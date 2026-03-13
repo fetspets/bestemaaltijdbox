@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink: #1a1a1a;
+  --paper: #faf8f5;
+  --rule: #e8e2d9;
+  --accent: #c0392b;
+  --accent-hover: #a93226;
+  --muted: #6b6560;
+  --green: #1B4332;
+  --mint: #52B788;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Outfit', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-editorial {
+  font-family: 'Playfair Display', serif;
+}
+
+.font-body {
+  font-family: 'Source Serif 4', serif;
+}
+
+.font-ui {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Score bars */
+.score-bar {
+  height: 6px;
+  background: var(--rule);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.score-bar-fill {
+  height: 100%;
+  background: var(--accent);
+  border-radius: 3px;
+  transition: width 0.6s ease;
+}
+
+/* Affiliate button */
+.btn-affiliate {
+  display: block;
+  width: 100%;
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 14px 24px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-affiliate:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  display: block;
+  width: 100%;
+  border: 2px solid var(--ink);
+  color: var(--ink);
+  text-align: center;
+  padding: 12px 24px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--ink);
+  color: white;
+}
+
+/* Code pill */
+.code-pill {
+  background: #fff3f2;
+  border: 1px solid #ffc5c0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  text-align: center;
+}
+
+.code-pill strong {
+  font-family: monospace;
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--accent);
+}
+
+/* Ranking number */
+.rank-number {
+  font-family: 'Playfair Display', serif;
+  font-size: 64px;
+  font-weight: 900;
+  color: var(--rule);
+  line-height: 1;
+}
+
+/* Top bar */
+.top-bar {
+  background: var(--accent);
+  color: white;
+  text-align: center;
+  padding: 10px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* Divider rule */
+.editorial-rule {
+  border: none;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+.editorial-rule-thick {
+  border: none;
+  border-top: 3px solid var(--ink);
+  margin: 0;
+}
