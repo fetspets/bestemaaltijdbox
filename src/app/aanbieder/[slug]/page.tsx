@@ -1,284 +1,233 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { aanbieders, getAanbieder } from '@/lib/aanbieders';
-import type { Metadata } from 'next';
+import { getAanbieder, aanbieders } from '@/lib/aanbieders';
 
 export async function generateStaticParams() {
-  return aanbieders.map((a) => ({ slug: a.slug }));
+  return aanbieders.map(a => ({ slug: a.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getAanbieder(slug);
   if (!a) return {};
   return {
     title: `${a.naam} Review België 2026 — Is het de beste maaltijdbox?`,
-    description: `Eerlijke review van ${a.naam} in België. Prijs: €${a.prijsPerPortie}/portie. Score: ${a.score.totaal}/10. ${a.beschrijving}`,
+    description: `Eerlijke review van ${a.naam} in België. Prijs: €${a.prijsPerPortie.toFixed(2)}/portie. Score: ${a.score.totaal}/10. Lees onze volledige test.`,
   };
 }
 
-export default async function AanbiederPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+const scoreLabels: Record<string, string> = {
+  smaak: 'Smaak',
+  prijsKwaliteit: 'Prijs-kwaliteit',
+  flexibiliteit: 'Flexibiliteit',
+  duurzaamheid: 'Duurzaamheid',
+  gemak: 'Gemak',
+};
+
+export default async function AanbiederPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const a = getAanbieder(slug);
   if (!a) notFound();
 
-  const scoreLabels: Record<string, string> = {
-    smaak: 'Smaak',
-    prijskwaliteit: 'Prijs-kwaliteit',
-    flexibiliteit: 'Flexibiliteit',
-    duurzaamheid: 'Duurzaamheid',
-    gemak: 'Gemak',
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Review',
+    name: `${a.naam} Review België 2026`,
+    reviewBody: a.beschrijving,
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: a.score.totaal,
+      bestRating: 10,
+      worstRating: 1,
+    },
+    author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be' },
+    itemReviewed: { '@type': 'Product', name: a.naam, url: a.affiliateUrl },
   };
 
+  const accentColor = {
+    hellofresh: '#1B4332',
+    foodbag: '#1E40AF',
+    'marley-spoon': '#7C3AED',
+  }[a.slug] || '#1B4332';
+
   return (
-    <div style={{ background: 'var(--paper)' }}>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
       {/* Breadcrumb */}
-      <div style={{ background: 'white', borderBottom: '1px solid var(--rule)' }}>
-        <div className="max-w-5xl mx-auto px-6 py-3" style={{ fontFamily: 'Outfit, sans-serif', fontSize: '13px', color: 'var(--muted)' }}>
+      <div style={{ background: 'white', borderBottom: '1px solid var(--rule)', padding: '10px 0' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', fontSize: 13, color: 'var(--muted)' }}>
           <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
           {' → '}
           <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Vergelijken</Link>
           {' → '}
-          <span style={{ color: 'var(--ink)', fontWeight: 600 }}>{a.naam}</span>
+          <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
+          <span style={{ float: 'right', fontSize: 12 }}>Bijgewerkt: maart 2026</span>
         </div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-6 py-10">
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 300px', gap: '48px', alignItems: 'start' }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 48px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 40, alignItems: 'start' }}>
 
-          {/* ── LEFT CONTENT ── */}
-          <div>
-            {/* Header */}
-            <div style={{ marginBottom: '24px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '12px', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '48px' }}>{a.logo}</span>
-                <div>
-                  <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '11px', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: 'var(--accent)', marginBottom: '4px' }}>
-                    Review
-                  </div>
-                  <h1 style={{ fontFamily: 'Playfair Display, serif', fontSize: '40px', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em' }}>
-                    {a.naam}
-                  </h1>
-                </div>
-              </div>
+        {/* MAIN */}
+        <div>
+          {/* Header */}
+          <div style={{ marginBottom: 24 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--mint)', marginBottom: 8 }}>REVIEW</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 8 }}>
+              <div style={{ width: 60, height: 60, borderRadius: 16, background: 'var(--cream)', border: '2px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 32 }}>{a.logo}</div>
+              <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 40, fontWeight: 900, margin: 0 }}>{a.naam}</h1>
+            </div>
+            <p style={{ fontSize: 16, color: 'var(--muted)', marginBottom: 12 }}>{a.tagline}</p>
+            <div style={{ display: 'flex', gap: 16, fontSize: 13, color: 'var(--muted)' }}>
+              <span>Door <strong style={{ color: 'var(--ink)' }}>Redactie BesteMaaltijdbox</strong></span>
+              <span>·</span>
+              <span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>maart 2026</strong></span>
+              <span>·</span>
+              <span>Getest over <strong style={{ color: 'var(--ink)' }}>4 weken</strong></span>
+            </div>
+          </div>
 
-              <p style={{ fontFamily: 'Outfit, sans-serif', fontSize: '18px', color: 'var(--muted)', marginBottom: '12px' }}>
-                {a.tagline}
-              </p>
-
-              {/* Meta */}
-              <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '13px', color: 'var(--muted)', display: 'flex', gap: '16px', flexWrap: 'wrap', padding: '12px 0', borderTop: '1px solid var(--rule)', borderBottom: '1px solid var(--rule)' }}>
-                <span>Door <strong style={{ color: 'var(--ink)' }}>Redactie BesteMaaltijdbox</strong></span>
-                <span>•</span>
-                <span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>maart 2026</strong></span>
-                <span>•</span>
-                <span>Getest over <strong style={{ color: 'var(--ink)' }}>4 weken</strong></span>
+          {/* Score box */}
+          <div style={{ background: 'white', border: '1.5px solid var(--mint)', borderRadius: 16, padding: 24, marginBottom: 24, position: 'relative', overflow: 'hidden' }}>
+            <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: `linear-gradient(90deg, #1B4332, var(--mint))` }} />
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700 }}>Onze score</div>
+              <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
+                <span style={{ fontFamily: 'Fraunces, serif', fontSize: 48, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</span>
+                <span style={{ fontSize: 20, color: 'var(--muted)' }}>/10</span>
               </div>
             </div>
-
-            {/* Score breakdown */}
-            <div style={{ background: 'white', border: '2px solid var(--ink)', padding: '24px', marginBottom: '32px' }}>
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '20px' }}>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '20px', fontWeight: 700 }}>
-                  Onze score
-                </div>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '48px', fontWeight: 900, color: 'var(--accent)', lineHeight: 1 }}>
-                  {a.score.totaal}
-                  <span style={{ fontSize: '20px', color: 'var(--muted)', fontFamily: 'Outfit, sans-serif', fontWeight: 400 }}>/10</span>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                {Object.entries(a.scores).map(([key, val]) => (
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+              {Object.entries(scoreLabels).map(([key, label]) => {
+                const val = a.score[key as keyof typeof a.score] as number;
+                return (
                   <div key={key}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', fontFamily: 'Outfit, sans-serif', fontSize: '13px', marginBottom: '4px' }}>
-                      <span style={{ fontWeight: 600 }}>{scoreLabels[key]}</span>
-                      <span style={{ fontWeight: 700, color: val >= 8 ? 'var(--accent)' : 'var(--ink)' }}>{val}</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: 12, marginBottom: 5 }}>
+                      <span style={{ color: 'var(--muted)', fontWeight: 500 }}>{label}</span>
+                      <span style={{ fontWeight: 700, color: '#1B4332' }}>{val}</span>
                     </div>
-                    <div className="score-bar">
-                      <div className="score-bar-fill" style={{ width: `${val * 10}%` }} />
-                    </div>
+                    <div className="score-bar"><div className="score-bar-fill" style={{ width: `${val * 10}%` }} /></div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Specs grid */}
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 12, marginBottom: 24 }}>
+            {[
+              { icon: '💰', label: 'Prijs per portie', val: `€${a.prijsPerPortie.toFixed(2)}` },
+              { icon: '📋', label: 'Recepten per week', val: `${a.receptenPerWeek}+` },
+              { icon: '🚚', label: 'Bezorging', val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}` },
+              { icon: '👥', label: 'Personen', val: `${a.minPersonen} of ${a.maxPersonen}` },
+              { icon: '📅', label: 'Opzegbaar', val: a.opzegTermijn },
+              { icon: '🇧🇪', label: 'Belgisch', val: a.belgisch ? 'Ja' : 'Nee' },
+            ].map(({ icon, label, val }) => (
+              <div key={label} style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: '14px 16px', display: 'flex', alignItems: 'center', gap: 12 }}>
+                <div style={{ fontSize: 22 }}>{icon}</div>
+                <div>
+                  <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 2 }}>{label}</div>
+                  <div style={{ fontWeight: 700, fontSize: 15 }}>{val}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Kenmerken */}
+          {a.kenmerken && a.kenmerken.length > 0 && (
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginBottom: 24 }}>
+              {a.kenmerken.map(k => (
+                <span key={k} style={{ fontSize: 12, padding: '5px 12px', borderRadius: 100, fontWeight: 600, background: '#E8F5EE', color: '#1B4332', border: '1px solid #A7DFC0' }}>{k}</span>
+              ))}
+            </div>
+          )}
+
+          {/* Beschrijving */}
+          <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, marginBottom: 12 }}>Over {a.naam}</h2>
+            <p style={{ fontSize: 15, lineHeight: 1.7, color: '#374151' }}>{a.beschrijving}</p>
+          </div>
+
+          {/* Pros & Cons */}
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
+            <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 12, padding: 20 }}>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#15803D', marginBottom: 12 }}>✓ Voordelen</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {a.pros.map(p => (
+                  <div key={p} style={{ display: 'flex', gap: 8, fontSize: 14, color: '#166534' }}>
+                    <span style={{ color: '#16A34A', fontWeight: 700, flexShrink: 0 }}>✓</span>{p}
                   </div>
                 ))}
               </div>
             </div>
+            <div style={{ background: '#FFF5F5', border: '1px solid #FCA5A5', borderRadius: 12, padding: 20 }}>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#B91C1C', marginBottom: 12 }}>✗ Nadelen</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+                {a.cons.map(c => (
+                  <div key={c} style={{ display: 'flex', gap: 8, fontSize: 14, color: '#7F1D1D' }}>
+                    <span style={{ color: '#EF4444', fontWeight: 700, flexShrink: 0 }}>✗</span>{c}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
 
-            {/* Quick specs */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '12px', marginBottom: '32px' }}>
+          <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar vergelijking</Link>
+        </div>
+
+        {/* STICKY SIDEBAR */}
+        <div style={{ position: 'sticky', top: 80 }}>
+          <div style={{ background: 'white', border: '1.5px solid var(--rule)', borderRadius: 16, padding: 24, boxShadow: '0 4px 24px rgba(0,0,0,.08)' }}>
+            <div style={{ textAlign: 'center', marginBottom: 16 }}>
+              <div style={{ fontSize: 40, marginBottom: 8 }}>{a.logo}</div>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900 }}>{a.naam}</div>
+              <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>{a.tagline}</div>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 48, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</div>
+              <div style={{ fontSize: 13, color: 'var(--muted)' }}>/10</div>
+            </div>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 16, fontSize: 13 }}>
               {[
-                { icon: '💰', label: 'Prijs per portie', val: `€${a.prijsPerPortie.toFixed(2)}` },
-                { icon: '📋', label: 'Recepten per week', val: `${a.aantalRecepten}+` },
-                { icon: '🚚', label: 'Bezorging', val: a.bezorging === 'gratis' ? 'Gratis' : `€${a.bezorgkost}` },
-                { icon: '👥', label: 'Personen', val: a.personenOpties.join(' of ') },
-                { icon: '📅', label: 'Opzegbaar', val: a.opzegbaar },
-                { icon: '🇧🇪', label: 'Belgisch', val: a.belgisch ? 'Ja' : 'Nee' },
-              ].map((s) => (
-                <div key={s.label} style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: '6px', padding: '14px', textAlign: 'center', fontFamily: 'Outfit, sans-serif' }}>
-                  <div style={{ fontSize: '20px', marginBottom: '4px' }}>{s.icon}</div>
-                  <div style={{ fontWeight: 700, fontSize: '15px', marginBottom: '2px' }}>{s.val}</div>
-                  <div style={{ fontSize: '11px', color: 'var(--muted)' }}>{s.label}</div>
+                ['Prijs/portie', `€${a.prijsPerPortie.toFixed(2)}`],
+                ['Recepten/week', `${a.receptenPerWeek}+`],
+                ['Personen', `${a.minPersonen} of ${a.maxPersonen}`],
+                ['Opzegbaar', a.opzegTermijn],
+                ['Belgisch', a.belgisch ? '🇧🇪 Ja' : 'Nee'],
+                ['Vegetarisch', a.vegetarisch ? '✓ Ja' : 'Nee'],
+              ].map(([k, v]) => (
+                <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--rule)' }}>
+                  <span style={{ color: 'var(--muted)' }}>{k}</span>
+                  <span style={{ fontWeight: 600 }}>{v}</span>
                 </div>
               ))}
             </div>
 
-            {/* Tags */}
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', marginBottom: '32px' }}>
-              {a.tags.map((tag) => (
-                <span key={tag} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '12px', fontWeight: 600, padding: '4px 12px', background: '#f5f5f5', border: '1px solid var(--rule)', borderRadius: '4px' }}>
-                  {tag}
-                </span>
-              ))}
-            </div>
+            {a.gratisBezorging && (
+              <div style={{ textAlign: 'center', fontSize: 13, color: '#16A34A', fontWeight: 600, marginBottom: 12 }}>✓ Gratis bezorging</div>
+            )}
 
-            {/* Review tekst */}
-            <h2 style={{ fontFamily: 'Playfair Display, serif', fontSize: '26px', fontWeight: 700, marginBottom: '12px' }}>
-              Onze bevindingen na 4 weken testen
-            </h2>
-            <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '16px', lineHeight: 1.8, color: '#333', marginBottom: '32px' }}>
-              {a.uitgebreideReview}
-            </p>
+            <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 10 }}>
+              {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+            </Link>
 
-            {/* Pros & Cons */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '20px', marginBottom: '32px' }}>
-              <div style={{ background: '#f0fdf4', border: '1px solid #bbf7d0', borderRadius: '8px', padding: '20px' }}>
-                <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#16a34a', marginBottom: '12px' }}>
-                  ✓ Voordelen
-                </div>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {a.pros.map((pro) => (
-                    <li key={pro} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '14px', color: '#166534', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#16a34a', fontWeight: 700, flexShrink: 0 }}>+</span>
-                      {pro}
-                    </li>
-                  ))}
-                </ul>
+            {a.kortingsCode && (
+              <div style={{ background: 'var(--red-light)', border: '1.5px dashed var(--red-border)', borderRadius: 8, padding: '10px 12px', textAlign: 'center', marginBottom: 10 }}>
+                <div style={{ fontSize: 11, color: 'var(--muted)' }}>Kortingscode</div>
+                <div style={{ fontFamily: 'monospace', fontSize: 18, fontWeight: 900, color: 'var(--red)' }}>{a.kortingsCode.code}</div>
+                <div style={{ fontSize: 11, color: 'var(--muted)' }}>{a.kortingsCode.beschrijving}</div>
               </div>
-              <div style={{ background: '#fef2f2', border: '1px solid #fecaca', borderRadius: '8px', padding: '20px' }}>
-                <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '13px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#dc2626', marginBottom: '12px' }}>
-                  ✗ Nadelen
-                </div>
-                <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                  {a.cons.map((con) => (
-                    <li key={con} style={{ fontFamily: 'Outfit, sans-serif', fontSize: '14px', color: '#991b1b', display: 'flex', gap: '8px', alignItems: 'flex-start' }}>
-                      <span style={{ color: '#dc2626', fontWeight: 700, flexShrink: 0 }}>−</span>
-                      {con}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
+            )}
 
-            {/* Verdict */}
-            <div style={{ background: '#fff9f8', border: '3px solid var(--accent)', borderRadius: '8px', padding: '24px', marginBottom: '32px' }}>
-              <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '12px', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--accent)', marginBottom: '8px' }}>
-                Ons verdict
-              </div>
-              <p style={{ fontFamily: 'Source Serif 4, serif', fontSize: '16px', lineHeight: 1.7, color: '#333' }}>
-                {a.beschrijving} {a.belgisch && 'Als Belgisch bedrijf draagt het ook bij aan de lokale economie. '}
-                {a.kortingscode
-                  ? `Gebruik kortingscode ${a.kortingscode} voor ${a.kortingBedrag}.`
-                  : 'Bekijk de huidige aanbiedingen op hun website.'}
-              </p>
-            </div>
+            <Link href="/" style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)' }}>
+              ← Terug naar vergelijking
+            </Link>
 
-            {/* CTA bottom */}
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              <a
-                href={`/ga/${a.slug}`}
-                className="btn-affiliate"
-                target="_blank"
-                rel="noopener noreferrer nofollow"
-                style={{ fontSize: '16px', padding: '16px' }}
-              >
-                Probeer {a.naam} →
-              </a>
-              {a.kortingscode && (
-                <div className="code-pill" style={{ fontSize: '14px', padding: '12px' }}>
-                  Code: <strong>{a.kortingscode}</strong> — {a.kortingBedrag}
-                </div>
-              )}
+            <div style={{ marginTop: 16, fontSize: 11, color: 'var(--muted)', textAlign: 'center', lineHeight: 1.5 }}>
+              Affiliate disclosure: Als je via onze link bestelt ontvangen we een kleine commissie. Dit is zonder meerprijs voor jou.
             </div>
           </div>
-
-          {/* ── RIGHT STICKY SIDEBAR ── */}
-          <div style={{ position: 'sticky', top: '20px' }}>
-            <div style={{ background: 'white', border: '3px solid var(--ink)', padding: '24px' }}>
-              {/* Logo + score */}
-              <div style={{ textAlign: 'center', marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--rule)' }}>
-                <div style={{ fontSize: '48px', marginBottom: '8px' }}>{a.logo}</div>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '24px', fontWeight: 700, marginBottom: '4px' }}>{a.naam}</div>
-                <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '13px', color: 'var(--muted)', marginBottom: '12px' }}>{a.tagline}</div>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', gap: '4px' }}>
-                  <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '40px', fontWeight: 900, color: 'var(--accent)' }}>{a.score.totaal}</span>
-                  <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '16px', color: 'var(--muted)' }}>/10</span>
-                </div>
-              </div>
-
-              {/* Price */}
-              <div style={{ textAlign: 'center', marginBottom: '20px', paddingBottom: '20px', borderBottom: '1px solid var(--rule)' }}>
-                <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '32px', fontWeight: 900 }}>
-                  €{a.prijsPerPortie.toFixed(2)}
-                </div>
-                <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '13px', color: 'var(--muted)' }}>per portie</div>
-                <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '12px', color: '#16a34a', fontWeight: 600, marginTop: '4px' }}>
-                  {a.bezorging === 'gratis' ? '✓ Gratis bezorging' : `Bezorging: €${a.bezorgkost}`}
-                </div>
-              </div>
-
-              {/* Key facts */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '20px', fontFamily: 'Outfit, sans-serif', fontSize: '13px' }}>
-                {[
-                  { k: 'Recepten/week', v: `${a.aantalRecepten}+` },
-                  { k: 'Personen', v: a.personenOpties.join(' of ') },
-                  { k: 'Opzegbaar', v: a.opzegbaar },
-                  { k: 'Belgisch', v: a.belgisch ? '🇧🇪 Ja' : 'Nee' },
-                  { k: 'Vegetarisch', v: a.vegetarisch ? '✓ Ja' : 'Nee' },
-                ].map((f) => (
-                  <div key={f.k} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--rule)' }}>
-                    <span style={{ color: 'var(--muted)' }}>{f.k}</span>
-                    <span style={{ fontWeight: 600 }}>{f.v}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <a
-                  href={`/ga/${a.slug}`}
-                  className="btn-affiliate"
-                  target="_blank"
-                  rel="noopener noreferrer nofollow"
-                >
-                  Bezoek {a.naam} →
-                </a>
-                {a.kortingscode && (
-                  <div className="code-pill">
-                    Code: <strong>{a.kortingscode}</strong>
-                    <div style={{ fontSize: '11px', color: 'var(--muted)', marginTop: '2px' }}>{a.kortingBedrag}</div>
-                  </div>
-                )}
-                <Link href="/" className="btn-secondary" style={{ textAlign: 'center' }}>
-                  ← Terug naar vergelijking
-                </Link>
-              </div>
-            </div>
-
-            {/* Affiliate disclosure */}
-            <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '11px', color: 'var(--muted)', marginTop: '12px', lineHeight: 1.5, padding: '0 4px' }}>
-              <strong>Affiliate disclosure:</strong> Als je via onze link bestelt ontvangen we een kleine commissie, zonder meerprijs voor jou. Dit beïnvloedt onze review niet.
-            </div>
-          </div>
-
         </div>
       </div>
-    </div>
+    </>
   );
 }
