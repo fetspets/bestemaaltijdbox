@@ -17,7 +17,7 @@ export async function generateMetadata({
   if (!a) return {};
   return {
     title: `${a.naam} Review België 2026 — Is het de beste maaltijdbox?`,
-    description: `Eerlijke review van ${a.naam} in België. Prijs: €${a.prijsPerPortie}/portie. Score: ${a.score}/10. ${a.beschrijving}`,
+    description: `Eerlijke review van ${a.naam} in België. Prijs: €${a.prijsPerPortie}/portie. Score: ${a.score.totaal}/10. ${a.beschrijving}`,
   };
 }
 
@@ -91,7 +91,7 @@ export default async function AanbiederPage({
                   Onze score
                 </div>
                 <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '48px', fontWeight: 900, color: 'var(--accent)', lineHeight: 1 }}>
-                  {a.score}
+                  {a.score.totaal}
                   <span style={{ fontSize: '20px', color: 'var(--muted)', fontFamily: 'Outfit, sans-serif', fontWeight: 400 }}>/10</span>
                 </div>
               </div>
@@ -217,7 +217,7 @@ export default async function AanbiederPage({
                 <div style={{ fontFamily: 'Playfair Display, serif', fontSize: '24px', fontWeight: 700, marginBottom: '4px' }}>{a.naam}</div>
                 <div style={{ fontFamily: 'Outfit, sans-serif', fontSize: '13px', color: 'var(--muted)', marginBottom: '12px' }}>{a.tagline}</div>
                 <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', gap: '4px' }}>
-                  <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '40px', fontWeight: 900, color: 'var(--accent)' }}>{a.score}</span>
+                  <span style={{ fontFamily: 'Playfair Display, serif', fontSize: '40px', fontWeight: 900, color: 'var(--accent)' }}>{a.score.totaal}</span>
                   <span style={{ fontFamily: 'Outfit, sans-serif', fontSize: '16px', color: 'var(--muted)' }}>/10</span>
                 </div>
               </div>
