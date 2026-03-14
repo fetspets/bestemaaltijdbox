@@ -1,7 +1,8 @@
 'use client';
 import { useState } from 'react';
 import Link from 'next/link';
-import { aanbieders, getAanbiedersByFilter } from '@/lib/aanbieders';
+import { aanbieders } from '@/lib/aanbieders';
+
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -60,15 +61,6 @@ function ScoreBar({ label, value }: { label: string; value: number }) {
   );
 }
 
-const filterLabels: Record<string, string> = {
-  alle: '🏆 Alle boxen',
-  koppel: '👫 Voor koppels',
-  gezin: '👨‍👩‍👧 Voor gezinnen',
-  vegetarisch: '🌱 Vegetarisch',
-  budget: '💰 Budget',
-  bio: '🌿 Biologisch',
-};
-
 const accentColors: Record<string, string> = {
   hellofresh: '#1B4332',
   foodbag: '#1E40AF',
@@ -76,10 +68,8 @@ const accentColors: Record<string, string> = {
 };
 
 export default function HomePage() {
-  const [activeFilter, setActiveFilter] = useState('alle');
-  const gefilterd = activeFilter === 'alle' ? aanbieders : getAanbiedersByFilter(activeFilter);
-  const top3 = gefilterd.slice(0, 3);
-  const rest = gefilterd.slice(3);
+ const top3 = aanbieders.slice(0, 3);
+const rest = aanbieders.slice(3);
 
   return (
     <>
@@ -94,7 +84,7 @@ export default function HomePage() {
         { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Smartmat is onze #1 keuze voor gezinnen met snelle recepten klaar in 20 minuten.' }},
       ]
     }) }} />
-      {/* TOPBAR */}
+     {/* TOPBAR */}
       <div style={{ background: '#1B4332', color: 'white', textAlign: 'center', padding: '10px 16px', fontSize: 13, fontWeight: 500 }}>
         🔥 <strong>Deze week:</strong> Grote kortingen op HelloFresh, Foodbag en Marley Spoon —{' '}
         <Link href="/kortingscodes" style={{ color: '#95D5B2', fontWeight: 700 }}>Bekijk alle codes →</Link>
@@ -152,33 +142,10 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* FILTER TABS */}
-        <div style={{ marginBottom: 32 }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--muted)', marginBottom: 10, textTransform: 'uppercase', letterSpacing: '0.06em' }}>Filter op situatie</div>
-          <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-            {Object.entries(filterLabels).map(([key, label]) => (
-              <button
-                key={key}
-                onClick={() => setActiveFilter(key)}
-                style={{
-                  padding: '9px 18px', borderRadius: 100, fontSize: 13, fontWeight: 600, cursor: 'pointer',
-                  border: '1.5px solid', transition: 'all 0.15s',
-                  background: activeFilter === key ? '#1B4332' : 'white',
-                  borderColor: activeFilter === key ? '#1B4332' : 'var(--rule)',
-                  color: activeFilter === key ? 'white' : 'var(--muted)',
-                  fontFamily: 'DM Sans, sans-serif',
-                }}
-              >
-                {label}
-              </button>
-            ))}
-          </div>
-        </div>
-
         {/* SECTION HEADER */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24, paddingBottom: 16, borderBottom: '2px solid var(--ink)' }}>
           <h2 style={{ fontSize: 28, fontWeight: 900 }}>Onze rankings</h2>
-          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt maart 2026 · {gefilterd.length} aanbieders</div>
+          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt maart 2026 · {aanbieders.length} aanbieders</div>
         </div>
 
         {/* TOP 3 CARDS */}
