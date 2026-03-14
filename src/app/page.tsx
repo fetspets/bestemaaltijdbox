@@ -275,44 +275,69 @@ export default function HomePage() {
           </>
         )}
 
-        {/* VERGELIJKINGSTABEL */}
+                {/* VERGELIJKINGSTABEL */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
             <h2 style={{ fontSize: 26, fontWeight: 900 }}>Alle boxen vergeleken</h2>
             <div style={{ fontSize: 13, color: 'var(--muted)' }}>9 aanbieders · gesorteerd op score</div>
           </div>
-          <div className="table-wrap">
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, minWidth: 900 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  {['#', 'Aanbieder', 'Score', 'Prijs/portie', 'Recepten', 'Bezorging', 'Belgisch', ''].map(h => (
-                    <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
+                  {['#', 'Aanbieder', 'Score', 'Prijs/portie', 'Recepten', 'Bezorging', 'Lokaal', 'Leverdag kiezen', 'Tijdstip kiezen', ''].map(h => (
+                    <th key={h} style={{ padding: '12px 14px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {aanbieders.map((a, i) => (
+                {[
+                  { slug: 'hellofresh', naam: 'HelloFresh', logo: '🌿', ranking: 1, score: 8.4, prijs: '€5,50', recepten: '30+', bezorging: 'Gratis', lokaal: false, leverdag: true, tijdstip: true },
+                  { slug: 'foodbag', naam: 'Foodbag', logo: '🥦', ranking: 2, score: 8.1, prijs: '€9,50', recepten: '30+', bezorging: 'Gratis', lokaal: true, leverdag: false, tijdstip: false },
+                  { slug: 'marley-spoon', naam: 'Marley Spoon', logo: '🌍', ranking: 3, score: 7.9, prijs: '€8,67', recepten: '40+', bezorging: 'Gratis', lokaal: false, leverdag: true, tijdstip: false },
+                  { slug: '15gram', naam: '15gram', logo: '👨‍🍳', ranking: 4, score: 7.8, prijs: '€7,50', recepten: '10+', bezorging: 'Gratis', lokaal: true, leverdag: false, tijdstip: false },
+                  { slug: 'ekomenu', naam: 'Ekomenu', logo: '🌱', ranking: 5, score: 7.6, prijs: '€7,00', recepten: '35+', bezorging: 'Gratis', lokaal: false, leverdag: true, tijdstip: false },
+                  { slug: 'smartmat', naam: 'Smartmat', logo: '⚡', ranking: 6, score: 7.3, prijs: '€5,80', recepten: '15+', bezorging: 'Gratis', lokaal: true, leverdag: false, tijdstip: false },
+                  { slug: 'delhaize-click-cook', naam: 'Delhaize C&C', logo: '🛒', ranking: 7, score: 7.0, prijs: '€5,20', recepten: '8+', bezorging: '€4,95', lokaal: true, leverdag: true, tijdstip: true },
+                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪', ranking: 8, score: 6.8, prijs: '€4,90', recepten: '6+', bezorging: '€5,95', lokaal: true, leverdag: true, tijdstip: false },
+                  { slug: 'cirkle', naam: 'Cirkle', logo: '♻️', ranking: 9, score: 7.2, prijs: '€6,80', recepten: '10+', bezorging: 'Gratis', lokaal: true, leverdag: false, tijdstip: false },
+                ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
-                    <td style={{ padding: '12px 16px', fontWeight: 800, color: i === 0 ? '#1B4332' : 'var(--muted)' }}>#{a.ranking}</td>
-                    <td style={{ padding: '12px 16px' }}>
+                    <td style={{ padding: '12px 14px', fontWeight: 800, color: i === 0 ? '#1B4332' : 'var(--muted)' }}>#{a.ranking}</td>
+                    <td style={{ padding: '12px 14px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600 }}>
                         <span>{a.logo}</span>{a.naam}
                       </div>
                     </td>
-                    <td style={{ padding: '12px 16px', fontWeight: 800, color: '#1B4332' }}>{a.score.totaal.toFixed(1)}</td>
-                    <td style={{ padding: '12px 16px' }}>€{a.prijsPerPortie.toFixed(2)}</td>
-                    <td style={{ padding: '12px 16px' }}>{a.receptenPerWeek}+</td>
-                    <td style={{ padding: '12px 16px', color: a.gratisBezorging ? '#16A34A' : '#DC2626', fontWeight: 600 }}>
-                      {a.gratisBezorging ? '✓ Gratis' : `€${a.bezorgkosten}`}
+                    <td style={{ padding: '12px 14px', fontWeight: 800, color: '#1B4332' }}>{a.score}</td>
+                    <td style={{ padding: '12px 14px', fontWeight: 600 }}>{a.prijs}</td>
+                    <td style={{ padding: '12px 14px' }}>{a.recepten}</td>
+                    <td style={{ padding: '12px 14px', color: a.bezorging === 'Gratis' ? '#16A34A' : '#DC2626', fontWeight: 600 }}>
+                      {a.bezorging === 'Gratis' ? '✓ Gratis' : a.bezorging}
                     </td>
-                    <td style={{ padding: '12px 16px' }}>{a.belgisch ? '🇧🇪' : '—'}</td>
-                    <td style={{ padding: '12px 16px' }}>
-                      <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 12 }}>Review →</Link>
+                    <td style={{ padding: '12px 14px', textAlign: 'center' }}>
+                      {a.lokaal ? <span style={{ color: '#16A34A', fontWeight: 700 }}>🇧🇪</span> : <span style={{ color: 'var(--muted)' }}>—</span>}
+                    </td>
+                    <td style={{ padding: '12px 14px', textAlign: 'center' }}>
+                      {a.leverdag
+                        ? <span style={{ color: '#16A34A', fontWeight: 700, fontSize: 16 }}>✓</span>
+                        : <span style={{ color: '#DC2626', fontWeight: 700, fontSize: 16 }}>✗</span>}
+                    </td>
+                    <td style={{ padding: '12px 14px', textAlign: 'center' }}>
+                      {a.tijdstip
+                        ? <span style={{ color: '#16A34A', fontWeight: 700, fontSize: 16 }}>✓</span>
+                        : <span style={{ color: '#DC2626', fontWeight: 700, fontSize: 16 }}>✗</span>}
+                    </td>
+                    <td style={{ padding: '12px 14px' }}>
+                      <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 12, whiteSpace: 'nowrap' }}>Review →</Link>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
+          </div>
+          <div style={{ marginTop: 10, fontSize: 11, color: 'var(--muted)' }}>
+            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen, controleer steeds de website voor de actuele prijs.
           </div>
         </div>
         {/* UITLEG SECTIE */}
