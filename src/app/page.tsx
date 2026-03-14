@@ -285,8 +285,7 @@ export default function HomePage() {
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                {['#', 'Aanbieder', 'Score', 'Prijs/portie', 'Recepten', 'Bezorging', '🇧🇪 Lokaal', 'Leverdag', 'Tijdstip (kost)', ''].map(h => (
-                    <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
+{['#', 'Aanbieder', 'Score', 'Prijs/portie', 'Recepten', 'Bezorging', '🇧🇪 Lokaal', 'Leverdag', 'Tijdstip', 'Tijdstip (kost)', ''].map(h => (                    <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
@@ -308,6 +307,9 @@ export default function HomePage() {
                   <td style={{ padding: '12px 16px' }}>{a.belgisch ? '🇧🇪' : '—'}</td>
                     <td style={{ padding: '12px 16px', textAlign: 'center', color: a.belgisch || ['hellofresh','marley-spoon','ekomenu'].includes(a.slug) ? '#16A34A' : '#DC2626', fontWeight: 600 }}>
                       {['hellofresh','marley-spoon','ekomenu','delhaize-click-cook','carrefour-simply-you'].includes(a.slug) ? '✓' : '✗'}
+                    </td>
+                   <td style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, color: ['hellofresh','delhaize-click-cook'].includes(a.slug) ? '#16A34A' : '#DC2626' }}>
+                      {['hellofresh','delhaize-click-cook'].includes(a.slug) ? '✓' : '✗'}
                     </td>
                     <td style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, color: a.slug === 'hellofresh' ? '#16A34A' : a.slug === 'delhaize-click-cook' ? '#DC2626' : 'var(--muted)' }}>
                       {a.slug === 'hellofresh' ? 'Gratis' : a.slug === 'delhaize-click-cook' ? '€4,95' : '—'}
