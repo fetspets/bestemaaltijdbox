@@ -44,6 +44,7 @@ export default function Navbar() {
                 {[
                   { href: '/', label: 'Vergelijken' },
                   { href: '/kortingscodes', label: 'Kortingscodes' },
+                  { href: '/over-ons', label: 'Over ons' },
                 ].map((link) => (
                   <Link
                     key={link.href}
@@ -89,10 +90,8 @@ export default function Navbar() {
           >
             {[
               { href: '/', label: 'Vergelijken' },
-              { href: '/aanbieders', label: 'Alle aanbieders' },
+              { href: '/over-ons', label: 'Over ons' },
               { href: '/kortingscodes', label: 'Kortingscodes' },
-              { href: '/voor/koppel', label: 'Voor koppels' },
-              { href: '/voor/gezin', label: 'Voor gezinnen' },
             ].map((link) => (
               <Link
                 key={link.href}

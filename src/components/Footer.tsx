@@ -2,116 +2,69 @@ import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer
-      style={{
-        background: 'var(--ink)',
-        color: 'white',
-        fontFamily: 'Outfit, sans-serif',
-      }}
-    >
-      <div className="max-w-5xl mx-auto px-6 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-          {/* Brand */}
+    <footer style={{ background: '#1C1C1C', color: 'white', padding: '48px 24px 24px', marginTop: 48 }}>
+      <div style={{ maxWidth: 1100, margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr', gap: 32, marginBottom: 40 }}>
+
+          {/* Logo & beschrijving */}
           <div>
-            <div
-              style={{
-                fontFamily: 'Playfair Display, serif',
-                fontSize: '20px',
-                fontWeight: 900,
-                marginBottom: '12px',
-              }}
-            >
-              BesteMaaltijdbox
-            </div>
-            <p style={{ fontSize: '13px', color: '#aaa', lineHeight: 1.7 }}>
-              Onafhankelijke vergelijking van alle maaltijdboxen in België.
-              Geen betaalde posities — alleen eerlijke reviews.
+            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 10 }}>BesteMaaltijdbox</div>
+            <p style={{ fontSize: 13, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 12 }}>
+              Onafhankelijke vergelijking van alle maaltijdboxen in België. Geen betaalde posities — alleen eerlijke reviews.
             </p>
+            <div style={{ fontSize: 12, color: '#6B7280' }}>© 2026 BesteMaaltijdbox.be</div>
           </div>
 
-          {/* Links */}
+          {/* Aanbieders */}
           <div>
-            <div
-              style={{
-                fontSize: '11px',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: '#888',
-                marginBottom: '12px',
-              }}
-            >
-              Aanbieders
-            </div>
-            <div className="flex flex-col gap-2">
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Aanbieders</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
-                { href: '/aanbieder/hellofresh', label: 'HelloFresh review' },
-                { href: '/aanbieder/foodbag', label: 'Foodbag review' },
-                { href: '/aanbieder/marley-spoon', label: 'Marley Spoon review' },
-                { href: '/aanbieder/15gram', label: '15gram review' },
-                { href: '/aanbieder/ekomenu', label: 'Ekomenu review' },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{ fontSize: '13px', color: '#bbb', textDecoration: 'none' }}
-                  className="hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
+                { naam: 'HelloFresh review', slug: 'hellofresh' },
+                { naam: 'Foodbag review', slug: 'foodbag' },
+                { naam: 'Marley Spoon review', slug: 'marley-spoon' },
+                { naam: '15gram review', slug: '15gram' },
+                { naam: 'Ekomenu review', slug: 'ekomenu' },
+              ].map(a => (
+                <Link key={a.slug} href={`/aanbieder/${a.slug}`} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{a.naam}</Link>
               ))}
             </div>
           </div>
 
-          {/* Filters */}
+          {/* Op situatie */}
           <div>
-            <div
-              style={{
-                fontSize: '11px',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: '#888',
-                marginBottom: '12px',
-              }}
-            >
-              Op situatie
-            </div>
-            <div className="flex flex-col gap-2">
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Op situatie</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
-                { href: '/voor/koppel', label: 'Beste box voor koppels' },
-                { href: '/voor/gezin', label: 'Beste box voor gezinnen' },
-                { href: '/voor/vegetariers', label: 'Beste vegetarische box' },
-                { href: '/voor/budget', label: 'Goedkoopste maaltijdbox' },
-                { href: '/voor/bio', label: 'Beste biologische box' },
-                { href: '/kortingscodes', label: 'Alle kortingscodes' },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  style={{ fontSize: '13px', color: '#bbb', textDecoration: 'none' }}
-                  className="hover:text-white transition-colors"
-                >
-                  {link.label}
-                </Link>
+                { label: 'Voor koppels', href: '/voor/koppel' },
+                { label: 'Voor gezinnen', href: '/voor/gezin' },
+                { label: 'Vegetarisch', href: '/voor/vegetarisch' },
+                { label: 'Beste budget', href: '/voor/budget' },
+                { label: 'Biologisch', href: '/voor/bio' },
+              ].map(l => (
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Info */}
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Info</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[
+                { label: 'Kortingscodes', href: '/kortingscodes' },
+                { label: 'Over ons', href: '/over-ons' },
+                { label: 'Privacybeleid', href: '/privacy' },
+              ].map(l => (
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom bar */}
-        <div
-          className="pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4"
-          style={{ borderTop: '1px solid #333', fontSize: '12px', color: '#666' }}
-        >
-          <div>
-            © 2026 BesteMaaltijdbox.be · Onafhankelijke vergelijkingssite
-          </div>
-          <div>
-            <strong style={{ color: '#888' }}>Affiliate disclosure:</strong>{' '}
-            Deze site bevat affiliate links. We ontvangen een kleine commissie als
-            je via onze links bestelt, zonder meerprijs voor jou.
-          </div>
+        {/* Bottom */}
+        <div style={{ paddingTop: 24, borderTop: '1px solid #374151', fontSize: 12, color: '#6B7280', lineHeight: 1.6 }}>
+          Affiliate disclosure: BesteMaaltijdbox.be ontvangt een kleine commissie wanneer je via onze links een abonnement afsluit. Dit is zonder meerprijs voor jou en heeft geen invloed op onze rankings.
         </div>
       </div>
     </footer>
