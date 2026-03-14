@@ -275,54 +275,86 @@ export default function HomePage() {
           </>
         )}
 
-        {/* VERGELIJKINGSTABEL */}
+              {/* VERGELIJKINGSTABEL */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
-            <h2 style={{ fontSize: 26, fontWeight: 900 }}>Alle boxen vergeleken</h2>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
+            <h2 style={{ fontSize: 26, fontWeight: 900 }}>Vergelijk alle maaltijdboxen in België</h2>
             <div style={{ fontSize: 13, color: 'var(--muted)' }}>9 aanbieders · gesorteerd op score</div>
           </div>
-          <div className="table-wrap">
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 20 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt maart 2026.</p>
+          <div className="table-wrap" style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 900 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-{['#', 'Aanbieder', 'Score', 'Prijs/portie', 'Recepten', 'Bezorging', '🇧🇪 Lokaal', 'Leverdag', 'Tijdstip', 'Tijdstip (kost)', ''].map(h => (                    <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
-                  ))}
+                  <th style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Aanbieder</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Score</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Prijs/portie</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Min. recepten</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>Bezorgkost</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>🇧🇪 Lokaal</th>
+                  <th style={{ padding: '10px 12px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                    <div>Leverdag</div>
+                    <div style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0, fontSize: 10, opacity: 0.75 }}>zelf kiezen</div>
+                  </th>
+                  <th style={{ padding: '10px 12px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                    <div>Tijdstip</div>
+                    <div style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0, fontSize: 10, opacity: 0.75 }}>zelf kiezen</div>
+                  </th>
+                  <th style={{ padding: '10px 12px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                    <div>Los bestellen</div>
+                    <div style={{ fontWeight: 400, textTransform: 'none', letterSpacing: 0, fontSize: 10, opacity: 0.75 }}>geen abo nodig</div>
+                  </th>
+                  <th style={{ padding: '10px 12px' }}></th>
                 </tr>
               </thead>
               <tbody>
-                {aanbieders.map((a, i) => (
+                {[
+                  { slug: 'hellofresh',          naam: 'HelloFresh',      logo: '🌿', score: 8.4, prijs: 'v.a. €5,50', minRecepten: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false },
+                  { slug: 'foodbag',             naam: 'Foodbag',         logo: '🥦', score: 8.1, prijs: 'v.a. €9,50', minRecepten: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'marley-spoon',        naam: 'Marley Spoon',    logo: '🌍', score: 7.9, prijs: 'v.a. €8,67', minRecepten: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
+                  { slug: '15gram',              naam: '15gram',          logo: '👨‍🍳', score: 7.8, prijs: 'v.a. €7,50', minRecepten: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
+                  { slug: 'ekomenu',             naam: 'Ekomenu',         logo: '🌱', score: 7.6, prijs: 'v.a. €7,00', minRecepten: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
+                  { slug: 'smartmat',            naam: 'Smartmat',        logo: '⚡', score: 7.3, prijs: 'v.a. €5,80', minRecepten: 3, bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: true  },
+                  { slug: 'delhaize-click-cook', naam: 'Delhaize C&C',    logo: '🛒', score: 7.0, prijs: 'v.a. €5,20', minRecepten: 1, bezorg: '€4,95',       lokaal: true,  leverdag: true,  tijdstip: true,  los: true  },
+                  { slug: 'carrefour-simply-you',naam: 'Carrefour SY',    logo: '🏪', score: 6.8, prijs: 'v.a. €4,90', minRecepten: 1, bezorg: '€5,95',       lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'cirkle',              naam: 'Cirkle',          logo: '♻️', score: 7.2, prijs: 'v.a. €6,80', minRecepten: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
+                ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
-                    <td style={{ padding: '12px 16px', fontWeight: 800, color: i === 0 ? '#1B4332' : 'var(--muted)' }}>#{a.ranking}</td>
-                    <td style={{ padding: '12px 16px' }}>
+                    <td style={{ padding: '10px 12px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 8, fontWeight: 600 }}>
                         <span>{a.logo}</span>{a.naam}
                       </div>
                     </td>
-                    <td style={{ padding: '12px 16px', fontWeight: 800, color: '#1B4332' }}>{a.score.totaal.toFixed(1)}</td>
-                    <td style={{ padding: '12px 16px' }}>€{a.prijsPerPortie.toFixed(2)}</td>
-                    <td style={{ padding: '12px 16px' }}>{a.receptenPerWeek}+</td>
-                    <td style={{ padding: '12px 16px', color: a.gratisBezorging ? '#16A34A' : '#DC2626', fontWeight: 600 }}>
-                      {a.gratisBezorging ? '✓ Gratis' : `€${a.bezorgkosten}`}
+                    <td style={{ padding: '10px 12px', fontWeight: 800, color: '#1B4332' }}>{a.score}</td>
+                    <td style={{ padding: '10px 12px', fontWeight: 600 }}>{a.prijs}</td>
+                    <td style={{ padding: '10px 12px', textAlign: 'center' }}>{a.minRecepten === 1 ? <span style={{ color: 'var(--muted)' }}>—</span> : `${a.minRecepten}/week`}</td>
+                    <td style={{ padding: '10px 12px', color: a.bezorg === 'Gratis' || a.bezorg === 'v.a. gratis' ? '#16A34A' : '#DC2626', fontWeight: 600 }}>{a.bezorg}</td>
+                    <td style={{ padding: '10px 12px', textAlign: 'center' }}>
+                      {a.lokaal ? '🇧🇪' : <span style={{ color: 'var(--muted)' }}>—</span>}
                     </td>
-                  <td style={{ padding: '12px 16px' }}>{a.belgisch ? '🇧🇪' : '—'}</td>
-                    <td style={{ padding: '12px 16px', textAlign: 'center', color: a.belgisch || ['hellofresh','marley-spoon','ekomenu'].includes(a.slug) ? '#16A34A' : '#DC2626', fontWeight: 600 }}>
-                      {['hellofresh','marley-spoon','ekomenu','delhaize-click-cook','carrefour-simply-you'].includes(a.slug) ? '✓' : '✗'}
+                    <td style={{ padding: '10px 12px', textAlign: 'center', color: a.leverdag ? '#16A34A' : '#DC2626', fontWeight: 700 }}>
+                      {a.leverdag ? '✓' : '✗'}
                     </td>
-                   <td style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, color: ['hellofresh','delhaize-click-cook'].includes(a.slug) ? '#16A34A' : '#DC2626' }}>
-                      {['hellofresh','delhaize-click-cook'].includes(a.slug) ? '✓' : '✗'}
+                    <td style={{ padding: '10px 12px', textAlign: 'center', color: a.tijdstip ? '#16A34A' : '#DC2626', fontWeight: 700 }}>
+                      {a.tijdstip ? '✓' : '✗'}
                     </td>
-                    <td style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, color: a.slug === 'hellofresh' ? '#16A34A' : a.slug === 'delhaize-click-cook' ? '#DC2626' : 'var(--muted)' }}>
-                      {a.slug === 'hellofresh' ? 'Gratis' : a.slug === 'delhaize-click-cook' ? '€4,95' : '—'}
+                    <td style={{ padding: '10px 12px', textAlign: 'center', color: a.los ? '#16A34A' : '#DC2626', fontWeight: 700 }}>
+                      {a.los ? '✓' : '✗'}
                     </td>
-                    <td style={{ padding: '12px 16px' }}>
-                      <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 12 }}>Review →</Link>
+                    <td style={{ padding: '10px 12px' }}>
+                      <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 12, whiteSpace: 'nowrap' }}>Review →</Link>
                     </td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+          <div style={{ marginTop: 8, fontSize: 11, color: 'var(--muted)' }}>
+            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen, controleer steeds de website voor de actuele prijs.
+          </div>
         </div>
+
+
         {/* UITLEG SECTIE */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 32 }}>
