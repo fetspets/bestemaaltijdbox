@@ -36,7 +36,7 @@ function CopyCodeButton({ code, url }: { code: string; url: string }) {
       <button
         onClick={handleCopy}
         style={{
-          width: '100%', padding: '8px', borderRadius: 6, border: 'none', cursor: 'pointer',
+          width: '100%', padding: '8px', borderRadius: 6, cursor: 'pointer',
           fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 12,
           background: copied ? '#F0FDF4' : 'white',
           color: copied ? '#16A34A' : 'var(--red)',
