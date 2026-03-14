@@ -11,10 +11,7 @@ export default function Navbar() {
     <>
       {/* Top promo bar */}
       <div className="top-bar">
-        🔥 <strong>Deze week:</strong> €40 korting op HelloFresh —{' '}
-        <Link href="/kortingscodes" className="underline text-red-200 hover:text-white">
-          Bekijk alle kortingscodes →
-        </Link>
+        🔥 <strong>Nieuw:</strong> Vergelijk alle maaltijdboxen in België en bespaar — <Link href="/kortingscodes" style={{ color: '#95D5B2', fontWeight: 700 }}>Bekijk de beste deals →</Link>
       </div>
 
       {/* Main nav */}
