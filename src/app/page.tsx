@@ -85,15 +85,15 @@ export default function HomePage() {
     <>
       {/* JSON-LD */}
 
-<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is de goedkoopste optie aan €4,90 per portie.' }},
-    { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website.' }},
-    { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Smartmat is onze #1 keuze voor gezinnen met snelle recepten klaar in 20 minuten.' }},
-  ]
-}) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'FAQPage',
+      mainEntity: [
+        { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is de goedkoopste optie aan €4,90 per portie.' }},
+        { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website.' }},
+        { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Smartmat is onze #1 keuze voor gezinnen met snelle recepten klaar in 20 minuten.' }},
+      ]
+    }) }} />
       {/* TOPBAR */}
       <div style={{ background: '#1B4332', color: 'white', textAlign: 'center', padding: '10px 16px', fontSize: 13, fontWeight: 500 }}>
         🔥 <strong>Deze week:</strong> Grote kortingen op HelloFresh, Foodbag en Marley Spoon —{' '}
