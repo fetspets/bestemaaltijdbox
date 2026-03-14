@@ -43,10 +43,7 @@ export default function Navbar() {
               <div style={{ display: 'flex', gap: '8px', marginLeft: '16px' }}>
                 {[
                   { href: '/', label: 'Vergelijken' },
-                  { href: '/aanbieders', label: 'Alle aanbieders' },
                   { href: '/kortingscodes', label: 'Kortingscodes' },
-                  { href: '/voor/koppel', label: 'Voor koppels' },
-                  { href: '/voor/gezin', label: 'Voor gezinnen' },
                 ].map((link) => (
                   <Link
                     key={link.href}
