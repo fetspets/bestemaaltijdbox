@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   alternates: { canonical: 'https://www.bestemaaltijdbox.be' },
+  verification: {
+    google: 'dgD6dFbp4JHPwAeuIu27zU6WTq1wEII8Sj_RsjngfgA',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
