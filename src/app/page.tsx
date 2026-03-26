@@ -206,11 +206,11 @@ export default function HomePage() {
           </div>
         ))}
 
-        {/* VERGELIJKINGSTABEL */}
+               {/* VERGELIJKINGSTABEL */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
-            <div style={{ fontSize: 13, color: 'var(--muted)' }}>9 aanbieders</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)' }}>7 aanbieders</div>
           </div>
           <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt maart 2026.</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>
@@ -224,15 +224,13 @@ export default function HomePage() {
               </thead>
               <tbody>
                 {[
-                  { slug: 'hellofresh',          naam: 'HelloFresh',    logo: '🌿', score: 8.4, prijs: '€5,50', min: 3,  bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false },
-                  { slug: 'foodbag',             naam: 'Foodbag',       logo: '🥦', score: 8.1, prijs: '€9,50', min: 2,  bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'marley-spoon',        naam: 'Marley Spoon',  logo: '🌍', score: 7.9, prijs: '€8,67', min: 2,  bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: '15gram',              naam: '15gram',        logo: '👨‍🍳', score: 7.8, prijs: '€7,50', min: 2,  bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
-                  { slug: 'ekomenu',             naam: 'Ekomenu',       logo: '🌱', score: 7.6, prijs: '€7,00', min: 2,  bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'smartmat',            naam: 'Smartmat',      logo: '⚡', score: 7.3, prijs: '€5,80', min: 3,  bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
-                  { slug: 'delhaize-click-cook', naam: 'Delhaize C&C',  logo: '🛒', score: 7.0, prijs: '€5,20', min: 1,  bezorg: '€4,95',       lokaal: true,  leverdag: true,  tijdstip: true,  los: true  },
-                  { slug: 'carrefour-simply-you',naam: 'Carrefour SY',  logo: '🏪', score: 6.8, prijs: '€4,90', min: 1,  bezorg: '€5,95',       lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'cirkle',              naam: 'Cirkle',        logo: '♻️', score: 7.2, prijs: '€6,80', min: 2,  bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
+                  { slug: 'hellofresh',          naam: 'HelloFresh',    logo: '🌿', score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false },
+                  { slug: 'foodbag',             naam: 'Foodbag',       logo: '🥦', score: 8.1, prijs: '€9,50', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'marley-spoon',        naam: 'Marley Spoon',  logo: '🌍', score: 7.9, prijs: '€8,67', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
+                  { slug: 'ekomenu',             naam: 'Ekomenu',       logo: '🌱', score: 7.6, prijs: '€7,00', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
+                  { slug: 'delhaize-click-cook', naam: 'Delhaize C&C',  logo: '🛒', score: 7.0, prijs: '€5,20', min: 1, bezorg: '€4,95',       lokaal: true,  leverdag: true,  tijdstip: true,  los: true  },
+                  { slug: 'carrefour-simply-you',naam: 'Carrefour SY',  logo: '🏪', score: 6.8, prijs: '€4,90', min: 1, bezorg: '€5,95',       lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'cirkle',              naam: 'Cirkle',        logo: '♻️', score: 7.2, prijs: '€6,80', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
                 ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
@@ -260,6 +258,7 @@ export default function HomePage() {
             ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen.
           </div>
         </div>
+
 
         {/* UITLEG SECTIE */}
         <div style={{ marginBottom: 40 }}>

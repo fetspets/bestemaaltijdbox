@@ -3,8 +3,8 @@ import { MetadataRoute } from 'next';
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.bestemaaltijdbox.be';
   const aanbieders = [
-    'hellofresh', 'foodbag', 'marley-spoon', '15gram',
-    'ekomenu', 'smartmat', 'delhaize-click-cook',
+    'hellofresh', 'foodbag', 'marley-spoon',
+    'ekomenu', 'delhaize-click-cook',
     'carrefour-simply-you', 'cirkle',
   ];
   const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio'];
