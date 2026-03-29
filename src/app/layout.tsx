@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: {
@@ -36,20 +37,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
+      </head>
+      <body>
+         <Script
+    id="organization-schema"
+    type="application/ld+json"
+    strategy="beforeInteractive"
+  >
+    {JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "BesteMaaltijdbox",
       "url": "https://www.bestemaaltijdbox.be",
       "logo": "https://www.bestemaaltijdbox.be/logo.png"
-    })
-  }}
-/>
-      </head>
-      <body>
+    })}
+  </Script>
         <Navbar />
         <main>{children}</main>
         <Footer />
