@@ -36,6 +36,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;0,9..144,900;1,9..144,700&family=DM+Sans:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BesteMaaltijdbox",
+      "url": "https://www.bestemaaltijdbox.be",
+      "logo": "https://www.bestemaaltijdbox.be/logo.png"
+    })
+  }}
+/>
       </head>
       <body>
         <Navbar />
@@ -62,15 +74,3 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
-<script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "BesteMaaltijdbox",
-      "url": "https://www.bestemaaltijdbox.be",
-      "logo": "https://www.bestemaaltijdbox.be/logo.png"
-    })
-  }}
-/>
