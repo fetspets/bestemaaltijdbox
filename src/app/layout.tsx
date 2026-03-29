@@ -62,3 +62,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     </html>
   );
 }
+<script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "BesteMaaltijdbox",
+      "url": "https://www.bestemaaltijdbox.be",
+      "logo": "https://www.bestemaaltijdbox.be/logo.png"
+    })
+  }}
+/>
