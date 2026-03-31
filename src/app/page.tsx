@@ -8,12 +8,12 @@ const jsonLd = {
   '@type': 'ItemList',
   name: 'Beste Maaltijdbox België 2026',
   description: 'Onafhankelijke vergelijking van maaltijdboxen in België',
-  numberOfItems: 9,
+  numberOfItems: 7,
   itemListElement: aanbieders.map((a, i) => ({
     '@type': 'ListItem',
     position: i + 1,
     name: a.naam,
-  url: `https://bestemaaltijdbox.be/aanbieder/${a.slug}`,
+    url: `https://bestemaaltijdbox.be/aanbieder/${a.slug}`,
   })),
 };
 
@@ -68,7 +68,7 @@ export default function HomePage() {
         mainEntity: [
           { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is de goedkoopste optie aan €4,90 per portie.' }},
           { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Smartmat is onze keuze voor gezinnen met snelle recepten klaar in 20 minuten.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' }},
         ]
       }) }} />
 
@@ -81,12 +81,12 @@ export default function HomePage() {
           De beste maaltijdbox<br />in <span style={{ color: 'var(--mint)' }}>België</span>
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          We kochten en testten alle 9 maaltijdboxen gedurende 4 weken. Eerlijke rankings op basis van smaak, prijs en gemak — geen betaalde posities.
+          We kochten en testten alle 7 maaltijdboxen gedurende 4 weken. Eerlijke rankings op basis van smaak, prijs en gemak — geen betaalde posities.
         </p>
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
-          {[['9', 'boxen getest'], ['4', 'weken getest'], ['2026', 'bijgewerkt']].map(([num, label]) => (
+          {[['7', 'boxen getest'], ['4', 'weken getest'], ['2026', 'bijgewerkt']].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: '#1B4332' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{label}</div>
@@ -94,7 +94,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* Trust card — mobiel volledig breed */}
+        {/* Trust card */}
         <div style={{ background: 'white', borderRadius: 16, padding: 20, boxShadow: '0 4px 24px rgba(0,0,0,.08)', border: '1px solid var(--rule)', marginBottom: 32 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>Waarom onze rankings vertrouwen?</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
@@ -121,15 +121,14 @@ export default function HomePage() {
           const accent = accentColors[a.slug] || '#1B4332';
           return (
             <div key={a.slug} className={`ranking-card${i === 0 ? ' top' : ''}`} style={{ marginBottom: 16 }}>
-              {/* Card header */}
               <div style={{ padding: '20px 20px 16px' }}>
                 <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 12 }}>
                   <div style={{ fontFamily: 'Fraunces, serif', fontSize: 40, fontWeight: 900, color: i === 0 ? '#C8EAD8' : 'var(--rule)', lineHeight: 1, flexShrink: 0 }}>{a.ranking}</div>
                   <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--cream)', border: '1.5px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, flexShrink: 0, overflow: 'hidden' }}>
-  {a.logo.startsWith('/') 
-    ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} />
-    : a.logo}
-</div>
+                    {a.logo.startsWith('/')
+                      ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} />
+                      : a.logo}
+                  </div>
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', marginBottom: 2 }}>
                       <span style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700 }}>{a.naam}</span>
@@ -138,7 +137,6 @@ export default function HomePage() {
                     </div>
                     <div style={{ fontSize: 13, color: 'var(--muted)' }}>{a.tagline}</div>
                   </div>
-                  {/* Score rechts */}
                   <div style={{ textAlign: 'center', flexShrink: 0 }}>
                     <div style={{ fontFamily: 'Fraunces, serif', fontSize: 32, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</div>
                     <div style={{ fontSize: 11, color: 'var(--muted)' }}>/10</div>
@@ -147,7 +145,6 @@ export default function HomePage() {
 
                 <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{a.beschrijving}</div>
 
-                {/* Specs row */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule)', borderRadius: 10, overflow: 'hidden', fontSize: 12, marginBottom: 12 }}>
                   {[
                     { val: a.score.totaal.toFixed(1), key: 'Score' },
@@ -162,14 +159,12 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                {/* Tags */}
                 <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 14 }}>
                   {a.kenmerken?.slice(0, 3).map(k => (
                     <span key={k} style={{ fontSize: 11, padding: '4px 10px', borderRadius: 6, fontWeight: 600, background: '#F3F4F6', color: '#6B7280' }}>{k}</span>
                   ))}
                 </div>
 
-                {/* CTA buttons */}
                 <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
                   {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
                 </Link>
@@ -179,7 +174,6 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Score bars — alleen #1 */}
               {i === 0 && (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, padding: '14px 20px 20px', borderTop: '1px solid var(--rule)' }}>
                   <ScoreBar label="Smaak" value={a.score.smaak} />
@@ -198,7 +192,11 @@ export default function HomePage() {
         {rest.map(a => (
           <div key={a.slug} className="small-card" style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8, padding: '14px 16px' }}>
             <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: 'var(--rule)', lineHeight: 1, flexShrink: 0, minWidth: 28 }}>{a.ranking}</div>
-            <div style={{ width: 36, height: 36, borderRadius: 8, background: 'var(--cream)', border: '1px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0 }}>{a.logo}</div>
+            <div style={{ width: 36, height: 36, borderRadius: 8, background: 'var(--cream)', border: '1px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, flexShrink: 0, overflow: 'hidden' }}>
+              {a.logo.startsWith('/')
+                ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 3 }} />
+                : a.logo}
+            </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700 }}>{a.naam} {a.belgisch && '🇧🇪'}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)' }}>€{a.prijsPerPortie.toFixed(2)}/portie</div>
@@ -210,7 +208,7 @@ export default function HomePage() {
           </div>
         ))}
 
-               {/* VERGELIJKINGSTABEL */}
+        {/* VERGELIJKINGSTABEL */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
@@ -228,18 +226,23 @@ export default function HomePage() {
               </thead>
               <tbody>
                 {[
-                  { slug: 'hellofresh',          naam: 'HelloFresh',    logo: '🌿', score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false },
-                  { slug: 'foodbag',             naam: 'Foodbag',       logo: '🥦', score: 8.1, prijs: '€9,50', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'marley-spoon',        naam: 'Marley Spoon',  logo: '🌍', score: 7.9, prijs: '€8,67', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'ekomenu',             naam: 'Ekomenu',       logo: '🌱', score: 7.6, prijs: '€7,00', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'delhaize-click-cook', naam: 'Delhaize C&C',  logo: '🛒', score: 7.0, prijs: '€5,20', min: 1, bezorg: '€4,95',       lokaal: true,  leverdag: true,  tijdstip: true,  los: true  },
-                  { slug: 'carrefour-simply-you',naam: 'Carrefour SY',  logo: '🏪', score: 6.8, prijs: '€4,90', min: 1, bezorg: '€5,95',       lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'cirkle',              naam: 'Cirkle',        logo: '♻️', score: 7.2, prijs: '€6,80', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
+                  { slug: 'hellofresh',           naam: 'HelloFresh',   logo: '/logos/hellofresh.png',  score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false },
+                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€8,67', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
+                  { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€7,00', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
+                  { slug: 'delhaize-click-cook',  naam: 'Delhaize C&C', logo: '/logos/delhaize.png',    score: 7.0, prijs: '€5,20', min: 1, bezorg: '€4,95',       lokaal: true,  leverdag: true,  tijdstip: true,  los: true  },
+                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€4,90', min: 1, bezorg: '€5,95',       lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'cirkle',               naam: 'Cirkle',       logo: '♻️',                     score: 7.2, prijs: '€6,80', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
                 ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 600, whiteSpace: 'nowrap' }}>
-                        <span>{a.logo}</span>{a.naam}
+                        <div style={{ width: 24, height: 24, display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+                          {a.logo.startsWith('/')
+                            ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+                            : <span>{a.logo}</span>}
+                        </div>
+                        {a.naam}
                       </div>
                     </td>
                     <td style={{ padding: '10px 10px', fontWeight: 800, color: '#1B4332' }}>{a.score}</td>
@@ -277,7 +280,7 @@ export default function HomePage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {[
                   { icon: '👫', title: 'Koppels', desc: 'HelloFresh en Foodbag zijn de populairste keuzes voor 2 personen.' },
-                  { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin. en snelle recepten (klaar in 20 min).' },
+                  { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin.' },
                   { icon: '🌱', title: 'Vegetariërs', desc: 'Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.' },
                   { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (€4,90/portie) is de goedkoopste optie.' },
                 ].map(({ icon, title, desc }) => (
@@ -303,7 +306,7 @@ export default function HomePage() {
             {[
               { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is de goedkoopste optie aan €4,90 per portie. Delhaize Click&Cook (€5,20) is ook budgetvriendelijk.' },
               { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar. HelloFresh, Foodbag en Marley Spoon laten je tot 5 dagen voor levering opzeggen.' },
-              { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.: snelle recepten klaar in 20 minuten, grote porties voor 2-5 personen.' },
+              { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
               { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Je betaalt €5-7,50 per portie tegenover €3-5 bij zelf winkelen.' },
               { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },
               { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3-5 dagen op voorhand. HelloFresh en Foodbag leveren in heel België, meestal dinsdag tot zaterdag.' },
