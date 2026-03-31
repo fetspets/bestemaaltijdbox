@@ -113,7 +113,7 @@ export default function HomePage() {
         {/* SECTION HEADER */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
           <h2 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900 }}>Onze rankings</h2>
-          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt maart 2026 · 9 aanbieders</div>
+          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt maart 2026 · 7 aanbieders</div>
         </div>
 
         {/* TOP 3 CARDS */}
@@ -259,7 +259,6 @@ export default function HomePage() {
           </div>
         </div>
 
-
         {/* UITLEG SECTIE */}
         <div style={{ marginBottom: 40 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
@@ -274,7 +273,7 @@ export default function HomePage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {[
                   { icon: '👫', title: 'Koppels', desc: 'HelloFresh en Foodbag zijn de populairste keuzes voor 2 personen.' },
-                  { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Smartmat en Foodbag: grote porties en snelle recepten (klaar in 20 min).' },
+                  { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin. en snelle recepten (klaar in 20 min).' },
                   { icon: '🌱', title: 'Vegetariërs', desc: 'Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.' },
                   { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (€4,90/portie) is de goedkoopste optie.' },
                 ].map(({ icon, title, desc }) => (
@@ -300,7 +299,7 @@ export default function HomePage() {
             {[
               { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is de goedkoopste optie aan €4,90 per portie. Delhaize Click&Cook (€5,20) is ook budgetvriendelijk.' },
               { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar. HelloFresh, Foodbag en Marley Spoon laten je tot 5 dagen voor levering opzeggen.' },
-              { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Smartmat is onze keuze voor gezinnen: snelle recepten klaar in 20 minuten, grote porties voor 2-5 personen.' },
+              { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.: snelle recepten klaar in 20 minuten, grote porties voor 2-5 personen.' },
               { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Je betaalt €5-7,50 per portie tegenover €3-5 bij zelf winkelen.' },
               { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },
               { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3-5 dagen op voorhand. HelloFresh en Foodbag leveren in heel België, meestal dinsdag tot zaterdag.' },
