@@ -13,7 +13,7 @@ const jsonLd = {
     '@type': 'ListItem',
     position: i + 1,
     name: a.naam,
-    url: `https://www.bestemaaltijdbox.be/aanbieder/${a.slug}`,
+  url: `https://bestemaaltijdbox.be/aanbieder/${a.slug}`,
   })),
 };
 
