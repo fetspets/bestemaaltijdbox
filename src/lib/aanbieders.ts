@@ -50,7 +50,7 @@ export const aanbieders: Aanbieder[] = [
   {
     slug: 'hellofresh',
     naam: 'HelloFresh',
-    logo: '🌿',
+    logo: '/logos/hellofresh.png',
     tagline: 'Marktleider met de beste prijs-kwaliteit',
     beschrijving: 'HelloFresh is de populairste maaltijdbox in België en wereldwijd. Met meer dan 30 recepten per week, gratis bezorging en een flexibel abonnement biedt het de beste balans tussen prijs, keuze en gemak.',
     uitgebreideReview: {
@@ -83,7 +83,7 @@ export const aanbieders: Aanbieder[] = [
   {
     slug: 'foodbag',
     naam: 'Foodbag',
-    logo: '🥦',
+    logo: '/logos/foodbag.png',
     tagline: 'De beste Belgische maaltijdbox met lokale topkwaliteit',
     beschrijving: 'Foodbag is dé Belgische maaltijdbox bij uitstek. Met verse ingrediënten van lokale Belgische boeren, 30 recepten per week en eigen bezorgers is het de premium keuze voor wie bewust lokaal wil eten. Eigendom van Colruyt Group.',
     uitgebreideReview: {
@@ -114,7 +114,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
   {
     slug: 'marley-spoon',
     naam: 'Marley Spoon',
-    logo: '🌍',
+    logo: '/logos/marley-spoon.png',
     tagline: 'Chef-kwaliteit recepten voor kookliefhebbers',
     beschrijving: 'Marley Spoon onderscheidt zich met creatieve chef-recepten en een groot aanbod van 40 gerechten per week. Bezorgt in Vlaanderen en Brussel met gratis verzending.',
     uitgebreideReview: {
@@ -147,7 +147,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
   {
     slug: 'ekomenu',
     naam: 'Ekomenu',
-    logo: '🌱',
+    logo: '/logos/ekomenu.png',
     tagline: '100% biologisch — de groenste keuze in België',
     beschrijving: 'Ekomenu is de meest duurzame maaltijdbox in België. Alle ingrediënten zijn biologisch gecertificeerd, verpakking is milieuvriendelijk, en je kan je persoonlijke CO2-footprint bijhouden.',
     uitgebreideReview: {
@@ -179,7 +179,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
   {
     slug: 'delhaize-click-cook',
     naam: 'Delhaize Click&Cook',
-    logo: '🛒',
+    logo: '/logos/delhaize.png',
     tagline: 'Supermarktkwaliteit zonder abonnement',
     beschrijving: 'Delhaize Click&Cook is de maaltijdbox van de bekende Belgische supermarktketen. Geen verplicht abonnement, vertrouwde Delhaize-kwaliteit en combineerbaar met je gewone boodschappen.',
     uitgebreideReview: {
