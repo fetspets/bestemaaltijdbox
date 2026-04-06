@@ -8,7 +8,7 @@ const jsonLd = {
   '@type': 'ItemList',
   name: 'Beste Maaltijdbox België 2026',
   description: 'Onafhankelijke vergelijking van maaltijdboxen in België',
-  numberOfItems: 5,
+  numberOfItems: 8,
   itemListElement: aanbieders.map((a, i) => ({
     '@type': 'ListItem',
     position: i + 1,
@@ -113,7 +113,7 @@ export default function HomePage() {
         {/* SECTION HEADER */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
           <h2 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900 }}>Onze rankings</h2>
-          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026 · 5 aanbieders</div>
+          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026 · 8 aanbieders</div>
         </div>
 
         {/* TOP 3 CARDS */}
@@ -210,7 +210,7 @@ export default function HomePage() {
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
-            <div style={{ fontSize: 13, color: 'var(--muted)' }}>5 aanbieders</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)' }}>8 aanbieders</div>
           </div>
           <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt april 2026.</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>
@@ -229,6 +229,9 @@ export default function HomePage() {
                   { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€5,59', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
                   { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€6,18', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
                   { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'veganbox',             naam: 'Veganbox',     logo: '🌱',                     score: 7.4, prijs: '€4,47', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false },
+                  { slug: 'foodmaker',            naam: 'Foodmaker',    logo: '👨‍🍳',                   score: 7.7, prijs: '€10,00',min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
                 ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
