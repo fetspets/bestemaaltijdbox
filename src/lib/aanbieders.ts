@@ -122,7 +122,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
       voorWie: 'Marley Spoon is de beste keuze voor koppels of alleenstaanden die van koken houden en de tijd nemen voor een uitgebreidere bereiding.',
       hoeWerktHet: 'Bestellen via marleyspoon.be of de app. Box voor 2 of 4 personen, 2-5 maaltijden per week. Bezorging in Vlaanderen en Brussel, gratis. Wekelijks pauzeren of opzeggen mogelijk.',
       vergelijking: 'Marley Spoon zit qua prijs in dezelfde categorie als Foodbag maar biedt meer receptkeuze (40 vs 30). Ten opzichte van HelloFresh zijn de recepten creatiever maar iets duurder.',
-      eindoordeel: 'Marley Spoon verdient zijn #3 positie als beste keuze voor kookliefhebbers. Enkel de beperkte bezorging (geen Wallonië) en de hogere standaardprijs zijn minpunten.',
+      eindoordeel: 'Marley Spoon verdient zijn #3 positie als beste keuze voor kookliefhebbers. Nieuwe klanten genieten van kortingen op de eerste 5 boxen (tot 35% op box 1). Enkel de beperkte bezorging (geen Wallonië) is een minpunt.',
     },
     ranking: 3,
     score: { totaal: 7.9, smaak: 8.6, prijsKwaliteit: 7.2, flexibiliteit: 8.0, duurzaamheid: 7.5, gemak: 7.2 },
