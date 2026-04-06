@@ -74,11 +74,6 @@ export const aanbieders: Aanbieder[] = [
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.hellofresh.be',
-    kortingsCode: {
-      code: '',
-      bedrag: 'Tot €60 welkomstkorting',
-      beschrijving: 'Automatisch via onze link. Verspreid over eerste 3 boxen (tot €37 + €12 + €5). Geldig voor nieuwe klanten, vervalt na 70 dagen.',
-    },
     kenmerken: ['✓ Gratis bezorging', '✓ Direct opzegbaar', '✓ 50+ recepten/week', '✓ App met tracking'],
     pros: ['Grootste receptvariatie (50+ per week)', 'Gratis bezorging in heel België', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Welkomstkorting tot €60 voor nieuwe klanten'],
     cons: ['Niet 100% Belgische ingrediënten', 'Meer plasticverpakking dan lokale alternatieven', 'Standaardprijs hoger na korting'],
@@ -142,11 +137,6 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.marleyspoon.be',
-    kortingsCode: {
-      code: '',
-      bedrag: '50% op eerste bestelling',
-      beschrijving: 'Automatisch via onze link. 50% korting op je eerste box. Geldig voor nieuwe klanten in België.',
-    },
     kenmerken: ['✓ 40 recepten/week', '✓ Chef-kwaliteit', '✓ Gratis bezorging', '🌱 Vegan opties'],
     pros: ['Meeste receptkeuze (40/week)', 'Hoogste smaakscore', 'Creatieve chef-recepten', 'Gratis bezorging'],
     cons: ['Enkel Vlaanderen en Brussel (geen Wallonië)', 'Hogere prijs per portie', 'Recepten kosten meer tijd (45-60 min)'],

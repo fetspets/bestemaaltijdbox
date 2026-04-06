@@ -14,8 +14,8 @@ const kortingen = [
     deal: 'Tot €60 korting verspreid over de eerste 3 boxen',
     bedrag: 'Tot €60',
     kleur: '#1B4332',
-    beschrijving: 'Geen code nodig — de korting wordt automatisch toegepast via onze link. Verspreid als: tot €37 op box 1, tot €12 op box 2, tot €5 op box 3. Vervalt 70 dagen na eerste bestelling.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Eerste 3 boxen · Direct opzegbaar',
+    beschrijving: 'Geen kortingscode nodig — de korting wordt automatisch toegepast wanneer je via onze link bestelt. Verspreid als: tot €37 op box 1, tot €12 op box 2, tot €5 op box 3. Vervalt 70 dagen na eerste bestelling.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 3 boxen · Direct opzegbaar',
     actief: true,
   },
   {
@@ -26,8 +26,8 @@ const kortingen = [
     deal: '50% korting op je eerste bestelling',
     bedrag: '50% eerste box',
     kleur: '#7C3AED',
-    beschrijving: 'Geen code nodig — korting wordt automatisch toegepast via onze affiliate link. 50% op je eerste box. Geldig voor nieuwe klanten in België.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Eerste bestelling · Direct opzegbaar',
+    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast wanneer je via onze link bestelt. 50% op je eerste box. Geldig voor nieuwe klanten in België.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste bestelling · Direct opzegbaar',
     actief: true,
   },
   {
@@ -38,8 +38,8 @@ const kortingen = [
     deal: 'Welkomstkorting voor nieuwe klanten',
     bedrag: 'Korting',
     kleur: '#1E40AF',
-    beschrijving: 'Bekijk de actuele welkomstdeal via onze link. Foodbag geeft regelmatig kortingen aan nieuwe klanten.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Bekijk website voor actuele aanbieding',
+    beschrijving: 'Geen vaste kortingscode — klik op onze link voor de meest actuele welkomstdeal. Foodbag geeft regelmatig kortingen aan nieuwe klanten, geen code vereist.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Bekijk website voor actuele aanbieding',
     actief: true,
   },
   {
