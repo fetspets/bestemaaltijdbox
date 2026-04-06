@@ -174,15 +174,13 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {i === 0 && (
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, padding: '14px 20px 20px', borderTop: '1px solid var(--rule)' }}>
-                  <ScoreBar label="Smaak" value={a.score.smaak} />
-                  <ScoreBar label="Prijs" value={a.score.prijsKwaliteit} />
-                  <ScoreBar label="Flex." value={a.score.flexibiliteit} />
-                  <ScoreBar label="Duurzaam" value={a.score.duurzaamheid} />
-                  <ScoreBar label="Gemak" value={a.score.gemak} />
-                </div>
-              )}
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, padding: '14px 20px 20px', borderTop: '1px solid var(--rule)' }}>
+                <ScoreBar label="Smaak" value={a.score.smaak} />
+                <ScoreBar label="Prijs" value={a.score.prijsKwaliteit} />
+                <ScoreBar label="Flex." value={a.score.flexibiliteit} />
+                <ScoreBar label="Duurzaam" value={a.score.duurzaamheid} />
+                <ScoreBar label="Gemak" value={a.score.gemak} />
+              </div>
             </div>
           );
         })}
