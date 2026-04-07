@@ -4,10 +4,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.bestemaaltijdbox.be';
   const aanbieders = [
     'hellofresh', 'foodbag', 'marley-spoon',
-    'ekomenu', 'delhaize-click-cook',
-    'carrefour-simply-you', 'cirkle',
+    'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
   ];
   const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio'];
+  const vergelijkingen = ['hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon'];
+  const gidsen = ['maaltijdbox-voor-gezinnen', 'goedkoopste-maaltijdbox-belgie'];
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
@@ -25,6 +26,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.7,
+    })),
+    ...vergelijkingen.map(slug => ({
+      url: `${baseUrl}/vergelijk/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.85,
+    })),
+    ...gidsen.map(slug => ({
+      url: `${baseUrl}/gids/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
     })),
   ];
 }
