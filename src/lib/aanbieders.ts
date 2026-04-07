@@ -105,7 +105,7 @@ export const aanbieders: Aanbieder[] = [
     belgisch: true,
     vegetarisch: true,
     bio: false,
-    affiliateUrl: 'https://www.foodbag.be',
+    affiliateUrl: 'https://www.foodbag.be/foodbox/?tt=19934_1015100_507243_&r=',
 kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kookstijlen', '✓ Zonder abonnement', '🔀 Voorheen ook Smartmat & 15gram'],    pros: ['100% Belgische en lokale ingrediënten', 'Uitstekende smaakscores', 'Eigen bezorgers', '5 kookstijlen incl. Sana (Sandra Bekkari)', 'Geen verplicht abonnement'],
     cons: ['Hogere prijs dan internationale alternatieven', 'Beperktere bezorgdagen dan HelloFresh', 'Minder geschikt voor strikte budgetkijkers'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'bio'],
