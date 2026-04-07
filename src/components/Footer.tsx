@@ -29,8 +29,10 @@ export default function Footer() {
                 { naam: 'HelloFresh review', slug: 'hellofresh' },
                 { naam: 'Foodbag review', slug: 'foodbag' },
                 { naam: 'Marley Spoon review', slug: 'marley-spoon' },
-                { naam: '15gram review', slug: '15gram' },
                 { naam: 'Ekomenu review', slug: 'ekomenu' },
+                { naam: 'Factor review', slug: 'factor' },
+                { naam: 'Foodmaker review', slug: 'foodmaker' },
+                { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you' },
               ].map(a => (
                 <Link key={a.slug} href={`/aanbieder/${a.slug}`} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{a.naam}</Link>
               ))}
@@ -47,6 +49,21 @@ export default function Footer() {
                 { label: 'Vegetarisch', href: '/voor/vegetarisch' },
                 { label: 'Beste budget', href: '/voor/budget' },
                 { label: 'Biologisch', href: '/voor/bio' },
+              ].map(l => (
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Vergelijk & Gidsen */}
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Vergelijk & Gidsen</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[
+                { label: 'HelloFresh vs Foodbag', href: '/vergelijk/hellofresh-vs-foodbag' },
+                { label: 'HelloFresh vs Marley Spoon', href: '/vergelijk/hellofresh-vs-marley-spoon' },
+                { label: 'Beste voor gezinnen', href: '/gids/maaltijdbox-voor-gezinnen' },
+                { label: 'Goedkoopste maaltijdbox', href: '/gids/goedkoopste-maaltijdbox-belgie' },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
               ))}
