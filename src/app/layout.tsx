@@ -40,7 +40,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/* @ts-ignore */}
-        <meta name="impact-site-verification" value="ce6e412d-fdbe-4c8a-9e52-bbb424d74ebf" />
+        <meta name="impact-site-verification" value="ddc95da5-4d50-49e0-96be-d2667999833a" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
