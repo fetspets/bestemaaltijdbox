@@ -136,7 +136,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     belgisch: false,
     vegetarisch: true,
     bio: false,
-    affiliateUrl: 'https://www.marleyspoon.be',
+    affiliateUrl: 'https://go.adt246.net/t/t?a=1709214807&as=2059394978&t=2&tk=1',
     kenmerken: ['✓ 40 recepten/week', '✓ Chef-kwaliteit', '✓ Gratis bezorging', '🌱 Vegan opties'],
     pros: ['Meeste receptkeuze (40/week)', 'Hoogste smaakscore', 'Creatieve chef-recepten', 'Gratis bezorging'],
     cons: ['Enkel Vlaanderen en Brussel (geen Wallonië)', 'Hogere prijs per portie', 'Recepten kosten meer tijd (45-60 min)'],
