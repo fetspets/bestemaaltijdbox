@@ -2,15 +2,8 @@ import { NextResponse } from 'next/server';
 import { getAanbieder } from '@/lib/aanbieders';
 
 const affiliateLinks: Record<string, string> = {
-  'hellofresh': 'https://www.hellofresh.be',
-  'marley-spoon': 'https://www.awin1.com/cread.php?awinmid=8500&awinaffid=2809534',
   'foodbag': 'https://www.foodbag.be/foodbox/?tt=19934_1015100_507243_&r=',
-  '15gram': 'https://www.foodbag.be/foodbox/?tt=19934_1015100_507243_&r=',
-  'smartmat': 'https://www.foodbag.be/foodbox/?tt=19934_1015100_507243_&r=',
-  'ekomenu': 'https://www.ekomenu.be',
-  'delhaize-click-cook': 'https://www.delhaize.be',
-  'carrefour-simply-you': 'https://www.carrefour.be',
-  'cirkle': 'https://www.cirkle.be',
+  'marley-spoon': 'https://go.adt246.net/t/t?a=1709214807&as=2059394978&t=2&tk=1',
 };
 
 export async function GET(
