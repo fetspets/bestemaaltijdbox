@@ -43,18 +43,6 @@ const kortingen = [
     actief: true,
   },
   {
-    slug: 'veganbox',
-    naam: 'Veganbox',
-    logo: '🌱',
-    code: null,
-    deal: 'Bekijk de huidige welkomstdeal',
-    bedrag: 'Deal',
-    kleur: '#166534',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding. Geen abonnement vereist.',
-    voorwaarden: 'Bekijk website voor actuele aanbieding',
-    actief: false,
-  },
-  {
     slug: 'factor',
     naam: 'Factor',
     logo: '⚡',
