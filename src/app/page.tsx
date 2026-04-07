@@ -67,7 +67,7 @@ export default function HomePage() {
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
           { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is een budgetvriendelijke optie vanaf €5,38 per portie, zonder verplicht abonnement.' }},
-          { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website.' }},
+          { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement.' }},
           { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' }},
         ]
       }) }} />
@@ -228,9 +228,9 @@ export default function HomePage() {
                   { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
                   { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€5,59', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
                   { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€6,18', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-{ slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false },
                   { slug: 'foodmaker',            naam: 'Foodmaker',    logo: '👨‍🍳',                   score: 7.7, prijs: '€10,00',min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false },
+                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
                 ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
@@ -327,11 +327,11 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14 }}>
             {[
               { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is een budgetvriendelijke optie vanaf €5,38 per portie, zonder verplicht abonnement en met bezorging in heel België.' },
-              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar. HelloFresh, Foodbag en Marley Spoon laten je tot 5 dagen voor levering opzeggen.' },
+              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement — je bestelt gewoon per keer.' },
               { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
               { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Je betaalt €5 tot €9,69 per portie tegenover €3-5 bij zelf winkelen.' },
               { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },
-              { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3-5 dagen op voorhand. HelloFresh en Foodbag leveren in heel België, meestal dinsdag tot zaterdag.' },
+              { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3–5 dagen op voorhand. HelloFresh vraagt 5 dagen voor de gewenste leverdag. Foodbag en Marley Spoon hanteren doorgaans 4–5 werkdagen. Carrefour Simply You levert altijd op maandag en je bestelt zonder vaste deadline.' },
             ].map(({ q, a }) => (
               <div key={q} style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)' }}>
                 <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>{q}</div>
