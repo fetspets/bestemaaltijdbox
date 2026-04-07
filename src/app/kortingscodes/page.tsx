@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Kortingscodes Maaltijdbox België 2026 — Bespaar op je eerste box',
-  description: 'Alle actieve kortingscodes voor maaltijdboxen in België. Bespaar op HelloFresh, Foodbag, Marley Spoon en meer. Bijgewerkt maart 2026.',
+  description: 'Alle actieve kortingscodes voor maaltijdboxen in België. Bespaar op HelloFresh, Foodbag, Marley Spoon en meer. Bijgewerkt april 2026.',
 };
 
 const kortingen = [
@@ -67,18 +67,6 @@ const kortingen = [
     actief: false,
   },
   {
-    slug: '15gram',
-    naam: '15gram',
-    logo: '👨‍🍳',
-    code: null,
-    deal: 'Bekijk de huidige welkomstdeal',
-    bedrag: 'Deal',
-    kleur: '#1B4332',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding.',
-    voorwaarden: 'Bekijk website voor actuele aanbieding',
-    actief: false,
-  },
-  {
     slug: 'ekomenu',
     naam: 'Ekomenu',
     logo: '🌱',
@@ -86,18 +74,6 @@ const kortingen = [
     deal: 'Bekijk de huidige welkomstdeal',
     bedrag: 'Deal',
     kleur: '#166534',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding.',
-    voorwaarden: 'Bekijk website voor actuele aanbieding',
-    actief: false,
-  },
-  {
-    slug: 'smartmat',
-    naam: 'Smartmat',
-    logo: '⚡',
-    code: null,
-    deal: 'Bekijk de huidige welkomstdeal',
-    bedrag: 'Deal',
-    kleur: '#1B4332',
     beschrijving: 'Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding.',
     voorwaarden: 'Bekijk website voor actuele aanbieding',
     actief: false,
@@ -130,7 +106,7 @@ export default function KortingscodesPagina() {
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          🏷️ Bijgewerkt maart 2026
+          🏷️ Bijgewerkt april 2026
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
           Kortingscodes maaltijdbox<br />België 2026
@@ -143,7 +119,7 @@ export default function KortingscodesPagina() {
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>Actieve deals</h2>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt maart 2026</div>
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026</div>
       </div>
 
       {kortingen.filter(k => k.actief).map((k, i) => (
