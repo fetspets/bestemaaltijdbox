@@ -264,6 +264,30 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* VERGELIJKINGEN & GIDSEN */}
+        <div style={{ marginBottom: 48 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
+            <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijkingen & Gidsen</h2>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 }}>
+            {[
+              { href: '/vergelijk/hellofresh-vs-foodbag', icon: '⚖️', label: 'HelloFresh vs Foodbag', sub: 'Welke is goedkoper en beter?' },
+              { href: '/vergelijk/hellofresh-vs-marley-spoon', icon: '⚖️', label: 'HelloFresh vs Marley Spoon', sub: 'Prijs vs culinaire kwaliteit' },
+              { href: '/gids/maaltijdbox-voor-gezinnen', icon: '👨‍👩‍👧', label: 'Beste maaltijdbox voor gezinnen', sub: 'Top 3 voor grote porties & snelle recepten' },
+              { href: '/gids/goedkoopste-maaltijdbox-belgie', icon: '💰', label: 'Goedkoopste maaltijdbox', sub: 'Prijsvergelijking inclusief welkomstdeals' },
+            ].map(({ href, icon, label, sub }) => (
+              <Link key={href} href={href} style={{ display: 'flex', alignItems: 'center', gap: 14, background: 'white', borderRadius: 12, border: '1px solid var(--rule)', padding: '16px 18px', textDecoration: 'none', color: 'var(--ink)' }}>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: '#E8F5EE', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>{icon}</div>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: 14, marginBottom: 2 }}>{label}</div>
+                  <div style={{ fontSize: 12, color: 'var(--muted)' }}>{sub}</div>
+                </div>
+                <div style={{ marginLeft: 'auto', color: 'var(--muted)', fontSize: 16, flexShrink: 0 }}>→</div>
+              </Link>
+            ))}
+          </div>
+        </div>
+
         {/* UITLEG SECTIE */}
         <div style={{ marginBottom: 40 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
