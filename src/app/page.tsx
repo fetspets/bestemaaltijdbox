@@ -148,7 +148,7 @@ export default function HomePage() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule)', borderRadius: 10, overflow: 'hidden', fontSize: 12, marginBottom: 12 }}>
                   {[
                     { val: a.score.totaal.toFixed(1), key: 'Score' },
-                    { val: `€${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
+                    { val: `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
                     { val: `${a.receptenPerWeek}+`, key: 'Recepten' },
                     { val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}`, key: 'Bezorging' },
                   ].map(({ val, key }) => (
@@ -197,7 +197,7 @@ export default function HomePage() {
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700 }}>{a.naam} {a.belgisch && '🇧🇪'}</div>
-              <div style={{ fontSize: 12, color: 'var(--muted)' }}>€{a.prijsPerPortie.toFixed(2)}/portie</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)' }}>v.a. €{a.prijsPerPortie.toFixed(2)}/portie</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4, flexShrink: 0 }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4, background: '#E8F5EE', borderRadius: 100, padding: '3px 10px', fontSize: 12, fontWeight: 700, color: '#1B4332' }}>{a.score.totaal.toFixed(1)} ★</div>
@@ -225,7 +225,7 @@ export default function HomePage() {
               <tbody>
                 {[
                   { slug: 'hellofresh',           naam: 'HelloFresh',   logo: '/logos/hellofresh.png',  score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false },
-                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
                   { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€5,59', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
                   { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€6,18', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
                   { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
