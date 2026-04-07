@@ -23,6 +23,9 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://bestemaaltijdbox.be' },
   verification: {
     google: 'dgD6dFbp4JHPwAeuIu27zU6WTq1wEII8Sj_RsjngfgA',
+    other: {
+      'impact-site-verification': 'ce6e412d-fdbe-4c8a-9e52-bbb424d74ebf',
+    },
   },
   icons: {
     icon: [
