@@ -81,7 +81,7 @@ export default function HomePage() {
           De beste maaltijdbox<br />in <span style={{ color: 'var(--mint)' }}>België</span>
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          We kochten en testten alle 7 maaltijdboxen gedurende 4 weken. Eerlijke rankings op basis van smaak, prijs en gemak — geen betaalde posities.
+          Wij hebben de populairste maaltijdboxen in België uitgebreid getest en vergeleken op prijs, smaak, flexibiliteit en gebruiksgemak. Eerlijke rankings — geen betaalde posities.
         </p>
 
         {/* Stats */}
@@ -185,6 +185,11 @@ export default function HomePage() {
           );
         })}
 
+        {/* MICRO-CONVERSION TIP */}
+        <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 10, padding: '10px 14px', fontSize: 12, color: '#92400E', marginBottom: 8 }}>
+          💡 <strong>Tip:</strong> Welkomstdeals zijn alleen geldig voor nieuwe klanten en zijn beschikbaar voor beperkte tijd.
+        </div>
+
         {/* REST (#4+) */}
         <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '24px 0 12px' }}>Overige aanbieders</div>
         {rest.map(a => (
@@ -260,7 +265,7 @@ export default function HomePage() {
             </table>
           </div>
           <div style={{ marginTop: 8, fontSize: 11, color: 'var(--muted)' }}>
-            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen.
+            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie.
           </div>
         </div>
 
@@ -295,7 +300,7 @@ export default function HomePage() {
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 14 }}>Hoe werkt een maaltijdbox?</h2>
               <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 10 }}>Een maaltijdbox is een wekelijkse bezorgservice waarbij je alle ingrediënten en recepten krijgt om thuis te koken. Je kiest hoeveel porties en maaltijden je wil per week, en alles wordt vers geleverd aan je deur.</p>
               <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 10 }}>Het grote voordeel: je hoeft niet meer na te denken over wat je kookt, de boodschappen zijn al gedaan, en je verspilt minder voedsel omdat alles exact afgemeten wordt geleverd.</p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563' }}>De meeste maaltijdboxen in België werken op abonnementsbasis, maar zijn vrij opzegbaar. Je betaalt gemiddeld €5 tot €9,69 per portie afhankelijk van de aanbieder en het gekozen plan.</p>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563' }}>De meeste maaltijdboxen in België werken op abonnementsbasis, maar zijn vrij opzegbaar. Je betaalt gemiddeld €5 tot €10 per portie afhankelijk van de aanbieder en het gekozen plan. We updaten deze pagina regelmatig op basis van nieuwe ervaringen en actuele informatie.</p>
             </div>
             <div style={{ background: 'white', borderRadius: 16, padding: 24, border: '1px solid var(--rule)' }}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 14 }}>Voor wie is een maaltijdbox geschikt?</h2>
@@ -327,11 +332,11 @@ export default function HomePage() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14 }}>
             {[
               { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is een budgetvriendelijke optie vanaf €5,38 per portie, zonder verplicht abonnement en met bezorging in heel België.' },
-              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement — je bestelt gewoon per keer.' },
+              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Je kan je abonnement meestal flexibel pauzeren of stopzetten, vaak tot enkele dagen voor de volgende levering. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement. De exacte voorwaarden verschillen per aanbieder.' },
               { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
               { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Je betaalt €5 tot €9,69 per portie tegenover €3-5 bij zelf winkelen.' },
               { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },
-              { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3–5 dagen op voorhand. HelloFresh vraagt 5 dagen voor de gewenste leverdag. Foodbag en Marley Spoon hanteren doorgaans 4–5 werkdagen. Carrefour Simply You levert altijd op maandag en je bestelt zonder vaste deadline.' },
+              { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3–5 dagen op voorhand. HelloFresh vraagt 5 dagen voor de gewenste leverdag, Foodbag en Marley Spoon doorgaans 4–5 werkdagen. Beschikbare leverdagen en regio\'s kunnen per aanbieder verschillen — Marley Spoon levert bijvoorbeeld niet in Wallonië.' },
             ].map(({ q, a }) => (
               <div key={q} style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)' }}>
                 <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>{q}</div>
