@@ -84,7 +84,7 @@ export const aanbieders: Aanbieder[] = [
     naam: 'Foodbag',
     logo: '/logos/foodbag.png',
     tagline: 'Belgische maaltijdbox met lokale ingrediënten en 5 kookstijlen',
-    beschrijving: 'Foodbag is dé Belgische maaltijdbox bij uitstek. Met verse ingrediënten van lokale Belgische boeren, 40 recepten per week en eigen bezorgers is het de premium keuze voor wie bewust lokaal wil eten. Eigendom van Colruyt Group.',
+    beschrijving: 'Foodbag is een Belgische maaltijdbox met focus op lokale ingrediënten en korte keten. Met verse ingrediënten van lokale Belgische boeren, 40 recepten per week en eigen bezorgers is het een sterke keuze voor wie bewust lokaal wil eten. Eigendom van Colruyt Group.',
     uitgebreideReview: {
       intro: 'Foodbag is het paradepaardje van de Belgische maaltijdboxmarkt. Inmiddels onderdeel van de Colruyt Group, heeft Foodbag zich gepositioneerd als de premium Belgische keuze. De ingrediënten zijn merkbaar verser en lokaler dan bij internationale concurrenten.',
       testervaring: 'Onze testperiode van 4 weken met Foodbag was ronduit positief op vlak van kwaliteit. De ingrediënten — van lokale boerderijen — zijn aantoonbaar verser dan bij HelloFresh. De 5 kookstijlen (Originals, Sana, Quick & Easy, Veggie, en Busy Day kant-en-klaar) geven veel flexibiliteit. Een kritische noot: Foodbag is duidelijk duurder dan de concurrenten aan €9,50/portie.',
@@ -115,7 +115,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     naam: 'Marley Spoon',
     logo: '/logos/marley-spoon.png',
     tagline: 'Creatieve chef-recepten voor kookliefhebbers',
-    beschrijving: 'Marley Spoon onderscheidt zich met creatieve chef-recepten en een groot aanbod van 40 gerechten per week. De prijs per portie varieert van €5,59 tot €9,69 afhankelijk van je plan. Bezorgt in Vlaanderen en Brussel met gratis verzending.',
+    beschrijving: 'Marley Spoon biedt gevarieerde recepten met vaak iets uitgebreidere bereidingen dan andere maaltijdboxen. Met 40 gerechten per week en prijzen van €5,59 tot €9,69 afhankelijk van je plan is het een goede keuze voor wie graag kookt. Bezorgt in Vlaanderen en Brussel.',
     uitgebreideReview: {
       intro: 'Marley Spoon is de keuze voor wie koken als een beleving ziet. Met 40 recepten per week en een focus op culinaire creativiteit richt Marley Spoon zich op de kookliefhebber die graag iets nieuws uitprobeert.',
       testervaring: 'Tijdens onze test vielen de recepten op door hun originaliteit en smaakdiepte. Recepten kosten gemiddeld 45-60 minuten — Marley Spoon mikt op mensen die van koken genieten. De ingrediënten zijn vers en kwalitatief. Minpunt: Marley Spoon bezorgt momenteel enkel in Vlaanderen en Brussel, niet in Wallonië.',
