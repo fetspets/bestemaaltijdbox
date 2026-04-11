@@ -46,6 +46,7 @@ export default function Footer() {
               {[
                 { label: 'Voor koppels', href: '/voor/koppel' },
                 { label: 'Voor gezinnen', href: '/voor/gezin' },
+                { label: 'Voor singles', href: '/voor/singles' },
                 { label: 'Vegetarisch', href: '/voor/vegetarisch' },
                 { label: 'Beste budget', href: '/voor/budget' },
                 { label: 'Biologisch', href: '/voor/bio' },
@@ -62,8 +63,12 @@ export default function Footer() {
               {[
                 { label: 'HelloFresh vs Foodbag', href: '/vergelijk/hellofresh-vs-foodbag' },
                 { label: 'HelloFresh vs Marley Spoon', href: '/vergelijk/hellofresh-vs-marley-spoon' },
+                { label: 'Foodbag vs Marley Spoon', href: '/vergelijk/foodbag-vs-marley-spoon' },
+                { label: 'HelloFresh vs Ekomenu', href: '/vergelijk/hellofresh-vs-ekomenu' },
                 { label: 'Beste voor gezinnen', href: '/gids/maaltijdbox-voor-gezinnen' },
+                { label: 'Beste voor singles', href: '/gids/beste-maaltijdbox-voor-singles' },
                 { label: 'Goedkoopste maaltijdbox', href: '/gids/goedkoopste-maaltijdbox-belgie' },
+                { label: 'Beste biologische box', href: '/gids/beste-biologische-maaltijdbox-belgie' },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
               ))}
@@ -78,6 +83,7 @@ export default function Footer() {
                 { label: 'Kortingscodes', href: '/kortingscodes' },
                 { label: 'Over ons', href: '/over-ons' },
                 { label: 'Privacybeleid', href: '/privacy' },
+                { label: 'Algemene voorwaarden', href: '/voorwaarden' },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
               ))}

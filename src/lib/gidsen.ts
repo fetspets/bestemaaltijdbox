@@ -78,6 +78,63 @@ export const gidsen: Gids[] = [
       { q: 'Zijn maaltijdboxen goedkoper dan boodschappen doen?', a: 'Per portie betaal je doorgaans meer dan bij de supermarkt. Maar maaltijdboxen leveren exacte hoeveelheden — weinig verspilling. Voor wie regelmatig ingrediënten weggooit of impulsaankopen doet, kan het werkelijke verschil kleiner zijn dan gedacht.' },
     ],
   },
+  {
+    slug: 'beste-maaltijdbox-voor-singles',
+    titel: 'Beste maaltijdbox voor singles in België 2026',
+    metaTitle: 'Beste maaltijdbox voor singles België 2026 — Top 3 vergeleken',
+    metaDescription: 'Welke maaltijdbox is het best voor 1 persoon in België? We vergeleken minimum porties, prijs en flexibiliteit. Onze top 3 voor singles in 2026.',
+    intro: 'Als alleenstaande is een maaltijdbox bestellen niet vanzelfsprekend: veel aanbieders leveren minimum voor 2 personen. Maar er zijn goede opties voor 1 persoon. We zetten de beste keuzes voor singles naast elkaar op basis van minimum afname, prijs en gemak.',
+    aanbevelingen: [
+      {
+        slug: 'hellofresh',
+        badge: '🏆 Beste kookbox voor 1 persoon',
+        reden: 'HelloFresh is de enige grote kookbox die levert voor 1 persoon. Je kan wekelijks kiezen hoeveel maaltijden je wil (tot 5 per week) en kan elke week pauzeren. Gratis bezorging, meer dan 40 recepten per week om uit te kiezen. Welkomstkorting voor nieuwe klanten.',
+      },
+      {
+        slug: 'factor',
+        badge: '⚡ Beste kant-en-klaar voor 1 persoon',
+        reden: 'Factor levert kant-en-klare maaltijden per stuk — ideaal voor wie alleen woont en geen 2-persoonsporties wil. Je bepaalt zelf hoeveel maaltijden je bestelt. Opwarmen in 2-3 minuten. Let op: bezorgkosten van €6 per levering.',
+      },
+      {
+        slug: 'carrefour-simply-you',
+        badge: '💰 Voordeligste optie zonder abonnement',
+        reden: 'Carrefour Simply You laat je eenmalig bestellen zonder engagement. Interessant als je het concept wil uitproberen zonder risico. Met kortingscode BOXNL20 krijg je €20 korting op je eerste bestelling. Bezorging in heel België op maandag.',
+      },
+    ],
+    tabelSlugs: ['hellofresh', 'factor', 'carrefour-simply-you', 'foodmaker'],
+    faq: [
+      { q: 'Welke maaltijdbox levert voor 1 persoon in België?', a: 'HelloFresh en Factor leveren voor 1 persoon. Foodmaker, Carrefour Simply You en Foodbag laten je ook los bestellen voor kleinere hoeveelheden. De meeste andere aanbieders zoals Marley Spoon en Ekomenu leveren minimum voor 2 personen.' },
+      { q: 'Is een maaltijdbox de moeite voor 1 persoon?', a: 'Ja, als je de bezorgkosten meerekent en de verspilling vergelijkt. Als alleenstaande gooi je makkelijker ingrediënten weg als je zelf boodschappen doet. Een maaltijdbox levert exacte hoeveelheden, wat verspilling sterk vermindert.' },
+      { q: 'Hoe pauzeer ik mijn maaltijdbox als alleenstaande?', a: 'HelloFresh en Factor laten je leveringen wekelijks overslaan of pauzeren via de app of website, doorgaans tot 5 dagen voor de volgende levering. Praktisch als je een week bij familie eet of op vakantie bent.' },
+      { q: 'Kan ik verschillende maaltijden voor 1 persoon kiezen?', a: 'Bij HelloFresh kies je elke week zelf welke recepten je wil uit het aanbod van 40+, voor 1 persoon. Bij Factor kies je kant-en-klare maaltijden per stuk uit 18 wekelijkse opties in 5 dieetstijlen. Beide geven veel keuzevrijheid.' },
+    ],
+  },
+  {
+    slug: 'beste-biologische-maaltijdbox-belgie',
+    titel: 'Beste biologische maaltijdbox in België 2026',
+    metaTitle: 'Beste biologische maaltijdbox België 2026 — Bio vergeleken',
+    metaDescription: 'Welke maaltijdbox heeft de meest biologische ingrediënten in België? We vergeleken Ekomenu, Cirkle en Foodbag. Bijgewerkt april 2026.',
+    intro: 'Biologisch eten klinkt eenvoudig, maar niet elke "duurzame" maaltijdbox werkt met gecertificeerde bio-ingrediënten. We vergeleken de drie aanbieders in België die het verst gaan op het vlak van biologisch en duurzaam: van 100% bio-gecertificeerd tot lokale korte keten.',
+    aanbevelingen: [
+      {
+        slug: 'ekomenu',
+        badge: '🌿 100% biologisch gecertificeerd',
+        reden: 'Ekomenu is de enige maaltijdbox in België waarbij alle ingrediënten biologisch gecertificeerd zijn. Bovenop dat heeft Ekomenu een unieke CO2-footprint tracker per bestelling. Beschikbaar in Vlaanderen en Brussel. 20-25 recepten per week.',
+      },
+      {
+        slug: 'foodbag',
+        badge: '🇧🇪 Lokale korte keten',
+        reden: 'Foodbag werkt niet met gecertificeerde bio-ingrediënten, maar koopt wel lokaal in bij Belgische boerderijen via een korte keten. De ingrediënten zijn merkbaar verser dan bij internationale aanbieders. Gratis bezorging in heel België.',
+      },
+    ],
+    tabelSlugs: ['ekomenu', 'foodbag', 'hellofresh'],
+    faq: [
+      { q: 'Welke Belgische maaltijdbox heeft 100% biologische ingrediënten?', a: 'Ekomenu is de enige maaltijdbox in ons overzicht waarbij alle ingrediënten biologisch gecertificeerd zijn. Cirkle werkt ook met bio-ingrediënten en herbruikbare verpakkingen, maar is momenteel enkel beschikbaar in Vlaanderen.' },
+      { q: 'Wat is het verschil tussen "biologisch" en "lokaal"?', a: '"Biologisch" betekent dat ingrediënten geteeld zijn zonder synthetische pesticiden of kunstmest, gecertificeerd door een erkend instituut. "Lokaal" betekent dat ingrediënten van nabijgelegen boerderijen komen, maar hoeft niet automatisch biologisch te zijn. Foodbag werkt lokaal maar niet volledig biologisch; Ekomenu werkt biologisch.' },
+      { q: 'Is een biologische maaltijdbox duurder?', a: 'Ja. Ekomenu kost meer per portie dan een standaardaanbieder als HelloFresh. Dat weerspiegelt de hogere inkoopkosten van bio-gecertificeerde ingrediënten. Als je bewust biologisch wil eten en dat budget hebt, is het een bewuste keuze.' },
+      { q: 'Bezorgt Ekomenu ook in Wallonië?', a: 'Nee. Ekomenu bezorgt momenteel enkel in Vlaanderen en Brussel. Wie in Wallonië woont en biologisch wil eten, kan kijken naar Foodbag (lokale ingrediënten, bezorging in heel België) als haalbaar alternatief.' },
+    ],
+  },
 ];
 
 export function getGids(slug: string): Gids | undefined {

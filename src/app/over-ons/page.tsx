@@ -44,7 +44,7 @@ export default function OverOnsPage() {
         <div style={{ fontSize: 40, marginBottom: 16 }}>🧪</div>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, marginBottom: 16 }}>Hoe we testen</h2>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151', marginBottom: 16 }}>
-          We beoordelen elke maaltijdbox op 5 criteria: smaak, prijs-kwaliteitsverhouding, flexibiliteit, duurzaamheid en gemak. Elke box wordt minimaal 2 weken getest voordat we een score geven.
+          We beoordelen elke maaltijdbox op 5 criteria: smaak, prijs-kwaliteitsverhouding, flexibiliteit, duurzaamheid en gemak. Elke box wordt minimaal 4 weken getest voordat we een score geven.
         </p>
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 16 }}>
           {[
