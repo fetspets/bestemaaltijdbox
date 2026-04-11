@@ -44,6 +44,11 @@ export interface Aanbieder {
   pros: string[];
   cons: string[];
   geschiktVoor: string[];
+  losBestellenMogelijk: boolean;
+  leverdag: boolean;
+  tijdstip: boolean;
+  besteVoor: string;
+  minMaaltijdenPerWeek: number;
 }
 
 export const aanbieders: Aanbieder[] = [
@@ -78,6 +83,11 @@ export const aanbieders: Aanbieder[] = [
     pros: ['Grootste receptvariatie (40+ per week)', 'Gratis bezorging in heel België', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Welkomstkorting tot €60 voor nieuwe klanten'],
     cons: ['Niet 100% Belgische ingrediënten', 'Meer plasticverpakking dan lokale alternatieven', 'Standaardprijs hoger na korting'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'singles'],
+    losBestellenMogelijk: false,
+    leverdag: true,
+    tijdstip: true,
+    besteVoor: 'Variatie & prijs',
+    minMaaltijdenPerWeek: 3,
   },
   {
     slug: 'foodbag',
@@ -109,6 +119,11 @@ export const aanbieders: Aanbieder[] = [
 kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kookstijlen', '✓ Zonder abonnement', '🔀 Voorheen ook Smartmat & 15gram'],    pros: ['100% Belgische en lokale ingrediënten', 'Uitstekende smaakscores', 'Eigen bezorgers', '5 kookstijlen incl. Sana (Sandra Bekkari)', 'Geen verplicht abonnement'],
     cons: ['Hogere prijs dan internationale alternatieven', 'Beperktere bezorgdagen dan HelloFresh', 'Minder geschikt voor strikte budgetkijkers'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'bio'],
+    losBestellenMogelijk: true,
+    leverdag: true,
+    tijdstip: false,
+    besteVoor: 'Belgische kwaliteit',
+    minMaaltijdenPerWeek: 1,
   },
   {
     slug: 'marley-spoon',
@@ -141,6 +156,11 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     pros: ['Groot receptaanbod (40/week)', 'Hoge smaakscore', 'Creatieve chef-recepten', 'Gratis bezorging'],
     cons: ['Enkel Vlaanderen en Brussel (geen Wallonië)', 'Hogere prijs per portie', 'Recepten kosten meer tijd (45-60 min)'],
     geschiktVoor: ['koppel', 'vegetarisch'],
+    losBestellenMogelijk: false,
+    leverdag: true,
+    tijdstip: false,
+    besteVoor: 'Fijnproevers',
+    minMaaltijdenPerWeek: 2,
   },
   {
     slug: 'ekomenu',
@@ -173,6 +193,11 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     pros: ['Enige 100% biologische maaltijdbox in België', 'Unieke CO2-footprint tracker', 'Brede keuze voor vegetariërs en vegans', 'Milieuvriendelijke verpakking'],
     cons: ['Hogere prijs dan HelloFresh', 'Enkel Vlaanderen en Brussel (niet Wallonië)', 'Minder receptvariatie dan HelloFresh'],
     geschiktVoor: ['koppel', 'vegetarisch', 'bio'],
+    losBestellenMogelijk: false,
+    leverdag: true,
+    tijdstip: false,
+    besteVoor: 'Vegetarisch/vegan',
+    minMaaltijdenPerWeek: 2,
   },
   {
     slug: 'foodmaker',
@@ -205,6 +230,11 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     pros: ['Samenwerking met Jeroen Meus (Dagelijkse Kost)', 'Gratis bezorging in heel België', 'Artisanale Belgische kwaliteit', 'Volledig vegan Vedge Bags gamma'],
     cons: ['Hogere prijs (~€10/portie)', 'Geen kookbeleving (kant-en-klaar)', 'Beperkte bezorgfrequentie'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'singles'],
+    losBestellenMogelijk: true,
+    leverdag: true,
+    tijdstip: false,
+    besteVoor: 'Pure kwaliteit',
+    minMaaltijdenPerWeek: 1,
   },
   {
     slug: 'factor',
@@ -238,6 +268,11 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     pros: ['Geen koken vereist — enkel opwarmen', 'Bezorging in heel België', '5 dieetstijlen incl. Keto en High-Protein', 'Van de HelloFresh Group'],
     cons: ['Bezorgkosten €6', 'Duurder dan kookboxen bij kleine hoeveelheden', 'Minder culinaire beleving'],
     geschiktVoor: ['koppel', 'gezin', 'singles'],
+    losBestellenMogelijk: false,
+    leverdag: true,
+    tijdstip: true,
+    besteVoor: 'Ready-to-eat',
+    minMaaltijdenPerWeek: 1,
   },
   {
     slug: 'carrefour-simply-you',
@@ -275,6 +310,11 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     pros: ['Geen verplicht abonnement', '€20 welkomstkorting (code BOXNL20)', 'Bezorging in heel België incl. Wallonië', '10+ recepten per week'],
     cons: ['Minder receptvariatie dan HelloFresh', 'Eenvoudigere recepten', 'Enkel maandaglevering'],
     geschiktVoor: ['budget', 'gezin', 'singles'],
+    losBestellenMogelijk: true,
+    leverdag: true,
+    tijdstip: false,
+    besteVoor: 'Zonder abonnement',
+    minMaaltijdenPerWeek: 1,
   },
 ];
 

@@ -240,15 +240,10 @@ export default function HomePage() {
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { slug: 'hellofresh',           naam: 'HelloFresh',   logo: '/logos/hellofresh.png',  score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false, besteVoor: 'Variatie & prijs' },
-                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Belgische kwaliteit' },
-                  { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€5,59', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false, besteVoor: 'Fijnproevers' },
-                  { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€6,18', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false, besteVoor: 'Vegetarisch/vegan' },
-                  { slug: 'foodmaker',            naam: 'Foodmaker',    logo: '👨‍🍳',                   score: 7.7, prijs: '€10,00',min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Pure kwaliteit' },
-                  { slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false, besteVoor: 'Ready-to-eat' },
-                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Zonder abonnement' },
-                ].map((a, i) => (
+                {aanbieders.map((a, i) => {
+                  const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}`;
+                  const bezorgGratis = a.gratisBezorging;
+                  return (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 600, whiteSpace: 'nowrap' }}>
@@ -260,20 +255,21 @@ export default function HomePage() {
                         {a.naam}
                       </div>
                     </td>
-                    <td style={{ padding: '10px 10px', fontWeight: 800, color: '#1B4332' }}>{a.score}</td>
-                    <td style={{ padding: '10px 10px' }}>v.a. {a.prijs}</td>
-                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.min === 1 ? '—' : `${a.min}/week`}</td>
-                    <td style={{ padding: '10px 10px', color: a.bezorg === 'Gratis' || a.bezorg === 'v.a. gratis' ? '#16A34A' : '#DC2626', fontWeight: 600 }}>{a.bezorg}</td>
-                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.lokaal ? '🇧🇪' : '—'}</td>
+                    <td style={{ padding: '10px 10px', fontWeight: 800, color: '#1B4332' }}>{a.score.totaal}</td>
+                    <td style={{ padding: '10px 10px' }}>v.a. €{a.prijsPerPortie.toFixed(2).replace('.', ',')}</td>
+                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.minMaaltijdenPerWeek === 1 ? '—' : `${a.minMaaltijdenPerWeek}/week`}</td>
+                    <td style={{ padding: '10px 10px', color: bezorgGratis ? '#16A34A' : '#DC2626', fontWeight: 600 }}>{bezorgLabel}</td>
+                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.belgisch ? '🇧🇪' : '—'}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.leverdag ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.leverdag ? '✓' : '✗'}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.tijdstip ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.tijdstip ? '✓' : '✗'}</td>
-                    <td style={{ padding: '10px 10px', textAlign: 'center', color: a.los ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.los ? '✓' : '✗'}</td>
+                    <td style={{ padding: '10px 10px', textAlign: 'center', color: a.losBestellenMogelijk ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.losBestellenMogelijk ? '✓' : '✗'}</td>
                     <td style={{ padding: '10px 10px', fontSize: 11, color: '#374151', whiteSpace: 'nowrap' }}>{a.besteVoor}</td>
                     <td style={{ padding: '10px 10px' }}>
                       <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 11, whiteSpace: 'nowrap' }}>Review →</Link>
                     </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>
