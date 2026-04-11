@@ -87,7 +87,7 @@ export default function HomePage() {
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
-          {[['7', 'boxen getest'], ['4', 'weken getest'], ['2026', 'bijgewerkt']].map(([num, label]) => (
+          {[['7', 'boxen getest'], ['4', 'weken getest'], ['4.200+', 'Belgen geholpen'], ['2026', 'bijgewerkt']].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: '#1B4332' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{label}</div>

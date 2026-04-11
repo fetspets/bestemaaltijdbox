@@ -29,6 +29,7 @@ export default function Navbar() {
             {[
               { href: '/', label: 'Vergelijken' },
               { href: '/kortingscodes', label: 'Kortingscodes' },
+              { href: '/blog', label: 'Blog' },
               { href: '/gids/maaltijdbox-voor-gezinnen', label: 'Gidsen' },
               { href: '/voor/koppel', label: 'Voor koppels' },
               { href: '/voor/gezin', label: 'Voor gezinnen' },
@@ -63,6 +64,7 @@ export default function Navbar() {
               { href: '/voor/singles', label: '🧑 Voor singles' },
               { href: '/voor/vegetarisch', label: '🌱 Vegetarisch' },
               { href: '/voor/budget', label: '💰 Budget' },
+              { href: '/blog', label: '📝 Blog' },
               { href: '/vergelijk/hellofresh-vs-foodbag', label: '⚖️ HelloFresh vs Foodbag' },
               { href: '/vergelijk/hellofresh-vs-marley-spoon', label: '⚖️ HelloFresh vs Marley Spoon' },
               { href: '/gids/maaltijdbox-voor-gezinnen', label: '📖 Gids: Voor gezinnen' },

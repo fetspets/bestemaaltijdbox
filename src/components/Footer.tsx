@@ -75,6 +75,22 @@ export default function Footer() {
             </div>
           </div>
 
+          {/* Blog */}
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Blog</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[
+                { label: 'Alle artikels', href: '/blog' },
+                { label: 'Maaltijdbox of zelf koken?', href: '/blog/maaltijdbox-of-zelf-koken-belgie' },
+                { label: 'Maaltijdbox opzeggen', href: '/blog/hoe-maaltijdbox-opzeggen-belgie' },
+                { label: 'Vegetarisch koken', href: '/blog/vegetarisch-koken-maaltijdbox' },
+                { label: 'Gids voor beginners', href: '/blog/maaltijdbox-starten-beginners' },
+              ].map(l => (
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+              ))}
+            </div>
+          </div>
+
           {/* Info */}
           <div>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Info</div>
