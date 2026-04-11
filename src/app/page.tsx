@@ -82,7 +82,7 @@ export default function HomePage() {
           De beste maaltijdbox<br />in <span style={{ color: 'var(--mint)' }}>België</span>
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          Wij hebben de populairste maaltijdboxen in België uitgebreid getest en vergeleken op prijs, smaak, flexibiliteit en gebruiksgemak. Eerlijke rankings — geen betaalde posities.
+          Welke maaltijdbox is echt de moeite waard in België? Wij testten 7 aanbieders gedurende 4 weken — op prijs, smaak, gemak en duurzaamheid. Eerlijke scores, geen betaalde posities.
         </p>
 
         {/* Stats */}
@@ -234,20 +234,20 @@ export default function HomePage() {
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 700 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  {['Aanbieder', 'Score', 'Prijs/portie', 'Min. recepten', 'Bezorgkost', '🇧🇪', 'Leverdag', 'Tijdstip', 'Los bestellen', ''].map(h => (
+                  {['Aanbieder', 'Score', 'Prijs/portie', 'Min. recepten', 'Bezorgkost', '🇧🇪', 'Leverdag', 'Tijdstip', 'Los bestellen', 'Beste voor', ''].map(h => (
                     <th key={h} style={{ padding: '10px 10px', textAlign: 'left', fontWeight: 600, fontSize: 10, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {[
-                  { slug: 'hellofresh',           naam: 'HelloFresh',   logo: '/logos/hellofresh.png',  score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false },
-                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€5,59', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€6,18', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'foodmaker',            naam: 'Foodmaker',    logo: '👨‍🍳',                   score: 7.7, prijs: '€10,00',min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false },
-                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
+                  { slug: 'hellofresh',           naam: 'HelloFresh',   logo: '/logos/hellofresh.png',  score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false, besteVoor: 'Variatie & prijs' },
+                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Belgische kwaliteit' },
+                  { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€5,59', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false, besteVoor: 'Fijnproevers' },
+                  { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€6,18', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false, besteVoor: 'Vegetarisch/vegan' },
+                  { slug: 'foodmaker',            naam: 'Foodmaker',    logo: '👨‍🍳',                   score: 7.7, prijs: '€10,00',min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Pure kwaliteit' },
+                  { slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false, besteVoor: 'Ready-to-eat' },
+                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Zonder abonnement' },
                 ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
@@ -268,6 +268,7 @@ export default function HomePage() {
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.leverdag ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.leverdag ? '✓' : '✗'}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.tijdstip ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.tijdstip ? '✓' : '✗'}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.los ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.los ? '✓' : '✗'}</td>
+                    <td style={{ padding: '10px 10px', fontSize: 11, color: '#374151', whiteSpace: 'nowrap' }}>{a.besteVoor}</td>
                     <td style={{ padding: '10px 10px' }}>
                       <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 11, whiteSpace: 'nowrap' }}>Review →</Link>
                     </td>
