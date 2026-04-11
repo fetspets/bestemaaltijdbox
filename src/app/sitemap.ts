@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio'];
   const vergelijkingen = ['hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon'];
   const gidsen = ['maaltijdbox-voor-gezinnen', 'goedkoopste-maaltijdbox-belgie'];
+  const blogSlugs = [
+    'maaltijdbox-of-zelf-koken-belgie',
+    'hoe-maaltijdbox-opzeggen-belgie',
+    'vegetarisch-koken-maaltijdbox',
+    'maaltijdbox-starten-beginners',
+  ];
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
@@ -38,6 +44,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
       priority: 0.8,
+    })),
+    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.7 },
+    ...blogSlugs.map(slug => ({
+      url: `${baseUrl}/blog/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
     })),
   ];
 }

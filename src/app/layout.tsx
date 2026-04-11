@@ -2,18 +2,19 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CookieBanner from '@/components/CookieBanner';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Beste maaltijdbox België 2026 – Vergelijk + tot €60 korting',
+    default: 'Beste maaltijdbox België 2026 – Onafhankelijk vergeleken',
     template: '%s | BesteMaaltijdbox.be',
   },
-  description: 'Vergelijk de beste maaltijdboxen in België (HelloFresh, Foodbag, Marley Spoon). Bekijk prijzen, reviews en kortingen tot €60 voor nieuwe klanten.',
+  description: 'Vergelijk de beste maaltijdboxen in België (HelloFresh, Foodbag, Marley Spoon). Eerlijke reviews, prijsvergelijking en welkomstkortingen voor nieuwe klanten.',
   keywords: ['beste maaltijdbox belgië', 'maaltijdbox vergelijken', 'hellofresh kortingscode', 'foodbag review', 'maaltijdbox 2026'],
   openGraph: {
-    title: 'Beste maaltijdbox België 2026 – Vergelijk + tot €60 korting',
-    description: 'Vergelijk de beste maaltijdboxen in België (HelloFresh, Foodbag, Marley Spoon). Bekijk prijzen, reviews en kortingen tot €60 voor nieuwe klanten.',
+    title: 'Beste maaltijdbox België 2026 – Onafhankelijk vergeleken',
+    description: 'Vergelijk de beste maaltijdboxen in België (HelloFresh, Foodbag, Marley Spoon). Eerlijke reviews, prijsvergelijking en welkomstkortingen voor nieuwe klanten.',
     url: 'https://bestemaaltijdbox.be',
     siteName: 'BesteMaaltijdbox.be',
     locale: 'nl_BE',
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
 
         {/* Google Analytics */}
         <Script
