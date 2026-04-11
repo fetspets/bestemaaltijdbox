@@ -68,8 +68,6 @@ export default function HomePage() {
         mainEntity: [
           { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is een budgetvriendelijke optie vanaf €5,38 per portie, zonder verplicht abonnement.' }},
           { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement.' }},
-          { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Delhaize Click&Cook (€5,20/portie) en Carrefour Simply You (€5,38/portie) zijn de voordeligste opties.' }},
-          { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website.' }},
           { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' }},
         ]
       }) }} />
@@ -238,12 +236,6 @@ export default function HomePage() {
                   { slug: 'foodmaker',            naam: 'Foodmaker',    logo: '👨‍🍳',                   score: 7.7, prijs: '€10,00',min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
                   { slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false },
                   { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€8,67', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€7,00', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false },
-                  { slug: 'delhaize-click-cook',  naam: 'Delhaize C&C', logo: '/logos/delhaize.png',    score: 7.0, prijs: '€5,20', min: 1, bezorg: '€4,95',       lokaal: true,  leverdag: true,  tijdstip: true,  los: true  },
-                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: '€5,95',       lokaal: true,  leverdag: true,  tijdstip: false, los: true  },
-                  { slug: 'cirkle',               naam: 'Cirkle',       logo: '♻️',                     score: 7.2, prijs: '€6,80', min: 2, bezorg: 'Gratis',      lokaal: true,  leverdag: false, tijdstip: false, los: false },
                 ].map((a, i) => (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
@@ -317,8 +309,7 @@ export default function HomePage() {
                   { icon: '👫', title: 'Koppels', desc: 'HelloFresh en Foodbag zijn de populairste keuzes voor 2 personen.' },
                   { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin.' },
                   { icon: '🌱', title: 'Vegetariërs', desc: 'Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.' },
-                  { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (v.a. €5,38/portie, geen abonnement) is de meest budgetvriendelijke optie.' },
-                  { icon: '💰', title: 'Budget', desc: 'Delhaize Click&Cook (€5,20/portie) en Carrefour Simply You (€5,38/portie) zijn de voordeligste opties.' },
+                  { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (v.a. €5,38/portie, geen abonnement) is een budgetvriendelijke optie.' },
                 ].map(({ icon, title, desc }) => (
                   <div key={title} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                     <div style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>{icon}</div>
@@ -342,8 +333,6 @@ export default function HomePage() {
             {[
               { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is een budgetvriendelijke optie vanaf €5,38 per portie, zonder verplicht abonnement en met bezorging in heel België.' },
               { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Je kan je abonnement meestal flexibel pauzeren of stopzetten, vaak tot enkele dagen voor de volgende levering. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement. De exacte voorwaarden verschillen per aanbieder.' },
-              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Delhaize Click&Cook (€5,20/portie) is de goedkoopste optie. Carrefour Simply You (€5,38/portie) is ook zeer budgetvriendelijk.' },
-              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar. HelloFresh, Foodbag en Marley Spoon laten je tot 5 dagen voor levering opzeggen.' },
               { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
               { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Je betaalt €5 tot €9,69 per portie tegenover €3-5 bij zelf winkelen.' },
               { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },
