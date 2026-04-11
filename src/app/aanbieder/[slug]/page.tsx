@@ -69,7 +69,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>
-          <span style={{ fontSize: 12 }}>Bijgewerkt: maart 2026</span>
+          <span style={{ fontSize: 12 }}>Bijgewerkt: april 2026</span>
         </div>
       </div>
 
@@ -89,7 +89,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
             <div style={{ display: 'flex', gap: 16, fontSize: 13, color: 'var(--muted)', flexWrap: 'wrap' }}>
               <span>Door <strong style={{ color: 'var(--ink)' }}>Redactie BesteMaaltijdbox</strong></span>
-              <span>·</span><span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>maart 2026</strong></span>
+              <span>·</span><span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>april 2026</strong></span>
               <span>·</span><span>Getest over <strong style={{ color: 'var(--ink)' }}>4 weken</strong></span>
               <span>·</span><span>Ranking: <strong style={{ color: '#1B4332' }}>#{a.ranking} van 7</strong></span>
             </div>

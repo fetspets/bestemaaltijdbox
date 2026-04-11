@@ -91,6 +91,26 @@ const situaties: Record<string, {
       { q: 'Kan ik een maaltijdbox eenmalig bestellen zonder abonnement?', a: 'Ja, Foodbag, Carrefour Simply You en Foodmaker laten je eenmalig bestellen zonder abonnement. Geen wekelijkse verplichtingen.' },
     ],
   },
+  singles: {
+    titel: 'Beste maaltijdbox voor singles',
+    h1: 'Beste maaltijdbox voor 1 persoon in België (2026)',
+    intro: 'Welke maaltijdbox is het beste voor alleenstaanden? Niet alle aanbieders leveren voor 1 persoon. Wij vergeleken minimum afname, prijs en flexibiliteit voor singles.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'Als alleenstaande stoot je snel op een probleem: de meeste maaltijdboxen leveren minimum voor 2 personen. Je eindigt dan met te veel eten of gooit porties weg — wat het voordeel van een maaltijdbox teniet doet.',
+      'HelloFresh is de enige klassieke kookbox die levert voor 1 persoon. Je kiest elke week hoeveel maaltijden je wil en welke recepten, uit een aanbod van 40+. Praktisch en flexibel. Lees onze <a href="/aanbieder/hellofresh" style="color:#1B4332;font-weight:600;text-decoration:underline">volledige HelloFresh review</a> voor alle details.',
+      'Factor is een interessant alternatief als je geen zin hebt om te koken: kant-en-klare maaltijden die je enkel opwarmt, besteld per stuk voor 1 persoon. Geen kookbeleving, maar wel maximaal gemak. Carrefour Simply You laat je eenmalig bestellen zonder abonnement — ideaal als je het concept wil uitproberen zonder engagement. Bekijk onze <a href="/gids/beste-maaltijdbox-voor-singles" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids voor singles</a>.',
+    ],
+    icon: '🧑',
+    seoTitel: 'Beste Maaltijdbox voor 1 Persoon België 2026 — Singles vergeleken',
+    seoDesc: 'Welke maaltijdbox is het beste voor alleenstaanden in België? Vergelijk HelloFresh, Factor en Carrefour Simply You voor 1 persoon. Onze top 3.',
+    faq: [
+      { q: 'Welke maaltijdbox levert voor 1 persoon in België?', a: 'HelloFresh is de enige grote kookbox die levert voor 1 persoon in België. Factor en Foodmaker leveren ook voor 1 persoon. De meeste andere aanbieders — Marley Spoon, Ekomenu — leveren minimum voor 2 personen.' },
+      { q: 'Is een maaltijdbox de moeite voor 1 persoon?', a: 'Ja. Als alleenstaande gooi je bij normale boodschappen makkelijker ingrediënten weg. Een maaltijdbox levert exacte hoeveelheden — geen restjes, geen verspilling. Dat maakt het werkelijke prijsverschil met de supermarkt kleiner dan je denkt.' },
+      { q: 'Hoe pauzeer ik een maaltijdbox als ik een week niet thuis ben?', a: 'HelloFresh en Factor laten je leveringen wekelijks overslaan of pauzeren via app of website, doorgaans tot 5 dagen voor de volgende levering. Je zit nergens aan vast.' },
+      { q: 'Hoeveel maaltijden per week is realistisch voor 1 persoon?', a: 'De meeste singles starten met 3 maaltijden per week. Dat geeft structuur voor drukke doordeweekse avonden, met vrijheid voor het weekend of spontane afspraken.' },
+    ],
+  },
   bio: {
     titel: 'Beste biologische maaltijdbox',
     h1: 'Beste biologische maaltijdbox in België (2026)',

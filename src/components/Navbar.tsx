@@ -60,6 +60,7 @@ export default function Navbar() {
               { href: '/kortingscodes', label: '🏷️ Kortingscodes' },
               { href: '/voor/koppel', label: '👫 Voor koppels' },
               { href: '/voor/gezin', label: '👨‍👩‍👧 Voor gezinnen' },
+              { href: '/voor/singles', label: '🧑 Voor singles' },
               { href: '/voor/vegetarisch', label: '🌱 Vegetarisch' },
               { href: '/voor/budget', label: '💰 Budget' },
               { href: '/vergelijk/hellofresh-vs-foodbag', label: '⚖️ HelloFresh vs Foodbag' },
