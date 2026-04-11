@@ -155,6 +155,21 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
           </div>
         </div>
 
+        {/* Uitleg blokken per situatie */}
+        {g.uitlegBlokken && g.uitlegBlokken.length > 0 && (
+          <div style={{ marginBottom: 40 }}>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
+              Per situatie: wat is de goedkoopste keuze?
+            </h2>
+            {g.uitlegBlokken.map(blok => (
+              <div key={blok.titel} style={{ marginBottom: 16, padding: '20px 24px', border: '1.5px solid var(--rule)', borderRadius: 12, background: 'white' }}>
+                <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 800, marginBottom: 8, color: 'var(--ink)' }}>{blok.titel}</h3>
+                <p style={{ fontSize: 14, lineHeight: 1.75, color: '#4B5563', margin: 0 }}>{blok.tekst}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
         {/* FAQ */}
         <div style={{ marginBottom: 40 }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
