@@ -13,6 +13,7 @@ const situaties: Record<string, {
   seoTitel: string;
   seoDesc: string;
   faq: { q: string; a: string }[];
+  nietGeschiktAls: string[];
 }> = {
   koppel: {
     titel: 'Beste maaltijdbox voor koppels',
@@ -33,6 +34,11 @@ const situaties: Record<string, {
       { q: 'Hoeveel maaltijden per week is realistisch als koppel?', a: 'De meeste koppels starten met 3 maaltijden per week — goed voor de drukke doordeweekse dagen, met ruimte voor een restaurant of zelf koken in het weekend. Je kan altijd aanpassen of pauzeren.' },
       { q: 'Is een maaltijdbox voor 2 personen duurder dan boodschappen?', a: 'Per portie betaal je doorgaans meer dan bij de supermarkt, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Voor koppels die regelmatig restjes weggooien of impulsaankopen doen bij de winkel, valt de werkelijke kostprijs vaak mee.' },
       { q: 'Kan ik als koppel ook kant-en-klare maaltijden bestellen?', a: 'Ja. Factor en Foodmaker leveren kant-en-klare maaltijden die je alleen nog moet opwarmen. Dat is handig voor drukke avonden, maar je mist het kookplezier van een klassieke maaltijdbox.' },
+    ],
+    nietGeschiktAls: [
+      'Je maar 1 à 2 keer per week kookt — dan is de kostprijs per maaltijd relatief hoog.',
+      'Jullie hebben sterk verschillende smaakvoorkeuren die moeilijk te combineren zijn in één recept.',
+      'Je schema is heel onregelmatig en je kan moeilijk voorspellen wanneer je thuis kookt.',
     ],
   },
   gezin: {
@@ -55,6 +61,11 @@ const situaties: Record<string, {
       { q: 'Wat als een kind een voedingsallergie heeft?', a: 'HelloFresh en Ekomenu bieden de meest uitgebreide filteropties per allergie (gluten, lactose, noten). Foodbag heeft minder filteropties maar de ingrediëntlijsten zijn transparant per recept, zodat je zelf kan controleren.' },
       { q: 'Kan ik de maaltijdbox pauzeren tijdens schoolvakanties?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je leveringen pauzeren of overslaan, doorgaans tot 5 dagen voor de volgende leverdatum. Handig als je op vakantie bent of een week wil overslaan.' },
     ],
+    nietGeschiktAls: [
+      'Je gezin bestaat uit 5 of meer personen en je kookt elke dag — de kostprijs loopt dan snel op.',
+      'Kinderen zijn heel kieskeurig en willen geen variatie of nieuwe gerechten uitproberen.',
+      'Je wil volledige controle over elke ingredient (bijv. bij ernstige allergieën) — raadpleeg dan altijd de allergeninformatie per recept.',
+    ],
   },
   vegetarisch: {
     titel: 'Beste vegetarische maaltijdbox',
@@ -76,12 +87,21 @@ const situaties: Record<string, {
       { q: 'Welke maaltijdbox is het beste voor biologisch eten?', a: 'Ekomenu is de enige 100% biologisch gecertificeerde maaltijdbox in België. Alle ingrediënten zijn bio en de verpakking is composteerbaar. Foodbag scoort ook sterk op duurzaamheid met lokale Belgische ingrediënten.' },
       { q: 'Levert Ekomenu ook in Wallonië?', a: 'Nee, Ekomenu bezorgt momenteel enkel in Vlaanderen en Brussel. Woon je in Wallonië en zoek je vegetarische opties? HelloFresh en Foodbag zijn de enige aanbieders met dekking in heel België én vegetarische recepten.' },
     ],
+    nietGeschiktAls: [
+      'Je partner eet vlees en wil een gemengde selectie — kies dan HelloFresh of Marley Spoon waarbij je per week kiest.',
+      'Je woont in Wallonië en wil 100% plantaardig — Ekomenu bezorgt daar momenteel niet.',
+      'Je zoekt vegan kant-en-klare maaltijden — dat segment is in België nog beperkt.',
+    ],
   },
   budget: {
     titel: 'Goedkoopste maaltijdbox in België',
     h1: 'Goedkoopste maaltijdbox in België 2026 — Beste prijs-kwaliteit',
     intro: 'Wil je een maaltijdbox proberen zonder de bank te breken? Wij vergeleken alle Belgische maaltijdboxen op prijs per portie, bezorgkosten en welkomstkorting.',
-    uitleg: 'De goedkoopste maaltijdbox is niet altijd de beste deal. Factor kost maar €4,99 per portie maar rekent €6 bezorgkosten aan. Carrefour Simply You kost €5,38 per portie met gratis bezorging en geen verplicht abonnement. HelloFresh lijkt duurder maar met de welkomstkorting van tot €60 is het de eerste weken de meest voordelige keuze.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'De goedkoopste maaltijdbox is niet altijd de beste deal. Factor kost maar €4,99 per portie maar rekent €6 bezorgkosten aan. <a href="/aanbieder/carrefour-simply-you" style="color:#1B4332;font-weight:600;text-decoration:underline">Carrefour Simply You</a> kost €5,38 per portie met gratis bezorging en geen verplicht abonnement — ideaal om te starten zonder engagement.',
+      'HelloFresh lijkt duurder, maar met de welkomstkorting van tot €60 is het de eerste weken de meest voordelige keuze. Na de proefperiode stijgt de prijs naar het normale tarief. Bekijk onze <a href="/gids/goedkoopste-maaltijdbox-belgie" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids over de goedkoopste maaltijdboxen</a> voor een volledige prijsvergelijking inclusief bezorgkosten.',
+    ],
     icon: '💰',
     seoTitel: 'Goedkoopste Maaltijdbox België 2026 — Beste prijs per portie',
     seoDesc: 'Welke maaltijdbox is het goedkoopst in België? Vergelijk Carrefour Simply You, Factor en HelloFresh. Inclusief bezorgkosten en kortingscodes.',
@@ -89,6 +109,13 @@ const situaties: Record<string, {
       { q: 'Wat is de goedkoopste maaltijdbox per portie in België?', a: 'Factor is de goedkoopste aan €4,99 per portie, maar rekent €6 bezorgkosten. Carrefour Simply You kost €5,38 per portie met gratis bezorging en geen abonnement. HelloFresh is met welkomstkorting de eerste weken het voordeligst.' },
       { q: 'Welke maaltijdbox heeft geen bezorgkosten?', a: 'HelloFresh, Foodbag, Marley Spoon, Ekomenu, Foodmaker en Carrefour Simply You bieden gratis bezorging. Factor rekent €6 bezorgkosten aan.' },
       { q: 'Kan ik een maaltijdbox eenmalig bestellen zonder abonnement?', a: 'Ja, Foodbag, Carrefour Simply You en Foodmaker laten je eenmalig bestellen zonder abonnement. Geen wekelijkse verplichtingen.' },
+      { q: 'Is een maaltijdbox goedkoper dan zelf boodschappen doen?', a: 'Niet altijd. Per portie betaal je meer dan bij de supermarkt, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Reken je weggegooide ingrediënten en impulsaankopen mee, dan valt het werkelijke prijsverschil kleiner uit dan je denkt.' },
+      { q: 'Kan ik de welkomstkorting meerdere keren gebruiken?', a: 'Nee, welkomstdeals zijn éénmalig voor nieuwe klanten. Na de proefperiode stijgt de prijs naar het normale tarief. Wil je opnieuw profiteren van een korting? Kijk dan naar een andere aanbieder.' },
+    ],
+    nietGeschiktAls: [
+      'Je al eerder klant was bij die aanbieder — welkomstkorting geldt alleen voor nieuwe klanten.',
+      'Je los wil bestellen: abonnementsboxen zijn goedkoper per portie dan eenmalige bestellingen.',
+      'Je verwacht elke dag een volledige maaltijd — de kosten lopen dan snel op ten opzichte van de supermarkt.',
     ],
   },
   singles: {
@@ -110,12 +137,21 @@ const situaties: Record<string, {
       { q: 'Hoe pauzeer ik een maaltijdbox als ik een week niet thuis ben?', a: 'HelloFresh en Factor laten je leveringen wekelijks overslaan of pauzeren via app of website, doorgaans tot 5 dagen voor de volgende levering. Je zit nergens aan vast.' },
       { q: 'Hoeveel maaltijden per week is realistisch voor 1 persoon?', a: 'De meeste singles starten met 3 maaltijden per week. Dat geeft structuur voor drukke doordeweekse avonden, met vrijheid voor het weekend of spontane afspraken.' },
     ],
+    nietGeschiktAls: [
+      'Je wil elke avond een andere keuken (Thais, Japans, Indisch) — het aanbod is gevarieerd maar niet onbeperkt specifiek.',
+      'Je wil geen vaste levermomenten en volledig spontaan bestellen — de meeste boxen vragen 3–5 dagen op voorhand.',
+      'Je bent regelmatig niet thuis — pauzeren kost aandacht en een gemiste week is geld weg.',
+    ],
   },
   bio: {
     titel: 'Beste biologische maaltijdbox',
     h1: 'Beste biologische maaltijdbox in België (2026)',
     intro: 'Wil je bewust eten met biologische ingrediënten? Wij vergeleken alle duurzame maaltijdboxen in België op biologische certificering, verpakking en CO2-impact.',
-    uitleg: 'Voor wie biologisch wil eten is Ekomenu de duidelijke keuze in België. Het is de enige 100% bio gecertificeerde maaltijdbox met composteerbare verpakking en een CO2-footprint tracker per bestelling. Foodbag scoort ook sterk op duurzaamheid dankzij lokale Belgische ingrediënten en eigen bezorgers.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'Voor wie biologisch wil eten is <a href="/aanbieder/ekomenu" style="color:#1B4332;font-weight:600;text-decoration:underline">Ekomenu</a> de duidelijke keuze in België. Het is de enige 100% bio gecertificeerde maaltijdbox met composteerbare verpakking en een CO2-footprint tracker per bestelling. Alle recepten zijn volledig plantaardig — ideaal als je tegelijk vegetarisch of vegan wil eten.',
+      'Foodbag scoort ook sterk op duurzaamheid dankzij lokale Belgische ingrediënten en eigen bezorgers. Wil je meer weten over het biologische aanbod? Lees onze <a href="/gids/beste-biologische-maaltijdbox-belgie" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids over de beste biologische maaltijdboxen</a>.',
+    ],
     icon: '🌿',
     seoTitel: 'Beste Biologische Maaltijdbox België 2026 — 100% Bio & Duurzaam',
     seoDesc: 'Welke maaltijdbox gebruikt biologische ingrediënten in België? Vergelijk Ekomenu en Foodbag. Duurzaam, lokaal en lekker eten.',
@@ -123,6 +159,13 @@ const situaties: Record<string, {
       { q: 'Welke maaltijdbox is 100% biologisch in België?', a: 'Ekomenu is de enige 100% biologisch gecertificeerde maaltijdbox in België. Alle ingrediënten zijn bio en de verpakking is composteerbaar.' },
       { q: 'Wat is de meest duurzame maaltijdbox in België?', a: 'Ekomenu scoort het hoogst op duurzaamheid (9.5/10) dankzij biologische certificering, composteerbare verpakking en een CO2-footprint tracker. Foodbag scoort ook goed (8.5/10) met lokale Belgische ingrediënten.' },
       { q: 'Is een biologische maaltijdbox duurder?', a: 'Ja, bio maaltijdboxen kosten doorgaans meer. Ekomenu kost v.a. €6,18 per portie tegenover €5,50 voor HelloFresh. De meerprijs weerspiegelt de biologische certificering en milieuvriendelijke verpakking.' },
+      { q: 'Is biologisch echt gezonder?', a: 'Biologische producten bevatten geen synthetische pesticiden en worden duurzamer geteeld. Of dit directe gezondheidsvoordelen geeft is wetenschappelijk niet eenduidig, maar voor het milieu en de biodiversiteit maakt het zeker verschil.' },
+      { q: 'Leveren biologische maaltijdboxen in heel België?', a: 'Ekomenu levert in Vlaanderen en Brussel, maar niet in Wallonië. Foodbag levert in heel België inclusief Wallonië en is ook een duurzame keuze dankzij lokale ingrediënten, al is het niet 100% bio gecertificeerd.' },
+    ],
+    nietGeschiktAls: [
+      'Je een strak budget hebt — bio maaltijdboxen zijn duurder dan mainstream alternatieven.',
+      'Je in Wallonië woont en 100% biologisch wil — Ekomenu bezorgt daar momenteel niet.',
+      'Je ook vlees wil eten — Ekomenu is volledig plantaardig, kies dan Foodbag als duurzamer vleesalternatief.',
     ],
   },
 };
@@ -253,6 +296,16 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
           </div>
         );
       })}
+
+      {/* Wanneer niet geschikt */}
+      <div style={{ background: '#FFF5F4', border: '1px solid var(--red-border)', borderRadius: 12, padding: '16px 20px', marginBottom: 32 }}>
+        <div style={{ fontWeight: 700, marginBottom: 10, color: 'var(--red)', fontSize: 14 }}>⚠️ Wanneer is een maaltijdbox minder geschikt?</div>
+        <ul style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 }}>
+          {s.nietGeschiktAls.map((item, i) => (
+            <li key={i} style={{ fontSize: 13, lineHeight: 1.6, color: '#374151' }}>{item}</li>
+          ))}
+        </ul>
+      </div>
 
       {/* FAQ */}
       <div style={{ marginTop: 40, marginBottom: 40 }}>
