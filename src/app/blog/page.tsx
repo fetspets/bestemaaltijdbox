@@ -10,6 +10,11 @@ export const metadata: Metadata = {
 export default function BlogOverzicht() {
   return (
     <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 20px' }}>
+      <style>{`
+        .blog-card { transition: border-color 0.15s, box-shadow 0.15s; }
+        .blog-card:hover { border-color: var(--green) !important; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+      `}</style>
+
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 5vw, 42px)', fontWeight: 900, color: 'var(--ink)', marginBottom: 8 }}>
         Blog
       </h1>
@@ -20,26 +25,16 @@ export default function BlogOverzicht() {
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
         {blogPosts.map(post => (
           <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
-            <article style={{
+            <article className="blog-card" style={{
               border: '2px solid var(--rule)',
               borderRadius: 12,
               padding: 24,
               background: 'white',
-              transition: 'border-color 0.15s, box-shadow 0.15s',
               height: '100%',
               display: 'flex',
               flexDirection: 'column',
               gap: 12,
-            }}
-              onMouseEnter={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'var(--green)';
-                (e.currentTarget as HTMLElement).style.boxShadow = '0 4px 16px rgba(0,0,0,0.08)';
-              }}
-              onMouseLeave={e => {
-                (e.currentTarget as HTMLElement).style.borderColor = 'var(--rule)';
-                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-              }}
-            >
+            }}>
               <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
                 {post.gepubliceerd}
               </div>
