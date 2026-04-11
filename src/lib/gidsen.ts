@@ -62,18 +62,18 @@ export const gidsen: Gids[] = [
       {
         slug: 'carrefour-simply-you',
         badge: '🛒 Voordeligst zonder abonnement',
-        reden: 'Carrefour Simply You is interessant als je eenmalig wil proberen zonder abonnementsrisico. Met kortingscode BOXNL20 krijg je €20 korting op je eerste bestelling. Beperkingen: enkel maandaglevering en een smaller receptaanbod dan de grote spelers.',
+        reden: 'Carrefour Simply You is interessant als je eenmalig wil proberen zonder abonnementsrisico. Nieuwe klanten kunnen profiteren van een welkomstkorting op de eerste bestelling — controleer de actuele code op de site. Beperkingen: enkel maandaglevering en een smaller receptaanbod dan de grote spelers.',
       },
       {
         slug: 'factor',
         badge: '⚡ Laagste prijs per portie',
-        reden: 'Factor heeft de laagste prijs per portie van alle aanbieders. Maar het gaat om kant-en-klare maaltijden die je enkel opwarmt — geen kookbeleving. Tel de bezorgkosten van €6 mee in je vergelijking. Interessant voor wie kooktijd wil besparen.',
+        reden: 'Factor heeft een van de laagste prijzen per portie van alle aanbieders. Maar het gaat om kant-en-klare maaltijden die je enkel opwarmt — geen kookbeleving. Tel de bezorgkosten mee in je vergelijking. Interessant voor wie kooktijd wil besparen.',
       },
     ],
     tabelSlugs: ['hellofresh', 'carrefour-simply-you', 'factor', 'marley-spoon', 'ekomenu'],
     faq: [
       { q: 'Wat is de goedkoopste maaltijdbox in België per portie?', a: 'Factor heeft de laagste prijs per portie maar levert kant-en-klare maaltijden en rekent bezorgkosten aan. Bij klassieke kookboxen is HelloFresh het voordeligst, met gratis bezorging. Carrefour Simply You is de goedkoopste optie zonder abonnement.' },
-      { q: 'Hoe bereken ik de echte kost van een maaltijdbox?', a: 'Reken: portieprijs × aantal porties + bezorgkosten − welkomstkorting. HelloFresh geeft gratis bezorging; Factor rekent €6 bezorgkosten. Voor een realistisch beeld: vergelijk ook de prijs na de welkomstperiode, niet enkel de introductieprijs.' },
+      { q: 'Hoe bereken ik de echte kost van een maaltijdbox?', a: 'Reken: portieprijs × aantal porties + bezorgkosten − welkomstkorting. HelloFresh geeft gratis bezorging; Factor rekent bezorgkosten aan. Voor een realistisch beeld: vergelijk ook de prijs na de welkomstperiode, niet enkel de introductieprijs.' },
       { q: 'Zijn er maaltijdboxen zonder abonnement in België?', a: 'Ja. Carrefour Simply You en Foodmaker werken zonder verplicht abonnement. Je bestelt wanneer je wil, zonder wekelijkse verplichting. Foodbag heeft ook een "los bestellen" optie.' },
       { q: 'Zijn maaltijdboxen goedkoper dan boodschappen doen?', a: 'Per portie betaal je doorgaans meer dan bij de supermarkt. Maar maaltijdboxen leveren exacte hoeveelheden — weinig verspilling. Voor wie regelmatig ingrediënten weggooit of impulsaankopen doet, kan het werkelijke verschil kleiner zijn dan gedacht.' },
     ],

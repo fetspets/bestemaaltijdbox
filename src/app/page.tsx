@@ -67,7 +67,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is een budgetvriendelijke optie vanaf €5,38 per portie, zonder verplicht abonnement.' }},
+          { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is een budgetvriendelijke optie met een lage prijs per portie, zonder verplicht abonnement. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' }},
           { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement.' }},
           { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' }},
         ]
@@ -240,15 +240,10 @@ export default function HomePage() {
                 </tr>
               </thead>
               <tbody>
-                {[
-                  { slug: 'hellofresh',           naam: 'HelloFresh',   logo: '/logos/hellofresh.png',  score: 8.4, prijs: '€5,50', min: 3, bezorg: 'v.a. gratis', lokaal: false, leverdag: true,  tijdstip: true,  los: false, besteVoor: 'Variatie & prijs' },
-                  { slug: 'foodbag',              naam: 'Foodbag',      logo: '/logos/foodbag.png',     score: 8.1, prijs: '€9,50', min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Belgische kwaliteit' },
-                  { slug: 'marley-spoon',         naam: 'Marley Spoon', logo: '/logos/marley-spoon.png',score: 7.9, prijs: '€5,59', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false, besteVoor: 'Fijnproevers' },
-                  { slug: 'ekomenu',              naam: 'Ekomenu',      logo: '/logos/ekomenu.png',     score: 7.6, prijs: '€6,18', min: 2, bezorg: 'Gratis',      lokaal: false, leverdag: true,  tijdstip: false, los: false, besteVoor: 'Vegetarisch/vegan' },
-                  { slug: 'foodmaker',            naam: 'Foodmaker',    logo: '👨‍🍳',                   score: 7.7, prijs: '€10,00',min: 1, bezorg: 'Gratis',      lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Pure kwaliteit' },
-                  { slug: 'factor',               naam: 'Factor',       logo: '⚡',                     score: 7.5, prijs: '€4,99', min: 1, bezorg: '€6',          lokaal: false, leverdag: true,  tijdstip: true,  los: false, besteVoor: 'Ready-to-eat' },
-                  { slug: 'carrefour-simply-you', naam: 'Carrefour SY', logo: '🏪',                     score: 6.8, prijs: '€5,38', min: 1, bezorg: 'v.a. gratis', lokaal: true,  leverdag: true,  tijdstip: false, los: true,  besteVoor: 'Zonder abonnement' },
-                ].map((a, i) => (
+                {aanbieders.map((a, i) => {
+                  const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}`;
+                  const bezorgGratis = a.gratisBezorging;
+                  return (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
                     <td style={{ padding: '10px 10px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 6, fontWeight: 600, whiteSpace: 'nowrap' }}>
@@ -260,25 +255,26 @@ export default function HomePage() {
                         {a.naam}
                       </div>
                     </td>
-                    <td style={{ padding: '10px 10px', fontWeight: 800, color: '#1B4332' }}>{a.score}</td>
-                    <td style={{ padding: '10px 10px' }}>v.a. {a.prijs}</td>
-                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.min === 1 ? '—' : `${a.min}/week`}</td>
-                    <td style={{ padding: '10px 10px', color: a.bezorg === 'Gratis' || a.bezorg === 'v.a. gratis' ? '#16A34A' : '#DC2626', fontWeight: 600 }}>{a.bezorg}</td>
-                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.lokaal ? '🇧🇪' : '—'}</td>
+                    <td style={{ padding: '10px 10px', fontWeight: 800, color: '#1B4332' }}>{a.score.totaal}</td>
+                    <td style={{ padding: '10px 10px' }}>v.a. €{a.prijsPerPortie.toFixed(2).replace('.', ',')}</td>
+                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.minMaaltijdenPerWeek === 1 ? '—' : `${a.minMaaltijdenPerWeek}/week`}</td>
+                    <td style={{ padding: '10px 10px', color: bezorgGratis ? '#16A34A' : '#DC2626', fontWeight: 600 }}>{bezorgLabel}</td>
+                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.belgisch ? '🇧🇪' : '—'}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.leverdag ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.leverdag ? '✓' : '✗'}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.tijdstip ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.tijdstip ? '✓' : '✗'}</td>
-                    <td style={{ padding: '10px 10px', textAlign: 'center', color: a.los ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.los ? '✓' : '✗'}</td>
+                    <td style={{ padding: '10px 10px', textAlign: 'center', color: a.losBestellenMogelijk ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.losBestellenMogelijk ? '✓' : '✗'}</td>
                     <td style={{ padding: '10px 10px', fontSize: 11, color: '#374151', whiteSpace: 'nowrap' }}>{a.besteVoor}</td>
                     <td style={{ padding: '10px 10px' }}>
                       <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 11, whiteSpace: 'nowrap' }}>Review →</Link>
                     </td>
                   </tr>
-                ))}
+                  );
+                })}
               </tbody>
             </table>
           </div>
           <div style={{ marginTop: 8, fontSize: 11, color: 'var(--muted)' }}>
-            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie.
+            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie. Raadpleeg de website van de aanbieder voor de meest actuele prijzen en aanbiedingen.
           </div>
         </div>
 
@@ -322,7 +318,7 @@ export default function HomePage() {
                   { icon: '👫', title: 'Koppels', desc: 'HelloFresh en Foodbag zijn de populairste keuzes voor 2 personen.' },
                   { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin.' },
                   { icon: '🌱', title: 'Vegetariërs', desc: 'Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.' },
-                  { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (v.a. €5,38/portie, geen abonnement) is een budgetvriendelijke optie.' },
+                  { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (lage prijs/portie, geen abonnement) is een budgetvriendelijke optie.' },
                 ].map(({ icon, title, desc }) => (
                   <div key={title} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                     <div style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>{icon}</div>
@@ -344,10 +340,10 @@ export default function HomePage() {
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14 }}>
             {[
-              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is een budgetvriendelijke optie vanaf €5,38 per portie, zonder verplicht abonnement en met bezorging in heel België.' },
+              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is een budgetvriendelijke optie met een lage prijs per portie, zonder verplicht abonnement en met bezorging in heel België. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' },
               { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Je kan je abonnement meestal flexibel pauzeren of stopzetten, vaak tot enkele dagen voor de volgende levering. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement. De exacte voorwaarden verschillen per aanbieder.' },
               { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
-              { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Je betaalt €5 tot €9,69 per portie tegenover €3-5 bij zelf winkelen.' },
+              { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Maaltijdboxen kosten doorgaans meer per portie dan zelf boodschappen doen, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd.' },
               { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },
               { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3–5 dagen op voorhand. HelloFresh vraagt 5 dagen voor de gewenste leverdag, Foodbag en Marley Spoon doorgaans 4–5 werkdagen. Beschikbare leverdagen en regio\'s kunnen per aanbieder verschillen — Marley Spoon levert bijvoorbeeld niet in Wallonië.' },
             ].map(({ q, a }) => (

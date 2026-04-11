@@ -106,11 +106,11 @@ const situaties: Record<string, {
     seoTitel: 'Goedkoopste Maaltijdbox België 2026 — Beste prijs per portie',
     seoDesc: 'Welke maaltijdbox is het goedkoopst in België? Vergelijk Carrefour Simply You, Factor en HelloFresh. Inclusief bezorgkosten en kortingscodes.',
     faq: [
-      { q: 'Wat is de goedkoopste maaltijdbox per portie in België?', a: 'Factor is de goedkoopste aan €4,99 per portie, maar rekent €6 bezorgkosten. Carrefour Simply You kost €5,38 per portie met gratis bezorging en geen abonnement. HelloFresh is met welkomstkorting de eerste weken het voordeligst.' },
-      { q: 'Welke maaltijdbox heeft geen bezorgkosten?', a: 'HelloFresh, Foodbag, Marley Spoon, Ekomenu, Foodmaker en Carrefour Simply You bieden gratis bezorging. Factor rekent €6 bezorgkosten aan.' },
+      { q: 'Wat is de goedkoopste maaltijdbox per portie in België?', a: 'Factor heeft een van de laagste prijzen per portie maar rekent bezorgkosten aan. Carrefour Simply You biedt gratis bezorging en geen abonnement — ideaal als instap. HelloFresh is met de welkomstaanbieding de eerste weken sterk geprijsd.' },
+      { q: 'Welke maaltijdbox heeft geen bezorgkosten?', a: 'HelloFresh, Foodbag, Marley Spoon, Ekomenu, Foodmaker en Carrefour Simply You bieden gratis bezorging. Factor rekent bezorgkosten aan.' },
       { q: 'Kan ik een maaltijdbox eenmalig bestellen zonder abonnement?', a: 'Ja, Foodbag, Carrefour Simply You en Foodmaker laten je eenmalig bestellen zonder abonnement. Geen wekelijkse verplichtingen.' },
       { q: 'Is een maaltijdbox goedkoper dan zelf boodschappen doen?', a: 'Niet altijd. Per portie betaal je meer dan bij de supermarkt, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Reken je weggegooide ingrediënten en impulsaankopen mee, dan valt het werkelijke prijsverschil kleiner uit dan je denkt.' },
-      { q: 'Kan ik de welkomstkorting meerdere keren gebruiken?', a: 'Nee, welkomstdeals zijn éénmalig voor nieuwe klanten. Na de proefperiode stijgt de prijs naar het normale tarief. Wil je opnieuw profiteren van een korting? Kijk dan naar een andere aanbieder.' },
+      { q: 'Kan ik de welkomstaanbieding meerdere keren gebruiken?', a: 'Nee, welkomstkortingen zijn éénmalig voor nieuwe klanten. Na de proefperiode stijgt de prijs naar het normale tarief. Wil je opnieuw profiteren van een aanbieding? Kijk dan naar een andere aanbieder.' },
     ],
     nietGeschiktAls: [
       'Je al eerder klant was bij die aanbieder — welkomstkorting geldt alleen voor nieuwe klanten.',
@@ -158,7 +158,7 @@ const situaties: Record<string, {
     faq: [
       { q: 'Welke maaltijdbox is 100% biologisch in België?', a: 'Ekomenu is de enige 100% biologisch gecertificeerde maaltijdbox in België. Alle ingrediënten zijn bio en de verpakking is composteerbaar.' },
       { q: 'Wat is de meest duurzame maaltijdbox in België?', a: 'Ekomenu scoort het hoogst op duurzaamheid (9.5/10) dankzij biologische certificering, composteerbare verpakking en een CO2-footprint tracker. Foodbag scoort ook goed (8.5/10) met lokale Belgische ingrediënten.' },
-      { q: 'Is een biologische maaltijdbox duurder?', a: 'Ja, bio maaltijdboxen kosten doorgaans meer. Ekomenu kost v.a. €6,18 per portie tegenover €5,50 voor HelloFresh. De meerprijs weerspiegelt de biologische certificering en milieuvriendelijke verpakking.' },
+      { q: 'Is een biologische maaltijdbox duurder?', a: 'Ja, bio maaltijdboxen kosten doorgaans meer dan conventionele alternatieven. Ekomenu kost meer dan HelloFresh, maar de meerprijs weerspiegelt de biologische certificering en milieuvriendelijke verpakking.' },
       { q: 'Is biologisch echt gezonder?', a: 'Biologische producten bevatten geen synthetische pesticiden en worden duurzamer geteeld. Of dit directe gezondheidsvoordelen geeft is wetenschappelijk niet eenduidig, maar voor het milieu en de biodiversiteit maakt het zeker verschil.' },
       { q: 'Leveren biologische maaltijdboxen in heel België?', a: 'Ekomenu levert in Vlaanderen en Brussel, maar niet in Wallonië. Foodbag levert in heel België inclusief Wallonië en is ook een duurzame keuze dankzij lokale ingrediënten, al is het niet 100% bio gecertificeerd.' },
     ],
