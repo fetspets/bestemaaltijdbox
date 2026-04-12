@@ -29,6 +29,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
   const a = getAanbieder(slug);
   if (!a) notFound();
 
+  const baseUrl = 'https://www.bestemaaltijdbox.be';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Review',
@@ -44,11 +45,38 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     itemReviewed: {
       '@type': 'Product',
       name: a.naam,
-      url: a.affiliateUrl,
+      description: a.beschrijving,
+      brand: { '@type': 'Brand', name: a.naam },
+      ...(a.logo.startsWith('/') ? { image: `${baseUrl}${a.logo}` } : {}),
+      aggregateRating: {
+        '@type': 'AggregateRating',
+        ratingValue: a.score.totaal,
+        bestRating: 10,
+        worstRating: 1,
+        reviewCount: 1,
+      },
       offers: {
         '@type': 'Offer',
         price: a.prijsPerPortie,
         priceCurrency: 'EUR',
+        availability: 'https://schema.org/InStock',
+        shippingDetails: {
+          '@type': 'OfferShippingDetails',
+          shippingRate: {
+            '@type': 'MonetaryAmount',
+            value: a.gratisBezorging ? 0 : a.bezorgkosten,
+            currency: 'EUR',
+          },
+          shippingDestination: {
+            '@type': 'DefinedRegion',
+            addressCountry: 'BE',
+          },
+        },
+        hasMerchantReturnPolicy: {
+          '@type': 'MerchantReturnPolicy',
+          applicableCountry: 'BE',
+          returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+        },
       },
     },
   };
