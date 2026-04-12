@@ -47,7 +47,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
       name: a.naam,
       description: a.beschrijving,
       brand: { '@type': 'Brand', name: a.naam },
-      ...(a.logo.startsWith('/') ? { image: `${baseUrl}${a.logo}` } : {}),
+      image: a.logo.startsWith('/') ? `${baseUrl}${a.logo}` : `${baseUrl}/logo.png`,
       aggregateRating: {
         '@type': 'AggregateRating',
         ratingValue: a.score.totaal,
