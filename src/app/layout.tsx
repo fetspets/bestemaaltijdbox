@@ -7,14 +7,14 @@ import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Beste maaltijdbox België 2026 – Onafhankelijk vergeleken',
+    default: 'Beste maaltijdbox België 2026 – Eerlijk getest & snel vergeleken',
     template: '%s | BesteMaaltijdbox.be',
   },
-  description: 'Vergelijk de beste maaltijdboxen in België (HelloFresh, Foodbag, Marley Spoon). Eerlijke reviews, prijsvergelijking en welkomstkortingen voor nieuwe klanten.',
+  description: 'Welke maaltijdbox past bij jou? Wij testten 7 aanbieders in België op prijs, smaak en gemak. Vind snel de beste keuze voor jouw situatie.',
   keywords: ['beste maaltijdbox belgië', 'maaltijdbox vergelijken', 'hellofresh kortingscode', 'foodbag review', 'maaltijdbox 2026'],
   openGraph: {
-    title: 'Beste maaltijdbox België 2026 – Onafhankelijk vergeleken',
-    description: 'Vergelijk de beste maaltijdboxen in België (HelloFresh, Foodbag, Marley Spoon). Eerlijke reviews, prijsvergelijking en welkomstkortingen voor nieuwe klanten.',
+    title: 'Beste maaltijdbox België 2026 – Eerlijk getest & snel vergeleken',
+    description: 'Welke maaltijdbox past bij jou? Wij testten 7 aanbieders in België op prijs, smaak en gemak. Vind snel de beste keuze voor jouw situatie.',
     url: 'https://bestemaaltijdbox.be',
     siteName: 'BesteMaaltijdbox.be',
     locale: 'nl_BE',

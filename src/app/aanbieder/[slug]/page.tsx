@@ -11,8 +11,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a = getAanbieder(slug);
   if (!a) return {};
   return {
-    title: `${a.naam} Review België 2026 — Eerlijke test & ervaringen | BesteMaaltijdbox.be`,
-    description: `Lees onze uitgebreide ${a.naam} review. Prijs: €${a.prijsPerPortie.toFixed(2)}/portie. Score: ${a.score.totaal}/10. Getest over 4 weken. Inclusief kortingscode.`,
+    title: `${a.naam} review België 2026 – Is het de moeite waard? | BesteMaaltijdbox.be`,
+    description: `Lees onze eerlijke ${a.naam} review. Getest over 4 weken op prijs, smaak en gemak. Score: ${a.score.totaal}/10. Voor wie is het geschikt — en wanneer niet?`,
   };
 }
 
@@ -70,6 +70,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           shippingDestination: {
             '@type': 'DefinedRegion',
             addressCountry: 'BE',
+          },
+          deliveryTime: {
+            '@type': 'ShippingDeliveryTime',
+            handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 1, unitCode: 'DAY' },
+            transitTime: { '@type': 'QuantitativeValue', minValue: 1, maxValue: 3, unitCode: 'DAY' },
           },
         },
         hasMerchantReturnPolicy: {
