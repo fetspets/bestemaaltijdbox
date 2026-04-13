@@ -14,8 +14,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a1 = getAanbieder(v.aanbieder1Slug)!;
   const a2 = getAanbieder(v.aanbieder2Slug)!;
   return {
-    title: `${a1.naam} vs ${a2.naam}: welke maaltijdbox is beter in 2026?`,
-    description: `Eerlijke vergelijking van ${a1.naam} en ${a2.naam} in België. Prijs, smaak, variatie, bezorging en meer — bijgewerkt april 2026.`,
+    title: `${a1.naam} vs ${a2.naam} (2026) – Welke past het best bij jou?`,
+    description: `Twijfel je tussen ${a1.naam} en ${a2.naam}? Wij vergeleken prijs, smaak en gemak zodat jij snel de juiste keuze maakt.`,
   };
 }
 
