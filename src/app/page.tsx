@@ -75,18 +75,18 @@ export default function HomePage() {
       {/* HERO */}
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 24px' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          ✓ Onafhankelijk getest · maart 2026
+          ✓ Onafhankelijk onderzocht · maart 2026
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 8vw, 52px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 12 }}>
           De beste maaltijdbox<br />in <span style={{ color: 'var(--mint)' }}>België</span>
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          We kochten en testten alle 7 maaltijdboxen gedurende 4 weken. Eerlijke rankings op basis van smaak, prijs en gemak — geen betaalde posities.
+          We onderzochten alle 7 maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke rankings op basis van smaak, prijs en gemak — geen betaalde posities.
         </p>
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
-          {[['7', 'boxen getest'], ['4', 'weken getest'], ['2026', 'bijgewerkt']].map(([num, label]) => (
+          {[['7', 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: '#1B4332' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{label}</div>
@@ -98,7 +98,7 @@ export default function HomePage() {
         <div style={{ background: 'white', borderRadius: 16, padding: 20, boxShadow: '0 4px 24px rgba(0,0,0,.08)', border: '1px solid var(--rule)', marginBottom: 32 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>Waarom onze rankings vertrouwen?</div>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
-            {[['🧪', 'Elke box 4 weken getest'], ['💰', 'Zelf betaald'], ['🔄', 'Maandelijks bijgewerkt'], ['🇧🇪', 'Focus op België']].map(([icon, text]) => (
+            {[['🧪', 'Uitgebreid onderzocht'], ['📊', 'Gebaseerd op gebruikersdata'], ['🔄', 'Regelmatig bijgewerkt'], ['🇧🇪', 'Focus op België']].map(([icon, text]) => (
               <div key={text} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13 }}>
                 <div style={{ width: 28, height: 28, borderRadius: 6, background: '#E8F5EE', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, flexShrink: 0 }}>{icon}</div>
                 {text}

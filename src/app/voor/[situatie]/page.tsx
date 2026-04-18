@@ -16,7 +16,7 @@ const situaties: Record<string, {
   koppel: {
     titel: 'Beste maaltijdbox voor koppels',
     h1: 'Beste maaltijdbox voor koppels in België (2026)',
-    intro: 'Op zoek naar de beste maaltijdbox voor 2 personen? Wij testten alle Belgische maaltijdboxen specifiek voor koppels en vergeleken prijs, receptvariatie en flexibiliteit.',
+    intro: 'Op zoek naar de beste maaltijdbox voor 2 personen? Wij onderzochten alle Belgische maaltijdboxen specifiek voor koppels en vergeleken prijs, receptvariatie en flexibiliteit op basis van gebruikerservaringen en publieke data.',
     uitleg: 'Een maaltijdbox voor koppels moet de juiste portiegrootte hebben (2 personen), voldoende receptvariatie bieden zodat je niet elke week hetzelfde eet, en makkelijk opzegbaar zijn. HelloFresh wint hier door de enorme keuze van 30+ recepten per week en de lage prijs per portie. Foodbag scoort beter op kwaliteit van lokale ingrediënten maar kost meer.',
     icon: '👫',
     seoTitel: 'Beste Maaltijdbox voor Koppels België 2026 — Top 5 vergeleken',
