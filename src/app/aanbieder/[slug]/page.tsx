@@ -114,7 +114,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div style={{ marginBottom: 28 }}>
             <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--mint)', marginBottom: 8 }}>REVIEW</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
-              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'var(--cream)', border: '2px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 34 }}>{a.logo}</div>
+              <div style={{ width: 64, height: 64, borderRadius: 16, background: 'var(--cream)', border: '2px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 34 }}>
+                {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 6 }} /> : a.logo}
+              </div>
               <div>
                 <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 38, fontWeight: 900, margin: 0, lineHeight: 1 }}>{a.naam}</h1>
                 <p style={{ fontSize: 15, color: 'var(--muted)', margin: '4px 0 0' }}>{a.tagline}</p>
@@ -255,7 +257,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         <div style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: 'white', border: '1.5px solid var(--rule)', borderRadius: 16, padding: 24, boxShadow: '0 4px 24px rgba(0,0,0,.08)', marginBottom: 16 }}>
             <div style={{ textAlign: 'center', marginBottom: 16 }}>
-              <div style={{ fontSize: 44, marginBottom: 8 }}>{a.logo}</div>
+              <div style={{ width: 72, height: 72, margin: '0 auto 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 44 }}>
+                {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain' }} /> : a.logo}
+              </div>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900 }}>{a.naam}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 12 }}>{a.tagline}</div>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 52, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</div>
