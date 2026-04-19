@@ -18,7 +18,7 @@ const situaties: Record<string, {
   koppel: {
     titel: 'Beste maaltijdbox voor koppels',
     h1: 'Beste maaltijdbox voor koppels in België (2026)',
-    intro: 'Op zoek naar de beste maaltijdbox voor 2 personen? Wij testten alle Belgische maaltijdboxen specifiek voor koppels en vergeleken prijs, receptvariatie en flexibiliteit.',
+    intro: 'Op zoek naar de beste maaltijdbox voor 2 personen? Wij onderzochten alle Belgische maaltijdboxen specifiek voor koppels en vergeleken prijs, receptvariatie en flexibiliteit op basis van gebruikerservaringen en publieke data.',
     uitleg: '',
     uitlegParagraphs: [
       'Stel: jullie koken 3 à 4 avonden per week samen. Je wil variatie, maar ook niet elk weekend boodschappen doen. Een maaltijdbox lost precies dat op — maar welke past bij jullie leefstijl als koppel?',
@@ -27,7 +27,7 @@ const situaties: Record<string, {
     ],
     icon: '👫',
     seoTitel: 'Beste maaltijdbox voor koppels in België (2026) – Vergeleken',
-    seoDesc: 'Welke maaltijdbox past het beste bij jullie als koppel? Vergelijk HelloFresh, Foodbag en meer op prijs, porties en flexibiliteit. Eerlijk getest.',
+    seoDesc: 'Welke maaltijdbox past het beste bij jullie als koppel? Vergelijk HelloFresh, Foodbag en meer op prijs, porties en flexibiliteit. Gebaseerd op gebruikerservaringen en publieke data.',
     faq: [
       { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh is een toegankelijke optie voor koppels, zeker met de welkomstkorting. Marley Spoon en Foodbag zijn duurder maar bieden een andere kwaliteit — Foodbag door lokale ingrediënten, Marley Spoon door uitgebreidere recepten.' },
       { q: 'Kan ik een maaltijdbox voor 2 personen makkelijk opzeggen?', a: 'Ja, HelloFresh, Foodbag en Marley Spoon laten je wekelijks opzeggen of pauzeren. Je zit nergens aan vast. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement.' },

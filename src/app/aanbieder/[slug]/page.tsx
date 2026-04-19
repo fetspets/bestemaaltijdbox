@@ -12,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!a) return {};
   return {
     title: `${a.naam} review België 2026 – Is het de moeite waard? | BesteMaaltijdbox.be`,
-    description: `Lees onze eerlijke ${a.naam} review. Getest over 4 weken op prijs, smaak en gemak. Score: ${a.score.totaal}/10. Voor wie is het geschikt — en wanneer niet?`,
+    description: `Lees onze eerlijke ${a.naam} review. Score: ${a.score.totaal}/10. Gebaseerd op gebruikerservaringen en onafhankelijk onderzoek. Voor wie is het geschikt — en wanneer niet?`,
   };
 }
 
@@ -125,7 +125,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             <div style={{ display: 'flex', gap: 16, fontSize: 13, color: 'var(--muted)', flexWrap: 'wrap' }}>
               <span>Door <strong style={{ color: 'var(--ink)' }}>Redactie BesteMaaltijdbox</strong></span>
               <span>·</span><span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>april 2026</strong></span>
-              <span>·</span><span>Getest over <strong style={{ color: 'var(--ink)' }}>4 weken</strong></span>
+              <span>·</span><span>Gebaseerd op <strong style={{ color: 'var(--ink)' }}>gebruikersdata & onderzoek</strong></span>
               <span>·</span><span>Ranking: <strong style={{ color: '#1B4332' }}>#{a.ranking} van 7</strong></span>
             </div>
           </div>
@@ -134,7 +134,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div style={{ background: 'white', border: '1.5px solid var(--mint)', borderRadius: 16, padding: 24, marginBottom: 24, position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700 }}>Onze score na 4 weken testen</div>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700 }}>Onze beoordeling</div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
                 <span style={{ fontFamily: 'Fraunces, serif', fontSize: 52, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</span>
                 <span style={{ fontSize: 20, color: 'var(--muted)' }}>/10</span>
@@ -191,7 +191,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* Testervaring */}
           <div style={{ marginBottom: 24 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 12, paddingBottom: 10, borderBottom: '2px solid var(--ink)' }}>
-              Onze testervaring
+              Onze bevindingen
             </h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151' }}>{a.uitgebreideReview.testervaring}</p>
           </div>
