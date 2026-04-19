@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { aanbieders } from '@/lib/aanbieders';
+import Quiz from '@/components/Quiz';
 
 const jsonLd = {
   '@context': 'https://schema.org',

@@ -29,9 +29,10 @@ export default function Navbar() {
             {[
               { href: '/', label: 'Vergelijken' },
               { href: '/kortingscodes', label: 'Kortingscodes' },
+              { href: '/blog', label: 'Blog' },
+              { href: '/gids/maaltijdbox-voor-gezinnen', label: 'Gidsen' },
               { href: '/voor/koppel', label: 'Voor koppels' },
               { href: '/voor/gezin', label: 'Voor gezinnen' },
-              { href: '/over-ons', label: 'Over ons' },
             ].map(link => (
               <Link key={link.href} href={link.href} style={{ padding: '6px 12px', fontSize: 13, fontWeight: 600, color: 'var(--ink)', textDecoration: 'none', borderRadius: 6, fontFamily: 'DM Sans, sans-serif' }}>
                 {link.label}
@@ -60,8 +61,14 @@ export default function Navbar() {
               { href: '/kortingscodes', label: '🏷️ Kortingscodes' },
               { href: '/voor/koppel', label: '👫 Voor koppels' },
               { href: '/voor/gezin', label: '👨‍👩‍👧 Voor gezinnen' },
+              { href: '/voor/singles', label: '🧑 Voor singles' },
               { href: '/voor/vegetarisch', label: '🌱 Vegetarisch' },
               { href: '/voor/budget', label: '💰 Budget' },
+              { href: '/blog', label: '📝 Blog' },
+              { href: '/vergelijk/hellofresh-vs-foodbag', label: '⚖️ HelloFresh vs Foodbag' },
+              { href: '/vergelijk/hellofresh-vs-marley-spoon', label: '⚖️ HelloFresh vs Marley Spoon' },
+              { href: '/gids/maaltijdbox-voor-gezinnen', label: '📖 Gids: Voor gezinnen' },
+              { href: '/gids/goedkoopste-maaltijdbox-belgie', label: '💰 Gids: Goedkoopste' },
               { href: '/over-ons', label: 'ℹ️ Over ons' },
             ].map(link => (
               <Link key={link.href} href={link.href}

@@ -29,8 +29,10 @@ export default function Footer() {
                 { naam: 'HelloFresh review', slug: 'hellofresh' },
                 { naam: 'Foodbag review', slug: 'foodbag' },
                 { naam: 'Marley Spoon review', slug: 'marley-spoon' },
-                { naam: '15gram review', slug: '15gram' },
                 { naam: 'Ekomenu review', slug: 'ekomenu' },
+                { naam: 'Factor review', slug: 'factor' },
+                { naam: 'Foodmaker review', slug: 'foodmaker' },
+                { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you' },
               ].map(a => (
                 <Link key={a.slug} href={`/aanbieder/${a.slug}`} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{a.naam}</Link>
               ))}
@@ -44,9 +46,45 @@ export default function Footer() {
               {[
                 { label: 'Voor koppels', href: '/voor/koppel' },
                 { label: 'Voor gezinnen', href: '/voor/gezin' },
+                { label: 'Voor singles', href: '/voor/singles' },
                 { label: 'Vegetarisch', href: '/voor/vegetarisch' },
                 { label: 'Beste budget', href: '/voor/budget' },
                 { label: 'Biologisch', href: '/voor/bio' },
+              ].map(l => (
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Vergelijk & Gidsen */}
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Vergelijk & Gidsen</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[
+                { label: 'HelloFresh vs Foodbag', href: '/vergelijk/hellofresh-vs-foodbag' },
+                { label: 'HelloFresh vs Marley Spoon', href: '/vergelijk/hellofresh-vs-marley-spoon' },
+                { label: 'Foodbag vs Marley Spoon', href: '/vergelijk/foodbag-vs-marley-spoon' },
+                { label: 'HelloFresh vs Ekomenu', href: '/vergelijk/hellofresh-vs-ekomenu' },
+                { label: 'Beste voor gezinnen', href: '/gids/maaltijdbox-voor-gezinnen' },
+                { label: 'Beste voor singles', href: '/gids/beste-maaltijdbox-voor-singles' },
+                { label: 'Goedkoopste maaltijdbox', href: '/gids/goedkoopste-maaltijdbox-belgie' },
+                { label: 'Beste biologische box', href: '/gids/beste-biologische-maaltijdbox-belgie' },
+              ].map(l => (
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+              ))}
+            </div>
+          </div>
+
+          {/* Blog */}
+          <div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Blog</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
+              {[
+                { label: 'Alle artikels', href: '/blog' },
+                { label: 'Maaltijdbox of zelf koken?', href: '/blog/maaltijdbox-of-zelf-koken-belgie' },
+                { label: 'Maaltijdbox opzeggen', href: '/blog/hoe-maaltijdbox-opzeggen-belgie' },
+                { label: 'Vegetarisch koken', href: '/blog/vegetarisch-koken-maaltijdbox' },
+                { label: 'Gids voor beginners', href: '/blog/maaltijdbox-starten-beginners' },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
               ))}
@@ -61,6 +99,7 @@ export default function Footer() {
                 { label: 'Kortingscodes', href: '/kortingscodes' },
                 { label: 'Over ons', href: '/over-ons' },
                 { label: 'Privacybeleid', href: '/privacy' },
+                { label: 'Algemene voorwaarden', href: '/voorwaarden' },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
               ))}

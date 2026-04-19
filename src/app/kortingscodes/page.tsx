@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export const metadata = {
   title: 'Kortingscodes Maaltijdbox België 2026 — Bespaar op je eerste box',
-  description: 'Alle actieve kortingscodes voor maaltijdboxen in België. Bespaar op HelloFresh, Foodbag, Marley Spoon en meer. Bijgewerkt maart 2026.',
+  description: 'Alle actieve kortingscodes voor maaltijdboxen in België. Bespaar op HelloFresh, Foodbag, Marley Spoon en meer. Bijgewerkt april 2026.',
 };
 
 const kortingen = [
@@ -11,11 +11,11 @@ const kortingen = [
     naam: 'HelloFresh',
     logo: '🌿',
     code: null,
-    deal: 'Tot €90 korting verspreid over de eerste 4 boxen',
-    bedrag: 'Tot €90',
+    deal: 'Tot €60 korting verspreid over de eerste 3 boxen',
+    bedrag: 'Tot €60',
     kleur: '#1B4332',
-    beschrijving: 'Geen code nodig — de korting wordt automatisch toegepast via onze link. Geldig voor nieuwe klanten.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Eerste 4 boxen · Direct opzegbaar',
+    beschrijving: 'Geen kortingscode nodig — de korting wordt automatisch toegepast wanneer je via onze link bestelt. Verspreid als: tot €37 op box 1, tot €12 op box 2, tot €5 op box 3. Vervalt 70 dagen na eerste bestelling.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 3 boxen · Direct opzegbaar',
     actief: true,
   },
   {
@@ -23,34 +23,46 @@ const kortingen = [
     naam: 'Marley Spoon',
     logo: '🌍',
     code: null,
-    deal: '€30 korting op de eerste 2 weken',
-    bedrag: '€30',
+    deal: 'Tot 35% korting verspreid over de eerste 5 boxen',
+    bedrag: 'Tot 35%',
     kleur: '#7C3AED',
-    beschrijving: 'Geen code nodig — korting wordt automatisch toegepast via onze affiliate link. Geldig voor nieuwe klanten in België.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Eerste 2 weken · Direct opzegbaar',
+    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 35% + gratis verzending op box 1, 30% op box 2, 10% op box 3, 10% op box 4, 20% op box 5.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 5 boxen · Direct opzegbaar',
     actief: true,
   },
   {
     slug: 'foodbag',
     naam: 'Foodbag',
     logo: '🥦',
-    code: null,
-    deal: 'Welkomstkorting voor nieuwe klanten',
-    bedrag: 'Korting',
+    code: 'FOODBAGx60',
+    deal: '3x €20 korting op je eerste 3 bestellingen',
+    bedrag: '€60 totaal',
     kleur: '#1E40AF',
-    beschrijving: 'Bekijk de actuele welkomstdeal via onze link. Foodbag geeft regelmatig kortingen aan nieuwe klanten.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Bekijk website voor actuele aanbieding',
+    beschrijving: 'Gebruik code FOODBAGx60 bij je eerste bestelling en krijg 3x €20 korting verspreid over je eerste 3 Foodbag-bestellingen. Totale besparing: €60.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Code: FOODBAGx60 · Geldig t.e.m. 01/01/2027 · 3x €20 op de eerste 3 bestellingen',
     actief: true,
   },
   {
-    slug: '15gram',
-    naam: '15gram',
+    slug: 'factor',
+    naam: 'Factor',
+    logo: '⚡',
+    code: null,
+    deal: 'Bekijk de huidige welkomstdeal',
+    bedrag: 'Deal',
+    kleur: '#7C3AED',
+    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk factormeals.be voor de huidige welkomstaanbieding voor nieuwe klanten.',
+    voorwaarden: 'Bekijk website voor actuele aanbieding',
+    actief: false,
+  },
+  {
+    slug: 'foodmaker',
+    naam: 'Foodmaker',
     logo: '👨‍🍳',
     code: null,
     deal: 'Bekijk de huidige welkomstdeal',
     bedrag: 'Deal',
     kleur: '#1B4332',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding.',
+    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk foodmaker.be voor de huidige welkomstaanbieding.',
     voorwaarden: 'Bekijk website voor actuele aanbieding',
     actief: false,
   },
@@ -67,52 +79,16 @@ const kortingen = [
     actief: false,
   },
   {
-    slug: 'smartmat',
-    naam: 'Smartmat',
-    logo: '⚡',
-    code: null,
-    deal: 'Bekijk de huidige welkomstdeal',
-    bedrag: 'Deal',
-    kleur: '#1B4332',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding.',
-    voorwaarden: 'Bekijk website voor actuele aanbieding',
-    actief: false,
-  },
-  {
-    slug: 'delhaize-click-cook',
-    naam: 'Delhaize Click&Cook',
-    logo: '🛒',
-    code: null,
-    deal: 'Geen abonnement nodig — bestel wanneer je wil',
-    bedrag: 'Geen abo',
-    kleur: '#1B4332',
-    beschrijving: 'Delhaize Click&Cook heeft geen kortingscode maar heeft ook geen verplicht abonnement. Bestel gewoon wanneer het jou past.',
-    voorwaarden: 'Geen abonnement · Bestel wanneer je wil',
-    actief: true,
-  },
-  {
     slug: 'carrefour-simply-you',
     naam: 'Carrefour Simply You',
     logo: '🏪',
-    code: null,
-    deal: 'Goedkoopste optie — geen code nodig',
-    bedrag: 'v.a. €4,90',
+    code: 'BOXNL20',
+    deal: '€20 korting op je eerste box',
+    bedrag: '€20 korting',
     kleur: '#1B4332',
-    beschrijving: 'Carrefour Simply You is al de goedkoopste maaltijdbox van België aan €4,90/portie. Geen kortingscode nodig.',
-    voorwaarden: 'Geen abonnement · Goedkoopste prijs per portie',
+    beschrijving: 'Gebruik code BOXNL20 bij je eerste bestelling op carrefour.be. Geen abonnement nodig, bezorging in heel België inclusief Wallonië.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Code BOXNL20 · Geen abonnement vereist',
     actief: true,
-  },
-  {
-    slug: 'cirkle',
-    naam: 'Cirkle',
-    logo: '♻️',
-    code: null,
-    deal: 'Bekijk de huidige welkomstdeal',
-    bedrag: 'Deal',
-    kleur: '#166534',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding.',
-    voorwaarden: 'Bekijk website voor actuele aanbieding',
-    actief: false,
   },
 ];
 
@@ -130,7 +106,7 @@ export default function KortingscodesPagina() {
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          🏷️ Bijgewerkt maart 2026
+          🏷️ Bijgewerkt april 2026
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
           Kortingscodes maaltijdbox<br />België 2026
@@ -143,7 +119,7 @@ export default function KortingscodesPagina() {
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>Actieve deals</h2>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt maart 2026</div>
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026</div>
       </div>
 
       {kortingen.filter(k => k.actief).map((k, i) => (

@@ -2,18 +2,19 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import CookieBanner from '@/components/CookieBanner';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: {
-    default: 'Beste Maaltijdbox België 2026 — Onafhankelijke Vergelijking',
+    default: 'Beste maaltijdbox België 2026 – welke past écht bij jou?',
     template: '%s | BesteMaaltijdbox.be',
   },
-  description: 'Onafhankelijke vergelijking van alle maaltijdboxen in België. Reviews, prijzen en kortingscodes voor HelloFresh, Foodbag, Marley Spoon en meer.',
+  description: 'Welke maaltijdbox past bij jou? Wij testten 7 aanbieders in België op prijs, smaak en gemak. Vind snel de beste keuze voor jouw situatie.',
   keywords: ['beste maaltijdbox belgië', 'maaltijdbox vergelijken', 'hellofresh kortingscode', 'foodbag review', 'maaltijdbox 2026'],
   openGraph: {
-    title: 'Beste Maaltijdbox België 2026',
-    description: 'Onafhankelijke vergelijking van alle Belgische maaltijdboxen.',
+    title: 'Beste maaltijdbox België 2026 – welke past écht bij jou?',
+    description: 'Welke maaltijdbox past bij jou? Wij testten 7 aanbieders in België op prijs, smaak en gemak. Vind snel de beste keuze voor jouw situatie.',
     url: 'https://bestemaaltijdbox.be',
     siteName: 'BesteMaaltijdbox.be',
     locale: 'nl_BE',
@@ -38,6 +39,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="nl">
       <head>
+        {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
+        {/* @ts-ignore */}
+        <meta name="impact-site-verification" value="075beb09-740b-4a00-a981-14a75a9e2f6c" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
@@ -59,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <CookieBanner />
 
         {/* Google Analytics */}
         <Script
