@@ -8,79 +8,164 @@ const situaties: Record<string, {
   h1: string;
   intro: string;
   uitleg: string;
+  uitlegParagraphs?: string[];
   icon: string;
   seoTitel: string;
   seoDesc: string;
   faq: { q: string; a: string }[];
+  nietGeschiktAls: string[];
 }> = {
   koppel: {
     titel: 'Beste maaltijdbox voor koppels',
     h1: 'Beste maaltijdbox voor koppels in België (2026)',
     intro: 'Op zoek naar de beste maaltijdbox voor 2 personen? Wij onderzochten alle Belgische maaltijdboxen specifiek voor koppels en vergeleken prijs, receptvariatie en flexibiliteit op basis van gebruikerservaringen en publieke data.',
-    uitleg: 'Een maaltijdbox voor koppels moet de juiste portiegrootte hebben (2 personen), voldoende receptvariatie bieden zodat je niet elke week hetzelfde eet, en makkelijk opzegbaar zijn. HelloFresh wint hier door de enorme keuze van 30+ recepten per week en de lage prijs per portie. Foodbag scoort beter op kwaliteit van lokale ingrediënten maar kost meer.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'Stel: jullie koken 3 à 4 avonden per week samen. Je wil variatie, maar ook niet elk weekend boodschappen doen. Een maaltijdbox lost precies dat op — maar welke past bij jullie leefstijl als koppel?',
+      'HelloFresh wordt door veel koppels gekozen omdat je door het grote receptenaanbod zelden twee keer hetzelfde op tafel zet. Dat maakt het makkelijker om het vol te houden zonder snel te vervelen. Marley Spoon is interessant voor wie van koken een echte avondactiviteit wil maken: de recepten vragen meer aandacht, maar het resultaat voelt ook culinairder. Vergelijk beide in onze <a href="/vergelijk/hellofresh-vs-marley-spoon" style="color:#1B4332;font-weight:600;text-decoration:underline">HelloFresh vs Marley Spoon vergelijking</a>.',
+      'Foodbag is vooral interessant voor koppels die bewust lokaal en Belgisch willen eten. De ingrediënten komen via een kortere keten — dat merk je aan de versheid. Het is wel duurder dan de internationale alternatieven, dus het is een bewuste keuze. Lees meer in onze <a href="/aanbieder/foodbag" style="color:#1B4332;font-weight:600;text-decoration:underline">volledige Foodbag review</a>.',
+    ],
     icon: '👫',
-    seoTitel: 'Beste Maaltijdbox voor Koppels België 2026 — Top 5 vergeleken',
-    seoDesc: 'Welke maaltijdbox is het beste voor 2 personen in België? Wij vergeleken HelloFresh, Foodbag, Marley Spoon en meer. Eerlijke reviews en kortingscodes.',
+    seoTitel: 'Beste maaltijdbox voor koppels in België (2026) – Vergeleken',
+    seoDesc: 'Welke maaltijdbox past het beste bij jullie als koppel? Vergelijk HelloFresh, Foodbag en meer op prijs, porties en flexibiliteit. Eerlijk getest.',
     faq: [
-      { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh is het goedkoopst voor koppels vanaf €5,50 per portie, zeker met de welkomstkorting. Marley Spoon en Foodbag zijn duurder maar bieden hogere kwaliteit.' },
-      { q: 'Kan ik een maaltijdbox voor 2 personen makkelijk opzeggen?', a: 'Ja, HelloFresh, Foodbag en Marley Spoon laten je wekelijks opzeggen of pauzeren. Je zit nergens aan vast.' },
-      { q: 'Hoeveel maaltijden per week moet ik minimaal bestellen als koppel?', a: 'De meeste aanbieders vragen minimaal 2-3 maaltijden per week. HelloFresh laat je kiezen tussen 2, 3, 4 of 5 maaltijden per week.' },
+      { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh is een toegankelijke optie voor koppels, zeker met de welkomstkorting. Marley Spoon en Foodbag zijn duurder maar bieden een andere kwaliteit — Foodbag door lokale ingrediënten, Marley Spoon door uitgebreidere recepten.' },
+      { q: 'Kan ik een maaltijdbox voor 2 personen makkelijk opzeggen?', a: 'Ja, HelloFresh, Foodbag en Marley Spoon laten je wekelijks opzeggen of pauzeren. Je zit nergens aan vast. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement.' },
+      { q: 'Hoeveel maaltijden per week is realistisch als koppel?', a: 'De meeste koppels starten met 3 maaltijden per week — goed voor de drukke doordeweekse dagen, met ruimte voor een restaurant of zelf koken in het weekend. Je kan altijd aanpassen of pauzeren.' },
+      { q: 'Is een maaltijdbox voor 2 personen duurder dan boodschappen?', a: 'Per portie betaal je doorgaans meer dan bij de supermarkt, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Voor koppels die regelmatig restjes weggooien of impulsaankopen doen bij de winkel, valt de werkelijke kostprijs vaak mee.' },
+      { q: 'Kan ik als koppel ook kant-en-klare maaltijden bestellen?', a: 'Ja. Factor en Foodmaker leveren kant-en-klare maaltijden die je alleen nog moet opwarmen. Dat is handig voor drukke avonden, maar je mist het kookplezier van een klassieke maaltijdbox.' },
+    ],
+    nietGeschiktAls: [
+      'Je maar 1 à 2 keer per week kookt — dan is de kostprijs per maaltijd relatief hoog.',
+      'Jullie hebben sterk verschillende smaakvoorkeuren die moeilijk te combineren zijn in één recept.',
+      'Je schema is heel onregelmatig en je kan moeilijk voorspellen wanneer je thuis kookt.',
     ],
   },
   gezin: {
     titel: 'Beste maaltijdbox voor gezinnen',
     h1: 'Beste maaltijdbox voor gezinnen in België (2026)',
     intro: 'Welke maaltijdbox past het beste bij een gezin met kinderen? Wij vergeleken portiegroottes, bereidingstijd en kindvriendelijke recepten van alle Belgische maaltijdboxen.',
-    uitleg: 'Voor gezinnen zijn drie dingen cruciaal: voldoende porties (3-5 personen), snelle bereidingstijd zodat het haalbaar is op drukke avonden, en kindvriendelijke recepten. Smartmat wint hier met recepten klaar in 20 minuten en porties voor tot 5 personen. Foodbag is de beste keuze als je lokale Belgische kwaliteit wil voor het hele gezin.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'Hoe zorg je voor gevarieerde, gezonde maaltijden op een drukke dinsdagavond — met kinderen die wachten, huiswerk dat gemaakt moet worden, en geen zin om na te denken over wat er in de koelkast ligt?',
+      'Foodbag\'s "Busy Day" lijn is specifiek voor dat probleem gemaakt: maaltijden klaar in 20 minuten, weinig afwas, en toch verse ingrediënten van Belgische boerderijen. HelloFresh is interessant als je een groter gezin hebt of meer keuze wil: doordat je elke week zelf kiest, kan je de selectie afstemmen op wat de kinderen die week lekker vinden. Lees onze <a href="/gids/maaltijdbox-voor-gezinnen" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids voor gezinnen</a> voor een diepere vergelijking.',
+      'Let ook op de bezorgdagen. Foodbag levert van vrijdag tot maandag — handig als je het weekend wil plannen. HelloFresh is flexibeler met meerdere weekdagen. Beide leveren in heel België inclusief Wallonië; Marley Spoon niet.',
+    ],
     icon: '👨‍👩‍👧',
-    seoTitel: 'Beste Maaltijdbox voor Gezinnen België 2026 — Snel en lekker',
-    seoDesc: 'Welke maaltijdbox is het beste voor gezinnen met kinderen in België? Vergelijk Smartmat, Foodbag, HelloFresh en meer. Grote porties, snelle recepten.',
+    seoTitel: 'Beste maaltijdbox voor gezinnen België 2026 – Snel, lekker & kindvriendelijk',
+    seoDesc: 'Geen tijd om te koken? Bekijk welke maaltijdbox het beste werkt voor gezinnen met kinderen. Snelle recepten, grote porties, heel België.',
     faq: [
-      { q: 'Welke maaltijdbox is het snelst klaar voor een gezin?', a: 'Smartmat is de snelste met alle recepten klaar in maximaal 20 minuten. Ideaal voor drukke gezinnen met kinderen.' },
-      { q: 'Welke maaltijdbox heeft de grootste porties voor gezinnen?', a: 'Foodbag en HelloFresh bieden boxen voor tot 5 personen. Smartmat gaat ook tot 5 personen.' },
-      { q: 'Zijn maaltijdboxen kindvriendelijk?', a: 'HelloFresh en Smartmat hebben specifieke kindvriendelijke recepten. Foodbag biedt ook een "Busy Day" lijn met eenvoudige maaltijden.' },
+      { q: 'Welke maaltijdbox is het snelst klaar voor een gezin?', a: 'Foodbag "Busy Day" heeft maaltijden klaar in 20 minuten, met eenvoudige instructies en weinig afwas. HelloFresh "Quick & Easy" recepten zijn klaar in 25–30 minuten. Beide zijn goed haalbaar op drukke schoolavonden.' },
+      { q: 'Welke maaltijdbox heeft de grootste porties voor gezinnen?', a: 'Foodbag en HelloFresh bieden boxen voor tot 5 personen. HelloFresh gaat als enige aanbieder tot 6 personen — handig voor grotere gezinnen of als er regelmatig iemand extra aan tafel zit.' },
+      { q: 'Kunnen kinderen kieskeurig zijn bij maaltijdboxen?', a: 'HelloFresh heeft op zijn website een "Gezin" filter waarmee je kindvriendelijke recepten kan selecteren. Foodbag\'s Originals-lijn bevat veel vertrouwde Belgische klassiekers die ook bij kinderen in de smaak vallen.' },
+      { q: 'Wat als een kind een voedingsallergie heeft?', a: 'HelloFresh en Ekomenu bieden de meest uitgebreide filteropties per allergie (gluten, lactose, noten). Foodbag heeft minder filteropties maar de ingrediëntlijsten zijn transparant per recept, zodat je zelf kan controleren.' },
+      { q: 'Kan ik de maaltijdbox pauzeren tijdens schoolvakanties?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je leveringen pauzeren of overslaan, doorgaans tot 5 dagen voor de volgende leverdatum. Handig als je op vakantie bent of een week wil overslaan.' },
+    ],
+    nietGeschiktAls: [
+      'Je gezin bestaat uit 5 of meer personen en je kookt elke dag — de kostprijs loopt dan snel op.',
+      'Kinderen zijn heel kieskeurig en willen geen variatie of nieuwe gerechten uitproberen.',
+      'Je wil volledige controle over elke ingredient (bijv. bij ernstige allergieën) — raadpleeg dan altijd de allergeninformatie per recept.',
     ],
   },
   vegetarisch: {
     titel: 'Beste vegetarische maaltijdbox',
     h1: 'Beste vegetarische maaltijdbox in België (2026)',
     intro: 'Op zoek naar een maaltijdbox met veel vegetarische of vegan recepten? Wij vergeleken het plantaardige aanbod van alle Belgische maaltijdboxen.',
-    uitleg: 'Voor vegetariërs en vegans zijn er grote verschillen tussen de aanbieders. Ekomenu is de beste keuze met 100% biologische ingrediënten en een volledig vegetarisch/vegan menu. Marley Spoon biedt ook uitgebreide vegan opties. HelloFresh heeft meer dan 6 vegetarische recepten per week maar is niet volledig vegetarisch.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'Niet elke maaltijdbox met "vegetarische opties" is geschikt voor wie echt vegetarisch of vegan eet. Er is een fundamenteel verschil: sommige boxen bieden wekelijks een paar plantaardige recepten naast vlees, andere zijn volledig plantaardig. Die keuze heeft meer impact op je dagelijkse ervaring dan je op het eerste gezicht zou denken.',
+      'Ekomenu is de enige aanbieder in België die uitsluitend plantaardig werkt — je hoeft nooit te kiezen of te filteren. Dat maakt het rustiger in gebruik voor wie vegetarisch of vegan eet. De "Groenteteller" helpt je bijhouden of je genoeg groenten binnenkrijgt per week. Lees onze <a href="/aanbieder/ekomenu" style="color:#1B4332;font-weight:600;text-decoration:underline">volledige Ekomenu review</a> voor alle details. Nadeel: bezorging enkel in Vlaanderen en Brussel.',
+      'Als je vegetarisch wil eten maar je partner niet, zijn Marley Spoon en HelloFresh interessanter — je kiest elke week zelf welke recepten je wil, ook volledig plantaardige. Je moet dan wel actief filteren per week. Lees onze <a href="/aanbieder/marley-spoon" style="color:#1B4332;font-weight:600;text-decoration:underline">Marley Spoon review</a> voor een overzicht van het vegan aanbod.',
+    ],
     icon: '🌱',
-    seoTitel: 'Beste Vegetarische Maaltijdbox België 2026 — Bio & Vegan opties',
-    seoDesc: 'Welke maaltijdbox heeft de beste vegetarische en vegan opties in België? Vergelijk Ekomenu, Marley Spoon, HelloFresh. Biologisch en duurzaam.',
+    seoTitel: 'Beste vegetarische maaltijdbox België 2026 – Vegan & bio vergeleken',
+    seoDesc: 'Vegetarisch of vegan eten met een maaltijdbox? Ontdek welke aanbieders écht geschikt zijn en waar je op moet letten.',
     faq: [
-      { q: 'Welke maaltijdbox is volledig vegetarisch in België?', a: 'Ekomenu is de enige volledig vegetarische en vegane maaltijdbox in België met 100% biologische ingrediënten.' },
-      { q: 'Heeft HelloFresh vegan opties in België?', a: 'Ja, HelloFresh biedt wekelijks meerdere vegetarische en vegan recepten aan, maar is niet uitsluitend vegetarisch.' },
-      { q: 'Welke maaltijdbox is het beste voor biologisch eten?', a: 'Ekomenu en Cirkle zijn de beste keuzes voor biologisch eten. Ekomenu is 100% bio gecertificeerd.' },
+      { q: 'Welke maaltijdbox is volledig vegetarisch in België?', a: 'Ekomenu is de enige volledig vegetarische en vegane maaltijdbox in België — alle recepten zijn plantaardig en 100% biologisch gecertificeerd. Bij de andere aanbieders zijn er vegetarische opties, maar je moet zelf filteren.' },
+      { q: 'Heeft HelloFresh vegan opties in België?', a: 'Ja, HelloFresh biedt wekelijks meerdere vegetarische en vegan recepten aan via de "Veggie" categorie. Maar HelloFresh is niet uitsluitend vegetarisch — je selecteert zelf welke recepten je wil voor die week.' },
+      { q: 'Heeft Ekomenu ook vegan opties, of alleen vegetarisch?', a: 'Ekomenu biedt zowel vegetarische als volledig vegan recepten aan. Je kan filteren op vegan, glutenvrij, koolhydraatarm en meer. Alle recepten zijn sowieso 100% biologisch gecertificeerd.' },
+      { q: 'Welke maaltijdbox is het beste voor biologisch eten?', a: 'Ekomenu is de enige 100% biologisch gecertificeerde maaltijdbox in België. Alle ingrediënten zijn bio en de verpakking is composteerbaar. Foodbag scoort ook sterk op duurzaamheid met lokale Belgische ingrediënten.' },
+      { q: 'Levert Ekomenu ook in Wallonië?', a: 'Nee, Ekomenu bezorgt momenteel enkel in Vlaanderen en Brussel. Woon je in Wallonië en zoek je vegetarische opties? HelloFresh en Foodbag zijn de enige aanbieders met dekking in heel België én vegetarische recepten.' },
+    ],
+    nietGeschiktAls: [
+      'Je partner eet vlees en wil een gemengde selectie — kies dan HelloFresh of Marley Spoon waarbij je per week kiest.',
+      'Je woont in Wallonië en wil 100% plantaardig — Ekomenu bezorgt daar momenteel niet.',
+      'Je zoekt vegan kant-en-klare maaltijden — dat segment is in België nog beperkt.',
     ],
   },
   budget: {
     titel: 'Goedkoopste maaltijdbox in België',
     h1: 'Goedkoopste maaltijdbox in België 2026 — Beste prijs-kwaliteit',
     intro: 'Wil je een maaltijdbox proberen zonder de bank te breken? Wij vergeleken alle Belgische maaltijdboxen op prijs per portie, bezorgkosten en welkomstkorting.',
-    uitleg: 'De goedkoopste maaltijdbox is niet altijd de beste deal. Carrefour Simply You kost maar €4,90 per portie maar heeft hogere bezorgkosten (€5,95). HelloFresh lijkt duurder maar met de welkomstkorting van tot €90 is het de eerste weken spotgoedkoop. Delhaize Click&Cook heeft geen abonnement nodig en kost €5,20 per portie met €4,95 bezorgkosten.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'De goedkoopste maaltijdbox is niet altijd de beste deal. Factor kost maar €4,99 per portie maar rekent €6 bezorgkosten aan. <a href="/aanbieder/carrefour-simply-you" style="color:#1B4332;font-weight:600;text-decoration:underline">Carrefour Simply You</a> kost €5,38 per portie met gratis bezorging en geen verplicht abonnement — ideaal om te starten zonder engagement.',
+      'HelloFresh lijkt duurder, maar met de welkomstkorting van tot €60 is het de eerste weken de meest voordelige keuze. Na de proefperiode stijgt de prijs naar het normale tarief. Bekijk onze <a href="/gids/goedkoopste-maaltijdbox-belgie" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids over de goedkoopste maaltijdboxen</a> voor een volledige prijsvergelijking inclusief bezorgkosten.',
+    ],
     icon: '💰',
-    seoTitel: 'Goedkoopste Maaltijdbox België 2026 — Beste prijs per portie',
-    seoDesc: 'Welke maaltijdbox is het goedkoopst in België? Vergelijk Carrefour Simply You, Delhaize Click&Cook, HelloFresh. Inclusief bezorgkosten en kortingscodes.',
+    seoTitel: 'Goedkoopste maaltijdbox België 2026 – Echte prijs per portie vergeleken',
+    seoDesc: 'Wat kost een maaltijdbox echt? Vergelijk prijzen, bezorgkosten en welkomstvoordelen. Zo kies je de goedkoopste optie in België.',
     faq: [
-      { q: 'Wat is de goedkoopste maaltijdbox per portie in België?', a: 'Carrefour Simply You is de goedkoopste aan €4,90 per portie. Delhaize Click&Cook (€5,20) en HelloFresh met korting zijn ook budgetvriendelijk.' },
-      { q: 'Welke maaltijdbox heeft geen bezorgkosten?', a: 'HelloFresh, Foodbag, Marley Spoon, Ekomenu, Smartmat en Cirkle bieden gratis bezorging. Delhaize (€4,95) en Carrefour (€5,95) rekenen bezorgkosten aan.' },
-      { q: 'Kan ik een maaltijdbox eenmalig bestellen zonder abonnement?', a: 'Ja, Foodbag, Delhaize Click&Cook en Carrefour Simply You laten je eenmalig bestellen zonder abonnement.' },
+      { q: 'Wat is de goedkoopste maaltijdbox per portie in België?', a: 'Factor heeft een van de laagste prijzen per portie maar rekent bezorgkosten aan. Carrefour Simply You biedt gratis bezorging en geen abonnement — ideaal als instap. HelloFresh is met de welkomstaanbieding de eerste weken sterk geprijsd.' },
+      { q: 'Welke maaltijdbox heeft geen bezorgkosten?', a: 'HelloFresh, Foodbag, Marley Spoon, Ekomenu, Foodmaker en Carrefour Simply You bieden gratis bezorging. Factor rekent bezorgkosten aan.' },
+      { q: 'Kan ik een maaltijdbox eenmalig bestellen zonder abonnement?', a: 'Ja, Foodbag, Carrefour Simply You en Foodmaker laten je eenmalig bestellen zonder abonnement. Geen wekelijkse verplichtingen.' },
+      { q: 'Is een maaltijdbox goedkoper dan zelf boodschappen doen?', a: 'Niet altijd. Per portie betaal je meer dan bij de supermarkt, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Reken je weggegooide ingrediënten en impulsaankopen mee, dan valt het werkelijke prijsverschil kleiner uit dan je denkt.' },
+      { q: 'Kan ik de welkomstaanbieding meerdere keren gebruiken?', a: 'Nee, welkomstkortingen zijn éénmalig voor nieuwe klanten. Na de proefperiode stijgt de prijs naar het normale tarief. Wil je opnieuw profiteren van een aanbieding? Kijk dan naar een andere aanbieder.' },
+    ],
+    nietGeschiktAls: [
+      'Je al eerder klant was bij die aanbieder — welkomstkorting geldt alleen voor nieuwe klanten.',
+      'Je los wil bestellen: abonnementsboxen zijn goedkoper per portie dan eenmalige bestellingen.',
+      'Je verwacht elke dag een volledige maaltijd — de kosten lopen dan snel op ten opzichte van de supermarkt.',
+    ],
+  },
+  singles: {
+    titel: 'Beste maaltijdbox voor singles',
+    h1: 'Beste maaltijdbox voor 1 persoon in België (2026)',
+    intro: 'Welke maaltijdbox is het beste voor alleenstaanden? Niet alle aanbieders leveren voor 1 persoon. Wij vergeleken minimum afname, prijs en flexibiliteit voor singles.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'Als alleenstaande stoot je snel op een probleem: de meeste maaltijdboxen leveren minimum voor 2 personen. Je eindigt dan met te veel eten of gooit porties weg — wat het voordeel van een maaltijdbox teniet doet.',
+      'HelloFresh is de enige klassieke kookbox die levert voor 1 persoon. Je kiest elke week hoeveel maaltijden je wil en welke recepten, uit een aanbod van 40+. Praktisch en flexibel. Lees onze <a href="/aanbieder/hellofresh" style="color:#1B4332;font-weight:600;text-decoration:underline">volledige HelloFresh review</a> voor alle details.',
+      'Factor is een interessant alternatief als je geen zin hebt om te koken: kant-en-klare maaltijden die je enkel opwarmt, besteld per stuk voor 1 persoon. Geen kookbeleving, maar wel maximaal gemak. Carrefour Simply You laat je eenmalig bestellen zonder abonnement — ideaal als je het concept wil uitproberen zonder engagement. Bekijk onze <a href="/gids/beste-maaltijdbox-voor-singles" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids voor singles</a>.',
+    ],
+    icon: '🧑',
+    seoTitel: 'Beste maaltijdbox voor 1 persoon België 2026 – Voor singles vergeleken',
+    seoDesc: 'Welke maaltijdbox levert voor 1 persoon in België? Vergelijk HelloFresh, Factor en meer op prijs en flexibiliteit.',
+    faq: [
+      { q: 'Welke maaltijdbox levert voor 1 persoon in België?', a: 'HelloFresh is de enige grote kookbox die levert voor 1 persoon in België. Factor en Foodmaker leveren ook voor 1 persoon. De meeste andere aanbieders — Marley Spoon, Ekomenu — leveren minimum voor 2 personen.' },
+      { q: 'Is een maaltijdbox de moeite voor 1 persoon?', a: 'Ja. Als alleenstaande gooi je bij normale boodschappen makkelijker ingrediënten weg. Een maaltijdbox levert exacte hoeveelheden — geen restjes, geen verspilling. Dat maakt het werkelijke prijsverschil met de supermarkt kleiner dan je denkt.' },
+      { q: 'Hoe pauzeer ik een maaltijdbox als ik een week niet thuis ben?', a: 'HelloFresh en Factor laten je leveringen wekelijks overslaan of pauzeren via app of website, doorgaans tot 5 dagen voor de volgende levering. Je zit nergens aan vast.' },
+      { q: 'Hoeveel maaltijden per week is realistisch voor 1 persoon?', a: 'De meeste singles starten met 3 maaltijden per week. Dat geeft structuur voor drukke doordeweekse avonden, met vrijheid voor het weekend of spontane afspraken.' },
+    ],
+    nietGeschiktAls: [
+      'Je wil elke avond een andere keuken (Thais, Japans, Indisch) — het aanbod is gevarieerd maar niet onbeperkt specifiek.',
+      'Je wil geen vaste levermomenten en volledig spontaan bestellen — de meeste boxen vragen 3–5 dagen op voorhand.',
+      'Je bent regelmatig niet thuis — pauzeren kost aandacht en een gemiste week is geld weg.',
     ],
   },
   bio: {
     titel: 'Beste biologische maaltijdbox',
     h1: 'Beste biologische maaltijdbox in België (2026)',
     intro: 'Wil je bewust eten met biologische ingrediënten? Wij vergeleken alle duurzame maaltijdboxen in België op biologische certificering, verpakking en CO2-impact.',
-    uitleg: 'Voor wie biologisch wil eten zijn er twee uitstekende opties in België. Ekomenu is de meest complete biologische maaltijdbox met 100% bio gecertificeerde ingrediënten, composteerbare verpakking en een CO2-footprint tracker. Cirkle gaat nog een stap verder met volledig herbruikbare verpakkingen die bij elke levering worden teruggenomen.',
+    uitleg: '',
+    uitlegParagraphs: [
+      'Voor wie biologisch wil eten is <a href="/aanbieder/ekomenu" style="color:#1B4332;font-weight:600;text-decoration:underline">Ekomenu</a> de duidelijke keuze in België. Het is de enige 100% bio gecertificeerde maaltijdbox met composteerbare verpakking en een CO2-footprint tracker per bestelling. Alle recepten zijn volledig plantaardig — ideaal als je tegelijk vegetarisch of vegan wil eten.',
+      'Foodbag scoort ook sterk op duurzaamheid dankzij lokale Belgische ingrediënten en eigen bezorgers. Wil je meer weten over het biologische aanbod? Lees onze <a href="/gids/beste-biologische-maaltijdbox-belgie" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids over de beste biologische maaltijdboxen</a>.',
+    ],
     icon: '🌿',
-    seoTitel: 'Beste Biologische Maaltijdbox België 2026 — 100% Bio & Duurzaam',
-    seoDesc: 'Welke maaltijdbox gebruikt biologische ingrediënten in België? Vergelijk Ekomenu en Cirkle. Duurzaam, zero waste en lekker eten.',
+    seoTitel: 'Beste biologische maaltijdbox België 2026 – 100% bio vergeleken',
+    seoDesc: 'Op zoek naar een biologische maaltijdbox? Vergelijk Ekomenu en Foodbag op bio-certificering, verpakking en smaak.',
     faq: [
       { q: 'Welke maaltijdbox is 100% biologisch in België?', a: 'Ekomenu is de enige 100% biologisch gecertificeerde maaltijdbox in België. Alle ingrediënten zijn bio en de verpakking is composteerbaar.' },
-      { q: 'Wat is de meest duurzame maaltijdbox in België?', a: 'Cirkle is de meest duurzame met volledig herbruikbare verpakkingen. Ekomenu scoort het hoogst op biologische certificering.' },
-      { q: 'Is een biologische maaltijdbox duurder?', a: 'Ja, bio maaltijdboxen kosten meer. Ekomenu kost €7,00 per portie en Cirkle €6,80, tegenover €5,50 voor HelloFresh.' },
+      { q: 'Wat is de meest duurzame maaltijdbox in België?', a: 'Ekomenu scoort het hoogst op duurzaamheid (9.5/10) dankzij biologische certificering, composteerbare verpakking en een CO2-footprint tracker. Foodbag scoort ook goed (8.5/10) met lokale Belgische ingrediënten.' },
+      { q: 'Is een biologische maaltijdbox duurder?', a: 'Ja, bio maaltijdboxen kosten doorgaans meer dan conventionele alternatieven. Ekomenu kost meer dan HelloFresh, maar de meerprijs weerspiegelt de biologische certificering en milieuvriendelijke verpakking.' },
+      { q: 'Is biologisch echt gezonder?', a: 'Biologische producten bevatten geen synthetische pesticiden en worden duurzamer geteeld. Of dit directe gezondheidsvoordelen geeft is wetenschappelijk niet eenduidig, maar voor het milieu en de biodiversiteit maakt het zeker verschil.' },
+      { q: 'Leveren biologische maaltijdboxen in heel België?', a: 'Ekomenu levert in Vlaanderen en Brussel, maar niet in Wallonië. Foodbag levert in heel België inclusief Wallonië en is ook een duurzame keuze dankzij lokale ingrediënten, al is het niet 100% bio gecertificeerd.' },
+    ],
+    nietGeschiktAls: [
+      'Je een strak budget hebt — bio maaltijdboxen zijn duurder dan mainstream alternatieven.',
+      'Je in Wallonië woont en 100% biologisch wil — Ekomenu bezorgt daar momenteel niet.',
+      'Je ook vlees wil eten — Ekomenu is volledig plantaardig, kies dan Foodbag als duurzamer vleesalternatief.',
     ],
   },
 };
@@ -140,7 +225,11 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 680, marginBottom: 20 }}>{s.intro}</p>
         <div style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)', maxWidth: 680 }}>
-          <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{s.uitleg}</p>
+          {s.uitlegParagraphs ? s.uitlegParagraphs.map((p, i) => (
+            <p key={i} style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: i > 0 ? '12px 0 0' : 0 }} dangerouslySetInnerHTML={{ __html: p }} />
+          )) : (
+            <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{s.uitleg}</p>
+          )}
         </div>
       </div>
 
@@ -163,7 +252,11 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
             {i === 0 && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />}
 
             <div style={{ display: 'flex', alignItems: 'flex-start', gap: 12, marginBottom: 12 }}>
-              <div style={{ width: 44, height: 44, borderRadius: 10, background: 'var(--cream)', border: '1.5px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, flexShrink: 0 }}>{a.logo}</div>
+              <div style={{ width: 44, height: 44, borderRadius: 10, background: 'var(--cream)', border: '1.5px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 22, flexShrink: 0, overflow: 'hidden' }}>
+                {a.logo.startsWith('/')
+                  ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} />
+                  : a.logo}
+              </div>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', marginBottom: 2 }}>
                   <span style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700 }}>{a.naam}</span>
@@ -203,6 +296,16 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
           </div>
         );
       })}
+
+      {/* Wanneer niet geschikt */}
+      <div style={{ background: '#FFF5F4', border: '1px solid var(--red-border)', borderRadius: 12, padding: '16px 20px', marginBottom: 32 }}>
+        <div style={{ fontWeight: 700, marginBottom: 10, color: 'var(--red)', fontSize: 14 }}>⚠️ Wanneer is een maaltijdbox minder geschikt?</div>
+        <ul style={{ margin: 0, paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 4 }}>
+          {s.nietGeschiktAls.map((item, i) => (
+            <li key={i} style={{ fontSize: 13, lineHeight: 1.6, color: '#374151' }}>{item}</li>
+          ))}
+        </ul>
+      </div>
 
       {/* FAQ */}
       <div style={{ marginTop: 40, marginBottom: 40 }}>

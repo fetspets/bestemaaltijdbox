@@ -36,7 +36,7 @@ export default function OverOnsPage() {
           Online vonden we vooral vage artikels die niet echt antwoord gaven op de praktische vragen. Wat kost het écht per maand? Kan je makkelijk opzeggen? Is het de moeite voor 2 personen?
         </p>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151' }}>
-          We besloten het grondig uit te zoeken. We analyseerden alle populaire maaltijdboxen in België — van HelloFresh en Foodbag tot Marley Spoon en kleinere Belgische spelers — op basis van gebruikerservaringen, publieke data, officiële productinformatie en regelmatige vergelijkingen. Het resultaat: een eerlijk, onafhankelijk overzicht dat we regelmatig bijwerken.
+          We besloten het grondig uit te zoeken. We analyseerden alle populaire maaltijdboxen in België — van HelloFresh en Foodbag tot Marley Spoon en kleinere Belgische spelers — op basis van gebruikerservaringen, publieke data en officiële productinformatie. Het resultaat: een eerlijk, onafhankelijk overzicht dat we regelmatig bijwerken.
         </p>
       </div>
 
