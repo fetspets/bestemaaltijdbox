@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { aanbieders } from '@/lib/aanbieders';
-import Quiz from '@/components/Quiz';
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -217,16 +216,6 @@ export default function HomePage() {
           </div>
         ))}
 
-        {/* QUIZ */}
-        <div style={{ marginBottom: 48 }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
-            <h2 style={{ fontSize: 'clamp(18px, 4vw, 28px)', fontWeight: 900 }}>Welke maaltijdbox past bij jou?</h2>
-          </div>
-          <p style={{ fontSize: 14, color: '#4B5563', marginBottom: 16, lineHeight: 1.6 }}>
-            Twijfel je welke maaltijdbox het beste bij jou past? Doe onze korte test van 5 vragen en ontdek jouw persoonlijke aanbeveling.
-          </p>
-          <Quiz />
-        </div>
 
         {/* VERGELIJKINGSTABEL */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
