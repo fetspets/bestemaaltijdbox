@@ -75,9 +75,6 @@ export default function HomePage() {
 
       {/* HERO */}
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 24px' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          ✓ Onafhankelijk onderzocht · april 2026
-        </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 8vw, 52px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 12 }}>
           De beste maaltijdbox<br />in <span style={{ color: 'var(--mint)' }}>België</span>
         </h1>
