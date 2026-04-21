@@ -8,7 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio'];
   const vergelijkingen = ['hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon'];
-  const gidsen = ['maaltijdbox-voor-gezinnen', 'goedkoopste-maaltijdbox-belgie'];
+  const gidsen = ['goedkoopste-maaltijdbox-belgie'];
   const blogSlugs = [
     'maaltijdbox-of-zelf-koken-belgie',
     'hoe-maaltijdbox-opzeggen-belgie',
