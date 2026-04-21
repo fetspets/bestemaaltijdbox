@@ -53,7 +53,7 @@ const situaties: Record<string, {
     ],
     icon: '👨‍👩‍👧',
     seoTitel: 'Beste maaltijdbox voor gezinnen België 2026 – Snel, lekker & kindvriendelijk',
-    seoDesc: 'Geen tijd om te koken? Bekijk welke maaltijdbox het beste werkt voor gezinnen met kinderen. Snelle recepten, grote porties, heel België.',
+    seoDesc: 'Maaltijdbox voor het gezin in 2026? Foodbag & HelloFresh vergeleken op snelheid, porties en prijs. Bestel vandaag en bespaar tot €60 op je eerste box.',
     faq: [
       { q: 'Welke maaltijdbox is het snelst klaar voor een gezin?', a: 'Foodbag "Busy Day" heeft maaltijden klaar in 20 minuten, met eenvoudige instructies en weinig afwas. HelloFresh "Quick & Easy" recepten zijn klaar in 25–30 minuten. Beide zijn goed haalbaar op drukke schoolavonden.' },
       { q: 'Welke maaltijdbox heeft de grootste porties voor gezinnen?', a: 'Foodbag en HelloFresh bieden boxen voor tot 5 personen. HelloFresh gaat als enige aanbieder tot 6 personen — handig voor grotere gezinnen of als er regelmatig iemand extra aan tafel zit.' },
@@ -79,7 +79,7 @@ const situaties: Record<string, {
     ],
     icon: '🌱',
     seoTitel: 'Beste vegetarische maaltijdbox België 2026 – Vegan & bio vergeleken',
-    seoDesc: 'Vegetarisch of vegan eten met een maaltijdbox? Ontdek welke aanbieders écht geschikt zijn en waar je op moet letten.',
+    seoDesc: 'Vegetarische maaltijdbox in België (2026)? Ekomenu, HelloFresh & Marley Spoon vergeleken. Vind de beste plantaardige box en start vandaag.',
     faq: [
       { q: 'Welke maaltijdbox is volledig vegetarisch in België?', a: 'Ekomenu is de enige volledig vegetarische en vegane maaltijdbox in België — alle recepten zijn plantaardig en 100% biologisch gecertificeerd. Bij de andere aanbieders zijn er vegetarische opties, maar je moet zelf filteren.' },
       { q: 'Heeft HelloFresh vegan opties in België?', a: 'Ja, HelloFresh biedt wekelijks meerdere vegetarische en vegan recepten aan via de "Veggie" categorie. Maar HelloFresh is niet uitsluitend vegetarisch — je selecteert zelf welke recepten je wil voor die week.' },
@@ -104,7 +104,7 @@ const situaties: Record<string, {
     ],
     icon: '💰',
     seoTitel: 'Goedkoopste maaltijdbox België 2026 – Echte prijs per portie vergeleken',
-    seoDesc: 'Wat kost een maaltijdbox echt? Vergelijk prijzen, bezorgkosten en welkomstvoordelen. Zo kies je de goedkoopste optie in België.',
+    seoDesc: 'Goedkoopste maaltijdbox in België (2026)? Vergelijk echte prijzen per portie — inclusief bezorgkosten. Bespaar direct met onze welkomstdeals.',
     faq: [
       { q: 'Wat is de goedkoopste maaltijdbox per portie in België?', a: 'Factor heeft een van de laagste prijzen per portie maar rekent bezorgkosten aan. Carrefour Simply You biedt gratis bezorging en geen abonnement — ideaal als instap. HelloFresh is met de welkomstaanbieding de eerste weken sterk geprijsd.' },
       { q: 'Welke maaltijdbox heeft geen bezorgkosten?', a: 'HelloFresh, Foodbag, Marley Spoon, Ekomenu, Foodmaker en Carrefour Simply You bieden gratis bezorging. Factor rekent bezorgkosten aan.' },
@@ -130,7 +130,7 @@ const situaties: Record<string, {
     ],
     icon: '🧑',
     seoTitel: 'Beste maaltijdbox voor 1 persoon België 2026 – Voor singles vergeleken',
-    seoDesc: 'Welke maaltijdbox levert voor 1 persoon in België? Vergelijk HelloFresh, Factor en meer op prijs en flexibiliteit.',
+    seoDesc: 'Maaltijdbox voor 1 persoon in België (2026)? HelloFresh & Factor vergeleken op prijs & gemak. Bestel zonder abonnement — start vandaag.',
     faq: [
       { q: 'Welke maaltijdbox levert voor 1 persoon in België?', a: 'HelloFresh is de enige grote kookbox die levert voor 1 persoon in België. Factor en Foodmaker leveren ook voor 1 persoon. De meeste andere aanbieders — Marley Spoon, Ekomenu — leveren minimum voor 2 personen.' },
       { q: 'Is een maaltijdbox de moeite voor 1 persoon?', a: 'Ja. Als alleenstaande gooi je bij normale boodschappen makkelijker ingrediënten weg. Een maaltijdbox levert exacte hoeveelheden — geen restjes, geen verspilling. Dat maakt het werkelijke prijsverschil met de supermarkt kleiner dan je denkt.' },
@@ -154,7 +154,7 @@ const situaties: Record<string, {
     ],
     icon: '🌿',
     seoTitel: 'Beste biologische maaltijdbox België 2026 – 100% bio vergeleken',
-    seoDesc: 'Op zoek naar een biologische maaltijdbox? Vergelijk Ekomenu en Foodbag op bio-certificering, verpakking en smaak.',
+    seoDesc: 'Biologische maaltijdbox in België (2026)? Ekomenu & Foodbag vergeleken op bio-certificering, smaak en prijs. Eet bewust — bestel vandaag.',
     faq: [
       { q: 'Welke maaltijdbox is 100% biologisch in België?', a: 'Ekomenu is de enige 100% biologisch gecertificeerde maaltijdbox in België. Alle ingrediënten zijn bio en de verpakking is composteerbaar.' },
       { q: 'Wat is de meest duurzame maaltijdbox in België?', a: 'Ekomenu scoort het hoogst op duurzaamheid (9.5/10) dankzij biologische certificering, composteerbare verpakking en een CO2-footprint tracker. Foodbag scoort ook goed (8.5/10) met lokale Belgische ingrediënten.' },
