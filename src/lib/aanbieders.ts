@@ -1,5 +1,5 @@
 export interface KortingsCode {
-  code: string;
+  code: string | null;
   bedrag: string;
   beschrijving: string;
 }
@@ -40,6 +40,7 @@ export interface Aanbieder {
   bio: boolean;
   affiliateUrl: string;
   kortingsCode?: KortingsCode;
+  ctaSubtekst?: string;
   kenmerken: string[];
   pros: string[];
   cons: string[];
@@ -79,6 +80,12 @@ export const aanbieders: Aanbieder[] = [
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.hellofresh.be',
+    kortingsCode: {
+      code: null,
+      bedrag: 'tot €60 korting',
+      beschrijving: 'Automatisch via link — geen code nodig. Geldig op eerste 3 boxen voor nieuwe klanten.',
+    },
+    ctaSubtekst: 'Automatisch — geen code nodig',
     kenmerken: ['✓ Gratis bezorging', '✓ Direct opzegbaar', '✓ 40+ recepten/week', '✓ App met tracking'],
     pros: ['Grootste receptvariatie (40+ per week)', 'Gratis bezorging in heel België', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Regelmatige welkomstaanbiedingen voor nieuwe klanten'],
     cons: ['Niet 100% Belgische ingrediënten', 'Meer plasticverpakking dan lokale alternatieven', 'Standaardprijs hoger na korting'],
@@ -116,7 +123,13 @@ export const aanbieders: Aanbieder[] = [
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.foodbag.be/foodbox/?tt=19934_2485209_507243_&r=',
-kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kookstijlen', '✓ Zonder abonnement', '🔀 Voorheen ook Smartmat & 15gram'],    pros: ['100% Belgische en lokale ingrediënten', 'Uitstekende smaakscores', 'Eigen bezorgers', '5 kookstijlen incl. Sana (Sandra Bekkari)', 'Geen verplicht abonnement'],
+    kortingsCode: {
+      code: 'FOODBAGx60',
+      bedrag: '€60 korting',
+      beschrijving: '3× €20 korting op eerste 3 bestellingen. Voer code in bij afrekenen.',
+    },
+    ctaSubtekst: 'Code FOODBAGx60 · 3× €20 per box',
+    kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kookstijlen', '✓ Zonder abonnement', '🔀 Voorheen ook Smartmat & 15gram'],    pros: ['100% Belgische en lokale ingrediënten', 'Uitstekende smaakscores', 'Eigen bezorgers', '5 kookstijlen incl. Sana (Sandra Bekkari)', 'Geen verplicht abonnement'],
     cons: ['Hogere prijs dan internationale alternatieven', 'Beperktere bezorgdagen dan HelloFresh', 'Minder geschikt voor strikte budgetkijkers'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'bio'],
     losBestellenMogelijk: true,
@@ -152,6 +165,12 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://go.adt246.net/t/t?a=1709214807&as=2059394978&t=2&tk=1',
+    kortingsCode: {
+      code: null,
+      bedrag: '35% korting',
+      beschrijving: 'Automatisch via link — geen code nodig. Geldig op eerste 5 boxen voor nieuwe klanten.',
+    },
+    ctaSubtekst: 'Automatisch via link · 5 boxen',
     kenmerken: ['✓ 40 recepten/week', '✓ Chef-kwaliteit', '✓ Gratis bezorging', '🌱 Vegan opties'],
     pros: ['Groot receptaanbod (40/week)', 'Hoge smaakscore', 'Creatieve chef-recepten', 'Gratis bezorging'],
     cons: ['Enkel Vlaanderen en Brussel (geen Wallonië)', 'Hogere prijs per portie', 'Recepten kosten meer tijd (45-60 min)'],
@@ -189,6 +208,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     vegetarisch: true,
     bio: true,
     affiliateUrl: 'https://www.ekomenu.be',
+    ctaSubtekst: '100% biologisch · gratis bezorging',
     kenmerken: ['🌿 100% Biologisch', '✓ CO2-tracker', '✓ 20-25 recepten/week', '♻️ Eco-verpakking'],
     pros: ['Enige 100% biologische maaltijdbox in België', 'Unieke CO2-footprint tracker', 'Brede keuze voor vegetariërs en vegans', 'Milieuvriendelijke verpakking'],
     cons: ['Hogere prijs dan HelloFresh', 'Enkel Vlaanderen en Brussel (niet Wallonië)', 'Minder receptvariatie dan HelloFresh'],
@@ -226,6 +246,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.foodmaker.be',
+    ctaSubtekst: 'Jeroen Meus · gratis bezorging',
     kenmerken: ['👨‍🍳 Jeroen Meus', '🇧🇪 Belgisch', '✓ 32 gerechten/week', '✓ Gratis bezorging'],
     pros: ['Samenwerking met Jeroen Meus (Dagelijkse Kost)', 'Gratis bezorging in heel België', 'Artisanale Belgische kwaliteit', 'Volledig vegan Vedge Bags gamma'],
     cons: ['Hogere prijs (~€10/portie)', 'Geen kookbeleving (kant-en-klaar)', 'Beperkte bezorgfrequentie'],
@@ -264,6 +285,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.factormeals.be',
+    ctaSubtekst: 'Klaar in 2 min · heel België',
     kenmerken: ['⚡ Kant-en-klaar', '✓ Heel België', '✓ 18 maaltijden/week', '🥗 5 dieetstijlen'],
     pros: ['Geen koken vereist — enkel opwarmen', 'Bezorging in heel België', '5 dieetstijlen incl. Keto en High-Protein', 'Van de HelloFresh Group'],
     cons: ['Bezorgkosten €6', 'Duurder dan kookboxen bij kleine hoeveelheden', 'Minder culinaire beleving'],
@@ -301,11 +323,7 @@ kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kook
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.carrefour.be',
-    kortingsCode: {
-      code: 'BOXNL20',
-      bedrag: '€20 welkomstkorting',
-      beschrijving: 'Gebruik code BOXNL20 bij je eerste bestelling. Geldig voor nieuwe klanten.',
-    },
+    ctaSubtekst: 'Geen abonnement · heel België',
     kenmerken: ['💰 Voordelig', '🇧🇪 Heel België', '✓ Geen abonnement', '🏷️ Welkomstkorting nieuwe klanten'],
     pros: ['Geen verplicht abonnement', 'Welkomstkorting voor nieuwe klanten', 'Bezorging in heel België incl. Wallonië', '10+ recepten per week'],
     cons: ['Minder receptvariatie dan HelloFresh', 'Eenvoudigere recepten', 'Enkel maandaglevering'],

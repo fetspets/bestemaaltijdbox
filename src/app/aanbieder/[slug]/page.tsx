@@ -245,7 +245,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <div style={{ color: '#F59E0B', fontSize: 18 }}>{'★'.repeat(Math.round(a.score.totaal / 2))}{'☆'.repeat(5 - Math.round(a.score.totaal / 2))}</div>
               </div>
               <Link href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-                {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+                {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
               </Link>
             </div>
           </div>
@@ -289,11 +289,14 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <div style={{ textAlign: 'center', fontSize: 13, color: '#16A34A', fontWeight: 600, marginBottom: 12 }}>✓ Gratis bezorging inbegrepen</div>
             )}
 
-            <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 10 }}>
-              {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+            <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
+              {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
             </Link>
+            {a.ctaSubtekst && (
+              <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 10 }}>{a.ctaSubtekst}</div>
+            )}
 
-            {a.kortingsCode && (
+            {a.kortingsCode?.code && (
               <div style={{ background: 'var(--red-light)', border: '1.5px dashed var(--red-border)', borderRadius: 8, padding: '10px 12px', textAlign: 'center', marginBottom: 10 }}>
                 <div style={{ fontSize: 11, color: 'var(--muted)' }}>Kortingscode</div>
                 <div style={{ fontFamily: 'monospace', fontSize: 18, fontWeight: 900, color: 'var(--red)' }}>{a.kortingsCode.code}</div>
