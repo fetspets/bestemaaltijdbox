@@ -65,10 +65,10 @@ export default function Footer() {
                 { label: 'HelloFresh vs Marley Spoon', href: '/vergelijk/hellofresh-vs-marley-spoon' },
                 { label: 'Foodbag vs Marley Spoon', href: '/vergelijk/foodbag-vs-marley-spoon' },
                 { label: 'HelloFresh vs Ekomenu', href: '/vergelijk/hellofresh-vs-ekomenu' },
-                { label: 'Beste voor gezinnen', href: '/gids/maaltijdbox-voor-gezinnen' },
-                { label: 'Beste voor singles', href: '/gids/beste-maaltijdbox-voor-singles' },
+                { label: 'Beste voor gezinnen', href: '/voor/gezin' },
+                { label: 'Beste voor singles', href: '/voor/singles' },
                 { label: 'Goedkoopste maaltijdbox', href: '/gids/goedkoopste-maaltijdbox-belgie' },
-                { label: 'Beste biologische box', href: '/gids/beste-biologische-maaltijdbox-belgie' },
+                { label: 'Beste biologische box', href: '/voor/bio' },
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
               ))}

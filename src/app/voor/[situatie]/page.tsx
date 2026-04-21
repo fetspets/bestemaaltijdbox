@@ -48,7 +48,7 @@ const situaties: Record<string, {
     uitleg: '',
     uitlegParagraphs: [
       'Hoe zorg je voor gevarieerde, gezonde maaltijden op een drukke dinsdagavond — met kinderen die wachten, huiswerk dat gemaakt moet worden, en geen zin om na te denken over wat er in de koelkast ligt?',
-      'Foodbag\'s "Busy Day" lijn is specifiek voor dat probleem gemaakt: maaltijden klaar in 20 minuten, weinig afwas, en toch verse ingrediënten van Belgische boerderijen. HelloFresh is interessant als je een groter gezin hebt of meer keuze wil: doordat je elke week zelf kiest, kan je de selectie afstemmen op wat de kinderen die week lekker vinden. Lees onze <a href="/gids/maaltijdbox-voor-gezinnen" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids voor gezinnen</a> voor een diepere vergelijking.',
+      'Foodbag\'s "Busy Day" lijn is specifiek voor dat probleem gemaakt: maaltijden klaar in 20 minuten, weinig afwas, en toch verse ingrediënten van Belgische boerderijen. HelloFresh is interessant als je een groter gezin hebt of meer keuze wil: doordat je elke week zelf kiest, kan je de selectie afstemmen op wat de kinderen die week lekker vinden. Lees onze <a href="/voor/gezin" style="color:#1B4332;font-weight:600;text-decoration:underline">meer info over maaltijdboxen voor gezinnen</a> voor een diepere vergelijking.',
       'Let ook op de bezorgdagen. Foodbag levert van vrijdag tot maandag — handig als je het weekend wil plannen. HelloFresh is flexibeler met meerdere weekdagen. Beide leveren in heel België inclusief Wallonië; Marley Spoon niet.',
     ],
     icon: '👨‍👩‍👧',
@@ -126,7 +126,7 @@ const situaties: Record<string, {
     uitlegParagraphs: [
       'Als alleenstaande stoot je snel op een probleem: de meeste maaltijdboxen leveren minimum voor 2 personen. Je eindigt dan met te veel eten of gooit porties weg — wat het voordeel van een maaltijdbox teniet doet.',
       'HelloFresh is de enige klassieke kookbox die levert voor 1 persoon. Je kiest elke week hoeveel maaltijden je wil en welke recepten, uit een aanbod van 40+. Praktisch en flexibel. Lees onze <a href="/aanbieder/hellofresh" style="color:#1B4332;font-weight:600;text-decoration:underline">volledige HelloFresh review</a> voor alle details.',
-      'Factor is een interessant alternatief als je geen zin hebt om te koken: kant-en-klare maaltijden die je enkel opwarmt, besteld per stuk voor 1 persoon. Geen kookbeleving, maar wel maximaal gemak. Carrefour Simply You laat je eenmalig bestellen zonder abonnement — ideaal als je het concept wil uitproberen zonder engagement. Bekijk onze <a href="/gids/beste-maaltijdbox-voor-singles" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids voor singles</a>.',
+      'Factor is een interessant alternatief als je geen zin hebt om te koken: kant-en-klare maaltijden die je enkel opwarmt, besteld per stuk voor 1 persoon. Geen kookbeleving, maar wel maximaal gemak. Carrefour Simply You laat je eenmalig bestellen zonder abonnement — ideaal als je het concept wil uitproberen zonder engagement. Bekijk onze <a href="/voor/singles" style="color:#1B4332;font-weight:600;text-decoration:underline">meer info over maaltijdboxen voor singles</a>.',
     ],
     icon: '🧑',
     seoTitel: 'Beste maaltijdbox voor 1 persoon België 2026 – Voor singles vergeleken',
@@ -150,7 +150,7 @@ const situaties: Record<string, {
     uitleg: '',
     uitlegParagraphs: [
       'Voor wie biologisch wil eten is <a href="/aanbieder/ekomenu" style="color:#1B4332;font-weight:600;text-decoration:underline">Ekomenu</a> de duidelijke keuze in België. Het is de enige 100% bio gecertificeerde maaltijdbox met composteerbare verpakking en een CO2-footprint tracker per bestelling. Alle recepten zijn volledig plantaardig — ideaal als je tegelijk vegetarisch of vegan wil eten.',
-      'Foodbag scoort ook sterk op duurzaamheid dankzij lokale Belgische ingrediënten en eigen bezorgers. Wil je meer weten over het biologische aanbod? Lees onze <a href="/gids/beste-biologische-maaltijdbox-belgie" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids over de beste biologische maaltijdboxen</a>.',
+      'Foodbag scoort ook sterk op duurzaamheid dankzij lokale Belgische ingrediënten en eigen bezorgers. Wil je meer weten over het biologische aanbod? Lees onze <a href="/voor/bio" style="color:#1B4332;font-weight:600;text-decoration:underline">meer info over biologische maaltijdboxen</a>.',
     ],
     icon: '🌿',
     seoTitel: 'Beste biologische maaltijdbox België 2026 – 100% bio vergeleken',

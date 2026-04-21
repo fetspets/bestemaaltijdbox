@@ -288,7 +288,7 @@ export default function HomePage() {
             {[
               { href: '/vergelijk/hellofresh-vs-foodbag', icon: '⚖️', label: 'HelloFresh vs Foodbag', sub: 'Welke is goedkoper en beter?' },
               { href: '/vergelijk/hellofresh-vs-marley-spoon', icon: '⚖️', label: 'HelloFresh vs Marley Spoon', sub: 'Prijs vs culinaire kwaliteit' },
-              { href: '/gids/maaltijdbox-voor-gezinnen', icon: '👨‍👩‍👧', label: 'Beste maaltijdbox voor gezinnen', sub: 'Top 3 voor grote porties & snelle recepten' },
+              { href: '/voor/gezin', icon: '👨‍👩‍👧', label: 'Beste maaltijdbox voor gezinnen', sub: 'Top 3 voor grote porties & snelle recepten' },
               { href: '/gids/goedkoopste-maaltijdbox-belgie', icon: '💰', label: 'Goedkoopste maaltijdbox', sub: 'Prijsvergelijking inclusief welkomstdeals' },
             ].map(({ href, icon, label, sub }) => (
               <Link key={href} href={href} style={{ display: 'flex', alignItems: 'center', gap: 14, background: 'white', borderRadius: 12, border: '1px solid var(--rule)', padding: '16px 18px', textDecoration: 'none', color: 'var(--ink)' }}>
