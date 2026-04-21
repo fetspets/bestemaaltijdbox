@@ -163,15 +163,13 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
-                  {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
+                <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
+                  {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
                 </Link>
-                {a.kortingsCode && <CopyCodeButton code={a.kortingsCode.code} />}
-                {a.slug === 'foodbag' && (
-                  <Link href="/kortingscode/foodbag" style={{ display: 'block', border: '1.5px solid #1E40AF', textAlign: 'center', padding: '10px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none', color: '#1E40AF', marginTop: 8 }}>
-                    🏷️ Kortingscode: FOODBAGx60 (€60)
-                  </Link>
+                {a.ctaSubtekst && (
+                  <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>{a.ctaSubtekst}</div>
                 )}
+                {a.kortingsCode?.code && <CopyCodeButton code={a.kortingsCode.code} />}
                 <Link href={`/aanbieder/${a.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)', marginTop: 8 }}>
                   Lees volledige review
                 </Link>
