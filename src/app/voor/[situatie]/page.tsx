@@ -29,11 +29,10 @@ const situaties: Record<string, {
     seoTitel: 'Beste maaltijdbox voor koppels in België (2026) – Vergeleken',
     seoDesc: 'Welke maaltijdbox is het beste voor koppels in 2026? HelloFresh, Foodbag & Marley Spoon vergeleken. Ontdek jouw match en bespaar meteen.',
     faq: [
-      { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh is een toegankelijke optie voor koppels, zeker met de welkomstkorting. Marley Spoon en Foodbag zijn duurder maar bieden een andere kwaliteit — Foodbag door lokale ingrediënten, Marley Spoon door uitgebreidere recepten.' },
-      { q: 'Kan ik een maaltijdbox voor 2 personen makkelijk opzeggen?', a: 'Ja, HelloFresh, Foodbag en Marley Spoon laten je wekelijks opzeggen of pauzeren. Je zit nergens aan vast. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement.' },
-      { q: 'Hoeveel maaltijden per week is realistisch als koppel?', a: 'De meeste koppels starten met 3 maaltijden per week — goed voor de drukke doordeweekse dagen, met ruimte voor een restaurant of zelf koken in het weekend. Je kan altijd aanpassen of pauzeren.' },
-      { q: 'Is een maaltijdbox voor 2 personen duurder dan boodschappen?', a: 'Per portie betaal je doorgaans meer dan bij de supermarkt, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Voor koppels die regelmatig restjes weggooien of impulsaankopen doen bij de winkel, valt de werkelijke kostprijs vaak mee.' },
-      { q: 'Kan ik als koppel ook kant-en-klare maaltijden bestellen?', a: 'Ja. Factor en Foodmaker leveren kant-en-klare maaltijden die je alleen nog moet opwarmen. Dat is handig voor drukke avonden, maar je mist het kookplezier van een klassieke maaltijdbox.' },
+      { q: 'Welke maaltijdbox is het beste voor 2 personen in België?', a: 'HelloFresh is de populairste keuze voor koppels: groot receptaanbod, gratis bezorging en tot €60 welkomstkorting op de eerste 3 boxen. Marley Spoon is een goed alternatief voor wie van uitgebreider koken houdt, met tot 35% korting op de eerste 5 boxen.' },
+      { q: 'Wat kost een maaltijdbox voor 2 personen per week?', a: 'Reken op €5,50 tot €9,50 per portie, oftewel €33 tot €57 per week voor 3 maaltijden voor 2 personen exclusief bezorgkosten. Met welkomstkorting zijn de eerste weken een stuk goedkoper — HelloFresh en Foodbag geven elk tot €60 korting.' },
+      { q: 'Welke maaltijdbox voor koppels heeft nu de beste deal?', a: 'Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig tot 01/01/2027. HelloFresh geeft automatisch tot €60 korting via onze link, zonder code nodig.' },
+      { q: 'Kan ik een maaltijdbox voor 2 personen wekelijks pauzeren?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of een levering overslaan via je account, doorgaans tot 5 dagen voor de leveringsdatum. Je zit bij geen van hen langdurig vast.' },
     ],
     nietGeschiktAls: [
       'Je maar 1 à 2 keer per week kookt — dan is de kostprijs per maaltijd relatief hoog.',
