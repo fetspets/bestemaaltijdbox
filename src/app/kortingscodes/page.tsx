@@ -10,12 +10,12 @@ const kortingen = [
     slug: 'hellofresh',
     naam: 'HelloFresh',
     logo: '🌿',
-    code: null,
-    deal: 'Tot €60 korting verspreid over de eerste 3 boxen',
-    bedrag: 'Tot €60',
+    code: 'HELLO85FL',
+    deal: '€50 korting verspreid over de eerste 4 boxen',
+    bedrag: '€50',
     kleur: '#1B4332',
-    beschrijving: 'Geen kortingscode nodig — de korting wordt automatisch toegepast wanneer je via onze link bestelt. Verspreid als: tot €37 op box 1, tot €12 op box 2, tot €5 op box 3. Vervalt 70 dagen na eerste bestelling.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 3 boxen · Direct opzegbaar',
+    beschrijving: 'Gebruik code HELLO85FL bij je eerste bestelling. Korting: €25 op box 1, €10 op box 2, €10 op box 3, €5 op box 4. Totale besparing: €50.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Code: HELLO85FL · Eerste 4 boxen · Direct opzegbaar',
     actief: true,
   },
   {
@@ -147,6 +147,11 @@ export default function KortingscodesPagina() {
             <Link href={`/ga/${k.slug}`} style={{ display: 'block', background: k.kleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
               Activeer deal →
             </Link>
+            {k.code && (
+              <Link href={`/kortingscode/${k.slug}`} style={{ display: 'block', textAlign: 'center', padding: '8px', borderRadius: 10, fontWeight: 600, fontSize: 12, textDecoration: 'none', color: k.kleur, border: `1.5px solid ${k.kleur}` }}>
+                Bekijk details →
+              </Link>
+            )}
           </div>
         </div>
       ))}

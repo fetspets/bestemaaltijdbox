@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m ':*)",
+      "Bash(gh pr create --title 'Data gecorrigeerd: ranking, HelloFresh recepten en Carrefour prijs' --body ':*)",
+      "Bash(winpty gh pr create --title 'Data gecorrigeerd: ranking, HelloFresh recepten en Carrefour prijs' --body ':*)",
+      "Bash(git fetch:*)",
+      "Bash(git rebase:*)",
+      "Bash(node -e:*)",
+      "Bash(git push:*)",
+      "Bash(gh pr create --title 'feat: interactieve maaltijdbox keuzequiz' --body ':*)",
+      "Bash(npx tsc:*)",
+      "Bash(gh pr create --title 'feat: blog, GDPR cookiebanner en trust signal' --body ':*)",
+      "Bash(cat next.config.js)",
+      "Bash(cat next.config.ts)",
+      "Bash(cat next.config.mjs)"
+    ]
+  }
+}

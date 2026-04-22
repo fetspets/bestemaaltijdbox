@@ -67,9 +67,10 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is een budgetvriendelijke optie met een lage prijs per portie, zonder verplicht abonnement. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' }},
-          { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en €50 korting via code HELLO85FL op de eerste 4 boxen. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting via code FOODBAGx60.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €6 bezorgkosten. HelloFresh (v.a. €5,50) levert gratis en geeft nieuwe klanten €50 korting op de eerste 4 boxen via code HELLO85FL.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig t.e.m. 01/01/2027. HelloFresh geeft €50 korting via code HELLO85FL verspreid over de eerste 4 boxen.' }},
+          { '@type': 'Question', name: 'Kan ik een maaltijdbox uitproberen zonder abonnement?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Carrefour Simply You (v.a. €5,38/portie, gratis bezorging) en Foodmaker werken zonder verplicht abonnement. Met code BOXNL20 krijg je €20 korting op je eerste bestelling bij Carrefour Simply You.' }},
         ]
       }) }} />
 
@@ -213,6 +214,17 @@ export default function HomePage() {
         ))}
 
 
+        {/* QUIZ */}
+        <div style={{ marginBottom: 48 }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
+            <h2 style={{ fontSize: 'clamp(18px, 4vw, 28px)', fontWeight: 900 }}>Welke maaltijdbox past bij jou?</h2>
+          </div>
+          <p style={{ fontSize: 14, color: '#4B5563', marginBottom: 16, lineHeight: 1.6 }}>
+            Twijfel je welke maaltijdbox het beste bij jou past? Doe onze korte test van 5 vragen en ontdek jouw persoonlijke aanbeveling.
+          </p>
+          <Quiz />
+        </div>
+
         {/* VERGELIJKINGSTABEL */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
@@ -277,7 +289,7 @@ export default function HomePage() {
             {[
               { href: '/vergelijk/hellofresh-vs-foodbag', icon: '⚖️', label: 'HelloFresh vs Foodbag', sub: 'Welke is goedkoper en beter?' },
               { href: '/vergelijk/hellofresh-vs-marley-spoon', icon: '⚖️', label: 'HelloFresh vs Marley Spoon', sub: 'Prijs vs culinaire kwaliteit' },
-              { href: '/gids/maaltijdbox-voor-gezinnen', icon: '👨‍👩‍👧', label: 'Beste maaltijdbox voor gezinnen', sub: 'Top 3 voor grote porties & snelle recepten' },
+              { href: '/voor/gezin', icon: '👨‍👩‍👧', label: 'Beste maaltijdbox voor gezinnen', sub: 'Top 3 voor grote porties & snelle recepten' },
               { href: '/gids/goedkoopste-maaltijdbox-belgie', icon: '💰', label: 'Goedkoopste maaltijdbox', sub: 'Prijsvergelijking inclusief welkomstdeals' },
             ].map(({ href, icon, label, sub }) => (
               <Link key={href} href={href} style={{ display: 'flex', alignItems: 'center', gap: 14, background: 'white', borderRadius: 12, border: '1px solid var(--rule)', padding: '16px 18px', textDecoration: 'none', color: 'var(--ink)' }}>
