@@ -10,7 +10,7 @@ const vragen = [
     vraag: 'Voor hoeveel personen kook je meestal?',
     opties: [
       { label: '1 persoon', scores: { hf: 2, fb: 0, ms: 0, ek: 1 } },
-      { label: '2 personen', scores: { hf: 2, fb: 0, ms: 2, ek: 2 } },
+      { label: '2 personen', scores: { hf: 2, fb: 1, ms: 2, ek: 2 } },
       { label: '3–4 personen', scores: { hf: 1, fb: 2, ms: 1, ek: 0 } },
       { label: '5 of meer', scores: { hf: 1, fb: 3, ms: 0, ek: 0 } },
     ],
@@ -18,7 +18,7 @@ const vragen = [
   {
     vraag: 'Hoe vaak per week wil je een maaltijdbox gebruiken?',
     opties: [
-      { label: '2–3 keer per week', scores: { hf: 1, fb: 0, ms: 1, ek: 1 } },
+      { label: '2–3 keer per week', scores: { hf: 1, fb: 0, ms: 2, ek: 1 } },
       { label: '3–5 keer per week', scores: { hf: 2, fb: 2, ms: 0, ek: 0 } },
       { label: 'Bijna elke dag', scores: { hf: 0, fb: 2, ms: 0, ek: 2 } },
       { label: 'Af en toe', scores: { hf: 1, fb: 0, ms: 1, ek: 0 } },
@@ -28,7 +28,7 @@ const vragen = [
     vraag: 'Wat vind je het belangrijkst?',
     opties: [
       { label: '💰 Zo goedkoop mogelijk', scores: { hf: 3, fb: 0, ms: 0, ek: 0 } },
-      { label: '⚡ Snel en makkelijk koken', scores: { hf: 2, fb: 1, ms: 0, ek: 0 } },
+      { label: '⚡ Snel en makkelijk koken', scores: { hf: 2, fb: 1, ms: 1, ek: 0 } },
       { label: '🥗 Gezond / vegetarisch / vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3 } },
       { label: '👨‍🍳 Lekker koken, culinaire ervaring', scores: { hf: 0, fb: 1, ms: 3, ek: 0 } },
       { label: '🇧🇪 Lokale Belgische producten', scores: { hf: 0, fb: 3, ms: 0, ek: 0 } },
@@ -38,7 +38,7 @@ const vragen = [
     vraag: 'Hoeveel tijd heb je gemiddeld om te koken?',
     opties: [
       { label: 'Minder dan 20 minuten', scores: { hf: 2, fb: 0, ms: 0, ek: 0 } },
-      { label: '20–40 minuten', scores: { hf: 1, fb: 2, ms: 0, ek: 0 } },
+      { label: '20–40 minuten', scores: { hf: 1, fb: 2, ms: 1, ek: 0 } },
       { label: '40–60 minuten', scores: { hf: 0, fb: 1, ms: 2, ek: 1 } },
       { label: 'Ik kook graag uitgebreid', scores: { hf: 0, fb: 0, ms: 3, ek: 0 } },
     ],
@@ -46,7 +46,7 @@ const vragen = [
   {
     vraag: 'Heb je specifieke dieetvoorkeuren?',
     opties: [
-      { label: 'Geen specifieke voorkeur', scores: { hf: 1, fb: 1, ms: 1, ek: 0 } },
+      { label: 'Geen specifieke voorkeur', scores: { hf: 1, fb: 2, ms: 1, ek: 0 } },
       { label: 'Vegetarisch', scores: { hf: 0, fb: 0, ms: 0, ek: 3 } },
       { label: 'Vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3 } },
       { label: 'Gezond & caloriebewust', scores: { hf: 1, fb: 0, ms: 0, ek: 2 } },

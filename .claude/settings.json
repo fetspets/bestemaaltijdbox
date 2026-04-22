@@ -1,0 +1,18 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "shell": "powershell",
+            "async": true,
+            "statusMessage": "Auto-commit & push...",
+            "command": "$j = $input | ConvertFrom-Json; $f = $j.tool_input.file_path; if ($f -and $f -notmatch '\\.claude') { Set-Location 'C:\\Users\\stefm\\bestemaaltijdbox\\.claude\\worktrees\\modest-johnson'; git add $f 2>&1 | Out-Null; $name = Split-Path $f -Leaf; git diff --cached --quiet 2>&1; if ($LASTEXITCODE -ne 0) { git commit -m \"auto: update $name\" 2>&1 | Out-Null; git push 2>&1 | Out-Null } }"
+          }
+        ]
+      }
+    ]
+  }
+}

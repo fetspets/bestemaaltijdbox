@@ -21,6 +21,22 @@ const nextConfig: NextConfig = {
         destination: '/aanbieder/foodbag',
         permanent: true,
       },
+      // Verwijderde gidsen → bijbehorende /voor/ pagina's
+      {
+        source: '/gids/maaltijdbox-voor-gezinnen',
+        destination: '/voor/gezin',
+        permanent: true,
+      },
+      {
+        source: '/gids/beste-maaltijdbox-voor-singles',
+        destination: '/voor/singles',
+        permanent: true,
+      },
+      {
+        source: '/gids/beste-biologische-maaltijdbox-belgie',
+        destination: '/voor/bio',
+        permanent: true,
+      },
     ];
   },
 };

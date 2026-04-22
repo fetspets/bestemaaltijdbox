@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a2 = getAanbieder(v.aanbieder2Slug)!;
   return {
     title: `${a1.naam} vs ${a2.naam} (2026) – Welke past het best bij jou?`,
-    description: `Twijfel je tussen ${a1.naam} en ${a2.naam}? Wij vergeleken prijs, smaak en gemak zodat jij snel de juiste keuze maakt.`,
+    description: `Twijfel tussen ${a1.naam} en ${a2.naam} (2026)? Prijs, smaak & kortingen eerlijk vergeleken. Maak direct de juiste keuze en bespaar.`,
   };
 }
 
