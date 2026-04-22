@@ -67,9 +67,10 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'Wat is de goedkoopste maaltijdbox in België?', acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You is een budgetvriendelijke optie met een lage prijs per portie, zonder verplicht abonnement. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' }},
-          { '@type': 'Question', name: 'Kan ik een maaltijdbox makkelijk opzeggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, de meeste maaltijdboxen zijn wekelijks opzegbaar via app of website. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox is het beste voor gezinnen?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en tot €60 welkomstkorting. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting via code FOODBAGx60.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €6 bezorgkosten. HelloFresh (v.a. €5,50) levert gratis en geeft nieuwe klanten automatisch tot €60 korting op de eerste 3 boxen via onze link.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig t.e.m. 01/01/2027. HelloFresh geeft automatisch tot €60 korting op de eerste 3 boxen via onze link — geen code nodig.' }},
+          { '@type': 'Question', name: 'Kan ik een maaltijdbox uitproberen zonder abonnement?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Carrefour Simply You (v.a. €5,38/portie, gratis bezorging) en Foodmaker werken zonder verplicht abonnement. Met code BOXNL20 krijg je €20 korting op je eerste bestelling bij Carrefour Simply You.' }},
         ]
       }) }} />
 
