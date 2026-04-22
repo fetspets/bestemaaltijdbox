@@ -14,7 +14,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Wat kost een maaltijdbox gemiddeld per maand in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). Met welkomstkorting kan dat in de eerste maand dalen tot €65–80. Foodbag is duurder: €228/maand aan reguliere prijs.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). Met welkomstkorting (code HELLO85FL: €50 korting op 4 boxen) daalt dat in de eerste maand. Foodbag is duurder: €228/maand aan reguliere prijs.' },
     },
     {
       '@type': 'Question',
@@ -37,7 +37,7 @@ const faqJsonLd = {
 const prijsTabel = [
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 6, weekprijs: 35.94, welkomst: '—', noot: '+ €6 bezorgkost' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '€20 korting (BOXNL20)', noot: null },
-  { naam: 'HelloFresh', slug: 'hellofresh', portie: 5.50, bezorging: 0, weekprijs: 33.00, welkomst: 'tot €50 (automatisch)', noot: null },
+  { naam: 'HelloFresh', slug: 'hellofresh', portie: 5.50, bezorging: 0, weekprijs: 33.00, welkomst: '€50 korting (code HELLO85FL)', noot: null },
   { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 5.59, bezorging: 0, weekprijs: 33.54, welkomst: '35% korting (automatisch)', noot: null },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null },
@@ -151,10 +151,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
               slug: 'hellofresh',
               badge: '💰 Beste welkomstdeal voor kookboxen',
               accent: '#1B4332',
-              metDeal: 'Gemiddeld ~€16,33/week over de eerste 3 boxen (tot €50 korting gespreid)',
+              metDeal: 'Gemiddeld ~€20,50/week over de eerste 4 boxen (€50 korting gespreid: €25+€10+€10+€5)',
               naDeal: '€33,00/week (reguliere prijs)',
-              uitleg: 'HelloFresh geeft tot €50 welkomstkorting gespreid over de eerste 3 boxen — automatisch via de link, geen code nodig. Dat maakt de instapperiode bijzonder voordelig. Na de welkomstperiode stijgt de weekprijs naar €33,00. Gratis bezorging, 40+ recepten per week, wekelijks opzegbaar.',
-              dealOpmerking: 'Korting wordt automatisch toegepast via de link — geen code invullen.',
+              uitleg: 'HelloFresh geeft €50 welkomstkorting via code HELLO85FL, gespreid over de eerste 4 boxen (€25 op box 1, €10 op box 2, €10 op box 3, €5 op box 4). Dat maakt de instapperiode bijzonder voordelig. Na de welkomstperiode stijgt de weekprijs naar €33,00. Gratis bezorging, 40+ recepten per week, wekelijks opzegbaar.',
+              dealOpmerking: 'Gebruik code HELLO85FL bij je eerste bestelling · 4 boxen · exclusief voor nieuwe klanten.',
             },
             {
               rang: 3,

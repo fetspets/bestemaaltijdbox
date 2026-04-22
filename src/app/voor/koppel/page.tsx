@@ -50,7 +50,7 @@ const top3 = [
     accent: '#1B4332',
     tagline: 'Marktleider — sterkste prijs-kwaliteitverhouding',
     waarom: 'Met 40+ recepten per week komen koppels zelden twee keer hetzelfde op tafel. HelloFresh is flexibel — pauzeren of opzeggen kan tot 5 dagen voor levering. De grote keuze maakt het ook makkelijk om rekening te houden met elkaars voorkeuren.',
-    deal: 'tot €50 korting — automatisch via link, geen code nodig',
+    deal: '€50 korting — gebruik code HELLO85FL (€25 op box 1, €10 op box 2, €10 op box 3, €5 op box 4)',
     dealColor: '#1B4332',
   },
   {
@@ -303,7 +303,7 @@ export default function KoppelPage() {
               scenario: 'Jullie willen maximaal voordeel',
               aanbeveling: 'HelloFresh',
               slug: 'hellofresh',
-              uitleg: 'Met tot €50 welkomstkorting betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
+              uitleg: 'Met kortingscode HELLO85FL (€50 korting op 4 boxen) betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
               color: '#E8F5EE',
               border: '#BBF7D0',
             },
@@ -364,7 +364,7 @@ export default function KoppelPage() {
         <Link href="/ga/hellofresh" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
           Activeer tot €50 korting bij HelloFresh →
         </Link>
-        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Automatisch via link · geen code nodig · direct opzegbaar</div>
+        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Code HELLO85FL · €50 korting op 4 boxen · direct opzegbaar</div>
       </div>
 
       {/* Andere categorieën */}
