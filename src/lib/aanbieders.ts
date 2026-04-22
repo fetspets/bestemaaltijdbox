@@ -81,9 +81,15 @@ export const aanbieders: Aanbieder[] = [
     bio: false,
     affiliateUrl: 'https://hellofresheuro.sjv.io/c/3156055/1235519/9318',
     kortingsCode: {
+<<<<<<< fix/eerlijke-teksten-zonder-testclaims
+      code: null,
+      bedrag: 'tot €50 korting',
+      beschrijving: 'Automatisch via link — geen code nodig. Geldig op eerste 3 boxen voor nieuwe klanten.',
+=======
       code: 'HELLO85FL',
       bedrag: '€50 korting',
       beschrijving: 'Gebruik code HELLO85FL bij je eerste bestelling. €50 korting verspreid over je eerste 4 boxen: €25 op box 1, €10 op box 2, €10 op box 3, €5 op box 4. Exclusief voor nieuwe klanten.',
+>>>>>>> main
     },
     ctaSubtekst: 'Code: HELLO85FL — €50 korting op 4 boxen',
     kenmerken: ['✓ Gratis bezorging', '✓ Direct opzegbaar', '✓ 40+ recepten/week', '✓ App met tracking'],
@@ -323,11 +329,16 @@ export const aanbieders: Aanbieder[] = [
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.carrefour.be',
-    ctaSubtekst: 'Geen abonnement · heel België',
+    kortingsCode: {
+      code: 'BOXNL20',
+      bedrag: '€20 korting',
+      beschrijving: 'Voer code BOXNL20 in bij afrekenen. Geldig voor nieuwe klanten.',
+    },
+    ctaSubtekst: 'Code BOXNL20 · geen abonnement',
     kenmerken: ['💰 Voordelig', '🇧🇪 Heel België', '✓ Geen abonnement', '🏷️ Welkomstkorting nieuwe klanten'],
     pros: ['Geen verplicht abonnement', 'Welkomstkorting voor nieuwe klanten', 'Bezorging in heel België incl. Wallonië', '10+ recepten per week'],
     cons: ['Minder receptvariatie dan HelloFresh', 'Eenvoudigere recepten', 'Enkel maandaglevering'],
-    geschiktVoor: ['budget', 'gezin', 'singles'],
+    geschiktVoor: ['budget', 'gezin', 'singles', 'koppel'],
     losBestellenMogelijk: true,
     leverdag: true,
     tijdstip: false,
