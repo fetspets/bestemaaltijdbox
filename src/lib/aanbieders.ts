@@ -50,6 +50,7 @@ export interface Aanbieder {
   tijdstip: boolean;
   besteVoor: string;
   minMaaltijdenPerWeek: number;
+  badge?: { label: string; bg: string; color: string };
 }
 
 export const aanbieders: Aanbieder[] = [
@@ -95,6 +96,7 @@ export const aanbieders: Aanbieder[] = [
     tijdstip: true,
     besteVoor: 'Variatie & prijs',
     minMaaltijdenPerWeek: 3,
+    badge: { label: '⭐ Beste keuze', bg: '#E8F5EE', color: '#1B4332' },
   },
   {
     slug: 'foodbag',
@@ -137,6 +139,7 @@ export const aanbieders: Aanbieder[] = [
     tijdstip: false,
     besteVoor: 'Belgische kwaliteit',
     minMaaltijdenPerWeek: 1,
+    badge: { label: '🇧🇪 Belgische keuze', bg: '#DBEAFE', color: '#1E40AF' },
   },
   {
     slug: 'marley-spoon',
@@ -180,6 +183,7 @@ export const aanbieders: Aanbieder[] = [
     tijdstip: false,
     besteVoor: 'Fijnproevers',
     minMaaltijdenPerWeek: 2,
+    badge: { label: '👨‍🍳 Beste voor kookliefhebbers', bg: '#F3E8FF', color: '#7C3AED' },
   },
   {
     slug: 'ekomenu',
