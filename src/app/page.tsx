@@ -131,8 +131,7 @@ export default function HomePage() {
                   <div style={{ flex: 1, minWidth: 0 }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, flexWrap: 'wrap', marginBottom: 2 }}>
                       <span style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700 }}>{a.naam}</span>
-                      {i === 0 && <span style={{ fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332', whiteSpace: 'nowrap' }}>⭐ Beste keuze</span>}
-                      {a.belgisch && <span style={{ fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 100, background: '#DBEAFE', color: '#1E40AF' }}>🇧🇪</span>}
+                      {a.badge && <span style={{ fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 100, background: a.badge.bg, color: a.badge.color, whiteSpace: 'nowrap' }}>{a.badge.label}</span>}
                     </div>
                     <div style={{ fontSize: 13, color: 'var(--muted)' }}>{a.tagline}</div>
                   </div>
