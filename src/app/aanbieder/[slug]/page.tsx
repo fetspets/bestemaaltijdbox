@@ -188,6 +188,57 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             <p style={{ fontSize: 15, lineHeight: 1.8, color: '#166534', margin: 0, fontStyle: 'italic' }}>{a.uitgebreideReview.intro}</p>
           </div>
 
+          {/* Hero CTA */}
+          {a.ctaTekst && a.kortingsCode && (
+            <div style={{ textAlign: 'center', marginBottom: 24 }}>
+              <Link href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '14px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+                {a.ctaTekst} →
+              </Link>
+              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>Korting wordt automatisch toegepast — geen code nodig.</div>
+            </div>
+          )}
+
+          {/* Prijstabel */}
+          {a.uitgebreideReview.prijsTabel && (
+            <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>Wat kost {a.naam} per maand in België?</h2>
+              <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>Welkomstdeal (2 personen / 3 maaltijden/week) — automatisch via de link, geen code nodig:</p>
+              <div style={{ overflowX: 'auto' }}>
+                <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
+                  <thead>
+                    <tr style={{ background: 'var(--cream)' }}>
+                      {['Box', 'Normale prijs', 'Korting', 'Jij betaalt', 'Besparing'].map(h => (
+                        <th key={h} style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--rule)', fontWeight: 700, color: 'var(--ink)', whiteSpace: 'nowrap' }}>{h}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {a.uitgebreideReview.prijsTabel.map((row, i) => (
+                      <tr key={i} style={{ background: i % 2 === 0 ? 'white' : '#FAFAFA', fontWeight: row.box === 'Totaal' ? 700 : 400 }}>
+                        <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--rule)' }}>{row.box}</td>
+                        <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--rule)', textDecoration: row.box === 'Totaal' ? 'line-through' : 'none', color: row.box === 'Totaal' ? 'var(--muted)' : 'inherit' }}>{row.normaal}</td>
+                        <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--rule)' }}>{row.korting}</td>
+                        <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--rule)', color: '#16A34A', fontWeight: 700 }}>{row.betaal}</td>
+                        <td style={{ padding: '8px 12px', borderBottom: '1px solid var(--rule)' }}>{row.besparing}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {a.uitgebreideReview.prijsUitleg && (
+                <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: '16px 0' }}>{a.uitgebreideReview.prijsUitleg}</p>
+              )}
+              {a.ctaTekst2 && (
+                <div style={{ textAlign: 'center' }}>
+                  <Link href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+                    {a.ctaTekst2} →
+                  </Link>
+                  <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>Opzegbaar na je eerste box.</div>
+                </div>
+              )}
+            </div>
+          )}
+
           {/* Testervaring */}
           <div style={{ marginBottom: 24 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 12, paddingBottom: 10, borderBottom: '2px solid var(--ink)' }}>
@@ -219,7 +270,18 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* Voor wie */}
           <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>Voor wie is {a.naam} geschikt?</h2>
-            <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{a.uitgebreideReview.voorWie}</p>
+            <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: a.uitgebreideReview.nietGeschiktVoor ? '0 0 20px' : 0 }}>{a.uitgebreideReview.voorWie}</p>
+            {a.uitgebreideReview.nietGeschiktVoor && (
+              <>
+                <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 10, color: '#B91C1C' }}>Voor wie is {a.naam} niet de juiste keuze?</h3>
+                {a.uitgebreideReview.nietGeschiktVoor.map((punt, i) => (
+                  <div key={i} style={{ display: 'flex', gap: 8, fontSize: 13, color: '#374151', marginBottom: 8, lineHeight: 1.6 }}>
+                    <span style={{ color: '#EF4444', fontWeight: 700, flexShrink: 0 }}>✗</span>
+                    <span>{punt}</span>
+                  </div>
+                ))}
+              </>
+            )}
           </div>
 
           {/* Hoe werkt het */}
@@ -245,10 +307,23 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <div style={{ color: '#F59E0B', fontSize: 18 }}>{'★'.repeat(Math.round(a.score.totaal / 2))}{'☆'.repeat(5 - Math.round(a.score.totaal / 2))}</div>
               </div>
               <Link href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-                {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+                {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
               </Link>
             </div>
           </div>
+
+          {/* FAQ */}
+          {a.uitgebreideReview.faq && (
+            <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16 }}>Veelgestelde vragen over {a.naam}</h2>
+              {a.uitgebreideReview.faq.map((item, i) => (
+                <div key={i} style={{ marginBottom: i < a.uitgebreideReview.faq!.length - 1 ? 20 : 0 }}>
+                  <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700, marginBottom: 6, color: 'var(--ink)' }}>{item.vraag}</h3>
+                  <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{item.antwoord}</p>
+                </div>
+              ))}
+            </div>
+          )}
 
           <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar alle maaltijdboxen</Link>
         </div>
@@ -290,7 +365,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             )}
 
             <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
-              {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+              {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
             </Link>
             {a.ctaSubtekst && (
               <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 10 }}>{a.ctaSubtekst}</div>
