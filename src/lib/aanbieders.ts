@@ -17,6 +17,10 @@ export interface Aanbieder {
     hoeWerktHet: string;
     vergelijking: string;
     eindoordeel: string;
+    prijsTabel?: { box: string; normaal: string; korting: string; betaal: string; besparing: string }[];
+    prijsUitleg?: string;
+    nietGeschiktVoor?: string[];
+    faq?: { vraag: string; antwoord: string }[];
   };
   ranking: number;
   score: {
@@ -41,6 +45,8 @@ export interface Aanbieder {
   affiliateUrl: string;
   kortingsCode?: KortingsCode;
   ctaSubtekst?: string;
+  ctaTekst?: string;
+  ctaTekst2?: string;
   kenmerken: string[];
   pros: string[];
   cons: string[];
@@ -148,12 +154,38 @@ export const aanbieders: Aanbieder[] = [
     tagline: 'Creatieve chef-recepten voor kookliefhebbers',
     beschrijving: 'Marley Spoon biedt gevarieerde recepten met vaak iets uitgebreidere bereidingen dan andere maaltijdboxen. Met 40 gerechten per week en prijzen van €5,59 tot €9,69 afhankelijk van je plan is het een goede keuze voor wie graag kookt. Bezorgt in Vlaanderen en Brussel.',
     uitgebreideReview: {
-      intro: 'Marley Spoon is de keuze voor wie koken als een beleving ziet. Met 40 recepten per week en een focus op culinaire creativiteit richt Marley Spoon zich op de kookliefhebber die graag iets nieuws uitprobeert.',
+      intro: 'Ben jij iemand die koken niet als een plicht ziet, maar als een moment voor jezelf? Marley Spoon scoort 8,6 op 10 voor smaak — de hoogste score in onze test — en biedt elke week meer dan 40 recepten die verder gaan dan het doorsnee weekmenu. Dat kwaliteit een prijs heeft, is eerlijk: Marley Spoon is niet de goedkoopste keuze. Maar voor wie écht geniet van koken, is het verschil te proeven.',
       testervaring: 'Gebruikerservaringen benadrukken dat de Marley Spoon-recepten uitgebreider zijn dan bij HelloFresh of Foodbag — meer stappen, meer technieken, gemiddeld 45-60 minuten bereidingstijd. Dat is een bewuste keuze: Marley Spoon mikt op mensen die van koken genieten. De kwaliteit van de kruidenmixen en sauzen wordt consistent positief beoordeeld. Terugkerend minpunt in reviews: Marley Spoon bezorgt enkel in Vlaanderen en Brussel — wie in Wallonië woont kan er niet terecht.',
-      voorWie: 'Marley Spoon is een uitstekende keuze voor wie koken als ontspanning ziet en er 45-60 minuten voor wil nemen. Minder geschikt voor wie snel iets op tafel wil of in Wallonië woont.',
-      hoeWerktHet: 'Bestellen via marleyspoon.be of de app. Box voor 2 of 4 personen, 2-5 maaltijden per week. Bezorging in Vlaanderen en Brussel, gratis. Wekelijks pauzeren of opzeggen mogelijk.',
-      vergelijking: 'Marley Spoon zit qua prijs in dezelfde categorie als Foodbag maar biedt meer receptkeuze (40 vs 40). Ten opzichte van HelloFresh (50+ recepten) zijn de recepten van Marley Spoon creatiever en uitgebreider qua bereiding.',
-      eindoordeel: 'Marley Spoon verdient zijn #3 positie als beste keuze voor kookliefhebbers. Nieuwe klanten genieten van een welkomstaanbieding op de eerste boxen. Enkel de beperkte bezorging (geen Wallonië) is een minpunt.',
+      voorWie: 'Marley Spoon is een goede keuze voor wie koken als ontspanning ziet en er 45-60 minuten voor wil nemen. Ook interessant voor koppels en gezinnen die elke week iets nieuws op tafel willen zetten zonder de winkel in te moeten.',
+      hoeWerktHet: 'Bestellen via marleyspoon.be of de app. Box voor 2 of 4 personen, 2-5 maaltijden per week. Bezorging in Vlaanderen en Brussel. Wekelijks pauzeren of opzeggen mogelijk via je account.',
+      vergelijking: 'Marley Spoon zit qua prijs in dezelfde categorie als Foodbag maar biedt meer receptkeuze (40/week). Ten opzichte van HelloFresh zijn de recepten creatiever en uitgebreider qua bereiding, maar ook tijdsintensiever. Wie snel wil koken kiest beter voor HelloFresh.',
+      eindoordeel: 'Marley Spoon verdient zijn #3 positie als beste keuze voor kookliefhebbers. De hoge smaakscore (8,6/10) en het brede receptaanbod maken het verschil. Enkel de beperkte bezorging (geen Wallonië) en de hogere prijs zijn minpunten.',
+      prijsTabel: [
+        { box: 'Box 1', normaal: '€51,99', korting: '35% + gratis bezorging', betaal: '€33,79', besparing: '€18,20' },
+        { box: 'Box 2', normaal: '€51,99', korting: '30%', betaal: '€36,39', besparing: '€15,60' },
+        { box: 'Box 3', normaal: '€51,99', korting: '10%', betaal: '€46,79', besparing: '€5,20' },
+        { box: 'Box 4', normaal: '€51,99', korting: '10%', betaal: '€46,79', besparing: '€5,20' },
+        { box: 'Box 5', normaal: '€51,99', korting: '20%', betaal: '€41,59', besparing: '€10,40' },
+        { box: 'Totaal', normaal: '€259,95', korting: '—', betaal: '€205,35', besparing: '€54,60' },
+      ],
+      prijsUitleg: 'Na de welkomstperiode betaal je als 2 personen met 3 maaltijden/week €207,96/maand (4 × €51,99). Voor 4 personen loopt dat op tot €251,80/maand (4 × €62,95). Is dat duur vergeleken met zelf boodschappen doen? Ja. Maar Marley Spoon-gebruikers noemen telkens dezelfde redenen: geen voedselverspilling, geen dagelijks nadenken over wat je kookt, en de tijdsbesparing van niet elke avond naar de winkel te rijden.',
+      nietGeschiktVoor: [
+        'Je woont in Wallonië of buiten Vlaanderen/Brussel — Marley Spoon bezorgt daar niet.',
+        'Je hebt weinig tijd om te koken — reken op 45 tot 60 minuten per bereiding.',
+        'Je wil de goedkoopste maaltijdbox — de prijs per portie ligt hoger dan bij de meeste concurrenten.',
+        'Je kookt voor jonge kinderen met eenvoudige smaakvoorkeuren — de recepten zijn soms complex of pittiger van smaak.',
+        'Je wil à la carte ingrediënten kiezen — je kiest uit een menu, zelf bepalen wat je ontvangt is niet mogelijk.',
+      ],
+      faq: [
+        {
+          vraag: 'Kan ik Marley Spoon opzeggen na de eerste box?',
+          antwoord: 'Ja, Marley Spoon is wekelijks opzegbaar en heeft geen minimumperiode of opzegkosten. Je stopt of pauzeert je abonnement via je account — zolang je dit doet vóór de wekelijkse besteldeadline, wordt er geen nieuwe box aangemaakt.',
+        },
+        {
+          vraag: 'Bezorgt Marley Spoon ook in mijn gemeente?',
+          antwoord: 'Marley Spoon levert in Vlaanderen en het Brussels Hoofdstedelijk Gewest. Wallonië en andere regio\'s buiten dit gebied worden momenteel niet bediend. Twijfel je of jouw postcode in het leveringsgebied valt? Vul je postcode in op de website van Marley Spoon — je ziet meteen of bezorging mogelijk is.',
+        },
+      ],
     },
     ranking: 3,
     score: { totaal: 7.9, smaak: 8.6, prijsKwaliteit: 7.2, flexibiliteit: 8.0, duurzaamheid: 7.5, gemak: 7.2 },
@@ -173,10 +205,24 @@ export const aanbieders: Aanbieder[] = [
       bedrag: '35% korting',
       beschrijving: 'Automatisch via link — geen code nodig. Geldig op eerste 5 boxen voor nieuwe klanten.',
     },
-    ctaSubtekst: 'Automatisch via link · 5 boxen',
+    ctaSubtekst: 'Korting automatisch via link · geen code nodig',
+    ctaTekst: 'Bespaar €54 op je eerste 5 boxen',
+    ctaTekst2: 'Probeer je eerste box voor €33,79',
     kenmerken: ['✓ 40 recepten/week', '✓ Chef-kwaliteit', '✓ Gratis bezorging', '🌱 Vegan opties'],
-    pros: ['Groot receptaanbod (40/week)', 'Hoge smaakscore', 'Creatieve chef-recepten', 'Gratis bezorging'],
-    cons: ['Enkel Vlaanderen en Brussel (geen Wallonië)', 'Hogere prijs per portie', 'Recepten kosten meer tijd (45-60 min)'],
+    pros: [
+      'Grootste receptaanbod van alle geteste boxen: 40+ recepten per week',
+      'Hoogste smaakscore in onze test (8,6/10) — ingrediënten en afwerking overtuigen',
+      'Recepten van chefs met aandacht voor techniek, smaak en zelfgemaakte sauzen',
+      'Gratis bezorging op je eerste box via de welkomstdeal',
+      'Wekelijks opzegbaar, geen abonnement of minimumperiode',
+      'Ruim aanbod vegetarische en flexitarische opties',
+    ],
+    cons: [
+      'Enkel leverbaar in Vlaanderen en Brussel — Wallonië wordt niet bediend',
+      'Hogere prijs dan gemiddeld: €8,67/portie voor de populaire 2-pers/3-maaltijden box',
+      'Bereidingstijd van 45–60 minuten is langer dan bij HelloFresh of Foodbag',
+      'Je kiest uit een vast menu — zelf ingrediënten samenstellen is niet mogelijk',
+    ],
     geschiktVoor: ['koppel', 'vegetarisch'],
     losBestellenMogelijk: false,
     leverdag: true,
