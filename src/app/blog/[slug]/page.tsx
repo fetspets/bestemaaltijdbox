@@ -63,6 +63,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {[
               {
+                naam: 'Factor',
+                logo: '⚡',
+                deal: '40% op eerste box, 25% op volgende 5 boxen',
+                detail: 'Code BESTE40 · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
+                cta: 'Activeer Factor deal',
+                href: '/ga/factor',
+                kleur: '#D97706',
+                bg: '#FFFBEB',
+              },
+              {
                 naam: 'Foodbag',
                 logo: '🥦',
                 deal: '€60 korting op je eerste 3 bestellingen',
@@ -91,16 +101,6 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 href: '/ga/marley-spoon',
                 kleur: '#7C3AED',
                 bg: '#F5F3FF',
-              },
-              {
-                naam: 'Factor',
-                logo: '⚡',
-                deal: '40% op eerste box, 25% op volgende 5 boxen',
-                detail: 'Code BESTE40 · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
-                cta: 'Activeer Factor deal',
-                href: '/ga/factor',
-                kleur: '#D97706',
-                bg: '#FFFBEB',
               },
             ].map(a => (
               <div key={a.naam} style={{ background: 'white', borderRadius: 12, border: '1.5px solid #E5E7EB', padding: '16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
