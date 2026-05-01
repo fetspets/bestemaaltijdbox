@@ -310,7 +310,7 @@ export const aanbieders: Aanbieder[] = [
   {
     slug: 'factor',
     naam: 'Factor',
-    logo: '⚡',
+    logo: '/logos/factor.svg',
     tagline: 'Kant-en-klaar chef-maaltijden — geen koken vereist',
     beschrijving: 'Factor (van de HelloFresh Group) levert kant-en-klare chef-maaltijden die je enkel hoeft op te warmen. 18 gerechten per week in 5 dieetstijlen, bezorging in heel België op zondag of maandag.',
     uitgebreideReview: {
