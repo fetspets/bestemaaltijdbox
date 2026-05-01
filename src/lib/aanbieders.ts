@@ -272,7 +272,7 @@ export const aanbieders: Aanbieder[] = [
   {
     slug: 'foodmaker',
     naam: 'Foodmaker',
-    logo: '👨‍🍳',
+    logo: '/logos/foodmaker.svg',
     tagline: 'Artisanale kant-en-klaar met Jeroen Meus — Dagelijkse Kost bezorgd',
     beschrijving: 'Foodmaker is de Antwerpse kant-en-klaar maaltijdservice met een unieke samenwerking met Jeroen Meus (Dagelijkse Kost). 32 gerechten per week, gratis bezorging in heel België en een volledig vegan "Vedge Bags" gamma.',
     uitgebreideReview: {
