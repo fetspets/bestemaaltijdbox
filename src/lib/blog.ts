@@ -98,7 +98,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Wat als je toch te laat bent?' },
       { type: 'p', text: 'Neem direct contact op met de klantenservice via chat of e-mail. In de meeste gevallen is er begrip als je snel reageert, zeker als je een goede reden hebt. Klanten die een abonnement willen stopzetten krijgen soms ook een retentieaanbieding.' },
     ],
-    relatedSlugs: ['hellofresh', 'foodbag', 'marley-spoon', 'ekomenu'],
+    relatedSlugs: ['hellofresh', 'foodbag', 'marley-spoon', 'ekomenu', 'factor'],
   },
   {
     slug: 'vegetarisch-koken-maaltijdbox',

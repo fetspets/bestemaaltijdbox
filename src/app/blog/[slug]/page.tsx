@@ -92,6 +92,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 kleur: '#7C3AED',
                 bg: '#F5F3FF',
               },
+              {
+                naam: 'Factor',
+                logo: '⚡',
+                deal: '40% op eerste box, 25% op volgende 5 boxen',
+                detail: 'Code BESTE40 · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
+                cta: 'Activeer Factor deal',
+                href: '/ga/factor',
+                kleur: '#D97706',
+                bg: '#FFFBEB',
+              },
             ].map(a => (
               <div key={a.naam} style={{ background: 'white', borderRadius: 12, border: '1.5px solid #E5E7EB', padding: '16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: a.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>{a.logo}</div>
