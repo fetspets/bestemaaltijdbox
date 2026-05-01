@@ -354,7 +354,7 @@ export const aanbieders: Aanbieder[] = [
   {
     slug: 'carrefour-simply-you',
     naam: 'Carrefour Simply You',
-    logo: '🏪',
+    logo: '/logos/carrefour-simply-you.svg',
     tagline: 'Budgetvriendelijk zonder abonnement — in heel België',
     beschrijving: 'Carrefour Simply You is een betaalbare maaltijdbox van de bekende supermarktketen. Geen verplicht abonnement, bezorging in heel België inclusief Wallonië, en een welkomstkorting voor nieuwe klanten.',
     uitgebreideReview: {
