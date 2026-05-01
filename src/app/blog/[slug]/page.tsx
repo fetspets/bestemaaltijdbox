@@ -64,7 +64,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             {[
               {
                 naam: 'Factor',
-                logo: '⚡',
+                logo: '/logos/factor.svg',
                 deal: '40% op eerste box, 25% op volgende 5 boxen',
                 detail: 'Code BESTE40 · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
                 cta: 'Activeer Factor deal',
@@ -74,7 +74,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               },
               {
                 naam: 'Foodbag',
-                logo: '🥦',
+                logo: '/logos/foodbag.png',
                 deal: '€60 korting op je eerste 3 bestellingen',
                 detail: 'Code FOODBAGx60 · 3x €20 · geldig t.e.m. 01/01/2027',
                 cta: 'Activeer €60 korting',
@@ -84,7 +84,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               },
               {
                 naam: 'HelloFresh',
-                logo: '🌿',
+                logo: '/logos/hellofresh.png',
                 deal: '€50 korting op je eerste 4 boxen',
                 detail: 'Code HELLO85FL · €25+€10+€10+€5 · nieuwe klanten',
                 cta: 'Activeer HelloFresh deal',
@@ -94,7 +94,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               },
               {
                 naam: 'Marley Spoon',
-                logo: '🌍',
+                logo: '/logos/marley-spoon.png',
                 deal: 'Tot 35% korting op je eerste 5 boxen',
                 detail: 'Geen code nodig · korting automatisch via onze link',
                 cta: 'Activeer Marley Spoon deal',
@@ -104,7 +104,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               },
             ].map(a => (
               <div key={a.naam} style={{ background: 'white', borderRadius: 12, border: '1.5px solid #E5E7EB', padding: '16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: a.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>{a.logo}</div>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: a.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0, overflow: 'hidden' }}>
+                  {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} /> : a.logo}
+                </div>
                 <div style={{ flex: 1, minWidth: 180 }}>
                   <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 2 }}>{a.naam}</div>
                   <div style={{ fontSize: 14, fontWeight: 600, color: a.kleur, marginBottom: 2 }}>{a.deal}</div>
