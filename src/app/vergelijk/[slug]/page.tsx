@@ -27,6 +27,7 @@ const accentColors: Record<string, string> = {
   'carrefour-simply-you': '#1B4332',
   factor: '#7C3AED',
   foodmaker: '#1B4332',
+  foodprepper: '#2D6A4F',
 };
 
 const categorieLabelMap: Record<string, string> = {

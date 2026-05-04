@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
   ];
   const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio'];
-  const vergelijkingen = ['hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon'];
+  const vergelijkingen = ['hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon', 'foodprepper-vs-foodbag', 'foodprepper-vs-hellofresh'];
   const gidsen = ['goedkoopste-maaltijdbox-belgie'];
   const blogSlugs = [
     'maaltijdbox-of-zelf-koken-belgie',
