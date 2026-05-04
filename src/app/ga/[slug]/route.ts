@@ -6,7 +6,7 @@ const affiliateLinks: Record<string, string> = {
   'foodbag': 'https://www.foodbag.be/foodbox/?tt=19934_1015100_507243_&r=',
   'marley-spoon': 'https://go.adt246.net/t/t?a=1709214807&as=2059394978&t=2&tk=1',
   'factor': 'https://factor-be.sjv.io/c/3156055/3876428/19954',
-  'foodprepper': 'https://deals.foodprepper.be/c?c=40691&m=2545883&a=507243&r=&u=',
+  'foodprepper': 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u=',
 };
 
 export async function GET(

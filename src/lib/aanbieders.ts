@@ -288,7 +288,7 @@ export const aanbieders: Aanbieder[] = [
     belgisch: true,
     vegetarisch: true,
     bio: false,
-    affiliateUrl: 'https://deals.foodprepper.be/c?c=40691&m=2545883&a=507243&r=',
+    affiliateUrl: 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=',
     kortingsCode: {
       code: 'FOODPREPX45',
       bedrag: '3× €15 korting',
