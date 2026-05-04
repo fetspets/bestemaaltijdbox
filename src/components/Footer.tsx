@@ -65,6 +65,8 @@ export default function Footer() {
                 { label: 'HelloFresh vs Marley Spoon', href: '/vergelijk/hellofresh-vs-marley-spoon' },
                 { label: 'Foodbag vs Marley Spoon', href: '/vergelijk/foodbag-vs-marley-spoon' },
                 { label: 'HelloFresh vs Ekomenu', href: '/vergelijk/hellofresh-vs-ekomenu' },
+                { label: 'Foodprepper vs Foodbag', href: '/vergelijk/foodprepper-vs-foodbag' },
+                { label: 'Foodprepper vs HelloFresh', href: '/vergelijk/foodprepper-vs-hellofresh' },
                 { label: 'Beste voor gezinnen', href: '/voor/gezin' },
                 { label: 'Beste voor singles', href: '/voor/singles' },
                 { label: 'Goedkoopste maaltijdbox', href: '/gids/goedkoopste-maaltijdbox-belgie' },
