@@ -33,9 +33,34 @@ export default function HelloFreshKortingscode() {
         HelloFresh kortingscode 2026 — tot €60 korting + gratis extras voor 8 weken
       </h1>
 
-      <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, marginBottom: 32 }}>
-        Met de exclusieve HelloFresh kortingscode <strong>BESTE60</strong> krijg je tot €60 korting op je eerste boxen: <strong>€30 korting op box 1</strong>, €10 op box 2 en €5 op box 3. De bezorging van je eerste box is gratis. Bovendien krijg je gedurende <strong>8 weken een gratis extra product</strong> per box — zolang je abonnement actief is. Exclusief voor nieuwe klanten.
+      <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, marginBottom: 24 }}>
+        Met de exclusieve HelloFresh kortingscode <strong>BESTE60</strong> krijg je tot €60 korting op je eerste boxen. De bezorging van je eerste box is gratis. Bovendien krijg je gedurende <strong>8 weken een gratis extra product</strong> per box — zolang je abonnement actief is. Exclusief voor nieuwe klanten.
       </p>
+
+      {/* Kortingsstructuur */}
+      <div style={{ background: '#F8FAFC', border: '1.5px solid #E2E8F0', borderRadius: 12, padding: 20, marginBottom: 32 }}>
+        <div style={{ fontWeight: 700, fontSize: 14, color: '#1C1C1C', marginBottom: 12 }}>Hoe is de korting verdeeld?</div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div style={{ background: 'white', border: '1px solid #E2E8F0', borderRadius: 8, padding: 14 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#6B7280', marginBottom: 6 }}>Standaard abonnement</div>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, color: '#4B5563', display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <li>Box 1: <strong>€30 korting</strong></li>
+              <li>Box 2: <strong>€10 korting</strong></li>
+              <li>Box 3: <strong>€5 korting</strong></li>
+              <li style={{ color: '#9CA3AF' }}>Totaal: €45</li>
+            </ul>
+          </div>
+          <div style={{ background: 'white', border: '1.5px solid #A7DFC0', borderRadius: 8, padding: 14 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#1B4332', marginBottom: 6 }}>Flexibel abonnement</div>
+            <ul style={{ margin: 0, paddingLeft: 16, fontSize: 13, color: '#4B5563', display: 'flex', flexDirection: 'column', gap: 4 }}>
+              <li>Box 1: <strong>tot €44,01 korting</strong></li>
+              <li>Box 2: <strong>tot €20 korting</strong></li>
+              <li>Box 3 & 4: <strong>tot €10 korting</strong></li>
+              <li style={{ color: '#1B4332', fontWeight: 600 }}>Totaal: tot €60</li>
+            </ul>
+          </div>
+        </div>
+      </div>
 
       {/* Code box */}
       <div style={{ background: '#F0FDF4', border: '2px dashed #86EFAC', borderRadius: 16, padding: '28px 24px', textAlign: 'center', marginBottom: 24 }}>
@@ -91,7 +116,8 @@ export default function HelloFreshKortingscode() {
         <ul style={{ paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
           {[
             'Exclusief voor nieuwe HelloFresh-klanten',
-            'Tot €60 korting: €30 op box 1, €10 op box 2, €5 op box 3',
+            'Standaard: €30 op box 1, €10 op box 2, €5 op box 3 (= €45 totaal)',
+            'Flexibel abonnement: tot €44,01 op box 1, tot €20 op box 2, tot €10 op box 3 & 4',
             'Gratis bezorging op je eerste box',
             '8 weken lang een gratis extra product per box (zolang abonnement actief)',
             'Code BESTE60 invullen bij het afrekenen',

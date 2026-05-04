@@ -91,7 +91,7 @@ export const aanbieders: Aanbieder[] = [
     kortingsCode: {
       code: 'BESTE60',
       bedrag: 'tot €60 korting',
-      beschrijving: 'Gebruik exclusieve code BESTE60. Tot €60 korting op je eerste boxen: €30 korting op box 1, €10 op box 2, €5 op box 3. Gratis bezorging op box 1. Plus 8 weken lang een gratis extra per box. Exclusief voor nieuwe klanten.',
+      beschrijving: 'Gebruik exclusieve code BESTE60. Standaard: €30 op box 1, €10 op box 2, €5 op box 3. Met flexibel abonnement: tot €44,01 op box 1, tot €20 op box 2, tot €10 op box 3 & 4 (tot €60 totaal). Gratis bezorging op box 1. Plus 8 weken gratis extra per box. Exclusief voor nieuwe klanten.',
     },
     ctaSubtekst: 'Code: BESTE60 — tot €60 korting + gratis extras voor nieuwe klanten',
     kenmerken: ['✓ Gratis bezorging', '✓ Direct opzegbaar', '✓ 40+ recepten/week', '✓ App met tracking'],
