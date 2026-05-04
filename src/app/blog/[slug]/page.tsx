@@ -102,6 +102,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 kleur: '#7C3AED',
                 bg: '#F5F3FF',
               },
+              {
+                naam: 'Foodprepper',
+                logo: '/logos/foodprepper.png',
+                deal: '3× €15 korting op je eerste 3 bestellingen',
+                detail: 'Code FOODPREPX45 · €45 totaal · klaar in 15 minuten',
+                cta: 'Activeer Foodprepper deal',
+                href: '/ga/foodprepper',
+                kleur: '#2D6A4F',
+                bg: '#ECFDF5',
+              },
             ].map(a => (
               <div key={a.naam} style={{ background: 'white', borderRadius: 12, border: '1.5px solid #E5E7EB', padding: '16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: a.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0, overflow: 'hidden' }}>
