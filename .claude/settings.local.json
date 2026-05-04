@@ -16,7 +16,15 @@
       "Bash(cat next.config.ts)",
       "Bash(cat next.config.mjs)",
       "Bash(gh pr *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "WebSearch",
+      "WebFetch(domain:upload.wikimedia.org)",
+      "WebFetch(domain:brandfetch.com)",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:www.foodmaker.be)",
+      "WebFetch(domain:www.carrefour.be)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.creneau.com)"
     ]
   }
 }

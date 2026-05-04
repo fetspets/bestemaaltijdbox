@@ -6,7 +6,7 @@ export default function HelloFreshKortingscode() {
   const [copied, setCopied] = useState(false);
 
   async function handleCopy() {
-    try { await navigator.clipboard.writeText('HELLO85FL'); } catch {}
+    try { await navigator.clipboard.writeText('BESTE60'); } catch {}
     setCopied(true);
     setTimeout(() => setCopied(false), 2500);
   }
@@ -30,18 +30,18 @@ export default function HelloFreshKortingscode() {
 
       {/* H1 */}
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 5vw, 38px)', fontWeight: 900, color: '#1C1C1C', lineHeight: 1.15, marginBottom: 12 }}>
-        HelloFresh kortingscode 2026 — €50 korting op je eerste 4 boxen
+        HelloFresh kortingscode 2026 — €60 korting voor nieuwe klanten
       </h1>
 
       <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, marginBottom: 32 }}>
-        Met de HelloFresh kortingscode <strong>HELLO85FL</strong> krijg je €50 korting verspreid over je eerste 4 boxen: €25 op box 1, €10 op box 2, €10 op box 3 en €5 op box 4. Totale besparing: <strong>€50</strong>. Exclusief voor nieuwe klanten.
+        Met de exclusieve HelloFresh kortingscode <strong>BESTE60</strong> krijg je €60 korting op je eerste boxen. Exclusief voor nieuwe klanten.
       </p>
 
       {/* Code box */}
       <div style={{ background: '#F0FDF4', border: '2px dashed #86EFAC', borderRadius: 16, padding: '28px 24px', textAlign: 'center', marginBottom: 24 }}>
         <div style={{ fontSize: 12, fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Jouw kortingscode</div>
         <div style={{ fontFamily: 'monospace', fontSize: 'clamp(28px, 6vw, 42px)', fontWeight: 900, color: '#1B4332', letterSpacing: '0.05em', marginBottom: 16 }}>
-          HELLO85FL
+          BESTE60
         </div>
         <button
           onClick={handleCopy}
@@ -63,7 +63,7 @@ export default function HelloFreshKortingscode() {
         href="/ga/hellofresh"
         style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '16px', borderRadius: 12, fontWeight: 700, fontSize: 16, textDecoration: 'none', marginBottom: 32 }}
       >
-        Activeer €50 korting bij HelloFresh →
+        Activeer €60 korting bij HelloFresh →
       </Link>
 
       {/* Stappenplan */}
@@ -73,10 +73,10 @@ export default function HelloFreshKortingscode() {
         </h2>
         <ol style={{ paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
           {[
-            'Kopieer de code HELLO85FL via de knop hierboven',
-            'Klik op "Activeer €50 korting bij HelloFresh" en maak een account aan',
-            'Voer de code HELLO85FL in bij het afronden van je eerste bestelling',
-            'De korting wordt verdeeld over je eerste 4 boxen: €25, €10, €10 en €5',
+            'Kopieer de code BESTE60 via de knop hierboven',
+            'Klik op "Activeer €60 korting bij HelloFresh" en maak een account aan',
+            'Voer de code BESTE60 in bij het afronden van je eerste bestelling',
+            'De korting wordt automatisch verrekend op je bestelling',
           ].map((stap, i) => (
             <li key={i} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.6 }}>
               <strong style={{ color: '#1C1C1C' }}>Stap {i + 1}:</strong> {stap}
@@ -91,8 +91,8 @@ export default function HelloFreshKortingscode() {
         <ul style={{ paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
           {[
             'Geldig voor nieuwe HelloFresh-klanten',
-            '€50 korting: €25 op box 1, €10 op box 2, €10 op box 3, €5 op box 4',
-            'Code HELLO85FL invullen bij het afrekenen',
+            '€60 korting via exclusieve code BESTE60',
+            'Code invullen bij het afrekenen',
             'Direct opzegbaar na elke levering',
             'Gratis bezorging in heel België',
           ].map((v, i) => (

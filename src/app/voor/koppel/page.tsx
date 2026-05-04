@@ -50,7 +50,7 @@ const top3 = [
     accent: '#1B4332',
     tagline: 'Marktleider — sterkste prijs-kwaliteitverhouding',
     waarom: 'Met 40+ recepten per week komen koppels zelden twee keer hetzelfde op tafel. HelloFresh is flexibel — pauzeren of opzeggen kan tot 5 dagen voor levering. De grote keuze maakt het ook makkelijk om rekening te houden met elkaars voorkeuren.',
-    deal: '€50 korting — gebruik code HELLO85FL (€25 op box 1, €10 op box 2, €10 op box 3, €5 op box 4)',
+    deal: '€60 korting — gebruik exclusieve code BESTE60',
     dealColor: '#1B4332',
   },
   {
@@ -303,7 +303,7 @@ export default function KoppelPage() {
               scenario: 'Jullie willen maximaal voordeel',
               aanbeveling: 'HelloFresh',
               slug: 'hellofresh',
-              uitleg: 'Met kortingscode HELLO85FL (€50 korting op 4 boxen) betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
+              uitleg: 'Met exclusieve kortingscode BESTE60 (€60 korting) betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
               color: '#E8F5EE',
               border: '#BBF7D0',
             },
@@ -359,12 +359,12 @@ export default function KoppelPage() {
           Klaar om te beginnen?
         </div>
         <p style={{ fontSize: 14, lineHeight: 1.7, opacity: 0.85, maxWidth: 480, margin: '0 auto 20px' }}>
-          HelloFresh is de meest gekozen maaltijdbox voor koppels in België. Met tot €50 welkomstkorting is het ook meteen de voordeligste manier om te starten — geen code nodig, korting wordt automatisch toegepast.
+          HelloFresh is de meest gekozen maaltijdbox voor koppels in België. Met €60 welkomstkorting via exclusieve code BESTE60 is het ook meteen de voordeligste manier om te starten.
         </p>
         <Link href="/ga/hellofresh" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
-          Activeer tot €50 korting bij HelloFresh →
+          Activeer €60 korting bij HelloFresh →
         </Link>
-        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Code HELLO85FL · €50 korting op 4 boxen · direct opzegbaar</div>
+        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Code BESTE60 · €60 korting · direct opzegbaar</div>
       </div>
 
       {/* Andere categorieën */}
