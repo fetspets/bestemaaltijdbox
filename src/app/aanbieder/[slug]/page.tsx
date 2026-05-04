@@ -224,7 +224,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <Link href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '14px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
                 {a.ctaTekst} →
               </Link>
-              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>Korting wordt automatisch toegepast — geen code nodig.</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>
+                {a.kortingsCode?.code ? `Voer code ${a.kortingsCode.code} in bij het afrekenen.` : 'Korting wordt automatisch toegepast — geen code nodig.'}
+              </div>
             </div>
           )}
 
