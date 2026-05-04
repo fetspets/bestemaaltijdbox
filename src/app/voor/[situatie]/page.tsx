@@ -275,7 +275,7 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', border: '1px solid var(--rule)', borderRadius: 10, overflow: 'hidden', fontSize: 12, marginBottom: 14 }}>
               {[
-                { val: `€${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
+                { val: `vanaf €${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
                 { val: `${a.receptenPerWeek}+`, key: 'Recepten/week' },
                 { val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}`, key: 'Bezorging' },
               ].map(({ val, key }) => (
