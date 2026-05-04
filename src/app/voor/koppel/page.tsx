@@ -40,7 +40,7 @@ const top3 = [
     naam: 'HelloFresh',
     logo: '/logos/hellofresh.png',
     score: 8.4,
-    prijsPortie: '€5,50',
+    prijsPortie: 'vanaf €5,50',
     weekprijs: '€33,00',
     recepten: '40+',
     bezorging: 'Gratis',
@@ -58,7 +58,7 @@ const top3 = [
     naam: 'Foodbag',
     logo: '/logos/foodbag.png',
     score: 8.1,
-    prijsPortie: '€9,50',
+    prijsPortie: 'vanaf €9,50',
     weekprijs: '€57,00',
     recepten: '40+',
     bezorging: 'Gratis',
@@ -76,7 +76,7 @@ const top3 = [
     naam: 'Marley Spoon',
     logo: '/logos/marley-spoon.png',
     score: 7.9,
-    prijsPortie: '€5,59',
+    prijsPortie: 'vanaf €5,59',
     weekprijs: '€33,54',
     recepten: '40+',
     bezorging: 'Gratis',
@@ -96,7 +96,7 @@ const overige3 = [
     slug: 'ekomenu',
     naam: 'Ekomenu',
     score: 7.6,
-    prijsPortie: '€6,18',
+    prijsPortie: 'vanaf €6,18',
     weekprijs: '€37,08',
     omschrijving: 'De enige 100% biologische maaltijdbox in België — ideaal voor koppels met een milieubewuste leefstijl. Enkel bezorging in Vlaanderen en Brussel, geen actieve kortingscode.',
   },
@@ -104,7 +104,7 @@ const overige3 = [
     slug: 'factor',
     naam: 'Factor',
     score: 7.5,
-    prijsPortie: '€4,99',
+    prijsPortie: 'vanaf €4,99',
     weekprijs: '€35,94 (incl. €6 bezorgkost)',
     omschrijving: 'Kant-en-klare chef-maaltijden die je enkel opwarmt — geen koken vereist. Handig voor drukke avonden, maar je mist het kookplezier van een klassieke maaltijdbox.',
   },
@@ -112,7 +112,7 @@ const overige3 = [
     slug: 'carrefour-simply-you',
     naam: 'Carrefour Simply You',
     score: 6.8,
-    prijsPortie: '€5,38',
+    prijsPortie: 'vanaf €5,38',
     weekprijs: '€32,28',
     omschrijving: 'Geen abonnement nodig — je bestelt wanneer het uitkomt. Met kortingscode BOXNL20 ontvangen nieuwe klanten €20 korting op de eerste bestelling.',
   },
@@ -243,7 +243,7 @@ export default function KoppelPage() {
                 <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
                   <span style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700 }}>{a.naam}</span>
                   <span style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 900, color: '#1B4332' }}>{a.score.toFixed(1)}/10</span>
-                  <span style={{ fontSize: 12, color: 'var(--muted)' }}>· {a.prijsPortie}/portie</span>
+                  <span style={{ fontSize: 12, color: 'var(--muted)' }}>· {a.prijsPortie}</span>
                 </div>
                 <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', margin: 0 }}>{a.omschrijving}</p>
               </div>
@@ -271,12 +271,12 @@ export default function KoppelPage() {
             </thead>
             <tbody>
               {[
-                { naam: 'HelloFresh', portie: '€5,50', week: '€33,00', recepten: '40+', korting: 'tot €50 (automatisch)' },
-                { naam: 'Foodbag', portie: '€9,50', week: '€57,00', recepten: '40+', korting: '€60 — code FOODBAGx60' },
-                { naam: 'Marley Spoon', portie: '€5,59', week: '€33,54', recepten: '40+', korting: '35% (automatisch)' },
-                { naam: 'Ekomenu', portie: '€6,18', week: '€37,08', recepten: '20–25', korting: '—' },
-                { naam: 'Factor', portie: '€4,99', week: '€35,94 ²', recepten: '18', korting: '—' },
-                { naam: 'Carrefour Simply You', portie: '€5,38', week: '€32,28', recepten: '10+', korting: '€20 — code BOXNL20' },
+                { naam: 'HelloFresh', portie: 'vanaf €5,50', week: '€33,00', recepten: '40+', korting: 'tot €50 (automatisch)' },
+                { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '40+', korting: '€60 — code FOODBAGx60' },
+                { naam: 'Marley Spoon', portie: 'vanaf €5,59', week: '€33,54', recepten: '40+', korting: '35% (automatisch)' },
+                { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
+                { naam: 'Factor', portie: 'vanaf €4,99', week: '€35,94 ²', recepten: '18', korting: '—' },
+                { naam: 'Carrefour Simply You', portie: 'vanaf €5,38', week: '€32,28', recepten: '10+', korting: '€20 — code BOXNL20' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.naam}</td>

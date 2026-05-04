@@ -35,7 +35,7 @@ const top4 = [
     naam: 'Ekomenu',
     logo: '/logos/ekomenu.png',
     score: 7.6,
-    prijsPortie: '€6,18',
+    prijsPortie: 'vanaf €6,18',
     weekprijs: '€37,08',
     recepten: '20–25',
     bezorging: 'Gratis',
@@ -54,7 +54,7 @@ const top4 = [
     naam: 'HelloFresh',
     logo: '/logos/hellofresh.png',
     score: 8.4,
-    prijsPortie: '€5,50',
+    prijsPortie: 'vanaf €5,50',
     weekprijs: '€33,00',
     recepten: '40+',
     bezorging: 'Gratis',
@@ -73,7 +73,7 @@ const top4 = [
     naam: 'Foodbag',
     logo: '/logos/foodbag.png',
     score: 8.1,
-    prijsPortie: '€9,50',
+    prijsPortie: 'vanaf €9,50',
     weekprijs: '€57,00',
     recepten: '40+',
     bezorging: 'Gratis',
@@ -92,7 +92,7 @@ const top4 = [
     naam: 'Marley Spoon',
     logo: '/logos/marley-spoon.png',
     score: 7.9,
-    prijsPortie: '€5,59',
+    prijsPortie: 'vanaf €5,59',
     weekprijs: '€33,54',
     recepten: '40+',
     bezorging: 'Gratis',
@@ -230,10 +230,10 @@ export default function VeganPage() {
             </thead>
             <tbody>
               {[
-                { naam: 'Ekomenu', portie: '€6,18', vegan: '100% vegan & bio ✓', score: '7.6/10', korting: 'Welkomstaanbieding op site' },
-                { naam: 'HelloFresh', portie: '€5,50', vegan: 'Vegetarische opties', score: '8.4/10', korting: 'Tot €60 (automatisch)' },
-                { naam: 'Foodbag', portie: '€9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 — code FOODBAGx60' },
-                { naam: 'Marley Spoon', portie: '€5,59', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 35% (automatisch)' },
+                { naam: 'Ekomenu', portie: 'vanaf €6,18', vegan: '100% vegan & bio ✓', score: '7.6/10', korting: 'Welkomstaanbieding op site' },
+                { naam: 'HelloFresh', portie: 'vanaf €5,50', vegan: 'Vegetarische opties', score: '8.4/10', korting: 'Tot €60 (automatisch)' },
+                { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 — code FOODBAGx60' },
+                { naam: 'Marley Spoon', portie: 'vanaf €5,59', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 35% (automatisch)' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.naam}</td>
@@ -276,7 +276,7 @@ export default function VeganPage() {
               scenario: 'Je wil Belgisch én veggie, en je budget is ruimer',
               aanbeveling: 'Foodbag',
               slug: 'foodbag',
-              uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (€9,50/portie), maar de versheid en lokale herkomst zijn merkbaar. Met code FOODBAGx60 krijg je €60 korting op je eerste bestellingen.',
+              uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (vanaf €9,50/portie), maar de versheid en lokale herkomst zijn merkbaar. Met code FOODBAGx60 krijg je €60 korting op je eerste bestellingen.',
               color: '#FEF3C7',
               border: '#FCD34D',
             },

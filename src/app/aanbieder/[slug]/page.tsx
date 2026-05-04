@@ -189,7 +189,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* Specs grid */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 24 }}>
             {[
-              { icon: '💰', label: 'Prijs per portie', val: a.prijsPerPortieLabel ?? `€${a.prijsPerPortie.toFixed(2)}` },
+              { icon: '💰', label: 'Prijs per portie', val: a.prijsPerPortieLabel ?? `vanaf €${a.prijsPerPortie.toFixed(2)}` },
               { icon: '📋', label: 'Recepten per week', val: `${a.receptenPerWeek}+` },
               { icon: '🚚', label: 'Bezorging', val: a.gratisBezorging ? '✓ Gratis' : `€${a.bezorgkosten}` },
               { icon: '👥', label: 'Personen', val: `${a.minPersonen}–${a.maxPersonen}` },
@@ -374,7 +374,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
 
             <div style={{ marginBottom: 16 }}>
               {[
-                ['Prijs/portie', a.prijsPerPortieLabel ?? `€${a.prijsPerPortie.toFixed(2)}`],
+                ['Prijs/portie', a.prijsPerPortieLabel ?? `vanaf €${a.prijsPerPortie.toFixed(2)}`],
                 ['Populaire box', `€${a.prijsPopulaireBox.toFixed(2)}/week`],
                 ['Recepten/week', `${a.receptenPerWeek}+`],
                 ['Personen', `${a.minPersonen}–${a.maxPersonen}`],
