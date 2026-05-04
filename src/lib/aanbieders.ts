@@ -90,10 +90,10 @@ export const aanbieders: Aanbieder[] = [
     affiliateUrl: 'https://hellofresheuro.sjv.io/c/3156055/3872827/9318',
     kortingsCode: {
       code: 'BESTE60',
-      bedrag: '€60 korting',
-      beschrijving: 'Gebruik exclusieve code BESTE60 bij je eerste bestelling voor €60 korting. Geldig voor nieuwe klanten.',
+      bedrag: 'tot €60 korting',
+      beschrijving: 'Gebruik exclusieve code BESTE60. Tot €60 korting op je eerste boxen: €30 korting op box 1, €10 op box 2, €5 op box 3. Gratis bezorging op box 1. Plus 8 weken lang een gratis extra per box. Exclusief voor nieuwe klanten.',
     },
-    ctaSubtekst: 'Code: BESTE60 — €60 korting voor nieuwe klanten',
+    ctaSubtekst: 'Code: BESTE60 — tot €60 korting + gratis extras voor nieuwe klanten',
     kenmerken: ['✓ Gratis bezorging', '✓ Direct opzegbaar', '✓ 40+ recepten/week', '✓ App met tracking'],
     pros: ['Grootste receptvariatie (40+ per week)', 'Gratis bezorging in heel België', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Regelmatige welkomstaanbiedingen voor nieuwe klanten'],
     cons: ['Niet 100% Belgische ingrediënten', 'Meer plasticverpakking dan lokale alternatieven', 'Standaardprijs hoger na korting'],

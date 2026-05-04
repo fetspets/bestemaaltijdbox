@@ -30,11 +30,11 @@ export default function HelloFreshKortingscode() {
 
       {/* H1 */}
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 5vw, 38px)', fontWeight: 900, color: '#1C1C1C', lineHeight: 1.15, marginBottom: 12 }}>
-        HelloFresh kortingscode 2026 — €60 korting voor nieuwe klanten
+        HelloFresh kortingscode 2026 — tot €60 korting + gratis extras voor 8 weken
       </h1>
 
       <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, marginBottom: 32 }}>
-        Met de exclusieve HelloFresh kortingscode <strong>BESTE60</strong> krijg je €60 korting op je eerste boxen. Exclusief voor nieuwe klanten.
+        Met de exclusieve HelloFresh kortingscode <strong>BESTE60</strong> krijg je tot €60 korting op je eerste boxen: <strong>€30 korting op box 1</strong>, €10 op box 2 en €5 op box 3. De bezorging van je eerste box is gratis. Bovendien krijg je gedurende <strong>8 weken een gratis extra product</strong> per box — zolang je abonnement actief is. Exclusief voor nieuwe klanten.
       </p>
 
       {/* Code box */}
@@ -63,7 +63,7 @@ export default function HelloFreshKortingscode() {
         href="/ga/hellofresh"
         style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '16px', borderRadius: 12, fontWeight: 700, fontSize: 16, textDecoration: 'none', marginBottom: 32 }}
       >
-        Activeer €60 korting bij HelloFresh →
+        Activeer tot €60 korting bij HelloFresh →
       </Link>
 
       {/* Stappenplan */}
@@ -74,9 +74,9 @@ export default function HelloFreshKortingscode() {
         <ol style={{ paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
           {[
             'Kopieer de code BESTE60 via de knop hierboven',
-            'Klik op "Activeer €60 korting bij HelloFresh" en maak een account aan',
+            'Klik op "Activeer tot €60 korting bij HelloFresh" en maak een account aan',
             'Voer de code BESTE60 in bij het afronden van je eerste bestelling',
-            'De korting wordt automatisch verrekend op je bestelling',
+            'Je krijgt €30 korting op box 1, €10 op box 2 en €5 op box 3 — plus 8 weken lang een gratis extra per box',
           ].map((stap, i) => (
             <li key={i} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.6 }}>
               <strong style={{ color: '#1C1C1C' }}>Stap {i + 1}:</strong> {stap}
@@ -90,11 +90,12 @@ export default function HelloFreshKortingscode() {
         <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 800, marginBottom: 12, color: '#1C1C1C' }}>Voorwaarden</h3>
         <ul style={{ paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
           {[
-            'Geldig voor nieuwe HelloFresh-klanten',
-            '€60 korting via exclusieve code BESTE60',
-            'Code invullen bij het afrekenen',
-            'Direct opzegbaar na elke levering',
-            'Gratis bezorging in heel België',
+            'Exclusief voor nieuwe HelloFresh-klanten',
+            'Tot €60 korting: €30 op box 1, €10 op box 2, €5 op box 3',
+            'Gratis bezorging op je eerste box',
+            '8 weken lang een gratis extra product per box (zolang abonnement actief)',
+            'Code BESTE60 invullen bij het afrekenen',
+            'Wekelijks pauzeerbaar of opzegbaar vóór de besteldeadline',
           ].map((v, i) => (
             <li key={i} style={{ fontSize: 14, color: '#4B5563' }}>✓ {v}</li>
           ))}

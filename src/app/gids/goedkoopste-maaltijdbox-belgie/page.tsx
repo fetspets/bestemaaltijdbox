@@ -14,7 +14,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Wat kost een maaltijdbox gemiddeld per maand in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). Met welkomstkorting (code BESTE60: €60 korting) daalt dat in de eerste maand. Foodbag is duurder: €228/maand aan reguliere prijs.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). Met welkomstkorting (code BESTE60: tot €60 korting + gratis extras) daalt dat in de eerste maand. Foodbag is duurder: €228/maand aan reguliere prijs.' },
     },
     {
       '@type': 'Question',
@@ -37,7 +37,7 @@ const faqJsonLd = {
 const prijsTabel = [
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 6, weekprijs: 35.94, welkomst: '—', noot: '+ €6 bezorgkost' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '€20 korting (BOXNL20)', noot: null },
-  { naam: 'HelloFresh', slug: 'hellofresh', portie: 5.50, bezorging: 0, weekprijs: 33.00, welkomst: '€60 korting (code BESTE60)', noot: null },
+  { naam: 'HelloFresh', slug: 'hellofresh', portie: 5.50, bezorging: 0, weekprijs: 33.00, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
   { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 5.59, bezorging: 0, weekprijs: 33.54, welkomst: '35% korting (automatisch)', noot: null },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null },
@@ -151,10 +151,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
               slug: 'hellofresh',
               badge: '💰 Beste welkomstdeal voor kookboxen',
               accent: '#1B4332',
-              metDeal: '€60 korting via exclusieve code BESTE60',
+              metDeal: 'tot €60 korting via code BESTE60 + 8 weken gratis extras',
               naDeal: '€33,00/week (reguliere prijs)',
-              uitleg: 'HelloFresh geeft €60 welkomstkorting via exclusieve code BESTE60. Dat maakt de instapperiode bijzonder voordelig. Na de welkomstperiode stijgt de weekprijs naar €33,00. Gratis bezorging, 40+ recepten per week, wekelijks opzegbaar.',
-              dealOpmerking: 'Gebruik code BESTE60 bij je eerste bestelling · exclusief voor nieuwe klanten.',
+              uitleg: 'HelloFresh geeft tot €60 welkomstkorting via exclusieve code BESTE60: €30 op box 1, €10 op box 2, €5 op box 3. Gratis bezorging op box 1. Bovendien 8 weken lang een gratis extra product per box. Na de welkomstperiode stijgt de weekprijs naar €33,00. Gratis bezorging, 40+ recepten per week, wekelijks opzegbaar.',
+              dealOpmerking: 'Gebruik code BESTE60 bij je eerste bestelling · tot €60 korting + gratis extras · exclusief voor nieuwe klanten.',
             },
             {
               rang: 3,

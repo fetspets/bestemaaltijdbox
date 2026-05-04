@@ -85,7 +85,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               {
                 naam: 'HelloFresh',
                 logo: '/logos/hellofresh.png',
-                deal: '€60 korting voor nieuwe klanten',
+                deal: 'Tot €60 korting + 8 weken gratis extras',
                 detail: 'Exclusieve code BESTE60 · nieuwe klanten',
                 cta: 'Activeer HelloFresh deal',
                 href: '/ga/hellofresh',

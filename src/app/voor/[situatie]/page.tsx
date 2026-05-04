@@ -29,9 +29,9 @@ const situaties: Record<string, {
     seoTitel: 'Beste maaltijdbox voor koppels in België (2026) – Vergeleken',
     seoDesc: 'Welke maaltijdbox is het beste voor koppels in 2026? HelloFresh, Foodbag & Marley Spoon vergeleken. Ontdek jouw match en bespaar meteen.',
     faq: [
-      { q: 'Welke maaltijdbox is het beste voor 2 personen in België?', a: 'HelloFresh is de populairste keuze voor koppels: groot receptaanbod, gratis bezorging en €60 korting via exclusieve code BESTE60. Marley Spoon is een goed alternatief voor wie van uitgebreider koken houdt, met tot 35% korting op de eerste 5 boxen.' },
-      { q: 'Wat kost een maaltijdbox voor 2 personen per week?', a: 'Reken op €5,50 tot €9,50 per portie, oftewel €33 tot €57 per week voor 3 maaltijden voor 2 personen exclusief bezorgkosten. Met welkomstkorting zijn de eerste weken een stuk goedkoper — HelloFresh geeft €60 korting (code BESTE60) en Foodbag €60 korting (code FOODBAGx60).' },
-      { q: 'Welke maaltijdbox voor koppels heeft nu de beste deal?', a: 'Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig tot 01/01/2027. HelloFresh geeft €60 korting via exclusieve code BESTE60.' },
+      { q: 'Welke maaltijdbox is het beste voor 2 personen in België?', a: 'HelloFresh is de populairste keuze voor koppels: groot receptaanbod, gratis bezorging en tot €60 korting + 8 weken gratis extras via exclusieve code BESTE60. Marley Spoon is een goed alternatief voor wie van uitgebreider koken houdt, met tot 35% korting op de eerste 5 boxen.' },
+      { q: 'Wat kost een maaltijdbox voor 2 personen per week?', a: 'Reken op €5,50 tot €9,50 per portie, oftewel €33 tot €57 per week voor 3 maaltijden voor 2 personen exclusief bezorgkosten. Met welkomstkorting zijn de eerste weken een stuk goedkoper — HelloFresh geeft tot €60 korting + gratis extras (code BESTE60) en Foodbag €60 korting (code FOODBAGx60).' },
+      { q: 'Welke maaltijdbox voor koppels heeft nu de beste deal?', a: 'Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig tot 01/01/2027. HelloFresh geeft tot €60 korting + 8 weken gratis extras via exclusieve code BESTE60.' },
       { q: 'Kan ik een maaltijdbox voor 2 personen wekelijks pauzeren?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of een levering overslaan via je account, doorgaans tot 5 dagen voor de leveringsdatum. Je zit bij geen van hen langdurig vast.' },
     ],
     nietGeschiktAls: [
