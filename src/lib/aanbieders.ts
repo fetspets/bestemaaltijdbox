@@ -32,6 +32,7 @@ export interface Aanbieder {
     gemak: number;
   };
   prijsPerPortie: number;
+  prijsPerPortieLabel?: string;
   prijsPopulaireBox: number;
   receptenPerWeek: number;
   gratisBezorging: boolean;
@@ -440,6 +441,7 @@ export const aanbieders: Aanbieder[] = [
     ranking: 8,
     score: { totaal: 7.8, smaak: 7.6, prijsKwaliteit: 7.0, flexibiliteit: 8.5, duurzaamheid: 8.0, gemak: 9.5 },
     prijsPerPortie: 7.49,
+    prijsPerPortieLabel: '€6,50 – €8,50',
     prijsPopulaireBox: 44.90,
     receptenPerWeek: 20,
     gratisBezorging: true,
