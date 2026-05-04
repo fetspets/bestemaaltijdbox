@@ -244,28 +244,55 @@ export default function FoodprepperVsHellofresh() {
           </p>
         </div>
 
-        {/* Kortingsblok */}
-        <div style={{ background: '#ECFDF5', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: 28, marginBottom: 40 }}>
-          <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#D1FAE5', color: '#065F46', display: 'inline-block', marginBottom: 12 }}>
-            🏷️ Welkomstkorting Foodprepper
+        {/* Kortingsblokken */}
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 40 }}>
+          {/* Foodprepper korting */}
+          <div style={{ background: '#ECFDF5', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: 24 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#D1FAE5', color: '#065F46', display: 'inline-block', marginBottom: 12 }}>
+              🏷️ Welkomstkorting Foodprepper
+            </div>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
+              Code: <span style={{ color: '#2D6A4F' }}>FOODPREPX45</span>
+            </h3>
+            <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
+              <strong>3× €15 korting</strong> op eerste 3 bestellingen (tot €45). Voer code handmatig in bij het afrekenen.
+            </p>
+            <a
+              href={FOODPREPPER_KORTING}
+              target="_blank"
+              rel="sponsored nofollow"
+              style={{ display: 'block', background: '#2D6A4F', color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
+            >
+              €15 korting op eerste 3 bestellingen →
+            </a>
+            <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 8 }}>
+              Geldig voor nieuwe klanten. Controleer geldigheid op foodprepper.be.
+            </p>
           </div>
-          <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 900, marginBottom: 8 }}>
-            Kortingscode: <span style={{ color: '#2D6A4F' }}>FOODPREPX45</span>
-          </h3>
-          <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', marginBottom: 16 }}>
-            Gebruik code <strong>FOODPREPX45</strong> bij het afrekenen op foodprepper.be en krijg <strong>3× €15 korting</strong> op je eerste 3 bestellingen — tot €45 voordeel. Voer de code handmatig in bij het afrekenen.
-          </p>
-          <a
-            href={FOODPREPPER_KORTING}
-            target="_blank"
-            rel="sponsored nofollow"
-            style={{ display: 'inline-block', background: '#2D6A4F', color: 'white', padding: '11px 22px', borderRadius: 8, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}
-          >
-            €15 korting op de eerste 3 bestellingen →
-          </a>
-          <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10 }}>
-            Geldig voor nieuwe klanten. Controleer geldigheid op foodprepper.be.
-          </p>
+
+          {/* HelloFresh korting */}
+          <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: 24 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#D1FAE5', color: '#1B4332', display: 'inline-block', marginBottom: 12 }}>
+              🏷️ Welkomstkorting HelloFresh
+            </div>
+            <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
+              Code: <span style={{ color: '#1B4332' }}>BESTE60</span>
+            </h3>
+            <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
+              Tot <strong>€60 korting</strong> op de eerste boxen. Voer code <strong>BESTE60</strong> in bij het afrekenen op hellofresh.be.
+            </p>
+            <a
+              href={hf.affiliateUrl}
+              target="_blank"
+              rel="sponsored nofollow"
+              style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
+            >
+              Bekijk HelloFresh →
+            </a>
+            <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 8 }}>
+              Geldig voor nieuwe klanten. Controleer geldigheid op hellofresh.be.
+            </p>
+          </div>
         </div>
 
         {/* H2: Kies Foodprepper als */}
