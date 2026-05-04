@@ -105,7 +105,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                       <Link href={`/aanbieder/${r.slug}`} style={{ color: 'var(--ink)', textDecoration: 'none' }}>{r.naam}</Link>
                       {r.noot && <span style={{ display: 'block', fontSize: 11, color: '#DC2626', fontWeight: 400 }}>{r.noot}</span>}
                     </td>
-                    <td style={{ padding: '10px 12px' }}>€{r.portie.toFixed(2)}</td>
+                    <td style={{ padding: '10px 12px' }}>vanaf €{r.portie.toFixed(2)}</td>
                     <td style={{ padding: '10px 12px', color: r.bezorging === 0 ? '#16A34A' : '#DC2626', fontWeight: 600 }}>
                       {r.bezorging === 0 ? 'Gratis' : `€${r.bezorging}`}
                     </td>
