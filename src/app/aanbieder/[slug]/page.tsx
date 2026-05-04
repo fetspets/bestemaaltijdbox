@@ -13,6 +13,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${a.naam} review België 2026 – Is het de moeite waard? | BesteMaaltijdbox.be`,
     description: `Lees onze eerlijke ${a.naam} review. Score: ${a.score.totaal}/10. Gebaseerd op gebruikerservaringen en onafhankelijk onderzoek. Voor wie is het geschikt — en wanneer niet?`,
+    alternates: { canonical: `https://www.bestemaaltijdbox.be/aanbieder/${slug}` },
+    openGraph: {
+      title: `${a.naam} review België 2026 – Is het de moeite waard?`,
+      description: `Lees onze eerlijke ${a.naam} review. Score: ${a.score.totaal}/10. Gebaseerd op gebruikerservaringen en onafhankelijk onderzoek.`,
+      url: `https://www.bestemaaltijdbox.be/aanbieder/${slug}`,
+      type: 'article',
+      locale: 'nl_BE',
+    },
   };
 }
 
@@ -86,11 +94,33 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     },
   };
 
-  const accentColor = ({ hellofresh: '#1B4332', foodbag: '#1E40AF', 'marley-spoon': '#7C3AED' } as Record<string, string>)[a.slug] || '#1B4332';
+  const accentColor = ({ hellofresh: '#1B4332', foodbag: '#1E40AF', 'marley-spoon': '#7C3AED', foodprepper: '#2D6A4F' } as Record<string, string>)[a.slug] || '#1B4332';
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bestemaaltijdbox.be' },
+      { '@type': 'ListItem', position: 2, name: 'Vergelijken', item: 'https://www.bestemaaltijdbox.be' },
+      { '@type': 'ListItem', position: 3, name: a.naam, item: `https://www.bestemaaltijdbox.be/aanbieder/${a.slug}` },
+    ],
+  };
+
+  const faqLd = a.uitgebreideReview.faq && a.uitgebreideReview.faq.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: a.uitgebreideReview.faq.map(f => ({
+      '@type': 'Question',
+      name: f.vraag,
+      acceptedAnswer: { '@type': 'Answer', text: f.antwoord },
+    })),
+  } : null;
 
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
+      {faqLd && <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />}
 
       {/* Breadcrumb */}
       <div style={{ background: 'white', borderBottom: '1px solid var(--rule)', padding: '10px 0' }}>
