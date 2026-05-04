@@ -9,7 +9,7 @@ const jsonLd = {
   '@type': 'ItemList',
   name: 'Beste Maaltijdbox België 2026',
   description: 'Onafhankelijke vergelijking van maaltijdboxen in België',
-  numberOfItems: 7,
+  numberOfItems: 8,
   itemListElement: aanbieders.map((a, i) => ({
     '@type': 'ListItem',
     position: i + 1,
@@ -80,12 +80,12 @@ export default function HomePage() {
           De beste maaltijdbox<br />in <span style={{ color: 'var(--mint)' }}>België</span>
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          We onderzochten alle 7 maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke scores op smaak, prijs, gemak en duurzaamheid — geen betaalde posities.
+          We onderzochten alle 8 maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke scores op smaak, prijs, gemak en duurzaamheid — geen betaalde posities.
         </p>
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
-          {[['7', 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
+          {[['8', 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: '#1B4332' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{label}</div>
@@ -112,7 +112,7 @@ export default function HomePage() {
         {/* SECTION HEADER */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
           <h2 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900 }}>Onze rankings</h2>
-          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026 · 7 aanbieders</div>
+          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026 · 8 aanbieders</div>
         </div>
 
         {/* TOP 3 CARDS */}
