@@ -9,7 +9,7 @@ const kortingen = [
   {
     slug: 'hellofresh',
     naam: 'HelloFresh',
-    logo: '🌿',
+    logo: '/logos/hellofresh.png',
     code: 'BESTE60',
     deal: 'Tot €60 korting + 8 weken gratis extras voor nieuwe klanten',
     bedrag: 'tot €60',
@@ -19,21 +19,9 @@ const kortingen = [
     actief: true,
   },
   {
-    slug: 'marley-spoon',
-    naam: 'Marley Spoon',
-    logo: '🌍',
-    code: null,
-    deal: 'Tot 35% korting verspreid over de eerste 5 boxen',
-    bedrag: 'Tot 35%',
-    kleur: '#7C3AED',
-    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 35% + gratis verzending op box 1, 30% op box 2, 10% op box 3, 10% op box 4, 20% op box 5.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 5 boxen · Direct opzegbaar',
-    actief: true,
-  },
-  {
     slug: 'foodbag',
     naam: 'Foodbag',
-    logo: '🥦',
+    logo: '/logos/foodbag.png',
     code: 'FOODBAGx60',
     deal: '3x €20 korting op je eerste 3 bestellingen',
     bedrag: '€60 totaal',
@@ -43,9 +31,33 @@ const kortingen = [
     actief: true,
   },
   {
+    slug: 'marley-spoon',
+    naam: 'Marley Spoon',
+    logo: '/logos/marley-spoon.png',
+    code: null,
+    deal: 'Tot 35% korting verspreid over de eerste 5 boxen',
+    bedrag: 'Tot 35%',
+    kleur: '#7C3AED',
+    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 35% + gratis verzending op box 1, 30% op box 2, 10% op box 3, 10% op box 4, 20% op box 5.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 5 boxen · Direct opzegbaar',
+    actief: true,
+  },
+  {
+    slug: 'foodprepper',
+    naam: 'Foodprepper',
+    logo: '/logos/foodprepper.png',
+    code: 'FOODPREPX45',
+    deal: '3× €15 korting op je eerste 3 bestellingen',
+    bedrag: '€45 totaal',
+    kleur: '#2D6A4F',
+    beschrijving: 'Gebruik code FOODPREPX45 bij het afrekenen en krijg €15 korting op elk van je eerste 3 bestellingen. Totale besparing: €45. Klaar in 15 minuten dankzij voorbereide ingrediënten.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Code: FOODPREPX45 · 3× €15 op eerste 3 bestellingen · Vrij opzegbaar',
+    actief: true,
+  },
+  {
     slug: 'factor',
     naam: 'Factor',
-    logo: '⚡',
+    logo: '/logos/factor.svg',
     code: 'BESTE40',
     deal: '40% korting op je eerste box + 25% op de volgende vijf boxen',
     bedrag: '40% + 25%',
@@ -57,7 +69,7 @@ const kortingen = [
   {
     slug: 'foodmaker',
     naam: 'Foodmaker',
-    logo: '👨‍🍳',
+    logo: '/logos/foodmaker.svg',
     code: null,
     deal: 'Bekijk de huidige welkomstdeal',
     bedrag: 'Deal',
@@ -69,7 +81,7 @@ const kortingen = [
   {
     slug: 'ekomenu',
     naam: 'Ekomenu',
-    logo: '🌱',
+    logo: '/logos/ekomenu.png',
     code: null,
     deal: 'Bekijk de huidige welkomstdeal',
     bedrag: 'Deal',
@@ -81,14 +93,14 @@ const kortingen = [
   {
     slug: 'carrefour-simply-you',
     naam: 'Carrefour Simply You',
-    logo: '🏪',
-    code: 'BOXNL20',
-    deal: '€20 korting op je eerste box',
-    bedrag: '€20 korting',
+    logo: '/logos/carrefour-simply-you.svg',
+    code: null,
+    deal: 'Bekijk de huidige welkomstdeal',
+    bedrag: 'Deal',
     kleur: '#1B4332',
-    beschrijving: 'Gebruik code BOXNL20 bij je eerste bestelling op carrefour.be. Geen abonnement nodig, bezorging in heel België inclusief Wallonië.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Code BOXNL20 · Geen abonnement vereist',
-    actief: true,
+    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk carrefour.be voor de huidige welkomstaanbieding.',
+    voorwaarden: 'Bekijk website voor actuele aanbieding',
+    actief: false,
   },
 ];
 
@@ -130,7 +142,9 @@ export default function KortingscodesPagina() {
           position: 'relative', overflow: 'hidden',
         }}>
           {i === 0 && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />}
-          <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--cream)', border: '1.5px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24 }}>{k.logo}</div>
+          <div style={{ width: 48, height: 48, borderRadius: 12, background: 'var(--cream)', border: '1.5px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 24, overflow: 'hidden' }}>
+            {k.logo.startsWith('/') ? <img src={k.logo} alt={k.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 6 }} /> : k.logo}
+          </div>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
               <span style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700 }}>{k.naam}</span>
@@ -167,7 +181,9 @@ export default function KortingscodesPagina() {
           padding: 20, marginBottom: 10, display: 'grid',
           gridTemplateColumns: '40px 1fr auto', gap: 16, alignItems: 'center', opacity: 0.8,
         }}>
-          <div style={{ width: 40, height: 40, borderRadius: 10, background: 'white', border: '1px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20 }}>{k.logo}</div>
+          <div style={{ width: 40, height: 40, borderRadius: 10, background: 'white', border: '1px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, overflow: 'hidden' }}>
+            {k.logo.startsWith('/') ? <img src={k.logo} alt={k.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 5 }} /> : k.logo}
+          </div>
           <div>
             <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 2 }}>{k.naam}</div>
             <div style={{ fontSize: 13, color: 'var(--muted)' }}>{k.beschrijving}</div>
