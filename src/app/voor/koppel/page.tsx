@@ -105,7 +105,7 @@ const overige3 = [
     naam: 'Factor',
     score: 7.5,
     prijsPortie: 'vanaf €4,99',
-    weekprijs: '€35,94 (incl. €6 bezorgkost)',
+    weekprijs: '€35,93 (incl. €5,99 bezorgkost)',
     omschrijving: 'Kant-en-klare chef-maaltijden die je enkel opwarmt — geen koken vereist. Handig voor drukke avonden, maar je mist het kookplezier van een klassieke maaltijdbox.',
   },
   {
@@ -288,7 +288,7 @@ export default function KoppelPage() {
               ))}
             </tbody>
           </table>
-          <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>² Marley Spoon weekprijs exclusief €3,99 bezorgkost (+ Factor €6 bezorgkost). Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder.</p>
+          <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>² Marley Spoon weekprijs exclusief €5,99 bezorgkost (+ Factor €5,99 bezorgkost). Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder.</p>
         </div>
       </div>
 

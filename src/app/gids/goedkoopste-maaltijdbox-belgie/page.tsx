@@ -19,7 +19,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Is Factor echt de goedkoopste maaltijdbox in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Factor heeft de laagste prijs per portie (€4,99), maar rekent €6 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je op €35,94/week — duurder dan Carrefour Simply You (€32,28) en vergelijkbaar met HelloFresh (€33,00). Factor levert ook kant-en-klare maaltijden, geen kookbox.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Factor heeft de laagste prijs per portie (€4,99), maar rekent €5,99 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je op €35,93/week — duurder dan Carrefour Simply You (€32,28) en vergelijkbaar met HelloFresh (€47,94). Factor levert ook kant-en-klare maaltijden, geen kookbox.' },
     },
     {
       '@type': 'Question',
@@ -35,10 +35,10 @@ const faqJsonLd = {
 };
 
 const prijsTabel = [
-  { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 6, weekprijs: 35.94, welkomst: '—', noot: '+ €6 bezorgkost' },
+  { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '€20 korting (BOXNL20)', noot: null },
   { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
-  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 3.99, weekprijs: 52.02, welkomst: '35% korting (automatisch)', noot: '+ €3,99 bezorgkost' },
+  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 58.01, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null },
   { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null },
@@ -70,7 +70,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
           </h1>
           <div style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.8, maxWidth: 680 }}>
             <p style={{ margin: '0 0 12px' }}>
-              De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lijkt goedkoopst op €4,99/portie — maar als je de €6 bezorgkost per week optelt, betaal je meer dan bij HelloFresh (€33,00, gratis bezorging). De echte formule:
+              De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lijkt goedkoopst op €4,99/portie — maar als je de €5,99 bezorgkost per week optelt, betaal je meer dan bij Carrefour Simply You (€32,28, gratis bezorging). De echte formule:
             </p>
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 10, padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#1B4332', fontWeight: 600, marginBottom: 12 }}>
               weekprijs = (porties × prijs/portie) + bezorgkost
@@ -103,10 +103,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
                   <tr key={r.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 1 ? '#F0FDF4' : i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                     <td style={{ padding: '10px 12px', fontWeight: 600 }}>
                       <Link href={`/aanbieder/${r.slug}`} style={{ color: 'var(--ink)', textDecoration: 'none' }}>{r.naam}</Link>
-                      {r.noot && <span style={{ display: 'block', fontSize: 11, color: '#DC2626', fontWeight: 400 }}>{r.noot}</span>}
+                      {r.noot && <span style={{ display: 'block', fontSize: 11, color: '#D97706', fontWeight: 400 }}>{r.noot}</span>}
                     </td>
                     <td style={{ padding: '10px 12px' }}>vanaf €{r.portie.toFixed(2)}</td>
-                    <td style={{ padding: '10px 12px', color: r.bezorging === 0 ? '#16A34A' : '#DC2626', fontWeight: 600 }}>
+                    <td style={{ padding: '10px 12px', color: r.bezorging === 0 ? '#16A34A' : '#D97706', fontWeight: 600 }}>
                       {r.bezorging === 0 ? 'Gratis' : `€${r.bezorging}`}
                     </td>
                     <td style={{ padding: '10px 12px', fontFamily: 'Fraunces, serif', fontWeight: 900, fontSize: 15, color: i < 3 ? '#1B4332' : 'var(--ink)' }}>
@@ -284,7 +284,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 situatie: 'Goedkoopste optie voor 1 persoon',
                 winnaar: 'HelloFresh',
                 slug: 'hellofresh',
-                detail: '€23,97/week (1p, 3 maaltijden, 3 porties × €7,99), gratis bezorging. HelloFresh is de enige grote kookbox die levert voor 1 persoon. Factor heeft een lagere portieprijs maar de €6 bezorgkost maakt het voor 1 persoon duurder per portie.',
+                detail: '€23,97/week (1p, 3 maaltijden, 3 porties × €7,99), gratis bezorging. HelloFresh is de enige grote kookbox die levert voor 1 persoon. Factor heeft een lagere portieprijs maar de €5,99 bezorgkost maakt het voor 1 persoon duurder per portie.',
                 color: '#FFF7ED',
                 border: '#FED7AA',
               },

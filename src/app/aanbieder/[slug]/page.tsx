@@ -200,7 +200,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <div style={{ fontSize: 20, flexShrink: 0 }}>{icon}</div>
                 <div>
                   <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 1 }}>{label}</div>
-                  <div style={{ fontWeight: 700, fontSize: 14, color: val.startsWith('✓') ? '#16A34A' : 'var(--ink)' }}>{val}</div>
+                  <div style={{ fontWeight: 700, fontSize: 14, color: val.startsWith('✓') ? '#16A34A' : val.startsWith('€') ? '#D97706' : 'var(--ink)' }}>{val}</div>
                 </div>
               </div>
             ))}
@@ -392,9 +392,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               ))}
             </div>
 
-            {a.gratisBezorging && (
+            {a.gratisBezorging ? (
               <div style={{ textAlign: 'center', fontSize: 13, color: '#16A34A', fontWeight: 600, marginBottom: 12 }}>✓ Gratis bezorging inbegrepen</div>
-            )}
+            ) : a.bezorgkosten ? (
+              <div style={{ textAlign: 'center', fontSize: 13, color: '#D97706', fontWeight: 600, marginBottom: 12 }}>+ €{a.bezorgkosten} bezorgkost per levering</div>
+            ) : null}
 
             <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
               {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}

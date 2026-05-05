@@ -98,7 +98,7 @@ const situaties: Record<string, {
     intro: 'Wil je een maaltijdbox proberen zonder de bank te breken? Wij vergeleken alle Belgische maaltijdboxen op prijs per portie, bezorgkosten en welkomstkorting.',
     uitleg: '',
     uitlegParagraphs: [
-      'De goedkoopste maaltijdbox is niet altijd de beste deal. Factor kost maar €4,99 per portie maar rekent €6 bezorgkosten aan. <a href="/aanbieder/carrefour-simply-you" style="color:#1B4332;font-weight:600;text-decoration:underline">Carrefour Simply You</a> kost €5,38 per portie met gratis bezorging en geen verplicht abonnement — ideaal om te starten zonder engagement.',
+      'De goedkoopste maaltijdbox is niet altijd de beste deal. Factor kost maar €4,99 per portie maar rekent €5,99 bezorgkosten aan. <a href="/aanbieder/carrefour-simply-you" style="color:#1B4332;font-weight:600;text-decoration:underline">Carrefour Simply You</a> kost €5,38 per portie met gratis bezorging en geen verplicht abonnement — ideaal om te starten zonder engagement.',
       'HelloFresh lijkt duurder, maar met de welkomstkorting van tot €60 is het de eerste weken de meest voordelige keuze. Na de proefperiode stijgt de prijs naar het normale tarief. Bekijk onze <a href="/gids/goedkoopste-maaltijdbox-belgie" style="color:#1B4332;font-weight:600;text-decoration:underline">uitgebreide gids over de goedkoopste maaltijdboxen</a> voor een volledige prijsvergelijking inclusief bezorgkosten.',
     ],
     icon: '💰',
