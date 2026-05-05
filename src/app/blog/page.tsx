@@ -6,6 +6,13 @@ export const metadata: Metadata = {
   title: 'Blog – Maaltijdbox tips & gidsen | BesteMaaltijdbox.be',
   description: 'Handige artikels over maaltijdboxen in België: vergelijkingen, tips, kostenbesparing en meer.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/blog' },
+  openGraph: {
+    title: 'Blog – Maaltijdbox tips & gidsen | BesteMaaltijdbox.be',
+    description: 'Handige artikels over maaltijdboxen in België: vergelijkingen, tips, kostenbesparing en meer.',
+    url: 'https://www.bestemaaltijdbox.be/blog',
+    type: 'website',
+    locale: 'nl_BE',
+  },
 };
 
 export default function BlogOverzicht() {

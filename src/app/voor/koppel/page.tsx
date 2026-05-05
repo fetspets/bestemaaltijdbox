@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: 'Maaltijdbox voor 2 personen België 2026 – Top 6 vergeleken',
   description: 'Welke maaltijdbox past het beste bij jullie als koppel? Vergelijk prijs, receptvariatie en deals voor 2 personen in België. Met echte kortingscodes.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/voor/koppel' },
+  openGraph: {
+    title: 'Maaltijdbox voor 2 personen België 2026 – Top 6 vergeleken',
+    description: 'Welke maaltijdbox past het beste bij jullie als koppel? Vergelijk prijs, receptvariatie en deals voor 2 personen in België. Met echte kortingscodes.',
+    url: 'https://www.bestemaaltijdbox.be/voor/koppel',
+    type: 'website',
+    locale: 'nl_BE',
+  },
 };
 
 const jsonLd = {

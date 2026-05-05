@@ -4,6 +4,13 @@ export const metadata = {
   title: 'Algemene voorwaarden — BesteMaaltijdbox.be',
   description: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/voorwaarden' },
+  openGraph: {
+    title: 'Algemene voorwaarden — BesteMaaltijdbox.be',
+    description: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
+    url: 'https://www.bestemaaltijdbox.be/voorwaarden',
+    type: 'website',
+    locale: 'nl_BE',
+  },
 };
 
 export default function VoorwaardenPage() {

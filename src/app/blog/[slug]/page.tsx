@@ -17,6 +17,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: post.metaTitle,
     description: post.metaDescription,
     alternates: { canonical: `https://www.bestemaaltijdbox.be/blog/${slug}` },
+    openGraph: {
+      title: post.metaTitle,
+      description: post.metaDescription,
+      url: `https://www.bestemaaltijdbox.be/blog/${slug}`,
+      type: 'article',
+      locale: 'nl_BE',
+    },
   };
 }
 

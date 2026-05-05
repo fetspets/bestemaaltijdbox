@@ -5,6 +5,13 @@ export const metadata: Metadata = {
   title: 'Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week',
   description: 'Welke maaltijdbox is écht het goedkoopst in België? Vergelijk prijs per week (incl. bezorgkost) voor 8 aanbieders. Met rekensom, welkomstdeals en verborgen kosten.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie' },
+  openGraph: {
+    title: 'Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week',
+    description: 'Welke maaltijdbox is écht het goedkoopst in België? Vergelijk prijs per week (incl. bezorgkost) voor 8 aanbieders. Met rekensom, welkomstdeals en verborgen kosten.',
+    url: 'https://www.bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie',
+    type: 'article',
+    locale: 'nl_BE',
+  },
 };
 
 const faqJsonLd = {
