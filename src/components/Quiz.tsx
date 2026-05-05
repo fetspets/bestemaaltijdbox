@@ -3,53 +3,53 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-type Scores = { hf: number; fb: number; ms: number; ek: number };
+type Scores = { hf: number; fb: number; ms: number; ek: number; fp: number };
 
 const vragen = [
   {
     vraag: 'Voor hoeveel personen kook je meestal?',
     opties: [
-      { label: '1 persoon', scores: { hf: 2, fb: 0, ms: 0, ek: 1 } },
-      { label: '2 personen', scores: { hf: 2, fb: 1, ms: 2, ek: 2 } },
-      { label: '3–4 personen', scores: { hf: 1, fb: 2, ms: 1, ek: 0 } },
-      { label: '5 of meer', scores: { hf: 1, fb: 3, ms: 0, ek: 0 } },
+      { label: '1 persoon', scores: { hf: 2, fb: 0, ms: 0, ek: 1, fp: 1 } },
+      { label: '2 personen', scores: { hf: 2, fb: 1, ms: 2, ek: 2, fp: 1 } },
+      { label: '3–4 personen', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 0 } },
+      { label: '5 of meer', scores: { hf: 1, fb: 3, ms: 0, ek: 0, fp: 0 } },
     ],
   },
   {
     vraag: 'Hoe vaak per week wil je een maaltijdbox gebruiken?',
     opties: [
-      { label: '2–3 keer per week', scores: { hf: 1, fb: 0, ms: 2, ek: 1 } },
-      { label: '3–5 keer per week', scores: { hf: 2, fb: 2, ms: 0, ek: 0 } },
-      { label: 'Bijna elke dag', scores: { hf: 0, fb: 2, ms: 0, ek: 2 } },
-      { label: 'Af en toe', scores: { hf: 1, fb: 0, ms: 1, ek: 0 } },
+      { label: '2–3 keer per week', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1 } },
+      { label: '3–5 keer per week', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1 } },
+      { label: 'Bijna elke dag', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0 } },
+      { label: 'Af en toe', scores: { hf: 1, fb: 0, ms: 1, ek: 0, fp: 2 } },
     ],
   },
   {
     vraag: 'Wat vind je het belangrijkst?',
     opties: [
-      { label: '💰 Zo goedkoop mogelijk', scores: { hf: 3, fb: 0, ms: 0, ek: 0 } },
-      { label: '⚡ Snel en makkelijk koken', scores: { hf: 2, fb: 1, ms: 1, ek: 0 } },
-      { label: '🥗 Gezond / vegetarisch / vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3 } },
-      { label: '👨‍🍳 Lekker koken, culinaire ervaring', scores: { hf: 0, fb: 1, ms: 3, ek: 0 } },
-      { label: '🇧🇪 Lokale Belgische producten', scores: { hf: 0, fb: 3, ms: 0, ek: 0 } },
+      { label: '💰 Zo goedkoop mogelijk', scores: { hf: 3, fb: 0, ms: 0, ek: 0, fp: 0 } },
+      { label: '⚡ Snel en makkelijk koken', scores: { hf: 2, fb: 1, ms: 1, ek: 0, fp: 3 } },
+      { label: '🥗 Gezond / vegetarisch / vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0 } },
+      { label: '👨‍🍳 Lekker koken, culinaire ervaring', scores: { hf: 0, fb: 1, ms: 3, ek: 0, fp: 0 } },
+      { label: '🇧🇪 Lokale Belgische producten', scores: { hf: 0, fb: 3, ms: 0, ek: 0, fp: 1 } },
     ],
   },
   {
     vraag: 'Hoeveel tijd heb je gemiddeld om te koken?',
     opties: [
-      { label: 'Minder dan 20 minuten', scores: { hf: 2, fb: 0, ms: 0, ek: 0 } },
-      { label: '20–40 minuten', scores: { hf: 1, fb: 2, ms: 1, ek: 0 } },
-      { label: '40–60 minuten', scores: { hf: 0, fb: 1, ms: 2, ek: 1 } },
-      { label: 'Ik kook graag uitgebreid', scores: { hf: 0, fb: 0, ms: 3, ek: 0 } },
+      { label: 'Minder dan 20 minuten', scores: { hf: 2, fb: 0, ms: 0, ek: 0, fp: 3 } },
+      { label: '20–40 minuten', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1 } },
+      { label: '40–60 minuten', scores: { hf: 0, fb: 1, ms: 2, ek: 1, fp: 0 } },
+      { label: 'Ik kook graag uitgebreid', scores: { hf: 0, fb: 0, ms: 3, ek: 0, fp: 0 } },
     ],
   },
   {
     vraag: 'Heb je specifieke dieetvoorkeuren?',
     opties: [
-      { label: 'Geen specifieke voorkeur', scores: { hf: 1, fb: 2, ms: 1, ek: 0 } },
-      { label: 'Vegetarisch', scores: { hf: 0, fb: 0, ms: 0, ek: 3 } },
-      { label: 'Vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3 } },
-      { label: 'Gezond & caloriebewust', scores: { hf: 1, fb: 0, ms: 0, ek: 2 } },
+      { label: 'Geen specifieke voorkeur', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1 } },
+      { label: 'Vegetarisch', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0 } },
+      { label: 'Vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0 } },
+      { label: 'Gezond & caloriebewust', scores: { hf: 1, fb: 0, ms: 0, ek: 2, fp: 0 } },
     ],
   },
 ];
@@ -105,6 +105,17 @@ const resultaten: Record<string, {
     ],
     runnerUp: { slug: 'hellofresh', naam: 'HelloFresh', vergelijkSlug: 'hellofresh-vs-ekomenu' },
   },
+  fp: {
+    naam: 'Foodprepper',
+    slug: 'foodprepper',
+    tagline: 'De snelste maaltijdbox van België — verse maaltijden klaar in 15 minuten.',
+    bullets: [
+      'Klaar in 15 minuten — ingrediënten vooraf bereid geleverd',
+      'Geen verplicht abonnement, bestel wanneer je wil',
+      '100% Belgisch en lokaal',
+    ],
+    runnerUp: { slug: 'hellofresh', naam: 'HelloFresh', vergelijkSlug: 'foodprepper-vs-hellofresh' },
+  },
 };
 
 function getWinnaar(scores: Scores): string {
@@ -115,7 +126,7 @@ function getWinnaar(scores: Scores): string {
 
 export default function Quiz() {
   const [step, setStep] = useState(0);
-  const [scores, setScores] = useState<Scores>({ hf: 0, fb: 0, ms: 0, ek: 0 });
+  const [scores, setScores] = useState<Scores>({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0 });
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [done, setDone] = useState(false);
 
@@ -128,6 +139,7 @@ export default function Quiz() {
       fb: scores.fb + delta.fb,
       ms: scores.ms + delta.ms,
       ek: scores.ek + delta.ek,
+      fp: scores.fp + delta.fp,
     };
     setScores(next);
     if (step + 1 >= totalSteps) {
@@ -139,7 +151,7 @@ export default function Quiz() {
 
   function reset() {
     setStep(0);
-    setScores({ hf: 0, fb: 0, ms: 0, ek: 0 });
+    setScores({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0 });
     setDone(false);
     setHoveredIdx(null);
   }
