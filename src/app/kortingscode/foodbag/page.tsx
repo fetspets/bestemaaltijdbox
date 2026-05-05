@@ -107,7 +107,7 @@ export default function FoodbagKortingscode() {
           Waarom Foodbag?
         </h2>
         <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 12 }}>
-          Foodbag is een 100% Belgische maaltijdbox met lokale ingrediënten van Belgische boerderijen. Eigendom van Colruyt Group. Met 40 recepten per week, 5 kookstijlen en gratis bezorging in heel België is het een van de meest populaire keuzes voor Belgische gezinnen en koppels.
+          Foodbag is een 100% Belgische maaltijdbox met lokale ingrediënten van Belgische boerderijen. Eigendom van Colruyt Group. Met 20+ recepten per week, 5 kookstijlen en gratis bezorging in heel België is het een van de meest populaire keuzes voor Belgische gezinnen en koppels.
         </p>
         <Link href="/aanbieder/foodbag" style={{ fontSize: 14, fontWeight: 700, color: '#1B4332', textDecoration: 'underline' }}>
           Lees onze volledige Foodbag review →

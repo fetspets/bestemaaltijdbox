@@ -207,7 +207,7 @@ export default function FoodprepperVsFoodbag() {
             <strong>Foodprepper</strong> onderscheidt zich met een volledig dagmenu: ontbijt, lunch, diner én snacks. Via de versmarkt — een soort online buurtsupermarkt — kan je ook soepen, bijgerechten en snacks bijbestellen. Het weekmenu wisselt, maar is kleiner dan bij Foodbag.
           </p>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563' }}>
-            <strong>Foodbag</strong> biedt tot 40 recepten per week verdeeld over 5 kookstijlen, waaronder de populaire Sana-lijn van Sandra Bekkari en de Busy Day-gerechten (klaar in 20 min). Wie afwisseling wil in avondmaaltijden, vindt hier een breed aanbod. Ontbijt en lunch zitten er niet bij.
+            <strong>Foodbag</strong> biedt 20+ recepten per week verdeeld over 5 kookstijlen, waaronder de populaire Sana-lijn van Sandra Bekkari en de Busy Day-gerechten (klaar in 20 min). Wie afwisseling wil in avondmaaltijden, vindt hier een breed aanbod. Ontbijt en lunch zitten er niet bij.
           </p>
         </div>
 
@@ -308,7 +308,7 @@ export default function FoodprepperVsFoodbag() {
             {[
               'Je van koken houdt en het als een ontspannend moment ziet',
               'Je de avond als rusttijd ervaart en er 30 minuten voor neemt',
-              'Je veel receptvariatie wil: 40+ maaltijden per week uit 5 kookstijlen',
+              'Je veel receptvariatie wil: 20+ maaltijden per week uit 5 kookstijlen',
               'Je bewust lokaal en Belgisch wil eten met kortere keten',
               'Je de Sandra Bekkari Sana-lijn of Busy Day-gerechten wil',
             ].map((item) => (
