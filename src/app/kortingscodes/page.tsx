@@ -38,8 +38,8 @@ const kortingen = [
     deal: 'Tot 35% korting verspreid over de eerste 5 boxen',
     bedrag: 'Tot 35%',
     kleur: '#7C3AED',
-    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 35% + gratis verzending op box 1, 30% op box 2, 10% op box 3, 10% op box 4, 20% op box 5.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 5 boxen · Direct opzegbaar',
+    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 35% + gratis verzending op box 1, 30% op box 2, 10% op box 3, 10% op box 4, 20% op box 5. Daarna €5,99/levering.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 5 boxen · Direct opzegbaar · Reguliere bezorgkost: €5,99/levering',
     actief: true,
   },
   {
