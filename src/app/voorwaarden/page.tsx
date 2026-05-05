@@ -3,6 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Algemene voorwaarden — BesteMaaltijdbox.be',
   description: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
+  alternates: { canonical: 'https://www.bestemaaltijdbox.be/voorwaarden' },
 };
 
 export default function VoorwaardenPage() {

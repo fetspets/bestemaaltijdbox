@@ -4,10 +4,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.bestemaaltijdbox.be';
   const aanbieders = [
     'hellofresh', 'foodbag', 'marley-spoon',
-    'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
+    'foodprepper', 'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
   ];
-  const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio'];
-  const vergelijkingen = ['hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon', 'foodprepper-vs-foodbag', 'foodprepper-vs-hellofresh'];
+  const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio', 'vegan'];
+  const vergelijkingen = [
+    'hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon',
+    'foodbag-vs-marley-spoon', 'hellofresh-vs-ekomenu', 'hellofresh-vs-carrefour',
+    'foodprepper-vs-foodbag', 'foodprepper-vs-hellofresh',
+  ];
   const gidsen = ['goedkoopste-maaltijdbox-belgie'];
   const blogSlugs = [
     'maaltijdbox-of-zelf-koken-belgie',
@@ -15,12 +19,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'vegetarisch-koken-maaltijdbox',
     'maaltijdbox-starten-beginners',
   ];
+  const kortingscodes = ['hellofresh', 'foodbag', 'factor', 'foodprepper'];
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
     { url: `${baseUrl}/kortingscodes`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/over-ons`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
     { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
+    { url: `${baseUrl}/voorwaarden`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
     ...aanbieders.map(slug => ({
       url: `${baseUrl}/aanbieder/${slug}`,
       lastModified: new Date(),
@@ -45,8 +51,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly' as const,
       priority: 0.8,
     })),
-    { url: `${baseUrl}/kortingscode/foodbag`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${baseUrl}/kortingscode/factor`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.8 },
+    ...kortingscodes.map(slug => ({
+      url: `${baseUrl}/kortingscode/${slug}`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    })),
     { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.7 },
     ...blogSlugs.map(slug => ({
       url: `${baseUrl}/blog/${slug}`,
