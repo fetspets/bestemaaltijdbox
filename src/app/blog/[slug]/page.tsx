@@ -1,3 +1,4 @@
+import { Fragment } from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
@@ -153,6 +154,33 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             );
           }
           if (block.type === 'ul') {
+            if (i === 3 && slug === 'hoe-maaltijdbox-opzeggen-belgie') {
+              return (
+                <Fragment key={i}>
+                  <ul style={{ paddingLeft: 20, marginBottom: 16 }}>
+                    {block.items.map((item, j) => (
+                      <li key={j} style={{ marginBottom: 8 }}>{item}</li>
+                    ))}
+                  </ul>
+                  <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 12, padding: '20px', marginBottom: 16, marginTop: 8 }}>
+                    <p style={{ fontWeight: 800, fontSize: 16, color: '#1C1C1C', marginBottom: 8, marginTop: 0 }}>
+                      Op zoek naar iets snellers dan HelloFresh?
+                    </p>
+                    <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 16, marginTop: 0 }}>
+                      Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Gebruik code <strong>FOODPREPX45</strong> en krijg €15 korting op elk van je eerste 3 bestellingen.
+                    </p>
+                    <a
+                      href="https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u="
+                      target="_blank"
+                      rel="sponsored nofollow"
+                      style={{ display: 'inline-block', background: '#2D6A4F', color: 'white', padding: '10px 18px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
+                    >
+                      €15 korting op de eerste 3 bestellingen →
+                    </a>
+                  </div>
+                </Fragment>
+              );
+            }
             return (
               <ul key={i} style={{ paddingLeft: 20, marginBottom: 16 }}>
                 {block.items.map((item, j) => (
