@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://bestemaaltijdbox.be' },
+  alternates: { canonical: 'https://www.bestemaaltijdbox.be' },
   verification: {
     google: 'dgD6dFbp4JHPwAeuIu27zU6WTq1wEII8Sj_RsjngfgA',
   },

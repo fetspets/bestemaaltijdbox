@@ -3,6 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Over Ons — BesteMaaltijdbox.be',
   description: 'Wie zit er achter BesteMaaltijdbox.be? Ontdek hoe we alle Belgische maaltijdboxen uitgebreid onderzochten op basis van gebruikerservaringen, publieke data en eigen analyse.',
+  alternates: { canonical: 'https://www.bestemaaltijdbox.be/over-ons' },
 };
 
 export default function OverOnsPage() {

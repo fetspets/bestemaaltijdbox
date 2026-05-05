@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.metaTitle,
     description: post.metaDescription,
+    alternates: { canonical: `https://www.bestemaaltijdbox.be/blog/${slug}` },
   };
 }
 

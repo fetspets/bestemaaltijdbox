@@ -5,6 +5,7 @@ import { blogPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Blog – Maaltijdbox tips & gidsen | BesteMaaltijdbox.be',
   description: 'Handige artikels over maaltijdboxen in België: vergelijkingen, tips, kostenbesparing en meer.',
+  alternates: { canonical: 'https://www.bestemaaltijdbox.be/blog' },
 };
 
 export default function BlogOverzicht() {
