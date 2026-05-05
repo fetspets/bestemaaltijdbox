@@ -19,7 +19,7 @@ const jsonLd = {
     {
       '@type': 'Question',
       name: 'Welke maaltijdbox is het goedkoopst voor 2 personen?',
-      acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh met welkomstkorting (tot €50) is de goedkoopste optie voor koppels in de eerste weken. Carrefour Simply You (€32,28/week met code BOXNL20) is een goede keuze zonder abonnement.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh met welkomstkorting (tot €60 via code BESTE60) is de goedkoopste optie voor koppels in de eerste weken. Carrefour Simply You (€32,28/week met code BOXNL20) is een goede keuze zonder abonnement.' },
     },
     {
       '@type': 'Question',
@@ -40,8 +40,8 @@ const top3 = [
     naam: 'HelloFresh',
     logo: '/logos/hellofresh.png',
     score: 8.4,
-    prijsPortie: 'vanaf €5,50',
-    weekprijs: '€33,00',
+    prijsPortie: 'vanaf €7,99',
+    weekprijs: '€47,94',
     recepten: '40+',
     bezorging: 'Gratis',
     badge: '⭐ Beste keuze',
@@ -76,10 +76,10 @@ const top3 = [
     naam: 'Marley Spoon',
     logo: '/logos/marley-spoon.png',
     score: 7.9,
-    prijsPortie: 'vanaf €5,59',
-    weekprijs: '€33,54',
+    prijsPortie: 'vanaf €8,67',
+    weekprijs: '€52,02',
     recepten: '40+',
-    bezorging: 'Gratis',
+    bezorging: '€3,99',
     badge: '👨‍🍳 Chef-recepten',
     badgeColor: '#F3E8FF',
     badgeText: '#7C3AED',
@@ -271,9 +271,9 @@ export default function KoppelPage() {
             </thead>
             <tbody>
               {[
-                { naam: 'HelloFresh', portie: 'vanaf €5,50', week: '€33,00', recepten: '40+', korting: 'tot €50 (automatisch)' },
-                { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '40+', korting: '€60 — code FOODBAGx60' },
-                { naam: 'Marley Spoon', portie: 'vanaf €5,59', week: '€33,54', recepten: '40+', korting: '35% (automatisch)' },
+                { naam: 'HelloFresh', portie: 'vanaf €7,99', week: '€47,94', recepten: '40+', korting: 'tot €60 — code BESTE60' },
+                { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '20+', korting: '€60 — code FOODBAGx60' },
+                { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€52,02 ²', recepten: '40+', korting: '35% (automatisch)' },
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
                 { naam: 'Factor', portie: 'vanaf €4,99', week: '€35,94 ²', recepten: '18', korting: '—' },
                 { naam: 'Carrefour Simply You', portie: 'vanaf €5,38', week: '€32,28', recepten: '10+', korting: '€20 — code BOXNL20' },
@@ -288,7 +288,7 @@ export default function KoppelPage() {
               ))}
             </tbody>
           </table>
-          <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>² Inclusief €6 bezorgkost. Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder.</p>
+          <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 6 }}>² Marley Spoon weekprijs exclusief €3,99 bezorgkost (+ Factor €6 bezorgkost). Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder.</p>
         </div>
       </div>
 
@@ -341,7 +341,7 @@ export default function KoppelPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {[
             { q: 'Hoeveel maaltijden per week is realistisch als koppel?', a: 'De meeste koppels starten met 3 maaltijden per week — dat dekt de drukke doordeweekse avonden en laat ruimte voor een restaurantje of zelf iets klaarmaken in het weekend. Je kan altijd aanpassen of een week pauzeren.' },
-            { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh met welkomstkorting (tot €50) is de goedkoopste optie voor koppels in de eerste weken. Carrefour Simply You (€32,28/week met code BOXNL20) is een goede keuze zonder abonnement.' },
+            { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh met welkomstkorting (tot €60 via code BESTE60) is de goedkoopste optie voor koppels in de eerste weken. Carrefour Simply You (€32,28/week met code BOXNL20) is een goede keuze zonder abonnement.' },
             { q: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
             { q: 'Is een maaltijdbox duurder dan gewone boodschappen?', a: 'Per portie betaal je iets meer, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Koppels die regelmatig restjes weggooien of impulsaankopen doen, betalen in de praktijk niet veel meer.' },
           ].map(({ q, a }) => (

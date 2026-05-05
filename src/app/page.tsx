@@ -68,7 +68,7 @@ export default function HomePage() {
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
           { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en tot €60 korting + gratis extras via exclusieve code BESTE60. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting via code FOODBAGx60.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €6 bezorgkosten. HelloFresh (v.a. €5,50) levert gratis en geeft nieuwe klanten tot €60 korting + gratis extras via exclusieve code BESTE60.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €6 bezorgkosten. Carrefour Simply You (v.a. €5,38, gratis bezorging) is de goedkoopste kookbox. HelloFresh kost v.a. €7,99 maar geeft nieuwe klanten tot €60 korting + gratis extras via exclusieve code BESTE60.' }},
           { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig t.e.m. 01/01/2027. HelloFresh geeft tot €60 korting + 8 weken gratis extras via exclusieve code BESTE60.' }},
           { '@type': 'Question', name: 'Kan ik een maaltijdbox uitproberen zonder abonnement?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Carrefour Simply You (v.a. €5,38/portie, gratis bezorging) en Foodmaker werken zonder verplicht abonnement. Met code BOXNL20 krijg je €20 korting op je eerste bestelling bij Carrefour Simply You.' }},
         ]
@@ -228,7 +228,7 @@ export default function HomePage() {
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
-            <div style={{ fontSize: 13, color: 'var(--muted)' }}>7 aanbieders</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)' }}>8 aanbieders</div>
           </div>
           <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt april 2026.</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>

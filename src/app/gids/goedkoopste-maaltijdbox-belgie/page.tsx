@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week',
-  description: 'Welke maaltijdbox is écht het goedkoopst in België? Vergelijk prijs per week (incl. bezorgkost) voor 7 aanbieders. Met rekensom, welkomstdeals en verborgen kosten.',
+  description: 'Welke maaltijdbox is écht het goedkoopst in België? Vergelijk prijs per week (incl. bezorgkost) voor 8 aanbieders. Met rekensom, welkomstdeals en verborgen kosten.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie' },
 };
 
@@ -37,8 +37,8 @@ const faqJsonLd = {
 const prijsTabel = [
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 6, weekprijs: 35.94, welkomst: '—', noot: '+ €6 bezorgkost' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '€20 korting (BOXNL20)', noot: null },
-  { naam: 'HelloFresh', slug: 'hellofresh', portie: 5.50, bezorging: 0, weekprijs: 33.00, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
-  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 5.59, bezorging: 0, weekprijs: 33.54, welkomst: '35% korting (automatisch)', noot: null },
+  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
+  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 3.99, weekprijs: 52.02, welkomst: '35% korting (automatisch)', noot: '+ €3,99 bezorgkost' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null },
   { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null },
@@ -76,7 +76,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               weekprijs = (porties × prijs/portie) + bezorgkost
             </div>
             <p style={{ margin: 0 }}>
-              We berekenden de weekprijs voor 2 personen met 3 maaltijden (= 6 porties) voor alle 7 aanbieders, inclusief bezorgkost en welkomstdeals. Zo zie je meteen wie écht het voordeligst is.
+              We berekenden de weekprijs voor 2 personen met 3 maaltijden (= 6 porties) voor alle 8 aanbieders, inclusief bezorgkost en welkomstdeals. Zo zie je meteen wie écht het voordeligst is.
             </p>
           </div>
         </div>
@@ -276,7 +276,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 situatie: 'Goedkoopste kookbox voor een gezin (4p)',
                 winnaar: 'HelloFresh',
                 slug: 'hellofresh',
-                detail: '€66,00/week (4p, 3 maaltijden, 12 porties × €5,50), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Met welkomstkorting (tot €50) daalt de weekprijs in de eerste 3 boxen.',
+                detail: '€95,88/week (4p, 3 maaltijden, 12 porties × €7,99), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Met welkomstkorting (tot €60 via code BESTE60) daalt de weekprijs in de eerste boxen.',
                 color: '#EEF2FF',
                 border: '#C7D2FE',
               },
@@ -284,7 +284,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 situatie: 'Goedkoopste optie voor 1 persoon',
                 winnaar: 'HelloFresh',
                 slug: 'hellofresh',
-                detail: '€16,50/week (1p, 3 maaltijden, 3 porties × €5,50), gratis bezorging. HelloFresh is de enige grote kookbox die levert voor 1 persoon. Factor heeft een lagere portieprijs maar de €6 bezorgkost maakt het voor 1 persoon duurder per portie.',
+                detail: '€23,97/week (1p, 3 maaltijden, 3 porties × €7,99), gratis bezorging. HelloFresh is de enige grote kookbox die levert voor 1 persoon. Factor heeft een lagere portieprijs maar de €6 bezorgkost maakt het voor 1 persoon duurder per portie.',
                 color: '#FFF7ED',
                 border: '#FED7AA',
               },

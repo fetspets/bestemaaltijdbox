@@ -24,7 +24,7 @@ const jsonLd = {
     {
       '@type': 'Question',
       name: 'Is een vegan maaltijdbox duurder dan een gewone maaltijdbox?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Ekomenu kost €6,18 per portie — iets meer dan HelloFresh (€5,50) of Marley Spoon (€5,59). Het hogere tarief weerspiegelt het 100% biologische aanbod. Foodbag is met €9,50 per portie de duurste optie. Als je vegan wil eten via een andere aanbieder zoals HelloFresh, betaal je de reguliere prijs maar heb je een beperktere keuze aan vegan-geschikte recepten.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Ekomenu kost €6,18 per portie — goedkoper dan HelloFresh (€7,99) of Marley Spoon (€8,67). Het hogere tarief bij die aanbieders weerspiegelt hun bredere receptaanbod. Foodbag is met €9,50 per portie de duurste optie. Als je vegan wil eten via een andere aanbieder zoals HelloFresh, betaal je de reguliere prijs maar heb je een beperktere keuze aan vegan-geschikte recepten.' },
     },
   ],
 };
@@ -54,8 +54,8 @@ const top4 = [
     naam: 'HelloFresh',
     logo: '/logos/hellofresh.png',
     score: 8.4,
-    prijsPortie: 'vanaf €5,50',
-    weekprijs: '€33,00',
+    prijsPortie: 'vanaf €7,99',
+    weekprijs: '€47,94',
     recepten: '40+',
     bezorging: 'Gratis',
     badge: '⭐ Hoogste score',
@@ -92,8 +92,8 @@ const top4 = [
     naam: 'Marley Spoon',
     logo: '/logos/marley-spoon.png',
     score: 7.9,
-    prijsPortie: 'vanaf €5,59',
-    weekprijs: '€33,54',
+    prijsPortie: 'vanaf €8,67',
+    weekprijs: '€52,02',
     recepten: '40+',
     bezorging: 'Gratis',
     badge: '👨‍🍳 Chef-recepten',
@@ -231,9 +231,9 @@ export default function VeganPage() {
             <tbody>
               {[
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', vegan: '100% vegan & bio ✓', score: '7.6/10', korting: 'Welkomstaanbieding op site' },
-                { naam: 'HelloFresh', portie: 'vanaf €5,50', vegan: 'Vegetarische opties', score: '8.4/10', korting: 'Tot €60 (automatisch)' },
+                { naam: 'HelloFresh', portie: 'vanaf €7,99', vegan: 'Vegetarische opties', score: '8.4/10', korting: 'Tot €60 — code BESTE60' },
                 { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 — code FOODBAGx60' },
-                { naam: 'Marley Spoon', portie: 'vanaf €5,59', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 35% (automatisch)' },
+                { naam: 'Marley Spoon', portie: 'vanaf €8,67', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 35% (automatisch)' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.naam}</td>
@@ -299,7 +299,7 @@ export default function VeganPage() {
           {[
             { q: 'Wat is het verschil tussen een vegan maaltijdbox en een vegetarische maaltijdbox?', a: 'Een vegan maaltijdbox bevat geen enkele dierlijke producten — geen vlees, vis, eieren of zuivel. Een vegetarische maaltijdbox sluit vlees en vis uit, maar kan nog wel eieren, kaas of melk bevatten. In België is Ekomenu de enige aanbieder met een volledig vegan en biologisch aanbod. HelloFresh, Foodbag en Marley Spoon bieden vegetarische receptopties maar zijn geen vegan boxen.' },
             { q: 'Bestaat er een 100% vegan maaltijdbox in België?', a: 'Ja. Ekomenu is de enige aanbieder in België met een volledig plantaardig en biologisch aanbod. Alle ingrediënten zijn 100% bio-gecertificeerd en er worden geen dierlijke producten gebruikt. De andere aanbieders — HelloFresh, Foodbag en Marley Spoon — hebben vegetarische recepten in hun assortiment, maar zijn geen exclusief vegan boxen.' },
-            { q: 'Is een vegan maaltijdbox duurder dan een gewone maaltijdbox?', a: 'Ekomenu kost €6,18 per portie — iets meer dan HelloFresh (€5,50) of Marley Spoon (€5,59). Het hogere tarief weerspiegelt het 100% biologische aanbod. Foodbag is met €9,50 per portie de duurste optie. Als je vegan wil eten via een andere aanbieder zoals HelloFresh, betaal je de reguliere prijs maar heb je een beperktere keuze aan vegan-geschikte recepten.' },
+            { q: 'Is een vegan maaltijdbox duurder dan een gewone maaltijdbox?', a: 'Ekomenu kost €6,18 per portie — goedkoper dan HelloFresh (€7,99) of Marley Spoon (€8,67). Het hogere tarief bij die aanbieders weerspiegelt hun bredere receptaanbod. Foodbag is met €9,50 per portie de duurste optie. Als je vegan wil eten via een andere aanbieder zoals HelloFresh, betaal je de reguliere prijs maar heb je een beperktere keuze aan vegan-geschikte recepten.' },
           ].map(({ q, a }) => (
             <div key={q} style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)' }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700, marginBottom: 8 }}>{q}</div>
