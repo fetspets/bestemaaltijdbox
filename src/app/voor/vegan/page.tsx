@@ -2,12 +2,12 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Beste vegan maaltijdbox België 2026 — eerlijk vergeleken',
-  description: 'Op zoek naar een vegan maaltijdbox in België? Vergelijk Ekomenu (100% vegan & bio) met HelloFresh, Foodbag en Marley Spoon. Eerlijk, zonder testclaims.',
+  title: 'Beste vegan maaltijdbox in België 2026 — Ekomenu, HelloFresh en Foodbag getest',
+  description: 'Op zoek naar een 100% vegan maaltijdbox in België? Ekomenu (volledig plantaardig & bio) vergeleken met de vegan-opties van HelloFresh en Foodbag.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/voor/vegan' },
   openGraph: {
-    title: 'Beste vegan maaltijdbox België 2026 — eerlijk vergeleken',
-    description: 'Op zoek naar een vegan maaltijdbox in België? Vergelijk Ekomenu (100% vegan & bio) met HelloFresh, Foodbag en Marley Spoon. Eerlijk, zonder testclaims.',
+    title: 'Beste vegan maaltijdbox in België 2026 — Ekomenu, HelloFresh en Foodbag getest',
+    description: 'Op zoek naar een 100% vegan maaltijdbox in België? Ekomenu (volledig plantaardig & bio) vergeleken met de vegan-opties van HelloFresh en Foodbag.',
     url: 'https://www.bestemaaltijdbox.be/voor/vegan',
     type: 'website',
     locale: 'nl_BE',

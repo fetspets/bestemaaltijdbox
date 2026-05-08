@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Over Ons — BesteMaaltijdbox.be',
-  description: 'Wie zit er achter BesteMaaltijdbox.be? Ontdek hoe we alle Belgische maaltijdboxen uitgebreid onderzochten op basis van gebruikerservaringen, publieke data en eigen analyse.',
+  title: 'Over BesteMaaltijdbox.be — onafhankelijk advies, eerlijk vergeleken',
+  description: 'Wie zit er achter BesteMaaltijdbox.be? Hoe we elke Belgische maaltijdbox onderzoeken op gebruikerservaringen, publieke data en eigen analyse.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/over-ons' },
   openGraph: {
-    title: 'Over Ons — BesteMaaltijdbox.be',
-    description: 'Wie zit er achter BesteMaaltijdbox.be? Ontdek hoe we alle Belgische maaltijdboxen uitgebreid onderzochten op basis van gebruikerservaringen, publieke data en eigen analyse.',
+    title: 'Over BesteMaaltijdbox.be — onafhankelijk advies, eerlijk vergeleken',
+    description: 'Wie zit er achter BesteMaaltijdbox.be? Hoe we elke Belgische maaltijdbox onderzoeken op gebruikerservaringen, publieke data en eigen analyse.',
     url: 'https://www.bestemaaltijdbox.be/over-ons',
     type: 'website',
     locale: 'nl_BE',

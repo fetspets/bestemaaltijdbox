@@ -11,12 +11,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a = getAanbieder(slug);
   if (!a) return {};
   return {
-    title: `${a.naam} review België 2026 – Is het de moeite waard? | BesteMaaltijdbox.be`,
-    description: `Lees onze eerlijke ${a.naam} review. Score: ${a.score.totaal}/10. Gebaseerd op gebruikerservaringen en onafhankelijk onderzoek. Voor wie is het geschikt — en wanneer niet?`,
+    title: `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`,
+    description: `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`,
     alternates: { canonical: `https://www.bestemaaltijdbox.be/aanbieder/${slug}` },
     openGraph: {
-      title: `${a.naam} review België 2026 – Is het de moeite waard?`,
-      description: `Lees onze eerlijke ${a.naam} review. Score: ${a.score.totaal}/10. Gebaseerd op gebruikerservaringen en onafhankelijk onderzoek.`,
+      title: `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`,
+      description: `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`,
       url: `https://www.bestemaaltijdbox.be/aanbieder/${slug}`,
       type: 'article',
       locale: 'nl_BE',

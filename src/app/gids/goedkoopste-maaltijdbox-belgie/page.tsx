@@ -2,12 +2,12 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week',
-  description: 'Welke maaltijdbox is écht het goedkoopst in België? Vergelijk prijs per week (incl. bezorgkost) voor 8 aanbieders. Met rekensom, welkomstdeals en verborgen kosten.',
+  title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 8 aanbieders',
+  description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 8 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie' },
   openGraph: {
-    title: 'Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week',
-    description: 'Welke maaltijdbox is écht het goedkoopst in België? Vergelijk prijs per week (incl. bezorgkost) voor 8 aanbieders. Met rekensom, welkomstdeals en verborgen kosten.',
+    title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 8 aanbieders',
+    description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 8 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
     url: 'https://www.bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie',
     type: 'article',
     locale: 'nl_BE',
