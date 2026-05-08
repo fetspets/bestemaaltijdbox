@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Factor kortingscode mei 2026 — welkomstvoordeel op kant-en-klare maaltijden',
-  description: 'Het actuele Factor welkomstvoordeel voor nieuwe klanten in België. Kant-en-klare maaltijden zonder kookgedoe — bekijk wat je effectief betaalt.',
+  title: 'Factor kortingscode mei 2026 — 40% korting op je eerste box',
+  description: 'Het actuele Factor welkomstvoordeel voor nieuwe klanten in België: 40% korting op je eerste box met kant-en-klare maaltijden zonder kookgedoe.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/kortingscode/factor' },
   openGraph: {
-    title: 'Factor kortingscode mei 2026 — welkomstvoordeel op kant-en-klare maaltijden',
-    description: 'Het actuele Factor welkomstvoordeel voor nieuwe klanten in België. Kant-en-klare maaltijden zonder kookgedoe — bekijk wat je effectief betaalt.',
+    title: 'Factor kortingscode mei 2026 — 40% korting op je eerste box',
+    description: 'Het actuele Factor welkomstvoordeel voor nieuwe klanten in België: 40% korting op je eerste box met kant-en-klare maaltijden zonder kookgedoe.',
     url: 'https://www.bestemaaltijdbox.be/kortingscode/factor',
     type: 'article',
     locale: 'nl_BE',

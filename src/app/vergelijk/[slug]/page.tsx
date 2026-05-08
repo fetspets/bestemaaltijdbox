@@ -15,11 +15,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a2 = getAanbieder(v.aanbieder2Slug)!;
   return {
     title: `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`,
-    description: `${a1.naam} of ${a2.naam}? We vergeleken beide op prijs per portie, smaak, variatie en flexibiliteit. Bekijk welke écht bij jou past.`,
+    description: `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €60 op je eerste box.`,
     alternates: { canonical: `https://www.bestemaaltijdbox.be/vergelijk/${slug}` },
     openGraph: {
       title: `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`,
-      description: `${a1.naam} of ${a2.naam}? We vergeleken beide op prijs per portie, smaak, variatie en flexibiliteit. Bekijk welke écht bij jou past.`,
+      description: `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €60 op je eerste box.`,
       url: `https://www.bestemaaltijdbox.be/vergelijk/${slug}`,
       type: 'article',
       locale: 'nl_BE',
