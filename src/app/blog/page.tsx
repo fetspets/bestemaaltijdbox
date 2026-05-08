@@ -3,12 +3,12 @@ import Link from 'next/link';
 import { blogPosts } from '@/lib/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog – Maaltijdbox tips & gidsen | BesteMaaltijdbox.be',
-  description: 'Handige artikels over maaltijdboxen in België: vergelijkingen, tips, kostenbesparing en meer.',
+  title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
+  description: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/blog' },
   openGraph: {
-    title: 'Blog – Maaltijdbox tips & gidsen | BesteMaaltijdbox.be',
-    description: 'Handige artikels over maaltijdboxen in België: vergelijkingen, tips, kostenbesparing en meer.',
+    title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
+    description: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
     url: 'https://www.bestemaaltijdbox.be/blog',
     type: 'website',
     locale: 'nl_BE',

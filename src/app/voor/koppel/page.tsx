@@ -2,12 +2,12 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Maaltijdbox voor 2 personen België 2026 – Top 6 vergeleken',
-  description: 'Welke maaltijdbox past het beste bij jullie als koppel? Vergelijk prijs, receptvariatie en deals voor 2 personen in België. Met echte kortingscodes.',
+  title: 'Beste maaltijdbox voor 2 personen in België 2026 — top 6 getest',
+  description: 'Welke maaltijdbox past het best als koppel? We testten 6 aanbieders op prijs, receptvariatie en flexibiliteit voor 2 personen. Lees onze winnaar.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/voor/koppel' },
   openGraph: {
-    title: 'Maaltijdbox voor 2 personen België 2026 – Top 6 vergeleken',
-    description: 'Welke maaltijdbox past het beste bij jullie als koppel? Vergelijk prijs, receptvariatie en deals voor 2 personen in België. Met echte kortingscodes.',
+    title: 'Beste maaltijdbox voor 2 personen in België 2026 — top 6 getest',
+    description: 'Welke maaltijdbox past het best als koppel? We testten 6 aanbieders op prijs, receptvariatie en flexibiliteit voor 2 personen. Lees onze winnaar.',
     url: 'https://www.bestemaaltijdbox.be/voor/koppel',
     type: 'website',
     locale: 'nl_BE',

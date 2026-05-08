@@ -18,8 +18,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'maaltijdbox-of-zelf-koken-belgie',
     titel: 'Maaltijdbox of zelf koken in België: wat is goedkoper?',
-    metaTitle: 'Maaltijdbox of zelf koken in België: wat is goedkoper? — 2026',
-    metaDescription: 'Is een maaltijdbox goedkoper dan zelf boodschappen doen in België? We rekenden het uit met echte supermarktprijzen en maaltijdboxprijzen.',
+    metaTitle: 'Maaltijdbox vs. zelf koken in België 2026 — wat is écht goedkoper?',
+    metaDescription: 'We rekenden uit of een maaltijdbox écht duurder is dan zelf koken in België. Met supermarktprijzen, verspilling en tijdskost meegerekend.',
     gepubliceerd: 'april 2026',
     excerpt: 'Veel mensen denken dat een maaltijdbox automatisch duurder is dan zelf koken. Maar als je voedselverspilling, tijdskost en impulsaankopen meerekent, is het plaatje genuanceerder.',
     content: [
@@ -58,8 +58,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'hoe-maaltijdbox-opzeggen-belgie',
     titel: 'Hoe zeg je een maaltijdbox op in België? (stap voor stap)',
-    metaTitle: 'Maaltijdbox opzeggen in België: hoe doe je dat? — HelloFresh, Foodbag & meer',
-    metaDescription: 'Wil je je maaltijdbox opzeggen in België? Hier is hoe je dat doet bij HelloFresh, Foodbag, Marley Spoon en andere aanbieders — stap voor stap.',
+    metaTitle: 'Maaltijdbox opzeggen in België (2026): stappenplan per aanbieder',
+    metaDescription: 'Hoe zeg je je maaltijdbox op zonder dubbel te betalen? Stap voor stap voor HelloFresh, Foodbag, Marley Spoon en Ekomenu — met deadlines.',
     gepubliceerd: 'april 2026',
     excerpt: 'Een maaltijdbox opzeggen is bij de meeste aanbieders eenvoudig, maar er zijn deadlines om rekening mee te houden. We leggen het uit per aanbieder.',
     content: [
@@ -103,8 +103,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'vegetarisch-koken-maaltijdbox',
     titel: 'Vegetarisch koken met een maaltijdbox: onze ervaring',
-    metaTitle: 'Vegetarisch koken met een maaltijdbox in België — Onze ervaring 2026',
-    metaDescription: 'Welke maaltijdbox is het best voor vegetariërs in België? We testten HelloFresh, Ekomenu en Foodbag op vegetarisch aanbod, smaak en variatie.',
+    metaTitle: 'Vegetarische maaltijdbox in België 2026 — getest en vergeleken',
+    metaDescription: 'Welke maaltijdbox is het sterkst voor vegetariërs? We testten HelloFresh, Ekomenu en Foodbag op aanbod, smaak en variatie. Lees onze eerlijke uitkomst.',
     gepubliceerd: 'april 2026',
     excerpt: 'We testten 3 Belgische maaltijdboxen specifiek op hun vegetarisch aanbod: hoe groot is de keuze, hoe smaken de recepten en welke aanbieder biedt de meeste variatie?',
     content: [
@@ -136,8 +136,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'maaltijdbox-starten-beginners',
     titel: 'Maaltijdbox starten: alles wat je moet weten als beginner',
-    metaTitle: 'Maaltijdbox starten in België: beginnershandleiding 2026',
-    metaDescription: 'Wil je voor het eerst een maaltijdbox proberen in België? Hier is alles wat je moet weten: hoe het werkt, wat het kost en welke aanbieder het best past bij jou.',
+    metaTitle: 'Eerste maaltijdbox bestellen in België — beginnersgids 2026',
+    metaDescription: 'Nog nooit een maaltijdbox besteld? Zo werkt het, dit kost het en dit zijn de valkuilen voor je eerste levering. Met aanrader voor beginners.',
     gepubliceerd: 'april 2026',
     excerpt: 'Nog nooit een maaltijdbox besteld? We leggen uit hoe het werkt, wat je kan verwachten bij de eerste levering en waar je op moet letten bij de keuze van een aanbieder.',
     content: [

@@ -20,8 +20,8 @@ export const gidsen: Gids[] = [
   {
     slug: 'goedkoopste-maaltijdbox-belgie',
     titel: 'Goedkoopste maaltijdbox in België 2026 — vergeleken',
-    metaTitle: 'Goedkoopste maaltijdbox België 2026 — Prijsvergelijking',
-    metaDescription: 'Wat is de goedkoopste maaltijdbox in België? We vergeleken alle prijzen per portie, bezorgkosten en welkomstdeals. Bijgewerkt april 2026.',
+    metaTitle: 'Goedkoopste maaltijdbox in België 2026 — prijs en welkomstvoordelen vergeleken',
+    metaDescription: 'Wat is écht de goedkoopste maaltijdbox in België? Prijzen per portie, bezorgkosten en welkomstvoordelen voor alle aanbieders. Bijgewerkt mei 2026.',
     intro: 'De prijs per portie varieert enorm tussen Belgische maaltijdboxen. Maar de echte kost bereken je zo: portieprijs × aantal porties + bezorgkosten − welkomstkorting. We zetten alle opties naast elkaar, inclusief de addertjes onder het gras.',
     aanbevelingen: [
       {

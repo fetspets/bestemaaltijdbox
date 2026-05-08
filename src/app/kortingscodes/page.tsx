@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Kortingscodes Maaltijdbox België 2026 — Bespaar op je eerste box',
-  description: 'Alle actieve kortingscodes voor maaltijdboxen in België. Bespaar op HelloFresh, Foodbag, Marley Spoon en meer. Bijgewerkt april 2026.',
+  title: 'Kortingscodes maaltijdbox België mei 2026 — actueel overzicht',
+  description: 'Het meest actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Vergelijk welk welkomstvoordeel het meest oplevert.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/kortingscodes' },
   openGraph: {
-    title: 'Kortingscodes Maaltijdbox België 2026 — Bespaar op je eerste box',
-    description: 'Alle actieve kortingscodes voor maaltijdboxen in België. Bespaar op HelloFresh, Foodbag, Marley Spoon en meer. Bijgewerkt april 2026.',
+    title: 'Kortingscodes maaltijdbox België mei 2026 — actueel overzicht',
+    description: 'Het meest actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Vergelijk welk welkomstvoordeel het meest oplevert.',
     url: 'https://www.bestemaaltijdbox.be/kortingscodes',
     type: 'website',
     locale: 'nl_BE',

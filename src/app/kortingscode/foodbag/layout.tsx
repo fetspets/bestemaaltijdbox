@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Foodbag kortingscode FOODBAGx60 (2026) — €60 korting op je eerste 3 bestellingen | BesteMaaltijdbox.be',
-  description: 'Exclusieve Foodbag kortingscode voor mei 2026 — bespaar op je eerste bestellingen. Bekijk de actuele deal op BesteMaaltijdbox.be.',
+  title: 'Foodbag kortingscode mei 2026 — welkomstvoordeel voor nieuwe klanten',
+  description: 'Het actuele Foodbag welkomstaanbod voor nieuwe klanten in België. Bekijk de voorwaarden en wat je écht betaalt voor je eerste 3 bestellingen.',
   alternates: { canonical: 'https://www.bestemaaltijdbox.be/kortingscode/foodbag' },
   openGraph: {
-    title: 'Foodbag kortingscode FOODBAGx60 (2026) — €60 korting op je eerste 3 bestellingen',
-    description: 'Exclusieve Foodbag kortingscode voor mei 2026 — bespaar op je eerste bestellingen. Bekijk de actuele deal op BesteMaaltijdbox.be.',
+    title: 'Foodbag kortingscode mei 2026 — welkomstvoordeel voor nieuwe klanten',
+    description: 'Het actuele Foodbag welkomstaanbod voor nieuwe klanten in België. Bekijk de voorwaarden en wat je écht betaalt voor je eerste 3 bestellingen.',
     url: 'https://www.bestemaaltijdbox.be/kortingscode/foodbag',
     type: 'article',
     locale: 'nl_BE',
