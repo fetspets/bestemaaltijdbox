@@ -5,12 +5,12 @@ const CANONICAL = 'https://www.bestemaaltijdbox.be/kortingscode/foodprepper';
 export const metadata: Metadata = {
   title: 'Foodprepper kortingscode mei 2026 – €45 korting voor nieuwe klanten',
   description:
-    'Actieve Foodprepper kortingscode: gebruik FOODPREPX45 en krijg 3x €15 korting op je eerste 3 bestellingen. Exclusief voor nieuwe klanten.',
+    'Exclusieve Foodprepper kortingscode voor mei 2026 — bespaar op je eerste bestellingen. Bekijk de actuele deal op BesteMaaltijdbox.be.',
   alternates: { canonical: CANONICAL },
   openGraph: {
     title: 'Foodprepper kortingscode mei 2026 – €45 korting voor nieuwe klanten',
     description:
-      'Actieve Foodprepper kortingscode: gebruik FOODPREPX45 en krijg 3x €15 korting op je eerste 3 bestellingen. Exclusief voor nieuwe klanten.',
+      'Exclusieve Foodprepper kortingscode voor mei 2026 — bespaar op je eerste bestellingen. Bekijk de actuele deal op BesteMaaltijdbox.be.',
     type: 'article',
     url: CANONICAL,
   },
