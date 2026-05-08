@@ -3,14 +3,14 @@ import type { Metadata } from 'next';
 const CANONICAL = 'https://www.bestemaaltijdbox.be/kortingscode/foodprepper';
 
 export const metadata: Metadata = {
-  title: 'Foodprepper kortingscode mei 2026 — welkomstvoordeel zonder abonnement',
+  title: 'Foodprepper kortingscode mei 2026 — €45 korting zonder abonnement',
   description:
-    'Het actuele Foodprepper welkomstvoordeel voor nieuwe klanten — geen abonnement, geen verplichtingen. Bekijk wat je betaalt voor je eerste 3 bestellingen.',
+    'Het actuele Foodprepper welkomstvoordeel: €45 korting (3x €15) op je eerste 3 bestellingen — geen abonnement, geen verplichtingen.',
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: 'Foodprepper kortingscode mei 2026 — welkomstvoordeel zonder abonnement',
+    title: 'Foodprepper kortingscode mei 2026 — €45 korting zonder abonnement',
     description:
-      'Het actuele Foodprepper welkomstvoordeel voor nieuwe klanten — geen abonnement, geen verplichtingen. Bekijk wat je betaalt voor je eerste 3 bestellingen.',
+      'Het actuele Foodprepper welkomstvoordeel: €45 korting (3x €15) op je eerste 3 bestellingen — geen abonnement, geen verplichtingen.',
     type: 'article',
     url: CANONICAL,
   },

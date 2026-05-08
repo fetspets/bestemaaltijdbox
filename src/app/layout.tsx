@@ -10,11 +10,11 @@ export const metadata: Metadata = {
     default: 'Beste maaltijdbox België 2026 — 8 boxen eerlijk vergeleken',
     template: '%s | BesteMaaltijdbox.be',
   },
-  description: 'Welke maaltijdbox past écht bij jou? We vergeleken HelloFresh, Foodbag, Marley Spoon en 5 anderen op smaak, prijs en flexibiliteit. Bekijk onze topkeuzes.',
+  description: 'Welke maaltijdbox past écht bij jou? HelloFresh, Foodbag, Marley Spoon en 5 anderen vergeleken op smaak, prijs en flexibiliteit. Bespaar tot €60.',
   keywords: ['beste maaltijdbox belgië', 'maaltijdbox vergelijken', 'hellofresh kortingscode', 'foodbag review', 'maaltijdbox 2026'],
   openGraph: {
     title: 'Beste maaltijdbox België 2026 — 8 boxen eerlijk vergeleken',
-    description: 'Welke maaltijdbox past écht bij jou? We vergeleken HelloFresh, Foodbag, Marley Spoon en 5 anderen op smaak, prijs en flexibiliteit. Bekijk onze topkeuzes.',
+    description: 'Welke maaltijdbox past écht bij jou? HelloFresh, Foodbag, Marley Spoon en 5 anderen vergeleken op smaak, prijs en flexibiliteit. Bespaar tot €60.',
     url: 'https://bestemaaltijdbox.be',
     siteName: 'BesteMaaltijdbox.be',
     locale: 'nl_BE',
