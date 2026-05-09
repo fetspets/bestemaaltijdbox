@@ -31,7 +31,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Wat is de goedkoopste maaltijdbox zonder abonnement in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You heeft geen verplicht abonnement. Je bestelt wanneer het uitkomt, zonder wekelijkse verplichting. Met kortingscode BOXNL20 krijg je €20 korting op de eerste bestelling — effectief €12,28 voor de eerste week (2p, 3 maaltijden).' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You en Foodprepper hebben geen verplicht abonnement. Je bestelt wanneer het uitkomt, zonder wekelijkse verplichting. Foodprepper biedt daarbij €45 welkomstkorting over de eerste 3 bestellingen.' },
     },
     {
       '@type': 'Question',
@@ -43,7 +43,7 @@ const faqJsonLd = {
 
 const prijsTabel = [
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost' },
-  { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '€20 korting (BOXNL20)', noot: null },
+  { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null },
   { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
   { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
@@ -147,10 +147,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
               slug: 'carrefour-simply-you',
               badge: '🛒 Goedkoopst op reguliere prijs',
               accent: '#1B4332',
-              metDeal: '€12,28 (eerste bestelling met code BOXNL20)',
+              metDeal: '€32,28/week',
               naDeal: '€32,28/week (reguliere prijs)',
-              uitleg: 'De enige aanbieder zonder verplicht abonnement. Je bestelt wanneer het uitkomt. Met code BOXNL20 (€20 korting) betaal je voor de eerste keer maar €12,28 voor 2 personen en 3 maaltijden. Na die eerste bestelling betaal je €32,28/week — de laagste reguliere weekprijs van alle kookboxen.',
-              dealOpmerking: 'Let op: kortingscode BOXNL20 geldt enkel voor nieuwe klanten op de eerste bestelling.',
+              uitleg: 'De enige aanbieder zonder verplicht abonnement. Je bestelt wanneer het uitkomt. Met €32,28/week voor 2 personen en 3 maaltijden is dit de laagste reguliere weekprijs van alle kookboxen — zonder abonnement.',
+              dealOpmerking: 'Geen verplichte wekelijkse levering. Bestellen wanneer het jou uitkomt.',
             },
             {
               rang: 2,
@@ -275,7 +275,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 situatie: 'Goedkoopste kookbox voor een koppel (2p)',
                 winnaar: 'Carrefour Simply You',
                 slug: 'carrefour-simply-you',
-                detail: '€32,28/week (reguliere prijs) of €12,28 de eerste keer met code BOXNL20. Geen abonnement. HelloFresh is een goed alternatief als je meer receptkeuze wil (40+ vs. 10+).',
+                detail: '€32,28/week (reguliere prijs), geen abonnement. HelloFresh is een goed alternatief als je meer receptkeuze wil (40+ vs. 10+).',
                 color: '#F0FDF4',
                 border: '#BBF7D0',
               },
@@ -299,7 +299,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 situatie: 'Goedkoopste als je geen abonnement wil',
                 winnaar: 'Carrefour Simply You',
                 slug: 'carrefour-simply-you',
-                detail: 'Geen abonnement, geen opzegtermijn. Bestellen wanneer het uitkomt. Met BOXNL20 (€20 korting) is de eerste bestelling maar €12,28 voor een koppel. Foodmaker en Foodbag werken ook zonder vast abonnement.',
+                detail: 'Geen abonnement, geen opzegtermijn. Bestellen wanneer het uitkomt. Foodprepper en Foodmaker werken ook zonder vast abonnement — Foodprepper biedt daarbij €45 welkomstkorting.',
                 color: '#F5F3FF',
                 border: '#DDD6FE',
               },
