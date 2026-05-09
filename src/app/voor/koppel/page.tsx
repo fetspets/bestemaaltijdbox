@@ -26,7 +26,7 @@ const jsonLd = {
     {
       '@type': 'Question',
       name: 'Welke maaltijdbox is het goedkoopst voor 2 personen?',
-      acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh met welkomstkorting (tot €60 via code BESTE60) is de goedkoopste optie voor koppels in de eerste weken. Carrefour Simply You (€32,28/week met code BOXNL20) is een goede keuze zonder abonnement.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh met tot €60 welkomstkorting is de goedkoopste optie voor koppels in de eerste weken. Foodprepper (€45 korting, geen abonnement) is een goede keuze als je flexibel wil blijven.' },
     },
     {
       '@type': 'Question',
@@ -121,7 +121,7 @@ const overige3 = [
     score: 6.8,
     prijsPortie: 'vanaf €5,38',
     weekprijs: '€32,28',
-    omschrijving: 'Geen abonnement nodig — je bestelt wanneer het uitkomt. Met kortingscode BOXNL20 ontvangen nieuwe klanten €20 korting op de eerste bestelling.',
+    omschrijving: 'Geen abonnement nodig — je bestelt wanneer het uitkomt. Carrefour Simply You is een flexibele optie voor koppels die niet gebonden willen zijn.',
   },
 ];
 
@@ -283,7 +283,7 @@ export default function KoppelPage() {
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€51,99 ²', recepten: '40+', korting: '35% (automatisch)' },
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
                 { naam: 'Factor', portie: 'vanaf €4,99', week: '€35,94 ²', recepten: '18', korting: '—' },
-                { naam: 'Carrefour Simply You', portie: 'vanaf €5,38', week: '€32,28', recepten: '10+', korting: '€20 — code BOXNL20' },
+                { naam: 'Carrefour Simply You', portie: 'vanaf €5,38', week: '€32,28', recepten: '10+', korting: '—' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.naam}</td>
@@ -348,7 +348,7 @@ export default function KoppelPage() {
         <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {[
             { q: 'Hoeveel maaltijden per week is realistisch als koppel?', a: 'De meeste koppels starten met 3 maaltijden per week — dat dekt de drukke doordeweekse avonden en laat ruimte voor een restaurantje of zelf iets klaarmaken in het weekend. Je kan altijd aanpassen of een week pauzeren.' },
-            { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh met welkomstkorting (tot €60 via code BESTE60) is de goedkoopste optie voor koppels in de eerste weken. Carrefour Simply You (€32,28/week met code BOXNL20) is een goede keuze zonder abonnement.' },
+            { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh met tot €60 welkomstkorting is de goedkoopste optie voor koppels in de eerste weken. Foodprepper (€45 korting, geen abonnement) is een goede keuze als je flexibel wil blijven.' },
             { q: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
             { q: 'Is een maaltijdbox duurder dan gewone boodschappen?', a: 'Per portie betaal je iets meer, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Koppels die regelmatig restjes weggooien of impulsaankopen doen, betalen in de praktijk niet veel meer.' },
           ].map(({ q, a }) => (

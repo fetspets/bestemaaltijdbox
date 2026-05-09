@@ -467,12 +467,7 @@ export const aanbieders: Aanbieder[] = [
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://www.carrefour.be',
-    kortingsCode: {
-      code: 'BOXNL20',
-      bedrag: '€20 korting',
-      beschrijving: 'Voer code BOXNL20 in bij afrekenen. Geldig voor nieuwe klanten.',
-    },
-    ctaSubtekst: 'Code BOXNL20 · geen abonnement',
+    ctaSubtekst: 'Geen abonnement · bestellen wanneer je wil',
     kenmerken: ['💰 Voordelig', '🇧🇪 Heel België', '✓ Geen abonnement', '🏷️ Welkomstkorting nieuwe klanten'],
     pros: ['Geen verplicht abonnement', 'Welkomstkorting voor nieuwe klanten', 'Bezorging in heel België incl. Wallonië', '10+ recepten per week'],
     cons: ['Minder receptvariatie dan HelloFresh', 'Eenvoudigere recepten', 'Enkel maandaglevering'],
