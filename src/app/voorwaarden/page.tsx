@@ -27,7 +27,7 @@ export default function VoorwaardenPage() {
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 38, fontWeight: 900, lineHeight: 1.1, marginBottom: 8 }}>
         Algemene voorwaarden
       </h1>
-      <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 32 }}>Laatst bijgewerkt: april 2026</p>
+      <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 32 }}>Laatst bijgewerkt: mei 2026</p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
 
