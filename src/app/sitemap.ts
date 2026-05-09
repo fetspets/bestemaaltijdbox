@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'hellofresh', 'foodbag', 'marley-spoon',
     'foodprepper', 'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
   ];
-  const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio', 'vegan'];
+  const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio', 'singles'];
   const vergelijkingen = [
     'hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon',
     'foodbag-vs-marley-spoon', 'hellofresh-vs-ekomenu', 'hellofresh-vs-carrefour',
