@@ -112,7 +112,7 @@ export default function HomePage() {
         {/* SECTION HEADER */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
           <h2 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900 }}>Onze rankings</h2>
-          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026 · 8 aanbieders</div>
+          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt mei 2026 · 8 aanbieders</div>
         </div>
 
         {/* TOP 3 CARDS */}
@@ -230,7 +230,7 @@ export default function HomePage() {
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
             <div style={{ fontSize: 13, color: 'var(--muted)' }}>8 aanbieders</div>
           </div>
-          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt april 2026.</p>
+          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt mei 2026.</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 700 }}>
               <thead>

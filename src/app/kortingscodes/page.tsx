@@ -126,7 +126,7 @@ export default function KortingscodesPagina() {
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          🏷️ Bijgewerkt april 2026
+          🏷️ Bijgewerkt mei 2026
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
           Kortingscodes maaltijdbox<br />België 2026
@@ -139,7 +139,7 @@ export default function KortingscodesPagina() {
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>Actieve deals</h2>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt april 2026</div>
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt mei 2026</div>
       </div>
 
       {kortingen.filter(k => k.actief).map((k, i) => (
