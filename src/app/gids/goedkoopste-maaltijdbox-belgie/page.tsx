@@ -42,12 +42,12 @@ const faqJsonLd = {
 };
 
 const prijsTabel = [
-  { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null },
-  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
-  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost' },
+  { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
+  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null },
+  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost' },
   { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null },
 ];
 
@@ -61,8 +61,6 @@ export default function GoedkoopsteMaaltijdboxPage() {
         {/* Breadcrumb */}
         <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24 }}>
           <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
-          {' → '}
-          <span style={{ color: 'var(--muted)' }}>Gidsen</span>
           {' → '}
           <strong style={{ color: 'var(--ink)' }}>Goedkoopste maaltijdbox</strong>
         </div>
@@ -88,6 +86,23 @@ export default function GoedkoopsteMaaltijdboxPage() {
           </div>
         </div>
 
+        {/* Snelle aanbeveling */}
+        <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 14, padding: '18px 22px', marginBottom: 36, display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'center' }}>
+          <div style={{ flex: 1, minWidth: 220 }}>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#1B4332', marginBottom: 6 }}>Kort antwoord</div>
+            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#14532D', marginBottom: 4 }}>
+              HelloFresh is de beste keuze voor de meeste mensen
+            </div>
+            <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.6 }}>
+              €47,94/week (2p, 3 maaltijden), gratis bezorging, tot €60 welkomstkorting via code BESTE60.
+              Wil je absoluut het goedkoopst zonder abonnement? <Link href="/aanbieder/carrefour-simply-you" style={{ color: '#1B4332', fontWeight: 600 }}>Carrefour Simply You</Link>: €32,28/week.
+            </div>
+          </div>
+          <Link href="/ga/hellofresh" style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '12px 20px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>
+            Bekijk HelloFresh →
+          </Link>
+        </div>
+
         {/* Prijstabel */}
         <div style={{ marginBottom: 40 }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 8, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
@@ -107,7 +122,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               </thead>
               <tbody>
                 {prijsTabel.map((r, i) => (
-                  <tr key={r.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 1 ? '#F0FDF4' : i % 2 === 0 ? 'white' : '#FAFAFA' }}>
+                  <tr key={r.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                     <td style={{ padding: '10px 12px', fontWeight: 600 }}>
                       <Link href={`/aanbieder/${r.slug}`} style={{ color: 'var(--ink)', textDecoration: 'none' }}>{r.naam}</Link>
                       {r.noot && <span style={{ display: 'block', fontSize: 11, color: '#D97706', fontWeight: 400 }}>{r.noot}</span>}
@@ -143,31 +158,31 @@ export default function GoedkoopsteMaaltijdboxPage() {
           {[
             {
               rang: 1,
-              naam: 'Carrefour Simply You',
-              slug: 'carrefour-simply-you',
-              badge: '🛒 Goedkoopst op reguliere prijs',
-              accent: '#1B4332',
-              metDeal: '€32,28/week',
-              naDeal: '€32,28/week (reguliere prijs)',
-              uitleg: 'De enige aanbieder zonder verplicht abonnement. Je bestelt wanneer het uitkomt. Met €32,28/week voor 2 personen en 3 maaltijden is dit de laagste reguliere weekprijs van alle kookboxen — zonder abonnement.',
-              dealOpmerking: 'Geen verplichte wekelijkse levering. Bestellen wanneer het jou uitkomt.',
-            },
-            {
-              rang: 2,
               naam: 'HelloFresh',
               slug: 'hellofresh',
-              badge: '💰 Beste welkomstdeal voor kookboxen',
+              badge: '⭐ Beste keuze voor de meeste mensen',
               accent: '#1B4332',
               metDeal: 'tot €60 korting via code BESTE60 + 8 weken gratis extras',
               naDeal: '€47,94/week (reguliere prijs)',
-              uitleg: 'HelloFresh geeft tot €60 welkomstkorting via exclusieve code BESTE60: €30 op box 1, €10 op box 2, €5 op box 3. Gratis bezorging op box 1. Bovendien 8 weken lang een gratis extra product per box. Na de welkomstperiode stijgt de weekprijs naar €47,94. Gratis bezorging, 40+ recepten per week, wekelijks opzegbaar.',
+              uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), gratis bezorging en de beste welkomstdeal: tot €60 korting via exclusieve code BESTE60 (€30 op box 1, €10 op box 2, €5 op box 3) én 8 weken gratis extra product per box. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
               dealOpmerking: 'Gebruik code BESTE60 bij je eerste bestelling · tot €60 korting + gratis extras · exclusief voor nieuwe klanten.',
+            },
+            {
+              rang: 2,
+              naam: 'Ekomenu',
+              slug: 'ekomenu',
+              badge: '🌱 Beste bio-keuze',
+              accent: '#15803D',
+              metDeal: '€37,08/week',
+              naDeal: '€37,08/week (reguliere prijs)',
+              uitleg: 'Ekomenu is de goedkoopste kookbox met biologische ingrediënten: €6,18/portie, gratis bezorging, geen bezorgkost. Met €37,08/week voor 2 personen en 3 maaltijden zit je ver onder de meeste conventionele kookboxen. Wekelijks opzegbaar.',
+              dealOpmerking: 'Biologische ingrediënten · gratis bezorging · wekelijks opzegbaar.',
             },
             {
               rang: 3,
               naam: 'Marley Spoon',
               slug: 'marley-spoon',
-              badge: '🎯 Beste deal per portie in welkomstperiode',
+              badge: '🎯 Beste welkomstdeal per portie',
               accent: '#7C3AED',
               metDeal: '~€21,80/week (35% korting op eerste 5 boxen)',
               naDeal: '€57,98/week (reguliere prijs)',
