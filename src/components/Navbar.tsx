@@ -30,7 +30,7 @@ export default function Navbar() {
               { href: '/', label: 'Vergelijken' },
               { href: '/kortingscodes', label: 'Kortingscodes' },
               { href: '/blog', label: 'Blog' },
-              { href: '/gids/goedkoopste-maaltijdbox-belgie', label: 'Gidsen' },
+              { href: '/gids/goedkoopste-maaltijdbox-belgie', label: 'Goedkoopste' },
               { href: '/voor/koppel', label: 'Voor koppels' },
               { href: '/voor/gezin', label: 'Voor gezinnen' },
             ].map(link => (
