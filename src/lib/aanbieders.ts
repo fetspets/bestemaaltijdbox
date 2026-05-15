@@ -87,7 +87,7 @@ export const aanbieders: Aanbieder[] = [
     belgisch: false,
     vegetarisch: true,
     bio: false,
-    affiliateUrl: 'https://hellofresheuro.sjv.io/c/3156055/3872827/9318',
+    affiliateUrl: 'https://hellofreshfr.sjv.io/c/3156055/3896977/45302',
     kortingsCode: {
       code: 'BESTE60',
       bedrag: 'tot €60 korting',
