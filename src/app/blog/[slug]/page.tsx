@@ -95,7 +95,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 naam: 'HelloFresh',
                 logo: '/logos/hellofresh.png',
                 deal: 'Tot €60 korting + 8 weken gratis extras',
-                detail: 'Exclusieve code BESTE60 · nieuwe klanten',
+                detail: 'Exclusieve code GreenPan-deal · nieuwe klanten',
                 cta: 'Activeer HelloFresh deal',
                 href: '/ga/hellofresh',
                 kleur: '#1B4332',

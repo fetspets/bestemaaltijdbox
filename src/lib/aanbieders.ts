@@ -44,6 +44,7 @@ export interface Aanbieder {
   vegetarisch: boolean;
   bio: boolean;
   affiliateUrl: string;
+  ctaUrl?: string;
   kortingsCode?: KortingsCode;
   ctaSubtekst?: string;
   ctaTekst?: string;
@@ -87,15 +88,16 @@ export const aanbieders: Aanbieder[] = [
     belgisch: false,
     vegetarisch: true,
     bio: false,
-    affiliateUrl: 'https://hellofresheuro.sjv.io/c/3156055/3872827/9318',
+    affiliateUrl: 'https://hellofreshfr.sjv.io/c/3156055/3896977/45302',
+    ctaUrl: '/hellofresh-greenpan-kortingscode',
     kortingsCode: {
-      code: 'BESTE60',
-      bedrag: 'tot €60 korting',
-      beschrijving: 'Gebruik exclusieve code BESTE60. Standaard: €30 op box 1, €10 op box 2, €5 op box 3. Met flexibel abonnement: tot €44,01 op box 1, tot €20 op box 2, tot €10 op box 3 & 4 (tot €60 totaal). Gratis bezorging op box 1. Plus 8 weken gratis extra per box. Exclusief voor nieuwe klanten.',
+      code: null,
+      bedrag: 'Gratis GreenPan™ + tot €60 korting',
+      beschrijving: 'Tijdelijke actie t.e.m. 15 juni 2026: gratis GreenPan™ braadpan t.w.v. tot €119,90 + tot €60 korting op je eerste boxen. Geldig voor nieuwe klanten die minimaal 5 boxen afnemen binnen 8 weken.',
     },
-    ctaSubtekst: 'Code: BESTE60 — tot €60 korting + gratis extras voor nieuwe klanten',
-    kenmerken: ['✓ Gratis bezorging', '✓ Direct opzegbaar', '✓ 40+ recepten/week', '✓ App met tracking'],
-    pros: ['Grootste receptvariatie (40+ per week)', 'Gratis bezorging in heel België', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Regelmatige welkomstaanbiedingen voor nieuwe klanten'],
+    ctaSubtekst: 'Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting — t.e.m. 15 juni 2026',
+    kenmerken: ['✓ Gratis bezorging', '✓ Direct opzegbaar', '✓ 40+ recepten/week', '✓ Gratis GreenPan™ actie'],
+    pros: ['Grootste receptvariatie (40+ per week)', 'Gratis bezorging in heel België', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Sterkste welkomstdeal 2026: gratis GreenPan™ + tot €60 korting'],
     cons: ['Niet 100% Belgische ingrediënten', 'Meer plasticverpakking dan lokale alternatieven', 'Standaardprijs hoger na korting'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'singles', 'budget'],
     losBestellenMogelijk: false,
