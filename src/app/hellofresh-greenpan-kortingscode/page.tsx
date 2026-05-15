@@ -147,14 +147,12 @@ export default function HelloFreshGreenPanPage() {
       <div style={{ maxWidth: 780, margin: '0 auto', padding: '0 20px 80px' }}>
 
         {/* Breadcrumb */}
-        <div style={{ fontSize: 13, color: '#9CA3AF', padding: '20px 0 28px' }}>
-          <Link href="/" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Home</Link>
-          {' → '}
-          <Link href="/kortingscodes" style={{ color: '#9CA3AF', textDecoration: 'none' }}>
-            Kortingscodes
-          </Link>
-          {' → '}
-          <strong style={{ color: '#1C1C1C' }}>HelloFresh GreenPan kortingscode</strong>
+        <div style={{ fontSize: 13, color: '#9CA3AF', padding: '20px 0 28px', display: 'flex', flexWrap: 'wrap', gap: '2px 4px', alignItems: 'center' }}>
+          <Link href="/" style={{ color: '#9CA3AF', textDecoration: 'none', whiteSpace: 'nowrap' }}>Home</Link>
+          <span aria-hidden="true">→</span>
+          <Link href="/kortingscodes" style={{ color: '#9CA3AF', textDecoration: 'none', whiteSpace: 'nowrap' }}>Kortingscodes</Link>
+          <span aria-hidden="true">→</span>
+          <strong style={{ color: '#1C1C1C', whiteSpace: 'nowrap' }}>HelloFresh GreenPan</strong>
         </div>
 
         {/* ── HERO ─────────────────────────────────────────── */}
@@ -195,7 +193,7 @@ export default function HelloFreshGreenPanPage() {
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, color: '#1C1C1C', marginBottom: 20 }}>
             Wat krijg je?
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))', gap: 12 }}>
             {[
               { icon: '🍳', title: 'Gratis GreenPan™ braadpan', sub: 't.w.v. tot €119,90 (PFAS-vrij)' },
               { icon: '💰', title: 'Tot €60 korting', sub: 'verspreid over je eerste boxen' },
@@ -274,10 +272,10 @@ export default function HelloFreshGreenPanPage() {
             <summary style={{
               padding: '16px 20px', fontFamily: 'Fraunces, serif', fontWeight: 800,
               fontSize: 16, color: '#1C1C1C', cursor: 'pointer', listStyle: 'none',
-              display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+              display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 10,
             }}>
-              Volledige actievoorwaarden bekijken
-              <span style={{ fontSize: 18, fontFamily: 'sans-serif', fontWeight: 400 }}>↓</span>
+              <span>Volledige actievoorwaarden bekijken</span>
+              <span style={{ fontSize: 18, fontFamily: 'sans-serif', fontWeight: 400, flexShrink: 0 }}>↓</span>
             </summary>
             <ul style={{ padding: '0 20px 20px', margin: 0, display: 'flex', flexDirection: 'column', gap: 7, listStyle: 'none' }}>
               {[
@@ -322,27 +320,27 @@ export default function HelloFreshGreenPanPage() {
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, color: '#1C1C1C', marginBottom: 16 }}>
             HelloFresh vs. de concurrentie
           </h2>
-          <div className="table-wrap" style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, minWidth: 520 }}>
+          <div className="table-wrap" style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 14, minWidth: 420 }}>
               <thead>
                 <tr style={{ background: '#F5F3EE', borderBottom: '1.5px solid #E8E3DC' }}>
                   {['', 'HelloFresh', 'Foodbag', 'Marley Spoon'].map(h => (
-                    <th key={h} style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 700, fontSize: 13 }}>{h}</th>
+                    <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 700, fontSize: 13, whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {[
                   ['Welkomstkorting', 'Tot €60', 'Tot €40', 'Tot €30'],
-                  ['Gratis cadeau', 'GreenPan™ (t.w.v. tot €119,90)', '—', '—'],
-                  ['Prijs/portie (2 pers.)', '~€5,00', '~€4,70', '~€5,50'],
-                  ['Score BesteMaaltijdbox', '8,4/10', '7,8/10', '7,6/10'],
+                  ['Gratis cadeau', '🍳 GreenPan™', '—', '—'],
+                  ['Prijs/portie', '~€5,00', '~€4,70', '~€5,50'],
+                  ['Score', '8,4/10', '7,8/10', '7,6/10'],
                 ].map(([label, hf, fb, ms], i) => (
                   <tr key={label} style={{ borderBottom: '1px solid #F0EDE8', background: i % 2 === 0 ? 'white' : '#FAFAF8' }}>
-                    <td style={{ padding: '11px 16px', fontWeight: 600, color: '#374151' }}>{label}</td>
-                    <td style={{ padding: '11px 16px', color: '#1B4332', fontWeight: label === 'Gratis cadeau' ? 700 : 400 }}>{hf}</td>
-                    <td style={{ padding: '11px 16px', color: '#6B7280' }}>{fb}</td>
-                    <td style={{ padding: '11px 16px', color: '#6B7280' }}>{ms}</td>
+                    <td style={{ padding: '10px 12px', fontWeight: 600, color: '#374151', whiteSpace: 'nowrap' }}>{label}</td>
+                    <td style={{ padding: '10px 12px', color: '#1B4332', fontWeight: label === 'Gratis cadeau' ? 700 : 400 }}>{hf}</td>
+                    <td style={{ padding: '10px 12px', color: '#6B7280' }}>{fb}</td>
+                    <td style={{ padding: '10px 12px', color: '#6B7280' }}>{ms}</td>
                   </tr>
                 ))}
               </tbody>
@@ -392,10 +390,10 @@ export default function HelloFreshGreenPanPage() {
                 <summary style={{
                   padding: '14px 18px', fontWeight: 700, fontSize: 14,
                   color: '#1C1C1C', cursor: 'pointer', listStyle: 'none',
-                  display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                  display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: 10,
                 }}>
-                  {q}
-                  <span style={{ fontSize: 16, fontFamily: 'sans-serif', fontWeight: 400, flexShrink: 0, marginLeft: 10 }}>+</span>
+                  <span style={{ minWidth: 0 }}>{q}</span>
+                  <span style={{ fontSize: 16, fontFamily: 'sans-serif', fontWeight: 400, flexShrink: 0, lineHeight: '1.4' }}>+</span>
                 </summary>
                 <p style={{ padding: '0 18px 14px', margin: 0, fontSize: 14, color: '#4B5563', lineHeight: 1.7 }}>
                   {a}
