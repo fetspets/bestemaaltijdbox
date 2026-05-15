@@ -67,9 +67,9 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en tot €60 korting + gratis extras via exclusieve code BESTE60. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting via code FOODBAGx60.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €5,99 bezorgkosten. Carrefour Simply You (v.a. €5,38, gratis bezorging) is de goedkoopste kookbox. HelloFresh kost v.a. €7,99 maar geeft nieuwe klanten tot €60 korting + gratis extras via exclusieve code BESTE60.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig t.e.m. 01/01/2027. HelloFresh geeft tot €60 korting + 8 weken gratis extras via exclusieve code BESTE60.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en de sterkste welkomstdeal van 2026: een gratis GreenPan™ braadpan t.w.v. tot €119,90 plus tot €60 korting. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting via code FOODBAGx60.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €5,99 bezorgkosten. Carrefour Simply You (v.a. €5,38, gratis bezorging) is de goedkoopste kookbox. HelloFresh kost v.a. €7,99 maar geeft nieuwe klanten tot €60 korting plus een gratis GreenPan™ braadpan (actie t.e.m. 15 juni 2026).' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh heeft de sterkste welkomstdeal van 2026: een gratis GreenPan™ braadpan t.w.v. tot €119,90 plus tot €60 korting. Actie geldig t.e.m. 15 juni 2026. Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig t.e.m. 01/01/2027.' }},
           { '@type': 'Question', name: 'Kan ik een maaltijdbox uitproberen zonder abonnement?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Foodprepper, Foodbag en Foodmaker werken zonder verplicht abonnement — je bestelt wanneer het uitkomt. Foodprepper geeft daarbij €45 welkomstkorting over de eerste 3 bestellingen.' }},
         ]
       }) }} />
@@ -163,7 +163,7 @@ export default function HomePage() {
                   ))}
                 </div>
 
-                <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
+                <Link href={a.ctaUrl || `/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
                   {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
                 </Link>
                 {a.ctaSubtekst && (

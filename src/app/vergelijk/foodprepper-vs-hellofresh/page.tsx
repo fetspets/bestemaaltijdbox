@@ -273,24 +273,22 @@ export default function FoodprepperVsHellofresh() {
           {/* HelloFresh korting */}
           <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: 24 }}>
             <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#D1FAE5', color: '#1B4332', display: 'inline-block', marginBottom: 12 }}>
-              🏷️ Welkomstkorting HelloFresh
+              🔥 Tijdelijke actie t.e.m. 15 juni 2026
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
-              Code: <span style={{ color: '#1B4332' }}>BESTE60</span>
+              Gratis GreenPan™ + tot €60 korting
             </h3>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
-              Tot <strong>€60 korting</strong> op de eerste boxen. Voer code <strong>BESTE60</strong> in bij het afrekenen op hellofresh.be.
+              Nieuwe klanten krijgen een <strong>gratis GreenPan™ braadpan t.w.v. tot €119,90</strong> plus <strong>tot €60 korting</strong> op de eerste boxen (na minimaal 5 boxen binnen 8 weken).
             </p>
-            <a
-              href={hf.affiliateUrl}
-              target="_blank"
-              rel="sponsored nofollow"
+            <Link
+              href="/hellofresh-greenpan-kortingscode"
               style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
             >
-              Bekijk HelloFresh →
-            </a>
+              Activeer HelloFresh GreenPan-deal →
+            </Link>
             <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 8 }}>
-              Geldig voor nieuwe klanten. Controleer geldigheid op hellofresh.be.
+              Geldig voor nieuwe klanten. Actie t.e.m. 15 juni 2026.
             </p>
           </div>
         </div>

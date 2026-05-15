@@ -18,12 +18,13 @@ const kortingen = [
     slug: 'hellofresh',
     naam: 'HelloFresh',
     logo: '/logos/hellofresh.png',
-    code: 'BESTE60',
-    deal: 'Tot €60 korting + 8 weken gratis extras voor nieuwe klanten',
-    bedrag: 'tot €60',
+    code: null,
+    deal: '🍳 Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting',
+    bedrag: 'GreenPan™',
     kleur: '#1B4332',
-    beschrijving: 'Gebruik exclusieve code BESTE60: €30 korting op box 1, €10 op box 2, €5 op box 3. Gratis bezorging op box 1. Plus 8 weken lang een gratis extra product per box.',
-    voorwaarden: 'Exclusief voor nieuwe klanten · Code: BESTE60 · Gratis bezorging box 1 · Wekelijks opzegbaar',
+    beschrijving: 'Tijdelijke actie t.e.m. 15 juni 2026: gratis GreenPan™ braadpan t.w.v. tot €119,90 + tot €60 korting verspreid over je eerste boxen. Geldig voor nieuwe klanten die minimaal 5 boxen afnemen binnen 8 weken.',
+    voorwaarden: 'Exclusief voor nieuwe klanten · Min. 5 boxen binnen 8 weken voor de pan · Actie t.e.m. 15 juni 2026 · Wekelijks opzegbaar',
+    ctaUrl: '/hellofresh-greenpan-kortingscode',
     actief: true,
   },
   {
@@ -166,7 +167,7 @@ export default function KortingscodesPagina() {
             <div style={{ textAlign: 'center', padding: '10px', background: 'var(--cream)', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: k.kleur }}>
               {k.bedrag}
             </div>
-            <Link href={`/ga/${k.slug}`} style={{ display: 'block', background: k.kleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+            <Link href={(k as {ctaUrl?: string}).ctaUrl || `/ga/${k.slug}`} style={{ display: 'block', background: k.kleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
               Activeer deal →
             </Link>
             {k.code && (

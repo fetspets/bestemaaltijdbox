@@ -21,7 +21,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Wat kost een maaltijdbox gemiddeld per maand in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). Met welkomstkorting (code BESTE60: tot €60 korting + gratis extras) daalt dat in de eerste maand. Foodbag is duurder: €228/maand aan reguliere prijs.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). HelloFresh heeft t.e.m. 15 juni 2026 een welkomstdeal met gratis GreenPan™ + tot €60 korting, waardoor de eerste weken fors goedkoper uitvallen. Foodbag is duurder: €228/maand aan reguliere prijs.' },
     },
     {
       '@type': 'Question',
@@ -45,7 +45,7 @@ const prijsTabel = [
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null },
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
-  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting + gratis extras (code BESTE60)', noot: null },
+  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: '🍳 Gratis GreenPan™ + tot €60 korting', noot: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null },
   { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost' },
   { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null },
@@ -94,7 +94,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               HelloFresh is de beste keuze voor de meeste mensen
             </div>
             <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.6 }}>
-              €47,94/week (2p, 3 maaltijden), gratis bezorging, tot €60 welkomstkorting via code BESTE60.
+              €47,94/week (2p, 3 maaltijden), gratis bezorging. Welkomstdeal t.e.m. 15 juni 2026: gratis GreenPan™ + tot €60 korting.
               Wil je absoluut het goedkoopst zonder abonnement? <Link href="/aanbieder/carrefour-simply-you" style={{ color: '#1B4332', fontWeight: 600 }}>Carrefour Simply You</Link>: €32,28/week.
             </div>
           </div>
@@ -162,10 +162,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
               slug: 'hellofresh',
               badge: '⭐ Beste keuze voor de meeste mensen',
               accent: '#1B4332',
-              metDeal: 'tot €60 korting via code BESTE60 + 8 weken gratis extras',
+              metDeal: 'Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting',
               naDeal: '€47,94/week (reguliere prijs)',
-              uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), gratis bezorging en de beste welkomstdeal: tot €60 korting via exclusieve code BESTE60 (€30 op box 1, €10 op box 2, €5 op box 3) én 8 weken gratis extra product per box. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
-              dealOpmerking: 'Gebruik code BESTE60 bij je eerste bestelling · tot €60 korting + gratis extras · exclusief voor nieuwe klanten.',
+              uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), gratis bezorging en de sterkste welkomstdeal van 2026: een gratis GreenPan™ braadpan t.w.v. tot €119,90 plus tot €60 korting (€30 op box 1, €10 op box 2, €5 op box 3). Na minimaal 5 boxen binnen 8 weken. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
+              dealOpmerking: 'Gratis GreenPan™ + tot €60 korting · exclusief voor nieuwe klanten · t.e.m. 15 juni 2026.',
             },
             {
               rang: 2,
@@ -298,7 +298,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 situatie: 'Goedkoopste kookbox voor een gezin (4p)',
                 winnaar: 'HelloFresh',
                 slug: 'hellofresh',
-                detail: '€95,88/week (4p, 3 maaltijden, 12 porties × €7,99), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Met welkomstkorting (tot €60 via code BESTE60) daalt de weekprijs in de eerste boxen.',
+                detail: '€95,88/week (4p, 3 maaltijden, 12 porties × €7,99), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Welkomstdeal t.e.m. 15 juni 2026: gratis GreenPan™ + tot €60 korting.',
                 color: '#EEF2FF',
                 border: '#C7D2FE',
               },
