@@ -89,7 +89,6 @@ export const aanbieders: Aanbieder[] = [
     vegetarisch: true,
     bio: false,
     affiliateUrl: 'https://hellofreshfr.sjv.io/c/3156055/3896977/45302',
-    ctaUrl: '/hellofresh-greenpan-kortingscode',
     kortingsCode: {
       code: null,
       bedrag: 'Gratis GreenPan™ + tot €60 korting',
