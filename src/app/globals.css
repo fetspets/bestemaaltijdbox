@@ -75,7 +75,41 @@ h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
 .table-wrap { background: white; border-radius: 16px; border: 1.5px solid var(--rule); overflow: hidden; }
 .disclosure { font-size: 11px; color: var(--muted); line-height: 1.5; padding: 8px 0; }
 
+.kortingen-row {
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  gap: 20px;
+  align-items: center;
+}
+.kortingen-row > .kortingen-cta { min-width: 150px; }
+
+.kortingen-row-inactive {
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  gap: 16px;
+  align-items: center;
+}
+
 @media (max-width: 768px) {
   .hide-mobile { display: none !important; }
   .mobile-full { width: 100% !important; }
+}
+
+@media (max-width: 640px) {
+  .kortingen-row {
+    grid-template-columns: 48px 1fr;
+    gap: 14px;
+  }
+  .kortingen-row > .kortingen-cta {
+    grid-column: 1 / -1;
+    min-width: 0;
+    margin-top: 4px;
+  }
+  .kortingen-row-inactive {
+    grid-template-columns: 40px 1fr;
+    gap: 12px;
+  }
+  .kortingen-row-inactive > a:last-child {
+    grid-column: 1 / -1;
+  }
 }

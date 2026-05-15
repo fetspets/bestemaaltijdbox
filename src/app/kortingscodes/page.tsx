@@ -144,10 +144,9 @@ export default function KortingscodesPagina() {
       </div>
 
       {kortingen.filter(k => k.actief).map((k, i) => (
-        <div key={k.slug} style={{
+        <div key={k.slug} className="kortingen-row" style={{
           background: 'white', borderRadius: 16, border: '1.5px solid var(--rule)',
-          padding: 24, marginBottom: 12, display: 'grid',
-          gridTemplateColumns: '48px 1fr auto', gap: 20, alignItems: 'center',
+          padding: 24, marginBottom: 12,
           position: 'relative', overflow: 'hidden',
         }}>
           {i === 0 && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />}
@@ -163,7 +162,7 @@ export default function KortingscodesPagina() {
             <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{k.beschrijving}</div>
             <div style={{ fontSize: 11, color: 'var(--muted)' }}>{k.voorwaarden}</div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 150 }}>
+          <div className="kortingen-cta" style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             <div style={{ textAlign: 'center', padding: '10px', background: 'var(--cream)', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: k.kleur }}>
               {k.bedrag}
             </div>
@@ -185,10 +184,9 @@ export default function KortingscodesPagina() {
       </div>
 
       {kortingen.filter(k => !k.actief).map(k => (
-        <div key={k.slug} style={{
+        <div key={k.slug} className="kortingen-row-inactive" style={{
           background: '#F9F9F9', borderRadius: 12, border: '1px solid var(--rule)',
-          padding: 20, marginBottom: 10, display: 'grid',
-          gridTemplateColumns: '40px 1fr auto', gap: 16, alignItems: 'center', opacity: 0.8,
+          padding: 20, marginBottom: 10, opacity: 0.8,
         }}>
           <div style={{ width: 40, height: 40, borderRadius: 10, background: 'white', border: '1px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, overflow: 'hidden' }}>
             {k.logo.startsWith('/') ? <img src={k.logo} alt={k.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 5 }} /> : k.logo}
