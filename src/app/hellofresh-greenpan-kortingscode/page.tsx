@@ -79,38 +79,62 @@ const breadcrumbSchema = {
   ],
 };
 
-const offerSchema = {
+const productSchema = {
   '@context': 'https://schema.org',
-  '@type': 'Offer',
-  name: 'HelloFresh: Gratis GreenPan™ + tot €60 korting',
+  '@type': 'Product',
+  name: 'HelloFresh maaltijdbox',
   description:
-    'Gratis GreenPan™ braadpan t.w.v. tot €119,90 + tot €60 korting voor nieuwe HelloFresh-klanten in België. Geldig van 15 mei t.e.m. 15 juni 2026.',
-  url: PAGE_URL,
-  priceCurrency: 'EUR',
-  validFrom: '2026-05-15',
-  validThrough: '2026-06-15',
-  eligibleRegion: { '@type': 'Country', name: 'Belgium' },
-  offeredBy: { '@type': 'Organization', name: 'HelloFresh', url: 'https://www.hellofresh.be' },
-};
-
-const reviewSchema = {
-  '@context': 'https://schema.org',
-  '@type': 'Review',
-  name: 'HelloFresh België review',
-  reviewBody:
-    'HelloFresh is de marktleider in België met meer dan 40 recepten per week, flexibele formules en uitstekende ingrediëntenkwaliteit. Bereidingstijd gemiddeld 25–35 minuten.',
-  reviewRating: {
-    '@type': 'Rating',
+    'HelloFresh maaltijdbox met verse ingrediënten en stapsgewijze recepten, bezorgd aan huis in heel België. Tijdelijke actie: gratis GreenPan™ braadpan + tot €60 korting voor nieuwe klanten.',
+  brand: { '@type': 'Brand', name: 'HelloFresh' },
+  image: `${BASE_URL}/logos/hellofresh.png`,
+  aggregateRating: {
+    '@type': 'AggregateRating',
     ratingValue: '8.4',
     bestRating: '10',
     worstRating: '1',
+    reviewCount: 1,
   },
-  author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: BASE_URL },
-  itemReviewed: {
-    '@type': 'Product',
-    name: 'HelloFresh maaltijdbox',
-    brand: { '@type': 'Brand', name: 'HelloFresh' },
-    description: 'Maaltijdbox met verse ingrediënten en stapsgewijze recepten, bezorgd aan huis.',
+  review: {
+    '@type': 'Review',
+    name: 'HelloFresh België review',
+    reviewBody:
+      'HelloFresh is de marktleider in België met meer dan 40 recepten per week, flexibele formules en uitstekende ingrediëntenkwaliteit. Bereidingstijd gemiddeld 25–35 minuten.',
+    reviewRating: {
+      '@type': 'Rating',
+      ratingValue: '8.4',
+      bestRating: '10',
+      worstRating: '1',
+    },
+    author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: BASE_URL },
+  },
+  offers: {
+    '@type': 'Offer',
+    name: 'Gratis GreenPan™ + tot €60 korting',
+    description:
+      'Gratis GreenPan™ braadpan t.w.v. tot €119,90 + tot €60 korting voor nieuwe HelloFresh-klanten in België.',
+    url: PAGE_URL,
+    price: 7.99,
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+    validFrom: '2026-05-15',
+    validThrough: '2026-06-15',
+    eligibleRegion: { '@type': 'Country', name: 'Belgium' },
+    offeredBy: { '@type': 'Organization', name: 'HelloFresh', url: 'https://www.hellofresh.be' },
+    shippingDetails: {
+      '@type': 'OfferShippingDetails',
+      shippingRate: { '@type': 'MonetaryAmount', value: 0, currency: 'EUR' },
+      shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'BE' },
+      deliveryTime: {
+        '@type': 'ShippingDeliveryTime',
+        handlingTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 1, unitCode: 'DAY' },
+        transitTime: { '@type': 'QuantitativeValue', minValue: 1, maxValue: 3, unitCode: 'DAY' },
+      },
+    },
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'BE',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+    },
   },
 };
 
@@ -129,8 +153,7 @@ export default function HelloFreshGreenPanPage() {
     <>
       {/* JSON-LD schemas */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(offerSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       {/* Impact impressiepixel */}
