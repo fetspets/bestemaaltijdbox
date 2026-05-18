@@ -42,13 +42,13 @@ const faqJsonLd = {
 };
 
 const prijsTabel = [
-  { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null },
-  { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost' },
-  { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null },
-  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: '🍳 Gratis GreenPan™ + tot €60 korting', noot: null },
-  { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null },
-  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost' },
-  { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null },
+  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: '🍳 Gratis GreenPan™ + tot €60 korting', noot: null, badge: '⭐ Beste keuze' },
+  { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null, badge: '🌱 Beste bio' },
+  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost', badge: '🎯 Beste deal' },
+  { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null, badge: null },
+  { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost', badge: null },
+  { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null, badge: null },
+  { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null, badge: null },
 ];
 
 export default function GoedkoopsteMaaltijdboxPage() {
@@ -86,21 +86,26 @@ export default function GoedkoopsteMaaltijdboxPage() {
           </div>
         </div>
 
-        {/* Snelle aanbeveling */}
-        <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 14, padding: '18px 22px', marginBottom: 36, display: 'flex', flexWrap: 'wrap', gap: 16, alignItems: 'center' }}>
-          <div style={{ flex: 1, minWidth: 220 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#1B4332', marginBottom: 6 }}>Kort antwoord</div>
-            <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#14532D', marginBottom: 4 }}>
-              HelloFresh is de beste keuze voor de meeste mensen
+        {/* Winnaar-box */}
+        <div style={{ background: '#F0FDF4', border: '1.5px solid #52B788', borderRadius: 16, marginBottom: 36, overflow: 'hidden' }}>
+          <div style={{ height: 4, background: 'linear-gradient(90deg, #1B4332, #52B788)' }} />
+          <div style={{ padding: '20px 24px', display: 'flex', flexWrap: 'wrap', gap: 20, alignItems: 'center' }}>
+            <div style={{ flex: 1, minWidth: 240 }}>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#1B4332', marginBottom: 6 }}>🏆 Goedkoopste kookbox voor de meeste mensen</div>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, color: '#14532D', marginBottom: 6 }}>HelloFresh</div>
+              <div style={{ fontSize: 14, fontWeight: 600, color: '#1B4332', marginBottom: 4 }}>€47,94/week · gratis bezorging</div>
+              <div style={{ fontSize: 13, color: '#374151', marginBottom: 12 }}>Gratis GreenPan™ + tot €60 korting (t.e.m. 15 juni 2026)</div>
+              <div style={{ fontSize: 12, color: '#6B7280' }}>
+                Wil je absoluut de laagste prijs zonder abonnement? →{' '}
+                <Link href="/aanbieder/carrefour-simply-you" style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
+                  Carrefour Simply You: €32,28/week
+                </Link>
+              </div>
             </div>
-            <div style={{ fontSize: 13, color: '#374151', lineHeight: 1.6 }}>
-              €47,94/week (2p, 3 maaltijden), gratis bezorging. Welkomstdeal t.e.m. 15 juni 2026: gratis GreenPan™ + tot €60 korting.
-              Wil je absoluut het goedkoopst zonder abonnement? <Link href="/aanbieder/carrefour-simply-you" style={{ color: '#1B4332', fontWeight: 600 }}>Carrefour Simply You</Link>: €32,28/week.
-            </div>
+            <Link href="/ga/hellofresh" style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
+              Bekijk HelloFresh →
+            </Link>
           </div>
-          <Link href="/ga/hellofresh" style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '12px 20px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0 }}>
-            Bekijk HelloFresh →
-          </Link>
         </div>
 
         {/* Prijstabel */}
@@ -109,13 +114,13 @@ export default function GoedkoopsteMaaltijdboxPage() {
             Prijsvergelijking: 2 personen, 3 maaltijden/week
           </h2>
           <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>
-            Berekening: 6 porties × prijs/portie + bezorgkost. Gesorteerd op weekprijs (laag → hoog).
+            Berekening: 6 porties × prijs/portie + bezorgkost. Gesorteerd op beste keuze.
           </p>
           <div style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, background: 'white', border: '1px solid var(--rule)', borderRadius: 12, overflow: 'hidden' }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  {['Aanbieder', '€/portie', 'Bezorging', '€/week (2p, 3×)', 'Welkomstdeal'].map(h => (
+                  {['Aanbieder', 'Onze keuze', '€/portie', 'Bezorging', '€/week (2p, 3×)', 'Welkomstdeal', 'Bekijk'].map(h => (
                     <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
@@ -127,6 +132,13 @@ export default function GoedkoopsteMaaltijdboxPage() {
                       <Link href={`/aanbieder/${r.slug}`} style={{ color: 'var(--ink)', textDecoration: 'none' }}>{r.naam}</Link>
                       {r.noot && <span style={{ display: 'block', fontSize: 11, color: '#D97706', fontWeight: 400 }}>{r.noot}</span>}
                     </td>
+                    <td style={{ padding: '10px 12px' }}>
+                      {r.badge && (
+                        <span style={{ fontSize: 11, fontWeight: 700, padding: '3px 8px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332', whiteSpace: 'nowrap' }}>
+                          {r.badge}
+                        </span>
+                      )}
+                    </td>
                     <td style={{ padding: '10px 12px' }}>vanaf €{r.portie.toFixed(2)}</td>
                     <td style={{ padding: '10px 12px', color: r.bezorging === 0 ? '#16A34A' : '#D97706', fontWeight: 600 }}>
                       {r.bezorging === 0 ? 'Gratis' : `€${r.bezorging}`}
@@ -136,6 +148,25 @@ export default function GoedkoopsteMaaltijdboxPage() {
                     </td>
                     <td style={{ padding: '10px 12px', fontSize: 12, color: r.welkomst === '—' ? 'var(--muted)' : '#15803D', fontWeight: r.welkomst === '—' ? 400 : 600 }}>
                       {r.welkomst}
+                    </td>
+                    <td style={{ padding: '10px 12px' }}>
+                      <Link
+                        href={r.slug === 'carrefour-simply-you' ? `/aanbieder/${r.slug}` : `/ga/${r.slug}`}
+                        style={{
+                          display: 'inline-block',
+                          background: i === 0 ? '#1B4332' : 'transparent',
+                          color: i === 0 ? 'white' : 'var(--ink)',
+                          border: i === 0 ? 'none' : '1px solid var(--rule)',
+                          padding: '5px 10px',
+                          borderRadius: 8,
+                          fontSize: 12,
+                          fontWeight: 600,
+                          textDecoration: 'none',
+                          whiteSpace: 'nowrap',
+                        }}
+                      >
+                        Bekijk →
+                      </Link>
                     </td>
                   </tr>
                 ))}
