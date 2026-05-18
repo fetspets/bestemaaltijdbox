@@ -19,6 +19,12 @@ export default function RevealComponent() {
     setState('loading');
 
     // 1. Affiliateklik EERST zodat de cookie geplaatst wordt vóór code-weergave
+    window.gtag?.('event', 'affiliate_click', {
+      aanbieder: 'hellofresh',
+      pagina: window.location.pathname,
+      element_type: 'knop',
+      bestemming: 'https://hellofreshfr.sjv.io/c/3156055/3896977/45302',
+    });
     window.open('/ga/hellofresh', '_blank', 'noopener');
 
     // 2. Dan pas de code ophalen van de server
