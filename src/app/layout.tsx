@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
+import AffiliateTracker from '@/components/AffiliateTracker';
 import Script from 'next/script';
 
 export const metadata: Metadata = {
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main>{children}</main>
         <Footer />
         <CookieBanner />
+        <AffiliateTracker />
 
         {/* Google Analytics */}
         <Script
