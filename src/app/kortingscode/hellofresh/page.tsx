@@ -65,7 +65,7 @@ export default function HelloFreshKortingscode() {
             marginBottom: 10,
           }}
         >
-          Toon kortingscode & activeer deal →
+          Activeer deal →
         </Link>
         <div style={{ fontSize: 12, color: '#6B7280', lineHeight: 1.5 }}>
           ⚠️ Gratis pan na minimaal 5 boxen binnen 8 weken
@@ -79,10 +79,10 @@ export default function HelloFreshKortingscode() {
         </h2>
         <ol style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 12 }}>
           {[
-            'Klik op "Toon kortingscode & activeer deal" hierboven.',
-            'Op de volgende pagina zie je de kortingscode na één klik onthullen.',
+            'Klik op "Activeer deal" hierboven.',
+            'Je wordt doorgestuurd naar HelloFresh — geen code nodig, korting wordt automatisch toegepast.',
             'Meld je aan bij HelloFresh tussen 15 mei en 15 juni 2026.',
-            'Plak de code bij checkout voor tot €60 korting.',
+            'Korting wordt automatisch verdeeld over je eerste boxen — totaal tot €60 voordeel.',
             'Bestel minimaal 5 boxen binnen 8 weken → ontvang je gratis GreenPan per e-mail.',
           ].map((stap, i) => (
             <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#4B5563', lineHeight: 1.6, background: 'white', border: '1px solid #E8E3DC', borderRadius: 10, padding: '12px 14px' }}>
