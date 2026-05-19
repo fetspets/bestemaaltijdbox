@@ -10,13 +10,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const a = getAanbieder(slug);
   if (!a) return {};
+  const defaultTitle = `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`;
+  const defaultDescription = `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`;
+  const title = a.seoTitle ?? defaultTitle;
+  const description = a.seoDescription ?? defaultDescription;
   return {
-    title: `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`,
-    description: `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`,
+    title: a.seoTitle ? { absolute: a.seoTitle } : defaultTitle,
+    description,
     alternates: { canonical: `https://www.bestemaaltijdbox.be/aanbieder/${slug}` },
     openGraph: {
-      title: `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`,
-      description: `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`,
+      title,
+      description,
       url: `https://www.bestemaaltijdbox.be/aanbieder/${slug}`,
       type: 'article',
       locale: 'nl_BE',
@@ -101,7 +105,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bestemaaltijdbox.be' },
-      { '@type': 'ListItem', position: 2, name: 'Vergelijken', item: 'https://www.bestemaaltijdbox.be' },
+      { '@type': 'ListItem', position: 2, name: 'Aanbieders', item: 'https://www.bestemaaltijdbox.be/aanbieder' },
       { '@type': 'ListItem', position: 3, name: a.naam, item: `https://www.bestemaaltijdbox.be/aanbieder/${a.slug}` },
     ],
   };
@@ -128,7 +132,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div>
             <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
             {' → '}
-            <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Vergelijken</Link>
+            <Link href="/aanbieder" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Aanbieders</Link>
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>
