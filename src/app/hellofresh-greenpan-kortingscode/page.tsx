@@ -87,13 +87,6 @@ const productSchema = {
     'HelloFresh maaltijdbox met verse ingrediënten en stapsgewijze recepten, bezorgd aan huis in heel België. Tijdelijke actie: gratis GreenPan™ braadpan + tot €60 korting voor nieuwe klanten.',
   brand: { '@type': 'Brand', name: 'HelloFresh' },
   image: `${BASE_URL}/logos/hellofresh.png`,
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '8.4',
-    bestRating: '10',
-    worstRating: '1',
-    reviewCount: 1,
-  },
   review: {
     '@type': 'Review',
     name: 'HelloFresh België review',
