@@ -18,10 +18,10 @@ const vragen = [
   {
     vraag: 'Hoe vaak per week wil je een maaltijdbox gebruiken?',
     opties: [
-      { label: '2–3 keer per week', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1 } },
-      { label: '3–5 keer per week', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1 } },
-      { label: 'Bijna elke dag', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0 } },
-      { label: 'Af en toe', scores: { hf: 1, fb: 0, ms: 1, ek: 0, fp: 2 } },
+      { label: '2–3 keer per week', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1, cc: 1 } },
+      { label: '3–5 keer per week', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1, cc: 1 } },
+      { label: 'Bijna elke dag', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0, cc: 1 } },
+      { label: 'Af en toe', scores: { hf: 1, fb: 0, ms: 1, ek: 0, fp: 2, cc: 2 } },
     ],
   },
   {
