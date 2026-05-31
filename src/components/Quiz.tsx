@@ -46,10 +46,10 @@ const vragen = [
   {
     vraag: 'Heb je specifieke dieetvoorkeuren?',
     opties: [
-      { label: 'Geen specifieke voorkeur', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1 } },
-      { label: 'Vegetarisch', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0 } },
-      { label: 'Vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0 } },
-      { label: 'Gezond & caloriebewust', scores: { hf: 1, fb: 0, ms: 0, ek: 2, fp: 0 } },
+      { label: 'Geen specifieke voorkeur', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 2 } },
+      { label: 'Vegetarisch', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
+      { label: 'Vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
+      { label: 'Gezond & caloriebewust', scores: { hf: 1, fb: 0, ms: 0, ek: 2, fp: 0, cc: 1 } },
     ],
   },
 ];
