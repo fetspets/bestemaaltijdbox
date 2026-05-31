@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 
-type Scores = { hf: number; fb: number; ms: number; ek: number; fp: number };
+type Scores = { hf: number; fb: number; ms: number; ek: number; fp: number; cc: number };
 
 const vragen = [
   {
