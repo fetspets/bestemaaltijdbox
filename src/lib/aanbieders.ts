@@ -331,8 +331,8 @@ export const aanbieders: Aanbieder[] = [
     slug: 'crowd-cooks',
     naam: 'Crowd Cooks',
     logo: '/logos/crowd-cooks.svg',
-    tagline: 'Kant-en-klare chef-maaltijden — vers bereid, gratis bezorgd',
-    beschrijving: 'Crowd Cooks is een Belgische kant-en-klare maaltijdservice: verse maaltijden bereid door chefs, die je enkel hoeft op te warmen. Elke week 12 nieuwe gerechten, royale porties van 450+ gram, en gratis bezorging op zondag of maandag. Geen koken vereist.',
+    tagline: 'Kant-en-klare chef-maaltijden — vers bereid, thuisbezorgd',
+    beschrijving: 'Crowd Cooks is een Belgische kant-en-klare maaltijdservice: verse maaltijden bereid door chefs, die je enkel hoeft op te warmen. Elke week 12 nieuwe gerechten, royale porties van 450+ gram, en bezorging op zondag of maandag (€4,90). Geen koken vereist.',
     uitgebreideReview: {
       intro: 'Crowd Cooks is geen klassieke kookbox maar een kant-en-klare maaltijdservice. De gerechten worden vers bereid door chefs en geleverd — jij warmt ze enkel op in een paar minuten. Een Belgisch alternatief voor wie wil eten zonder te koken.',
       testervaring: 'Crowd Cooks mikt op het gemak van kant-en-klaar zonder in te boeten op porties: de maaltijden wegen 450 gram of meer, wat ruim is voor het segment. Je kiest wekelijks uit 12 nieuwe gerechten die 5 dagen houdbaar zijn in de koelkast en in enkele minuten warm zijn. Het abonnement is flexibel — pauzeren of annuleren kan met één klik. Pluspunt tegenover veel concurrenten in dit segment: de bezorging is gratis (op zondag of maandag). De keuze van 12 gerechten is wat beperkter dan bij sommige grotere spelers, en de prijs per portie ligt in de premium-klasse die eigen is aan kant-en-klaar.',
