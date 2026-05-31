@@ -148,7 +148,7 @@ export default function HomePage() {
                     { val: a.score.totaal.toFixed(1), key: 'Score' },
                     { val: `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
                     { val: `${a.receptenPerWeek}+`, key: 'Recepten' },
-                    { val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}`, key: 'Bezorging' },
+                    { val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`, key: 'Bezorging' },
                   ].map(({ val, key }) => (
                     <div key={key} style={{ padding: '8px 6px', borderRight: '1px solid var(--rule)', textAlign: 'center' }}>
                       <div style={{ fontWeight: 700, fontSize: 14 }}>{val}</div>
