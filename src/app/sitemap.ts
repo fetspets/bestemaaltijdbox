@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon',
     'foodbag-vs-marley-spoon', 'hellofresh-vs-ekomenu', 'hellofresh-vs-carrefour',
     'foodprepper-vs-foodbag', 'foodprepper-vs-hellofresh',
+    'crowd-cooks-vs-factor',
   ];
   const gidsen = ['goedkoopste-maaltijdbox-belgie'];
   const blogSlugs = [
