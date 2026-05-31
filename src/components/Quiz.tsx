@@ -122,7 +122,7 @@ const resultaten: Record<string, {
     tagline: 'Kant-en-klare Belgische maaltijden — vers bereid, gewoon opwarmen.',
     bullets: [
       'Geen koken — klaar in een paar minuten',
-      'Gratis bezorging op zondag of maandag',
+      'Bezorging op zondag of maandag (€4,90)',
       'Belgisch, met royale porties van 450+ gram',
     ],
     runnerUp: { slug: 'factor', naam: 'Factor', vergelijkSlug: 'crowd-cooks-vs-factor' },

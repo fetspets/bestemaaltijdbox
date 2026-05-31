@@ -95,7 +95,7 @@ export default function CrowdCooksKortingscode() {
             '€10 korting per week gedurende 4 weken',
             'Totale besparing tot €60',
             'Code 60C invullen bij je eerste bestelling',
-            'Gratis bezorging op zondag of maandag in België',
+            'Bezorging €4,90 op zondag of maandag in België',
           ].map((v, i) => (
             <li key={i} style={{ fontSize: 14, color: '#4B5563' }}>✓ {v}</li>
           ))}
@@ -108,7 +108,7 @@ export default function CrowdCooksKortingscode() {
           Waarom Crowd Cooks?
         </h2>
         <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 12 }}>
-          Crowd Cooks is een Belgische kant-en-klare maaltijdservice — geen kookbox, maar verse maaltijden bereid door chefs die je in een paar minuten opwarmt. Elke week kies je uit 12 nieuwe gerechten met royale porties van 450+ gram, 5 dagen houdbaar in de koelkast. De bezorging is gratis op zondag of maandag en het abonnement is flexibel: pauzeren of annuleren kan met één klik. Ideaal voor drukke professionals, singles en koppels die gezond willen eten zonder kooktijd.
+          Crowd Cooks is een Belgische kant-en-klare maaltijdservice — geen kookbox, maar verse maaltijden bereid door chefs die je in een paar minuten opwarmt. Elke week kies je uit 12 nieuwe gerechten met royale porties van 450+ gram, 5 dagen houdbaar in de koelkast. De bezorging (€4,90) gebeurt op zondag of maandag en het abonnement is flexibel: pauzeren of annuleren kan met één klik. Ideaal voor drukke professionals, singles en koppels die gezond willen eten zonder kooktijd.
         </p>
         <Link href="/aanbieder/crowd-cooks" style={{ fontSize: 14, fontWeight: 700, color: '#1B4332', textDecoration: 'underline' }}>
           Lees onze volledige Crowd Cooks review →
