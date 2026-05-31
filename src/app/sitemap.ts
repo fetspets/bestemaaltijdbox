@@ -5,6 +5,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const aanbieders = [
     'hellofresh', 'foodbag', 'marley-spoon',
     'foodprepper', 'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
+    'crowd-cooks',
   ];
   const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio', 'singles'];
   const vergelijkingen = [
