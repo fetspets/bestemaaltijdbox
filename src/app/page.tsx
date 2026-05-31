@@ -9,7 +9,7 @@ const jsonLd = {
   '@type': 'ItemList',
   name: 'Beste Maaltijdbox België 2026',
   description: 'Onafhankelijke vergelijking van maaltijdboxen in België',
-  numberOfItems: 8,
+  numberOfItems: 9,
   itemListElement: aanbieders.map((a, i) => ({
     '@type': 'ListItem',
     position: i + 1,
