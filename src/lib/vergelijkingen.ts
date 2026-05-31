@@ -127,6 +127,29 @@ export const vergelijkingen: Vergelijking[] = [
       { q: 'Levert Carrefour Simply You ook in Wallonië?', a: 'Ja, Carrefour Simply You bezorgt in heel België inclusief Wallonië, op maandagavond. HelloFresh bezorgt ook in heel België maar op meerdere dagen per week, wat meer flexibiliteit geeft.' },
     ],
   },
+  {
+    slug: 'crowd-cooks-vs-factor',
+    seoTitle: 'Crowd Cooks vs Factor 2026: welke kant-en-klare box wint?',
+    seoDescription: 'Crowd Cooks of Factor — twee kant-en-klare maaltijdservices vergeleken op prijs, smaak en bezorging. Crowd Cooks: gratis bezorging in België.',
+    aanbieder1Slug: 'crowd-cooks',
+    aanbieder2Slug: 'factor',
+    winnaarPerCategorie: {
+      prijs: 'factor',
+      smaak: 'crowd-cooks',
+      variatie: 'factor',
+      flexibiliteit: 'factor',
+      bezorging: 'crowd-cooks',
+      duurzaamheid: 'crowd-cooks',
+    },
+    verdictSlug: 'crowd-cooks',
+    verdictTekst: 'Crowd Cooks en Factor zitten allebei in het kant-en-klaar-segment: je kookt niet, je warmt op. Het grote verschil zit in de bezorging en de verankering. Crowd Cooks is Belgisch en bezorgt gratis op zondag of maandag, terwijl Factor (van de HelloFresh Group) bezorgkosten van €5,99 per levering aanrekent — bij regelmatig gebruik telt dat snel op. Factor biedt meer keuze (18 gerechten per week tegenover 12) en vijf uitgesproken dieetstijlen, wat interessant is voor sporters en wie caloriebewust eet. Wie de laagste totaalprijs en de grootste variatie wil, leunt richting Factor. Wie bewust Belgisch wil eten, royale porties zoekt en gratis bezorging belangrijk vindt, kiest Crowd Cooks.',
+    faq: [
+      { q: 'Wat is het grootste verschil tussen Crowd Cooks en Factor?', a: 'Beide leveren kant-en-klare maaltijden die je enkel opwarmt. Crowd Cooks is een Belgische service met gratis bezorging op zondag of maandag; Factor hoort bij de HelloFresh Group en rekent €5,99 bezorgkosten per levering. Factor heeft een ruimer aanbod (18 gerechten), Crowd Cooks legt de nadruk op royale porties van 450+ gram.' },
+      { q: 'Welke is goedkoper: Crowd Cooks of Factor?', a: 'Factor heeft een lagere instapprijs per portie, maar de €5,99 bezorgkosten per levering verkleinen dat voordeel. Crowd Cooks ligt qua prijs per portie in de premium-klasse, maar bezorgt gratis. Reken voor jouw situatie de totaalprijs inclusief bezorging uit — bij wekelijkse leveringen maakt de gratis bezorging van Crowd Cooks een merkbaar verschil.' },
+      { q: 'Hoeveel gerechten kan ik per week kiezen?', a: 'Factor biedt 18 maaltijden per week in vijf dieetstijlen, waaronder High-Protein en Calorie-Conscious. Crowd Cooks heeft elke week 12 nieuwe gerechten. Wie veel variatie of specifieke dieetstijlen wil, heeft bij Factor meer keuze.' },
+      { q: 'Kan ik beide flexibel pauzeren of opzeggen?', a: 'Ja. Zowel Crowd Cooks als Factor werken met een flexibel abonnement dat je wekelijks kan aanpassen, pauzeren of opzeggen. Bij Crowd Cooks kan dat met één klik.' },
+    ],
+  },
 ];
 
 export function getVergelijking(slug: string): Vergelijking | undefined {
