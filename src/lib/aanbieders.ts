@@ -6,8 +6,6 @@ export interface KortingsCode {
 
 export interface Aanbieder {
   slug: string;
-  seoTitle?: string;
-  seoDescription?: string;
   naam: string;
   logo: string;
   tagline: string;
