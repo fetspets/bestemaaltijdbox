@@ -7,14 +7,14 @@ const FOODPREPPER_KORTING = 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=
 const CANONICAL = 'https://www.bestemaaltijdbox.be/vergelijk/foodprepper-vs-foodbag';
 
 export const metadata: Metadata = {
-  title: 'Foodprepper vs Foodbag (2026) – Welke maaltijdbox past bij jou?',
+  title: 'Foodprepper vs Foodbag 2026: snelheid of variatie?',
   description:
-    'Foodprepper of Foodbag? Vergelijk snelheid, prijs, menu en levering. Beide van Smartmat – maar ze zijn écht anders. Ontdek welke bij jou past.',
+    'Foodprepper klaar in 15 min, Foodbag in 30 min — maar welke smaakt beter en is goedkoper? Eerlijke vergelijking van twee Belgische maaltijdboxen.',
   alternates: { canonical: CANONICAL },
   openGraph: {
-    title: 'Foodprepper vs Foodbag (2026) – Welke maaltijdbox past bij jou?',
+    title: 'Foodprepper vs Foodbag 2026: snelheid of variatie?',
     description:
-      'Foodprepper of Foodbag? Vergelijk snelheid, prijs, menu en levering. Beide van Smartmat – maar ze zijn écht anders. Ontdek welke bij jou past.',
+      'Foodprepper klaar in 15 min, Foodbag in 30 min — maar welke smaakt beter en is goedkoper? Eerlijke vergelijking van twee Belgische maaltijdboxen.',
     type: 'article',
     url: CANONICAL,
   },
