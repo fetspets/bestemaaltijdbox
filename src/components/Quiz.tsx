@@ -37,10 +37,10 @@ const vragen = [
   {
     vraag: 'Hoeveel tijd heb je gemiddeld om te koken?',
     opties: [
-      { label: 'Minder dan 20 minuten', scores: { hf: 2, fb: 0, ms: 0, ek: 0, fp: 3 } },
-      { label: '20–40 minuten', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1 } },
-      { label: '40–60 minuten', scores: { hf: 0, fb: 1, ms: 2, ek: 1, fp: 0 } },
-      { label: 'Ik kook graag uitgebreid', scores: { hf: 0, fb: 0, ms: 3, ek: 0, fp: 0 } },
+      { label: 'Minder dan 20 minuten', scores: { hf: 2, fb: 0, ms: 0, ek: 0, fp: 3, cc: 3 } },
+      { label: '20–40 minuten', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 0 } },
+      { label: '40–60 minuten', scores: { hf: 0, fb: 1, ms: 2, ek: 1, fp: 0, cc: 0 } },
+      { label: 'Ik kook graag uitgebreid', scores: { hf: 0, fb: 0, ms: 3, ek: 0, fp: 0, cc: 0 } },
     ],
   },
   {
