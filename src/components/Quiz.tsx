@@ -137,7 +137,7 @@ function getWinnaar(scores: Scores): string {
 
 export default function Quiz() {
   const [step, setStep] = useState(0);
-  const [scores, setScores] = useState<Scores>({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0 });
+  const [scores, setScores] = useState<Scores>({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 });
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [done, setDone] = useState(false);
 
