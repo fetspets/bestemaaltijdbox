@@ -163,7 +163,7 @@ export default function Quiz() {
 
   function reset() {
     setStep(0);
-    setScores({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0 });
+    setScores({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 });
     setDone(false);
     setHoveredIdx(null);
   }
