@@ -21,7 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'vegetarisch-koken-maaltijdbox',
     'maaltijdbox-starten-beginners',
   ];
-  const kortingscodes = ['hellofresh', 'foodbag', 'factor', 'foodprepper'];
+  const kortingscodes = ['hellofresh', 'foodbag', 'factor', 'foodprepper', 'crowd-cooks'];
 
   return [
     { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
