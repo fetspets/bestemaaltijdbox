@@ -238,6 +238,8 @@ export const aanbieders: Aanbieder[] = [
   },
   {
     slug: 'foodprepper',
+    seoTitle: 'Foodprepper review 2026: klaar in 15 min · 7.8/10 · €45 korting',
+    seoDescription: 'Foodprepper: Belgische maaltijdbox klaar in 15 minuten. Score 7.8/10, gratis bezorging en geen verplicht abonnement. Nu tot €45 korting.',
     naam: 'Foodprepper',
     logo: '/logos/foodprepper.png',
     tagline: 'De snelste maaltijdbox van België — klaar in 15 minuten',
