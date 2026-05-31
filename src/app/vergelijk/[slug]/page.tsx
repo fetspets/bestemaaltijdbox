@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description,
-    alternates: { canonical: `https://www.bestemaaltijdbox.be/vergelijk/${slug}` },
+    alternates: { canonical: `https://bestemaaltijdbox.be/vergelijk/${slug}` },
     openGraph: {
       title,
       description,
-      url: `https://www.bestemaaltijdbox.be/vergelijk/${slug}`,
+      url: `https://bestemaaltijdbox.be/vergelijk/${slug}`,
       type: 'article',
       locale: 'nl_BE',
     },

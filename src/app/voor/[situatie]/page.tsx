@@ -181,11 +181,11 @@ export async function generateMetadata({ params }: { params: Promise<{ situatie:
   return {
     title: s.seoTitel,
     description: s.seoDesc,
-    alternates: { canonical: `https://www.bestemaaltijdbox.be/voor/${situatie}` },
+    alternates: { canonical: `https://bestemaaltijdbox.be/voor/${situatie}` },
     openGraph: {
       title: s.seoTitel,
       description: s.seoDesc,
-      url: `https://www.bestemaaltijdbox.be/voor/${situatie}`,
+      url: `https://bestemaaltijdbox.be/voor/${situatie}`,
       type: 'website',
       locale: 'nl_BE',
     },

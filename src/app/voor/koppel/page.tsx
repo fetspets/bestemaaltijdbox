@@ -4,11 +4,11 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Beste maaltijdbox voor 2 personen in België 2026 — top 6 getest',
   description: 'Welke maaltijdbox past het best als koppel? 6 aanbieders getest op prijs, receptvariatie en flexibiliteit voor 2 personen. Bespaar tot €60 op je eerste box.',
-  alternates: { canonical: 'https://www.bestemaaltijdbox.be/voor/koppel' },
+  alternates: { canonical: 'https://bestemaaltijdbox.be/voor/koppel' },
   openGraph: {
     title: 'Beste maaltijdbox voor 2 personen in België 2026 — top 6 getest',
     description: 'Welke maaltijdbox past het best als koppel? 6 aanbieders getest op prijs, receptvariatie en flexibiliteit voor 2 personen. Bespaar tot €60 op je eerste box.',
-    url: 'https://www.bestemaaltijdbox.be/voor/koppel',
+    url: 'https://bestemaaltijdbox.be/voor/koppel',
     type: 'website',
     locale: 'nl_BE',
   },
