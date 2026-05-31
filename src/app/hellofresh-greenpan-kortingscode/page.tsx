@@ -87,13 +87,6 @@ const productSchema = {
     'HelloFresh maaltijdbox met verse ingrediënten en stapsgewijze recepten, bezorgd aan huis in heel België. Tijdelijke actie: gratis GreenPan™ braadpan + tot €60 korting voor nieuwe klanten.',
   brand: { '@type': 'Brand', name: 'HelloFresh' },
   image: `${BASE_URL}/logos/hellofresh.png`,
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '8.4',
-    bestRating: '10',
-    worstRating: '1',
-    reviewCount: 1,
-  },
   review: {
     '@type': 'Review',
     name: 'HelloFresh België review',
@@ -260,9 +253,9 @@ export default function HelloFreshGreenPanPage() {
           </h2>
           <ol style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 14 }}>
             {[
-              'Klik op "Toon code & ga naar HelloFresh" hierboven.',
+              'Klik op "Activeer deal & ga naar HelloFresh" hierboven.',
               'Meld je aan tussen 15 mei en 15 juni 2026.',
-              'Plak de onthulde code bij checkout → tot €60 korting verspreid over je eerste boxen.',
+              'Korting wordt automatisch toegepast via onze link — geen code nodig.',
               <>
                 Bestel <strong>minimaal 5 boxen binnen 8 weken</strong> om je gratis pan te verdienen.
               </>,
@@ -356,7 +349,7 @@ export default function HelloFreshGreenPanPage() {
                 {[
                   ['Welkomstkorting', 'Tot €60', 'Tot €40', 'Tot €30'],
                   ['Gratis cadeau', '🍳 GreenPan™', '—', '—'],
-                  ['Prijs/portie', '~€5,00', '~€4,70', '~€5,50'],
+                  ['Prijs/portie', 'vanaf €7,99', 'vanaf €9,50', 'vanaf €8,67'],
                   ['Score', '8,4/10', '7,8/10', '7,6/10'],
                 ].map(([label, hf, fb, ms], i) => (
                   <tr key={label} style={{ borderBottom: '1px solid #F0EDE8', background: i % 2 === 0 ? 'white' : '#FAFAF8' }}>

@@ -61,6 +61,8 @@ export interface Aanbieder {
   besteVoor: string;
   minMaaltijdenPerWeek: number;
   badge?: { label: string; bg: string; color: string };
+  seoTitle?: string;
+  seoDescription?: string;
 }
 
 export const aanbieders: Aanbieder[] = [
@@ -235,6 +237,8 @@ export const aanbieders: Aanbieder[] = [
     besteVoor: 'Fijnproevers',
     minMaaltijdenPerWeek: 2,
     badge: { label: '👨‍🍳 Beste voor kookliefhebbers', bg: '#F3E8FF', color: '#7C3AED' },
+    seoTitle: 'Marley Spoon België 2026: 7.9/10 — voor wie is het écht geschikt?',
+    seoDescription: 'Marley Spoon getest in België: toprecepten maar duurder dan HelloFresh. Wij vergeleken prijs, smaak en flexibiliteit — inclusief de minpunten. Score: 7.9/10.',
   },
   {
     slug: 'foodprepper',

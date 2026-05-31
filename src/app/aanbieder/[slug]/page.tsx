@@ -96,7 +96,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bestemaaltijdbox.be' },
-      { '@type': 'ListItem', position: 2, name: 'Vergelijken', item: 'https://www.bestemaaltijdbox.be' },
+      { '@type': 'ListItem', position: 2, name: 'Aanbieders', item: 'https://www.bestemaaltijdbox.be/aanbieder' },
       { '@type': 'ListItem', position: 3, name: a.naam, item: `https://www.bestemaaltijdbox.be/aanbieder/${a.slug}` },
     ],
   };
@@ -123,7 +123,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div>
             <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
             {' → '}
-            <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Vergelijken</Link>
+            <Link href="/aanbieder" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Aanbieders</Link>
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>

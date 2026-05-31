@@ -54,9 +54,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "BesteMaaltijdbox",
-            "url": "https://bestemaaltijdbox.be",
-            "logo": "https://bestemaaltijdbox.be/favicon-180x180.png"
+            "name": "BesteMaaltijdbox.be",
+            "url": "https://www.bestemaaltijdbox.be",
+            "logo": "https://www.bestemaaltijdbox.be/favicon-180x180.png"
           })}}
         />
       </head>
