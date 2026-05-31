@@ -15,11 +15,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description,
-    alternates: { canonical: `https://www.bestemaaltijdbox.be/aanbieder/${slug}` },
+    alternates: { canonical: `https://bestemaaltijdbox.be/aanbieder/${slug}` },
     openGraph: {
       title,
       description,
-      url: `https://www.bestemaaltijdbox.be/aanbieder/${slug}`,
+      url: `https://bestemaaltijdbox.be/aanbieder/${slug}`,
       type: 'article',
       locale: 'nl_BE',
     },
@@ -39,7 +39,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
   const a = getAanbieder(slug);
   if (!a) notFound();
 
-  const baseUrl = 'https://www.bestemaaltijdbox.be';
+  const baseUrl = 'https://bestemaaltijdbox.be';
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Review',
@@ -95,9 +95,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bestemaaltijdbox.be' },
-      { '@type': 'ListItem', position: 2, name: 'Aanbieders', item: 'https://www.bestemaaltijdbox.be/aanbieder' },
-      { '@type': 'ListItem', position: 3, name: a.naam, item: `https://www.bestemaaltijdbox.be/aanbieder/${a.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bestemaaltijdbox.be' },
+      { '@type': 'ListItem', position: 2, name: 'Aanbieders', item: 'https://bestemaaltijdbox.be/aanbieder' },
+      { '@type': 'ListItem', position: 3, name: a.naam, item: `https://bestemaaltijdbox.be/aanbieder/${a.slug}` },
     ],
   };
 

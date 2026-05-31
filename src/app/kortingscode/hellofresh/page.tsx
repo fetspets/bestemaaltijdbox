@@ -4,11 +4,11 @@ import Link from 'next/link';
 export const metadata: Metadata = {
   title: 'HelloFresh kortingscode mei-juni 2026 — Gratis GreenPan™ + tot €60 korting',
   description: 'Activeer de HelloFresh welkomstdeal: gratis GreenPan™ braadpan t.w.v. tot €119,90 + tot €60 korting. Tijdelijke actie geldig t.e.m. 15 juni 2026 voor nieuwe klanten in België.',
-  alternates: { canonical: 'https://www.bestemaaltijdbox.be/kortingscode/hellofresh' },
+  alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscode/hellofresh' },
   openGraph: {
     title: 'HelloFresh kortingscode mei-juni 2026 — Gratis GreenPan™ + tot €60 korting',
     description: 'Activeer de HelloFresh welkomstdeal: gratis GreenPan™ braadpan t.w.v. tot €119,90 + tot €60 korting. Actie t.e.m. 15 juni 2026.',
-    url: 'https://www.bestemaaltijdbox.be/kortingscode/hellofresh',
+    url: 'https://bestemaaltijdbox.be/kortingscode/hellofresh',
     type: 'article',
     locale: 'nl_BE',
   },

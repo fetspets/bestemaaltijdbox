@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import RevealComponent from './RevealComponent';
 
-const BASE_URL = 'https://www.bestemaaltijdbox.be';
+const BASE_URL = 'https://bestemaaltijdbox.be';
 const PAGE_URL = `${BASE_URL}/hellofresh-greenpan-kortingscode`;
 
 export const metadata: Metadata = {

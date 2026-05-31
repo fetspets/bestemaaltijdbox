@@ -4,7 +4,7 @@ import { getAanbieder } from '@/lib/aanbieders';
 
 const FOODPREPPER_CTA = 'https://deals.foodprepper.be/c?c=40691&m=2545883&a=507243&r=&u=';
 const FOODPREPPER_KORTING = 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u=';
-const CANONICAL = 'https://www.bestemaaltijdbox.be/vergelijk/foodprepper-vs-foodbag';
+const CANONICAL = 'https://bestemaaltijdbox.be/vergelijk/foodprepper-vs-foodbag';
 
 export const metadata: Metadata = {
   title: 'Foodprepper vs Foodbag 2026: snelheid of variatie?',
@@ -67,8 +67,8 @@ export default function FoodprepperVsFoodbag() {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bestemaaltijdbox.be' },
-      { '@type': 'ListItem', position: 2, name: 'Vergelijk', item: 'https://www.bestemaaltijdbox.be/vergelijk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bestemaaltijdbox.be' },
+      { '@type': 'ListItem', position: 2, name: 'Vergelijk', item: 'https://bestemaaltijdbox.be/vergelijk' },
       { '@type': 'ListItem', position: 3, name: 'Foodprepper vs Foodbag', item: CANONICAL },
     ],
   };

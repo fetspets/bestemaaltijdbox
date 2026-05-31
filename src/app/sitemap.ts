@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.bestemaaltijdbox.be';
+  const baseUrl = 'https://bestemaaltijdbox.be';
   const aanbieders = [
     'hellofresh', 'foodbag', 'marley-spoon',
     'foodprepper', 'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',

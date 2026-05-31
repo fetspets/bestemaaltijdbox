@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/ga/', '/api/reveal-code'],
     },
-    sitemap: 'https://www.bestemaaltijdbox.be/sitemap.xml',
+    sitemap: 'https://bestemaaltijdbox.be/sitemap.xml',
   };
 }

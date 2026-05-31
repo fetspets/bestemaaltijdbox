@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 
-const CANONICAL = 'https://www.bestemaaltijdbox.be/kortingscode/foodprepper';
+const CANONICAL = 'https://bestemaaltijdbox.be/kortingscode/foodprepper';
 
 export const metadata: Metadata = {
   title: 'Foodprepper kortingscode mei 2026 — €45 korting zonder abonnement',
@@ -59,8 +59,8 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.bestemaaltijdbox.be' },
-    { '@type': 'ListItem', position: 2, name: 'Kortingscodes', item: 'https://www.bestemaaltijdbox.be/kortingscodes' },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bestemaaltijdbox.be' },
+    { '@type': 'ListItem', position: 2, name: 'Kortingscodes', item: 'https://bestemaaltijdbox.be/kortingscodes' },
     { '@type': 'ListItem', position: 3, name: 'Foodprepper kortingscode', item: CANONICAL },
   ],
 };

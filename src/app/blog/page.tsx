@@ -5,11 +5,11 @@ import { blogPosts } from '@/lib/blog';
 export const metadata: Metadata = {
   title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
   description: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
-  alternates: { canonical: 'https://www.bestemaaltijdbox.be/blog' },
+  alternates: { canonical: 'https://bestemaaltijdbox.be/blog' },
   openGraph: {
     title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
     description: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
-    url: 'https://www.bestemaaltijdbox.be/blog',
+    url: 'https://bestemaaltijdbox.be/blog',
     type: 'website',
     locale: 'nl_BE',
   },

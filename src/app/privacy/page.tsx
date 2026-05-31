@@ -3,11 +3,11 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Privacybeleid — BesteMaaltijdbox.be',
   description: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
-  alternates: { canonical: 'https://www.bestemaaltijdbox.be/privacy' },
+  alternates: { canonical: 'https://bestemaaltijdbox.be/privacy' },
   openGraph: {
     title: 'Privacybeleid — BesteMaaltijdbox.be',
     description: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
-    url: 'https://www.bestemaaltijdbox.be/privacy',
+    url: 'https://bestemaaltijdbox.be/privacy',
     type: 'website',
     locale: 'nl_BE',
   },

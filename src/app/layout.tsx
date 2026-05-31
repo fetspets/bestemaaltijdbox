@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     type: 'website',
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://www.bestemaaltijdbox.be' },
+  alternates: { canonical: 'https://bestemaaltijdbox.be' },
   verification: {
     google: 'dgD6dFbp4JHPwAeuIu27zU6WTq1wEII8Sj_RsjngfgA',
   },
@@ -55,8 +55,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "BesteMaaltijdbox.be",
-            "url": "https://www.bestemaaltijdbox.be",
-            "logo": "https://www.bestemaaltijdbox.be/favicon-180x180.png"
+            "url": "https://bestemaaltijdbox.be",
+            "logo": "https://bestemaaltijdbox.be/favicon-180x180.png"
           })}}
         />
       </head>

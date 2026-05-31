@@ -4,11 +4,11 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Beste vegan maaltijdbox in België 2026 — Ekomenu, HelloFresh en Foodbag getest',
   description: 'Op zoek naar een 100% vegan maaltijdbox in België? Ekomenu (plantaardig & bio) vergeleken met de vegan-opties van HelloFresh en Foodbag. Bespaar tot €60.',
-  alternates: { canonical: 'https://www.bestemaaltijdbox.be/voor/vegan' },
+  alternates: { canonical: 'https://bestemaaltijdbox.be/voor/vegan' },
   openGraph: {
     title: 'Beste vegan maaltijdbox in België 2026 — Ekomenu, HelloFresh en Foodbag getest',
     description: 'Op zoek naar een 100% vegan maaltijdbox in België? Ekomenu (plantaardig & bio) vergeleken met de vegan-opties van HelloFresh en Foodbag. Bespaar tot €60.',
-    url: 'https://www.bestemaaltijdbox.be/voor/vegan',
+    url: 'https://bestemaaltijdbox.be/voor/vegan',
     type: 'website',
     locale: 'nl_BE',
   },
