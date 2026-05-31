@@ -116,6 +116,17 @@ const resultaten: Record<string, {
     ],
     runnerUp: { slug: 'hellofresh', naam: 'HelloFresh', vergelijkSlug: 'foodprepper-vs-hellofresh' },
   },
+  cc: {
+    naam: 'Crowd Cooks',
+    slug: 'crowd-cooks',
+    tagline: 'Kant-en-klare Belgische maaltijden — vers bereid, gewoon opwarmen.',
+    bullets: [
+      'Geen koken — klaar in een paar minuten',
+      'Gratis bezorging op zondag of maandag',
+      'Belgisch, met royale porties van 450+ gram',
+    ],
+    runnerUp: { slug: 'factor', naam: 'Factor', vergelijkSlug: 'crowd-cooks-vs-factor' },
+  },
 };
 
 function getWinnaar(scores: Scores): string {
