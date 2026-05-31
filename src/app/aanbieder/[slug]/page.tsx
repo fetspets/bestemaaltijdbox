@@ -58,13 +58,6 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
       description: a.beschrijving,
       brand: { '@type': 'Brand', name: a.naam },
       image: a.logo.startsWith('/') ? `${baseUrl}${a.logo}` : `${baseUrl}/logo.png`,
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: a.score.totaal,
-        bestRating: 10,
-        worstRating: 1,
-        reviewCount: 1,
-      },
       offers: {
         '@type': 'Offer',
         price: a.prijsPerPortie,
