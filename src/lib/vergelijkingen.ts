@@ -2,6 +2,8 @@ import { getAanbieder } from './aanbieders';
 
 export interface Vergelijking {
   slug: string;
+  seoTitle?: string;
+  seoDescription?: string;
   aanbieder1Slug: string;
   aanbieder2Slug: string;
   winnaarPerCategorie: {
