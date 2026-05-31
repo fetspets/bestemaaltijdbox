@@ -242,7 +242,7 @@ export default function HomePage() {
               </thead>
               <tbody>
                 {aanbieders.map((a, i) => {
-                  const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}`;
+                  const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`;
                   const bezorgGratis = a.gratisBezorging;
                   return (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
