@@ -2,6 +2,8 @@ import { getAanbieder } from './aanbieders';
 
 export interface Vergelijking {
   slug: string;
+  seoTitle?: string;
+  seoDescription?: string;
   aanbieder1Slug: string;
   aanbieder2Slug: string;
   winnaarPerCategorie: {
@@ -20,6 +22,8 @@ export interface Vergelijking {
 export const vergelijkingen: Vergelijking[] = [
   {
     slug: 'hellofresh-vs-foodbag',
+    seoTitle: 'HelloFresh vs Foodbag 2026: welke wint? Eerlijke vergelijking',
+    seoDescription: 'HelloFresh of Foodbag — welke is goedkoper en beter? We vergeleken prijs, smaak en flexibiliteit. HelloFresh v.a. €7,99 · Foodbag v.a. €9,50.',
     aanbieder1Slug: 'hellofresh',
     aanbieder2Slug: 'foodbag',
     winnaarPerCategorie: {
