@@ -151,6 +151,7 @@ export default function Quiz() {
       ms: scores.ms + delta.ms,
       ek: scores.ek + delta.ek,
       fp: scores.fp + delta.fp,
+      cc: scores.cc + delta.cc,
     };
     setScores(next);
     if (step + 1 >= totalSteps) {
