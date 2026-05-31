@@ -371,7 +371,7 @@ export const aanbieders: Aanbieder[] = [
     besteVoor: 'Ready-to-eat',
     minMaaltijdenPerWeek: 1,
     seoTitle: 'Crowd Cooks review 2026: kant-en-klaar · €60 korting',
-    seoDescription: 'Crowd Cooks: Belgische kant-en-klare maaltijden, vers door chefs, gratis bezorging. Onze eerlijke review + tot €60 welkomstkorting.',
+    seoDescription: 'Crowd Cooks: Belgische kant-en-klare maaltijden, vers bereid door chefs. Onze eerlijke review + tot €60 welkomstkorting.',
   },
   {
     slug: 'foodmaker',
