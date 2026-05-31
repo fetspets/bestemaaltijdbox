@@ -111,6 +111,18 @@ const kortingen = [
     voorwaarden: 'Bekijk website voor actuele aanbieding',
     actief: false,
   },
+  {
+    slug: 'crowd-cooks',
+    naam: 'Crowd Cooks',
+    logo: '/logos/crowd-cooks.svg',
+    code: '60C',
+    deal: '€20 korting in week 1 + €10 korting per week gedurende 4 weken',
+    bedrag: '€60 totaal',
+    kleur: '#1B4332',
+    beschrijving: 'Gebruik code 60C bij je eerste bestelling: €20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. Belgische kant-en-klare maaltijden met gratis bezorging.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Code: 60C · €20 in week 1 + 4× €10 · Wekelijks opzegbaar',
+    actief: true,
+  },
 ];
 
 export default function KortingscodesPagina() {
