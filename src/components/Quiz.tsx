@@ -27,11 +27,11 @@ const vragen = [
   {
     vraag: 'Wat vind je het belangrijkst?',
     opties: [
-      { label: '💰 Zo goedkoop mogelijk', scores: { hf: 3, fb: 0, ms: 0, ek: 0, fp: 0 } },
-      { label: '⚡ Snel en makkelijk koken', scores: { hf: 2, fb: 1, ms: 1, ek: 0, fp: 3 } },
-      { label: '🥗 Gezond / vegetarisch / vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0 } },
-      { label: '👨‍🍳 Lekker koken, culinaire ervaring', scores: { hf: 0, fb: 1, ms: 3, ek: 0, fp: 0 } },
-      { label: '🇧🇪 Lokale Belgische producten', scores: { hf: 0, fb: 3, ms: 0, ek: 0, fp: 1 } },
+      { label: '💰 Zo goedkoop mogelijk', scores: { hf: 3, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 } },
+      { label: '⚡ Snel en makkelijk koken', scores: { hf: 2, fb: 1, ms: 1, ek: 0, fp: 3, cc: 3 } },
+      { label: '🥗 Gezond / vegetarisch / vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
+      { label: '👨‍🍳 Lekker koken, culinaire ervaring', scores: { hf: 0, fb: 1, ms: 3, ek: 0, fp: 0, cc: 0 } },
+      { label: '🇧🇪 Lokale Belgische producten', scores: { hf: 0, fb: 3, ms: 0, ek: 0, fp: 1, cc: 2 } },
     ],
   },
   {
