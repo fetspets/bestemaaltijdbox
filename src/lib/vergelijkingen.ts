@@ -130,7 +130,7 @@ export const vergelijkingen: Vergelijking[] = [
   {
     slug: 'crowd-cooks-vs-factor',
     seoTitle: 'Crowd Cooks vs Factor 2026: welke kant-en-klare box wint?',
-    seoDescription: 'Crowd Cooks of Factor — twee kant-en-klare maaltijdservices vergeleken op prijs, smaak en bezorging. Crowd Cooks: gratis bezorging in België.',
+    seoDescription: 'Crowd Cooks of Factor — twee kant-en-klare maaltijdservices vergeleken op prijs, smaak en bezorging. Crowd Cooks: Belgisch met lagere bezorgkosten.',
     aanbieder1Slug: 'crowd-cooks',
     aanbieder2Slug: 'factor',
     winnaarPerCategorie: {
