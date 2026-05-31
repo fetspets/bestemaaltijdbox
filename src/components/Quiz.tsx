@@ -9,10 +9,10 @@ const vragen = [
   {
     vraag: 'Voor hoeveel personen kook je meestal?',
     opties: [
-      { label: '1 persoon', scores: { hf: 2, fb: 0, ms: 0, ek: 1, fp: 1 } },
-      { label: '2 personen', scores: { hf: 2, fb: 1, ms: 2, ek: 2, fp: 1 } },
-      { label: '3–4 personen', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 0 } },
-      { label: '5 of meer', scores: { hf: 1, fb: 3, ms: 0, ek: 0, fp: 0 } },
+      { label: '1 persoon', scores: { hf: 2, fb: 0, ms: 0, ek: 1, fp: 1, cc: 2 } },
+      { label: '2 personen', scores: { hf: 2, fb: 1, ms: 2, ek: 2, fp: 1, cc: 2 } },
+      { label: '3–4 personen', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 0, cc: 1 } },
+      { label: '5 of meer', scores: { hf: 1, fb: 3, ms: 0, ek: 0, fp: 0, cc: 0 } },
     ],
   },
   {
