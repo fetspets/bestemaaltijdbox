@@ -10,13 +10,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const a = getAanbieder(slug);
   if (!a) return {};
+  const title = a.seoTitle ?? `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`;
+  const description = a.seoDescription ?? `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`;
   return {
-    title: `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`,
-    description: `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`,
+    title,
+    description,
     alternates: { canonical: `https://www.bestemaaltijdbox.be/aanbieder/${slug}` },
     openGraph: {
-      title: `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`,
-      description: `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`,
+      title,
+      description,
       url: `https://www.bestemaaltijdbox.be/aanbieder/${slug}`,
       type: 'article',
       locale: 'nl_BE',
