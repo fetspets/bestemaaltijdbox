@@ -327,7 +327,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div style={{ background: 'var(--cream)', border: '2px solid #1B4332', borderRadius: 12, padding: 24, marginBottom: 28 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12, color: '#1B4332' }}>Ons eindoordeel</h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: '0 0 16px' }}>{a.uitgebreideReview.eindoordeel}</p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 48, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</div>
               <div>
                 <div style={{ fontSize: 13, color: 'var(--muted)' }}>Onze score</div>
