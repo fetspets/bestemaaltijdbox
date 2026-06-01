@@ -142,7 +142,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
             Categorie per categorie
           </h2>
-          <div style={{ borderRadius: 12, overflow: 'hidden', border: '1.5px solid var(--rule)' }}>
+          <div style={{ borderRadius: 12, overflowX: 'auto', border: '1.5px solid var(--rule)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
