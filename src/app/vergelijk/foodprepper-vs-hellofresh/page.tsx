@@ -245,7 +245,7 @@ export default function FoodprepperVsHellofresh() {
         </div>
 
         {/* Kortingsblokken */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 40 }}>
+        <div className="two-col-grid" style={{ marginBottom: 40 }}>
           {/* Foodprepper korting */}
           <div style={{ background: '#ECFDF5', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: 24 }}>
             <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#D1FAE5', color: '#065F46', display: 'inline-block', marginBottom: 12 }}>
