@@ -124,7 +124,7 @@ export default function FoodprepperVsHellofresh() {
         </div>
 
         {/* Score-overzicht: 2 kolommen */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 36 }}>
+        <div className="two-col-grid" style={{ marginBottom: 36 }}>
           {[
             { a: fp, accentColor: '#2D6A4F', prijs: '[PRIJS]', label: 'Beste prijs: check foodprepper.be' },
             { a: hf, accentColor: '#1B4332', prijs: `€${hf.prijsPerPortie.toFixed(2)}/portie`, label: hf.tagline },
