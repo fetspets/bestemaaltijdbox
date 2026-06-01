@@ -182,7 +182,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           </div>
 
           {/* Specs grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 24 }}>
+          <div className="specs-grid">
             {[
               { icon: '💰', label: 'Prijs per portie', val: a.prijsPerPortieLabel ?? `vanaf €${a.prijsPerPortie.toFixed(2)}` },
               { icon: '📋', label: 'Recepten per week', val: `${a.receptenPerWeek}+` },
