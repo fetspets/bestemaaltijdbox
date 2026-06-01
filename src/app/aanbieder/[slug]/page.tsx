@@ -131,7 +131,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         </div>
       </div>
 
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 40, alignItems: 'start' }}>
+      <div className="page-grid" style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px' }}>
 
         {/* MAIN CONTENT */}
         <div>
