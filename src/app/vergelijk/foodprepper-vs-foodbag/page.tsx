@@ -332,7 +332,7 @@ export default function FoodprepperVsFoodbag() {
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>
             Er is geen absolute winnaar in deze vergelijking — de beste keuze hangt af van je levensstijl. Als je op doordeweekse avonden maximaal 20 minuten wil koken en ook ontbijt of lunch wil regelen, is Foodprepper de sterkste optie. Als je van koken houdt, de avond als rustmoment ervaart en veel receptvariatie wil, is Foodbag de juiste keuze. Beide zijn van hetzelfde moederbedrijf en gebruiken Belgische ingrediënten — het verschil zit hem in het concept.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div className="two-col-grid" style={{ gap: 12 }}>
             <a
               href={FOODPREPPER_CTA}
               target="_blank"
