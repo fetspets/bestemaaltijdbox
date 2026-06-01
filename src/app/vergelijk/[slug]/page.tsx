@@ -113,7 +113,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         </div>
 
         {/* Score-overzicht: 2 kolommen */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 36 }}>
+        <div className="two-col-grid" style={{ marginBottom: 36 }}>
           {[a1, a2].map(a => (
             <div key={a.slug} style={{
               background: 'white', borderRadius: 16, border: `2px solid ${v.verdictSlug === a.slug ? accentColors[a.slug] : 'var(--rule)'}`,
