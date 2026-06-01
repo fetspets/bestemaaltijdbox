@@ -175,7 +175,7 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, padding: '14px 20px 20px', borderTop: '1px solid var(--rule)' }}>
+              <div className="ranking-scores-grid">
                 <ScoreBar label="Smaak" value={a.score.smaak} />
                 <ScoreBar label="Prijs" value={a.score.prijsKwaliteit} />
                 <ScoreBar label="Flex." value={a.score.flexibiliteit} />
