@@ -356,7 +356,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         </div>
 
         {/* STICKY SIDEBAR */}
-        <div style={{ position: 'sticky', top: 80 }}>
+        <div className="page-grid-sidebar" style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: 'white', border: '1.5px solid var(--rule)', borderRadius: 16, padding: 24, boxShadow: '0 4px 24px rgba(0,0,0,.08)', marginBottom: 16 }}>
             <div style={{ textAlign: 'center', marginBottom: 16 }}>
               <div style={{ width: 72, height: 72, margin: '0 auto 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 44 }}>
