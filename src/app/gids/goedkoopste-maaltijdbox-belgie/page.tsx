@@ -215,10 +215,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
               slug: 'marley-spoon',
               badge: '🎯 Beste welkomstdeal per portie',
               accent: '#7C3AED',
-              metDeal: '~€21,80/week (35% korting op eerste 5 boxen)',
+              metDeal: '~€44/week gemiddeld · box 1 €25,99 (50% + gratis bezorging)',
               naDeal: '€57,98/week (reguliere prijs)',
-              uitleg: '35% korting op de eerste 5 boxen maakt Marley Spoon tijdens de welkomstperiode bijzonder voordelig — 5 weken aan gereduceerde prijs. Chef-kwaliteitsrecepten met 40+ keuzes per week. Na de welkomstperiode: €51,99/week + €5,99 bezorgkost. Bezorging enkel in Vlaanderen en Brussel.',
-              dealOpmerking: 'Korting automatisch via link · 5 boxen · enkel Vlaanderen & Brussel',
+              uitleg: '50% + 20% + 15% + 10% korting op de eerste 4 boxen maakt Marley Spoon tijdens de welkomstperiode bijzonder voordelig — je eerste box kost €25,99 inclusief gratis bezorging. Chef-kwaliteitsrecepten met 40+ keuzes per week. Na de welkomstperiode: €51,99/week + €5,99 bezorgkost. Bezorging enkel in Vlaanderen en Brussel.',
+              dealOpmerking: 'Korting automatisch via link · 4 boxen · enkel Vlaanderen & Brussel',
             },
           ].map(({ rang, naam, slug, badge, accent, metDeal, naDeal, uitleg, dealOpmerking }) => (
             <div key={slug} style={{ background: 'white', borderRadius: 16, border: rang === 1 ? '1.5px solid var(--mint)' : '1.5px solid var(--rule)', padding: 24, marginBottom: 16, position: 'relative', overflow: 'hidden' }}>
