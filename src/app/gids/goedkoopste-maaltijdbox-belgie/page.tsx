@@ -241,7 +241,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 </div>
               </div>
               <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', marginBottom: 14 }}>{uitleg}</p>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+              <div className="two-col-grid" style={{ gap: 10 }}>
                 <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 8, padding: '10px 12px' }}>
                   <div style={{ fontSize: 11, fontWeight: 700, color: '#15803D', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 3 }}>Met welkomstdeal</div>
                   <div style={{ fontSize: 13, fontWeight: 600, color: '#14532D' }}>{metDeal}</div>
