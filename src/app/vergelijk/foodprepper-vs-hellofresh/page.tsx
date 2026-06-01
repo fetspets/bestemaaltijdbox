@@ -347,7 +347,7 @@ export default function FoodprepperVsHellofresh() {
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>
             Foodprepper is de sterkste keuze voor drukke gezinnen en tweeverdieners die vers willen eten in 15 minuten, bewust Belgisch consumeren en ook ontbijt of lunch willen regelen. HelloFresh wint op receptenvariatie (40+), bereik (heel België) en een vaste lage prijs per portie. Wie van koken houdt of in Wallonië woont, kiest HelloFresh. Wie snelheid en lokale herkomst boven menugrootte stelt, kiest Foodprepper.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div className="two-col-grid" style={{ gap: 12 }}>
             <a
               href={FOODPREPPER_CTA}
               target="_blank"
