@@ -124,7 +124,7 @@ export default function FoodprepperVsFoodbag() {
         </div>
 
         {/* Score-overzicht: 2 kolommen */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 36 }}>
+        <div className="two-col-grid" style={{ marginBottom: 36 }}>
           {[
             { a: fp, accentColor: '#2D6A4F', prijs: '[PRIJS]' },
             { a: fb, accentColor: '#1E40AF', prijs: `€${fb.prijsPerPortie.toFixed(2)}/portie` },
