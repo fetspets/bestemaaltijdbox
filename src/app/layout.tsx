@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Beste maaltijdbox België 2026 — 9 boxen eerlijk vergeleken',
     description: 'Vergelijk HelloFresh, Foodbag, Marley Spoon en 6 anderen op prijs, smaak en kortingen. Onafhankelijk beoordeeld · bijgewerkt mei 2026 · deals tot €60.',
-    url: 'https://bestemaaltijdbox.be',
+    url: 'https://bestemaaltijdbox.be/',
     siteName: 'BesteMaaltijdbox.be',
     locale: 'nl_BE',
     type: 'website',
