@@ -210,8 +210,8 @@ export const aanbieders: Aanbieder[] = [
       beschrijving: 'Automatisch via link — geen code nodig. 50% + 20% + 15% + 10% korting op je eerste 4 boxen voor nieuwe klanten.',
     },
     ctaSubtekst: 'Korting automatisch via link · geen code nodig',
-    ctaTekst: 'Bespaar €54 op je eerste 5 boxen',
-    ctaTekst2: 'Probeer je eerste box voor €33,79',
+    ctaTekst: 'Bespaar €49 op je eerste 4 boxen',
+    ctaTekst2: 'Probeer je eerste box voor €25,99',
     kenmerken: ['✓ 40 recepten/week', '✓ Chef-kwaliteit', '📦 €5,99 bezorging', '🌱 Vegan opties'],
     pros: [
       'Grootste receptaanbod van alle geteste boxen: 40+ recepten per week',
