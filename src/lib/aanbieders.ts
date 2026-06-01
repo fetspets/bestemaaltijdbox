@@ -206,8 +206,8 @@ export const aanbieders: Aanbieder[] = [
     affiliateUrl: 'https://go.adt246.net/t/t?a=1709214807&as=2059394978&t=2&tk=1',
     kortingsCode: {
       code: null,
-      bedrag: '35% korting',
-      beschrijving: 'Automatisch via link — geen code nodig. Geldig op eerste 5 boxen voor nieuwe klanten.',
+      bedrag: '50% korting',
+      beschrijving: 'Automatisch via link — geen code nodig. 50% + 20% + 15% + 10% korting op je eerste 4 boxen voor nieuwe klanten.',
     },
     ctaSubtekst: 'Korting automatisch via link · geen code nodig',
     ctaTekst: 'Bespaar €54 op je eerste 5 boxen',
