@@ -54,7 +54,7 @@ export default function OverOnsPage() {
         <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151', marginBottom: 16 }}>
           We beoordelen elke maaltijdbox op 5 criteria: smaak, prijs-kwaliteitsverhouding, flexibiliteit, duurzaamheid en gemak. Onze scores zijn gebaseerd op gebruikerservaringen, publieke reviewdata en officiële productinformatie — en worden regelmatig bijgewerkt.
         </p>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12, marginTop: 16 }}>
+        <div className="two-col-grid" style={{ gap: 12, marginTop: 16 }}>
           {[
             { icon: '🍽️', titel: 'Smaak', desc: 'Gebaseerd op gebruikerservaringen en reviews' },
             { icon: '💰', titel: 'Prijs-kwaliteit', desc: 'Eerlijke vergelijking van de totale kost' },

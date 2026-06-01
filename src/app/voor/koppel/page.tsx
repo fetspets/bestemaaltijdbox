@@ -208,7 +208,7 @@ export default function KoppelPage() {
 
             <p style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{a.waarom}</p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule)', borderRadius: 10, overflow: 'hidden', fontSize: 12, marginBottom: 14 }}>
+            <div className="ranking-stats-grid" style={{ marginBottom: 14 }}>
               {[
                 { val: a.prijsPortie, key: 'Per portie' },
                 { val: a.weekprijs, key: 'Per week (2p, 3×)' },

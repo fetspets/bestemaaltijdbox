@@ -113,3 +113,96 @@ h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
     grid-column: 1 / -1;
   }
 }
+
+/* ── RESPONSIVE LAYOUT CLASSES ── */
+
+.page-grid {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 40px;
+  align-items: start;
+}
+
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+}
+
+.specs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.pros-cons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ranking-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  overflow: hidden;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.ranking-scores-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+  padding: 14px 20px 20px;
+  border-top: 1px solid var(--rule);
+}
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* 3-koloms stats-rij met border-separators (geen gap) */
+.three-col-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .page-grid-sidebar {
+    display: none;
+  }
+  .score-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pros-cons-grid {
+    grid-template-columns: 1fr;
+  }
+  .two-col-grid {
+    grid-template-columns: 1fr;
+  }
+  .ranking-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .ranking-scores-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .score-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .specs-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

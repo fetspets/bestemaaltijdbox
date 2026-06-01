@@ -113,7 +113,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         </div>
 
         {/* Score-overzicht: 2 kolommen */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 36 }}>
+        <div className="two-col-grid" style={{ marginBottom: 36 }}>
           {[a1, a2].map(a => (
             <div key={a.slug} style={{
               background: 'white', borderRadius: 16, border: `2px solid ${v.verdictSlug === a.slug ? accentColors[a.slug] : 'var(--rule)'}`,
@@ -142,7 +142,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
             Categorie per categorie
           </h2>
-          <div style={{ borderRadius: 12, overflow: 'hidden', border: '1.5px solid var(--rule)' }}>
+          <div style={{ borderRadius: 12, overflowX: 'auto', border: '1.5px solid var(--rule)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
@@ -189,7 +189,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             Onze keuze: {winnaar.naam}
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>{v.verdictTekst}</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div className="two-col-grid" style={{ gap: 12 }}>
             <Link href={`/ga/${a1.slug}`} style={{ display: 'block', background: accentColors[a1.slug], color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
               Ga naar {a1.naam} →
             </Link>

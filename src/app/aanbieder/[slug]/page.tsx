@@ -127,11 +127,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>
-          <span style={{ fontSize: 12 }}>Bijgewerkt: mei 2026</span>
+          <span className="hide-mobile" style={{ fontSize: 12 }}>Bijgewerkt: mei 2026</span>
         </div>
       </div>
 
-      <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px', display: 'grid', gridTemplateColumns: '1fr 280px', gap: 40, alignItems: 'start' }}>
+      <div className="page-grid" style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px' }}>
 
         {/* MAIN CONTENT */}
         <div>
@@ -165,7 +165,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <span style={{ fontSize: 20, color: 'var(--muted)' }}>/10</span>
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+            <div className="score-grid">
               {Object.entries(scoreLabels).map(([key, label]) => {
                 const val = a.score[key as keyof typeof a.score] as number;
                 return (
@@ -182,7 +182,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           </div>
 
           {/* Specs grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 10, marginBottom: 24 }}>
+          <div className="specs-grid">
             {[
               { icon: '💰', label: 'Prijs per portie', val: a.prijsPerPortieLabel ?? `vanaf €${a.prijsPerPortie.toFixed(2)}` },
               { icon: '📋', label: 'Recepten per week', val: `${a.receptenPerWeek}+` },
@@ -275,7 +275,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           </div>
 
           {/* Pros & Cons */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
+          <div className="pros-cons-grid">
             <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 12, padding: 20 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#15803D', marginBottom: 12 }}>✓ Voordelen</div>
               {a.pros.map(p => (
@@ -327,7 +327,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div style={{ background: 'var(--cream)', border: '2px solid #1B4332', borderRadius: 12, padding: 24, marginBottom: 28 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12, color: '#1B4332' }}>Ons eindoordeel</h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: '0 0 16px' }}>{a.uitgebreideReview.eindoordeel}</p>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 48, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</div>
               <div>
                 <div style={{ fontSize: 13, color: 'var(--muted)' }}>Onze score</div>
@@ -356,7 +356,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         </div>
 
         {/* STICKY SIDEBAR */}
-        <div style={{ position: 'sticky', top: 80 }}>
+        <div className="page-grid-sidebar" style={{ position: 'sticky', top: 80 }}>
           <div style={{ background: 'white', border: '1.5px solid var(--rule)', borderRadius: 16, padding: 24, boxShadow: '0 4px 24px rgba(0,0,0,.08)', marginBottom: 16 }}>
             <div style={{ textAlign: 'center', marginBottom: 16 }}>
               <div style={{ width: 72, height: 72, margin: '0 auto 8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 44 }}>

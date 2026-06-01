@@ -96,7 +96,7 @@ export default function HomePage() {
         {/* Trust card */}
         <div style={{ background: 'white', borderRadius: 16, padding: 20, boxShadow: '0 4px 24px rgba(0,0,0,.08)', border: '1px solid var(--rule)', marginBottom: 32 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>Waarom onze rankings vertrouwen?</div>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 10 }}>
+          <div className="two-col-grid" style={{ gap: 10 }}>
             {[['🧪', 'Uitgebreid onderzocht'], ['📊', 'Gebaseerd op gebruikersdata'], ['🔄', 'Regelmatig bijgewerkt'], ['🇧🇪', 'Focus op België']].map(([icon, text]) => (
               <div key={text} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13 }}>
                 <div style={{ width: 28, height: 28, borderRadius: 6, background: '#E8F5EE', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, flexShrink: 0 }}>{icon}</div>
@@ -143,7 +143,7 @@ export default function HomePage() {
 
                 <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{a.beschrijving}</div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule)', borderRadius: 10, overflow: 'hidden', fontSize: 12, marginBottom: 12 }}>
+                <div className="ranking-stats-grid">
                   {[
                     { val: a.score.totaal.toFixed(1), key: 'Score' },
                     { val: `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
@@ -175,7 +175,7 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 12, padding: '14px 20px 20px', borderTop: '1px solid var(--rule)' }}>
+              <div className="ranking-scores-grid">
                 <ScoreBar label="Smaak" value={a.score.smaak} />
                 <ScoreBar label="Prijs" value={a.score.prijsKwaliteit} />
                 <ScoreBar label="Flex." value={a.score.flexibiliteit} />

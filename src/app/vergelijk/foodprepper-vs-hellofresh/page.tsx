@@ -124,7 +124,7 @@ export default function FoodprepperVsHellofresh() {
         </div>
 
         {/* Score-overzicht: 2 kolommen */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 36 }}>
+        <div className="two-col-grid" style={{ marginBottom: 36 }}>
           {[
             { a: fp, accentColor: '#2D6A4F', prijs: '[PRIJS]', label: 'Beste prijs: check foodprepper.be' },
             { a: hf, accentColor: '#1B4332', prijs: `€${hf.prijsPerPortie.toFixed(2)}/portie`, label: hf.tagline },
@@ -151,7 +151,7 @@ export default function FoodprepperVsHellofresh() {
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
             Snel overzicht
           </h2>
-          <div style={{ borderRadius: 12, overflow: 'hidden', border: '1.5px solid var(--rule)' }}>
+          <div style={{ borderRadius: 12, overflowX: 'auto', border: '1.5px solid var(--rule)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
@@ -245,7 +245,7 @@ export default function FoodprepperVsHellofresh() {
         </div>
 
         {/* Kortingsblokken */}
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 40 }}>
+        <div className="two-col-grid" style={{ marginBottom: 40 }}>
           {/* Foodprepper korting */}
           <div style={{ background: '#ECFDF5', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: 24 }}>
             <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#D1FAE5', color: '#065F46', display: 'inline-block', marginBottom: 12 }}>
@@ -347,7 +347,7 @@ export default function FoodprepperVsHellofresh() {
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>
             Foodprepper is de sterkste keuze voor drukke gezinnen en tweeverdieners die vers willen eten in 15 minuten, bewust Belgisch consumeren en ook ontbijt of lunch willen regelen. HelloFresh wint op receptenvariatie (40+), bereik (heel België) en een vaste lage prijs per portie. Wie van koken houdt of in Wallonië woont, kiest HelloFresh. Wie snelheid en lokale herkomst boven menugrootte stelt, kiest Foodprepper.
           </p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div className="two-col-grid" style={{ gap: 12 }}>
             <a
               href={FOODPREPPER_CTA}
               target="_blank"
