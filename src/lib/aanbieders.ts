@@ -165,12 +165,11 @@ export const aanbieders: Aanbieder[] = [
       vergelijking: 'Marley Spoon zit qua prijs in dezelfde categorie als Foodbag maar biedt meer receptkeuze (40/week). Ten opzichte van HelloFresh zijn de recepten creatiever en uitgebreider qua bereiding, maar ook tijdsintensiever. Wie snel wil koken kiest beter voor HelloFresh.',
       eindoordeel: 'Marley Spoon verdient zijn #3 positie als beste keuze voor kookliefhebbers. De hoge smaakscore (8,6/10) en het brede receptaanbod maken het verschil. Enkel de beperkte bezorging (geen Wallonië) en de hogere prijs zijn minpunten.',
       prijsTabel: [
-        { box: 'Box 1', normaal: '€51,99', korting: '35% + gratis bezorging', betaal: '€33,79', besparing: '€18,20' },
-        { box: 'Box 2', normaal: '€51,99', korting: '30%', betaal: '€36,39', besparing: '€15,60' },
-        { box: 'Box 3', normaal: '€51,99', korting: '10%', betaal: '€46,79', besparing: '€5,20' },
+        { box: 'Box 1', normaal: '€51,99', korting: '50% + gratis bezorging', betaal: '€25,99', besparing: '€26,00' },
+        { box: 'Box 2', normaal: '€51,99', korting: '20%', betaal: '€41,59', besparing: '€10,40' },
+        { box: 'Box 3', normaal: '€51,99', korting: '15%', betaal: '€44,19', besparing: '€7,80' },
         { box: 'Box 4', normaal: '€51,99', korting: '10%', betaal: '€46,79', besparing: '€5,20' },
-        { box: 'Box 5', normaal: '€51,99', korting: '20%', betaal: '€41,59', besparing: '€10,40' },
-        { box: 'Totaal', normaal: '€259,95', korting: '—', betaal: '€205,35', besparing: '€54,60' },
+        { box: 'Totaal', normaal: '€207,96', korting: '—', betaal: '€158,56', besparing: '€49,40' },
       ],
       prijsUitleg: 'Na de welkomstperiode betaal je als 2 personen met 3 maaltijden/week €207,96/maand (4 × €51,99). Voor 4 personen loopt dat op tot €251,80/maand (4 × €62,95). Is dat duur vergeleken met zelf boodschappen doen? Ja. Maar Marley Spoon-gebruikers noemen telkens dezelfde redenen: geen voedselverspilling, geen dagelijks nadenken over wat je kookt, en de tijdsbesparing van niet elke avond naar de winkel te rijden.',
       nietGeschiktVoor: [
