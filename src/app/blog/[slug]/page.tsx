@@ -104,7 +104,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               {
                 naam: 'Marley Spoon',
                 logo: '/logos/marley-spoon.png',
-                deal: 'Tot 35% korting op je eerste 5 boxen',
+                deal: 'Tot 50% korting op je eerste 4 boxen',
                 detail: 'Geen code nodig · korting automatisch via onze link',
                 cta: 'Activeer Marley Spoon deal',
                 href: '/ga/marley-spoon',
