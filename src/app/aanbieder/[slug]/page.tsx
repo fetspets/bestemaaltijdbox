@@ -275,7 +275,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           </div>
 
           {/* Pros & Cons */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 24 }}>
+          <div className="pros-cons-grid">
             <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 12, padding: 20 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#15803D', marginBottom: 12 }}>✓ Voordelen</div>
               {a.pros.map(p => (
