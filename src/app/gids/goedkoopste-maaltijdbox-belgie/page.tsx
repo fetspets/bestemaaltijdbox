@@ -44,7 +44,7 @@ const faqJsonLd = {
 const prijsTabel = [
   { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: '🍳 Gratis GreenPan™ + tot €60 korting', noot: null, badge: '⭐ Beste keuze' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null, badge: '🌱 Beste bio' },
-  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '35% korting (automatisch)', noot: '+ €5,99 bezorgkost', badge: '🎯 Beste deal' },
+  { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '50% korting (automatisch)', noot: '+ €5,99 bezorgkost', badge: '🎯 Beste deal' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null, badge: null },
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost', badge: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null, badge: null },
@@ -68,7 +68,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
         {/* Header */}
         <div style={{ marginBottom: 36 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-            ✓ Prijzen geverifieerd · mei 2026
+            ✓ Prijzen geverifieerd · juni 2026
           </div>
           <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 7vw, 40px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 16 }}>
             Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week
@@ -215,10 +215,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
               slug: 'marley-spoon',
               badge: '🎯 Beste welkomstdeal per portie',
               accent: '#7C3AED',
-              metDeal: '~€21,80/week (35% korting op eerste 5 boxen)',
+              metDeal: '~€44/week gemiddeld · box 1 €25,99 (50% + gratis bezorging)',
               naDeal: '€57,98/week (reguliere prijs)',
-              uitleg: '35% korting op de eerste 5 boxen maakt Marley Spoon tijdens de welkomstperiode bijzonder voordelig — 5 weken aan gereduceerde prijs. Chef-kwaliteitsrecepten met 40+ keuzes per week. Na de welkomstperiode: €51,99/week + €5,99 bezorgkost. Bezorging enkel in Vlaanderen en Brussel.',
-              dealOpmerking: 'Korting automatisch via link · 5 boxen · enkel Vlaanderen & Brussel',
+              uitleg: '50% + 20% + 15% + 10% korting op de eerste 4 boxen maakt Marley Spoon tijdens de welkomstperiode bijzonder voordelig — je eerste box kost €25,99 inclusief gratis bezorging. Chef-kwaliteitsrecepten met 40+ keuzes per week. Na de welkomstperiode: €51,99/week + €5,99 bezorgkost. Bezorging enkel in Vlaanderen en Brussel.',
+              dealOpmerking: 'Korting automatisch via link · 4 boxen · enkel Vlaanderen & Brussel',
             },
           ].map(({ rang, naam, slug, badge, accent, metDeal, naDeal, uitleg, dealOpmerking }) => (
             <div key={slug} style={{ background: 'white', borderRadius: 16, border: rang === 1 ? '1.5px solid var(--mint)' : '1.5px solid var(--rule)', padding: 24, marginBottom: 16, position: 'relative', overflow: 'hidden' }}>

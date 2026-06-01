@@ -110,7 +110,7 @@ const top4 = [
     tagline: 'Vegetarische opties beschikbaar — niet 100% vegan',
     waarom: 'Marley Spoon heeft vegetarische recepten in zijn weekmenu, maar is geen vegan box. De recepten zijn kwalitatief en uitgebreider dan bij andere aanbieders — meer technieken, mooiere presentatie. Als je ocasioneel vegetarisch wil koken en houdt van iets meer culinaire uitdaging, is dit een optie. Let op: enkel bezorging in Vlaanderen en Brussel.',
     isVegan100: false,
-    deal: 'Tot 35% korting automatisch via link — geldig op eerste 5 boxen',
+    deal: 'Tot 50% korting automatisch via link — geldig op eerste 4 boxen',
     dealColor: '#7C3AED',
   },
 ];
@@ -240,7 +240,7 @@ export default function VeganPage() {
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', vegan: '100% vegan & bio ✓', score: '7.6/10', korting: 'Welkomstaanbieding op site' },
                 { naam: 'HelloFresh', portie: 'vanaf €7,99', vegan: 'Vegetarische opties', score: '8.4/10', korting: '🍳 GreenPan™ + tot €60' },
                 { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 — code FOODBAGx60' },
-                { naam: 'Marley Spoon', portie: 'vanaf €8,67', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 35% (automatisch)' },
+                { naam: 'Marley Spoon', portie: 'vanaf €8,67', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 50% (automatisch)' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.naam}</td>

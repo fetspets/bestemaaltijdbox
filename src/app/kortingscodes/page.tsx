@@ -1,12 +1,12 @@
 import Link from 'next/link';
 
 export const metadata = {
-  title: 'Kortingscodes maaltijdbox België mei 2026 — bespaar tot €60 op je eerste box',
-  description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt mei 2026.',
+  title: 'Kortingscodes maaltijdbox België juni 2026 — bespaar tot €60 op je eerste box',
+  description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt juni 2026.',
   alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscodes' },
   openGraph: {
-    title: 'Kortingscodes maaltijdbox België mei 2026 — bespaar tot €60 op je eerste box',
-    description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt mei 2026.',
+    title: 'Kortingscodes maaltijdbox België juni 2026 — bespaar tot €60 op je eerste box',
+    description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt juni 2026.',
     url: 'https://bestemaaltijdbox.be/kortingscodes',
     type: 'website',
     locale: 'nl_BE',
@@ -44,11 +44,11 @@ const kortingen = [
     naam: 'Marley Spoon',
     logo: '/logos/marley-spoon.png',
     code: null,
-    deal: 'Tot 35% korting verspreid over de eerste 5 boxen',
-    bedrag: 'Tot 35%',
+    deal: 'Tot 50% korting verspreid over de eerste 4 boxen',
+    bedrag: 'Tot 50%',
     kleur: '#7C3AED',
-    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 35% + gratis verzending op box 1, 30% op box 2, 10% op box 3, 10% op box 4, 20% op box 5. Daarna €5,99/levering.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 5 boxen · Direct opzegbaar · Reguliere bezorgkost: €5,99/levering',
+    beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 50% + gratis verzending op box 1, 20% op box 2, 15% op box 3, 10% op box 4. Daarna €5,99/levering.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 4 boxen · Direct opzegbaar · Reguliere bezorgkost: €5,99/levering',
     actief: true,
   },
   {
@@ -139,7 +139,7 @@ export default function KortingscodesPagina() {
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          🏷️ Bijgewerkt mei 2026
+          🏷️ Bijgewerkt juni 2026
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
           Kortingscodes maaltijdbox<br />België 2026
@@ -152,7 +152,7 @@ export default function KortingscodesPagina() {
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>Actieve deals</h2>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt mei 2026</div>
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt juni 2026</div>
       </div>
 
       {kortingen.filter(k => k.actief).map((k, i) => (

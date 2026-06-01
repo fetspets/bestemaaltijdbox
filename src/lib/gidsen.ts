@@ -21,7 +21,7 @@ export const gidsen: Gids[] = [
     slug: 'goedkoopste-maaltijdbox-belgie',
     titel: 'Goedkoopste maaltijdbox in België 2026 — vergeleken',
     metaTitle: 'Goedkoopste maaltijdbox in België 2026 — prijs en welkomstvoordelen vergeleken',
-    metaDescription: 'Wat is écht de goedkoopste maaltijdbox in België? Prijzen per portie, bezorgkosten en welkomstvoordelen voor alle aanbieders. Bijgewerkt mei 2026.',
+    metaDescription: 'Wat is écht de goedkoopste maaltijdbox in België? Prijzen per portie, bezorgkosten en welkomstvoordelen voor alle aanbieders. Bijgewerkt juni 2026.',
     intro: 'De prijs per portie varieert enorm tussen Belgische maaltijdboxen. Maar de echte kost bereken je zo: portieprijs × aantal porties + bezorgkosten − welkomstkorting. We zetten alle opties naast elkaar, inclusief de addertjes onder het gras.',
     aanbevelingen: [
       {
@@ -57,7 +57,7 @@ export const gidsen: Gids[] = [
     ],
     faq: [
       { q: 'Wat is de goedkoopste maaltijdbox per portie in België?', a: 'Factor is het goedkoopst per portie (v.a. €4,99) maar rekent €5,99 bezorgkosten per levering. Als je de bezorgkosten meetelt is Carrefour Simply You (v.a. €5,38, gratis bezorging) de goedkoopste kookbox. HelloFresh kost v.a. €7,99 per portie maar biedt de beste welkomstkorting voor nieuwe klanten.' },
-      { q: 'Welke maaltijdbox is goedkoopst voor nieuwe klanten?', a: 'HelloFresh geeft tot €60 korting + 8 weken gratis extras voor nieuwe klanten. Foodbag geeft €60 korting (3x €20) op je eerste 3 bestellingen, Marley Spoon tot 35% korting op je eerste 5 boxen, en Foodprepper €45 korting verspreid over de eerste 3 bestellingen.' },
+      { q: 'Welke maaltijdbox is goedkoopst voor nieuwe klanten?', a: 'HelloFresh geeft tot €60 korting + 8 weken gratis extras voor nieuwe klanten. Foodbag geeft €60 korting (3x €20) op je eerste 3 bestellingen, Marley Spoon tot 50% korting op je eerste 4 boxen, en Foodprepper €45 korting verspreid over de eerste 3 bestellingen.' },
       { q: 'Is er een goedkope maaltijdbox zonder abonnement in België?', a: 'Ja. Carrefour Simply You (v.a. €5,38/portie, gratis bezorging) en Foodmaker werken zonder verplicht abonnement. Foodbag heeft ook een "los bestellen" optie — handig als je flexibel wil blijven zonder wekelijkse verplichting.' },
       { q: 'Welke maaltijdbox heeft de laagste bezorgkosten in België?', a: 'HelloFresh, Foodbag, Marley Spoon, Ekomenu, Foodmaker en Carrefour Simply You bieden allemaal gratis bezorging. Factor rekent €5,99 bezorgkosten per levering — tel die altijd mee in je vergelijking van de echte prijs per maaltijd.' },
       { q: 'Zijn maaltijdboxen goedkoper dan boodschappen doen?', a: 'Per portie betaal je doorgaans meer dan bij de supermarkt. Maar maaltijdboxen leveren exacte hoeveelheden — weinig verspilling. Voor wie regelmatig ingrediënten weggooit of impulsaankopen doet, kan het werkelijke verschil kleiner zijn dan gedacht.' },
