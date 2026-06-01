@@ -189,7 +189,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             Onze keuze: {winnaar.naam}
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>{v.verdictTekst}</p>
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+          <div className="two-col-grid" style={{ gap: 12 }}>
             <Link href={`/ga/${a1.slug}`} style={{ display: 'block', background: accentColors[a1.slug], color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
               Ga naar {a1.naam} →
             </Link>
