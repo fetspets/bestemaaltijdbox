@@ -165,7 +165,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <span style={{ fontSize: 20, color: 'var(--muted)' }}>/10</span>
               </div>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: 16 }}>
+            <div className="score-grid">
               {Object.entries(scoreLabels).map(([key, label]) => {
                 const val = a.score[key as keyof typeof a.score] as number;
                 return (
