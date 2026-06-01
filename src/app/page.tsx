@@ -143,7 +143,7 @@ export default function HomePage() {
 
                 <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{a.beschrijving}</div>
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', border: '1px solid var(--rule)', borderRadius: 10, overflow: 'hidden', fontSize: 12, marginBottom: 12 }}>
+                <div className="ranking-stats-grid">
                   {[
                     { val: a.score.totaal.toFixed(1), key: 'Score' },
                     { val: `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
