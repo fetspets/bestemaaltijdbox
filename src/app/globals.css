@@ -167,6 +167,12 @@ h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
   gap: 16px;
 }
 
+/* 3-koloms stats-rij met border-separators (geen gap) */
+.three-col-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 @media (max-width: 768px) {
   .page-grid {
     grid-template-columns: 1fr;
