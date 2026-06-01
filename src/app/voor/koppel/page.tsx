@@ -93,7 +93,7 @@ const top3 = [
     accent: '#7C3AED',
     tagline: 'Chef-kwaliteit — samen koken als avondactiviteit',
     waarom: 'Voor koppels die van koken genieten en er 45-60 minuten voor willen nemen. De recepten zijn uitgebreider dan bij HelloFresh — meer technieken, kwalitatievere kruidenmixen. Ideaal als samen koken quality time is. Let op: enkel bezorging in Vlaanderen en Brussel.',
-    deal: '35% korting — automatisch via link, geldig op eerste 5 boxen',
+    deal: '50% korting — automatisch via link, geldig op eerste 4 boxen',
     dealColor: '#7C3AED',
   },
 ];
@@ -280,7 +280,7 @@ export default function KoppelPage() {
               {[
                 { naam: 'HelloFresh', portie: 'vanaf €7,99', week: '€47,94', recepten: '40+', korting: '🍳 GreenPan™ + tot €60' },
                 { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '20+', korting: '€60 — code FOODBAGx60' },
-                { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€51,99 ²', recepten: '40+', korting: '35% (automatisch)' },
+                { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€51,99 ²', recepten: '40+', korting: '50% (automatisch)' },
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
                 { naam: 'Factor', portie: 'vanaf €4,99', week: '€35,94 ²', recepten: '18', korting: '—' },
                 { naam: 'Carrefour Simply You', portie: 'vanaf €5,38', week: '€32,28', recepten: '10+', korting: '—' },
