@@ -31,7 +31,7 @@ export default function BlogOverzicht() {
       </p>
 
       {/* Uitgelichte gidspagina */}
-      <Link href="/gids/maaltijdbox-betalen-met-maaltijdcheques" style={{ textDecoration: 'none', display: 'block', marginBottom: 32 }}>
+      <Link href="/blog/maaltijdbox-maaltijdcheques-belgie" style={{ textDecoration: 'none', display: 'block', marginBottom: 32 }}>
         <article className="blog-card" style={{
           border: '2px solid var(--green)',
           borderRadius: 12,
@@ -51,7 +51,7 @@ export default function BlogOverzicht() {
             Foodbag, HelloFresh en Foodprepper accepteren Monizze, Pluxee en Edenred. De andere aanbieders doen dit (nog) niet. Direct antwoord + vergelijkingstabel.
           </p>
           <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
-            Lees gids →
+            Lees artikel →
           </span>
         </article>
       </Link>
