@@ -30,6 +30,37 @@ export default function BlogOverzicht() {
         Tips, vergelijkingen en praktische gidsen over maaltijdboxen in België.
       </p>
 
+      {/* Uitgelichte gidspagina */}
+      <Link href="/gids/maaltijdbox-betalen-met-maaltijdcheques" style={{ textDecoration: 'none', display: 'block', marginBottom: 32 }}>
+        <article className="blog-card" style={{
+          border: '2px solid var(--green)',
+          borderRadius: 12,
+          padding: 24,
+          background: '#F0FDF4',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+        }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+              juni 2026
+            </div>
+            <span style={{ fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 100, background: '#1B4332', color: 'white' }}>
+              Gids
+            </span>
+          </div>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
+            Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?
+          </h2>
+          <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, margin: 0 }}>
+            Foodbag, HelloFresh en Foodprepper accepteren Monizze, Pluxee en Edenred. De andere aanbieders doen dit (nog) niet. Direct antwoord + vergelijkingstabel.
+          </p>
+          <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
+            Lees gids →
+          </span>
+        </article>
+      </Link>
+
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
         {blogPosts.map(post => (
           <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
