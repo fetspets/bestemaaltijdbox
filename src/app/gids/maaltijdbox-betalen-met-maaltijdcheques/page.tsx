@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Maaltijdbox betalen met maaltijdcheques in België (2026) — wie accepteert ze?',
   description: 'Welke maaltijdbox accepteert maaltijdcheques van Monizze, Pluxee of Edenred? Foodbag, HelloFresh en Foodprepper vergeleken. Direct antwoord + beste deal.',
+  keywords: [],
   alternates: { canonical: 'https://bestemaaltijdbox.be/gids/maaltijdbox-betalen-met-maaltijdcheques' },
   openGraph: {
     title: 'Maaltijdbox betalen met maaltijdcheques in België (2026) — wie accepteert ze?',
