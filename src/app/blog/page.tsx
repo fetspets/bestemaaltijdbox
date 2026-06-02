@@ -41,13 +41,8 @@ export default function BlogOverzicht() {
           flexDirection: 'column',
           gap: 12,
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-              juni 2026
-            </div>
-            <span style={{ fontSize: 10, fontWeight: 700, padding: '2px 8px', borderRadius: 100, background: '#1B4332', color: 'white' }}>
-              Gids
-            </span>
+          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            juni 2026
           </div>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
             Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?
