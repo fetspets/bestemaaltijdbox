@@ -37,6 +37,12 @@ const nextConfig: NextConfig = {
         destination: '/voor/bio',
         permanent: true,
       },
+      // Duplicate maaltijdcheques gidspagina → blogpagina
+      {
+        source: '/gids/maaltijdbox-betalen-met-maaltijdcheques',
+        destination: '/blog/maaltijdbox-maaltijdcheques-belgie',
+        permanent: true,
+      },
     ];
   },
 };
