@@ -5,11 +5,11 @@ export const metadata: Metadata = {
   title: 'Maaltijdbox betalen met maaltijdcheques in België (2026) — wie accepteert ze?',
   description: 'Welke maaltijdbox accepteert maaltijdcheques van Monizze, Pluxee of Edenred? Foodbag, HelloFresh en Foodprepper vergeleken. Direct antwoord + beste deal.',
   keywords: [],
-  alternates: { canonical: 'https://bestemaaltijdbox.be/gids/maaltijdbox-betalen-met-maaltijdcheques' },
+  alternates: { canonical: 'https://bestemaaltijdbox.be/blog/maaltijdbox-maaltijdcheques-belgie' },
   openGraph: {
     title: 'Maaltijdbox betalen met maaltijdcheques in België (2026) — wie accepteert ze?',
     description: 'Welke maaltijdbox accepteert maaltijdcheques van Monizze, Pluxee of Edenred? Foodbag, HelloFresh en Foodprepper vergeleken. Direct antwoord + beste deal.',
-    url: 'https://bestemaaltijdbox.be/gids/maaltijdbox-betalen-met-maaltijdcheques',
+    url: 'https://bestemaaltijdbox.be/blog/maaltijdbox-maaltijdcheques-belgie',
     type: 'article',
     locale: 'nl_BE',
   },
@@ -79,7 +79,7 @@ const articleJsonLd = {
   dateModified: '2026-06-02',
   author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be' },
   publisher: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: 'https://bestemaaltijdbox.be' },
-  url: 'https://bestemaaltijdbox.be/gids/maaltijdbox-betalen-met-maaltijdcheques',
+  url: 'https://bestemaaltijdbox.be/blog/maaltijdbox-maaltijdcheques-belgie',
 };
 
 const tabelData = [
@@ -184,19 +184,15 @@ const tabelData = [
   },
 ];
 
-function aanbiederBg(accepteert: boolean | null) {
-  if (accepteert === true) return '#F0FDF4';
-  if (accepteert === false) return '#FEF2F2';
-  return 'white';
+function aanbiederBg(accepteert: boolean) {
+  return accepteert ? '#F0FDF4' : '#FEF2F2';
 }
 
-function labelKleur(accepteert: boolean | null) {
-  if (accepteert === true) return '#16A34A';
-  if (accepteert === false) return '#DC2626';
-  return '#D97706';
+function labelKleur(accepteert: boolean) {
+  return accepteert ? '#16A34A' : '#DC2626';
 }
 
-export default function MaaltijdchequesPagina() {
+export default function MaaltijdchequesBlogPagina() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
@@ -208,7 +204,7 @@ export default function MaaltijdchequesPagina() {
         <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24 }}>
           <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
           {' → '}
-          <span style={{ color: 'var(--muted)' }}>Gidsen</span>
+          <Link href="/blog" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Blog</Link>
           {' → '}
           <strong style={{ color: 'var(--ink)' }}>Maaltijdbox betalen met maaltijdcheques</strong>
         </div>
@@ -447,7 +443,7 @@ export default function MaaltijdchequesPagina() {
           Affiliate disclosure: we ontvangen een kleine commissie via deze links, zonder meerprijs voor jou. Dit heeft geen invloed op onze beoordeling.
         </p>
 
-        <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar alle maaltijdboxen</Link>
+        <Link href="/blog" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar blog</Link>
       </div>
     </>
   );
