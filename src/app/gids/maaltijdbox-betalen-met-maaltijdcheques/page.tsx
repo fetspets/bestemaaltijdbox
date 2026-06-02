@@ -170,6 +170,17 @@ const tabelData = [
     heeftCta: false,
     badge: null,
   },
+  {
+    naam: 'Crowd Cooks',
+    slug: 'crowd-cooks',
+    logo: '/logos/crowd-cooks.svg',
+    accepteert: null,
+    label: '❓ Niet bevestigd',
+    uitgevers: '—',
+    beperking: '—',
+    heeftCta: false,
+    badge: null,
+  },
 ];
 
 function aanbiederBg(accepteert: boolean | null) {
