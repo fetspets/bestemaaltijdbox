@@ -506,6 +506,8 @@ export const aanbieders: Aanbieder[] = [
       vergelijking: 'Carrefour Simply You is een budgetvriendelijke optie zonder abonnement. Met de welkomstkorting voor nieuwe klanten (controleer de actuele code op de site) is de eerste box extra voordelig. Ten opzichte van HelloFresh met korting kan HelloFresh in de eerste weken zelfs goedkoper uitvallen.',
       eindoordeel: 'Carrefour Simply You is een goede keuze als budget de prioriteit is en je geen abonnement wil. De welkomstkorting maakt de instap extra aantrekkelijk.',
     },
+    seoTitle: 'Carrefour Simply You Box — stopgezet (2026) · bekijk alternatieven',
+    seoDescription: 'De Carrefour Simply You Box bestaat niet meer. Bekijk de beste alternatieven zonder abonnement: Foodprepper, Foodmaker en Foodbag. Direct vergelijken en besparen.',
     ranking: 9,
     score: { totaal: 6.8, smaak: 6.5, prijsKwaliteit: 7.8, flexibiliteit: 6.0, duurzaamheid: 6.0, gemak: 7.5 },
     prijsPerPortie: 5.38,
