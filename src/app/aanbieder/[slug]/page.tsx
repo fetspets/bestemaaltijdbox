@@ -155,6 +155,16 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
           </div>
 
+          {/* Stopgezet banner */}
+          {a.slug === 'carrefour-simply-you' && (
+            <div style={{ background: '#FEF3C7', border: '1.5px solid #F59E0B', borderRadius: 12, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+              <span style={{ fontSize: 20, flexShrink: 0 }}>⚠️</span>
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: '#92400E' }}>
+                <strong>Update juni 2026:</strong> De Carrefour Simply You Box is stopgezet. De website bestaat niet meer en het product is niet langer beschikbaar. Bekijk hieronder onze aanbevolen alternatieven.
+              </p>
+            </div>
+          )}
+
           {/* Score box */}
           <div style={{ background: 'white', border: '1.5px solid var(--mint)', borderRadius: 16, padding: 24, marginBottom: 24, position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />
