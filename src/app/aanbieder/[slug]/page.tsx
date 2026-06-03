@@ -364,6 +364,30 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
           )}
 
+          {/* Alternatieven voor stopgezette aanbieders */}
+          {a.slug === 'carrefour-simply-you' && (
+            <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>
+                Op zoek naar een maaltijdbox zonder abonnement?
+              </h2>
+              <p style={{ fontSize: 14, color: 'var(--muted)', marginBottom: 20, lineHeight: 1.7 }}>
+                Net zoals Carrefour Simply You werken deze aanbieders zonder verplicht abonnement — je bestelt wanneer je wil.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
+                {[
+                  { slug: 'foodprepper', naam: 'Foodprepper', sub: 'Klaar in 15 min · geen abonnement · Monizze/Pluxee/Edenred' },
+                  { slug: 'foodmaker', naam: 'Foodmaker', sub: 'Chef-kwaliteit · geen abonnement · v.a. €10/portie' },
+                  { slug: 'foodbag', naam: 'Foodbag', sub: 'Belgische ingrediënten · eenmalig bestellen mogelijk' },
+                ].map(alt => (
+                  <Link key={alt.slug} href={`/ga/${alt.slug}`} style={{ display: 'block', background: 'var(--cream)', border: '1px solid var(--rule)', borderRadius: 10, padding: '16px', textDecoration: 'none', color: 'var(--ink)' }}>
+                    <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{alt.naam} →</div>
+                    <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 }}>{alt.sub}</div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
           <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar alle maaltijdboxen</Link>
         </div>
 
