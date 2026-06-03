@@ -155,6 +155,16 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
           </div>
 
+          {/* Stopgezet banner */}
+          {a.slug === 'carrefour-simply-you' && (
+            <div style={{ background: '#FEF3C7', border: '1.5px solid #F59E0B', borderRadius: 12, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+              <span style={{ fontSize: 20, flexShrink: 0 }}>⚠️</span>
+              <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: '#92400E' }}>
+                <strong>Update juni 2026:</strong> De Carrefour Simply You Box is stopgezet. De website bestaat niet meer en het product is niet langer beschikbaar. Bekijk hieronder onze aanbevolen alternatieven.
+              </p>
+            </div>
+          )}
+
           {/* Score box */}
           <div style={{ background: 'white', border: '1.5px solid var(--mint)', borderRadius: 16, padding: 24, marginBottom: 24, position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />
@@ -333,9 +343,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <div style={{ fontSize: 13, color: 'var(--muted)' }}>Onze score</div>
                 <div style={{ color: '#F59E0B', fontSize: 18 }}>{'★'.repeat(Math.round(a.score.totaal / 2))}{'☆'.repeat(5 - Math.round(a.score.totaal / 2))}</div>
               </div>
-              <Link href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-                {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
-              </Link>
+              {a.slug !== 'carrefour-simply-you' && (
+                <Link href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+                  {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+                </Link>
+              )}
             </div>
           </div>
 
@@ -349,6 +361,30 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                   <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{item.antwoord}</p>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Alternatieven voor stopgezette aanbieders */}
+          {a.slug === 'carrefour-simply-you' && (
+            <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>
+                Op zoek naar een maaltijdbox zonder abonnement?
+              </h2>
+              <p style={{ fontSize: 14, color: 'var(--muted)', marginBottom: 20, lineHeight: 1.7 }}>
+                Net zoals Carrefour Simply You werken deze aanbieders zonder verplicht abonnement — je bestelt wanneer je wil.
+              </p>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
+                {[
+                  { slug: 'foodprepper', naam: 'Foodprepper', sub: 'Klaar in 15 min · geen abonnement · Monizze/Pluxee/Edenred' },
+                  { slug: 'foodmaker', naam: 'Foodmaker', sub: 'Chef-kwaliteit · geen abonnement · v.a. €10/portie' },
+                  { slug: 'foodbag', naam: 'Foodbag', sub: 'Belgische ingrediënten · eenmalig bestellen mogelijk' },
+                ].map(alt => (
+                  <Link key={alt.slug} href={`/ga/${alt.slug}`} style={{ display: 'block', background: 'var(--cream)', border: '1px solid var(--rule)', borderRadius: 10, padding: '16px', textDecoration: 'none', color: 'var(--ink)' }}>
+                    <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{alt.naam} →</div>
+                    <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 }}>{alt.sub}</div>
+                  </Link>
+                ))}
+              </div>
             </div>
           )}
 
@@ -393,9 +429,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <div style={{ textAlign: 'center', fontSize: 13, color: '#D97706', fontWeight: 600, marginBottom: 12 }}>+ €{a.bezorgkosten} bezorgkost per levering</div>
             ) : null}
 
-            <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
-              {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
-            </Link>
+            {a.slug !== 'carrefour-simply-you' && (
+              <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
+                {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+              </Link>
+            )}
             {a.ctaSubtekst && (
               <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 10 }}>{a.ctaSubtekst}</div>
             )}
