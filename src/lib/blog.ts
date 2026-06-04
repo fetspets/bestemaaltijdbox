@@ -58,8 +58,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'hoe-maaltijdbox-opzeggen-belgie',
     titel: 'Hoe zeg je een maaltijdbox op in België? (stap voor stap)',
-    metaTitle: 'Maaltijdbox opzeggen in België (2026): stappenplan per aanbieder',
-    metaDescription: 'Hoe zeg je je maaltijdbox op zonder dubbel te betalen? Stap voor stap voor HelloFresh, Foodbag, Marley Spoon en Ekomenu — met deadlines.',
+    metaTitle: 'Maaltijdbox opzeggen in België 2026 — stap voor stap uitgelegd',
+    metaDescription: 'Hoe zeg je je maaltijdbox op in België? Stap-voor-stap uitleg voor HelloFresh, Foodbag, Marley Spoon en andere aanbieders. Opzeggen in 2 minuten.',
     gepubliceerd: 'mei 2026',
     excerpt: 'Een maaltijdbox opzeggen is bij de meeste aanbieders eenvoudig, maar er zijn deadlines om rekening mee te houden. We leggen het uit per aanbieder.',
     content: [
