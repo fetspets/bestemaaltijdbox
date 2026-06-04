@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import GreenPanBanner from '@/components/GreenPanBanner';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import AffiliateTracker from '@/components/AffiliateTracker';
