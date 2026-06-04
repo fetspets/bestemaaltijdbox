@@ -16,6 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
   const gidsen = ['goedkoopste-maaltijdbox-belgie'];
   const blogSlugs = [
+    'maaltijdbox-zonder-abonnement-belgie',
     'maaltijdbox-of-zelf-koken-belgie',
     'hoe-maaltijdbox-opzeggen-belgie',
     'vegetarisch-koken-maaltijdbox',
