@@ -30,7 +30,32 @@ export default function BlogOverzicht() {
         Tips, vergelijkingen en praktische gidsen over maaltijdboxen in België.
       </p>
 
-      {/* Uitgelichte gidspagina */}
+      {/* Uitgelichte artikels */}
+      <Link href="/blog/maaltijdbox-zonder-abonnement-belgie" style={{ textDecoration: 'none', display: 'block', marginBottom: 16 }}>
+        <article className="blog-card" style={{
+          border: '2px solid var(--green)',
+          borderRadius: 12,
+          padding: 24,
+          background: '#F0FDF4',
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 12,
+        }}>
+          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+            juni 2026
+          </div>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
+            Maaltijdbox zonder abonnement in België 2026 — welke opties zijn er?
+          </h2>
+          <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, margin: 0 }}>
+            Foodbag, Foodprepper en Foodmaker leveren zonder vast contract. Vergelijk prijs, bezorging en welkomstkorting — en ontdek welke optie het best bij jou past.
+          </p>
+          <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
+            Lees artikel →
+          </span>
+        </article>
+      </Link>
+
       <Link href="/blog/maaltijdbox-maaltijdcheques-belgie" style={{ textDecoration: 'none', display: 'block', marginBottom: 32 }}>
         <article className="blog-card" style={{
           border: '2px solid var(--green)',
