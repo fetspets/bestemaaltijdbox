@@ -70,6 +70,25 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {/* #1 HelloFresh — prominente topkaart */}
+            <div style={{ background: 'white', borderRadius: 12, border: '2px solid #1B4332', padding: '18px 16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap', boxShadow: '0 2px 12px rgba(27,67,50,0.10)' }}>
+              <div style={{ width: 40, height: 40, borderRadius: 10, background: '#F0FDF4', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, overflow: 'hidden' }}>
+                <img src="/logos/hellofresh.png" alt="HelloFresh" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} />
+              </div>
+              <div style={{ flex: 1, minWidth: 180 }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 2 }}>
+                  <span style={{ fontWeight: 700, fontSize: 15 }}>HelloFresh</span>
+                  <span style={{ fontSize: 10, fontWeight: 700, padding: '2px 7px', borderRadius: 100, background: '#DCFCE7', color: '#15803D' }}>Beste deal</span>
+                </div>
+                <div style={{ fontSize: 14, fontWeight: 600, color: '#1B4332', marginBottom: 2 }}>Tot €60 korting + gratis GreenPan pan (t.e.m. 15 juni)</div>
+                <div style={{ fontSize: 12, color: '#6B7280' }}>Code GPBESTE60 · gratis pan t.w.v. €119,90 · nieuwe klanten</div>
+              </div>
+              <Link href="/ga/hellofresh" style={{ display: 'inline-block', background: '#1B4332', color: 'white', padding: '12px 22px', borderRadius: 8, fontWeight: 800, fontSize: 14, textDecoration: 'none', flexShrink: 0, whiteSpace: 'nowrap' }}>
+                Claim HelloFresh deal →
+              </Link>
+            </div>
+
+            {/* #2–5 overige aanbieders */}
             {[
               {
                 naam: 'Factor',
@@ -90,16 +109,6 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 href: '/ga/foodbag',
                 kleur: '#1E40AF',
                 bg: '#EFF6FF',
-              },
-              {
-                naam: 'HelloFresh',
-                logo: '/logos/hellofresh.png',
-                deal: 'Tot €60 korting + 8 weken gratis extras',
-                detail: 'Exclusieve code GreenPan-deal · nieuwe klanten',
-                cta: 'Activeer HelloFresh deal',
-                href: '/ga/hellofresh',
-                kleur: '#1B4332',
-                bg: '#F0FDF4',
               },
               {
                 naam: 'Marley Spoon',
