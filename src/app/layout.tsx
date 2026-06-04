@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
+import GreenPanBanner from '@/components/GreenPanBanner';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import AffiliateTracker from '@/components/AffiliateTracker';
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Navbar />
+        <GreenPanBanner />
         <main>{children}</main>
         <Footer />
         <CookieBanner />
