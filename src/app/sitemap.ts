@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'foodprepper-vs-foodbag', 'foodprepper-vs-hellofresh',
     'crowd-cooks-vs-factor',
   ];
-  const gidsen = ['goedkoopste-maaltijdbox-belgie', 'maaltijdbox-zonder-abonnement-belgie'];
+  const gidsen = ['goedkoopste-maaltijdbox-belgie'];
   const blogSlugs = [
     'maaltijdbox-of-zelf-koken-belgie',
     'hoe-maaltijdbox-opzeggen-belgie',
