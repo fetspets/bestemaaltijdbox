@@ -63,6 +63,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Navbar />
+        <GreenPanBanner />
         <main>{children}</main>
         <Footer />
         <CookieBanner />
