@@ -193,10 +193,10 @@ export default function GoedkoopsteMaaltijdboxPage() {
               slug: 'hellofresh',
               badge: '⭐ Beste keuze voor de meeste mensen',
               accent: '#1B4332',
-              metDeal: 'Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting',
+              metDeal: 'tot €60 korting op je eerste 3 boxen',
               naDeal: '€47,94/week (reguliere prijs)',
-              uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), gratis bezorging en de sterkste welkomstdeal van 2026: een gratis GreenPan™ braadpan t.w.v. tot €119,90 plus tot €60 korting (€30 op box 1, €10 op box 2, €5 op box 3). Na minimaal 5 boxen binnen 8 weken. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
-              dealOpmerking: 'Gratis GreenPan™ + tot €60 korting · exclusief voor nieuwe klanten · t.e.m. 15 juni 2026.',
+              uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), gratis bezorging en een sterke welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen (€27,50 op box 1, €10 op box 2, €7,50 op box 3). De korting wordt automatisch toegepast via de link — geen code nodig. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
+              dealOpmerking: 'Tot €60 korting op je eerste 3 boxen · exclusief voor nieuwe klanten · automatisch via link.',
             },
             {
               rang: 2,
