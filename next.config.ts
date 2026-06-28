@@ -43,6 +43,12 @@ const nextConfig: NextConfig = {
         destination: '/blog/maaltijdbox-maaltijdcheques-belgie',
         permanent: true,
       },
+      // Verlopen GreenPan-actiepagina → HelloFresh kortingscodepagina
+      {
+        source: '/hellofresh-greenpan-kortingscode',
+        destination: '/kortingscode/hellofresh',
+        permanent: true,
+      },
     ];
   },
 };

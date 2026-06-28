@@ -57,7 +57,7 @@ const top3 = [
     accent: '#1B4332',
     tagline: 'Marktleider — sterkste prijs-kwaliteitverhouding',
     waarom: 'Met 40+ recepten per week komen koppels zelden twee keer hetzelfde op tafel. HelloFresh is flexibel — pauzeren of opzeggen kan tot 5 dagen voor levering. De grote keuze maakt het ook makkelijk om rekening te houden met elkaars voorkeuren.',
-    deal: 'Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting — t.e.m. 15 juni 2026',
+    deal: 'tot €60 korting op je eerste 3 boxen — automatisch via onze link',
     dealColor: '#1B4332',
   },
   {
@@ -278,7 +278,7 @@ export default function KoppelPage() {
             </thead>
             <tbody>
               {[
-                { naam: 'HelloFresh', portie: 'vanaf €7,99', week: '€47,94', recepten: '40+', korting: '🍳 GreenPan™ + tot €60' },
+                { naam: 'HelloFresh', portie: 'vanaf €7,99', week: '€47,94', recepten: '40+', korting: 'tot €60 korting' },
                 { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '20+', korting: '€60 — code FOODBAGx60' },
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€51,99 ²', recepten: '40+', korting: '50% (automatisch)' },
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
@@ -310,7 +310,7 @@ export default function KoppelPage() {
               scenario: 'Jullie willen maximaal voordeel',
               aanbeveling: 'HelloFresh',
               slug: 'hellofresh',
-              uitleg: 'Met de HelloFresh welkomstdeal (gratis GreenPan™ + tot €60 korting, t.e.m. 15 juni 2026) betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
+              uitleg: 'Met de HelloFresh welkomstdeal (tot €60 korting op je eerste 3 boxen) betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
               color: '#E8F5EE',
               border: '#BBF7D0',
             },
@@ -366,12 +366,12 @@ export default function KoppelPage() {
           Klaar om te beginnen?
         </div>
         <p style={{ fontSize: 14, lineHeight: 1.7, opacity: 0.85, maxWidth: 480, margin: '0 auto 20px' }}>
-          HelloFresh is de meest gekozen maaltijdbox voor koppels in België. Met de tijdelijke GreenPan-deal (gratis pan t.w.v. tot €119,90 + tot €60 korting, t.e.m. 15 juni 2026) is het ook meteen de voordeligste manier om te starten.
+          HelloFresh is de meest gekozen maaltijdbox voor koppels in België. Met de welkomstdeal (tot €60 korting op je eerste 3 boxen) is het ook meteen de voordeligste manier om te starten.
         </p>
         <Link href="/ga/hellofresh" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
           Activeer tot €60 korting bij HelloFresh →
         </Link>
-        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Gratis GreenPan™ + tot €60 korting · t.e.m. 15 juni 2026 · direct opzegbaar</div>
+        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Tot €60 korting op je eerste 3 boxen · automatisch via link · direct opzegbaar</div>
       </div>
 
       {/* Andere categorieën */}

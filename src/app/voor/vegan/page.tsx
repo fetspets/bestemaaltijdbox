@@ -72,7 +72,7 @@ const top4 = [
     tagline: 'Vegetarische receptopties — niet 100% vegan',
     waarom: 'HelloFresh heeft wekelijks een selectie vegetarische recepten in zijn aanbod van 40+ maaltijden. Handig als je af en toe vegan of vegetarisch wil koken maar niet elke dag. Let op: HelloFresh is geen vegan box — de meeste recepten bevatten vlees of vis. Je kiest zelf welke recepten je wil, maar het assortiment is niet uitsluitend plantaardig.',
     isVegan100: false,
-    deal: 'Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting — t.e.m. 15 juni 2026',
+    deal: 'tot €60 korting op je eerste 3 boxen — automatisch via onze link',
     dealColor: '#1E40AF',
   },
   {
@@ -238,7 +238,7 @@ export default function VeganPage() {
             <tbody>
               {[
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', vegan: '100% vegan & bio ✓', score: '7.6/10', korting: 'Welkomstaanbieding op site' },
-                { naam: 'HelloFresh', portie: 'vanaf €7,99', vegan: 'Vegetarische opties', score: '8.4/10', korting: '🍳 GreenPan™ + tot €60' },
+                { naam: 'HelloFresh', portie: 'vanaf €7,99', vegan: 'Vegetarische opties', score: '8.4/10', korting: 'tot €60 korting' },
                 { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 — code FOODBAGx60' },
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 50% (automatisch)' },
               ].map((r, i) => (

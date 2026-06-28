@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const SHOW_ON = ['/', '/aanbieder/hellofresh', '/vergelijk/hellofresh-vs-foodbag', '/vergelijk/hellofresh-vs-marley-spoon'];
 
-export default function GreenPanBanner() {
+export default function HelloFreshDealBanner() {
   const pathname = usePathname();
   const [dismissed, setDismissed] = useState(false);
 
@@ -13,7 +13,7 @@ export default function GreenPanBanner() {
 
   return (
     <div style={{
-      background: 'linear-gradient(90deg, #F97316 0%, #FBBF24 100%)',
+      background: 'linear-gradient(90deg, #1B4332 0%, #2D6A4F 100%)',
       color: 'white',
       padding: '10px 16px',
       display: 'flex',
@@ -25,13 +25,14 @@ export default function GreenPanBanner() {
       zIndex: 50,
     }}>
       <span style={{ fontSize: 14, fontWeight: 600, textAlign: 'center', lineHeight: 1.5 }}>
-        🍳 Laatste kans: Gratis GreenPan pan bij HelloFresh — deal eindigt 15 juni 2026. Gebruik code <strong>GPBESTE60</strong> en bespaar tot €60.
+        🥗 HelloFresh-deal: tot €60 korting op je eerste 3 boxen — automatisch via onze link, geen code nodig.
       </span>
       <Link
         href="/ga/hellofresh"
+        rel="noopener sponsored nofollow"
         style={{
           background: 'white',
-          color: '#F97316',
+          color: '#1B4332',
           padding: '7px 16px',
           borderRadius: 8,
           fontWeight: 700,
@@ -41,7 +42,7 @@ export default function GreenPanBanner() {
           flexShrink: 0,
         }}
       >
-        Claim je gratis pan →
+        Bekijk de deal →
       </Link>
       <button
         onClick={() => setDismissed(true)}
