@@ -366,12 +366,12 @@ export default function KoppelPage() {
           Klaar om te beginnen?
         </div>
         <p style={{ fontSize: 14, lineHeight: 1.7, opacity: 0.85, maxWidth: 480, margin: '0 auto 20px' }}>
-          HelloFresh is de meest gekozen maaltijdbox voor koppels in België. Met de tijdelijke GreenPan-deal (gratis pan t.w.v. tot €119,90 + tot €60 korting, t.e.m. 15 juni 2026) is het ook meteen de voordeligste manier om te starten.
+          HelloFresh is de meest gekozen maaltijdbox voor koppels in België. Met de welkomstdeal (tot €60 korting op je eerste 3 boxen) is het ook meteen de voordeligste manier om te starten.
         </p>
         <Link href="/ga/hellofresh" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
           Activeer tot €60 korting bij HelloFresh →
         </Link>
-        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Gratis GreenPan™ + tot €60 korting · t.e.m. 15 juni 2026 · direct opzegbaar</div>
+        <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>Tot €60 korting op je eerste 3 boxen · automatisch via link · direct opzegbaar</div>
       </div>
 
       {/* Andere categorieën */}
