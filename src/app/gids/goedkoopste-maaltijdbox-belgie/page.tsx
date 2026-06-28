@@ -42,7 +42,7 @@ const faqJsonLd = {
 };
 
 const prijsTabel = [
-  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: '🍳 Gratis GreenPan™ + tot €60 korting', noot: null, badge: '⭐ Beste keuze' },
+  { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting op eerste 3 boxen', noot: null, badge: '⭐ Beste keuze' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null, badge: '🌱 Beste bio' },
   { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '50% korting (automatisch)', noot: '+ €5,99 bezorgkost', badge: '🎯 Beste deal' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null, badge: null },
