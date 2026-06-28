@@ -278,7 +278,7 @@ export default function KoppelPage() {
             </thead>
             <tbody>
               {[
-                { naam: 'HelloFresh', portie: 'vanaf €7,99', week: '€47,94', recepten: '40+', korting: '🍳 GreenPan™ + tot €60' },
+                { naam: 'HelloFresh', portie: 'vanaf €7,99', week: '€47,94', recepten: '40+', korting: 'tot €60 korting' },
                 { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '20+', korting: '€60 — code FOODBAGx60' },
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€51,99 ²', recepten: '40+', korting: '50% (automatisch)' },
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
