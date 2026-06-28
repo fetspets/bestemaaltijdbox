@@ -57,7 +57,7 @@ const top3 = [
     accent: '#1B4332',
     tagline: 'Marktleider — sterkste prijs-kwaliteitverhouding',
     waarom: 'Met 40+ recepten per week komen koppels zelden twee keer hetzelfde op tafel. HelloFresh is flexibel — pauzeren of opzeggen kan tot 5 dagen voor levering. De grote keuze maakt het ook makkelijk om rekening te houden met elkaars voorkeuren.',
-    deal: 'Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting — t.e.m. 15 juni 2026',
+    deal: 'tot €60 korting op je eerste 3 boxen — automatisch via onze link',
     dealColor: '#1B4332',
   },
   {
