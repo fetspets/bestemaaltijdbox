@@ -5,7 +5,7 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: ['/ga/', '/api/reveal-code'],
+      disallow: ['/ga/'],
     },
     sitemap: 'https://bestemaaltijdbox.be/sitemap.xml',
   };
