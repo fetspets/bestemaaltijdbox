@@ -21,7 +21,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Wat kost een maaltijdbox gemiddeld per maand in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). HelloFresh heeft t.e.m. 15 juni 2026 een welkomstdeal met gratis GreenPan™ + tot €60 korting, waardoor de eerste weken fors goedkoper uitvallen. Foodbag is duurder: €228/maand aan reguliere prijs.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). HelloFresh heeft een welkomstdeal met tot €60 korting op je eerste 3 boxen, waardoor de eerste weken fors goedkoper uitvallen. Foodbag is duurder: €228/maand aan reguliere prijs.' },
     },
     {
       '@type': 'Question',
