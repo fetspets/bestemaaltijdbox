@@ -72,7 +72,7 @@ const top4 = [
     tagline: 'Vegetarische receptopties — niet 100% vegan',
     waarom: 'HelloFresh heeft wekelijks een selectie vegetarische recepten in zijn aanbod van 40+ maaltijden. Handig als je af en toe vegan of vegetarisch wil koken maar niet elke dag. Let op: HelloFresh is geen vegan box — de meeste recepten bevatten vlees of vis. Je kiest zelf welke recepten je wil, maar het assortiment is niet uitsluitend plantaardig.',
     isVegan100: false,
-    deal: 'Gratis GreenPan™ t.w.v. tot €119,90 + tot €60 korting — t.e.m. 15 juni 2026',
+    deal: 'tot €60 korting op je eerste 3 boxen — automatisch via onze link',
     dealColor: '#1E40AF',
   },
   {
