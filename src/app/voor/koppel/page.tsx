@@ -310,7 +310,7 @@ export default function KoppelPage() {
               scenario: 'Jullie willen maximaal voordeel',
               aanbeveling: 'HelloFresh',
               slug: 'hellofresh',
-              uitleg: 'Met de HelloFresh welkomstdeal (gratis GreenPan™ + tot €60 korting, t.e.m. 15 juni 2026) betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
+              uitleg: 'Met de HelloFresh welkomstdeal (tot €60 korting op je eerste 3 boxen) betaal je de eerste weken maar €5–6/avond voor twee. Na de kortingsperiode is HelloFresh nog steeds een van de goedkoopste kookboxen in België.',
               color: '#E8F5EE',
               border: '#BBF7D0',
             },
