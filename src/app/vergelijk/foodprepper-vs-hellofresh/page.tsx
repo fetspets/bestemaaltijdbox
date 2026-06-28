@@ -273,22 +273,22 @@ export default function FoodprepperVsHellofresh() {
           {/* HelloFresh korting */}
           <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: 24 }}>
             <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#D1FAE5', color: '#1B4332', display: 'inline-block', marginBottom: 12 }}>
-              🔥 Tijdelijke actie t.e.m. 15 juni 2026
+              🔥 Tijdelijke actie · juni 2026
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
-              Gratis GreenPan™ + tot €60 korting
+              Tot €60 korting op je eerste 3 boxen
             </h3>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
-              Nieuwe klanten krijgen een <strong>gratis GreenPan™ braadpan t.w.v. tot €119,90</strong> plus <strong>tot €60 korting</strong> op de eerste boxen (na minimaal 5 boxen binnen 8 weken).
+              Nieuwe klanten krijgen <strong>tot €60 korting</strong> verdeeld over hun eerste 3 boxen. De korting wordt <strong>automatisch toegepast via onze link</strong> — geen code nodig.
             </p>
             <Link
-              href="/hellofresh-greenpan-kortingscode"
+              href="/kortingscode/hellofresh"
               style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
             >
-              Activeer HelloFresh GreenPan-deal →
+              Bekijk de HelloFresh-deal →
             </Link>
             <p style={{ fontSize: 11, color: 'var(--muted)', marginTop: 8 }}>
-              Geldig voor nieuwe klanten. Actie t.e.m. 15 juni 2026.
+              Geldig voor nieuwe klanten in België.
             </p>
           </div>
         </div>
