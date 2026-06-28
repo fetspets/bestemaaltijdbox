@@ -329,7 +329,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
                 situatie: 'Goedkoopste kookbox voor een gezin (4p)',
                 winnaar: 'HelloFresh',
                 slug: 'hellofresh',
-                detail: '€95,88/week (4p, 3 maaltijden, 12 porties × €7,99), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Welkomstdeal t.e.m. 15 juni 2026: gratis GreenPan™ + tot €60 korting.',
+                detail: '€95,88/week (4p, 3 maaltijden, 12 porties × €7,99), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Welkomstdeal: tot €60 korting op je eerste 3 boxen.',
                 color: '#EEF2FF',
                 border: '#C7D2FE',
               },
