@@ -60,10 +60,8 @@ const accentColors: Record<string, string> = {
 
 export default function HomePageClient({
   sponsoringActief,
-  kortingsCode,
 }: {
   sponsoringActief: boolean;
-  kortingsCode: string;
 }) {
   const top3 = aanbieders.slice(0, 3);
   const rest = aanbieders.slice(3);
