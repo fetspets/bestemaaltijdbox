@@ -108,7 +108,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             {a1.naam} vs {a2.naam}:<br />welke maaltijdbox is beter?
           </h1>
           <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 600 }}>
-            We vergeleken {a1.naam} en {a2.naam} op prijs, smaak, variatie, flexibiliteit, bezorging en duurzaamheid. Eerlijk en onafhankelijk — geen betaalde posities.
+            We vergeleken {a1.naam} en {a2.naam} op prijs, smaak, variatie, flexibiliteit, bezorging en duurzaamheid. Eerlijk en onafhankelijk — onze scores en rangschikking worden nooit betaald.
           </p>
         </div>
 
