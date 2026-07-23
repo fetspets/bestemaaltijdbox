@@ -72,6 +72,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <SponsoredBanner active={bannerActief} code={sponsoring?.kortingsCode ?? 'BESTE40'} />
         <Navbar />
         <HelloFreshDealBanner />
         <main>{children}</main>
