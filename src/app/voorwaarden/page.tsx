@@ -47,7 +47,7 @@ export default function VoorwaardenPage() {
             BesteMaaltijdbox.be werkt met affiliate links. Als je via een link op onze site een aankoop doet of een abonnement afsluit, ontvangen wij mogelijk een kleine commissie van de betreffende aanbieder. <strong>Dit is zonder extra kost voor jou.</strong>
           </p>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', marginTop: 12 }}>
-            De commissies hebben <strong>geen invloed op onze rankings, scores of aanbevelingen</strong>. Aanbieders kunnen niet betalen voor een hogere positie. Onze beoordelingen zijn uitsluitend gebaseerd op eigen tests en objectieve criteria.
+            De commissies hebben <strong>geen invloed op onze rankings, scores of aanbevelingen</strong>. Aanbieders kunnen niet betalen voor een betere score of een hogere positie in onze rangschikking. Onze beoordelingen zijn uitsluitend gebaseerd op eigen tests en objectieve criteria. Sommige aanbieders kunnen wel betalen voor extra <strong>zichtbaarheid</strong> (zoals een gesponsorde banner of een uitgelicht blok); zulke plaatsingen worden altijd duidelijk gelabeld als &quot;Gesponsord&quot; en staan los van onze scores en rangschikking.
           </p>
         </div>
 
