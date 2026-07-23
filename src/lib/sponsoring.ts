@@ -25,7 +25,7 @@ export interface Sponsoring {
 export const sponsoringen: Sponsoring[] = [
   {
     partnerSlug: 'factor',
-    startDatum: '2026-07-23', // TIJDELIJK voor preview — herstel naar 2026-07-25
+    startDatum: '2026-07-27', // maandag — live-datum
     eindDatum: '2026-10-25',
     kortingsCode: 'BESTE40',
     plaatsingen: {
