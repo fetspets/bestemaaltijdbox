@@ -16,7 +16,7 @@ export default function Footer() {
           <div>
             <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 10 }}>BesteMaaltijdbox</div>
             <p style={{ fontSize: 13, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 12 }}>
-              Onafhankelijke vergelijking van alle maaltijdboxen in België. Geen betaalde posities.
+              Onafhankelijke vergelijking van alle maaltijdboxen in België. Onze scores en rangschikking worden nooit betaald.
             </p>
             <div style={{ fontSize: 12, color: '#6B7280' }}>© 2026 BesteMaaltijdbox.be</div>
           </div>
