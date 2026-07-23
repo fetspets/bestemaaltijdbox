@@ -47,9 +47,15 @@ function loopt(s: Sponsoring, now: Date): boolean {
   return now >= start && now < eindExclusief;
 }
 
+// Lokale preview: forceer de plaatsingen actief zonder de datums te wijzigen.
+// Zet SPONSORING_PREVIEW=1 in .env.local (niet gecommit) om de banner + het blok
+// lokaal te zien vóór de startdatum. In productie staat dit niet aan, dus daar
+// geldt altijd de echte looptijd (startDatum/eindDatum).
+const previewMode = process.env.SPONSORING_PREVIEW === '1';
+
 /** De momenteel lopende sponsoring (of undefined). */
 export function getActieveSponsoring(now: Date = new Date()): Sponsoring | undefined {
-  return sponsoringen.find(s => loopt(s, now));
+  return sponsoringen.find(s => previewMode || loopt(s, now));
 }
 
 /** Is een specifieke plaatsing nu actief? Server-side aanroepen met de servertijd. */
