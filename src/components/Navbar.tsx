@@ -7,12 +7,6 @@ export default function Navbar() {
 
   return (
     <>
-      {/* Top promo bar */}
-      <div style={{ background: '#1B4332', color: 'white', textAlign: 'center', padding: '9px 16px', fontSize: 13, fontWeight: 500, lineHeight: 1.4 }}>
-        🔥 <strong>Nieuw:</strong> Vergelijk alle maaltijdboxen in België en bespaar —{' '}
-        <Link href="/kortingscodes" style={{ color: '#95D5B2', fontWeight: 700 }}>Bekijk de beste deals →</Link>
-      </div>
-
       {/* Main nav */}
       <nav style={{ background: 'white', borderBottom: '3px solid var(--ink)', position: 'sticky', top: 0, zIndex: 100 }}>
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 56 }}>
