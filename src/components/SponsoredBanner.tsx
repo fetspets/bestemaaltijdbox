@@ -47,8 +47,11 @@ export default function SponsoredBanner({
       }}
     >
       <GesponsordLabel variant="op-donker" />
-      <span style={{ fontSize: 13.5, fontWeight: 600, textAlign: 'center', lineHeight: 1.4 }}>
-        🍱 Factor — kant-en-klare chef-maaltijden zonder koken. Code <strong>{code}</strong>: 40% korting op je eerste box.
+      <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontSize: 13.5, fontWeight: 600, textAlign: 'center', lineHeight: 1.4 }}>
+        <span style={{ display: 'inline-flex', width: 24, height: 24, borderRadius: 6, background: 'white', alignItems: 'center', justifyContent: 'center', flexShrink: 0, overflow: 'hidden' }}>
+          <img src="/logos/factor.svg" alt="Factor" style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 3 }} />
+        </span>
+        <span>Factor — kant-en-klare chef-maaltijden zonder koken. Code <strong>{code}</strong>: 40% korting op je eerste box.</span>
       </span>
       <Link
         href="/ga/factor"
