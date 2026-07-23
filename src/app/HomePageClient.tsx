@@ -228,14 +228,11 @@ export default function HomePageClient({
             </div>
             <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 60%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '20px 20px 18px', position: 'relative', overflow: 'hidden' }}>
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: 14, marginBottom: 12 }}>
-                <div style={{ width: 48, height: 48, borderRadius: 12, background: 'white', border: '1.5px solid #FDE68A', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, overflow: 'hidden' }}>
-                  <img src={factor.logo} alt={factor.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 6 }} />
+              <div style={{ marginBottom: 14 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', background: 'white', border: '1.5px solid #FDE68A', borderRadius: 12, padding: '10px 18px', marginBottom: 10 }}>
+                  <img src={factor.logo} alt={factor.naam} style={{ height: 26, width: 'auto', display: 'block' }} />
                 </div>
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 700, marginBottom: 2 }}>{factor.naam}</div>
-                  <div style={{ fontSize: 13, color: 'var(--muted)' }}>{factor.tagline}</div>
-                </div>
+                <div style={{ fontSize: 13, color: 'var(--muted)' }}>{factor.tagline}</div>
               </div>
 
               <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{factor.beschrijving}</div>
