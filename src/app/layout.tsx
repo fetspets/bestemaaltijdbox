@@ -45,7 +45,6 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const sponsoring = getActieveSponsoring();
   const bannerActief = isSponsoringActief('banner');
 
   return (
