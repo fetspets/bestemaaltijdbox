@@ -133,6 +133,10 @@ const kortingen = [
 ];
 
 export default function KortingscodesPagina() {
+  // Server-side: toon het uitgelichte Factor-blok enkel binnen de sponsoringsperiode.
+  const sponsoring = getActieveSponsoring();
+  const factor = getAanbieder('factor');
+
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px' }}>
 
