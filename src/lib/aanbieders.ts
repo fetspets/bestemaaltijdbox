@@ -468,7 +468,7 @@ export const aanbieders: Aanbieder[] = [
       vergelijking: 'Ekomenu is de enige maaltijdbox in België met 100% biologische ingrediënten. Ten opzichte van HelloFresh is het duurder maar ook significant duurzamer. Let op: Ekomenu bezorgt enkel in Vlaanderen en Brussel, niet in Wallonië.',
       eindoordeel: 'Ekomenu is een sterke keuze als duurzaamheid en gezondheid je prioriteiten zijn. De biologische kwaliteit en de brede keuze aan dieetopties zijn weinig te vinden bij andere Belgische maaltijdboxen.',
     },
-    ranking: 7,
+    ranking: 8,
     score: { totaal: 7.6, smaak: 7.5, prijsKwaliteit: 6.8, flexibiliteit: 7.5, duurzaamheid: 9.5, gemak: 7.0 },
     prijsPerPortie: 6.18,
     prijsPopulaireBox: 44.91,
