@@ -1,4 +1,11 @@
 import Link from 'next/link';
+import GesponsordLabel from '@/components/GesponsordLabel';
+import { getAanbieder } from '@/lib/aanbieders';
+import { getActieveSponsoring } from '@/lib/sponsoring';
+
+// ISR: het gesponsorde, uitgelichte BESTE40-blok verdwijnt vanzelf na de
+// sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
+export const revalidate = 3600;
 
 export const metadata = {
   title: 'Kortingscodes maaltijdbox België juni 2026 — bespaar tot €60 op je eerste box',
