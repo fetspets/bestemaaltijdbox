@@ -357,7 +357,7 @@ export const aanbieders: Aanbieder[] = [
     kortingsCode: {
       code: 'BESTE40',
       bedrag: '40% + 25% korting',
-      beschrijving: 'Gebruik code BESTE40 voor 40% korting op je eerste box + 25% korting op de volgende vijf boxen. Exclusief voor nieuwe klanten.',
+      beschrijving: 'De korting wordt automatisch toegepast via onze link (code BESTE40 werkt ook handmatig): 40% korting op je eerste box + 25% korting op de volgende vijf boxen. Exclusief voor nieuwe klanten.',
     },
     ctaSubtekst: 'Code: BESTE40 — 40% korting op eerste box',
     kenmerken: ['⚡ Kant-en-klaar', '✓ Heel België', '✓ 18 maaltijden/week', '🥗 5 dieetstijlen'],
