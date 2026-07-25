@@ -160,6 +160,34 @@ export default function KortingscodesPagina() {
         </p>
       </div>
 
+      {/* Uitgelicht — gesponsorde BESTE40 (server-gated op de sponsoringsperiode, verdwijnt na 27/10/2026) */}
+      {sponsoring?.partnerSlug === 'factor' && factor && (
+        <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 70%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '22px 24px', marginBottom: 36, position: 'relative', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
+          <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
+            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Uitgelicht</span>
+            <GesponsordLabel />
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }}>
+            <div style={{ width: 56, height: 56, borderRadius: 12, background: 'white', border: '1.5px solid #FDE68A', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
+              <img src={factor.logo} alt="Factor" style={{ height: 22, width: 'auto', maxWidth: 44, objectFit: 'contain' }} />
+            </div>
+            <div style={{ flex: 1, minWidth: 220 }}>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 4 }}>
+                Factor kortingscode: <span style={{ color: '#B45309' }}>{sponsoring.kortingsCode}</span>
+              </div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#B45309', marginBottom: 4 }}>40% korting op je eerste box + 25% op de volgende vijf boxen</div>
+              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>Kant-en-klare chef-maaltijden zonder koken. De korting wordt automatisch toegepast via de link — de code kan je ook handmatig invoeren.</div>
+              <div style={{ fontSize: 11, color: 'var(--muted)' }}>Geldig voor nieuwe klanten · Geldig t.e.m. 27/10/2026</div>
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 160 }}>
+              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'monospace', fontSize: 20, fontWeight: 900, color: '#B45309' }}>{sponsoring.kortingsCode}</div>
+              <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>Activeer deal →</Link>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>Actieve deals</h2>
