@@ -2,10 +2,17 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import HelloFreshDealBanner from '@/components/HelloFreshDealBanner';
+import SponsoredBanner from '@/components/SponsoredBanner';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import AffiliateTracker from '@/components/AffiliateTracker';
 import Script from 'next/script';
+import { isSponsoringActief } from '@/lib/sponsoring';
+
+// ISR: elk uur herbouwen zodat de server-datum meeschuift en tijdelijke
+// gesponsorde plaatsingen automatisch verdwijnen na hun einddatum, zonder
+// rebuild en zonder de browserklok te gebruiken.
+export const revalidate = 3600;
 
 export const metadata: Metadata = {
   title: {
@@ -38,6 +45,8 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const bannerActief = isSponsoringActief('banner');
+
   return (
     <html lang="nl">
       <head>
@@ -63,7 +72,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <Navbar />
-        <HelloFreshDealBanner />
+        {/* Factor-banner op de plaats van de HelloFresh-banner; die laatste
+            wordt tijdelijk verborgen zolang de Factor-sponsoring loopt. */}
+        <SponsoredBanner active={bannerActief} />
+        {!bannerActief && <HelloFreshDealBanner />}
         <main>{children}</main>
         <Footer />
         <CookieBanner />

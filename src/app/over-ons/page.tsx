@@ -78,10 +78,13 @@ export default function OverOnsPage() {
         <div style={{ fontSize: 40, marginBottom: 16 }}>🤝</div>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, marginBottom: 16 }}>Onze belofte</h2>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151', marginBottom: 16 }}>
-          BesteMaaltijdbox.be is 100% onafhankelijk. Geen enkele aanbieder betaalt ons om hoger te staan in onze rankings. We verdienen een kleine commissie als je via onze links een abonnement afsluit — maar dit heeft <strong>geen invloed op onze scores of aanbevelingen</strong>.
+          Onze scores en rangschikking zijn 100% onafhankelijk en worden nooit betaald. Geen enkele aanbieder kan een betere score of een hogere positie kopen. We verdienen een kleine commissie als je via onze links een abonnement afsluit — maar dit heeft <strong>geen invloed op onze scores of aanbevelingen</strong>.
+        </p>
+        <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151', marginBottom: 16 }}>
+          Wat wél kan: sommige aanbieders betalen voor extra <strong>zichtbaarheid</strong> — bijvoorbeeld een gesponsorde banner of een uitgelicht blok. Zulke betaalde plaatsingen labelen we altijd duidelijk als <strong>&quot;Gesponsord&quot;</strong> en staan volledig los van hoe we scoren en rangschikken. De redactionele volgorde op onze site verandert er niet door.
         </p>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151' }}>
-          Als een aanbieder slecht scoort bij ons, zeggen we dat gewoon. Onze rankings zijn gebaseerd op eerlijk, onafhankelijk onderzoek — niet op wie het meest betaalt.
+          Als een aanbieder slecht scoort bij ons, zeggen we dat gewoon — ook als die aanbieder voor zichtbaarheid betaalt. Onze rankings zijn gebaseerd op eerlijk, onafhankelijk onderzoek, niet op wie het meest betaalt.
         </p>
       </div>
 
