@@ -71,7 +71,7 @@ const kortingen = [
     deal: '40% korting op je eerste box + 25% op de volgende vijf boxen',
     bedrag: '40% + 25%',
     kleur: '#7C3AED',
-    beschrijving: 'Gebruik code BESTE40 bij je eerste bestelling. 40% korting op je eerste box + 25% korting op elk van de volgende vijf boxen. Exclusief voor nieuwe klanten.',
+    beschrijving: 'De korting wordt automatisch toegepast via onze link — de code BESTE40 kan je ook handmatig invoeren. 40% korting op je eerste box + 25% korting op elk van de volgende vijf boxen. Exclusief voor nieuwe klanten.',
     voorwaarden: 'Geldig voor nieuwe klanten · Code: BESTE40 · Eerste box + vijf volgende boxen',
     actief: true,
   },
