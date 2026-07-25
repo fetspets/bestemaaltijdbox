@@ -23,13 +23,14 @@ export default function GesponsordLabel({
         display: 'inline-flex',
         alignItems: 'center',
         gap: 4,
-        fontSize: 10,
-        fontWeight: 700,
-        letterSpacing: '0.04em',
+        fontSize: 9.5,
+        fontWeight: 600,
+        letterSpacing: '0.06em',
         textTransform: 'uppercase',
-        padding: '2px 8px',
+        padding: '1px 7px',
         borderRadius: 100,
         whiteSpace: 'nowrap',
+        background: 'transparent',
         ...stijl,
       }}
     >
