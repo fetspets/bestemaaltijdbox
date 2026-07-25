@@ -384,7 +384,7 @@ export const aanbieders: Aanbieder[] = [
       vergelijking: 'Crowd Cooks speelt in hetzelfde kant-en-klaar-segment als Factor, maar is Belgisch en rekent €4,90 bezorgkosten — lager dan de €5,99 van Factor. Tegenover klassieke kookboxen zoals HelloFresh of Foodbag bespaart Crowd Cooks alle kooktijd, maar je levert wel de kookbeleving en een deel van de receptkeuze in.',
       eindoordeel: 'Crowd Cooks vult een andere behoefte dan de klassieke maaltijdboxen: eten zonder koken, met Belgische verankering en royale porties als troeven. Voor wie tijd de grootste schaarste is en toch verse, royale maaltijden wil, is het een sterk alternatief voor restaurant of take-away.',
     },
-    ranking: 5,
+    ranking: 6,
     score: { totaal: 7.8, smaak: 7.8, prijsKwaliteit: 6.8, flexibiliteit: 8.0, duurzaamheid: 6.5, gemak: 9.3 },
     prijsPerPortie: 10.71,
     prijsPopulaireBox: 49.90,
