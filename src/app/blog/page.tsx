@@ -27,9 +27,47 @@ export default function BlogOverzicht() {
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 5vw, 42px)', fontWeight: 900, color: 'var(--ink)', marginBottom: 8 }}>
         Blog
       </h1>
-      <p style={{ fontSize: 17, color: '#555', marginBottom: 40, lineHeight: 1.6 }}>
+      <p style={{ fontSize: 17, color: '#555', marginBottom: 32, lineHeight: 1.6 }}>
         Tips, vergelijkingen en praktische gidsen over maaltijdboxen in België.
       </p>
+
+      {/* Uitgelicht — gesponsorde Factor-artikels, bovenaan met label */}
+      {blogPosts.some(p => p.sponsor) && (
+        <div style={{ marginBottom: 32 }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16 }}>
+            {blogPosts.filter(p => p.sponsor).map(post => (
+              <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
+                <article style={{
+                  border: '2px solid #FCD34D',
+                  borderRadius: 12,
+                  padding: 24,
+                  background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 70%)',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: 12,
+                }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                    <span style={{ fontSize: 12, fontWeight: 600, color: '#B45309', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                      {post.gepubliceerd}
+                    </span>
+                    <GesponsordLabel />
+                  </div>
+                  <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
+                    {post.titel}
+                  </h2>
+                  <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, margin: 0, flexGrow: 1 }}>
+                    {post.excerpt}
+                  </p>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: '#B45309' }}>
+                    Lees artikel →
+                  </span>
+                </article>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Uitgelichte artikels */}
       <Link href="/blog/maaltijdbox-zonder-abonnement-belgie" style={{ textDecoration: 'none', display: 'block', marginBottom: 16 }}>
@@ -83,7 +121,7 @@ export default function BlogOverzicht() {
       </Link>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
-        {blogPosts.map(post => (
+        {blogPosts.filter(post => !post.sponsor).map(post => (
           <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
             <article className="blog-card" style={{
               border: '2px solid var(--rule)',
