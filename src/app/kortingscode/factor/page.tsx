@@ -75,7 +75,7 @@ export default function FactorKortingscode() {
           {[
             'Kopieer de code BESTE40 via de knop hierboven',
             'Klik op "Activeer 40% korting bij Factor" en maak een account aan',
-            'Voer de code BESTE40 in bij het afronden van je eerste bestelling',
+            'De korting wordt automatisch toegepast via de link — de code BESTE40 kan je desgewenst ook handmatig invoeren bij het afrekenen',
             'Geniet van 40% korting op je eerste box én 25% korting op elk van de volgende vijf boxen',
           ].map((stap, i) => (
             <li key={i} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.6 }}>
