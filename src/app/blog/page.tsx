@@ -121,7 +121,7 @@ export default function BlogOverzicht() {
       </Link>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
-        {blogPosts.map(post => (
+        {blogPosts.filter(post => !post.sponsor).map(post => (
           <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
             <article className="blog-card" style={{
               border: '2px solid var(--rule)',
