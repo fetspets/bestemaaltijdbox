@@ -100,20 +100,20 @@ const top3 = [
 
 const overige3 = [
   {
+    slug: 'factor',
+    naam: 'Factor',
+    score: 7.8,
+    prijsPortie: 'vanaf €4,99',
+    weekprijs: '€35,93 (incl. €5,99 bezorgkost)',
+    omschrijving: 'Kant-en-klare chef-maaltijden die je enkel opwarmt — geen koken vereist. Handig voor drukke avonden, maar je mist het kookplezier van een klassieke maaltijdbox.',
+  },
+  {
     slug: 'ekomenu',
     naam: 'Ekomenu',
     score: 7.6,
     prijsPortie: 'vanaf €6,18',
     weekprijs: '€37,08',
     omschrijving: 'De enige 100% biologische maaltijdbox in België — ideaal voor koppels met een milieubewuste leefstijl. Enkel bezorging in Vlaanderen en Brussel, geen actieve kortingscode.',
-  },
-  {
-    slug: 'factor',
-    naam: 'Factor',
-    score: 7.5,
-    prijsPortie: 'vanaf €4,99',
-    weekprijs: '€35,93 (incl. €5,99 bezorgkost)',
-    omschrijving: 'Kant-en-klare chef-maaltijden die je enkel opwarmt — geen koken vereist. Handig voor drukke avonden, maar je mist het kookplezier van een klassieke maaltijdbox.',
   },
   {
     slug: 'carrefour-simply-you',
