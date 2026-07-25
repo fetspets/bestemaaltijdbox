@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog';
+import GesponsordLabel from '@/components/GesponsordLabel';
 
 export const metadata: Metadata = {
   title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
@@ -94,8 +95,11 @@ export default function BlogOverzicht() {
               flexDirection: 'column',
               gap: 12,
             }}>
-              <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-                {post.gepubliceerd}
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8, flexWrap: 'wrap' }}>
+                <span style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                  {post.gepubliceerd}
+                </span>
+                {post.sponsor && <GesponsordLabel />}
               </div>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
                 {post.titel}

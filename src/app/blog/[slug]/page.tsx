@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { blogPosts, getBlogPost, generateBlogStaticParams } from '@/lib/blog';
 import { aanbieders } from '@/lib/aanbieders';
+import GesponsordLabel from '@/components/GesponsordLabel';
 
 export function generateStaticParams() {
   return generateBlogStaticParams();
@@ -58,6 +59,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           {post.excerpt}
         </p>
       </div>
+
+      {/* Sponsor-disclosure — bij betaalde/gesponsorde artikels */}
+      {post.sponsor && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 10, padding: '10px 14px', marginBottom: 28 }}>
+          <GesponsordLabel />
+          <span style={{ fontSize: 13, color: '#92400E', lineHeight: 1.5 }}>
+            Dit artikel kwam tot stand in samenwerking met {post.sponsor.partner}. Onze scores en rangschikking blijven onafhankelijk.
+          </span>
+        </div>
+      )}
 
       {/* Conversieblok — alleen op opzeg-pagina */}
       {slug === 'hoe-maaltijdbox-opzeggen-belgie' && (
@@ -195,6 +206,15 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                   <li key={j} style={{ marginBottom: 8 }}>{item}</li>
                 ))}
               </ul>
+            );
+          }
+          if (block.type === 'cta') {
+            return (
+              <div key={i} style={{ margin: '24px 0' }}>
+                <Link href={`/ga/${post.sponsor?.gaSlug ?? 'factor'}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: '#B45309', color: 'white', padding: '13px 24px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+                  {block.tekst} →
+                </Link>
+              </div>
             );
           }
           return null;

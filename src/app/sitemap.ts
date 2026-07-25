@@ -21,6 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'hoe-maaltijdbox-opzeggen-belgie',
     'vegetarisch-koken-maaltijdbox',
     'maaltijdbox-starten-beginners',
+    'factor-review-belgie',
+    'kant-en-klare-maaltijden-zonder-koken-belgie',
+    'gezond-eten-zonder-tijd-belgie',
   ];
   const kortingscodes = ['hellofresh', 'foodbag', 'factor', 'foodprepper', 'crowd-cooks'];
 
