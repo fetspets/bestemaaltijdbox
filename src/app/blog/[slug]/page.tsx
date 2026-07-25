@@ -60,6 +60,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         </p>
       </div>
 
+      {/* Sponsor-disclosure — bij betaalde/gesponsorde artikels */}
+      {post.sponsor && (
+        <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 10, padding: '10px 14px', marginBottom: 28 }}>
+          <GesponsordLabel />
+          <span style={{ fontSize: 13, color: '#92400E', lineHeight: 1.5 }}>
+            Dit artikel kwam tot stand in samenwerking met {post.sponsor.partner}. Onze scores en rangschikking blijven onafhankelijk.
+          </span>
+        </div>
+      )}
+
       {/* Conversieblok — alleen op opzeg-pagina */}
       {slug === 'hoe-maaltijdbox-opzeggen-belgie' && (
         <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: '24px 20px', marginBottom: 40 }}>
