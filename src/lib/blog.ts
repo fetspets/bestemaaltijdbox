@@ -1,7 +1,8 @@
 export type BlogContentBlock =
   | { type: 'h2'; text: string }
   | { type: 'p'; text: string }
-  | { type: 'ul'; items: string[] };
+  | { type: 'ul'; items: string[] }
+  | { type: 'cta'; tekst: string };
 
 export interface BlogPost {
   slug: string;
@@ -12,6 +13,8 @@ export interface BlogPost {
   excerpt: string;
   content: BlogContentBlock[];
   relatedSlugs: string[];
+  /** Aanwezig bij betaalde/gesponsorde artikels — toont een disclosure en stuurt CTA's via /ga/<gaSlug>. */
+  sponsor?: { partner: string; gaSlug: string; code?: string };
 }
 
 export const blogPosts: BlogPost[] = [
