@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog';
+import GesponsordLabel from '@/components/GesponsordLabel';
 
 export const metadata: Metadata = {
   title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
