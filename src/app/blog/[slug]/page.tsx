@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { blogPosts, getBlogPost, generateBlogStaticParams } from '@/lib/blog';
 import { aanbieders } from '@/lib/aanbieders';
+import GesponsordLabel from '@/components/GesponsordLabel';
 
 export function generateStaticParams() {
   return generateBlogStaticParams();
