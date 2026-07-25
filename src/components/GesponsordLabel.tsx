@@ -10,10 +10,12 @@ export default function GesponsordLabel({
   variant?: 'op-licht' | 'op-donker';
   tekst?: string;
 }) {
+  // Bewust subtiel gehouden (geen opvallende vulkleur), maar met leesbaar
+  // contrast — de term "Gesponsord" moet duidelijk herkenbaar blijven.
   const stijl =
     variant === 'op-donker'
-      ? { background: 'rgba(255,255,255,0.22)', color: '#FFFFFF', border: '1px solid rgba(255,255,255,0.35)' }
-      : { background: '#FEF3C7', color: '#92400E', border: '1px solid #FCD34D' };
+      ? { color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.28)' }
+      : { color: '#6B7280', border: '1px solid rgba(0,0,0,0.12)' };
 
   return (
     <span
@@ -21,13 +23,14 @@ export default function GesponsordLabel({
         display: 'inline-flex',
         alignItems: 'center',
         gap: 4,
-        fontSize: 10,
-        fontWeight: 700,
-        letterSpacing: '0.04em',
+        fontSize: 9.5,
+        fontWeight: 600,
+        letterSpacing: '0.06em',
         textTransform: 'uppercase',
-        padding: '2px 8px',
+        padding: '1px 7px',
         borderRadius: 100,
         whiteSpace: 'nowrap',
+        background: 'transparent',
         ...stijl,
       }}
     >

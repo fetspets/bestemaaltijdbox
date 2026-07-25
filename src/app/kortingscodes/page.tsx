@@ -71,7 +71,7 @@ const kortingen = [
     deal: '40% korting op je eerste box + 25% op de volgende vijf boxen',
     bedrag: '40% + 25%',
     kleur: '#7C3AED',
-    beschrijving: 'Gebruik code BESTE40 bij je eerste bestelling. 40% korting op je eerste box + 25% korting op elk van de volgende vijf boxen. Exclusief voor nieuwe klanten.',
+    beschrijving: 'De korting wordt automatisch toegepast via onze link — de code BESTE40 kan je ook handmatig invoeren. 40% korting op je eerste box + 25% korting op elk van de volgende vijf boxen. Exclusief voor nieuwe klanten.',
     voorwaarden: 'Geldig voor nieuwe klanten · Code: BESTE40 · Eerste box + vijf volgende boxen',
     actief: true,
   },
@@ -220,7 +220,7 @@ export default function KortingscodesPagina() {
           {[
             { num: '1', titel: 'Klik op "Activeer deal"', desc: 'Klik op de knop naast de maaltijdbox van je keuze. Je wordt doorgestuurd naar de website.' },
             { num: '2', titel: 'Kies je box', desc: 'Selecteer het aantal personen en maaltijden per week dat je wil ontvangen.' },
-            { num: '3', titel: 'Korting wordt toegepast', desc: 'Bij sommige aanbieders (HelloFresh, Marley Spoon) is geen code nodig — korting wordt automatisch toegepast. Bij Foodbag, Factor en Foodprepper voer je de code handmatig in bij het afrekenen.' },
+            { num: '3', titel: 'Korting wordt toegepast', desc: 'Bij sommige aanbieders (HelloFresh, Marley Spoon, Factor) is geen code nodig — de korting wordt automatisch toegepast via de link. Bij Foodbag en Foodprepper voer je de code handmatig in bij het afrekenen.' },
             { num: '4', titel: 'Direct opzegbaar', desc: 'Je zit nergens aan vast. De meeste aanbieders laat je wekelijks opzeggen of pauzeren.' },
           ].map(({ num, titel, desc }) => (
             <div key={num} style={{ display: 'flex', gap: 12 }}>
