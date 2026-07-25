@@ -208,6 +208,15 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </ul>
             );
           }
+          if (block.type === 'cta') {
+            return (
+              <div key={i} style={{ margin: '24px 0' }}>
+                <Link href={`/ga/${post.sponsor?.gaSlug ?? 'factor'}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: '#B45309', color: 'white', padding: '13px 24px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+                  {block.tekst} →
+                </Link>
+              </div>
+            );
+          }
           return null;
         })}
       </article>
