@@ -269,6 +269,8 @@ export const blogPosts: BlogPost[] = [
       ]},
       { type: 'h2', text: 'Wat kost het?' },
       { type: 'p', text: 'De prijs per portie ligt in de premium-klasse die eigen is aan kant-en-klaar. Factor start het laagst met €4,99 per portie, maar rekent €5,99 bezorgkosten per levering. Crowd Cooks ligt hoger per portie maar rekent minder bezorgkost (€4,90). Foodmaker bezorgt gratis maar heeft een minimumbestelbedrag. Reken altijd de totaalprijs uit: portieprijs × aantal maaltijden + bezorgkost.' },
+      { type: 'prijsvoorbeeld' },
+      { type: 'codebox', tekst: 'Claim 40% korting met code BESTE40' },
       { type: 'h2', text: 'Voor wie is het geschikt?' },
       { type: 'p', text: 'Kant-en-klaar loont voor drukke professionals, tweeverdieners, singles en iedereen die weinig kooktijd heeft maar toch gevarieerd en warm wil eten. Het is een verse tussenvorm tussen zelf koken en afhalen. Minder geschikt voor wie van koken houdt of de laagste prijs zoekt.' },
       { type: 'h2', text: 'Welke kiezen?' },
