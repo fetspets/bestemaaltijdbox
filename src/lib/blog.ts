@@ -309,7 +309,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'Bij kant-en-klare diensten staan die waarden per gerecht vermeld, wat het makkelijk maakt om te kiezen op basis van je doel.' },
       { type: 'h2', text: 'High-protein en caloriebewuste opties' },
       { type: 'p', text: 'Factor werkt met vijf dieetstijlen, waaronder High-Protein (extra eiwitten, populair bij sporters) en Calorie-Conscious (een gecontroleerd caloriegehalte). Je kiest per week welke stijl bij je doel past — bijvoorbeeld high-protein tijdens een trainingsblok, caloriebewust als je wat wil afvallen. De maaltijden zijn klaar in 2–3 minuten.' },
-      { type: 'cta', tekst: 'Bekijk de dieetstijlen van Factor' },
+      { type: 'codebox', tekst: 'Bekijk de dieetstijlen van Factor' },
       { type: 'h2', text: 'Praktisch inpassen in een drukke week' },
       { type: 'ul', items: [
         'Kies vooraf je maaltijden voor de drukste avonden van de week',
