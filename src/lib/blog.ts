@@ -296,6 +296,7 @@ export const blogPosts: BlogPost[] = [
     sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
     content: [
       { type: 'p', text: 'Gezond willen eten en er de tijd voor hebben zijn twee verschillende dingen. Na een lange werkdag valt de discipline vaak weg en wordt het toch afhalen. Kant-en-klare maaltijden met vaste voedingswaarden — high-protein of caloriebewust — maken het makkelijker om een gezond eetpatroon vol te houden, zonder te koken.' },
+      { type: 'codebox', tekst: 'Bekijk de high-protein maaltijden' },
       { type: 'h2', text: 'Waarom tijdsgebrek gezond eten saboteert' },
       { type: 'p', text: 'Gezond koken vraagt planning: boodschappen, recepten, bereidingstijd en afwas. Wie een druk schema heeft, valt op drukke avonden terug op snelle, minder gezonde keuzes. Een maaltijd die al klaar is en waarvan de voedingswaarde vastligt, neemt die drempel weg.' },
       { type: 'h2', text: 'Wat maakt een maaltijd "gezond"?' },
