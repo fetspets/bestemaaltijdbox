@@ -198,6 +198,7 @@ export const blogPosts: BlogPost[] = [
     sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
     content: [
       { type: 'p', text: 'Factor is geen klassieke maaltijdbox waar je zelf kookt, maar een kant-en-klare maaltijdservice van de HelloFresh Group. De maaltijden worden vers bereid geleverd en zijn klaar in 2 tot 3 minuten in de magnetron. We bekeken wat je krijgt, wat het kost en voor wie het de moeite is.' },
+      { type: 'codebox', tekst: 'Bekijk de maaltijden van deze week' },
       { type: 'h2', text: 'Wat is Factor precies?' },
       { type: 'p', text: 'Factor bezorgt wekelijks kant-en-klare gerechten in heel België, op zondag of maandag. Je kiest uit 18 maaltijden per week, verdeeld over vijf dieetstijlen — waaronder High-Protein, Calorie-Conscious en Chef\'s Choice. Je hoeft niet te snijden, bakken of afwassen: opwarmen en eten.' },
       { type: 'ul', items: [
