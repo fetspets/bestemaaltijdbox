@@ -285,6 +285,23 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         </section>
       )}
 
+      {/* Lees ook — contextuele links naar andere blogs/pagina's */}
+      {post.relatedLinks && post.relatedLinks.length > 0 && (
+        <section style={{ marginTop: 32 }}>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 800, marginBottom: 20, color: 'var(--ink)' }}>
+            Lees ook
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {post.relatedLinks.map(l => (
+              <Link key={l.href} href={l.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '14px 16px', border: '2px solid var(--rule)', borderRadius: 10, textDecoration: 'none', color: 'var(--ink)', fontSize: 14, fontWeight: 600 }}>
+                <span>{l.label}</span>
+                <span style={{ color: 'var(--green)', whiteSpace: 'nowrap' }}>Lees meer →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Back to blog */}
       <div style={{ marginTop: 40 }}>
         <Link href="/blog" style={{ fontSize: 14, fontWeight: 600, color: 'var(--green)', textDecoration: 'none' }}>
