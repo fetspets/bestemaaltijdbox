@@ -3,8 +3,13 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { blogPosts, getBlogPost, generateBlogStaticParams } from '@/lib/blog';
-import { aanbieders } from '@/lib/aanbieders';
+import { aanbieders, getAanbieder } from '@/lib/aanbieders';
 import GesponsordLabel from '@/components/GesponsordLabel';
+import KortingscodeBox from '@/components/KortingscodeBox';
+
+// Fallback og-afbeelding (er is nog geen dedicated 1200×630-beeld per blog).
+const OG_IMAGE = 'https://bestemaaltijdbox.be/logo.png';
+const eur = (n: number) => '€' + n.toFixed(2).replace('.', ',');
 
 export function generateStaticParams() {
   return generateBlogStaticParams();
