@@ -228,9 +228,16 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'Het grote verschil met HelloFresh of Foodbag is dat je bij Factor niet kookt. Dat spaart tijd, maar je levert de kookbeleving en een deel van de versheid van zelf bereiden in. Zoek je een Belgisch kant-en-klaar-alternatief met lagere bezorgkosten, dan is Crowd Cooks (€4,90 bezorging) het overwegen waard. Wil je de grootste keuze en uitgesproken dieetstijlen, dan trekt Factor aan het langste eind.' },
       { type: 'h2', text: 'Ons oordeel' },
       { type: 'p', text: 'Factor is een sterke keuze in het kant-en-klaar-segment: veel keuze, duidelijke dieetstijlen en bezorging in heel België. De bezorgkosten en de beperktere kookbeleving zijn de voornaamste minpunten. Voor wie tijd de grootste schaarste is, weegt het gemak ruimschoots op.' },
-      { type: 'cta', tekst: 'Activeer 40% korting bij Factor' },
+      { type: 'codebox', tekst: 'Start met Factor — 40% korting op je eerste box' },
     ],
     relatedSlugs: ['factor', 'crowd-cooks', 'foodmaker'],
+    relatedLinks: [
+      { label: 'Kant-en-klare maaltijden zonder koken: hoe werkt het en wat kost het?', href: '/blog/kant-en-klare-maaltijden-zonder-koken-belgie' },
+      { label: 'Gezond eten zonder tijd: high-protein maaltijden aan huis', href: '/blog/gezond-eten-zonder-tijd-belgie' },
+      { label: 'Factor vs HelloFresh: opwarmen of zelf koken?', href: '/vergelijk/factor-vs-hellofresh' },
+    ],
+    keywords: ['factor review', 'factor belgië', 'factor ervaringen', 'factor meals review', 'kant-en-klaar zonder koken'],
+    datumISO: '2026-07-01',
   },
   {
     slug: 'kant-en-klare-maaltijden-zonder-koken-belgie',
