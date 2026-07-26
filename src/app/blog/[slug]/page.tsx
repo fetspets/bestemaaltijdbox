@@ -230,6 +230,29 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </div>
             );
           }
+          if (block.type === 'codebox') {
+            return <KortingscodeBox key={i} partnerSlug={post.sponsor?.gaSlug} ctaTekst={block.tekst} />;
+          }
+          if (block.type === 'prijsvoorbeeld') {
+            const f = getAanbieder(post.sponsor?.gaSlug ?? 'factor');
+            if (!f) return null;
+            const maaltijden = 6;
+            const maaltijdKost = maaltijden * f.prijsPerPortie;
+            const bezorg = f.bezorgkosten ?? 0;
+            const week = maaltijdKost + bezorg;
+            const eersteWeek = maaltijdKost * 0.6 + bezorg; // 40% welkomstkorting op de maaltijden, bezorging apart
+            return (
+              <div key={i} style={{ background: '#F9FAFB', border: '1px solid var(--rule)', borderRadius: 12, padding: '18px 20px', margin: '24px 0' }}>
+                <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 800, fontSize: 16, marginBottom: 8 }}>Prijsvoorbeeld — {maaltijden} maaltijden per week</div>
+                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 15, lineHeight: 1.8 }}>
+                  <li>{maaltijden} × {eur(f.prijsPerPortie)} = {eur(maaltijdKost)} aan maaltijden</li>
+                  <li>+ {eur(bezorg)} bezorgkosten = <strong>{eur(week)} per week</strong> (normaal tarief)</li>
+                  <li>Eerste week met 40% welkomstkorting op de maaltijden: <strong>{eur(eersteWeek)}</strong></li>
+                </ul>
+                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>Richtprijs op basis van {maaltijden} maaltijden; prijzen kunnen variëren per keuze en promotie.</div>
+              </div>
+            );
+          }
           return null;
         })}
       </article>
