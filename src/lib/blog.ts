@@ -195,7 +195,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Onze eerlijke Factor review: kant-en-klare chef-maaltijden zonder koken. Prijs, smaak, de vijf dieetstijlen en voor wie het écht past. Score 7,8/10.',
     gepubliceerd: 'juli 2026',
     excerpt: 'Factor levert kant-en-klare chef-maaltijden die je in 2-3 minuten opwarmt — geen koken. We testten prijs, smaak, de vijf dieetstijlen en voor wie het de moeite is.',
-    sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
+    sponsor: { partner: 'Factor', gaSlug: 'factor' },
     content: [
       { type: 'p', text: 'Factor is geen klassieke maaltijdbox waar je zelf kookt, maar een kant-en-klare maaltijdservice van de HelloFresh Group. De maaltijden worden vers bereid geleverd en zijn klaar in 2 tot 3 minuten in de magnetron. We bekeken wat je krijgt, wat het kost en voor wie het de moeite is.' },
       { type: 'codebox', tekst: 'Bekijk de maaltijden van deze week' },
@@ -246,7 +246,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Maaltijden zonder koken, thuisbezorgd: hoe werkt het, wat kost het en welke aanbieders zijn er in België? Factor, Crowd Cooks en Foodmaker vergeleken.',
     gepubliceerd: 'juli 2026',
     excerpt: 'Geen tijd of zin om te koken? Kant-en-klare maaltijdservices bezorgen verse gerechten die je enkel opwarmt. We leggen uit hoe het werkt, wat het kost en welke aanbieders er in België zijn.',
-    sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
+    sponsor: { partner: 'Factor', gaSlug: 'factor' },
     content: [
       { type: 'p', text: 'Een maaltijdbox waar je zelf kookt is niet voor iedereen weggelegd. Wie thuiskomt en meteen wil eten — zonder snijden, bakken of afwassen — heeft meer aan een kant-en-klare maaltijdservice. Die bezorgt verse gerechten die je enkel opwarmt. We leggen uit hoe het werkt, wat het kost en welke aanbieders er in België zijn.' },
       { type: 'codebox', tekst: 'Bekijk het weekmenu van Factor' },
@@ -293,7 +293,7 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Gezond eten met een druk schema? High-protein en caloriebewuste kant-en-klare maaltijden, thuisbezorgd. Hoe het werkt en waar je op moet letten.',
     gepubliceerd: 'juli 2026',
     excerpt: 'Gezond eten sneuvelt vaak door tijdsgebrek. Kant-en-klare maaltijden met vaste macro\'s — high-protein of caloriebewust — maken het makkelijker om vol te houden. We leggen uit hoe en waar op te letten.',
-    sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
+    sponsor: { partner: 'Factor', gaSlug: 'factor' },
     content: [
       { type: 'p', text: 'Gezond willen eten en er de tijd voor hebben zijn twee verschillende dingen. Na een lange werkdag valt de discipline vaak weg en wordt het toch afhalen. Kant-en-klare maaltijden met vaste voedingswaarden — high-protein of caloriebewust — maken het makkelijker om een gezond eetpatroon vol te houden, zonder te koken.' },
       { type: 'codebox', tekst: 'Bekijk de high-protein maaltijden' },
