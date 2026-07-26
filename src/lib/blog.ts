@@ -249,6 +249,7 @@ export const blogPosts: BlogPost[] = [
     sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
     content: [
       { type: 'p', text: 'Een maaltijdbox waar je zelf kookt is niet voor iedereen weggelegd. Wie thuiskomt en meteen wil eten — zonder snijden, bakken of afwassen — heeft meer aan een kant-en-klare maaltijdservice. Die bezorgt verse gerechten die je enkel opwarmt. We leggen uit hoe het werkt, wat het kost en welke aanbieders er in België zijn.' },
+      { type: 'codebox', tekst: 'Bekijk het weekmenu van Factor' },
       { type: 'h2', text: 'Wat is een kant-en-klare maaltijdservice?' },
       { type: 'p', text: 'Anders dan bij een klassieke kookbox (HelloFresh, Foodbag) krijg je geen losse ingrediënten en een recept, maar een volledig bereide maaltijd. Die is gekoeld verpakt en enkele dagen houdbaar. Opwarmen in de magnetron of oven duurt een paar minuten. Je bespaart alle kooktijd, maar levert de kookbeleving in.' },
       { type: 'h2', text: 'Hoe werkt het?' },
