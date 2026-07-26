@@ -318,7 +318,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             '@type': 'Article',
             headline: post.titel,
             description: post.metaDescription,
-            datePublished: post.gepubliceerd,
+            datePublished: post.datumISO ?? post.gepubliceerd,
+            dateModified: post.datumISO ?? post.gepubliceerd,
             author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be' },
           }),
         }}
