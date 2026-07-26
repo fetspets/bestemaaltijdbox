@@ -2,17 +2,28 @@ export type BlogContentBlock =
   | { type: 'h2'; text: string }
   | { type: 'p'; text: string }
   | { type: 'ul'; items: string[] }
-  | { type: 'cta'; tekst: string };
+  | { type: 'cta'; tekst: string }
+  // Kortingscode-box met CTA (gesponsorde content). `tekst` = knoplabel.
+  | { type: 'codebox'; tekst: string }
+  // Berekend prijsvoorbeeld voor de partner (data-driven uit aanbieders.ts).
+  | { type: 'prijsvoorbeeld' };
 
 export interface BlogPost {
   slug: string;
   titel: string;
   metaTitle: string;
   metaDescription: string;
+  /** Zichtbare publicatiedatum (bv. 'juli 2026'). */
   gepubliceerd: string;
+  /** ISO-datum voor JSON-LD datePublished/dateModified (bv. '2026-07-01'). */
+  datumISO?: string;
   excerpt: string;
   content: BlogContentBlock[];
   relatedSlugs: string[];
+  /** Contextuele links naar andere blogs/pagina's ("Lees ook"). */
+  relatedLinks?: Array<{ label: string; href: string }>;
+  /** Artikelspecifieke meta-keywords (overschrijven de generieke set uit layout). */
+  keywords?: string[];
   /** Aanwezig bij betaalde/gesponsorde artikels — toont een disclosure en stuurt CTA's via /ga/<gaSlug>. */
   sponsor?: { partner: string; gaSlug: string; code?: string };
 }
