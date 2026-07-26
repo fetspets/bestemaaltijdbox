@@ -22,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.metaTitle,
     description: post.metaDescription,
+    keywords: post.keywords,
     alternates: { canonical: `https://bestemaaltijdbox.be/blog/${slug}` },
     openGraph: {
       title: post.metaTitle,
@@ -29,6 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://bestemaaltijdbox.be/blog/${slug}`,
       type: 'article',
       locale: 'nl_BE',
+      images: [{ url: OG_IMAGE }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: [OG_IMAGE],
     },
   };
 }
