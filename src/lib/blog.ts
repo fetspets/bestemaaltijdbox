@@ -213,8 +213,9 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Smaak en kwaliteit' },
       { type: 'p', text: 'Voor een maaltijd die je enkel opwarmt, is de smaak verrassend goed. In onze beoordeling scoort Factor 7,8/10. Gebruikers waarderen vooral de vijf dieetstijlen: sporters kiezen High-Protein, wie op zijn gewicht let gaat voor Calorie-Conscious. De porties zijn afgemeten op voedingswaarde, niet op maximale hoeveelheid — hou daar rekening mee als je een grote eter bent.' },
       { type: 'h2', text: 'Wat kost Factor echt?' },
-      { type: 'p', text: 'De instapprijs ligt op €4,99 per portie — een van de laagste van de markt. Maar reken de €5,99 bezorgkosten per levering mee: die komen bovenop de portieprijs, ongeacht hoeveel maaltijden je bestelt. Voor nieuwe klanten geldt de welkomstkorting: 40% korting op je eerste box en 25% op de volgende vijf. Die wordt automatisch toegepast via de link hieronder.' },
-      { type: 'cta', tekst: 'Bekijk Factor — 40% korting op je eerste box' },
+      { type: 'p', text: 'De instapprijs ligt op €4,99 per portie — een van de laagste van de markt. Maar reken de €5,99 bezorgkosten per levering mee: die komen bovenop de portieprijs, ongeacht hoeveel maaltijden je bestelt. Voor nieuwe klanten geldt de welkomstkorting: 40% korting op je eerste box en 25% op de volgende vijf.' },
+      { type: 'prijsvoorbeeld' },
+      { type: 'codebox', tekst: 'Claim 40% korting met code BESTE40' },
       { type: 'h2', text: 'Voor wie is Factor geschikt?' },
       { type: 'p', text: 'Factor is op zijn sterkst voor drukke professionals, sporters en iedereen die gezond wil eten zonder kooktijd. Wie thuiskomt en meteen wil eten, zonder boodschappen of afwas, zit hier goed.' },
       { type: 'ul', items: [
