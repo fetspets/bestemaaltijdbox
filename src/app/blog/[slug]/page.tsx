@@ -3,8 +3,13 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { blogPosts, getBlogPost, generateBlogStaticParams } from '@/lib/blog';
-import { aanbieders } from '@/lib/aanbieders';
+import { aanbieders, getAanbieder } from '@/lib/aanbieders';
 import GesponsordLabel from '@/components/GesponsordLabel';
+import KortingscodeBox from '@/components/KortingscodeBox';
+
+// Fallback og-afbeelding (er is nog geen dedicated 1200×630-beeld per blog).
+const OG_IMAGE = 'https://bestemaaltijdbox.be/logo.png';
+const eur = (n: number) => '€' + n.toFixed(2).replace('.', ',');
 
 export function generateStaticParams() {
   return generateBlogStaticParams();
@@ -17,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: post.metaTitle,
     description: post.metaDescription,
+    keywords: post.keywords,
     alternates: { canonical: `https://bestemaaltijdbox.be/blog/${slug}` },
     openGraph: {
       title: post.metaTitle,
@@ -24,6 +30,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://bestemaaltijdbox.be/blog/${slug}`,
       type: 'article',
       locale: 'nl_BE',
+      images: [{ url: OG_IMAGE }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.metaTitle,
+      description: post.metaDescription,
+      images: [OG_IMAGE],
     },
   };
 }
@@ -217,6 +230,29 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </div>
             );
           }
+          if (block.type === 'codebox') {
+            return <KortingscodeBox key={i} partnerSlug={post.sponsor?.gaSlug} ctaTekst={block.tekst} />;
+          }
+          if (block.type === 'prijsvoorbeeld') {
+            const f = getAanbieder(post.sponsor?.gaSlug ?? 'factor');
+            if (!f) return null;
+            const maaltijden = 6;
+            const maaltijdKost = maaltijden * f.prijsPerPortie;
+            const bezorg = f.bezorgkosten ?? 0;
+            const week = maaltijdKost + bezorg;
+            const eersteWeek = maaltijdKost * 0.6 + bezorg; // 40% welkomstkorting op de maaltijden, bezorging apart
+            return (
+              <div key={i} style={{ background: '#F9FAFB', border: '1px solid var(--rule)', borderRadius: 12, padding: '18px 20px', margin: '24px 0' }}>
+                <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 800, fontSize: 16, marginBottom: 8 }}>Prijsvoorbeeld — {maaltijden} maaltijden per week</div>
+                <ul style={{ margin: 0, paddingLeft: 18, fontSize: 15, lineHeight: 1.8 }}>
+                  <li>{maaltijden} × {eur(f.prijsPerPortie)} = {eur(maaltijdKost)} aan maaltijden</li>
+                  <li>+ {eur(bezorg)} bezorgkosten = <strong>{eur(week)} per week</strong> (normaal tarief)</li>
+                  <li>Eerste week met 40% welkomstkorting op de maaltijden: <strong>{eur(eersteWeek)}</strong></li>
+                </ul>
+                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>Richtprijs op basis van {maaltijden} maaltijden; prijzen kunnen variëren per keuze en promotie.</div>
+              </div>
+            );
+          }
           return null;
         })}
       </article>
@@ -249,6 +285,23 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         </section>
       )}
 
+      {/* Lees ook — contextuele links naar andere blogs/pagina's */}
+      {post.relatedLinks && post.relatedLinks.length > 0 && (
+        <section style={{ marginTop: 32 }}>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 800, marginBottom: 20, color: 'var(--ink)' }}>
+            Lees ook
+          </h2>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {post.relatedLinks.map(l => (
+              <Link key={l.href} href={l.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '14px 16px', border: '2px solid var(--rule)', borderRadius: 10, textDecoration: 'none', color: 'var(--ink)', fontSize: 14, fontWeight: 600 }}>
+                <span>{l.label}</span>
+                <span style={{ color: 'var(--green)', whiteSpace: 'nowrap' }}>Lees meer →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Back to blog */}
       <div style={{ marginTop: 40 }}>
         <Link href="/blog" style={{ fontSize: 14, fontWeight: 600, color: 'var(--green)', textDecoration: 'none' }}>
@@ -265,7 +318,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             '@type': 'Article',
             headline: post.titel,
             description: post.metaDescription,
-            datePublished: post.gepubliceerd,
+            datePublished: post.datumISO ?? post.gepubliceerd,
+            dateModified: post.datumISO ?? post.gepubliceerd,
             author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be' },
           }),
         }}

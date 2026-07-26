@@ -2,17 +2,28 @@ export type BlogContentBlock =
   | { type: 'h2'; text: string }
   | { type: 'p'; text: string }
   | { type: 'ul'; items: string[] }
-  | { type: 'cta'; tekst: string };
+  | { type: 'cta'; tekst: string }
+  // Kortingscode-box met CTA (gesponsorde content). `tekst` = knoplabel.
+  | { type: 'codebox'; tekst: string }
+  // Berekend prijsvoorbeeld voor de partner (data-driven uit aanbieders.ts).
+  | { type: 'prijsvoorbeeld' };
 
 export interface BlogPost {
   slug: string;
   titel: string;
   metaTitle: string;
   metaDescription: string;
+  /** Zichtbare publicatiedatum (bv. 'juli 2026'). */
   gepubliceerd: string;
+  /** ISO-datum voor JSON-LD datePublished/dateModified (bv. '2026-07-01'). */
+  datumISO?: string;
   excerpt: string;
   content: BlogContentBlock[];
   relatedSlugs: string[];
+  /** Contextuele links naar andere blogs/pagina's ("Lees ook"). */
+  relatedLinks?: Array<{ label: string; href: string }>;
+  /** Artikelspecifieke meta-keywords (overschrijven de generieke set uit layout). */
+  keywords?: string[];
   /** Aanwezig bij betaalde/gesponsorde artikels — toont een disclosure en stuurt CTA's via /ga/<gaSlug>. */
   sponsor?: { partner: string; gaSlug: string; code?: string };
 }
@@ -184,9 +195,10 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Onze eerlijke Factor review: kant-en-klare chef-maaltijden zonder koken. Prijs, smaak, de vijf dieetstijlen en voor wie het écht past. Score 7,8/10.',
     gepubliceerd: 'juli 2026',
     excerpt: 'Factor levert kant-en-klare chef-maaltijden die je in 2-3 minuten opwarmt — geen koken. We testten prijs, smaak, de vijf dieetstijlen en voor wie het de moeite is.',
-    sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
+    sponsor: { partner: 'Factor', gaSlug: 'factor' },
     content: [
       { type: 'p', text: 'Factor is geen klassieke maaltijdbox waar je zelf kookt, maar een kant-en-klare maaltijdservice van de HelloFresh Group. De maaltijden worden vers bereid geleverd en zijn klaar in 2 tot 3 minuten in de magnetron. We bekeken wat je krijgt, wat het kost en voor wie het de moeite is.' },
+      { type: 'codebox', tekst: 'Bekijk de maaltijden van deze week' },
       { type: 'h2', text: 'Wat is Factor precies?' },
       { type: 'p', text: 'Factor bezorgt wekelijks kant-en-klare gerechten in heel België, op zondag of maandag. Je kiest uit 18 maaltijden per week, verdeeld over vijf dieetstijlen — waaronder High-Protein, Calorie-Conscious en Chef\'s Choice. Je hoeft niet te snijden, bakken of afwassen: opwarmen en eten.' },
       { type: 'ul', items: [
@@ -201,8 +213,9 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Smaak en kwaliteit' },
       { type: 'p', text: 'Voor een maaltijd die je enkel opwarmt, is de smaak verrassend goed. In onze beoordeling scoort Factor 7,8/10. Gebruikers waarderen vooral de vijf dieetstijlen: sporters kiezen High-Protein, wie op zijn gewicht let gaat voor Calorie-Conscious. De porties zijn afgemeten op voedingswaarde, niet op maximale hoeveelheid — hou daar rekening mee als je een grote eter bent.' },
       { type: 'h2', text: 'Wat kost Factor echt?' },
-      { type: 'p', text: 'De instapprijs ligt op €4,99 per portie — een van de laagste van de markt. Maar reken de €5,99 bezorgkosten per levering mee: die komen bovenop de portieprijs, ongeacht hoeveel maaltijden je bestelt. Voor nieuwe klanten geldt de welkomstkorting: 40% korting op je eerste box en 25% op de volgende vijf. Die wordt automatisch toegepast via de link hieronder.' },
-      { type: 'cta', tekst: 'Bekijk Factor — 40% korting op je eerste box' },
+      { type: 'p', text: 'De instapprijs ligt op €4,99 per portie — een van de laagste van de markt. Maar reken de €5,99 bezorgkosten per levering mee: die komen bovenop de portieprijs, ongeacht hoeveel maaltijden je bestelt. Voor nieuwe klanten geldt de welkomstkorting: 40% korting op je eerste box en 25% op de volgende vijf.' },
+      { type: 'prijsvoorbeeld' },
+      { type: 'codebox', tekst: 'Claim je 40% welkomstkorting' },
       { type: 'h2', text: 'Voor wie is Factor geschikt?' },
       { type: 'p', text: 'Factor is op zijn sterkst voor drukke professionals, sporters en iedereen die gezond wil eten zonder kooktijd. Wie thuiskomt en meteen wil eten, zonder boodschappen of afwas, zit hier goed.' },
       { type: 'ul', items: [
@@ -215,9 +228,16 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'Het grote verschil met HelloFresh of Foodbag is dat je bij Factor niet kookt. Dat spaart tijd, maar je levert de kookbeleving en een deel van de versheid van zelf bereiden in. Zoek je een Belgisch kant-en-klaar-alternatief met lagere bezorgkosten, dan is Crowd Cooks (€4,90 bezorging) het overwegen waard. Wil je de grootste keuze en uitgesproken dieetstijlen, dan trekt Factor aan het langste eind.' },
       { type: 'h2', text: 'Ons oordeel' },
       { type: 'p', text: 'Factor is een sterke keuze in het kant-en-klaar-segment: veel keuze, duidelijke dieetstijlen en bezorging in heel België. De bezorgkosten en de beperktere kookbeleving zijn de voornaamste minpunten. Voor wie tijd de grootste schaarste is, weegt het gemak ruimschoots op.' },
-      { type: 'cta', tekst: 'Activeer 40% korting bij Factor' },
+      { type: 'codebox', tekst: 'Start met Factor — 40% korting op je eerste box' },
     ],
     relatedSlugs: ['factor', 'crowd-cooks', 'foodmaker'],
+    relatedLinks: [
+      { label: 'Kant-en-klare maaltijden zonder koken: hoe werkt het en wat kost het?', href: '/blog/kant-en-klare-maaltijden-zonder-koken-belgie' },
+      { label: 'Gezond eten zonder tijd: high-protein maaltijden aan huis', href: '/blog/gezond-eten-zonder-tijd-belgie' },
+      { label: 'Factor vs HelloFresh: opwarmen of zelf koken?', href: '/vergelijk/factor-vs-hellofresh' },
+    ],
+    keywords: ['factor review', 'factor belgië', 'factor ervaringen', 'factor meals review', 'kant-en-klaar zonder koken'],
+    datumISO: '2026-07-01',
   },
   {
     slug: 'kant-en-klare-maaltijden-zonder-koken-belgie',
@@ -226,9 +246,10 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Maaltijden zonder koken, thuisbezorgd: hoe werkt het, wat kost het en welke aanbieders zijn er in België? Factor, Crowd Cooks en Foodmaker vergeleken.',
     gepubliceerd: 'juli 2026',
     excerpt: 'Geen tijd of zin om te koken? Kant-en-klare maaltijdservices bezorgen verse gerechten die je enkel opwarmt. We leggen uit hoe het werkt, wat het kost en welke aanbieders er in België zijn.',
-    sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
+    sponsor: { partner: 'Factor', gaSlug: 'factor' },
     content: [
       { type: 'p', text: 'Een maaltijdbox waar je zelf kookt is niet voor iedereen weggelegd. Wie thuiskomt en meteen wil eten — zonder snijden, bakken of afwassen — heeft meer aan een kant-en-klare maaltijdservice. Die bezorgt verse gerechten die je enkel opwarmt. We leggen uit hoe het werkt, wat het kost en welke aanbieders er in België zijn.' },
+      { type: 'codebox', tekst: 'Bekijk het weekmenu van Factor' },
       { type: 'h2', text: 'Wat is een kant-en-klare maaltijdservice?' },
       { type: 'p', text: 'Anders dan bij een klassieke kookbox (HelloFresh, Foodbag) krijg je geen losse ingrediënten en een recept, maar een volledig bereide maaltijd. Die is gekoeld verpakt en enkele dagen houdbaar. Opwarmen in de magnetron of oven duurt een paar minuten. Je bespaart alle kooktijd, maar levert de kookbeleving in.' },
       { type: 'h2', text: 'Hoe werkt het?' },
@@ -248,13 +269,22 @@ export const blogPosts: BlogPost[] = [
       ]},
       { type: 'h2', text: 'Wat kost het?' },
       { type: 'p', text: 'De prijs per portie ligt in de premium-klasse die eigen is aan kant-en-klaar. Factor start het laagst met €4,99 per portie, maar rekent €5,99 bezorgkosten per levering. Crowd Cooks ligt hoger per portie maar rekent minder bezorgkost (€4,90). Foodmaker bezorgt gratis maar heeft een minimumbestelbedrag. Reken altijd de totaalprijs uit: portieprijs × aantal maaltijden + bezorgkost.' },
+      { type: 'prijsvoorbeeld' },
+      { type: 'codebox', tekst: 'Claim je 40% welkomstkorting' },
       { type: 'h2', text: 'Voor wie is het geschikt?' },
       { type: 'p', text: 'Kant-en-klaar loont voor drukke professionals, tweeverdieners, singles en iedereen die weinig kooktijd heeft maar toch gevarieerd en warm wil eten. Het is een verse tussenvorm tussen zelf koken en afhalen. Minder geschikt voor wie van koken houdt of de laagste prijs zoekt.' },
       { type: 'h2', text: 'Welke kiezen?' },
       { type: 'p', text: 'Zoek je de grootste keuze en uitgesproken dieetstijlen (high-protein, caloriebewust)? Dan is Factor de sterkste optie, met bezorging in heel België. Wil je bewust Belgisch eten met royale porties en lagere bezorgkosten? Dan is Crowd Cooks interessant. Voor de Jeroen Meus-recepten kies je Foodmaker.' },
-      { type: 'cta', tekst: 'Bekijk Factor — 40% korting op je eerste box' },
+      { type: 'codebox', tekst: 'Probeer Factor — 40% korting op je eerste box' },
     ],
     relatedSlugs: ['factor', 'crowd-cooks', 'foodmaker'],
+    relatedLinks: [
+      { label: 'Factor review: kant-en-klaar zonder koken getest', href: '/blog/factor-review-belgie' },
+      { label: 'Gezond eten zonder tijd: high-protein maaltijden aan huis', href: '/blog/gezond-eten-zonder-tijd-belgie' },
+      { label: 'Factor vs Foodbag: kant-en-klaar of Belgisch koken?', href: '/vergelijk/factor-vs-foodbag' },
+    ],
+    keywords: ['kant-en-klare maaltijden', 'maaltijden zonder koken', 'warme maaltijden bezorgd belgië', 'geen tijd om te koken', 'factor'],
+    datumISO: '2026-07-01',
   },
   {
     slug: 'gezond-eten-zonder-tijd-belgie',
@@ -263,9 +293,10 @@ export const blogPosts: BlogPost[] = [
     metaDescription: 'Gezond eten met een druk schema? High-protein en caloriebewuste kant-en-klare maaltijden, thuisbezorgd. Hoe het werkt en waar je op moet letten.',
     gepubliceerd: 'juli 2026',
     excerpt: 'Gezond eten sneuvelt vaak door tijdsgebrek. Kant-en-klare maaltijden met vaste macro\'s — high-protein of caloriebewust — maken het makkelijker om vol te houden. We leggen uit hoe en waar op te letten.',
-    sponsor: { partner: 'Factor', gaSlug: 'factor', code: 'BESTE40' },
+    sponsor: { partner: 'Factor', gaSlug: 'factor' },
     content: [
       { type: 'p', text: 'Gezond willen eten en er de tijd voor hebben zijn twee verschillende dingen. Na een lange werkdag valt de discipline vaak weg en wordt het toch afhalen. Kant-en-klare maaltijden met vaste voedingswaarden — high-protein of caloriebewust — maken het makkelijker om een gezond eetpatroon vol te houden, zonder te koken.' },
+      { type: 'codebox', tekst: 'Bekijk de high-protein maaltijden' },
       { type: 'h2', text: 'Waarom tijdsgebrek gezond eten saboteert' },
       { type: 'p', text: 'Gezond koken vraagt planning: boodschappen, recepten, bereidingstijd en afwas. Wie een druk schema heeft, valt op drukke avonden terug op snelle, minder gezonde keuzes. Een maaltijd die al klaar is en waarvan de voedingswaarde vastligt, neemt die drempel weg.' },
       { type: 'h2', text: 'Wat maakt een maaltijd "gezond"?' },
@@ -278,7 +309,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'Bij kant-en-klare diensten staan die waarden per gerecht vermeld, wat het makkelijk maakt om te kiezen op basis van je doel.' },
       { type: 'h2', text: 'High-protein en caloriebewuste opties' },
       { type: 'p', text: 'Factor werkt met vijf dieetstijlen, waaronder High-Protein (extra eiwitten, populair bij sporters) en Calorie-Conscious (een gecontroleerd caloriegehalte). Je kiest per week welke stijl bij je doel past — bijvoorbeeld high-protein tijdens een trainingsblok, caloriebewust als je wat wil afvallen. De maaltijden zijn klaar in 2–3 minuten.' },
-      { type: 'cta', tekst: 'Bekijk de dieetstijlen van Factor' },
+      { type: 'codebox', tekst: 'Bekijk de dieetstijlen van Factor' },
       { type: 'h2', text: 'Praktisch inpassen in een drukke week' },
       { type: 'ul', items: [
         'Kies vooraf je maaltijden voor de drukste avonden van de week',
@@ -288,11 +319,19 @@ export const blogPosts: BlogPost[] = [
       ]},
       { type: 'h2', text: 'Eerlijke kanttekeningen' },
       { type: 'p', text: 'Kant-en-klaar is niet gratis en niet perfect. Tel de bezorgkosten mee (bij Factor €5,99 per levering), hou er rekening mee dat je de kookbeleving mist, en dat er meer verpakking bij komt kijken dan bij zelf koken. Voor wie tijd de grootste schaarste is, wegen die nadelen doorgaans niet op tegen het gemak van elke dag een gezonde maaltijd klaar hebben.' },
+      { type: 'prijsvoorbeeld' },
       { type: 'h2', text: 'Conclusie' },
       { type: 'p', text: 'Gezond eten met een druk schema wordt een stuk haalbaarder met kant-en-klare maaltijden waarvan de voedingswaarde vastligt. Factor is daarvoor een sterke keuze dankzij de high-protein en caloriebewuste stijlen en de bezorging in heel België. Begin met de drukste avonden en bouw van daaruit verder.' },
-      { type: 'cta', tekst: 'Activeer 40% korting bij Factor' },
+      { type: 'codebox', tekst: 'Start gezond met Factor — 40% korting' },
     ],
     relatedSlugs: ['factor', 'foodmaker', 'crowd-cooks'],
+    relatedLinks: [
+      { label: 'Factor review: kant-en-klaar zonder koken getest', href: '/blog/factor-review-belgie' },
+      { label: 'Kant-en-klare maaltijden zonder koken: hoe werkt het?', href: '/blog/kant-en-klare-maaltijden-zonder-koken-belgie' },
+      { label: 'Factor vs Marley Spoon: opwarmen of chef-recepten koken?', href: '/vergelijk/factor-vs-marley-spoon' },
+    ],
+    keywords: ['gezonde kant-en-klare maaltijden', 'high protein maaltijden bezorgd', 'caloriearme maaltijden aan huis', 'meal prep zonder koken', 'factor'],
+    datumISO: '2026-07-01',
   },
 ];
 
