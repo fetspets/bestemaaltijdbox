@@ -275,9 +275,16 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'Kant-en-klaar loont voor drukke professionals, tweeverdieners, singles en iedereen die weinig kooktijd heeft maar toch gevarieerd en warm wil eten. Het is een verse tussenvorm tussen zelf koken en afhalen. Minder geschikt voor wie van koken houdt of de laagste prijs zoekt.' },
       { type: 'h2', text: 'Welke kiezen?' },
       { type: 'p', text: 'Zoek je de grootste keuze en uitgesproken dieetstijlen (high-protein, caloriebewust)? Dan is Factor de sterkste optie, met bezorging in heel België. Wil je bewust Belgisch eten met royale porties en lagere bezorgkosten? Dan is Crowd Cooks interessant. Voor de Jeroen Meus-recepten kies je Foodmaker.' },
-      { type: 'cta', tekst: 'Bekijk Factor — 40% korting op je eerste box' },
+      { type: 'codebox', tekst: 'Probeer Factor — 40% korting op je eerste box' },
     ],
     relatedSlugs: ['factor', 'crowd-cooks', 'foodmaker'],
+    relatedLinks: [
+      { label: 'Factor review: kant-en-klaar zonder koken getest', href: '/blog/factor-review-belgie' },
+      { label: 'Gezond eten zonder tijd: high-protein maaltijden aan huis', href: '/blog/gezond-eten-zonder-tijd-belgie' },
+      { label: 'Factor vs Foodbag: kant-en-klaar of Belgisch koken?', href: '/vergelijk/factor-vs-foodbag' },
+    ],
+    keywords: ['kant-en-klare maaltijden', 'maaltijden zonder koken', 'warme maaltijden bezorgd belgië', 'geen tijd om te koken', 'factor'],
+    datumISO: '2026-07-01',
   },
   {
     slug: 'gezond-eten-zonder-tijd-belgie',
