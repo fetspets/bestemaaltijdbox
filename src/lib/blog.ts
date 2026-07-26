@@ -322,9 +322,16 @@ export const blogPosts: BlogPost[] = [
       { type: 'prijsvoorbeeld' },
       { type: 'h2', text: 'Conclusie' },
       { type: 'p', text: 'Gezond eten met een druk schema wordt een stuk haalbaarder met kant-en-klare maaltijden waarvan de voedingswaarde vastligt. Factor is daarvoor een sterke keuze dankzij de high-protein en caloriebewuste stijlen en de bezorging in heel België. Begin met de drukste avonden en bouw van daaruit verder.' },
-      { type: 'cta', tekst: 'Activeer 40% korting bij Factor' },
+      { type: 'codebox', tekst: 'Start gezond met Factor — 40% korting' },
     ],
     relatedSlugs: ['factor', 'foodmaker', 'crowd-cooks'],
+    relatedLinks: [
+      { label: 'Factor review: kant-en-klaar zonder koken getest', href: '/blog/factor-review-belgie' },
+      { label: 'Kant-en-klare maaltijden zonder koken: hoe werkt het?', href: '/blog/kant-en-klare-maaltijden-zonder-koken-belgie' },
+      { label: 'Factor vs Marley Spoon: opwarmen of chef-recepten koken?', href: '/vergelijk/factor-vs-marley-spoon' },
+    ],
+    keywords: ['gezonde kant-en-klare maaltijden', 'high protein maaltijden bezorgd', 'caloriearme maaltijden aan huis', 'meal prep zonder koken', 'factor'],
+    datumISO: '2026-07-01',
   },
 ];
 
