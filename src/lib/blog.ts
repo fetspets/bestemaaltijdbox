@@ -319,6 +319,7 @@ export const blogPosts: BlogPost[] = [
       ]},
       { type: 'h2', text: 'Eerlijke kanttekeningen' },
       { type: 'p', text: 'Kant-en-klaar is niet gratis en niet perfect. Tel de bezorgkosten mee (bij Factor €5,99 per levering), hou er rekening mee dat je de kookbeleving mist, en dat er meer verpakking bij komt kijken dan bij zelf koken. Voor wie tijd de grootste schaarste is, wegen die nadelen doorgaans niet op tegen het gemak van elke dag een gezonde maaltijd klaar hebben.' },
+      { type: 'prijsvoorbeeld' },
       { type: 'h2', text: 'Conclusie' },
       { type: 'p', text: 'Gezond eten met een druk schema wordt een stuk haalbaarder met kant-en-klare maaltijden waarvan de voedingswaarde vastligt. Factor is daarvoor een sterke keuze dankzij de high-protein en caloriebewuste stijlen en de bezorging in heel België. Begin met de drukste avonden en bouw van daaruit verder.' },
       { type: 'cta', tekst: 'Activeer 40% korting bij Factor' },
