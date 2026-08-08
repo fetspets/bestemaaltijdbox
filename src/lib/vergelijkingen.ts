@@ -107,27 +107,6 @@ export const vergelijkingen: Vergelijking[] = [
     ],
   },
   {
-    slug: 'hellofresh-vs-carrefour',
-    aanbieder1Slug: 'hellofresh',
-    aanbieder2Slug: 'carrefour-simply-you',
-    winnaarPerCategorie: {
-      prijs: 'carrefour-simply-you',
-      smaak: 'hellofresh',
-      variatie: 'hellofresh',
-      flexibiliteit: 'hellofresh',
-      bezorging: 'hellofresh',
-      duurzaamheid: 'hellofresh',
-    },
-    verdictSlug: 'hellofresh',
-    verdictTekst: 'Carrefour Simply You is het voordeligst zonder abonnement — ideaal als kennismaking met maaltijdboxen of voor wie geen engagement wil aangaan. HelloFresh biedt meer variatie, hogere smaakscores in onze test en bezorging op meerdere dagen per week. Met de HelloFresh welkomstkorting voor nieuwe klanten is het prijsverschil de eerste weken klein of zelfs omgekeerd. Wie wil starten zonder risico kiest Carrefour; wie op termijn meerdere keren per week een box wil, profiteert meer van HelloFresh.',
-    faq: [
-      { q: 'Kan ik Carrefour Simply You eenmalig bestellen zonder abonnement?', a: 'Ja, dat is precies het voordeel van Carrefour Simply You. Je bestelt eenmalig via carrefour.be, zonder abonnement of engagement. HelloFresh werkt met een flexibel abonnement dat je wekelijks kan pauzeren of opzeggen.' },
-      { q: 'Is HelloFresh of Carrefour Simply You goedkoper?', a: 'Carrefour Simply You is in standaardprijzen voordeliger per portie. Maar HelloFresh biedt welkomstkortingen voor nieuwe klanten, waardoor de eerste weken HelloFresh soms goedkoper uitvalt. Daarna is Carrefour in de basisprijs iets goedkoper.' },
-      { q: 'Hoeveel recepten heeft Carrefour Simply You per week?', a: 'Carrefour Simply You biedt circa 10 recepten per week. HelloFresh biedt 40+ recepten per week, wat beduidend meer keuze geeft. Voor wie keuzestress wil vermijden kan het beperktere aanbod van Carrefour een voordeel zijn.' },
-      { q: 'Levert Carrefour Simply You ook in Wallonië?', a: 'Ja, Carrefour Simply You bezorgt in heel België inclusief Wallonië, op maandagavond. HelloFresh bezorgt ook in heel België maar op meerdere dagen per week, wat meer flexibiliteit geeft.' },
-    ],
-  },
-  {
     slug: 'crowd-cooks-vs-factor',
     seoTitle: 'Crowd Cooks vs Factor 2026: welke kant-en-klare box wint?',
     seoDescription: 'Crowd Cooks of Factor — twee kant-en-klare maaltijdservices vergeleken op prijs, smaak en bezorging. Crowd Cooks: Belgisch met lagere bezorgkosten.',
