@@ -319,9 +319,9 @@ export default function GoedkoopsteMaaltijdboxPage() {
             {[
               {
                 situatie: 'Goedkoopste kookbox voor een koppel (2p)',
-                winnaar: 'Carrefour Simply You',
-                slug: 'carrefour-simply-you',
-                detail: '€32,28/week (reguliere prijs), geen abonnement. HelloFresh is een goed alternatief als je meer receptkeuze wil (40+ vs. 10+).',
+                winnaar: 'Ekomenu',
+                slug: 'ekomenu',
+                detail: '€37,08/week (reguliere prijs, €6,18/portie), gratis bezorging — de voordeligste klassieke kookbox. HelloFresh is een goed alternatief als je meer receptkeuze wil (40+ recepten).',
                 color: '#F0FDF4',
                 border: '#BBF7D0',
               },
