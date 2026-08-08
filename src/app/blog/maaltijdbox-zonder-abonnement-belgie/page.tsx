@@ -39,7 +39,7 @@ const faqJsonLd = {
       name: 'Wat is de goedkoopste maaltijdbox zonder abonnement?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €6,50/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 via code FOODPREPX45 (3× €15 op de eerste 3 bestellingen). Foodbag kost €9,50/portie maar biedt €60 korting (code FOODBAGx60) en bezorgt in heel België inclusief Wallonië.',
+        text: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €6,50/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 (3× €15 op de eerste 3 bestellingen), automatisch toegepast via onze link. Foodbag kost €9,50/portie maar biedt €60 korting via onze link en bezorgt in heel België inclusief Wallonië.',
       },
     },
   ],
