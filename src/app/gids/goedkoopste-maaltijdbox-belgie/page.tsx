@@ -47,7 +47,7 @@ const prijsTabel = [
   { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '50% korting (automatisch)', noot: '+ €5,99 bezorgkost', badge: '🎯 Beste deal' },
   { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null, badge: null },
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost', badge: null },
-  { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting (FOODBAGx60)', noot: null, badge: null },
+  { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting', noot: null, badge: null },
   { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null, badge: null },
 ];
 
