@@ -110,18 +110,6 @@ const kortingen = [
     actief: false,
   },
   {
-    slug: 'carrefour-simply-you',
-    naam: 'Carrefour Simply You',
-    logo: '/logos/carrefour-simply-you.svg',
-    code: null,
-    deal: 'Bekijk de huidige welkomstdeal',
-    bedrag: 'Deal',
-    kleur: '#1B4332',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk carrefour.be voor de huidige welkomstaanbieding.',
-    voorwaarden: 'Bekijk website voor actuele aanbieding',
-    actief: false,
-  },
-  {
     slug: 'crowd-cooks',
     naam: 'Crowd Cooks',
     logo: '/logos/crowd-cooks.svg',
