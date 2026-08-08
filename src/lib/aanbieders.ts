@@ -397,7 +397,7 @@ export const aanbieders: Aanbieder[] = [
     belgisch: true,
     vegetarisch: false,
     bio: false,
-    affiliateUrl: 'https://tc.tradetracker.net/?c=34031&m=1868354&a=507243&r=&u=',
+    affiliateUrl: 'https://tc.tradetracker.net/?c=34031&m=1868354&a=507243&r=&u=https%3A%2F%2Fcrowdcooks.be%2Fnl%2Fonboarding%2Fplan',
     kortingsCode: {
       code: null,
       bedrag: '€60 totaal',
