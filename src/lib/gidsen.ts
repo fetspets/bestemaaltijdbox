@@ -42,7 +42,7 @@ export const gidsen: Gids[] = [
         reden: 'Factor heeft een van de laagste prijzen per portie van alle aanbieders. Maar het gaat om kant-en-klare maaltijden die je enkel opwarmt — geen kookbeleving. Tel de bezorgkosten mee in je vergelijking. Interessant voor wie kooktijd wil besparen.',
       },
     ],
-    tabelSlugs: ['hellofresh', 'carrefour-simply-you', 'factor', 'marley-spoon', 'ekomenu'],
+    tabelSlugs: ['hellofresh', 'foodprepper', 'factor', 'marley-spoon', 'ekomenu'],
     uitlegBlokken: [
       {
         titel: 'Goedkoopste maaltijdbox voor een koppel',
