@@ -283,7 +283,7 @@ export default function VeganPage() {
               scenario: 'Je wil Belgisch én veggie, en je budget is ruimer',
               aanbeveling: 'Foodbag',
               slug: 'foodbag',
-              uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (vanaf €9,50/portie), maar de versheid en lokale herkomst zijn merkbaar. Met code FOODBAGx60 krijg je €60 korting op je eerste bestellingen.',
+              uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (vanaf €9,50/portie), maar de versheid en lokale herkomst zijn merkbaar. Via onze link krijg je €60 korting op je eerste bestellingen — automatisch toegepast, geen code nodig.',
               color: '#FEF3C7',
               border: '#FCD34D',
             },
