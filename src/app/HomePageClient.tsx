@@ -40,8 +40,8 @@ export default function HomePageClient({
 }: {
   sponsoringActief: boolean;
 }) {
-  const top3 = aanbieders.slice(0, 3);
-  const rest = aanbieders.slice(3);
+  const top3 = actieveAanbieders.slice(0, 3);
+  const rest = actieveAanbieders.slice(3);
   const factor = getAanbieder('factor');
 
   return (
