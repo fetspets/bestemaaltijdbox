@@ -23,6 +23,10 @@ export interface Aanbieder {
     faq?: { vraag: string; antwoord: string }[];
   };
   ranking: number;
+  /** Beschikbaarheid van de box. Alleen 'active' verschijnt in ranglijsten, tabellen en tellingen. */
+  status: 'active' | 'discontinued' | 'temporarily_unavailable';
+  /** Optionele toelichting bij een niet-actieve status (bv. stopgezet-melding). */
+  statusNotitie?: string;
   score: {
     totaal: number;
     smaak: number;
