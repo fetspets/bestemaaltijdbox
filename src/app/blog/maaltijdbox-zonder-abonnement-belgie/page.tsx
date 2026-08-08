@@ -122,7 +122,6 @@ const aanbieders = [
     naam: 'Foodprepper',
     slug: 'foodprepper',
     ctaHref: '/ga/foodprepper',
-    kortingsCode: 'FOODPREPX45',
     kortingsBedrag: '3× €15 korting op eerste 3 bestellingen',
     portie: 'vanaf €6,50/portie',
     badge: '💰 Goedkoopst zonder abo',
