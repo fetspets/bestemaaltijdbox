@@ -295,7 +295,7 @@ export default function HomePageClient({
             </table>
           </div>
           <div style={{ marginTop: 8, fontSize: 11, color: 'var(--muted)' }}>
-            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie. Raadpleeg de website van de aanbieder voor de meest actuele prijzen en aanbiedingen.
+            <strong>Leverdag kiezen</strong> = je kan zelf je bezorgdag selecteren · <strong>Tijdslot kiezen</strong> = je kan zelf een tijdstip/leverslot kiezen · ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie. Raadpleeg de website van de aanbieder voor de meest actuele prijzen en aanbiedingen.
           </div>
         </div>
 
