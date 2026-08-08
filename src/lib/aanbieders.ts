@@ -297,11 +297,11 @@ export const aanbieders: Aanbieder[] = [
     bio: false,
     affiliateUrl: 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=',
     kortingsCode: {
-      code: 'FOODPREPX45',
+      code: null,
       bedrag: '3× €15 korting',
-      beschrijving: '€15 korting op eerste 3 bestellingen (totaal €45). Gebruik code FOODPREPX45 bij het afrekenen. Geldig voor nieuwe klanten. Controleer geldigheid op foodprepper.be.',
+      beschrijving: '€15 korting op je eerste 3 bestellingen (totaal €45). Korting wordt automatisch toegepast via onze link — geen code nodig. Geldig voor nieuwe klanten.',
     },
-    ctaSubtekst: 'Code: FOODPREPX45 — 3× €15 korting op eerste 3 bestellingen',
+    ctaSubtekst: '3× €15 korting op eerste 3 bestellingen · automatisch via onze link',
     ctaTekst: 'Bekijk Foodprepper',
     kenmerken: ['⚡ Klaar in 15 min', '🇧🇪 Belgisch & lokaal', '✓ Gratis bezorging', '✓ Geen verplicht abo'],
     pros: [
