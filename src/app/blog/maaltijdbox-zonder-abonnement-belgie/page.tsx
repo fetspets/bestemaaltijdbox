@@ -310,7 +310,7 @@ export default function MaaltijdboxZonderAbonnementPage() {
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
             Elke aanbieder zonder abonnement in detail
           </h2>
-          {aanbieders.map(({ rang, naam, slug, ctaHref, kortingsCode, kortingsBedrag, portie, badge, uitleg, kenmerken, ctaTekst, ctaTekst2 }) => (
+          {aanbieders.map(({ rang, naam, slug, ctaHref, kortingsBedrag, portie, badge, uitleg, kenmerken, ctaTekst, ctaTekst2 }) => (
             <div
               key={slug}
               style={{ background: 'white', borderRadius: 16, border: rang === 1 ? '1.5px solid var(--mint)' : '1.5px solid var(--rule)', padding: 24, marginBottom: 16, position: 'relative', overflow: 'hidden' }}
