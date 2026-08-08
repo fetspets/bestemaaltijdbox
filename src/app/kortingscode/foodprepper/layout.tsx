@@ -22,10 +22,10 @@ const faqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is de kortingscode FOODPREPX45 nog geldig?',
+      name: 'Is de Foodprepper welkomstkorting nog geldig?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja, de code FOODPREPX45 is actief gecontroleerd geldig t.e.m. 01/01/2027. Controleer ook altijd de actuele geldigheid op foodprepper.be zelf.',
+        text: 'Ja, de welkomstkorting is actief gecontroleerd geldig t.e.m. 01/01/2027 en wordt automatisch toegepast via onze link — je hoeft geen code in te voeren. Controleer ook altijd de actuele geldigheid op foodprepper.be zelf.',
       },
     },
     {
@@ -33,15 +33,15 @@ const faqJsonLd = {
       name: 'Voor hoeveel bestellingen geldt de korting?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'De kortingscode FOODPREPX45 geeft 3x €15 korting — één keer per bestelling op je eerste drie bestellingen. Totale besparing: €45.',
+        text: 'De welkomstkorting geeft 3x €15 korting — één keer per bestelling op je eerste drie bestellingen. Totale besparing: €45.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Kan ik de code combineren met andere acties?',
+      name: 'Kan ik de korting combineren met andere acties?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nee, de code FOODPREPX45 is niet combineerbaar met andere promoties of kortingsacties van Foodprepper.',
+        text: 'Nee, de welkomstkorting is niet combineerbaar met andere promoties of kortingsacties van Foodprepper.',
       },
     },
     {
@@ -49,7 +49,7 @@ const faqJsonLd = {
       name: 'Geldt de korting ook bij een abonnement?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Foodprepper werkt zonder verplicht abonnement. Je bestelt wanneer je wil. De kortingscode FOODPREPX45 geldt voor nieuwe klanten op de eerste drie bestellingen, ongeacht of je regelmatig of eenmalig bestelt.',
+        text: 'Foodprepper werkt zonder verplicht abonnement. Je bestelt wanneer je wil. De welkomstkorting geldt voor nieuwe klanten op de eerste drie bestellingen, ongeacht of je regelmatig of eenmalig bestelt, en wordt automatisch toegepast via onze link.',
       },
     },
   ],
