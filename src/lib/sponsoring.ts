@@ -27,7 +27,7 @@ export const sponsoringen: Sponsoring[] = [
     partnerSlug: 'factor',
     startDatum: '2026-07-27', // maandag — live-datum
     eindDatum: '2026-10-27', // volle 3 maanden vanaf de live-datum
-    kortingsCode: 'BESTE40',
+    kortingsCode: '', // Geen zichtbare code meer: korting geldt automatisch via de affiliate-link, zodat de klik telt.
     plaatsingen: {
       banner: true,
       homepageBlok: true,
