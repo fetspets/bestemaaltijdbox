@@ -255,7 +255,7 @@ export default function HomePageClient({
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 700 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  {['Aanbieder', 'Score', 'Prijs/portie', 'Min. recepten', 'Bezorgkost', '🇧🇪', 'Leverdag', 'Tijdstip', 'Los bestellen', 'Beste voor', ''].map(h => (
+                  {['Aanbieder', 'Score', 'Prijs/portie', 'Min. maaltijden/week', 'Bezorgkost', '🇧🇪', 'Leverdag kiezen', 'Tijdslot kiezen', 'Los bestellen', 'Beste voor', ''].map(h => (
                     <th key={h} style={{ padding: '10px 10px', textAlign: 'left', fontWeight: 600, fontSize: 10, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
