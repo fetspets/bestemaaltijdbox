@@ -224,7 +224,7 @@ export default function MaaltijdboxZonderAbonnementPage() {
               <div style={{ fontSize: 14, fontWeight: 700, color: '#1B4332', marginBottom: 6 }}>🏆 Beste keuze zonder abonnement</div>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, color: '#14532D', marginBottom: 6 }}>Foodbag</div>
               <div style={{ fontSize: 14, fontWeight: 600, color: '#1B4332', marginBottom: 4 }}>€9,50/portie · gratis bezorging · heel België</div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 12 }}>Code FOODBAGx60: 3× €20 korting op je eerste 3 bestellingen (€60 totaal)</div>
+              <div style={{ fontSize: 13, color: '#374151', marginBottom: 12 }}>3× €20 korting op je eerste 3 bestellingen (€60 totaal) — automatisch via onze link, geen code nodig</div>
               <div style={{ fontSize: 12, color: '#6B7280' }}>
                 Op zoek naar de laagste prijs? →{' '}
                 <Link href="/aanbieder/foodprepper" style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
