@@ -128,7 +128,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>
-          <span className="hide-mobile" style={{ fontSize: 12 }}>Bijgewerkt: juni 2026</span>
+          <span className="hide-mobile" style={{ fontSize: 12 }}>Bijgewerkt: {LAATST_BIJGEWERKT}</span>
         </div>
       </div>
 
