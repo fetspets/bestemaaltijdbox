@@ -68,7 +68,7 @@ export default function HomePageClient({
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
-          {[['9', 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
+          {[[String(aantalAanbieders), 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: '#1B4332' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{label}</div>
