@@ -31,7 +31,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Wat is de goedkoopste maaltijdbox zonder abonnement in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You en Foodprepper hebben geen verplicht abonnement. Je bestelt wanneer het uitkomt, zonder wekelijkse verplichting. Foodprepper biedt daarbij €45 welkomstkorting over de eerste 3 bestellingen.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Foodprepper, Foodmaker en Foodbag (los bestellen) werken zonder verplicht abonnement. Je bestelt wanneer het uitkomt, zonder wekelijkse verplichting. Foodprepper biedt daarbij €45 welkomstkorting over de eerste 3 bestellingen.' },
     },
     {
       '@type': 'Question',
