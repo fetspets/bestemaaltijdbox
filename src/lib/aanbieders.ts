@@ -394,6 +394,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Crowd Cooks vult een andere behoefte dan de klassieke maaltijdboxen: eten zonder koken, met Belgische verankering en royale porties als troeven. Voor wie tijd de grootste schaarste is en toch verse, royale maaltijden wil, is het een sterk alternatief voor restaurant of take-away.',
     },
     ranking: 6,
+    status: 'active',
     score: { totaal: 7.8, smaak: 7.8, prijsKwaliteit: 6.8, flexibiliteit: 8.0, duurzaamheid: 6.5, gemak: 9.3 },
     prijsPerPortie: 10.71,
     prijsPopulaireBox: 49.90,
