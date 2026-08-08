@@ -83,6 +83,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'HelloFresh verdient zijn #1 positie. De combinatie van prijs, variatie en gemak is moeilijk te evenaren in België. Zeker met de regelmatige welkomstaanbiedingen voor nieuwe klanten is het zeker de moeite waard om te proberen.',
     },
     ranking: 1,
+    status: 'active',
     score: { totaal: 8.4, smaak: 8.2, prijsKwaliteit: 8.5, flexibiliteit: 9.0, duurzaamheid: 6.8, gemak: 9.0 },
     prijsPerPortie: 7.99,
     prijsPopulaireBox: 47.99,
