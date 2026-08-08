@@ -99,7 +99,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 naam: 'Factor',
                 logo: '/logos/factor.svg',
                 deal: '40% op eerste box, 25% op volgende 5 boxen',
-                detail: 'Code BESTE40 · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
+                detail: 'Automatisch via onze link · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
                 cta: 'Activeer Factor deal',
                 href: '/ga/factor',
                 kleur: '#D97706',
