@@ -39,7 +39,7 @@ const faqJsonLd = {
       name: 'Wat is de goedkoopste maaltijdbox zonder abonnement?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €6,50/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 via code FOODPREPX45 (3× €15 op de eerste 3 bestellingen). Foodbag kost €9,50/portie maar biedt €60 korting (code FOODBAGx60) en bezorgt in heel België inclusief Wallonië.',
+        text: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €6,50/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 (3× €15 op de eerste 3 bestellingen), automatisch toegepast via onze link. Foodbag kost €9,50/portie maar biedt €60 korting via onze link en bezorgt in heel België inclusief Wallonië.',
       },
     },
   ],
@@ -78,7 +78,7 @@ const vergelijkingsTabel = [
     abonnement: 'Los bestellen mogelijk',
     portie: '€9,50',
     bezorging: 'Gratis',
-    korting: '€60 (FOODBAGx60)',
+    korting: '€60 via onze link',
     badge: '🏆 Beste keuze',
   },
   {
@@ -88,7 +88,7 @@ const vergelijkingsTabel = [
     abonnement: 'Geen abo vereist',
     portie: 'vanaf €6,50',
     bezorging: 'Gratis',
-    korting: '€45 (FOODPREPX45)',
+    korting: '€45 via onze link',
     badge: '💰 Goedkoopst',
   },
   {
@@ -109,11 +109,10 @@ const aanbieders = [
     naam: 'Foodbag',
     slug: 'foodbag',
     ctaHref: '/ga/foodbag',
-    kortingsCode: 'FOODBAGx60',
     kortingsBedrag: '3× €20 korting op eerste 3 bestellingen',
     portie: '€9,50/portie',
     badge: '🏆 Beste keuze zonder abo',
-    uitleg: 'Foodbag is de #2 maaltijdbox in België, eigendom van de Colruyt Group. Met 100% lokale Belgische ingrediënten, 5 kookstijlen (waaronder Sana van Sandra Bekkari) en gratis bezorging in heel België — inclusief Wallonië — is het de meest complete keuze als je af en toe los wil bestellen. Je hebt geen vast abonnement nodig: je plaatst een bestelling wanneer het jou uitkomt. Via code FOODBAGx60 krijg je 3× €20 korting op je eerste 3 bestellingen (in totaal €60 voordeel).',
+    uitleg: 'Foodbag is de #2 maaltijdbox in België, eigendom van de Colruyt Group. Met 100% lokale Belgische ingrediënten, 5 kookstijlen (waaronder Sana van Sandra Bekkari) en gratis bezorging in heel België — inclusief Wallonië — is het de meest complete keuze als je af en toe los wil bestellen. Je hebt geen vast abonnement nodig: je plaatst een bestelling wanneer het jou uitkomt. Via onze link krijg je 3× €20 korting op je eerste 3 bestellingen (in totaal €60 voordeel), automatisch toegepast — geen code nodig.',
     kenmerken: ['🇧🇪 Lokale Belgische ingrediënten', '✓ Gratis bezorging heel België', '✓ Los bestellen mogelijk', '5 kookstijlen incl. Sana'],
     ctaTekst: 'Bekijk Foodbag →',
     ctaTekst2: 'Lees review',
@@ -123,11 +122,10 @@ const aanbieders = [
     naam: 'Foodprepper',
     slug: 'foodprepper',
     ctaHref: '/ga/foodprepper',
-    kortingsCode: 'FOODPREPX45',
     kortingsBedrag: '3× €15 korting op eerste 3 bestellingen',
     portie: 'vanaf €6,50/portie',
     badge: '💰 Goedkoopst zonder abo',
-    uitleg: 'Foodprepper is de snelste kookbox van België: alles staat in 15 minuten op tafel dankzij voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. Er is geen verplicht abonnement en geen opzegtermijn — je bestelt eenmalig, wekelijks of tweewekelijks zoals het jou past. Bijna alle ingrediënten komen van Belgische leveranciers. Bezorging is gratis in Vlaanderen en Brussel. Met code FOODPREPX45 bespaar je tot €45 op je eerste 3 bestellingen.',
+    uitleg: 'Foodprepper is de snelste kookbox van België: alles staat in 15 minuten op tafel dankzij voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. Er is geen verplicht abonnement en geen opzegtermijn — je bestelt eenmalig, wekelijks of tweewekelijks zoals het jou past. Bijna alle ingrediënten komen van Belgische leveranciers. Bezorging is gratis in Vlaanderen en Brussel. Via onze link bespaar je tot €45 op je eerste 3 bestellingen — automatisch toegepast, geen code nodig.',
     kenmerken: ['⚡ Klaar in 15 minuten', '🇧🇪 Belgische ingrediënten', '✓ Geen abo, vrij opzegbaar', '✓ Gratis bezorging'],
     ctaTekst: 'Bekijk Foodprepper →',
     ctaTekst2: 'Lees review',
@@ -137,7 +135,6 @@ const aanbieders = [
     naam: 'Foodmaker',
     slug: 'foodmaker',
     ctaHref: '/aanbieder/foodmaker',
-    kortingsCode: null,
     kortingsBedrag: null,
     portie: '€10,00/portie',
     badge: '👨‍🍳 Artisanale Belgische kwaliteit',
@@ -153,7 +150,7 @@ const situaties = [
     situatie: 'Je wil eenmalig een maaltijdbox proberen',
     winnaar: 'Foodprepper',
     slug: 'foodprepper',
-    detail: 'Geen abonnement, geen opzegtermijn. Code FOODPREPX45 geeft tot €45 welkomstkorting. Ideaal om risicovrij te starten.',
+    detail: 'Geen abonnement, geen opzegtermijn. Tot €45 welkomstkorting, automatisch via onze link. Ideaal om risicovrij te starten.',
     color: '#F0FDF4',
     border: '#BBF7D0',
   },
@@ -169,7 +166,7 @@ const situaties = [
     situatie: 'Belgische kwaliteit zonder vaste verplichting',
     winnaar: 'Foodbag',
     slug: 'foodbag',
-    detail: 'Lokale ingrediënten, 5 kookstijlen, gratis bezorging in heel België. Los bestellen mogelijk zonder abonnement. Code FOODBAGx60: €60 korting over eerste 3 bestellingen.',
+    detail: 'Lokale ingrediënten, 5 kookstijlen, gratis bezorging in heel België. Los bestellen mogelijk zonder abonnement. €60 korting over eerste 3 bestellingen, automatisch via onze link.',
     color: '#DBEAFE',
     border: '#93C5FD',
   },
@@ -227,7 +224,7 @@ export default function MaaltijdboxZonderAbonnementPage() {
               <div style={{ fontSize: 14, fontWeight: 700, color: '#1B4332', marginBottom: 6 }}>🏆 Beste keuze zonder abonnement</div>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, color: '#14532D', marginBottom: 6 }}>Foodbag</div>
               <div style={{ fontSize: 14, fontWeight: 600, color: '#1B4332', marginBottom: 4 }}>€9,50/portie · gratis bezorging · heel België</div>
-              <div style={{ fontSize: 13, color: '#374151', marginBottom: 12 }}>Code FOODBAGx60: 3× €20 korting op je eerste 3 bestellingen (€60 totaal)</div>
+              <div style={{ fontSize: 13, color: '#374151', marginBottom: 12 }}>3× €20 korting op je eerste 3 bestellingen (€60 totaal) — automatisch via onze link, geen code nodig</div>
               <div style={{ fontSize: 12, color: '#6B7280' }}>
                 Op zoek naar de laagste prijs? →{' '}
                 <Link href="/aanbieder/foodprepper" style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
@@ -310,7 +307,7 @@ export default function MaaltijdboxZonderAbonnementPage() {
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
             Elke aanbieder zonder abonnement in detail
           </h2>
-          {aanbieders.map(({ rang, naam, slug, ctaHref, kortingsCode, kortingsBedrag, portie, badge, uitleg, kenmerken, ctaTekst, ctaTekst2 }) => (
+          {aanbieders.map(({ rang, naam, slug, ctaHref, kortingsBedrag, portie, badge, uitleg, kenmerken, ctaTekst, ctaTekst2 }) => (
             <div
               key={slug}
               style={{ background: 'white', borderRadius: 16, border: rang === 1 ? '1.5px solid var(--mint)' : '1.5px solid var(--rule)', padding: 24, marginBottom: 16, position: 'relative', overflow: 'hidden' }}
@@ -343,16 +340,15 @@ export default function MaaltijdboxZonderAbonnementPage() {
                 </div>
               </div>
               <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', marginBottom: 14 }}>{uitleg}</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: kortingsCode ? 12 : 0 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: kortingsBedrag ? 12 : 0 }}>
                 {kenmerken.map(k => (
                   <span key={k} style={{ fontSize: 12, background: '#F9FAFB', border: '1px solid var(--rule)', borderRadius: 100, padding: '4px 10px', color: '#374151' }}>{k}</span>
                 ))}
               </div>
-              {kortingsCode && kortingsBedrag && (
-                <div style={{ background: '#FFF5F4', border: '1.5px dashed #FED7D7', borderRadius: 8, padding: '10px 14px', marginTop: 4 }}>
-                  <span style={{ fontSize: 12, color: 'var(--muted)' }}>Kortingscode: </span>
-                  <span style={{ fontFamily: 'monospace', fontSize: 15, fontWeight: 900, color: '#C0392B' }}>{kortingsCode}</span>
-                  <span style={{ fontSize: 12, color: 'var(--muted)' }}> — {kortingsBedrag}</span>
+              {kortingsBedrag && (
+                <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 8, padding: '10px 14px', marginTop: 4 }}>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>{kortingsBedrag}</span>
+                  <span style={{ fontSize: 12, color: 'var(--muted)' }}> — automatisch via onze link, geen code nodig</span>
                 </div>
               )}
             </div>

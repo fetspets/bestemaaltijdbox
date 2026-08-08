@@ -75,7 +75,7 @@ const top3 = [
     accent: '#1E40AF',
     tagline: 'Lokale Belgische ingrediënten — top smaakscore',
     waarom: 'Koppels die bewust Belgisch willen eten kiezen Foodbag. De ingrediënten komen van lokale boerderijen — dat merk je aan de versheid. Met 5 kookstijlen (waaronder de Sana-lijn van Sandra Bekkari) vinden ook veeleisende eters hun gading.',
-    deal: '€60 korting — gebruik code FOODBAGx60 bij afrekenen (3× €20)',
+    deal: '€60 korting — automatisch via onze link, geen code nodig (3× €20)',
     dealColor: '#1E40AF',
   },
   {
@@ -279,7 +279,7 @@ export default function KoppelPage() {
             <tbody>
               {[
                 { naam: 'HelloFresh', portie: 'vanaf €7,99', week: '€47,94', recepten: '40+', korting: 'tot €60 korting' },
-                { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '20+', korting: '€60 — code FOODBAGx60' },
+                { naam: 'Foodbag', portie: 'vanaf €9,50', week: '€57,00', recepten: '20+', korting: '€60 (automatisch)' },
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€51,99 ²', recepten: '40+', korting: '50% (automatisch)' },
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
                 { naam: 'Factor', portie: 'vanaf €4,99', week: '€35,94 ²', recepten: '18', korting: '—' },
@@ -326,7 +326,7 @@ export default function KoppelPage() {
               scenario: 'Jullie kiezen bewust Belgisch',
               aanbeveling: 'Foodbag',
               slug: 'foodbag',
-              uitleg: 'Foodbag werkt uitsluitend met Belgische en lokale ingrediënten van boerderijen in de buurt. Met de FOODBAGx60 code (3× €20) is de instapprijs ook voor budgetbewuste koppels draaglijk.',
+              uitleg: 'Foodbag werkt uitsluitend met Belgische en lokale ingrediënten van boerderijen in de buurt. Met €60 welkomstkorting (3× €20), automatisch via onze link, is de instapprijs ook voor budgetbewuste koppels draaglijk.',
               color: '#DBEAFE',
               border: '#BFDBFE',
             },

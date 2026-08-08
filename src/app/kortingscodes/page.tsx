@@ -3,7 +3,7 @@ import GesponsordLabel from '@/components/GesponsordLabel';
 import { getAanbieder } from '@/lib/aanbieders';
 import { getActieveSponsoring } from '@/lib/sponsoring';
 
-// ISR: het gesponsorde, uitgelichte BESTE40-blok verdwijnt vanzelf na de
+// ISR: het gesponsorde, uitgelichte Factor-blok verdwijnt vanzelf na de
 // sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
 export const revalidate = 3600;
 
@@ -19,6 +19,9 @@ export const metadata = {
     locale: 'nl_BE',
   },
 };
+
+// Slugs met een eigen /kortingscode/<slug>-detailpagina (voor de "Bekijk details"-link).
+const heeftDetailpagina = new Set(['hellofresh', 'foodbag', 'foodprepper', 'factor', 'crowd-cooks']);
 
 const kortingen = [
   {
@@ -38,12 +41,12 @@ const kortingen = [
     slug: 'foodbag',
     naam: 'Foodbag',
     logo: '/logos/foodbag.png',
-    code: 'FOODBAGx60',
+    code: null,
     deal: '3x €20 korting op je eerste 3 bestellingen',
     bedrag: '€60 totaal',
     kleur: '#1E40AF',
-    beschrijving: 'Gebruik code FOODBAGx60 bij je eerste bestelling en krijg 3x €20 korting verspreid over je eerste 3 Foodbag-bestellingen. Totale besparing: €60.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Code: FOODBAGx60 · Geldig t.e.m. 01/01/2027 · 3x €20 op de eerste 3 bestellingen',
+    beschrijving: 'Krijg 3x €20 korting verspreid over je eerste 3 Foodbag-bestellingen. Totale besparing: €60. De korting wordt automatisch toegepast via onze link — geen code nodig.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · Geldig t.e.m. 01/01/2027 · 3x €20 op de eerste 3 bestellingen',
     actief: true,
   },
   {
@@ -62,24 +65,24 @@ const kortingen = [
     slug: 'foodprepper',
     naam: 'Foodprepper',
     logo: '/logos/foodprepper.png',
-    code: 'FOODPREPX45',
+    code: null,
     deal: '3× €15 korting op je eerste 3 bestellingen',
     bedrag: '€45 totaal',
     kleur: '#2D6A4F',
-    beschrijving: 'Gebruik code FOODPREPX45 bij het afrekenen en krijg €15 korting op elk van je eerste 3 bestellingen. Totale besparing: €45. Klaar in 15 minuten dankzij voorbereide ingrediënten.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Code: FOODPREPX45 · 3× €15 op eerste 3 bestellingen · Vrij opzegbaar',
+    beschrijving: 'Krijg €15 korting op elk van je eerste 3 bestellingen. Totale besparing: €45. De korting wordt automatisch toegepast via onze link — geen code nodig. Klaar in 15 minuten dankzij voorbereide ingrediënten.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · 3× €15 op eerste 3 bestellingen · Vrij opzegbaar',
     actief: true,
   },
   {
     slug: 'factor',
     naam: 'Factor',
     logo: '/logos/factor.svg',
-    code: 'BESTE40',
+    code: null,
     deal: '40% korting op je eerste box + 25% op de volgende vijf boxen',
     bedrag: '40% + 25%',
     kleur: '#7C3AED',
-    beschrijving: 'De korting wordt automatisch toegepast via onze link — de code BESTE40 kan je ook handmatig invoeren. 40% korting op je eerste box + 25% korting op elk van de volgende vijf boxen. Exclusief voor nieuwe klanten.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Code: BESTE40 · Eerste box + vijf volgende boxen · Geldig t.e.m. 27/10/2026',
+    beschrijving: 'De korting wordt automatisch toegepast via onze link — je hoeft geen code in te voeren. 40% korting op je eerste box + 25% korting op elk van de volgende vijf boxen. Exclusief voor nieuwe klanten.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · Eerste box + vijf volgende boxen · Geldig t.e.m. 27/10/2026',
     actief: true,
   },
   {
@@ -122,12 +125,12 @@ const kortingen = [
     slug: 'crowd-cooks',
     naam: 'Crowd Cooks',
     logo: '/logos/crowd-cooks.svg',
-    code: '60C',
+    code: null,
     deal: '€20 korting in week 1 + €10 korting per week gedurende 4 weken',
     bedrag: '€60 totaal',
     kleur: '#1B4332',
-    beschrijving: 'Gebruik code 60C bij je eerste bestelling: €20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. Belgische kant-en-klare maaltijden, bezorgd op zondag of maandag.',
-    voorwaarden: 'Geldig voor nieuwe klanten · Code: 60C · €20 in week 1 + 4× €10 · Wekelijks opzegbaar',
+    beschrijving: '€20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. De korting wordt automatisch toegepast via onze link — geen code nodig. Belgische kant-en-klare maaltijden, bezorgd op zondag of maandag.',
+    voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · €20 in week 1 + 4× €10 · Wekelijks opzegbaar',
     actief: true,
   },
 ];
@@ -160,7 +163,7 @@ export default function KortingscodesPagina() {
         </p>
       </div>
 
-      {/* Uitgelicht — gesponsorde BESTE40 (server-gated op de sponsoringsperiode, verdwijnt na 27/10/2026) */}
+      {/* Uitgelicht — gesponsorde Factor-plaatsing (server-gated op de sponsoringsperiode, verdwijnt na 27/10/2026) */}
       {sponsoring?.partnerSlug === 'factor' && factor && (
         <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 70%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '22px 24px', marginBottom: 36, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
@@ -174,14 +177,14 @@ export default function KortingscodesPagina() {
             </div>
             <div style={{ flex: 1, minWidth: 220 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 4 }}>
-                Factor kortingscode: <span style={{ color: '#B45309' }}>{sponsoring.kortingsCode}</span>
+                Factor welkomstdeal
               </div>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#B45309', marginBottom: 4 }}>40% korting op je eerste box + 25% op de volgende vijf boxen</div>
-              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>Kant-en-klare chef-maaltijden zonder koken. De korting wordt automatisch toegepast via de link — de code kan je ook handmatig invoeren.</div>
+              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>Kant-en-klare chef-maaltijden zonder koken. De korting wordt automatisch toegepast via de link — je hoeft geen code in te voeren.</div>
               <div style={{ fontSize: 11, color: 'var(--muted)' }}>Geldig voor nieuwe klanten · Geldig t.e.m. 27/10/2026</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 160 }}>
-              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'monospace', fontSize: 20, fontWeight: 900, color: '#B45309' }}>{sponsoring.kortingsCode}</div>
+              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>40% + 25%</div>
               <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>Activeer deal →</Link>
             </div>
           </div>
@@ -220,7 +223,7 @@ export default function KortingscodesPagina() {
             <Link href={(k as {ctaUrl?: string}).ctaUrl || `/ga/${k.slug}`} style={{ display: 'block', background: k.kleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
               Activeer deal →
             </Link>
-            {k.code && (
+            {heeftDetailpagina.has(k.slug) && (
               <Link href={`/kortingscode/${k.slug}`} style={{ display: 'block', textAlign: 'center', padding: '8px', borderRadius: 10, fontWeight: 600, fontSize: 12, textDecoration: 'none', color: k.kleur, border: `1.5px solid ${k.kleur}` }}>
                 Bekijk details →
               </Link>
@@ -259,7 +262,7 @@ export default function KortingscodesPagina() {
           {[
             { num: '1', titel: 'Klik op "Activeer deal"', desc: 'Klik op de knop naast de maaltijdbox van je keuze. Je wordt doorgestuurd naar de website.' },
             { num: '2', titel: 'Kies je box', desc: 'Selecteer het aantal personen en maaltijden per week dat je wil ontvangen.' },
-            { num: '3', titel: 'Korting wordt toegepast', desc: 'Bij sommige aanbieders (HelloFresh, Marley Spoon, Factor) is geen code nodig — de korting wordt automatisch toegepast via de link. Bij Foodbag en Foodprepper voer je de code handmatig in bij het afrekenen.' },
+            { num: '3', titel: 'Korting wordt toegepast', desc: 'Je hebt geen code nodig — de korting wordt bij alle aanbieders automatisch toegepast via onze link. Rond gewoon je bestelling af en je voordeel staat al verrekend.' },
             { num: '4', titel: 'Direct opzegbaar', desc: 'Je zit nergens aan vast. De meeste aanbieders laat je wekelijks opzeggen of pauzeren.' },
           ].map(({ num, titel, desc }) => (
             <div key={num} style={{ display: 'flex', gap: 12 }}>

@@ -41,7 +41,7 @@ export default function FoodprepperVsFoodbag() {
         name: 'Welke is goedkoper: Foodprepper of Foodbag?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting op hun eerste drie bestellingen.',
+          text: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, automatisch toegepast via onze link.',
         },
       },
       {
@@ -49,7 +49,7 @@ export default function FoodprepperVsFoodbag() {
         name: 'Kan ik beide uitproberen?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting FOODPREPX45 (3× €15 op je eerste 3 bestellingen). Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
+          text: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting van 3× €15 op je eerste 3 bestellingen, automatisch via onze link. Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
         },
       },
       {
@@ -119,7 +119,7 @@ export default function FoodprepperVsFoodbag() {
             Bekijk Foodprepper →
           </a>
           <span style={{ marginLeft: 16, fontSize: 13, color: 'var(--muted)' }}>
-            Code <strong>FOODPREPX45</strong> — 3× €15 korting voor nieuwe klanten
+            3× €15 korting voor nieuwe klanten — automatisch via onze link
           </span>
         </div>
 
@@ -220,7 +220,7 @@ export default function FoodprepperVsFoodbag() {
             Foodbag kost gemiddeld <strong>€{fb.prijsPerPortie.toFixed(2)} per portie</strong> — een van de hogere prijzen in de Belgische maaltijdboxmarkt, te verklaren door de lokale inkoop en eigen bezorgers. De prijs van Foodprepper varieert per maaltijdkeuze en wordt best gecheckt op foodprepper.be, want die evolueert.
           </p>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563' }}>
-            Voor nieuwe Foodprepper-klanten geldt welkomstkorting <strong>FOODPREPX45</strong>: 3× €15 korting op de eerste 3 bestellingen (totaal tot €45 voordeel). Dat maakt de instap extra aantrekkelijk om te vergelijken.
+            Voor nieuwe Foodprepper-klanten geldt een welkomstkorting: 3× €15 korting op de eerste 3 bestellingen (totaal tot €45 voordeel), automatisch toegepast via onze link. Dat maakt de instap extra aantrekkelijk om te vergelijken.
           </p>
           <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>
             Prijzen kunnen wijzigen. Controleer altijd de actuele tarieven op foodprepper.be en foodbag.be.
@@ -235,10 +235,10 @@ export default function FoodprepperVsFoodbag() {
               🏷️ Welkomstkorting Foodprepper
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
-              Code: <span style={{ color: '#2D6A4F' }}>FOODPREPX45</span>
+              <span style={{ color: '#2D6A4F' }}>Tot €45 korting</span>
             </h3>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
-              <strong>3× €15 korting</strong> op eerste 3 bestellingen (tot €45). Voer code handmatig in bij het afrekenen.
+              <strong>3× €15 korting</strong> op eerste 3 bestellingen (tot €45). Automatisch toegepast via onze link — geen code nodig.
             </p>
             <a
               href={FOODPREPPER_KORTING}
@@ -259,10 +259,10 @@ export default function FoodprepperVsFoodbag() {
               🏷️ Welkomstkorting Foodbag
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
-              Code: <span style={{ color: '#1E40AF' }}>FOODBAGx60</span>
+              <span style={{ color: '#1E40AF' }}>Tot €60 korting</span>
             </h3>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
-              <strong>3× €20 korting</strong> op eerste 3 bestellingen (tot €60). Voer code handmatig in bij het afrekenen op foodbag.be.
+              <strong>3× €20 korting</strong> op eerste 3 bestellingen (tot €60). Automatisch toegepast via onze link — geen code nodig.
             </p>
             <a
               href={fb.affiliateUrl}
@@ -363,11 +363,11 @@ export default function FoodprepperVsFoodbag() {
               },
               {
                 q: 'Welke is goedkoper: Foodprepper of Foodbag?',
-                a: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting op hun eerste drie bestellingen.',
+                a: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, automatisch toegepast via onze link.',
               },
               {
                 q: 'Kan ik beide uitproberen?',
-                a: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting FOODPREPX45 (3× €15 op je eerste 3 bestellingen). Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
+                a: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting van 3× €15 op je eerste 3 bestellingen, automatisch via onze link. Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
               },
               {
                 q: 'Welke is het beste voor een gezin met kinderen?',

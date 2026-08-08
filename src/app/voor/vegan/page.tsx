@@ -91,7 +91,7 @@ const top4 = [
     tagline: '"Veggie" als één van 5 kookstijlen — niet 100% vegan',
     waarom: 'Foodbag biedt 5 kookstijlen waaronder een "veggie"-lijn. Die lijn bevat plantaardige en vegetarische maaltijden, maar Foodbag is geen vegan box — de andere kookstijlen bevatten vlees en vis. Als je bewust Belgisch én veggie wil eten, is de Foodbag veggie-lijn een optie. Wel de duurste aanbieder in dit overzicht.',
     isVegan100: false,
-    deal: '€60 korting — gebruik code FOODBAGx60 bij afrekenen (3× €20)',
+    deal: '€60 korting — automatisch via onze link, geen code nodig (3× €20)',
     dealColor: '#854D0E',
   },
   {
@@ -239,7 +239,7 @@ export default function VeganPage() {
               {[
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', vegan: '100% vegan & bio ✓', score: '7.6/10', korting: 'Welkomstaanbieding op site' },
                 { naam: 'HelloFresh', portie: 'vanaf €7,99', vegan: 'Vegetarische opties', score: '8.4/10', korting: 'tot €60 korting' },
-                { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 — code FOODBAGx60' },
+                { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 (automatisch)' },
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 50% (automatisch)' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
@@ -283,7 +283,7 @@ export default function VeganPage() {
               scenario: 'Je wil Belgisch én veggie, en je budget is ruimer',
               aanbeveling: 'Foodbag',
               slug: 'foodbag',
-              uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (vanaf €9,50/portie), maar de versheid en lokale herkomst zijn merkbaar. Met code FOODBAGx60 krijg je €60 korting op je eerste bestellingen.',
+              uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (vanaf €9,50/portie), maar de versheid en lokale herkomst zijn merkbaar. Via onze link krijg je €60 korting op je eerste bestellingen — automatisch toegepast, geen code nodig.',
               color: '#FEF3C7',
               border: '#FCD34D',
             },

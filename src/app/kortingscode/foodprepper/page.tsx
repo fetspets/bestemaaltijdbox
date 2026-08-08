@@ -1,16 +1,6 @@
-'use client';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function FoodprepperKortingscode() {
-  const [copied, setCopied] = useState(false);
-
-  async function handleCopy() {
-    try { await navigator.clipboard.writeText('FOODPREPX45'); } catch {}
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  }
-
   return (
     <div style={{ maxWidth: 680, margin: '0 auto', padding: '40px 20px 64px' }}>
 
@@ -34,28 +24,16 @@ export default function FoodprepperKortingscode() {
       </h1>
 
       <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, marginBottom: 32 }}>
-        Met de Foodprepper kortingscode <strong>FOODPREPX45</strong> krijg je 3x €15 korting op je eerste drie bestellingen. Totale besparing: <strong>€45</strong>. Exclusief voor nieuwe klanten.
+        Met de Foodprepper welkomstdeal krijg je 3x €15 korting op je eerste drie bestellingen. Totale besparing: <strong>€45</strong>. Exclusief voor nieuwe klanten — de korting wordt <strong>automatisch toegepast via onze link</strong>, je hoeft geen code in te voeren.
       </p>
 
-      {/* Code box */}
-      <div style={{ background: '#FFF7ED', border: '2px dashed #FED7AA', borderRadius: 16, padding: '28px 24px', textAlign: 'center', marginBottom: 24 }}>
-        <div style={{ fontSize: 12, fontWeight: 600, color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Jouw kortingscode</div>
-        <div style={{ fontFamily: 'monospace', fontSize: 'clamp(28px, 6vw, 42px)', fontWeight: 900, color: '#EA580C', letterSpacing: '0.05em', marginBottom: 16 }}>
-          FOODPREPX45
+      {/* Deal highlight */}
+      <div style={{ background: '#FFF7ED', border: '2px solid #FED7AA', borderRadius: 16, padding: '28px 24px', textAlign: 'center', marginBottom: 24 }}>
+        <div style={{ fontSize: 12, fontWeight: 600, color: '#EA580C', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Jouw voordeel</div>
+        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 6vw, 42px)', fontWeight: 900, color: '#EA580C', marginBottom: 8 }}>
+          €45 korting
         </div>
-        <button
-          onClick={handleCopy}
-          style={{
-            padding: '12px 32px', borderRadius: 10, cursor: 'pointer',
-            fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 14,
-            background: copied ? '#F0FDF4' : 'white',
-            color: copied ? '#16A34A' : '#EA580C',
-            border: copied ? '2px solid #86EFAC' : '2px solid #FED7AA',
-            transition: 'all 0.2s',
-          }}
-        >
-          {copied ? '✓ Gekopieerd!' : '📋 Kopieer code'}
-        </button>
+        <div style={{ fontSize: 14, color: '#4B5563' }}>3x €15 over je eerste 3 bestellingen — geen code nodig</div>
         <div style={{ fontSize: 12, color: '#9CA3AF', marginTop: 12 }}>
           Geldig voor nieuwe klanten. Controleer geldigheid op foodprepper.be.
         </div>
@@ -64,6 +42,7 @@ export default function FoodprepperKortingscode() {
       {/* CTA */}
       <Link
         href="/ga/foodprepper"
+        rel="noopener sponsored nofollow"
         style={{ display: 'block', background: '#EA580C', color: 'white', textAlign: 'center', padding: '16px', borderRadius: 12, fontWeight: 700, fontSize: 16, textDecoration: 'none', marginBottom: 32 }}
       >
         €15 korting op de eerste 3 bestellingen →
@@ -72,13 +51,13 @@ export default function FoodprepperKortingscode() {
       {/* Stappenplan */}
       <div style={{ marginBottom: 32 }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16, color: '#1C1C1C' }}>
-          Hoe gebruik je de kortingscode?
+          Hoe activeer je de korting?
         </h2>
         <ol style={{ paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
           {[
             'Ga naar foodprepper.be via de knop hierboven',
             'Stel je weekmenu samen',
-            'Vul FOODPREPX45 in bij het afrekenen',
+            'De korting staat al klaar — je hoeft geen code in te voeren',
             'Geniet van €15 korting — geldt voor je eerste 3 bestellingen',
           ].map((stap, i) => (
             <li key={i} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.6 }}>

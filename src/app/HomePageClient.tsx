@@ -1,5 +1,4 @@
 'use client';
-import { useState } from 'react';
 import Link from 'next/link';
 import { aanbieders, getAanbieder } from '@/lib/aanbieders';
 import GesponsordLabel from '@/components/GesponsordLabel';
@@ -18,31 +17,6 @@ const jsonLd = {
     url: `https://bestemaaltijdbox.be/aanbieder/${a.slug}`,
   })),
 };
-
-function CopyCodeButton({ code }: { code: string }) {
-  const [copied, setCopied] = useState(false);
-  const handleCopy = async () => {
-    try { await navigator.clipboard.writeText(code); } catch {}
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-  return (
-    <div style={{ background: 'var(--red-light)', border: '1.5px dashed var(--red-border)', borderRadius: 8, padding: '10px 12px', textAlign: 'center' }}>
-      <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 4 }}>Kortingscode</div>
-      <div style={{ fontFamily: 'monospace', fontSize: 18, fontWeight: 900, color: 'var(--red)', marginBottom: 8 }}>{code}</div>
-      <button onClick={handleCopy} style={{
-        width: '100%', padding: '8px', borderRadius: 6, cursor: 'pointer',
-        fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 12,
-        background: copied ? '#F0FDF4' : 'white',
-        color: copied ? '#16A34A' : 'var(--red)',
-        border: copied ? '1px solid #86EFAC' : '1px solid var(--red-border)',
-        transition: 'all 0.2s',
-      }}>
-        {copied ? '✓ Gekopieerd!' : '📋 Kopieer code'}
-      </button>
-    </div>
-  );
-}
 
 function ScoreBar({ label, value }: { label: string; value: number }) {
   return (
@@ -73,9 +47,9 @@ export default function HomePageClient({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
-          { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en een sterke welkomstdeal met tot €60 korting op je eerste 3 boxen. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting via code FOODBAGx60.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en een sterke welkomstdeal met tot €60 korting op je eerste 3 boxen. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting, automatisch toegepast via de link.' }},
           { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €5,99 bezorgkosten. Carrefour Simply You (v.a. €5,38, gratis bezorging) is de goedkoopste kookbox. HelloFresh kost v.a. €7,99 maar geeft nieuwe klanten tot €60 korting verdeeld over hun eerste 3 boxen.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh heeft een sterke welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen, automatisch toegepast via de link. Foodbag geeft €60 korting via code FOODBAGx60 — 3x €20 op je eerste 3 bestellingen, geldig t.e.m. 01/01/2027.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh heeft een sterke welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen, automatisch toegepast via de link. Foodbag geeft €60 korting — 3x €20 op je eerste 3 bestellingen, automatisch via de link, geldig t.e.m. 01/01/2027.' }},
           { '@type': 'Question', name: 'Kan ik een maaltijdbox uitproberen zonder abonnement?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Foodprepper, Foodbag en Foodmaker werken zonder verplicht abonnement — je bestelt wanneer het uitkomt. Foodprepper geeft daarbij €45 welkomstkorting over de eerste 3 bestellingen.' }},
         ]
       }) }} />
@@ -170,12 +144,11 @@ export default function HomePageClient({
                 </div>
 
                 <Link href={a.ctaUrl || `/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
-                  {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
+                  {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
                 </Link>
                 {a.ctaSubtekst && (
                   <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>{a.ctaSubtekst}</div>
                 )}
-                {a.kortingsCode?.code && <CopyCodeButton code={a.kortingsCode.code} />}
                 <Link href={`/aanbieder/${a.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)', marginTop: 8 }}>
                   Lees volledige review
                 </Link>
@@ -247,7 +220,7 @@ export default function HomePageClient({
                 Activeer 40% korting op je eerste box →
               </Link>
               <Link href="/kortingscode/factor" style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>
-                Bekijk de Factor-kortingscode
+                Bekijk de Factor-deal
               </Link>
               <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10, textAlign: 'center' }}>
                 Gesponsorde plaatsing. Onze scores en rangschikking staan hier los van en worden niet betaald.

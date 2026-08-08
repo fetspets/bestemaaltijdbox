@@ -33,7 +33,7 @@ export default function FoodprepperVsHellofresh() {
         name: 'Is Foodprepper goedkoper dan HelloFresh?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
+          text: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, automatisch toegepast via onze link, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
         },
       },
       {
@@ -119,7 +119,7 @@ export default function FoodprepperVsHellofresh() {
             Bekijk Foodprepper →
           </a>
           <span style={{ marginLeft: 16, fontSize: 13, color: 'var(--muted)' }}>
-            Code <strong>FOODPREPX45</strong> — 3× €15 korting voor nieuwe klanten
+            3× €15 korting voor nieuwe klanten — automatisch via onze link
           </span>
         </div>
 
@@ -237,7 +237,7 @@ export default function FoodprepperVsHellofresh() {
             HelloFresh begint vanaf <strong>€{hf.prijsPerPortie.toFixed(2)} per portie</strong> en heeft regelmatig welkomstkortingen voor nieuwe klanten. De prijs van Foodprepper varieert per maaltijdkeuze — check foodprepper.be voor het actuele aanbod, want tarieven kunnen wijzigen.
           </p>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563' }}>
-            Nieuwe Foodprepper-klanten kunnen via code <strong>FOODPREPX45</strong> drie keer €15 korting halen op hun eerste drie bestellingen. Dat maakt de startperiode extra voordelig om zelf te vergelijken.
+            Nieuwe Foodprepper-klanten kunnen drie keer €15 korting halen op hun eerste drie bestellingen, automatisch toegepast via onze link. Dat maakt de startperiode extra voordelig om zelf te vergelijken.
           </p>
           <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>
             Prijzen kunnen wijzigen. Controleer altijd de actuele tarieven op foodprepper.be en hellofresh.be.
@@ -252,10 +252,10 @@ export default function FoodprepperVsHellofresh() {
               🏷️ Welkomstkorting Foodprepper
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
-              Code: <span style={{ color: '#2D6A4F' }}>FOODPREPX45</span>
+              <span style={{ color: '#2D6A4F' }}>Tot €45 korting</span>
             </h3>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
-              <strong>3× €15 korting</strong> op eerste 3 bestellingen (tot €45). Voer code handmatig in bij het afrekenen.
+              <strong>3× €15 korting</strong> op eerste 3 bestellingen (tot €45). Automatisch toegepast via onze link — geen code nodig.
             </p>
             <a
               href={FOODPREPPER_KORTING}
@@ -374,7 +374,7 @@ export default function FoodprepperVsHellofresh() {
             {[
               {
                 q: 'Is Foodprepper goedkoper dan HelloFresh?',
-                a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
+                a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, automatisch toegepast via onze link, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
               },
               {
                 q: 'Levert HelloFresh ook in Vlaanderen?',

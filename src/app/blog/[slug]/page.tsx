@@ -99,7 +99,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 naam: 'Factor',
                 logo: '/logos/factor.svg',
                 deal: '40% op eerste box, 25% op volgende 5 boxen',
-                detail: 'Code BESTE40 · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
+                detail: 'Automatisch via onze link · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
                 cta: 'Activeer Factor deal',
                 href: '/ga/factor',
                 kleur: '#D97706',
@@ -109,7 +109,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 naam: 'Foodbag',
                 logo: '/logos/foodbag.png',
                 deal: '€60 korting op je eerste 3 bestellingen',
-                detail: 'Code FOODBAGx60 · 3x €20 · geldig t.e.m. 01/01/2027',
+                detail: 'Automatisch via onze link · 3x €20 · geldig t.e.m. 01/01/2027',
                 cta: 'Activeer €60 korting',
                 href: '/ga/foodbag',
                 kleur: '#1E40AF',
@@ -139,7 +139,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 naam: 'Foodprepper',
                 logo: '/logos/foodprepper.png',
                 deal: '3× €15 korting op je eerste 3 bestellingen',
-                detail: 'Code FOODPREPX45 · €45 totaal · klaar in 15 minuten',
+                detail: 'Automatisch via onze link · €45 totaal · klaar in 15 minuten',
                 cta: 'Activeer Foodprepper deal',
                 href: '/ga/foodprepper',
                 kleur: '#2D6A4F',
@@ -199,7 +199,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                       Op zoek naar iets snellers dan HelloFresh?
                     </p>
                     <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 16, marginTop: 0 }}>
-                      Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Gebruik code <strong>FOODPREPX45</strong> en krijg €15 korting op elk van je eerste 3 bestellingen.
+                      Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Krijg <strong>€15 korting</strong> op elk van je eerste 3 bestellingen, automatisch toegepast via onze link — geen code nodig.
                     </p>
                     <a
                       href="https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u="
