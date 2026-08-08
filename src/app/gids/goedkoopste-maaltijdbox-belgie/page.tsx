@@ -2,12 +2,12 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 8 aanbieders',
-  description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 8 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
+  title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 7 aanbieders',
+  description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 7 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
   alternates: { canonical: 'https://bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie' },
   openGraph: {
-    title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 8 aanbieders',
-    description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 8 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
+    title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 7 aanbieders',
+    description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 7 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
     url: 'https://bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie',
     type: 'article',
     locale: 'nl_BE',
@@ -81,7 +81,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               weekprijs = (porties × prijs/portie) + bezorgkost
             </div>
             <p style={{ margin: 0 }}>
-              We berekenden de weekprijs voor 2 personen met 3 maaltijden (= 6 porties) voor alle 8 aanbieders, inclusief bezorgkost en welkomstdeals. Zo zie je meteen wie écht het voordeligst is.
+              We berekenden de weekprijs voor 2 personen met 3 maaltijden (= 6 porties) voor alle 7 aanbieders, inclusief bezorgkost en welkomstdeals. Zo zie je meteen wie écht het voordeligst is.
             </p>
           </div>
         </div>
