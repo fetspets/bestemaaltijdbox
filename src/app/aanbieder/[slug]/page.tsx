@@ -151,7 +151,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <span>Door <strong style={{ color: 'var(--ink)' }}>Redactie BesteMaaltijdbox</strong></span>
               <span>·</span><span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>juni 2026</strong></span>
               <span>·</span><span>Gebaseerd op <strong style={{ color: 'var(--ink)' }}>gebruikersdata & onderzoek</strong></span>
-              <span>·</span><span>Ranking: <strong style={{ color: '#1B4332' }}>#{a.ranking} van {aanbieders.length}</strong></span>
+              {a.status === 'active'
+                ? <><span>·</span><span>Ranking: <strong style={{ color: '#1B4332' }}>#{a.ranking} van {actieveAanbieders.length}</strong></span></>
+                : <><span>·</span><span><strong style={{ color: '#B45309' }}>Stopgezet — niet meer beschikbaar</strong></span></>}
             </div>
           </div>
 
