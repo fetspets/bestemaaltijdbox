@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 7 aanbieders',
