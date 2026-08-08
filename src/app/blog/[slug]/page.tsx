@@ -199,7 +199,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                       Op zoek naar iets snellers dan HelloFresh?
                     </p>
                     <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 16, marginTop: 0 }}>
-                      Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Gebruik code <strong>FOODPREPX45</strong> en krijg €15 korting op elk van je eerste 3 bestellingen.
+                      Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Krijg <strong>€15 korting</strong> op elk van je eerste 3 bestellingen, automatisch toegepast via onze link — geen code nodig.
                     </p>
                     <a
                       href="https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u="
