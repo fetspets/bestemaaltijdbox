@@ -339,7 +339,7 @@ export default function HomePageClient({
                   { icon: '👫', title: 'Koppels', desc: 'HelloFresh en Foodbag zijn de populairste keuzes voor 2 personen.' },
                   { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin.' },
                   { icon: '🌱', title: 'Vegetariërs', desc: 'Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.' },
-                  { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (lage prijs/portie, geen abonnement) is een budgetvriendelijke optie.' },
+                  { icon: '💰', title: 'Budget', desc: 'Foodprepper (v.a. €4,75/portie, gratis bezorging, geen verplicht abonnement) is een budgetvriendelijke optie.' },
                 ].map(({ icon, title, desc }) => (
                   <div key={title} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                     <div style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>{icon}</div>
