@@ -281,7 +281,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               {
                 icon: '⏰',
                 titel: 'Opzegtermijn',
-                tekst: 'HelloFresh, Foodbag en Marley Spoon laten je opzeggen of pauzeren tot 5 dagen voor de volgende levering. Mis je die deadline, dan wordt de volgende box toch verstuurd. Carrefour Simply You heeft geen abonnement — geen opzegtermijn.',
+                tekst: 'HelloFresh, Foodbag en Marley Spoon laten je opzeggen of pauzeren tot 5 dagen voor de volgende levering. Mis je die deadline, dan wordt de volgende box toch verstuurd. Foodprepper en Foodmaker hebben geen verplicht abonnement — geen opzegtermijn.',
               },
             ].map(({ icon, titel, tekst }) => (
               <div key={titel} style={{ background: 'white', borderRadius: 12, padding: '16px 20px', border: '1px solid var(--rule)', display: 'flex', gap: 14 }}>
