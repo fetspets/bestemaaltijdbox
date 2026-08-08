@@ -150,7 +150,7 @@ const situaties = [
     situatie: 'Je wil eenmalig een maaltijdbox proberen',
     winnaar: 'Foodprepper',
     slug: 'foodprepper',
-    detail: 'Geen abonnement, geen opzegtermijn. Code FOODPREPX45 geeft tot €45 welkomstkorting. Ideaal om risicovrij te starten.',
+    detail: 'Geen abonnement, geen opzegtermijn. Tot €45 welkomstkorting, automatisch via onze link. Ideaal om risicovrij te starten.',
     color: '#F0FDF4',
     border: '#BBF7D0',
   },
