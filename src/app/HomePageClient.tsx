@@ -63,7 +63,7 @@ export default function HomePageClient({
           De beste maaltijdbox<br />van <span style={{ color: 'var(--mint)' }}>België</span> in 2026
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          We onderzochten alle 9 maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke scores op smaak, prijs, gemak en duurzaamheid — onze scores en rangschikking worden nooit betaald.
+          We onderzochten alle {aantalAanbieders} actieve maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke scores op smaak, prijs, gemak en duurzaamheid — onze scores en rangschikking worden nooit betaald.
         </p>
 
         {/* Stats */}
