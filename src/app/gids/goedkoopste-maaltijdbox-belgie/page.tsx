@@ -343,9 +343,9 @@ export default function GoedkoopsteMaaltijdboxPage() {
               },
               {
                 situatie: 'Goedkoopste als je geen abonnement wil',
-                winnaar: 'Carrefour Simply You',
-                slug: 'carrefour-simply-you',
-                detail: 'Geen abonnement, geen opzegtermijn. Bestellen wanneer het uitkomt. Foodprepper en Foodmaker werken ook zonder vast abonnement — Foodprepper biedt daarbij €45 welkomstkorting.',
+                winnaar: 'Foodprepper',
+                slug: 'foodprepper',
+                detail: 'v.a. €4,75/portie, gratis bezorging en geen verplicht abonnement (min. bestelbedrag €55). Bestellen wanneer het uitkomt, met €45 welkomstkorting. Foodmaker en Foodbag (los bestellen) werken ook zonder vast abonnement.',
                 color: '#F5F3FF',
                 border: '#DDD6FE',
               },
