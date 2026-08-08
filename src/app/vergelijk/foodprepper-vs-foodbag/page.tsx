@@ -259,10 +259,10 @@ export default function FoodprepperVsFoodbag() {
               🏷️ Welkomstkorting Foodbag
             </div>
             <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 900, marginBottom: 8 }}>
-              Code: <span style={{ color: '#1E40AF' }}>FOODBAGx60</span>
+              <span style={{ color: '#1E40AF' }}>Tot €60 korting</span>
             </h3>
             <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>
-              <strong>3× €20 korting</strong> op eerste 3 bestellingen (tot €60). Voer code handmatig in bij het afrekenen op foodbag.be.
+              <strong>3× €20 korting</strong> op eerste 3 bestellingen (tot €60). Automatisch toegepast via onze link — geen code nodig.
             </p>
             <a
               href={fb.affiliateUrl}
