@@ -32,9 +32,9 @@ export const gidsen: Gids[] = [
         reden: 'Voor nieuwe klanten is HelloFresh dankzij de welkomstkorting (verspreid over de eerste boxen) een van de meest betaalbare opties. Gratis bezorging, geen extra kosten. Na de welkomstperiode stijgt de standaardprijs — plan op voorhand of je wil verderzetten of pauzeren.',
       },
       {
-        slug: 'carrefour-simply-you',
+        slug: 'foodprepper',
         badge: '🛒 Voordeligst zonder abonnement',
-        reden: 'Carrefour Simply You is interessant als je eenmalig wil proberen zonder abonnementsrisico. Nieuwe klanten kunnen profiteren van een welkomstkorting op de eerste bestelling — controleer de actuele code op de site. Beperkingen: enkel maandaglevering en een smaller receptaanbod dan de grote spelers.',
+        reden: 'Foodprepper heeft de laagste prijs per portie met gratis bezorging (v.a. €4,75) en vraagt geen verplicht abonnement — je bestelt wanneer het uitkomt (min. bestelbedrag €55). Nieuwe klanten krijgen €45 welkomstkorting over de eerste 3 bestellingen. Beperking: enkel levering in Vlaanderen en Brussel.',
       },
       {
         slug: 'factor',
