@@ -62,7 +62,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         '@type': 'Offer',
         price: a.prijsPerPortie,
         priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
+        availability: a.status === 'active' ? 'https://schema.org/InStock' : 'https://schema.org/Discontinued',
         shippingDetails: {
           '@type': 'OfferShippingDetails',
           shippingRate: {
