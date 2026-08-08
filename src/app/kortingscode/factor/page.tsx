@@ -72,7 +72,7 @@ export default function FactorKortingscode() {
             'Geldig voor nieuwe Factor-klanten',
             '40% korting op je eerste box',
             '25% korting op elk van de volgende vijf boxen',
-            'Korting automatisch toegepast via de link — code BESTE40 ook handmatig mogelijk',
+            'Korting automatisch toegepast via de link — geen code nodig',
             'Flexibel abonnement — wekelijks aanpasbaar of te pauzeren',
             'Bezorging in heel België (bezorgkosten €6)',
           ].map((v, i) => (
