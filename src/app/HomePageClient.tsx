@@ -144,12 +144,11 @@ export default function HomePageClient({
                 </div>
 
                 <Link href={a.ctaUrl || `/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
-                  {a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
+                  {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
                 </Link>
                 {a.ctaSubtekst && (
                   <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>{a.ctaSubtekst}</div>
                 )}
-                {a.kortingsCode?.code && <CopyCodeButton code={a.kortingsCode.code} />}
                 <Link href={`/aanbieder/${a.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)', marginTop: 8 }}>
                   Lees volledige review
                 </Link>
