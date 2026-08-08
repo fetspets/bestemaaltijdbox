@@ -266,7 +266,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               {
                 icon: '📦',
                 titel: 'Bezorgkost',
-                tekst: 'Factor rekent €6 per levering — dat is €24/maand als je wekelijks bestelt. HelloFresh, Foodbag, Marley Spoon, Ekomenu en Carrefour Simply You leveren gratis. Vergelijk altijd de weekprijs inclusief bezorgkost, niet enkel de portieprijs.',
+                tekst: 'Factor rekent €5,99 per levering, Marley Spoon eveneens €5,99 — dat tikt aan bij wekelijks bestellen. HelloFresh, Foodbag, Ekomenu en Foodprepper leveren gratis. Vergelijk altijd de weekprijs inclusief bezorgkost, niet enkel de portieprijs.',
               },
               {
                 icon: '📏',
