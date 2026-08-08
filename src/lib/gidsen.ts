@@ -1,3 +1,5 @@
+import { LAATST_BIJGEWERKT } from './site';
+
 export interface GidsAanbeveling {
   slug: string;
   badge: string;
