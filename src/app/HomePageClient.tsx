@@ -248,9 +248,9 @@ export default function HomePageClient({
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
-            <div style={{ fontSize: 13, color: 'var(--muted)' }}>9 aanbieders</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)' }}>{aantalAanbieders} aanbieders</div>
           </div>
-          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt juni 2026.</p>
+          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt {LAATST_BIJGEWERKT}.</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 700 }}>
               <thead>
