@@ -521,6 +521,8 @@ export const aanbieders: Aanbieder[] = [
     seoTitle: 'Carrefour Simply You Box — stopgezet (2026) · bekijk alternatieven',
     seoDescription: 'De Carrefour Simply You Box bestaat niet meer. Bekijk de beste alternatieven zonder abonnement: Foodprepper, Foodmaker en Foodbag. Direct vergelijken en besparen.',
     ranking: 9,
+    status: 'discontinued',
+    statusNotitie: 'De Carrefour Simply You Box is stopgezet (2026). De website bestaat niet meer en het product is niet langer beschikbaar.',
     score: { totaal: 6.8, smaak: 6.5, prijsKwaliteit: 7.8, flexibiliteit: 6.0, duurzaamheid: 6.0, gemak: 7.5 },
     prijsPerPortie: 5.38,
     prijsPopulaireBox: 43.50,
