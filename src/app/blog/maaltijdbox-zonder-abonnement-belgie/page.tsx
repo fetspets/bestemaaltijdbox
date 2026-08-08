@@ -125,7 +125,7 @@ const aanbieders = [
     kortingsBedrag: '3× €15 korting op eerste 3 bestellingen',
     portie: 'vanaf €6,50/portie',
     badge: '💰 Goedkoopst zonder abo',
-    uitleg: 'Foodprepper is de snelste kookbox van België: alles staat in 15 minuten op tafel dankzij voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. Er is geen verplicht abonnement en geen opzegtermijn — je bestelt eenmalig, wekelijks of tweewekelijks zoals het jou past. Bijna alle ingrediënten komen van Belgische leveranciers. Bezorging is gratis in Vlaanderen en Brussel. Met code FOODPREPX45 bespaar je tot €45 op je eerste 3 bestellingen.',
+    uitleg: 'Foodprepper is de snelste kookbox van België: alles staat in 15 minuten op tafel dankzij voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. Er is geen verplicht abonnement en geen opzegtermijn — je bestelt eenmalig, wekelijks of tweewekelijks zoals het jou past. Bijna alle ingrediënten komen van Belgische leveranciers. Bezorging is gratis in Vlaanderen en Brussel. Via onze link bespaar je tot €45 op je eerste 3 bestellingen — automatisch toegepast, geen code nodig.',
     kenmerken: ['⚡ Klaar in 15 minuten', '🇧🇪 Belgische ingrediënten', '✓ Geen abo, vrij opzegbaar', '✓ Gratis bezorging'],
     ctaTekst: 'Bekijk Foodprepper →',
     ctaTekst2: 'Lees review',
