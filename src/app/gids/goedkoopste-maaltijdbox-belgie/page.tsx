@@ -26,7 +26,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Is Factor echt de goedkoopste maaltijdbox in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Factor heeft de laagste prijs per portie (€4,99), maar rekent €5,99 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je op €35,93/week — duurder dan Carrefour Simply You (€32,28) en vergelijkbaar met HelloFresh (€47,94). Factor levert ook kant-en-klare maaltijden, geen kookbox.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Factor heeft een van de laagste aankoopprijzen per portie (€4,99), maar rekent €5,99 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je op €35,93/week. Foodprepper ligt met v.a. €4,75/portie en gratis bezorging lager, al geldt daar een minimum bestelbedrag van €55. Factor levert kant-en-klare maaltijden, geen kookbox.' },
     },
     {
       '@type': 'Question',
