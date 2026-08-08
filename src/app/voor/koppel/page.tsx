@@ -75,7 +75,7 @@ const top3 = [
     accent: '#1E40AF',
     tagline: 'Lokale Belgische ingrediënten — top smaakscore',
     waarom: 'Koppels die bewust Belgisch willen eten kiezen Foodbag. De ingrediënten komen van lokale boerderijen — dat merk je aan de versheid. Met 5 kookstijlen (waaronder de Sana-lijn van Sandra Bekkari) vinden ook veeleisende eters hun gading.',
-    deal: '€60 korting — gebruik code FOODBAGx60 bij afrekenen (3× €20)',
+    deal: '€60 korting — automatisch via onze link, geen code nodig (3× €20)',
     dealColor: '#1E40AF',
   },
   {
