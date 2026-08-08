@@ -78,7 +78,7 @@ const vergelijkingsTabel = [
     abonnement: 'Los bestellen mogelijk',
     portie: '€9,50',
     bezorging: 'Gratis',
-    korting: '€60 (FOODBAGx60)',
+    korting: '€60 via onze link',
     badge: '🏆 Beste keuze',
   },
   {
