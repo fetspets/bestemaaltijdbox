@@ -109,7 +109,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 naam: 'Foodbag',
                 logo: '/logos/foodbag.png',
                 deal: '€60 korting op je eerste 3 bestellingen',
-                detail: 'Code FOODBAGx60 · 3x €20 · geldig t.e.m. 01/01/2027',
+                detail: 'Automatisch via onze link · 3x €20 · geldig t.e.m. 01/01/2027',
                 cta: 'Activeer €60 korting',
                 href: '/ga/foodbag',
                 kleur: '#1E40AF',
