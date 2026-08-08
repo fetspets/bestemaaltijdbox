@@ -139,7 +139,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 naam: 'Foodprepper',
                 logo: '/logos/foodprepper.png',
                 deal: '3× €15 korting op je eerste 3 bestellingen',
-                detail: 'Code FOODPREPX45 · €45 totaal · klaar in 15 minuten',
+                detail: 'Automatisch via onze link · €45 totaal · klaar in 15 minuten',
                 cta: 'Activeer Foodprepper deal',
                 href: '/ga/foodprepper',
                 kleur: '#2D6A4F',
