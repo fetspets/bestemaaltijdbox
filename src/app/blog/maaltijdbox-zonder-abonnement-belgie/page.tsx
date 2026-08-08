@@ -135,7 +135,6 @@ const aanbieders = [
     naam: 'Foodmaker',
     slug: 'foodmaker',
     ctaHref: '/aanbieder/foodmaker',
-    kortingsCode: null,
     kortingsBedrag: null,
     portie: '€10,00/portie',
     badge: '👨‍🍳 Artisanale Belgische kwaliteit',
