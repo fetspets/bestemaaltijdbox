@@ -434,7 +434,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <div style={{ textAlign: 'center', fontSize: 13, color: '#D97706', fontWeight: 600, marginBottom: 12 }}>+ €{a.bezorgkosten} bezorgkost per levering</div>
             ) : null}
 
-            {a.slug !== 'carrefour-simply-you' && (
+            {a.status === 'active' && (
               <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
                 {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
               </Link>
