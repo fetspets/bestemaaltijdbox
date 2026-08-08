@@ -128,6 +128,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Foodbag verdient zijn #2 positie als beste Belgische alternatief. De kwaliteit van de ingrediënten en de klantenservice zijn uitstekend. De hogere prijs is het voornaamste struikelblok.',
     },
     ranking: 2,
+    status: 'active',
     score: { totaal: 8.1, smaak: 8.6, prijsKwaliteit: 7.2, flexibiliteit: 8.0, duurzaamheid: 8.5, gemak: 8.0 },
     prijsPerPortie: 9.50,
     prijsPopulaireBox: 50.60,
