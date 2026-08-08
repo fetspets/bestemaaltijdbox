@@ -239,7 +239,7 @@ export default function VeganPage() {
               {[
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', vegan: '100% vegan & bio ✓', score: '7.6/10', korting: 'Welkomstaanbieding op site' },
                 { naam: 'HelloFresh', portie: 'vanaf €7,99', vegan: 'Vegetarische opties', score: '8.4/10', korting: 'tot €60 korting' },
-                { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 — code FOODBAGx60' },
+                { naam: 'Foodbag', portie: 'vanaf €9,50', vegan: '"Veggie" kookstijl', score: '8.1/10', korting: '€60 (automatisch)' },
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', vegan: 'Vegetarische opties', score: '7.9/10', korting: 'Tot 50% (automatisch)' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
