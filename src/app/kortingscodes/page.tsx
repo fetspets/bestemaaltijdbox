@@ -174,14 +174,14 @@ export default function KortingscodesPagina() {
             </div>
             <div style={{ flex: 1, minWidth: 220 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 4 }}>
-                Factor kortingscode: <span style={{ color: '#B45309' }}>{sponsoring.kortingsCode}</span>
+                Factor welkomstdeal
               </div>
               <div style={{ fontSize: 14, fontWeight: 700, color: '#B45309', marginBottom: 4 }}>40% korting op je eerste box + 25% op de volgende vijf boxen</div>
-              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>Kant-en-klare chef-maaltijden zonder koken. De korting wordt automatisch toegepast via de link — de code kan je ook handmatig invoeren.</div>
+              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>Kant-en-klare chef-maaltijden zonder koken. De korting wordt automatisch toegepast via de link — je hoeft geen code in te voeren.</div>
               <div style={{ fontSize: 11, color: 'var(--muted)' }}>Geldig voor nieuwe klanten · Geldig t.e.m. 27/10/2026</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 160 }}>
-              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'monospace', fontSize: 20, fontWeight: 900, color: '#B45309' }}>{sponsoring.kortingsCode}</div>
+              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>40% + 25%</div>
               <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>Activeer deal →</Link>
             </div>
           </div>
