@@ -119,7 +119,7 @@ export default function FoodprepperVsHellofresh() {
             Bekijk Foodprepper →
           </a>
           <span style={{ marginLeft: 16, fontSize: 13, color: 'var(--muted)' }}>
-            Code <strong>FOODPREPX45</strong> — 3× €15 korting voor nieuwe klanten
+            3× €15 korting voor nieuwe klanten — automatisch via onze link
           </span>
         </div>
 
