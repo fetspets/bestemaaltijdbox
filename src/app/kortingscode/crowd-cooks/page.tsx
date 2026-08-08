@@ -73,7 +73,7 @@ export default function CrowdCooksKortingscode() {
             '€20 korting op je eerste week',
             '€10 korting per week gedurende 4 weken',
             'Totale besparing tot €60',
-            'Code 60C invullen bij je eerste bestelling',
+            'Automatisch toegepast via onze link — geen code nodig',
             'Bezorging €4,90 op zondag of maandag in België',
           ].map((v, i) => (
             <li key={i} style={{ fontSize: 14, color: '#4B5563' }}>✓ {v}</li>
