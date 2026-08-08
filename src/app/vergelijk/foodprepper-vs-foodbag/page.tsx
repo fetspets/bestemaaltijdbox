@@ -220,7 +220,7 @@ export default function FoodprepperVsFoodbag() {
             Foodbag kost gemiddeld <strong>€{fb.prijsPerPortie.toFixed(2)} per portie</strong> — een van de hogere prijzen in de Belgische maaltijdboxmarkt, te verklaren door de lokale inkoop en eigen bezorgers. De prijs van Foodprepper varieert per maaltijdkeuze en wordt best gecheckt op foodprepper.be, want die evolueert.
           </p>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563' }}>
-            Voor nieuwe Foodprepper-klanten geldt welkomstkorting <strong>FOODPREPX45</strong>: 3× €15 korting op de eerste 3 bestellingen (totaal tot €45 voordeel). Dat maakt de instap extra aantrekkelijk om te vergelijken.
+            Voor nieuwe Foodprepper-klanten geldt een welkomstkorting: 3× €15 korting op de eerste 3 bestellingen (totaal tot €45 voordeel), automatisch toegepast via onze link. Dat maakt de instap extra aantrekkelijk om te vergelijken.
           </p>
           <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>
             Prijzen kunnen wijzigen. Controleer altijd de actuele tarieven op foodprepper.be en foodbag.be.
