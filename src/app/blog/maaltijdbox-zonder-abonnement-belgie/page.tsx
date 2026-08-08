@@ -112,7 +112,7 @@ const aanbieders = [
     kortingsBedrag: '3× €20 korting op eerste 3 bestellingen',
     portie: '€9,50/portie',
     badge: '🏆 Beste keuze zonder abo',
-    uitleg: 'Foodbag is de #2 maaltijdbox in België, eigendom van de Colruyt Group. Met 100% lokale Belgische ingrediënten, 5 kookstijlen (waaronder Sana van Sandra Bekkari) en gratis bezorging in heel België — inclusief Wallonië — is het de meest complete keuze als je af en toe los wil bestellen. Je hebt geen vast abonnement nodig: je plaatst een bestelling wanneer het jou uitkomt. Via code FOODBAGx60 krijg je 3× €20 korting op je eerste 3 bestellingen (in totaal €60 voordeel).',
+    uitleg: 'Foodbag is de #2 maaltijdbox in België, eigendom van de Colruyt Group. Met 100% lokale Belgische ingrediënten, 5 kookstijlen (waaronder Sana van Sandra Bekkari) en gratis bezorging in heel België — inclusief Wallonië — is het de meest complete keuze als je af en toe los wil bestellen. Je hebt geen vast abonnement nodig: je plaatst een bestelling wanneer het jou uitkomt. Via onze link krijg je 3× €20 korting op je eerste 3 bestellingen (in totaal €60 voordeel), automatisch toegepast — geen code nodig.',
     kenmerken: ['🇧🇪 Lokale Belgische ingrediënten', '✓ Gratis bezorging heel België', '✓ Los bestellen mogelijk', '5 kookstijlen incl. Sana'],
     ctaTekst: 'Bekijk Foodbag →',
     ctaTekst2: 'Lees review',
