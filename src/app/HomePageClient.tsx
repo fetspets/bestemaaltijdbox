@@ -261,7 +261,7 @@ export default function HomePageClient({
                 </tr>
               </thead>
               <tbody>
-                {aanbieders.map((a, i) => {
+                {actieveAanbieders.map((a, i) => {
                   const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`;
                   const bezorgGratis = a.gratisBezorging;
                   return (
