@@ -88,7 +88,7 @@ const vergelijkingsTabel = [
     abonnement: 'Geen abo vereist',
     portie: 'vanaf €6,50',
     bezorging: 'Gratis',
-    korting: '€45 (FOODPREPX45)',
+    korting: '€45 via onze link',
     badge: '💰 Goedkoopst',
   },
   {
