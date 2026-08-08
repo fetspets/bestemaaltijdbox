@@ -41,7 +41,7 @@ export default function FoodprepperVsFoodbag() {
         name: 'Welke is goedkoper: Foodprepper of Foodbag?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting op hun eerste drie bestellingen.',
+          text: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, automatisch toegepast via onze link.',
         },
       },
       {
@@ -363,7 +363,7 @@ export default function FoodprepperVsFoodbag() {
               },
               {
                 q: 'Welke is goedkoper: Foodprepper of Foodbag?',
-                a: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting op hun eerste drie bestellingen.',
+                a: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, automatisch toegepast via onze link.',
               },
               {
                 q: 'Kan ik beide uitproberen?',
