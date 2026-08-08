@@ -1,16 +1,6 @@
-'use client';
 import Link from 'next/link';
-import { useState } from 'react';
 
 export default function FoodprepperKortingscode() {
-  const [copied, setCopied] = useState(false);
-
-  async function handleCopy() {
-    try { await navigator.clipboard.writeText('FOODPREPX45'); } catch {}
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  }
-
   return (
     <div style={{ maxWidth: 680, margin: '0 auto', padding: '40px 20px 64px' }}>
 
