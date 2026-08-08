@@ -223,7 +223,7 @@ export default function KortingscodesPagina() {
             <Link href={(k as {ctaUrl?: string}).ctaUrl || `/ga/${k.slug}`} style={{ display: 'block', background: k.kleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
               Activeer deal →
             </Link>
-            {k.code && (
+            {heeftDetailpagina.has(k.slug) && (
               <Link href={`/kortingscode/${k.slug}`} style={{ display: 'block', textAlign: 'center', padding: '8px', borderRadius: 10, fontWeight: 600, fontSize: 12, textDecoration: 'none', color: k.kleur, border: `1.5px solid ${k.kleur}` }}>
                 Bekijk details →
               </Link>
