@@ -349,6 +349,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Factor vult een andere niche dan de klassieke maaltijdboxen. Wie wil eten zonder koken vindt hier een kwalitatief alternatief voor restaurant of take-away, aan een vergelijkbare prijs maar met meer nutritionele waarde.',
     },
     ranking: 5,
+    status: 'active',
     score: { totaal: 7.8, smaak: 7.8, prijsKwaliteit: 7.0, flexibiliteit: 8.0, duurzaamheid: 6.5, gemak: 9.5 },
     prijsPerPortie: 4.99,
     prijsPopulaireBox: 55.00,
