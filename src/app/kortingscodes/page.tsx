@@ -262,7 +262,7 @@ export default function KortingscodesPagina() {
           {[
             { num: '1', titel: 'Klik op "Activeer deal"', desc: 'Klik op de knop naast de maaltijdbox van je keuze. Je wordt doorgestuurd naar de website.' },
             { num: '2', titel: 'Kies je box', desc: 'Selecteer het aantal personen en maaltijden per week dat je wil ontvangen.' },
-            { num: '3', titel: 'Korting wordt toegepast', desc: 'Bij sommige aanbieders (HelloFresh, Marley Spoon, Factor) is geen code nodig — de korting wordt automatisch toegepast via de link. Bij Foodbag en Foodprepper voer je de code handmatig in bij het afrekenen.' },
+            { num: '3', titel: 'Korting wordt toegepast', desc: 'Je hebt geen code nodig — de korting wordt bij alle aanbieders automatisch toegepast via onze link. Rond gewoon je bestelling af en je voordeel staat al verrekend.' },
             { num: '4', titel: 'Direct opzegbaar', desc: 'Je zit nergens aan vast. De meeste aanbieders laat je wekelijks opzeggen of pauzeren.' },
           ].map(({ num, titel, desc }) => (
             <div key={num} style={{ display: 'flex', gap: 12 }}>
