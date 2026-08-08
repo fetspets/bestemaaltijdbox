@@ -33,7 +33,7 @@ export default function FoodprepperVsHellofresh() {
         name: 'Is Foodprepper goedkoper dan HelloFresh?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
+          text: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, automatisch toegepast via onze link, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
         },
       },
       {
@@ -374,7 +374,7 @@ export default function FoodprepperVsHellofresh() {
             {[
               {
                 q: 'Is Foodprepper goedkoper dan HelloFresh?',
-                a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen via code FOODPREPX45 drie keer €15 korting, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
+                a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, automatisch toegepast via onze link, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.',
               },
               {
                 q: 'Levert HelloFresh ook in Vlaanderen?',
