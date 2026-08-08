@@ -361,7 +361,7 @@ export default function HomePageClient({
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14 }}>
             {[
-              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is een budgetvriendelijke optie met een lage prijs per portie, zonder verplicht abonnement en met bezorging in heel België. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' },
+              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Foodprepper is een budgetvriendelijke optie met een lage prijs per portie (v.a. €4,75), gratis bezorging en zonder verplicht abonnement. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' },
               { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Je kan je abonnement meestal flexibel pauzeren of stopzetten, vaak tot enkele dagen voor de volgende levering. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement. De exacte voorwaarden verschillen per aanbieder.' },
               { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
               { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Maaltijdboxen kosten doorgaans meer per portie dan zelf boodschappen doen, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd.' },
