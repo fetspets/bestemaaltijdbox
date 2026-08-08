@@ -163,7 +163,7 @@ export default function KortingscodesPagina() {
         </p>
       </div>
 
-      {/* Uitgelicht — gesponsorde BESTE40 (server-gated op de sponsoringsperiode, verdwijnt na 27/10/2026) */}
+      {/* Uitgelicht — gesponsorde Factor-plaatsing (server-gated op de sponsoringsperiode, verdwijnt na 27/10/2026) */}
       {sponsoring?.partnerSlug === 'factor' && factor && (
         <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 70%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '22px 24px', marginBottom: 36, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
