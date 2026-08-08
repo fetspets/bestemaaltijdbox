@@ -370,7 +370,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           )}
 
           {/* Alternatieven voor stopgezette aanbieders */}
-          {a.slug === 'carrefour-simply-you' && (
+          {a.status !== 'active' && (
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>
                 Op zoek naar een maaltijdbox zonder abonnement?
