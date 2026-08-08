@@ -237,7 +237,7 @@ export default function FoodprepperVsHellofresh() {
             HelloFresh begint vanaf <strong>€{hf.prijsPerPortie.toFixed(2)} per portie</strong> en heeft regelmatig welkomstkortingen voor nieuwe klanten. De prijs van Foodprepper varieert per maaltijdkeuze — check foodprepper.be voor het actuele aanbod, want tarieven kunnen wijzigen.
           </p>
           <p style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563' }}>
-            Nieuwe Foodprepper-klanten kunnen via code <strong>FOODPREPX45</strong> drie keer €15 korting halen op hun eerste drie bestellingen. Dat maakt de startperiode extra voordelig om zelf te vergelijken.
+            Nieuwe Foodprepper-klanten kunnen drie keer €15 korting halen op hun eerste drie bestellingen, automatisch toegepast via onze link. Dat maakt de startperiode extra voordelig om zelf te vergelijken.
           </p>
           <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>
             Prijzen kunnen wijzigen. Controleer altijd de actuele tarieven op foodprepper.be en hellofresh.be.
