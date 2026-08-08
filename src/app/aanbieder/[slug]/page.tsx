@@ -230,7 +230,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 {a.ctaTekst} →
               </Link>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>
-                {a.kortingsCode?.code ? `Voer code ${a.kortingsCode.code} in bij het afrekenen.` : 'Korting wordt automatisch toegepast — geen code nodig.'}
+                Korting wordt automatisch toegepast via onze link — geen code nodig.
               </div>
             </div>
           )}
