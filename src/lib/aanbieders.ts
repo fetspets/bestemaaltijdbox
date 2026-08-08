@@ -197,6 +197,7 @@ export const aanbieders: Aanbieder[] = [
       ],
     },
     ranking: 3,
+    status: 'active',
     score: { totaal: 7.9, smaak: 8.6, prijsKwaliteit: 7.2, flexibiliteit: 8.0, duurzaamheid: 7.5, gemak: 7.2 },
     prijsPerPortie: 8.67,
     prijsPopulaireBox: 51.99,
