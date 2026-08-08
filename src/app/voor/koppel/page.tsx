@@ -163,7 +163,7 @@ export default function KoppelPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
           {[
             { icon: '💶', titel: 'Prijs voor 2', tekst: 'Reken met 6 porties per week (2 personen × 3 maaltijden). Dat loopt snel op: van €33 bij HelloFresh tot €57 bij Foodbag.' },
-            { icon: '📦', titel: 'Minimumafname', tekst: 'De meeste aanbieders vereisen minimum 2 maaltijden per week. Foodbag en Carrefour zijn flexibeler — geen verplicht abonnement.' },
+            { icon: '📦', titel: 'Minimumafname', tekst: 'De meeste aanbieders vereisen minimum 2 maaltijden per week. Foodbag en Foodprepper zijn flexibeler — geen verplicht abonnement.' },
             { icon: '🍽️', titel: 'Receptvariatie', tekst: 'Koppels vervelen sneller dan singles. Kies een aanbieder met 40+ recepten per week zodat je nooit twee keer hetzelfde eet.' },
             { icon: '🔀', titel: 'Flexibiliteit', tekst: 'Kunnen jullie makkelijk pauzeren of een week overslaan? HelloFresh, Foodbag en Marley Spoon laten je tot 5 dagen voor levering aanpassen.' },
           ].map(({ icon, titel, tekst }) => (
