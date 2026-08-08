@@ -44,7 +44,6 @@ const kortingen = [
     kleur: '#1E40AF',
     beschrijving: 'Krijg 3x €20 korting verspreid over je eerste 3 Foodbag-bestellingen. Totale besparing: €60. De korting wordt automatisch toegepast via onze link — geen code nodig.',
     voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · Geldig t.e.m. 01/01/2027 · 3x €20 op de eerste 3 bestellingen',
-    ctaUrl: '/kortingscode/foodbag',
     actief: true,
   },
   {
