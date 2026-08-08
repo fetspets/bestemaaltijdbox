@@ -191,6 +191,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 );
               })}
             </div>
+            <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted)', lineHeight: 1.5 }}>
+              De totaalscore is ons redactionele eindoordeel — geen rekenkundig gemiddelde van de subscores hierboven.
+            </div>
           </div>
 
           {/* Specs grid */}
