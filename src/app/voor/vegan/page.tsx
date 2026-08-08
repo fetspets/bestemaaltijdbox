@@ -91,7 +91,7 @@ const top4 = [
     tagline: '"Veggie" als één van 5 kookstijlen — niet 100% vegan',
     waarom: 'Foodbag biedt 5 kookstijlen waaronder een "veggie"-lijn. Die lijn bevat plantaardige en vegetarische maaltijden, maar Foodbag is geen vegan box — de andere kookstijlen bevatten vlees en vis. Als je bewust Belgisch én veggie wil eten, is de Foodbag veggie-lijn een optie. Wel de duurste aanbieder in dit overzicht.',
     isVegan100: false,
-    deal: '€60 korting — gebruik code FOODBAGx60 bij afrekenen (3× €20)',
+    deal: '€60 korting — automatisch via onze link, geen code nodig (3× €20)',
     dealColor: '#854D0E',
   },
   {
