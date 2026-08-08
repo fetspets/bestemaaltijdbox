@@ -441,6 +441,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Foodmaker is een sterke kant-en-klare keuze voor wie van kwaliteit en Belgische smaak houdt. De samenwerking met Jeroen Meus geeft het een herkenbaar en vertrouwd karakter.',
     },
     ranking: 7,
+    status: 'active',
     score: { totaal: 7.7, smaak: 8.4, prijsKwaliteit: 6.5, flexibiliteit: 7.5, duurzaamheid: 7.8, gemak: 9.5 },
     prijsPerPortie: 10.00,
     prijsPopulaireBox: 40.00,
