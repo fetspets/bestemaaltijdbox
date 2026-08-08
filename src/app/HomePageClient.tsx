@@ -19,31 +19,6 @@ const jsonLd = {
   })),
 };
 
-function CopyCodeButton({ code }: { code: string }) {
-  const [copied, setCopied] = useState(false);
-  const handleCopy = async () => {
-    try { await navigator.clipboard.writeText(code); } catch {}
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-  return (
-    <div style={{ background: 'var(--red-light)', border: '1.5px dashed var(--red-border)', borderRadius: 8, padding: '10px 12px', textAlign: 'center' }}>
-      <div style={{ fontSize: 11, color: 'var(--muted)', marginBottom: 4 }}>Kortingscode</div>
-      <div style={{ fontFamily: 'monospace', fontSize: 18, fontWeight: 900, color: 'var(--red)', marginBottom: 8 }}>{code}</div>
-      <button onClick={handleCopy} style={{
-        width: '100%', padding: '8px', borderRadius: 6, cursor: 'pointer',
-        fontFamily: 'DM Sans, sans-serif', fontWeight: 700, fontSize: 12,
-        background: copied ? '#F0FDF4' : 'white',
-        color: copied ? '#16A34A' : 'var(--red)',
-        border: copied ? '1px solid #86EFAC' : '1px solid var(--red-border)',
-        transition: 'all 0.2s',
-      }}>
-        {copied ? '✓ Gekopieerd!' : '📋 Kopieer code'}
-      </button>
-    </div>
-  );
-}
-
 function ScoreBar({ label, value }: { label: string; value: number }) {
   return (
     <div>
