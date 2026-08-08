@@ -46,7 +46,7 @@ export const gidsen: Gids[] = [
     uitlegBlokken: [
       {
         titel: 'Goedkoopste maaltijdbox voor een koppel',
-        tekst: 'HelloFresh is de goedkoopste kookbox voor 2 personen: gratis bezorging, groot receptaanbod en regelmatige welkomstvoordelen voor nieuwe klanten. Na de welkomstperiode stijgt de standaardprijs — plan op voorhand om te pauzeren of te stoppen als je de kost wil beheersen. Carrefour Simply You is een goed alternatief als je zonder abonnementsrisico wil proberen.',
+        tekst: 'HelloFresh is de goedkoopste kookbox voor 2 personen: gratis bezorging, groot receptaanbod en regelmatige welkomstvoordelen voor nieuwe klanten. Na de welkomstperiode stijgt de standaardprijs — plan op voorhand om te pauzeren of te stoppen als je de kost wil beheersen. Foodprepper is een goed alternatief als je zonder verplicht abonnement wil proberen.',
       },
       {
         titel: 'Goedkoopste maaltijdbox voor een gezin',
