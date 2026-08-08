@@ -125,7 +125,7 @@ const situaties: Record<string, {
     uitlegParagraphs: [
       'Als alleenstaande stoot je snel op een probleem: de meeste maaltijdboxen leveren minimum voor 2 personen. Je eindigt dan met te veel eten of gooit porties weg — wat het voordeel van een maaltijdbox teniet doet.',
       'HelloFresh is de enige klassieke kookbox die levert voor 1 persoon. Je kiest elke week hoeveel maaltijden je wil en welke recepten, uit een aanbod van 40+. Praktisch en flexibel. Lees onze <a href="/aanbieder/hellofresh" style="color:#1B4332;font-weight:600;text-decoration:underline">volledige HelloFresh review</a> voor alle details.',
-      'Factor is een interessant alternatief als je geen zin hebt om te koken: kant-en-klare maaltijden die je enkel opwarmt, besteld per stuk voor 1 persoon. Geen kookbeleving, maar wel maximaal gemak. Carrefour Simply You laat je eenmalig bestellen zonder abonnement — ideaal als je het concept wil uitproberen zonder engagement. Bekijk onze <a href="/voor/singles" style="color:#1B4332;font-weight:600;text-decoration:underline">meer info over maaltijdboxen voor singles</a>.',
+      'Factor is een interessant alternatief als je geen zin hebt om te koken: kant-en-klare maaltijden die je enkel opwarmt, besteld per stuk voor 1 persoon. Geen kookbeleving, maar wel maximaal gemak. Foodprepper laat je bestellen zonder verplicht abonnement — ideaal als je het concept wil uitproberen zonder engagement. Bekijk onze <a href="/voor/singles" style="color:#1B4332;font-weight:600;text-decoration:underline">meer info over maaltijdboxen voor singles</a>.',
     ],
     icon: '🧑',
     seoTitel: 'Beste maaltijdbox voor 1 persoon in België 2026 — singles-test',
