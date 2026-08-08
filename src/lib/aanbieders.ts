@@ -290,6 +290,7 @@ export const aanbieders: Aanbieder[] = [
       ],
     },
     ranking: 4,
+    status: 'active',
     score: { totaal: 7.8, smaak: 7.6, prijsKwaliteit: 7.0, flexibiliteit: 8.5, duurzaamheid: 8.0, gemak: 9.5 },
     prijsPerPortie: 7.49,
     prijsPerPortieLabel: 'vanaf €6,50',
