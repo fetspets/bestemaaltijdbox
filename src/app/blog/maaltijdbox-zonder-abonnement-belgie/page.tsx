@@ -343,16 +343,15 @@ export default function MaaltijdboxZonderAbonnementPage() {
                 </div>
               </div>
               <p style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563', marginBottom: 14 }}>{uitleg}</p>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: kortingsCode ? 12 : 0 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, marginBottom: kortingsBedrag ? 12 : 0 }}>
                 {kenmerken.map(k => (
                   <span key={k} style={{ fontSize: 12, background: '#F9FAFB', border: '1px solid var(--rule)', borderRadius: 100, padding: '4px 10px', color: '#374151' }}>{k}</span>
                 ))}
               </div>
-              {kortingsCode && kortingsBedrag && (
-                <div style={{ background: '#FFF5F4', border: '1.5px dashed #FED7D7', borderRadius: 8, padding: '10px 14px', marginTop: 4 }}>
-                  <span style={{ fontSize: 12, color: 'var(--muted)' }}>Kortingscode: </span>
-                  <span style={{ fontFamily: 'monospace', fontSize: 15, fontWeight: 900, color: '#C0392B' }}>{kortingsCode}</span>
-                  <span style={{ fontSize: 12, color: 'var(--muted)' }}> — {kortingsBedrag}</span>
+              {kortingsBedrag && (
+                <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 8, padding: '10px 14px', marginTop: 4 }}>
+                  <span style={{ fontSize: 13, fontWeight: 700, color: '#166534' }}>{kortingsBedrag}</span>
+                  <span style={{ fontSize: 12, color: 'var(--muted)' }}> — automatisch via onze link, geen code nodig</span>
                 </div>
               )}
             </div>
