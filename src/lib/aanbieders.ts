@@ -547,15 +547,22 @@ export const aanbieders: Aanbieder[] = [
   },
 ];
 
+/** Enkel de actieve aanbieders — gebruik dit voor ranglijsten, tabellen en tellingen. */
+export const actieveAanbieders: Aanbieder[] = aanbieders.filter(a => a.status === 'active');
+
 export function getAanbieder(slug: string): Aanbieder | undefined {
   return aanbieders.find(a => a.slug === slug);
 }
 
+export function getActieveAanbieders(): Aanbieder[] {
+  return actieveAanbieders;
+}
+
 export function getTopAanbieders(n: number): Aanbieder[] {
-  return aanbieders.slice(0, n);
+  return actieveAanbieders.slice(0, n);
 }
 
 export function getAanbiedersByFilter(filter: string): Aanbieder[] {
-  if (filter === 'alle') return aanbieders;
-  return aanbieders.filter(a => a.geschiktVoor.includes(filter));
+  if (filter === 'alle') return actieveAanbieders;
+  return actieveAanbieders.filter(a => a.geschiktVoor.includes(filter));
 }
