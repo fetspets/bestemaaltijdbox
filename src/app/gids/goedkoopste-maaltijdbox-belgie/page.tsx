@@ -96,9 +96,9 @@ export default function GoedkoopsteMaaltijdboxPage() {
               <div style={{ fontSize: 14, fontWeight: 600, color: '#1B4332', marginBottom: 4 }}>€47,94/week · gratis bezorging</div>
               <div style={{ fontSize: 13, color: '#374151', marginBottom: 12 }}>Tot €60 korting op je eerste 3 boxen</div>
               <div style={{ fontSize: 12, color: '#6B7280' }}>
-                Wil je absoluut de laagste prijs zonder abonnement? →{' '}
-                <Link href="/aanbieder/carrefour-simply-you" style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
-                  Carrefour Simply You: €32,28/week
+                Wil je absoluut de laagste prijs per portie zonder verplicht abonnement? →{' '}
+                <Link href="/aanbieder/foodprepper" style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
+                  Foodprepper: v.a. €4,75/portie
                 </Link>
               </div>
             </div>
