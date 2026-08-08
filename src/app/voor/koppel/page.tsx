@@ -31,7 +31,7 @@ const jsonLd = {
     {
       '@type': 'Question',
       name: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Foodprepper hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
     },
     {
       '@type': 'Question',
@@ -349,7 +349,7 @@ export default function KoppelPage() {
           {[
             { q: 'Hoeveel maaltijden per week is realistisch als koppel?', a: 'De meeste koppels starten met 3 maaltijden per week — dat dekt de drukke doordeweekse avonden en laat ruimte voor een restaurantje of zelf iets klaarmaken in het weekend. Je kan altijd aanpassen of een week pauzeren.' },
             { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh met tot €60 welkomstkorting is de goedkoopste optie voor koppels in de eerste weken. Foodprepper (€45 korting, geen abonnement) is een goede keuze als je flexibel wil blijven.' },
-            { q: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
+            { q: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Foodprepper hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
             { q: 'Is een maaltijdbox duurder dan gewone boodschappen?', a: 'Per portie betaal je iets meer, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Koppels die regelmatig restjes weggooien of impulsaankopen doen, betalen in de praktijk niet veel meer.' },
           ].map(({ q, a }) => (
             <div key={q} style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)' }}>
