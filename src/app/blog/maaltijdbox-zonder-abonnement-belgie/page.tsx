@@ -109,7 +109,6 @@ const aanbieders = [
     naam: 'Foodbag',
     slug: 'foodbag',
     ctaHref: '/ga/foodbag',
-    kortingsCode: 'FOODBAGx60',
     kortingsBedrag: '3× €20 korting op eerste 3 bestellingen',
     portie: '€9,50/portie',
     badge: '🏆 Beste keuze zonder abo',
