@@ -480,6 +480,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Ekomenu is een sterke keuze als duurzaamheid en gezondheid je prioriteiten zijn. De biologische kwaliteit en de brede keuze aan dieetopties zijn weinig te vinden bij andere Belgische maaltijdboxen.',
     },
     ranking: 8,
+    status: 'active',
     score: { totaal: 7.6, smaak: 7.5, prijsKwaliteit: 6.8, flexibiliteit: 7.5, duurzaamheid: 9.5, gemak: 7.0 },
     prijsPerPortie: 6.18,
     prijsPopulaireBox: 44.91,
