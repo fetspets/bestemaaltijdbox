@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getAanbieder, aanbieders, actieveAanbieders } from '@/lib/aanbieders';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export async function generateStaticParams() {
   return aanbieders.map(a => ({ slug: a.slug }));
