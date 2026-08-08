@@ -75,7 +75,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
           </h1>
           <div style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.8, maxWidth: 680 }}>
             <p style={{ margin: '0 0 12px' }}>
-              De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lijkt goedkoopst op €4,99/portie — maar als je de €5,99 bezorgkost per week optelt, betaal je meer dan bij Carrefour Simply You (€32,28, gratis bezorging). De echte formule:
+              De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lijkt goedkoopst op €4,99/portie — maar als je de €5,99 bezorgkost per week optelt, betaal je meer dan bij Foodprepper (v.a. €4,75/portie, gratis bezorging). De echte formule:
             </p>
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 10, padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#1B4332', fontWeight: 600, marginBottom: 12 }}>
               weekprijs = (porties × prijs/portie) + bezorgkost
