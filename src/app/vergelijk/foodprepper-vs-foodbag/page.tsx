@@ -49,7 +49,7 @@ export default function FoodprepperVsFoodbag() {
         name: 'Kan ik beide uitproberen?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting FOODPREPX45 (3× €15 op je eerste 3 bestellingen). Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
+          text: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting van 3× €15 op je eerste 3 bestellingen, automatisch via onze link. Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
         },
       },
       {
@@ -367,7 +367,7 @@ export default function FoodprepperVsFoodbag() {
               },
               {
                 q: 'Kan ik beide uitproberen?',
-                a: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting FOODPREPX45 (3× €15 op je eerste 3 bestellingen). Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
+                a: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting van 3× €15 op je eerste 3 bestellingen, automatisch via onze link. Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.',
               },
               {
                 q: 'Welke is het beste voor een gezin met kinderen?',
