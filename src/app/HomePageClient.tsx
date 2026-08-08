@@ -1,16 +1,19 @@
 'use client';
 import Link from 'next/link';
-import { aanbieders, getAanbieder } from '@/lib/aanbieders';
+import { actieveAanbieders, getAanbieder } from '@/lib/aanbieders';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import Quiz from '@/components/Quiz';
+
+const aantalAanbieders = actieveAanbieders.length;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Beste Maaltijdbox België 2026',
   description: 'Onafhankelijke vergelijking van maaltijdboxen in België',
-  numberOfItems: 9,
-  itemListElement: aanbieders.map((a, i) => ({
+  numberOfItems: aantalAanbieders,
+  itemListElement: actieveAanbieders.map((a, i) => ({
     '@type': 'ListItem',
     position: i + 1,
     name: a.naam,
