@@ -220,7 +220,7 @@ export default function HomePageClient({
                 Activeer 40% korting op je eerste box →
               </Link>
               <Link href="/kortingscode/factor" style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>
-                Bekijk de Factor-kortingscode
+                Bekijk de Factor-deal
               </Link>
               <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10, textAlign: 'center' }}>
                 Gesponsorde plaatsing. Onze scores en rangschikking staan hier los van en worden niet betaald.
