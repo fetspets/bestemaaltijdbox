@@ -326,7 +326,7 @@ export default function KoppelPage() {
               scenario: 'Jullie kiezen bewust Belgisch',
               aanbeveling: 'Foodbag',
               slug: 'foodbag',
-              uitleg: 'Foodbag werkt uitsluitend met Belgische en lokale ingrediënten van boerderijen in de buurt. Met de FOODBAGx60 code (3× €20) is de instapprijs ook voor budgetbewuste koppels draaglijk.',
+              uitleg: 'Foodbag werkt uitsluitend met Belgische en lokale ingrediënten van boerderijen in de buurt. Met €60 welkomstkorting (3× €20), automatisch via onze link, is de instapprijs ook voor budgetbewuste koppels draaglijk.',
               color: '#DBEAFE',
               border: '#BFDBFE',
             },
