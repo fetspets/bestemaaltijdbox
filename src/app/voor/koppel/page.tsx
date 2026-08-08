@@ -116,12 +116,12 @@ const overige3 = [
     omschrijving: 'De enige 100% biologische maaltijdbox in België — ideaal voor koppels met een milieubewuste leefstijl. Enkel bezorging in Vlaanderen en Brussel, geen actieve kortingscode.',
   },
   {
-    slug: 'carrefour-simply-you',
-    naam: 'Carrefour Simply You',
-    score: 6.8,
-    prijsPortie: 'vanaf €5,38',
-    weekprijs: '€32,28',
-    omschrijving: 'Geen abonnement nodig — je bestelt wanneer het uitkomt. Carrefour Simply You is een flexibele optie voor koppels die niet gebonden willen zijn.',
+    slug: 'foodprepper',
+    naam: 'Foodprepper',
+    score: 7.8,
+    prijsPortie: 'vanaf €4,75',
+    weekprijs: '€28,50 (min. bestelbedrag €55)',
+    omschrijving: 'De snelste optie — verse maaltijd in 15 minuten dankzij voorbereide ingrediënten. Geen verplicht abonnement en de laagste prijs per portie met gratis bezorging. Enkel levering in Vlaanderen en Brussel.',
   },
 ];
 
