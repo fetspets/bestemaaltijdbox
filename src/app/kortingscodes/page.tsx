@@ -3,7 +3,7 @@ import GesponsordLabel from '@/components/GesponsordLabel';
 import { getAanbieder } from '@/lib/aanbieders';
 import { getActieveSponsoring } from '@/lib/sponsoring';
 
-// ISR: het gesponsorde, uitgelichte BESTE40-blok verdwijnt vanzelf na de
+// ISR: het gesponsorde, uitgelichte Factor-blok verdwijnt vanzelf na de
 // sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
 export const revalidate = 3600;
 
