@@ -262,7 +262,7 @@ export const aanbieders: Aanbieder[] = [
       faq: [
         {
           vraag: 'Is Foodprepper duur?',
-          antwoord: 'Foodprepper is niet de goedkoopste maaltijdbox in België, maar ook niet de duurste. De prijs varieert afhankelijk van je keuze aan maaltijden en hoeveel personen je kookt. Voor nieuwe klanten geldt de welkomstkorting FOODPREPX45: 3× €15 korting op de eerste 3 bestellingen (tot €45 voordeel). Actuele prijzen vind je op foodprepper.be — prijzen kunnen wijzigen.',
+          antwoord: 'Foodprepper is niet de goedkoopste maaltijdbox in België, maar ook niet de duurste. De prijs varieert afhankelijk van je keuze aan maaltijden en hoeveel personen je kookt. Voor nieuwe klanten geldt een welkomstkorting: 3× €15 korting op de eerste 3 bestellingen (tot €45 voordeel), automatisch toegepast via onze link — geen code nodig. Actuele prijzen vind je op foodprepper.be — prijzen kunnen wijzigen.',
         },
         {
           vraag: 'Kan ik bestellen zonder abonnement?',
