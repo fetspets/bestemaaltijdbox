@@ -166,7 +166,7 @@ const situaties = [
     situatie: 'Belgische kwaliteit zonder vaste verplichting',
     winnaar: 'Foodbag',
     slug: 'foodbag',
-    detail: 'Lokale ingrediënten, 5 kookstijlen, gratis bezorging in heel België. Los bestellen mogelijk zonder abonnement. Code FOODBAGx60: €60 korting over eerste 3 bestellingen.',
+    detail: 'Lokale ingrediënten, 5 kookstijlen, gratis bezorging in heel België. Los bestellen mogelijk zonder abonnement. €60 korting over eerste 3 bestellingen, automatisch via onze link.',
     color: '#DBEAFE',
     border: '#93C5FD',
   },
