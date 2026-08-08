@@ -20,6 +20,9 @@ export const metadata = {
   },
 };
 
+// Slugs met een eigen /kortingscode/<slug>-detailpagina (voor de "Bekijk details"-link).
+const heeftDetailpagina = new Set(['hellofresh', 'foodbag', 'foodprepper', 'factor', 'crowd-cooks']);
+
 const kortingen = [
   {
     slug: 'hellofresh',
