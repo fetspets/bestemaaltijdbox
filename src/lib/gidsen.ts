@@ -54,7 +54,7 @@ export const gidsen: Gids[] = [
       },
       {
         titel: 'Goedkoopste maaltijdbox voor 1 persoon',
-        tekst: 'HelloFresh is de enige grote kookbox die levert voor 1 persoon, met gratis bezorging. Factor (kant-en-klare maaltijden) heeft een lagere prijs per portie maar rekent bezorgkosten aan — tel die altijd mee in je vergelijking. Carrefour Simply You laat je eenmalig bestellen zonder abonnement, ideaal om het concept te testen zonder financieel risico.',
+        tekst: 'HelloFresh is de enige grote kookbox die levert voor 1 persoon, met gratis bezorging. Factor (kant-en-klare maaltijden) heeft een lagere prijs per portie maar rekent bezorgkosten aan — tel die altijd mee in je vergelijking. Foodprepper laat je bestellen zonder verplicht abonnement, ideaal om het concept te testen zonder financieel risico.',
       },
     ],
     faq: [
