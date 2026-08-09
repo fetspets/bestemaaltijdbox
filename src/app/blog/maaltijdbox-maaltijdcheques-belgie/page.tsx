@@ -77,7 +77,7 @@ const articleJsonLd = {
   headline: 'Maaltijdbox betalen met maaltijdcheques in België (2026) — wie accepteert ze?',
   description: 'Welke maaltijdbox accepteert maaltijdcheques van Monizze, Pluxee of Edenred? Foodbag, HelloFresh en Foodprepper vergeleken.',
   datePublished: '2026-06-02',
-  dateModified: '2026-06-02',
+  dateModified: '2026-08-09',
   author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be' },
   publisher: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: 'https://bestemaaltijdbox.be' },
   url: 'https://bestemaaltijdbox.be/blog/maaltijdbox-maaltijdcheques-belgie',
