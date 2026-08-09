@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getGids, generateGidsStaticParams } from '@/lib/gidsen';
 import { getAanbieder, aanbieders } from '@/lib/aanbieders';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export async function generateStaticParams() {
   return generateGidsStaticParams();
