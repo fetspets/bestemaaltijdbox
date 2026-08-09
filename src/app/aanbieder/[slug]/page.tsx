@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { getAanbieder, aanbieders } from '@/lib/aanbieders';
+import { getAanbieder, aanbieders, actieveAanbieders } from '@/lib/aanbieders';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export async function generateStaticParams() {
   return aanbieders.map(a => ({ slug: a.slug }));
@@ -62,7 +63,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         '@type': 'Offer',
         price: a.prijsPerPortie,
         priceCurrency: 'EUR',
-        availability: 'https://schema.org/InStock',
+        availability: a.status === 'active' ? 'https://schema.org/InStock' : 'https://schema.org/Discontinued',
         shippingDetails: {
           '@type': 'OfferShippingDetails',
           shippingRate: {
@@ -127,7 +128,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>
-          <span className="hide-mobile" style={{ fontSize: 12 }}>Bijgewerkt: juni 2026</span>
+          <span className="hide-mobile" style={{ fontSize: 12 }}>Bijgewerkt: {LAATST_BIJGEWERKT}</span>
         </div>
       </div>
 
@@ -149,18 +150,20 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
             <div style={{ display: 'flex', gap: 16, fontSize: 13, color: 'var(--muted)', flexWrap: 'wrap' }}>
               <span>Door <strong style={{ color: 'var(--ink)' }}>Redactie BesteMaaltijdbox</strong></span>
-              <span>·</span><span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>juni 2026</strong></span>
+              <span>·</span><span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>{LAATST_BIJGEWERKT}</strong></span>
               <span>·</span><span>Gebaseerd op <strong style={{ color: 'var(--ink)' }}>gebruikersdata & onderzoek</strong></span>
-              <span>·</span><span>Ranking: <strong style={{ color: '#1B4332' }}>#{a.ranking} van {aanbieders.length}</strong></span>
+              {a.status === 'active'
+                ? <><span>·</span><span>Ranking: <strong style={{ color: '#1B4332' }}>#{a.ranking} van {actieveAanbieders.length}</strong></span></>
+                : <><span>·</span><span><strong style={{ color: '#B45309' }}>Stopgezet — niet meer beschikbaar</strong></span></>}
             </div>
           </div>
 
-          {/* Stopgezet banner */}
-          {a.slug === 'carrefour-simply-you' && (
+          {/* Stopgezet / tijdelijk-onbeschikbaar banner (status-gedreven) */}
+          {a.status !== 'active' && (
             <div style={{ background: '#FEF3C7', border: '1.5px solid #F59E0B', borderRadius: 12, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
               <span style={{ fontSize: 20, flexShrink: 0 }}>⚠️</span>
               <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: '#92400E' }}>
-                <strong>Update juni 2026:</strong> De Carrefour Simply You Box is stopgezet. De website bestaat niet meer en het product is niet langer beschikbaar. Bekijk hieronder onze aanbevolen alternatieven.
+                <strong>{a.status === 'discontinued' ? 'Stopgezet' : 'Tijdelijk niet beschikbaar'}:</strong> {a.statusNotitie ?? `${a.naam} is momenteel niet beschikbaar.`} Bekijk hieronder onze aanbevolen alternatieven.
               </p>
             </div>
           )}
@@ -188,6 +191,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                   </div>
                 );
               })}
+            </div>
+            <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted)', lineHeight: 1.5 }}>
+              De totaalscore is ons redactionele eindoordeel — geen rekenkundig gemiddelde van de subscores hierboven.
             </div>
           </div>
 
@@ -343,7 +349,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <div style={{ fontSize: 13, color: 'var(--muted)' }}>Onze score</div>
                 <div style={{ color: '#F59E0B', fontSize: 18 }}>{'★'.repeat(Math.round(a.score.totaal / 2))}{'☆'.repeat(5 - Math.round(a.score.totaal / 2))}</div>
               </div>
-              {a.slug !== 'carrefour-simply-you' && (
+              {a.status === 'active' && (
                 <Link href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
                   {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
                 </Link>
@@ -365,7 +371,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           )}
 
           {/* Alternatieven voor stopgezette aanbieders */}
-          {a.slug === 'carrefour-simply-you' && (
+          {a.status !== 'active' && (
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>
                 Op zoek naar een maaltijdbox zonder abonnement?
@@ -429,7 +435,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <div style={{ textAlign: 'center', fontSize: 13, color: '#D97706', fontWeight: 600, marginBottom: 12 }}>+ €{a.bezorgkosten} bezorgkost per levering</div>
             ) : null}
 
-            {a.slug !== 'carrefour-simply-you' && (
+            {a.status === 'active' && (
               <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
                 {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
               </Link>

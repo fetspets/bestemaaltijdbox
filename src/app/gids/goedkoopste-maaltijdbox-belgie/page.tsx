@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export const metadata: Metadata = {
-  title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 8 aanbieders',
-  description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 8 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
+  title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 7 aanbieders',
+  description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 7 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
   alternates: { canonical: 'https://bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie' },
   openGraph: {
-    title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 8 aanbieders',
-    description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 8 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
+    title: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 7 aanbieders',
+    description: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 7 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
     url: 'https://bestemaaltijdbox.be/gids/goedkoopste-maaltijdbox-belgie',
     type: 'article',
     locale: 'nl_BE',
@@ -26,12 +27,12 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Is Factor echt de goedkoopste maaltijdbox in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Factor heeft de laagste prijs per portie (€4,99), maar rekent €5,99 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je op €35,93/week — duurder dan Carrefour Simply You (€32,28) en vergelijkbaar met HelloFresh (€47,94). Factor levert ook kant-en-klare maaltijden, geen kookbox.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Factor heeft een van de laagste aankoopprijzen per portie (€4,99), maar rekent €5,99 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je op €35,93/week. Foodprepper ligt met v.a. €4,75/portie en gratis bezorging lager, al geldt daar een minimum bestelbedrag van €55. Factor levert kant-en-klare maaltijden, geen kookbox.' },
     },
     {
       '@type': 'Question',
       name: 'Wat is de goedkoopste maaltijdbox zonder abonnement in België?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Carrefour Simply You en Foodprepper hebben geen verplicht abonnement. Je bestelt wanneer het uitkomt, zonder wekelijkse verplichting. Foodprepper biedt daarbij €45 welkomstkorting over de eerste 3 bestellingen.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Foodprepper, Foodmaker en Foodbag (los bestellen) werken zonder verplicht abonnement. Je bestelt wanneer het uitkomt, zonder wekelijkse verplichting. Foodprepper biedt daarbij €45 welkomstkorting over de eerste 3 bestellingen.' },
     },
     {
       '@type': 'Question',
@@ -45,7 +46,7 @@ const prijsTabel = [
   { naam: 'HelloFresh', slug: 'hellofresh', portie: 7.99, bezorging: 0, weekprijs: 47.94, welkomst: 'tot €60 korting op eerste 3 boxen', noot: null, badge: '⭐ Beste keuze' },
   { naam: 'Ekomenu', slug: 'ekomenu', portie: 6.18, bezorging: 0, weekprijs: 37.08, welkomst: '—', noot: null, badge: '🌱 Beste bio' },
   { naam: 'Marley Spoon', slug: 'marley-spoon', portie: 8.67, bezorging: 5.99, weekprijs: 57.98, welkomst: '50% korting (automatisch)', noot: '+ €5,99 bezorgkost', badge: '🎯 Beste deal' },
-  { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you', portie: 5.38, bezorging: 0, weekprijs: 32.28, welkomst: '—', noot: null, badge: null },
+  { naam: 'Foodprepper', slug: 'foodprepper', portie: 4.75, bezorging: 0, weekprijs: 28.50, welkomst: '3× €15 (€45)', noot: 'min. bestelbedrag €55', badge: '💸 Laagste prijs/portie' },
   { naam: 'Factor', slug: 'factor', portie: 4.99, bezorging: 5.99, weekprijs: 35.93, welkomst: '—', noot: '+ €5,99 bezorgkost', badge: null },
   { naam: 'Foodbag', slug: 'foodbag', portie: 9.50, bezorging: 0, weekprijs: 57.00, welkomst: '€60 korting', noot: null, badge: null },
   { naam: 'Foodmaker', slug: 'foodmaker', portie: 10.00, bezorging: 0, weekprijs: 60.00, welkomst: '—', noot: null, badge: null },
@@ -68,20 +69,20 @@ export default function GoedkoopsteMaaltijdboxPage() {
         {/* Header */}
         <div style={{ marginBottom: 36 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-            ✓ Prijzen geverifieerd · juni 2026
+            ✓ Prijzen geverifieerd · {LAATST_BIJGEWERKT}
           </div>
           <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 7vw, 40px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 16 }}>
             Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week
           </h1>
           <div style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.8, maxWidth: 680 }}>
             <p style={{ margin: '0 0 12px' }}>
-              De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lijkt goedkoopst op €4,99/portie — maar als je de €5,99 bezorgkost per week optelt, betaal je meer dan bij Carrefour Simply You (€32,28, gratis bezorging). De echte formule:
+              De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lijkt goedkoopst op €4,99/portie — maar als je de €5,99 bezorgkost per week optelt, betaal je meer dan bij Foodprepper (v.a. €4,75/portie, gratis bezorging). De echte formule:
             </p>
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 10, padding: '12px 16px', fontFamily: 'monospace', fontSize: 13, color: '#1B4332', fontWeight: 600, marginBottom: 12 }}>
               weekprijs = (porties × prijs/portie) + bezorgkost
             </div>
             <p style={{ margin: 0 }}>
-              We berekenden de weekprijs voor 2 personen met 3 maaltijden (= 6 porties) voor alle 8 aanbieders, inclusief bezorgkost en welkomstdeals. Zo zie je meteen wie écht het voordeligst is.
+              We berekenden de weekprijs voor 2 personen met 3 maaltijden (= 6 porties) voor alle 7 aanbieders, inclusief bezorgkost en welkomstdeals. Zo zie je meteen wie écht het voordeligst is.
             </p>
           </div>
         </div>
@@ -96,9 +97,9 @@ export default function GoedkoopsteMaaltijdboxPage() {
               <div style={{ fontSize: 14, fontWeight: 600, color: '#1B4332', marginBottom: 4 }}>€47,94/week · gratis bezorging</div>
               <div style={{ fontSize: 13, color: '#374151', marginBottom: 12 }}>Tot €60 korting op je eerste 3 boxen</div>
               <div style={{ fontSize: 12, color: '#6B7280' }}>
-                Wil je absoluut de laagste prijs zonder abonnement? →{' '}
-                <Link href="/aanbieder/carrefour-simply-you" style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
-                  Carrefour Simply You: €32,28/week
+                Wil je absoluut de laagste prijs per portie zonder verplicht abonnement? →{' '}
+                <Link href="/aanbieder/foodprepper" style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
+                  Foodprepper: v.a. €4,75/portie
                 </Link>
               </div>
             </div>
@@ -266,7 +267,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               {
                 icon: '📦',
                 titel: 'Bezorgkost',
-                tekst: 'Factor rekent €6 per levering — dat is €24/maand als je wekelijks bestelt. HelloFresh, Foodbag, Marley Spoon, Ekomenu en Carrefour Simply You leveren gratis. Vergelijk altijd de weekprijs inclusief bezorgkost, niet enkel de portieprijs.',
+                tekst: 'Factor rekent €5,99 per levering, Marley Spoon eveneens €5,99 — dat tikt aan bij wekelijks bestellen. HelloFresh, Foodbag, Ekomenu en Foodprepper leveren gratis. Vergelijk altijd de weekprijs inclusief bezorgkost, niet enkel de portieprijs.',
               },
               {
                 icon: '📏',
@@ -281,7 +282,7 @@ export default function GoedkoopsteMaaltijdboxPage() {
               {
                 icon: '⏰',
                 titel: 'Opzegtermijn',
-                tekst: 'HelloFresh, Foodbag en Marley Spoon laten je opzeggen of pauzeren tot 5 dagen voor de volgende levering. Mis je die deadline, dan wordt de volgende box toch verstuurd. Carrefour Simply You heeft geen abonnement — geen opzegtermijn.',
+                tekst: 'HelloFresh, Foodbag en Marley Spoon laten je opzeggen of pauzeren tot 5 dagen voor de volgende levering. Mis je die deadline, dan wordt de volgende box toch verstuurd. Foodprepper en Foodmaker hebben geen verplicht abonnement — geen opzegtermijn.',
               },
             ].map(({ icon, titel, tekst }) => (
               <div key={titel} style={{ background: 'white', borderRadius: 12, padding: '16px 20px', border: '1px solid var(--rule)', display: 'flex', gap: 14 }}>
@@ -319,9 +320,9 @@ export default function GoedkoopsteMaaltijdboxPage() {
             {[
               {
                 situatie: 'Goedkoopste kookbox voor een koppel (2p)',
-                winnaar: 'Carrefour Simply You',
-                slug: 'carrefour-simply-you',
-                detail: '€32,28/week (reguliere prijs), geen abonnement. HelloFresh is een goed alternatief als je meer receptkeuze wil (40+ vs. 10+).',
+                winnaar: 'Ekomenu',
+                slug: 'ekomenu',
+                detail: '€37,08/week (reguliere prijs, €6,18/portie), gratis bezorging — de voordeligste klassieke kookbox. HelloFresh is een goed alternatief als je meer receptkeuze wil (40+ recepten).',
                 color: '#F0FDF4',
                 border: '#BBF7D0',
               },
@@ -343,9 +344,9 @@ export default function GoedkoopsteMaaltijdboxPage() {
               },
               {
                 situatie: 'Goedkoopste als je geen abonnement wil',
-                winnaar: 'Carrefour Simply You',
-                slug: 'carrefour-simply-you',
-                detail: 'Geen abonnement, geen opzegtermijn. Bestellen wanneer het uitkomt. Foodprepper en Foodmaker werken ook zonder vast abonnement — Foodprepper biedt daarbij €45 welkomstkorting.',
+                winnaar: 'Foodprepper',
+                slug: 'foodprepper',
+                detail: 'v.a. €4,75/portie, gratis bezorging en geen verplicht abonnement (min. bestelbedrag €55). Bestellen wanneer het uitkomt, met €45 welkomstkorting. Foodmaker en Foodbag (los bestellen) werken ook zonder vast abonnement.',
                 color: '#F5F3FF',
                 border: '#DDD6FE',
               },

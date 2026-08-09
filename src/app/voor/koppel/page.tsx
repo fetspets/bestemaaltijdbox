@@ -31,7 +31,7 @@ const jsonLd = {
     {
       '@type': 'Question',
       name: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Foodprepper hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
     },
     {
       '@type': 'Question',
@@ -116,12 +116,12 @@ const overige3 = [
     omschrijving: 'De enige 100% biologische maaltijdbox in België — ideaal voor koppels met een milieubewuste leefstijl. Enkel bezorging in Vlaanderen en Brussel, geen actieve kortingscode.',
   },
   {
-    slug: 'carrefour-simply-you',
-    naam: 'Carrefour Simply You',
-    score: 6.8,
-    prijsPortie: 'vanaf €5,38',
-    weekprijs: '€32,28',
-    omschrijving: 'Geen abonnement nodig — je bestelt wanneer het uitkomt. Carrefour Simply You is een flexibele optie voor koppels die niet gebonden willen zijn.',
+    slug: 'foodprepper',
+    naam: 'Foodprepper',
+    score: 7.8,
+    prijsPortie: 'vanaf €4,75',
+    weekprijs: '€28,50 (min. bestelbedrag €55)',
+    omschrijving: 'De snelste optie — verse maaltijd in 15 minuten dankzij voorbereide ingrediënten. Geen verplicht abonnement en de laagste prijs per portie met gratis bezorging. Enkel levering in Vlaanderen en Brussel.',
   },
 ];
 
@@ -163,7 +163,7 @@ export default function KoppelPage() {
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 12 }}>
           {[
             { icon: '💶', titel: 'Prijs voor 2', tekst: 'Reken met 6 porties per week (2 personen × 3 maaltijden). Dat loopt snel op: van €33 bij HelloFresh tot €57 bij Foodbag.' },
-            { icon: '📦', titel: 'Minimumafname', tekst: 'De meeste aanbieders vereisen minimum 2 maaltijden per week. Foodbag en Carrefour zijn flexibeler — geen verplicht abonnement.' },
+            { icon: '📦', titel: 'Minimumafname', tekst: 'De meeste aanbieders vereisen minimum 2 maaltijden per week. Foodbag en Foodprepper zijn flexibeler — geen verplicht abonnement.' },
             { icon: '🍽️', titel: 'Receptvariatie', tekst: 'Koppels vervelen sneller dan singles. Kies een aanbieder met 40+ recepten per week zodat je nooit twee keer hetzelfde eet.' },
             { icon: '🔀', titel: 'Flexibiliteit', tekst: 'Kunnen jullie makkelijk pauzeren of een week overslaan? HelloFresh, Foodbag en Marley Spoon laten je tot 5 dagen voor levering aanpassen.' },
           ].map(({ icon, titel, tekst }) => (
@@ -283,7 +283,7 @@ export default function KoppelPage() {
                 { naam: 'Marley Spoon', portie: 'vanaf €8,67', week: '€51,99 ²', recepten: '40+', korting: '50% (automatisch)' },
                 { naam: 'Ekomenu', portie: 'vanaf €6,18', week: '€37,08', recepten: '20–25', korting: '—' },
                 { naam: 'Factor', portie: 'vanaf €4,99', week: '€35,94 ²', recepten: '18', korting: '—' },
-                { naam: 'Carrefour Simply You', portie: 'vanaf €5,38', week: '€32,28', recepten: '10+', korting: '—' },
+                { naam: 'Foodprepper', portie: 'vanaf €4,75', week: '€28,50', recepten: '20+', korting: '€45' },
               ].map((r, i) => (
                 <tr key={r.naam} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                   <td style={{ padding: '10px 12px', fontWeight: 600 }}>{r.naam}</td>
@@ -349,7 +349,7 @@ export default function KoppelPage() {
           {[
             { q: 'Hoeveel maaltijden per week is realistisch als koppel?', a: 'De meeste koppels starten met 3 maaltijden per week — dat dekt de drukke doordeweekse avonden en laat ruimte voor een restaurantje of zelf iets klaarmaken in het weekend. Je kan altijd aanpassen of een week pauzeren.' },
             { q: 'Welke maaltijdbox is het goedkoopst voor 2 personen?', a: 'HelloFresh met tot €60 welkomstkorting is de goedkoopste optie voor koppels in de eerste weken. Foodprepper (€45 korting, geen abonnement) is een goede keuze als je flexibel wil blijven.' },
-            { q: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Carrefour Simply You hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
+            { q: 'Kunnen we als koppel wekelijks pauzeren of opzeggen?', a: 'Ja. HelloFresh, Foodbag en Marley Spoon laten je wekelijks pauzeren of opzeggen. Foodbag en Foodprepper hebben zelfs geen verplicht abonnement — je bestelt wanneer je wil.' },
             { q: 'Is een maaltijdbox duurder dan gewone boodschappen?', a: 'Per portie betaal je iets meer, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd. Koppels die regelmatig restjes weggooien of impulsaankopen doen, betalen in de praktijk niet veel meer.' },
           ].map(({ q, a }) => (
             <div key={q} style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)' }}>

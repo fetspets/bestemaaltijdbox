@@ -23,6 +23,10 @@ export interface Aanbieder {
     faq?: { vraag: string; antwoord: string }[];
   };
   ranking: number;
+  /** Beschikbaarheid van de box. Alleen 'active' verschijnt in ranglijsten, tabellen en tellingen. */
+  status: 'active' | 'discontinued' | 'temporarily_unavailable';
+  /** Optionele toelichting bij een niet-actieve status (bv. stopgezet-melding). */
+  statusNotitie?: string;
   score: {
     totaal: number;
     smaak: number;
@@ -79,6 +83,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'HelloFresh verdient zijn #1 positie. De combinatie van prijs, variatie en gemak is moeilijk te evenaren in België. Zeker met de regelmatige welkomstaanbiedingen voor nieuwe klanten is het zeker de moeite waard om te proberen.',
     },
     ranking: 1,
+    status: 'active',
     score: { totaal: 8.4, smaak: 8.2, prijsKwaliteit: 8.5, flexibiliteit: 9.0, duurzaamheid: 6.8, gemak: 9.0 },
     prijsPerPortie: 7.99,
     prijsPopulaireBox: 47.99,
@@ -123,6 +128,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Foodbag verdient zijn #2 positie als beste Belgische alternatief. De kwaliteit van de ingrediënten en de klantenservice zijn uitstekend. De hogere prijs is het voornaamste struikelblok.',
     },
     ranking: 2,
+    status: 'active',
     score: { totaal: 8.1, smaak: 8.6, prijsKwaliteit: 7.2, flexibiliteit: 8.0, duurzaamheid: 8.5, gemak: 8.0 },
     prijsPerPortie: 9.50,
     prijsPopulaireBox: 50.60,
@@ -191,6 +197,7 @@ export const aanbieders: Aanbieder[] = [
       ],
     },
     ranking: 3,
+    status: 'active',
     score: { totaal: 7.9, smaak: 8.6, prijsKwaliteit: 7.2, flexibiliteit: 8.0, duurzaamheid: 7.5, gemak: 7.2 },
     prijsPerPortie: 8.67,
     prijsPopulaireBox: 51.99,
@@ -283,9 +290,9 @@ export const aanbieders: Aanbieder[] = [
       ],
     },
     ranking: 4,
+    status: 'active',
     score: { totaal: 7.8, smaak: 7.6, prijsKwaliteit: 7.0, flexibiliteit: 8.5, duurzaamheid: 8.0, gemak: 9.5 },
-    prijsPerPortie: 7.49,
-    prijsPerPortieLabel: 'vanaf €6,50',
+    prijsPerPortie: 4.75,
     prijsPopulaireBox: 44.90,
     receptenPerWeek: 20,
     gratisBezorging: true,
@@ -341,6 +348,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Factor vult een andere niche dan de klassieke maaltijdboxen. Wie wil eten zonder koken vindt hier een kwalitatief alternatief voor restaurant of take-away, aan een vergelijkbare prijs maar met meer nutritionele waarde.',
     },
     ranking: 5,
+    status: 'active',
     score: { totaal: 7.8, smaak: 7.8, prijsKwaliteit: 7.0, flexibiliteit: 8.0, duurzaamheid: 6.5, gemak: 9.5 },
     prijsPerPortie: 4.99,
     prijsPopulaireBox: 55.00,
@@ -385,6 +393,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Crowd Cooks vult een andere behoefte dan de klassieke maaltijdboxen: eten zonder koken, met Belgische verankering en royale porties als troeven. Voor wie tijd de grootste schaarste is en toch verse, royale maaltijden wil, is het een sterk alternatief voor restaurant of take-away.',
     },
     ranking: 6,
+    status: 'active',
     score: { totaal: 7.8, smaak: 7.8, prijsKwaliteit: 6.8, flexibiliteit: 8.0, duurzaamheid: 6.5, gemak: 9.3 },
     prijsPerPortie: 10.71,
     prijsPopulaireBox: 49.90,
@@ -431,6 +440,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Foodmaker is een sterke kant-en-klare keuze voor wie van kwaliteit en Belgische smaak houdt. De samenwerking met Jeroen Meus geeft het een herkenbaar en vertrouwd karakter.',
     },
     ranking: 7,
+    status: 'active',
     score: { totaal: 7.7, smaak: 8.4, prijsKwaliteit: 6.5, flexibiliteit: 7.5, duurzaamheid: 7.8, gemak: 9.5 },
     prijsPerPortie: 10.00,
     prijsPopulaireBox: 40.00,
@@ -469,6 +479,7 @@ export const aanbieders: Aanbieder[] = [
       eindoordeel: 'Ekomenu is een sterke keuze als duurzaamheid en gezondheid je prioriteiten zijn. De biologische kwaliteit en de brede keuze aan dieetopties zijn weinig te vinden bij andere Belgische maaltijdboxen.',
     },
     ranking: 8,
+    status: 'active',
     score: { totaal: 7.6, smaak: 7.5, prijsKwaliteit: 6.8, flexibiliteit: 7.5, duurzaamheid: 9.5, gemak: 7.0 },
     prijsPerPortie: 6.18,
     prijsPopulaireBox: 44.91,
@@ -509,6 +520,8 @@ export const aanbieders: Aanbieder[] = [
     seoTitle: 'Carrefour Simply You Box — stopgezet (2026) · bekijk alternatieven',
     seoDescription: 'De Carrefour Simply You Box bestaat niet meer. Bekijk de beste alternatieven zonder abonnement: Foodprepper, Foodmaker en Foodbag. Direct vergelijken en besparen.',
     ranking: 9,
+    status: 'discontinued',
+    statusNotitie: 'De Carrefour Simply You Box is stopgezet (2026). De website bestaat niet meer en het product is niet langer beschikbaar.',
     score: { totaal: 6.8, smaak: 6.5, prijsKwaliteit: 7.8, flexibiliteit: 6.0, duurzaamheid: 6.0, gemak: 7.5 },
     prijsPerPortie: 5.38,
     prijsPopulaireBox: 43.50,
@@ -534,15 +547,22 @@ export const aanbieders: Aanbieder[] = [
   },
 ];
 
+/** Enkel de actieve aanbieders — gebruik dit voor ranglijsten, tabellen en tellingen. */
+export const actieveAanbieders: Aanbieder[] = aanbieders.filter(a => a.status === 'active');
+
 export function getAanbieder(slug: string): Aanbieder | undefined {
   return aanbieders.find(a => a.slug === slug);
 }
 
+export function getActieveAanbieders(): Aanbieder[] {
+  return actieveAanbieders;
+}
+
 export function getTopAanbieders(n: number): Aanbieder[] {
-  return aanbieders.slice(0, n);
+  return actieveAanbieders.slice(0, n);
 }
 
 export function getAanbiedersByFilter(filter: string): Aanbieder[] {
-  if (filter === 'alle') return aanbieders;
-  return aanbieders.filter(a => a.geschiktVoor.includes(filter));
+  if (filter === 'alle') return actieveAanbieders;
+  return actieveAanbieders.filter(a => a.geschiktVoor.includes(filter));
 }

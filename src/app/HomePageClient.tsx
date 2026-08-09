@@ -1,16 +1,19 @@
 'use client';
 import Link from 'next/link';
-import { aanbieders, getAanbieder } from '@/lib/aanbieders';
+import { actieveAanbieders, getAanbieder } from '@/lib/aanbieders';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import Quiz from '@/components/Quiz';
+
+const aantalAanbieders = actieveAanbieders.length;
 
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
   name: 'Beste Maaltijdbox België 2026',
   description: 'Onafhankelijke vergelijking van maaltijdboxen in België',
-  numberOfItems: 9,
-  itemListElement: aanbieders.map((a, i) => ({
+  numberOfItems: aantalAanbieders,
+  itemListElement: actieveAanbieders.map((a, i) => ({
     '@type': 'ListItem',
     position: i + 1,
     name: a.naam,
@@ -37,8 +40,8 @@ export default function HomePageClient({
 }: {
   sponsoringActief: boolean;
 }) {
-  const top3 = aanbieders.slice(0, 3);
-  const rest = aanbieders.slice(3);
+  const top3 = actieveAanbieders.slice(0, 3);
+  const rest = actieveAanbieders.slice(3);
   const factor = getAanbieder('factor');
 
   return (
@@ -48,7 +51,7 @@ export default function HomePageClient({
         '@context': 'https://schema.org', '@type': 'FAQPage',
         mainEntity: [
           { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en een sterke welkomstdeal met tot €60 korting op je eerste 3 boxen. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting, automatisch toegepast via de link.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Factor is goedkoopst per portie (v.a. €4,99) maar rekent €5,99 bezorgkosten. Carrefour Simply You (v.a. €5,38, gratis bezorging) is de goedkoopste kookbox. HelloFresh kost v.a. €7,99 maar geeft nieuwe klanten tot €60 korting verdeeld over hun eerste 3 boxen.' }},
+          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Foodprepper is de voordeligste met gratis bezorging (v.a. €4,75 per portie, zonder verplicht abonnement). Factor ligt in aankoopprijs iets lager (v.a. €4,99) maar rekent €5,99 bezorgkosten. HelloFresh kost v.a. €7,99 maar geeft nieuwe klanten tot €60 korting verdeeld over hun eerste 3 boxen.' }},
           { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh heeft een sterke welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen, automatisch toegepast via de link. Foodbag geeft €60 korting — 3x €20 op je eerste 3 bestellingen, automatisch via de link, geldig t.e.m. 01/01/2027.' }},
           { '@type': 'Question', name: 'Kan ik een maaltijdbox uitproberen zonder abonnement?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Foodprepper, Foodbag en Foodmaker werken zonder verplicht abonnement — je bestelt wanneer het uitkomt. Foodprepper geeft daarbij €45 welkomstkorting over de eerste 3 bestellingen.' }},
         ]
@@ -60,12 +63,12 @@ export default function HomePageClient({
           De beste maaltijdbox<br />van <span style={{ color: 'var(--mint)' }}>België</span> in 2026
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          We onderzochten alle 9 maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke scores op smaak, prijs, gemak en duurzaamheid — onze scores en rangschikking worden nooit betaald.
+          We onderzochten alle {aantalAanbieders} actieve maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke scores op smaak, prijs, gemak en duurzaamheid — onze scores en rangschikking worden nooit betaald.
         </p>
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
-          {[['9', 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
+          {[[String(aantalAanbieders), 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: '#1B4332' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{label}</div>
@@ -92,7 +95,7 @@ export default function HomePageClient({
         {/* SECTION HEADER */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
           <h2 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900 }}>Onze rankings</h2>
-          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt juni 2026 · 9 aanbieders</div>
+          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt {LAATST_BIJGEWERKT} · {aantalAanbieders} aanbieders</div>
         </div>
 
         {/* TOP 3 CARDS */}
@@ -245,20 +248,20 @@ export default function HomePageClient({
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
-            <div style={{ fontSize: 13, color: 'var(--muted)' }}>9 aanbieders</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)' }}>{aantalAanbieders} aanbieders</div>
           </div>
-          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt juni 2026.</p>
+          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt {LAATST_BIJGEWERKT}.</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 700 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  {['Aanbieder', 'Score', 'Prijs/portie', 'Min. recepten', 'Bezorgkost', '🇧🇪', 'Leverdag', 'Tijdstip', 'Los bestellen', 'Beste voor', ''].map(h => (
+                  {['Aanbieder', 'Score', 'Prijs/portie', 'Min. maaltijden/week', 'Bezorgkost', '🇧🇪', 'Leverdag kiezen', 'Tijdslot kiezen', 'Los bestellen', 'Beste voor', ''].map(h => (
                     <th key={h} style={{ padding: '10px 10px', textAlign: 'left', fontWeight: 600, fontSize: 10, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
-                {aanbieders.map((a, i) => {
+                {actieveAanbieders.map((a, i) => {
                   const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`;
                   const bezorgGratis = a.gratisBezorging;
                   return (
@@ -292,7 +295,7 @@ export default function HomePageClient({
             </table>
           </div>
           <div style={{ marginTop: 8, fontSize: 11, color: 'var(--muted)' }}>
-            ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie. Raadpleeg de website van de aanbieder voor de meest actuele prijzen en aanbiedingen.
+            <strong>Leverdag kiezen</strong> = je kan zelf je bezorgdag selecteren · <strong>Tijdslot kiezen</strong> = je kan zelf een tijdstip/leverslot kiezen · ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie. Raadpleeg de website van de aanbieder voor de meest actuele prijzen en aanbiedingen.
           </div>
         </div>
 
@@ -336,7 +339,7 @@ export default function HomePageClient({
                   { icon: '👫', title: 'Koppels', desc: 'HelloFresh en Foodbag zijn de populairste keuzes voor 2 personen.' },
                   { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin.' },
                   { icon: '🌱', title: 'Vegetariërs', desc: 'Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.' },
-                  { icon: '💰', title: 'Budget', desc: 'Carrefour Simply You (lage prijs/portie, geen abonnement) is een budgetvriendelijke optie.' },
+                  { icon: '💰', title: 'Budget', desc: 'Foodprepper (v.a. €4,75/portie, gratis bezorging, geen verplicht abonnement) is een budgetvriendelijke optie.' },
                 ].map(({ icon, title, desc }) => (
                   <div key={title} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                     <div style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>{icon}</div>
@@ -358,8 +361,8 @@ export default function HomePageClient({
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14 }}>
             {[
-              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Carrefour Simply You is een budgetvriendelijke optie met een lage prijs per portie, zonder verplicht abonnement en met bezorging in heel België. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' },
-              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Je kan je abonnement meestal flexibel pauzeren of stopzetten, vaak tot enkele dagen voor de volgende levering. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Carrefour Simply You en Foodmaker hebben geen abonnement. De exacte voorwaarden verschillen per aanbieder.' },
+              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Foodprepper is een budgetvriendelijke optie met een lage prijs per portie (v.a. €4,75), gratis bezorging en zonder verplicht abonnement. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' },
+              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Je kan je abonnement meestal flexibel pauzeren of stopzetten, vaak tot enkele dagen voor de volgende levering. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Foodprepper en Foodmaker hebben geen verplicht abonnement. De exacte voorwaarden verschillen per aanbieder.' },
               { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
               { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Maaltijdboxen kosten doorgaans meer per portie dan zelf boodschappen doen, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd.' },
               { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },

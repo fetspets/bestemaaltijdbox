@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio', 'singles'];
   const vergelijkingen = [
     'hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon',
-    'foodbag-vs-marley-spoon', 'hellofresh-vs-ekomenu', 'hellofresh-vs-carrefour',
+    'foodbag-vs-marley-spoon', 'hellofresh-vs-ekomenu',
     'foodprepper-vs-foodbag', 'foodprepper-vs-hellofresh',
     'crowd-cooks-vs-factor',
     'factor-vs-hellofresh', 'factor-vs-foodbag', 'factor-vs-marley-spoon',

@@ -2,18 +2,19 @@ import Link from 'next/link';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import { getAanbieder } from '@/lib/aanbieders';
 import { getActieveSponsoring } from '@/lib/sponsoring';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 // ISR: het gesponsorde, uitgelichte Factor-blok verdwijnt vanzelf na de
 // sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
 export const revalidate = 3600;
 
 export const metadata = {
-  title: 'Kortingscodes maaltijdbox België juni 2026 — bespaar tot €60 op je eerste box',
-  description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt juni 2026.',
+  title: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
+  description: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
   alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscodes' },
   openGraph: {
-    title: 'Kortingscodes maaltijdbox België juni 2026 — bespaar tot €60 op je eerste box',
-    description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt juni 2026.',
+    title: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
+    description: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
     url: 'https://bestemaaltijdbox.be/kortingscodes',
     type: 'website',
     locale: 'nl_BE',
@@ -110,18 +111,6 @@ const kortingen = [
     actief: false,
   },
   {
-    slug: 'carrefour-simply-you',
-    naam: 'Carrefour Simply You',
-    logo: '/logos/carrefour-simply-you.svg',
-    code: null,
-    deal: 'Bekijk de huidige welkomstdeal',
-    bedrag: 'Deal',
-    kleur: '#1B4332',
-    beschrijving: 'Momenteel geen actieve kortingscode. Bekijk carrefour.be voor de huidige welkomstaanbieding.',
-    voorwaarden: 'Bekijk website voor actuele aanbieding',
-    actief: false,
-  },
-  {
     slug: 'crowd-cooks',
     naam: 'Crowd Cooks',
     logo: '/logos/crowd-cooks.svg',
@@ -153,7 +142,7 @@ export default function KortingscodesPagina() {
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          🏷️ Bijgewerkt juni 2026
+          🏷️ Bijgewerkt {LAATST_BIJGEWERKT}
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
           Kortingscodes maaltijdbox<br />België 2026
@@ -194,7 +183,7 @@ export default function KortingscodesPagina() {
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>Actieve deals</h2>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt juni 2026</div>
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt {LAATST_BIJGEWERKT}</div>
       </div>
 
       {kortingen.filter(k => k.actief).map((k, i) => (

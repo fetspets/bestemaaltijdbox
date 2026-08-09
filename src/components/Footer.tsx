@@ -33,7 +33,7 @@ export default function Footer() {
                 { naam: 'Factor review', slug: 'factor' },
                 { naam: 'Foodmaker review', slug: 'foodmaker' },
                 { naam: 'Crowd Cooks review', slug: 'crowd-cooks' },
-                { naam: 'Carrefour Simply You', slug: 'carrefour-simply-you' },
+                { naam: 'Carrefour Simply You (stopgezet)', slug: 'carrefour-simply-you' },
               ].map(a => (
                 <Link key={a.slug} href={`/aanbieder/${a.slug}`} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{a.naam}</Link>
               ))}
