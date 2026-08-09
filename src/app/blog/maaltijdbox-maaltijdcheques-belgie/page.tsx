@@ -261,6 +261,9 @@ export default function MaaltijdchequesBlogPagina() {
               </tbody>
             </table>
           </div>
+          <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 10, lineHeight: 1.6 }}>
+            Bron: gecontroleerd op de betaalinformatie van Foodbag, HelloFresh en Foodprepper en op de aanvaarding door de uitgevers Monizze, Pluxee (Sodexo) en Edenred. Laatst geverifieerd: {LAATST_BIJGEWERKT}. Betaalvoorwaarden kunnen wijzigen — controleer altijd de actuele opties op de site van de aanbieder.
+          </p>
         </div>
 
         {/* Uitgelichte winnaar — Foodbag */}
