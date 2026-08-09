@@ -162,17 +162,6 @@ const tabelData = [
     badge: null,
   },
   {
-    naam: 'Carrefour Simply You',
-    slug: 'carrefour-simply-you',
-    logo: '/logos/carrefour-simply-you.svg',
-    accepteert: false,
-    label: '❌ NEE',
-    uitgevers: '—',
-    beperking: '—',
-    heeftCta: false,
-    badge: null,
-  },
-  {
     naam: 'Crowd Cooks',
     slug: 'crowd-cooks',
     logo: '/logos/crowd-cooks.svg',
