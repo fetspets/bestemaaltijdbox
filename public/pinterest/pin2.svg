@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+  <defs>
+    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#085041"/>
+      <stop offset="100%" style="stop-color:#1D9E75"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Achtergrond -->
+  <rect width="1000" height="1500" fill="#F7FBF5"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="210" fill="url(#hg)"/>
+  <circle cx="900" cy="50" r="90" fill="#1D9E75" opacity="0.25"/>
+  <circle cx="80" cy="180" r="55" fill="#085041" opacity="0.4"/>
+
+  <text x="500" y="68" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#A8E6CF" text-anchor="middle" letter-spacing="3">PRIJSVERGELIJKING</text>
+  <text x="500" y="135" font-family="'Segoe UI', Arial, sans-serif" font-size="50" font-weight="800" fill="#FFFFFF" text-anchor="middle">Prijs per portie</text>
+  <text x="500" y="185" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="600" fill="#EAF3DE" text-anchor="middle">Maaltijdboxen België 2026</text>
+
+  <!-- Subtitle strip -->
+  <rect x="0" y="210" width="1000" height="48" fill="#1D9E75"/>
+  <text x="500" y="241" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#FFFFFF" text-anchor="middle" font-weight="600">Gesorteerd van goedkoopst naar duurste per portie</text>
+
+  <!-- Column headers -->
+  <text x="60" y="295" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#4A6741" letter-spacing="1">AANBIEDER</text>
+  <text x="580" y="295" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#4A6741" letter-spacing="1">PRIJS/PORTIE</text>
+  <text x="820" y="295" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#4A6741" letter-spacing="1">BEZORGING</text>
+  <line x1="40" y1="305" x2="960" y2="305" stroke="#D5E8D4" stroke-width="2"/>
+
+  <!-- ===== ROW 1: Factor — €4,99 ===== -->
+  <rect x="40" y="315" width="920" height="100" rx="10" fill="#FFFFFF"/>
+  <rect x="40" y="315" width="8" height="100" rx="4" fill="#1D9E75"/>
+  <text x="70" y="358" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#1D9E75">GOEDKOOPST</text>
+  <text x="70" y="385" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#1A2E1A">Factor</text>
+  <text x="70" y="405" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">Kant-en-klaar</text>
+  <!-- Bar: max = €10,00 → 500px wide. €4,99 = 250px -->
+  <rect x="330" y="345" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="345" width="250" height="36" rx="6" fill="#1D9E75"/>
+  <text x="590" y="369" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">€4,99</text>
+  <rect x="780" y="350" width="150" height="28" rx="14" fill="#FFF3E0"/>
+  <text x="855" y="369" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#E65100" text-anchor="middle">+ €5,99 bezorg.</text>
+
+  <!-- ===== ROW 2: Carrefour Simply You — €5,38 ===== -->
+  <rect x="40" y="428" width="920" height="100" rx="10" fill="#FFFFFF"/>
+  <rect x="40" y="428" width="8" height="100" rx="4" fill="#25B080"/>
+  <text x="70" y="468" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Carrefour Simply You</text>
+  <text x="70" y="492" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">Geen abonnement · heel België</text>
+  <rect x="330" y="445" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="445" width="269" height="36" rx="6" fill="#25B080"/>
+  <text x="590" y="469" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">€5,38</text>
+  <rect x="780" y="450" width="150" height="28" rx="14" fill="#D4EDDA"/>
+  <text x="855" y="469" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#155724" text-anchor="middle">✓ Gratis bezorg.</text>
+
+  <!-- ===== ROW 3: Ekomenu — €6,18 ===== -->
+  <rect x="40" y="541" width="920" height="100" rx="10" fill="#FFFFFF"/>
+  <rect x="40" y="541" width="8" height="100" rx="4" fill="#35BA8B"/>
+  <text x="70" y="581" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Ekomenu</text>
+  <text x="70" y="605" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">100% biologisch · CO₂-tracker</text>
+  <rect x="330" y="558" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="558" width="309" height="36" rx="6" fill="#35BA8B"/>
+  <text x="590" y="582" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">€6,18</text>
+  <rect x="780" y="563" width="150" height="28" rx="14" fill="#D4EDDA"/>
+  <text x="855" y="582" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#155724" text-anchor="middle">✓ Gratis bezorg.</text>
+
+  <!-- ===== ROW 4: Foodprepper — €7,49 ===== -->
+  <rect x="40" y="654" width="920" height="100" rx="10" fill="#FFFFFF"/>
+  <rect x="40" y="654" width="8" height="100" rx="4" fill="#45C496"/>
+  <text x="70" y="694" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Foodprepper</text>
+  <text x="70" y="718" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">Belgisch · klaar in 15 minuten</text>
+  <rect x="330" y="671" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="671" width="375" height="36" rx="6" fill="#45C496"/>
+  <text x="590" y="695" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">€7,49</text>
+  <rect x="780" y="676" width="150" height="28" rx="14" fill="#D4EDDA"/>
+  <text x="855" y="695" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#155724" text-anchor="middle">✓ Gratis bezorg.</text>
+
+  <!-- ===== ROW 5: HelloFresh — €7,99 ===== -->
+  <rect x="40" y="767" width="920" height="100" rx="10" fill="#FFFEF5"/>
+  <rect x="40" y="767" width="8" height="100" rx="4" fill="#085041"/>
+  <text x="70" y="800" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#085041">⭐ BESTE PRIJS-KWALITEIT</text>
+  <text x="70" y="823" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">HelloFresh</text>
+  <text x="70" y="847" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">40+ recepten/week · gratis bezorg.</text>
+  <rect x="330" y="784" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="784" width="400" height="36" rx="6" fill="#085041"/>
+  <text x="590" y="808" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#FFFFFF" text-anchor="middle">€7,99</text>
+  <rect x="780" y="789" width="150" height="28" rx="14" fill="#D4EDDA"/>
+  <text x="855" y="808" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#155724" text-anchor="middle">✓ Gratis bezorg.</text>
+
+  <!-- ===== ROW 6: Marley Spoon — €8,67 ===== -->
+  <rect x="40" y="880" width="920" height="100" rx="10" fill="#FFFFFF"/>
+  <rect x="40" y="880" width="8" height="100" rx="4" fill="#6FCEAD"/>
+  <text x="70" y="920" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Marley Spoon</text>
+  <text x="70" y="944" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">Chef-recepten · hoogste smaakscore 8.6/10</text>
+  <rect x="330" y="897" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="897" width="434" height="36" rx="6" fill="#6FCEAD"/>
+  <text x="590" y="921" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">€8,67</text>
+  <rect x="780" y="902" width="150" height="28" rx="14" fill="#FFF3E0"/>
+  <text x="855" y="921" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#E65100" text-anchor="middle">+ €5,99 bezorg.</text>
+
+  <!-- ===== ROW 7: Foodbag — €9,50 ===== -->
+  <rect x="40" y="993" width="920" height="100" rx="10" fill="#FFFFFF"/>
+  <rect x="40" y="993" width="8" height="100" rx="4" fill="#89D8B8"/>
+  <text x="70" y="1033" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Foodbag</text>
+  <text x="70" y="1057" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">🇧🇪 Lokale ingrediënten · smaakscore 8.6/10</text>
+  <rect x="330" y="1010" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="1010" width="476" height="36" rx="6" fill="#89D8B8"/>
+  <text x="590" y="1034" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">€9,50</text>
+  <rect x="780" y="1015" width="150" height="28" rx="14" fill="#D4EDDA"/>
+  <text x="855" y="1034" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#155724" text-anchor="middle">✓ Gratis bezorg.</text>
+
+  <!-- ===== ROW 8: Foodmaker — €10,00 ===== -->
+  <rect x="40" y="1106" width="920" height="100" rx="10" fill="#FFFFFF"/>
+  <rect x="40" y="1106" width="8" height="100" rx="4" fill="#AAE2C8"/>
+  <text x="70" y="1146" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Foodmaker</text>
+  <text x="70" y="1170" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">Jeroen Meus · artisanaal Belgisch</text>
+  <rect x="330" y="1123" width="280" height="36" rx="6" fill="#EAF3DE"/>
+  <rect x="330" y="1123" width="500" height="36" rx="6" fill="#AAE2C8"/>
+  <text x="590" y="1147" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">€10,00</text>
+  <rect x="780" y="1128" width="150" height="28" rx="14" fill="#D4EDDA"/>
+  <text x="855" y="1147" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#155724" text-anchor="middle">✓ Gratis bezorg.</text>
+
+  <!-- Tip blok -->
+  <rect x="40" y="1225" width="920" height="180" rx="14" fill="#085041"/>
+  <circle cx="95" cy="1260" r="22" fill="#1D9E75"/>
+  <text x="95" y="1268" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#FFFFFF" text-anchor="middle">💡</text>
+  <text x="135" y="1258" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#A8E6CF">Slim besparen met welkomstkorting</text>
+  <text x="60" y="1295" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#EAF3DE">HelloFresh: tot €60 korting op eerste boxen → effectief v.a. €4,99/portie</text>
+  <text x="60" y="1323" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#EAF3DE">Foodbag: 3×€20 = €60 korting op eerste 3 bestellingen</text>
+  <text x="60" y="1351" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#EAF3DE">Marley Spoon: 35% korting verspreid over 5 boxen</text>
+  <text x="60" y="1383" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#88D6A5">Zie alle kortingscodes op bestemaaltijdbox.be/kortingscodes</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1455" width="1000" height="45" fill="#085041"/>
+  <text x="500" y="1484" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">bestemaaltijdbox.be</text>
+</svg>

@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+  <defs>
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#085041;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1D9E75;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1D9E75;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#25C490;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Achtergrond -->
+  <rect width="1000" height="1500" fill="#F7FBF5"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="220" fill="url(#headerGrad)"/>
+  <!-- Decoratieve cirkels header -->
+  <circle cx="880" cy="40" r="80" fill="#1D9E75" opacity="0.3"/>
+  <circle cx="120" cy="200" r="60" fill="#085041" opacity="0.4"/>
+
+  <text x="500" y="75" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#A8E6CF" text-anchor="middle" letter-spacing="3">MAALTIJDBOX VERGELIJKING</text>
+  <text x="500" y="140" font-family="'Segoe UI', Arial, sans-serif" font-size="52" font-weight="800" fill="#FFFFFF" text-anchor="middle">Beste Maaltijdbox</text>
+  <text x="500" y="195" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="600" fill="#EAF3DE" text-anchor="middle">België 2026 — Alle scores</text>
+
+  <!-- Subtitle strip -->
+  <rect x="0" y="220" width="1000" height="50" fill="#1D9E75"/>
+  <text x="500" y="252" font-family="'Segoe UI', Arial, sans-serif" font-size="20" fill="#FFFFFF" text-anchor="middle" font-weight="600">Beoordeeld op smaak · prijs · flexibiliteit · duurzaamheid · gemak</text>
+
+  <!-- ===== ROW 1: HelloFresh ===== -->
+  <rect x="40" y="295" width="920" height="120" rx="12" fill="#FFFFFF" filter="url(#shadow)"/>
+  <rect x="40" y="295" width="8" height="120" rx="4" fill="#1D9E75"/>
+  <!-- Rank badge -->
+  <circle cx="90" cy="355" r="28" fill="#085041"/>
+  <text x="90" y="363" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">#1</text>
+  <!-- Name & badge -->
+  <text x="135" y="343" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="700" fill="#1A2E1A">HelloFresh</text>
+  <rect x="135" y="352" width="130" height="28" rx="14" fill="#FFF3CD"/>
+  <text x="200" y="371" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#856404" text-anchor="middle">⭐ BESTE KEUZE</text>
+  <!-- Score bar -->
+  <rect x="135" y="388" width="560" height="18" rx="9" fill="#EAF3DE"/>
+  <rect x="135" y="388" width="472" height="18" rx="9" fill="url(#bar1)"/>
+  <text x="710" y="402" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">84% van max</text>
+  <!-- Score number -->
+  <text x="870" y="370" font-family="'Segoe UI', Arial, sans-serif" font-size="42" font-weight="800" fill="#085041" text-anchor="middle">8.4</text>
+  <text x="870" y="395" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- ===== ROW 2: Foodbag ===== -->
+  <rect x="40" y="430" width="920" height="110" rx="12" fill="#FFFFFF"/>
+  <rect x="40" y="430" width="8" height="110" rx="4" fill="#1D9E75"/>
+  <circle cx="90" cy="485" r="26" fill="#1D9E75"/>
+  <text x="90" y="493" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">#2</text>
+  <text x="135" y="473" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#1A2E1A">Foodbag</text>
+  <rect x="135" y="480" width="148" height="26" rx="13" fill="#D4EDDA"/>
+  <text x="209" y="498" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#155724" text-anchor="middle">🇧🇪 BELGISCHE KEUZE</text>
+  <rect x="135" y="515" width="560" height="16" rx="8" fill="#EAF3DE"/>
+  <rect x="135" y="515" width="459" height="16" rx="8" fill="#1D9E75"/>
+  <text x="870" y="498" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#085041" text-anchor="middle">8.1</text>
+  <text x="870" y="520" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- ===== ROW 3: Marley Spoon ===== -->
+  <rect x="40" y="555" width="920" height="110" rx="12" fill="#FFFFFF"/>
+  <rect x="40" y="555" width="8" height="110" rx="4" fill="#3DB88C"/>
+  <circle cx="90" cy="610" r="26" fill="#3DB88C"/>
+  <text x="90" y="618" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">#3</text>
+  <text x="135" y="598" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#1A2E1A">Marley Spoon</text>
+  <rect x="135" y="605" width="168" height="26" rx="13" fill="#E8F4FD"/>
+  <text x="219" y="623" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#0C6291" text-anchor="middle">👨‍🍳 KOOKLIEFHEBBERS</text>
+  <rect x="135" y="640" width="560" height="16" rx="8" fill="#EAF3DE"/>
+  <rect x="135" y="640" width="447" height="16" rx="8" fill="#3DB88C"/>
+  <text x="870" y="623" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#085041" text-anchor="middle">7.9</text>
+  <text x="870" y="645" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- ===== ROW 4: Foodprepper ===== -->
+  <rect x="40" y="680" width="920" height="110" rx="12" fill="#FFFFFF"/>
+  <rect x="40" y="680" width="8" height="110" rx="4" fill="#55C29E"/>
+  <circle cx="90" cy="735" r="26" fill="#55C29E"/>
+  <text x="90" y="743" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">#4</text>
+  <text x="135" y="723" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#1A2E1A">Foodprepper</text>
+  <rect x="135" y="730" width="130" height="26" rx="13" fill="#FFF3E0"/>
+  <text x="200" y="748" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#E65100" text-anchor="middle">⚡ SNELSTE BOX</text>
+  <rect x="135" y="765" width="560" height="16" rx="8" fill="#EAF3DE"/>
+  <rect x="135" y="765" width="440" height="16" rx="8" fill="#55C29E"/>
+  <text x="870" y="748" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#085041" text-anchor="middle">7.8</text>
+  <text x="870" y="770" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- ===== ROW 5: Foodmaker ===== -->
+  <rect x="40" y="805" width="920" height="110" rx="12" fill="#FFFFFF"/>
+  <rect x="40" y="805" width="8" height="110" rx="4" fill="#6ECC9F"/>
+  <circle cx="90" cy="860" r="26" fill="#6ECC9F"/>
+  <text x="90" y="868" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">#5</text>
+  <text x="135" y="848" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#1A2E1A">Foodmaker</text>
+  <rect x="135" y="855" width="120" height="26" rx="13" fill="#D4EDDA"/>
+  <text x="195" y="873" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#155724" text-anchor="middle">🇧🇪 ARTISANAAL</text>
+  <rect x="135" y="890" width="560" height="16" rx="8" fill="#EAF3DE"/>
+  <rect x="135" y="890" width="434" height="16" rx="8" fill="#6ECC9F"/>
+  <text x="870" y="873" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#085041" text-anchor="middle">7.7</text>
+  <text x="870" y="895" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- ===== ROW 6: Ekomenu ===== -->
+  <rect x="40" y="930" width="920" height="110" rx="12" fill="#FFFFFF"/>
+  <rect x="40" y="930" width="8" height="110" rx="4" fill="#88D6A5"/>
+  <circle cx="90" cy="985" r="26" fill="#88D6A5"/>
+  <text x="90" y="993" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">#6</text>
+  <text x="135" y="973" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#1A2E1A">Ekomenu</text>
+  <rect x="135" y="980" width="115" height="26" rx="13" fill="#D4EDDA"/>
+  <text x="192" y="998" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#155724" text-anchor="middle">🌿 100% BIO</text>
+  <rect x="135" y="1015" width="560" height="16" rx="8" fill="#EAF3DE"/>
+  <rect x="135" y="1015" width="428" height="16" rx="8" fill="#88D6A5"/>
+  <text x="870" y="998" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#085041" text-anchor="middle">7.6</text>
+  <text x="870" y="1020" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- ===== ROW 7: Factor ===== -->
+  <rect x="40" y="1055" width="920" height="110" rx="12" fill="#FFFFFF"/>
+  <rect x="40" y="1055" width="8" height="110" rx="4" fill="#A5E0B8"/>
+  <circle cx="90" cy="1110" r="26" fill="#A5E0B8"/>
+  <text x="90" y="1118" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">#7</text>
+  <text x="135" y="1098" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="700" fill="#1A2E1A">Factor</text>
+  <rect x="135" y="1105" width="140" height="26" rx="13" fill="#FFF3E0"/>
+  <text x="205" y="1123" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#E65100" text-anchor="middle">⚡ KANT-EN-KLAAR</text>
+  <rect x="135" y="1140" width="560" height="16" rx="8" fill="#EAF3DE"/>
+  <rect x="135" y="1140" width="423" height="16" rx="8" fill="#A5E0B8"/>
+  <text x="870" y="1123" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#085041" text-anchor="middle">7.5</text>
+  <text x="870" y="1145" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- ===== ROW 8: Carrefour Simply You ===== -->
+  <rect x="40" y="1180" width="920" height="110" rx="12" fill="#FFFFFF"/>
+  <rect x="40" y="1180" width="8" height="110" rx="4" fill="#C2EAD0"/>
+  <circle cx="90" cy="1235" r="26" fill="#C2EAD0"/>
+  <text x="90" y="1243" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">#8</text>
+  <text x="135" y="1223" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" fill="#1A2E1A">Carrefour Simply You</text>
+  <rect x="135" y="1230" width="95" height="26" rx="13" fill="#FFF9C4"/>
+  <text x="182" y="1248" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#827717" text-anchor="middle">💰 BUDGET</text>
+  <rect x="135" y="1265" width="560" height="16" rx="8" fill="#EAF3DE"/>
+  <rect x="135" y="1265" width="381" height="16" rx="8" fill="#C2EAD0"/>
+  <text x="870" y="1248" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#085041" text-anchor="middle">6.8</text>
+  <text x="870" y="1270" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741" text-anchor="middle">/10</text>
+
+  <!-- Legenda sectie -->
+  <rect x="40" y="1310" width="920" height="130" rx="12" fill="#EAF3DE"/>
+  <text x="500" y="1340" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="700" fill="#085041" text-anchor="middle">Beoordelingscriteria</text>
+  <!-- 5 criteria bullets -->
+  <circle cx="95" cy="1375" r="6" fill="#1D9E75"/>
+  <text x="110" y="1380" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#1A2E1A">Smaak</text>
+  <circle cx="225" cy="1375" r="6" fill="#1D9E75"/>
+  <text x="240" y="1380" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#1A2E1A">Prijs-kwaliteit</text>
+  <circle cx="415" cy="1375" r="6" fill="#1D9E75"/>
+  <text x="430" y="1380" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#1A2E1A">Flexibiliteit</text>
+  <circle cx="580" cy="1375" r="6" fill="#1D9E75"/>
+  <text x="595" y="1380" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#1A2E1A">Duurzaamheid</text>
+  <circle cx="775" cy="1375" r="6" fill="#1D9E75"/>
+  <text x="790" y="1380" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#1A2E1A">Gemak</text>
+  <text x="500" y="1425" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4A6741" text-anchor="middle">Scores bijgewerkt mei 2026 — onafhankelijke beoordeling</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1455" width="1000" height="45" fill="#085041"/>
+  <text x="500" y="1484" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">bestemaaltijdbox.be</text>
+</svg>

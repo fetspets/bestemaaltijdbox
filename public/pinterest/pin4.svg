@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+  <defs>
+    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#085041"/>
+      <stop offset="100%" style="stop-color:#1D9E75"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Achtergrond -->
+  <rect width="1000" height="1500" fill="#F7FBF5"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="220" fill="url(#hg)"/>
+  <circle cx="900" cy="55" r="85" fill="#1D9E75" opacity="0.25"/>
+  <circle cx="90" cy="195" r="65" fill="#085041" opacity="0.35"/>
+
+  <text x="500" y="68" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#A8E6CF" text-anchor="middle" letter-spacing="3">KORTINGSCODES MEI 2026</text>
+  <text x="500" y="138" font-family="'Segoe UI', Arial, sans-serif" font-size="50" font-weight="800" fill="#FFFFFF" text-anchor="middle">Bespaar tot €60</text>
+  <text x="500" y="192" font-family="'Segoe UI', Arial, sans-serif" font-size="32" font-weight="600" fill="#EAF3DE" text-anchor="middle">op je eerste maaltijdbox</text>
+
+  <!-- Subtitle strip -->
+  <rect x="0" y="220" width="1000" height="48" fill="#1D9E75"/>
+  <text x="500" y="251" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#FFFFFF" text-anchor="middle" font-weight="600">Alle codes gecontroleerd en actief — alleen voor nieuwe klanten</text>
+
+  <!-- ===== CARD 1: HelloFresh ===== -->
+  <rect x="30" y="285" width="940" height="185" rx="14" fill="#FFFFFF"/>
+  <rect x="30" y="285" width="10" height="185" rx="5" fill="#085041"/>
+
+  <!-- Bedrag badge groot -->
+  <rect x="760" y="300" width="190" height="80" rx="12" fill="#085041"/>
+  <text x="855" y="336" font-family="'Segoe UI', Arial, sans-serif" font-size="40" font-weight="800" fill="#FFFFFF" text-anchor="middle">€60</text>
+  <text x="855" y="365" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#A8E6CF" text-anchor="middle">korting + gratis extras</text>
+
+  <text x="62" y="320" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041">HelloFresh</text>
+  <text x="62" y="348" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">Score 8.4/10 · Marktleider België · Gratis bezorging</text>
+
+  <!-- Code badge -->
+  <rect x="62" y="363" width="200" height="46" rx="8" fill="#EAF3DE" stroke="#1D9E75" stroke-width="2"/>
+  <text x="162" y="382" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">KORTINGSCODE</text>
+  <text x="162" y="402" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">BESTE60</text>
+
+  <text x="280" y="385" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ €30 box 1 + €10 box 2 + €5 box 3</text>
+  <text x="280" y="407" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ 8 weken gratis extra product per box</text>
+
+  <text x="62" y="451" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">v.a. €7,99/portie · 40+ recepten/week · wekelijks opzegbaar</text>
+
+  <!-- ===== CARD 2: Foodbag ===== -->
+  <rect x="30" y="485" width="940" height="175" rx="14" fill="#FFFFFF"/>
+  <rect x="30" y="485" width="10" height="175" rx="5" fill="#1D9E75"/>
+
+  <rect x="760" y="500" width="190" height="75" rx="12" fill="#1D9E75"/>
+  <text x="855" y="534" font-family="'Segoe UI', Arial, sans-serif" font-size="40" font-weight="800" fill="#FFFFFF" text-anchor="middle">€60</text>
+  <text x="855" y="560" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#EAF3DE" text-anchor="middle">3 × €20 korting</text>
+
+  <text x="62" y="518" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041">Foodbag 🇧🇪</text>
+  <text x="62" y="545" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">Score 8.1/10 · Belgische ingrediënten · Smaak 8.6/10</text>
+
+  <rect x="62" y="558" width="220" height="46" rx="8" fill="#EAF3DE" stroke="#1D9E75" stroke-width="2"/>
+  <text x="172" y="577" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">KORTINGSCODE</text>
+  <text x="172" y="597" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">FOODBAGx60</text>
+
+  <text x="300" y="580" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ €20 korting op elk van 1e 3 bestellingen</text>
+  <text x="300" y="600" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">Geldig tot 01/01/2027</text>
+
+  <text x="62" y="641" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">v.a. €9,50/portie · 5 kookstijlen · los bestellen mogelijk</text>
+
+  <!-- ===== CARD 3: Marley Spoon ===== -->
+  <rect x="30" y="675" width="940" height="175" rx="14" fill="#FFFFFF"/>
+  <rect x="30" y="675" width="10" height="175" rx="5" fill="#3DB88C"/>
+
+  <rect x="740" y="690" width="210" height="75" rx="12" fill="#3DB88C"/>
+  <text x="845" y="724" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle">35%</text>
+  <text x="845" y="750" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#EAF3DE" text-anchor="middle">op 5 boxen = ~€54</text>
+
+  <text x="62" y="708" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041">Marley Spoon</text>
+  <text x="62" y="735" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">Score 7.9/10 · Chef-recepten · Smaak 8.6/10</text>
+
+  <rect x="62" y="748" width="240" height="46" rx="8" fill="#EAF3DE" stroke="#3DB88C" stroke-width="2"/>
+  <text x="182" y="767" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">GEEN CODE NODIG</text>
+  <text x="182" y="787" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#085041" text-anchor="middle">Automatisch via link</text>
+
+  <text x="318" y="768" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ 35% box 1 · 30% box 2 · 10% box 3+4</text>
+  <text x="318" y="789" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ 20% box 5 — gratis bezorging box 1</text>
+
+  <text x="62" y="830" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">v.a. €8,67/portie · enkel Vlaanderen &amp; Brussel</text>
+
+  <!-- ===== CARD 4: Foodprepper ===== -->
+  <rect x="30" y="865" width="940" height="165" rx="14" fill="#FFFFFF"/>
+  <rect x="30" y="865" width="10" height="165" rx="5" fill="#55C29E"/>
+
+  <rect x="760" y="878" width="190" height="70" rx="12" fill="#55C29E"/>
+  <text x="855" y="912" font-family="'Segoe UI', Arial, sans-serif" font-size="36" font-weight="800" fill="#FFFFFF" text-anchor="middle">€45</text>
+  <text x="855" y="936" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#EAF3DE" text-anchor="middle">3 × €15 korting</text>
+
+  <text x="62" y="895" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041">Foodprepper 🇧🇪</text>
+  <text x="62" y="922" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">Score 7.8/10 · Klaar in 15 min · Belgisch</text>
+
+  <rect x="62" y="935" width="230" height="46" rx="8" fill="#EAF3DE" stroke="#55C29E" stroke-width="2"/>
+  <text x="177" y="954" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">KORTINGSCODE</text>
+  <text x="177" y="974" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#085041" text-anchor="middle">FOODPREPX45</text>
+
+  <text x="308" y="958" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ €15 korting op elk van 1e 3 bestellingen</text>
+
+  <text x="62" y="1015" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">v.a. €7,49/portie · gratis bezorging · geen verplicht abo</text>
+
+  <!-- ===== CARD 5: Factor ===== -->
+  <rect x="30" y="1045" width="940" height="175" rx="14" fill="#FFFFFF"/>
+  <rect x="30" y="1045" width="10" height="175" rx="5" fill="#6FCEAD"/>
+
+  <rect x="740" y="1058" width="210" height="75" rx="12" fill="#6FCEAD"/>
+  <text x="845" y="1092" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041" text-anchor="middle">40% + 25%</text>
+  <text x="845" y="1118" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#085041" text-anchor="middle">op 6 boxen totaal</text>
+
+  <text x="62" y="1078" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#085041">Factor</text>
+  <text x="62" y="1105" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">Score 7.5/10 · Kant-en-klaar · Laagste prijs €4,99</text>
+
+  <rect x="62" y="1118" width="200" height="46" rx="8" fill="#EAF3DE" stroke="#6FCEAD" stroke-width="2"/>
+  <text x="162" y="1137" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">KORTINGSCODE</text>
+  <text x="162" y="1157" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">BESTE40</text>
+
+  <text x="278" y="1138" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ 40% korting op 1e box</text>
+  <text x="278" y="1158" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">→ 25% op volgende 5 boxen</text>
+
+  <text x="62" y="1200" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741">v.a. €4,99/portie · enkel opwarmen · +€5,99 bezorging</text>
+
+  <!-- Disclaimer blok -->
+  <rect x="30" y="1235" width="940" height="80" rx="12" fill="#EAF3DE"/>
+  <text x="500" y="1265" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#085041" text-anchor="middle">⚠ Alle kortingscodes zijn uitsluitend geldig voor nieuwe klanten</text>
+  <text x="500" y="1292" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4A6741" text-anchor="middle">Codes zijn bijgewerkt mei 2026 — controleer altijd de actuele voorwaarden</text>
+
+  <!-- CTA blok -->
+  <rect x="30" y="1330" width="940" height="105" rx="14" fill="#085041"/>
+  <text x="500" y="1365" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">Alle kortingscodes + directe links</text>
+  <text x="500" y="1395" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#A8E6CF" text-anchor="middle">bestemaaltijdbox.be/kortingscodes</text>
+  <text x="500" y="1420" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#6DB89A" text-anchor="middle">Bijgewerkt mei 2026 · onafhankelijke vergelijking</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1455" width="1000" height="45" fill="#085041"/>
+  <text x="500" y="1484" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">bestemaaltijdbox.be</text>
+</svg>

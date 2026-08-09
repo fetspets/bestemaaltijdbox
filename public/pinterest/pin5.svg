@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+  <defs>
+    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#085041"/>
+      <stop offset="100%" style="stop-color:#1D9E75"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#C0392B"/>
+      <stop offset="100%" style="stop-color:#E74C3C"/>
+    </linearGradient>
+    <linearGradient id="altGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#085041"/>
+      <stop offset="100%" style="stop-color:#1D9E75"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Achtergrond -->
+  <rect width="1000" height="1500" fill="#F7FBF5"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="215" fill="url(#hg)"/>
+  <circle cx="895" cy="55" r="88" fill="#1D9E75" opacity="0.22"/>
+  <circle cx="85" cy="190" r="62" fill="#085041" opacity="0.35"/>
+
+  <text x="500" y="65" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#A8E6CF" text-anchor="middle" letter-spacing="3">STAP-VOOR-STAP GIDS</text>
+  <text x="500" y="135" font-family="'Segoe UI', Arial, sans-serif" font-size="48" font-weight="800" fill="#FFFFFF" text-anchor="middle">HelloFresh Opzeggen</text>
+  <text x="500" y="190" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="600" fill="#EAF3DE" text-anchor="middle">+ het beste alternatief</text>
+
+  <!-- Subtitle strip -->
+  <rect x="0" y="215" width="1000" height="48" fill="#1D9E75"/>
+  <text x="500" y="246" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#FFFFFF" text-anchor="middle" font-weight="600">Deadline: minimaal 5 dagen voor je volgende levering</text>
+
+  <!-- ===== STAPPEN SECTIE ===== -->
+  <rect x="30" y="278" width="940" height="56" rx="10" fill="#EAF3DE"/>
+  <text x="500" y="314" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#085041" text-anchor="middle">Hoe zeg je HelloFresh op in België?</text>
+
+  <!-- Stap 1 -->
+  <rect x="30" y="348" width="940" height="105" rx="12" fill="#FFFFFF"/>
+  <rect x="30" y="348" width="10" height="105" rx="5" fill="url(#redGrad)"/>
+  <circle cx="95" cy="400" r="32" fill="url(#redGrad)"/>
+  <text x="95" y="408" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="middle">1</text>
+  <text x="150" y="385" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Log in op hellofresh.be</text>
+  <text x="150" y="415" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741">Ga naar de website en meld je aan met je e-mailadres en wachtwoord</text>
+  <text x="150" y="440" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#888">Gebruik de HelloFresh app of de website op je computer</text>
+
+  <!-- Stap 2 -->
+  <rect x="30" y="465" width="940" height="105" rx="12" fill="#FFFFFF"/>
+  <rect x="30" y="465" width="10" height="105" rx="5" fill="url(#redGrad)"/>
+  <circle cx="95" cy="517" r="32" fill="url(#redGrad)"/>
+  <text x="95" y="525" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="middle">2</text>
+  <text x="150" y="502" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Ga naar "Mijn account"</text>
+  <text x="150" y="532" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741">Klik rechtsboven op je naam of profielfoto → "Mijn account"</text>
+  <text x="150" y="557" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741">Klik vervolgens op het tabblad <tspan font-weight="700" fill="#1A2E1A">"Abonnement"</tspan></text>
+
+  <!-- Stap 3 -->
+  <rect x="30" y="582" width="940" height="105" rx="12" fill="#FFFFFF"/>
+  <rect x="30" y="582" width="10" height="105" rx="5" fill="url(#redGrad)"/>
+  <circle cx="95" cy="634" r="32" fill="url(#redGrad)"/>
+  <text x="95" y="642" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="middle">3</text>
+  <text x="150" y="619" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Klik op "Abonnement opzeggen"</text>
+  <text x="150" y="649" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741">Scroll naar beneden op de abonnementspagina</text>
+  <text x="150" y="674" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741">Volg de stappen en bevestig de opzegging — je ontvangt een e-mail</text>
+
+  <!-- Stap 4 -->
+  <rect x="30" y="699" width="940" height="105" rx="12" fill="#FFFFFF"/>
+  <rect x="30" y="699" width="10" height="105" rx="5" fill="url(#redGrad)"/>
+  <circle cx="95" cy="751" r="32" fill="url(#redGrad)"/>
+  <text x="95" y="759" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="middle">4</text>
+  <text x="150" y="736" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#1A2E1A">Let op de deadline!</text>
+  <text x="150" y="766" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741">Zeg op <tspan font-weight="700" fill="#C0392B">minimaal 5 dagen voor je volgende leverdatum</tspan></text>
+  <text x="150" y="791" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#4A6741">Te laat? Neem direct contact op via de chat op hellofresh.be</text>
+
+  <!-- TIP blok -->
+  <rect x="30" y="818" width="940" height="115" rx="14" fill="#FFF9E6"/>
+  <rect x="30" y="818" width="10" height="115" rx="5" fill="#F4C430"/>
+  <text x="75" y="853" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="800" fill="#856404">💡 TIP — PAUZEER EERST IN PLAATS VAN OPZEGGEN</text>
+  <text x="55" y="882" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#5D4800">Bij HelloFresh kan je leveringen wekelijks overslaan zonder volledig op te zeggen.</text>
+  <text x="55" y="907" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#5D4800">Je behoudt je kortingen en hoeft je niet opnieuw in te schrijven.</text>
+
+  <!-- DIVIDER -->
+  <rect x="30" y="948" width="940" height="4" rx="2" fill="#1D9E75" opacity="0.3"/>
+  <rect x="430" y="940" width="140" height="22" rx="11" fill="#1D9E75"/>
+  <text x="500" y="956" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">OF GA OVER NAAR</text>
+
+  <!-- ===== ALTERNATIEF SECTIE ===== -->
+  <rect x="30" y="968" width="940" height="60" rx="10" fill="#EAF3DE"/>
+  <text x="500" y="1007" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#085041" text-anchor="middle">Beste alternatief voor HelloFresh</text>
+
+  <!-- Foodbag card -->
+  <rect x="30" y="1042" width="940" height="235" rx="16" fill="#FFFFFF"/>
+  <rect x="30" y="1042" width="10" height="235" rx="5" fill="url(#altGrad)"/>
+  <rect x="30" y="1042" width="940" height="8" rx="4" fill="url(#altGrad)"/>
+
+  <!-- Score cirkel -->
+  <circle cx="120" cy="1130" r="55" fill="#EAF3DE"/>
+  <circle cx="120" cy="1130" r="44" fill="#1D9E75"/>
+  <text x="120" y="1122" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="800" fill="#FFFFFF" text-anchor="middle">8.1</text>
+  <text x="120" y="1145" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#EAF3DE" text-anchor="middle">/10</text>
+
+  <text x="200" y="1075" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="800" fill="#085041">Foodbag 🇧🇪</text>
+  <rect x="200" y="1083" width="188" height="28" rx="14" fill="#D4EDDA"/>
+  <text x="294" y="1102" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#155724" text-anchor="middle">🇧🇪 BELGISCHE KEUZE</text>
+
+  <!-- 3 eigenschappen -->
+  <rect x="200" y="1118" width="220" height="52" rx="8" fill="#EAF3DE"/>
+  <text x="310" y="1139" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741" text-anchor="middle">Smaakscore</text>
+  <text x="310" y="1160" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">8.6/10</text>
+
+  <rect x="435" y="1118" width="220" height="52" rx="8" fill="#EAF3DE"/>
+  <text x="545" y="1139" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741" text-anchor="middle">Prijs/portie</text>
+  <text x="545" y="1160" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">v.a. €9,50</text>
+
+  <rect x="670" y="1118" width="280" height="52" rx="8" fill="#085041"/>
+  <text x="810" y="1139" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#A8E6CF" text-anchor="middle">Welkomstkorting</text>
+  <text x="810" y="1160" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#FFFFFF" text-anchor="middle">€60 (code FOODBAGx60)</text>
+
+  <text x="200" y="1200" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">✓ 100% Belgische &amp; lokale ingrediënten</text>
+  <text x="200" y="1223" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">✓ Geen verplicht abonnement — los bestellen mogelijk</text>
+  <text x="200" y="1246" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">✓ 5 kookstijlen · gratis bezorging heel België</text>
+
+  <!-- Andere aanbieders ook opzeggen -->
+  <rect x="30" y="1292" width="940" height="140" rx="14" fill="#EAF3DE"/>
+  <text x="500" y="1322" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#085041" text-anchor="middle">Ook andere boxen opzeggen?</text>
+
+  <text x="60" y="1353" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">Foodbag</text>
+  <text x="220" y="1353" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">→ 5 werkdagen voor bezorgdatum</text>
+  <text x="60" y="1380" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">Marley Spoon</text>
+  <text x="220" y="1380" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">→ 6 dagen voor levering (stricter!)</text>
+  <text x="60" y="1407" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">Ekomenu</text>
+  <text x="220" y="1407" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#4A6741">→ 4 werkdagen voor leverdag</text>
+
+  <text x="500" y="1350" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#4A6741" text-anchor="middle">Volledige gids op:</text>
+  <text x="500" y="1373" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#085041" text-anchor="middle">bestemaaltijdbox.be/maaltijdbox-opzeggen</text>
+  <text x="500" y="1397" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#6DB89A" text-anchor="middle">Bijgewerkt mei 2026</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1455" width="1000" height="45" fill="#085041"/>
+  <text x="500" y="1484" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">bestemaaltijdbox.be</text>
+</svg>

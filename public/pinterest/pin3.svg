@@ -1,0 +1,170 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="1500" viewBox="0 0 1000 1500">
+  <defs>
+    <linearGradient id="hg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#085041"/>
+      <stop offset="100%" style="stop-color:#1D9E75"/>
+    </linearGradient>
+    <linearGradient id="goldBar" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#F4C430"/>
+      <stop offset="100%" style="stop-color:#FFD700"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Achtergrond -->
+  <rect width="1000" height="1500" fill="#F7FBF5"/>
+
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="220" fill="url(#hg)"/>
+  <circle cx="880" cy="60" r="90" fill="#1D9E75" opacity="0.25"/>
+  <circle cx="100" cy="190" r="60" fill="#085041" opacity="0.35"/>
+
+  <text x="500" y="68" font-family="'Segoe UI', Arial, sans-serif" font-size="26" font-weight="700" fill="#A8E6CF" text-anchor="middle" letter-spacing="3">GEZINNEN GIDS 2026</text>
+  <text x="500" y="140" font-family="'Segoe UI', Arial, sans-serif" font-size="50" font-weight="800" fill="#FFFFFF" text-anchor="middle">Beste Maaltijdbox</text>
+  <text x="500" y="193" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="600" fill="#EAF3DE" text-anchor="middle">voor Gezinnen</text>
+
+  <!-- Subtitle strip -->
+  <rect x="0" y="220" width="1000" height="48" fill="#1D9E75"/>
+  <text x="500" y="251" font-family="'Segoe UI', Arial, sans-serif" font-size="19" fill="#FFFFFF" text-anchor="middle" font-weight="600">Beoordeeld op porties · bereidingstijd · variatie · prijs</text>
+
+  <!-- ===== GOUD: #1 HelloFresh ===== -->
+  <rect x="30" y="285" width="940" height="310" rx="16" fill="#FFFFFF"/>
+  <rect x="30" y="285" width="940" height="10" rx="8" fill="url(#goldBar)"/>
+
+  <!-- Medaille -->
+  <circle cx="105" cy="365" r="48" fill="#F4C430"/>
+  <circle cx="105" cy="365" r="38" fill="#FFD700"/>
+  <text x="105" y="358" font-family="'Segoe UI', Arial, sans-serif" font-size="28" font-weight="800" fill="#7B5800" text-anchor="middle">#1</text>
+  <text x="105" y="383" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#7B5800" text-anchor="middle">GOUD</text>
+
+  <text x="175" y="333" font-family="'Segoe UI', Arial, sans-serif" font-size="34" font-weight="800" fill="#085041">HelloFresh</text>
+  <rect x="175" y="342" width="140" height="28" rx="14" fill="#FFF3CD"/>
+  <text x="245" y="361" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#856404" text-anchor="middle">⭐ BESTE KEUZE</text>
+  <text x="175" y="398" font-family="'Segoe UI', Arial, sans-serif" font-size="44" font-weight="800" fill="#1D9E75">8.4<tspan font-size="22" fill="#4A6741">/10</tspan></text>
+
+  <!-- Kenmerken grid -->
+  <rect x="175" y="415" width="200" height="60" rx="8" fill="#EAF3DE"/>
+  <text x="275" y="438" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741" text-anchor="middle">Max personen</text>
+  <text x="275" y="462" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#085041" text-anchor="middle">6 pers.</text>
+
+  <rect x="390" y="415" width="200" height="60" rx="8" fill="#EAF3DE"/>
+  <text x="490" y="438" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741" text-anchor="middle">Bereiding</text>
+  <text x="490" y="462" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#085041" text-anchor="middle">25-30 min</text>
+
+  <rect x="605" y="415" width="200" height="60" rx="8" fill="#EAF3DE"/>
+  <text x="705" y="438" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741" text-anchor="middle">Recepten/week</text>
+  <text x="705" y="462" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#085041" text-anchor="middle">40+</text>
+
+  <rect x="820" y="415" width="130" height="60" rx="8" fill="#EAF3DE"/>
+  <text x="885" y="438" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#4A6741" text-anchor="middle">Korting</text>
+  <text x="885" y="462" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#1D9E75" text-anchor="middle">€60</text>
+
+  <text x="175" y="507" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">✓ Enige box voor tot 6 personen  ✓ Gratis bezorging heel België</text>
+  <text x="175" y="530" font-family="'Segoe UI', Arial, sans-serif" font-size="15" fill="#1A2E1A">✓ Kindvriendelijke recepten filter  ✓ Wekelijks pauzeren mogelijk</text>
+  <text x="175" y="560" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#085041">Prijs: v.a. €7,99/portie — tot €60 welkomstkorting (code BESTE60)</text>
+
+  <!-- ===== ZILVER: #2 Foodbag ===== -->
+  <rect x="30" y="610" width="940" height="260" rx="16" fill="#FFFFFF"/>
+  <rect x="30" y="610" width="940" height="8" rx="4" fill="#C0C0C0"/>
+
+  <circle cx="105" cy="680" r="42" fill="#D8D8D8"/>
+  <circle cx="105" cy="680" r="32" fill="#C0C0C0"/>
+  <text x="105" y="673" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="800" fill="#555" text-anchor="middle">#2</text>
+  <text x="105" y="695" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#555" text-anchor="middle">ZILVER</text>
+
+  <text x="175" y="655" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="800" fill="#085041">Foodbag</text>
+  <rect x="175" y="663" width="148" height="26" rx="13" fill="#D4EDDA"/>
+  <text x="249" y="681" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#155724" text-anchor="middle">🇧🇪 BELGISCHE KEUZE</text>
+  <text x="175" y="715" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#1D9E75">8.1<tspan font-size="18" fill="#4A6741">/10</tspan></text>
+
+  <rect x="175" y="730" width="180" height="55" rx="8" fill="#EAF3DE"/>
+  <text x="265" y="752" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">Max personen</text>
+  <text x="265" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">5 pers.</text>
+
+  <rect x="370" y="730" width="180" height="55" rx="8" fill="#EAF3DE"/>
+  <text x="460" y="752" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">Bereiding</text>
+  <text x="460" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">20 min</text>
+
+  <rect x="565" y="730" width="180" height="55" rx="8" fill="#EAF3DE"/>
+  <text x="655" y="752" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">Smaakscore</text>
+  <text x="655" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">8.6/10</text>
+
+  <rect x="760" y="730" width="190" height="55" rx="8" fill="#EAF3DE"/>
+  <text x="855" y="752" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">Welkomstkorting</text>
+  <text x="855" y="774" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#1D9E75" text-anchor="middle">€60</text>
+
+  <text x="175" y="812" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">✓ Belgische ingrediënten  ✓ "Busy Day" 20 min  ✓ Hele België</text>
+  <text x="175" y="838" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#085041">Prijs: v.a. €9,50/portie — €60 korting (code FOODBAGx60)</text>
+
+  <!-- ===== BRONS: #3 Ekomenu ===== -->
+  <rect x="30" y="885" width="940" height="235" rx="16" fill="#FFFFFF"/>
+  <rect x="30" y="885" width="940" height="8" rx="4" fill="#CD7F32"/>
+
+  <circle cx="105" cy="945" r="40" fill="#DFA56A"/>
+  <circle cx="105" cy="945" r="30" fill="#CD7F32"/>
+  <text x="105" y="938" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#5D2E00" text-anchor="middle">#3</text>
+  <text x="105" y="958" font-family="'Segoe UI', Arial, sans-serif" font-size="12" font-weight="700" fill="#5D2E00" text-anchor="middle">BRONS</text>
+
+  <text x="175" y="922" font-family="'Segoe UI', Arial, sans-serif" font-size="30" font-weight="800" fill="#085041">Ekomenu</text>
+  <rect x="175" y="930" width="115" height="26" rx="13" fill="#D4EDDA"/>
+  <text x="233" y="948" font-family="'Segoe UI', Arial, sans-serif" font-size="13" font-weight="700" fill="#155724" text-anchor="middle">🌿 100% BIO</text>
+  <text x="175" y="980" font-family="'Segoe UI', Arial, sans-serif" font-size="38" font-weight="800" fill="#1D9E75">7.6<tspan font-size="18" fill="#4A6741">/10</tspan></text>
+
+  <rect x="175" y="995" width="220" height="55" rx="8" fill="#EAF3DE"/>
+  <text x="285" y="1017" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">Duurzaamheidsscore</text>
+  <text x="285" y="1039" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">9.5/10 🌿</text>
+
+  <rect x="410" y="995" width="200" height="55" rx="8" fill="#EAF3DE"/>
+  <text x="510" y="1017" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">Bereiding</text>
+  <text x="510" y="1039" font-family="'Segoe UI', Arial, sans-serif" font-size="20" font-weight="800" fill="#085041" text-anchor="middle">Flexibel</text>
+
+  <rect x="625" y="995" width="325" height="55" rx="8" fill="#EAF3DE"/>
+  <text x="787" y="1017" font-family="'Segoe UI', Arial, sans-serif" font-size="12" fill="#4A6741" text-anchor="middle">Speciaal</text>
+  <text x="787" y="1039" font-family="'Segoe UI', Arial, sans-serif" font-size="18" font-weight="800" fill="#085041" text-anchor="middle">Plantaardig aanbod</text>
+
+  <text x="175" y="1083" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#1A2E1A">✓ 100% biologisch · CO₂-tracker · milieubewust gezin</text>
+  <text x="175" y="1105" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#085041">Prijs: v.a. €6,18/portie — gratis bezorging</text>
+
+  <!-- Vergelijkingstabel -->
+  <rect x="30" y="1135" width="940" height="280" rx="14" fill="#085041"/>
+  <text x="500" y="1170" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="800" fill="#FFFFFF" text-anchor="middle">Snelle vergelijking voor gezinnen</text>
+
+  <!-- Header rij tabel -->
+  <rect x="50" y="1182" width="900" height="36" rx="6" fill="#1D9E75"/>
+  <text x="180" y="1206" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">MAX PERSONEN</text>
+  <text x="360" y="1206" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">BEREIDING</text>
+  <text x="540" y="1206" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">PRIJS/PORTIE</text>
+  <text x="720" y="1206" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">KORTING</text>
+  <text x="880" y="1206" font-family="'Segoe UI', Arial, sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle">SCORE</text>
+
+  <!-- Data rijen -->
+  <line x1="50" y1="1230" x2="950" y2="1230" stroke="#1D9E75" stroke-width="1"/>
+  <text x="70" y="1254" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#EAF3DE">HelloFresh</text>
+  <text x="180" y="1254" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">6 pers.</text>
+  <text x="360" y="1254" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">25-30 min</text>
+  <text x="540" y="1254" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">€7,99</text>
+  <text x="720" y="1254" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#A8E6CF" text-anchor="middle">€60</text>
+  <text x="880" y="1254" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#FFD700" text-anchor="middle">8.4/10</text>
+
+  <line x1="50" y1="1268" x2="950" y2="1268" stroke="#1D9E75" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="70" y="1292" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#EAF3DE">Foodbag</text>
+  <text x="180" y="1292" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">5 pers.</text>
+  <text x="360" y="1292" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">20 min</text>
+  <text x="540" y="1292" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">€9,50</text>
+  <text x="720" y="1292" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#A8E6CF" text-anchor="middle">€60</text>
+  <text x="880" y="1292" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#C0C0C0" text-anchor="middle">8.1/10</text>
+
+  <line x1="50" y1="1306" x2="950" y2="1306" stroke="#1D9E75" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="70" y="1330" font-family="'Segoe UI', Arial, sans-serif" font-size="15" font-weight="700" fill="#EAF3DE">Ekomenu</text>
+  <text x="180" y="1330" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">4 pers.</text>
+  <text x="360" y="1330" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">Flexibel</text>
+  <text x="540" y="1330" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#FFFFFF" text-anchor="middle">€6,18</text>
+  <text x="720" y="1330" font-family="'Segoe UI', Arial, sans-serif" font-size="16" fill="#A8E6CF" text-anchor="middle">—</text>
+  <text x="880" y="1330" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="700" fill="#CD7F32" text-anchor="middle">7.6/10</text>
+
+  <text x="500" y="1390" font-family="'Segoe UI', Arial, sans-serif" font-size="14" fill="#88D6A5" text-anchor="middle">Alle reviews en details: bestemaaltijdbox.be/beste-maaltijdbox-gezinnen</text>
+  <text x="500" y="1415" font-family="'Segoe UI', Arial, sans-serif" font-size="13" fill="#6DB89A" text-anchor="middle">Bijgewerkt mei 2026 — onafhankelijke beoordeling</text>
+
+  <!-- Footer -->
+  <rect x="0" y="1455" width="1000" height="45" fill="#085041"/>
+  <text x="500" y="1484" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="700" fill="#FFFFFF" text-anchor="middle">bestemaaltijdbox.be</text>
+</svg>
