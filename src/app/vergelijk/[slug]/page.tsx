@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getVergelijking, generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
 import { getAanbieder } from '@/lib/aanbieders';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export async function generateStaticParams() {
   return generateVergelijkingStaticParams();
