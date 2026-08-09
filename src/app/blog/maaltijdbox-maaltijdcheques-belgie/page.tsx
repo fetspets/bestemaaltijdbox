@@ -202,7 +202,7 @@ export default function MaaltijdchequesBlogPagina() {
         {/* Header */}
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-            ✓ Bijgewerkt juni 2026
+            ✓ Uitgevers geverifieerd · {LAATST_BIJGEWERKT}
           </div>
           <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(26px, 6vw, 40px)', fontWeight: 900, lineHeight: 1.15, marginBottom: 16, color: 'var(--ink)' }}>
             Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?
