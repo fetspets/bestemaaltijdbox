@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export const metadata: Metadata = {
   title: 'Maaltijdbox betalen met maaltijdcheques in België (2026) — wie accepteert ze?',
