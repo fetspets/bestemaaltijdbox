@@ -2,6 +2,7 @@ import Link from 'next/link';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import { getAanbieder } from '@/lib/aanbieders';
 import { getActieveSponsoring } from '@/lib/sponsoring';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 // ISR: het gesponsorde, uitgelichte Factor-blok verdwijnt vanzelf na de
 // sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
