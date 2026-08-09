@@ -8,6 +8,10 @@ import CookieBanner from '@/components/CookieBanner';
 import AffiliateTracker from '@/components/AffiliateTracker';
 import Script from 'next/script';
 import { isSponsoringActief } from '@/lib/sponsoring';
+import { actieveAanbieders } from '@/lib/aanbieders';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
+
+const aantalAanbieders = actieveAanbieders.length;
 
 // ISR: elk uur herbouwen zodat de server-datum meeschuift en tijdelijke
 // gesponsorde plaatsingen automatisch verdwijnen na hun einddatum, zonder
