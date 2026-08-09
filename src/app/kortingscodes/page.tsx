@@ -9,12 +9,12 @@ import { LAATST_BIJGEWERKT } from '@/lib/site';
 export const revalidate = 3600;
 
 export const metadata = {
-  title: 'Kortingscodes maaltijdbox België juni 2026 — bespaar tot €60 op je eerste box',
-  description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt juni 2026.',
+  title: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
+  description: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
   alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscodes' },
   openGraph: {
-    title: 'Kortingscodes maaltijdbox België juni 2026 — bespaar tot €60 op je eerste box',
-    description: 'Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt juni 2026.',
+    title: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
+    description: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
     url: 'https://bestemaaltijdbox.be/kortingscodes',
     type: 'website',
     locale: 'nl_BE',
