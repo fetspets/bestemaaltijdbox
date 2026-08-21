@@ -6,6 +6,8 @@ import { blogPosts, getBlogPost, generateBlogStaticParams } from '@/lib/blog';
 import { aanbieders, getAanbieder } from '@/lib/aanbieders';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import KortingscodeBox from '@/components/KortingscodeBox';
+import { Blok } from '@/components/ContentBlokken';
+import type { ContentBlok } from '@/lib/blokken';
 
 // Fallback og-afbeelding (er is nog geen dedicated 1200×630-beeld per blog).
 const OG_IMAGE = 'https://bestemaaltijdbox.be/logo.png';
@@ -40,6 +42,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
   };
 }
+
+const RIJKE_BLOKKEN = new Set<string>([
+  'notitie', 'infokaarten', 'winnaar', 'topAanbieders',
+  'overigeAanbieders', 'tabel', 'scenarios', 'slotCta',
+]);
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
@@ -171,6 +178,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       {/* Content */}
       <article style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink)' }}>
         {post.content.map((block, i) => {
+          // Gedeelde blokken (tabel, winnaar, scenario's, ...) gaan naar
+          // ContentBlokken; hieronder blijven de proza-blokken staan.
+          if (RIJKE_BLOKKEN.has(block.type)) {
+            return <Blok key={i} blok={block as ContentBlok} />;
+          }
           if (block.type === 'h2') {
             return (
               <h2 key={i} style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 800, marginTop: 40, marginBottom: 12, color: 'var(--ink)' }}>
@@ -179,8 +191,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             );
           }
           if (block.type === 'p') {
+            if (block.html) {
+              return (
+                <p key={i} style={{ marginBottom: 18, marginTop: 0 }} dangerouslySetInnerHTML={{ __html: block.text }} />
+              );
+            }
             return (
-              <p key={i} style={{ marginBottom: 16 }}>
+              <p key={i} style={{ marginBottom: 18, marginTop: 0 }}>
                 {block.text}
               </p>
             );
@@ -222,9 +239,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             );
           }
           if (block.type === 'cta') {
+            const doelSlug = block.slug ?? post.sponsor?.gaSlug ?? 'factor';
+            // Een CTA naar een specifieke aanbieder krijgt diens merkkleur;
+            // de gesponsorde variant houdt zijn eigen accent.
+            const kleur = block.slug ? (getAanbieder(block.slug)?.merkKleur ?? '#1B4332') : '#B45309';
             return (
               <div key={i} style={{ margin: '24px 0' }}>
-                <Link href={`/ga/${post.sponsor?.gaSlug ?? 'factor'}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: '#B45309', color: 'white', padding: '13px 24px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+                <Link href={`/ga/${doelSlug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: kleur, color: 'white', padding: '13px 24px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
                   {block.tekst} →
                 </Link>
               </div>
@@ -256,6 +277,22 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           return null;
         })}
       </article>
+
+      {post.faq && post.faq.length > 0 && (
+        <div style={{ marginTop: 40, marginBottom: 40 }}>
+          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
+            {post.faqKop ?? 'Veelgestelde vragen'}
+          </h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12 }}>
+            {post.faq.map(({ q, a }) => (
+              <div key={q} style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)' }}>
+                <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700, marginBottom: 8 }}>{q}</div>
+                <div style={{ fontSize: 14, lineHeight: 1.7, color: '#4B5563' }}>{a}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Related providers */}
       {relatedAanbieders.length > 0 && (
@@ -308,6 +345,24 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           ← Terug naar blog
         </Link>
       </div>
+
+
+      {post.faq && post.faq.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              mainEntity: post.faq.map(({ q, a }) => ({
+                '@type': 'Question',
+                name: q,
+                acceptedAnswer: { '@type': 'Answer', text: a },
+              })),
+            }),
+          }}
+        />
+      )}
 
       {/* JSON-LD */}
       <script

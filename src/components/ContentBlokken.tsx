@@ -25,6 +25,7 @@ function celWaarde(kolom: BlokTabelKolom, slug: string, porties: number): string
     case 'score': return `${a.score.totaal.toFixed(1)}/10`;
     case 'korting': return a.kortingsCode?.bedragKort ?? '—';
     case 'opzeg': return a.opzegTermijn;
+    case 'bezorging': return a.gratisBezorging ? 'Gratis' : euro(a.bezorgkosten ?? 0);
     case 'tekst': return kolom.waarden[slug] ?? '—';
   }
 }
@@ -78,6 +79,19 @@ export function Blok({ blok }: { blok: ContentBlok }) {
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, color: '#14532D', marginBottom: 6 }}>{a.naam}</div>
               <div style={{ fontSize: 14, fontWeight: 600, color: '#1B4332', marginBottom: 4 }}>{blok.prijsRegel}</div>
               <div style={{ fontSize: 13, color: '#374151' }}>{blok.dealRegel}</div>
+              {blok.alternatief && (
+                <div style={{ fontSize: 12, color: '#6B7280', marginTop: 8 }}>
+                  {blok.alternatief.inleiding}{' '}
+                  <Link href={`/aanbieder/${blok.alternatief.slug}`} style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>
+                    {blok.alternatief.label}
+                  </Link>
+                </div>
+              )}
+              {blok.punten && (
+                <ul style={{ margin: '10px 0 0', paddingLeft: 18, fontSize: 14, lineHeight: 1.8, color: '#374151' }}>
+                  {blok.punten.map(p => <li key={p}>{p}</li>)}
+                </ul>
+              )}
             </div>
             <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
               {blok.knoptekst}
@@ -202,8 +216,14 @@ export function Blok({ blok }: { blok: ContentBlok }) {
                 {blok.slugs.map((slug, i) => {
                   const a = getAanbieder(slug);
                   if (!a) return null;
+                  const markering = blok.rijMarkering?.[slug];
                   return (
-                    <tr key={slug} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
+                    <tr key={slug} style={{
+                      borderBottom: '1px solid var(--rule)',
+                      background: markering === 'positief' ? '#F0FDF4'
+                        : markering === 'negatief' ? '#FEF2F2'
+                        : i % 2 === 0 ? 'white' : '#FAFAFA',
+                    }}>
                       <td style={{ padding: '10px 12px', fontWeight: 600 }}>
                         <Link href={`/aanbieder/${slug}`} style={{ color: 'var(--ink)', textDecoration: 'none' }}>{a.naam}</Link>
                       </td>
