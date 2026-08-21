@@ -2,8 +2,6 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAanbieder } from '@/lib/aanbieders';
 
-const FOODPREPPER_CTA = 'https://deals.foodprepper.be/c?c=40691&m=2545883&a=507243&r=&u=';
-const FOODPREPPER_KORTING = 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u=';
 const CANONICAL = 'https://bestemaaltijdbox.be/vergelijk/foodprepper-vs-foodbag';
 
 export const metadata: Metadata = {
@@ -111,9 +109,9 @@ export default function FoodprepperVsFoodbag() {
         {/* Primaire CTA bovenaan */}
         <div style={{ marginBottom: 36 }}>
           <a
-            href={FOODPREPPER_CTA}
+            href="/ga/foodprepper?c=cta"
             target="_blank"
-            rel="sponsored nofollow"
+            rel="noopener sponsored nofollow"
             style={{ display: 'inline-block', background: '#2D6A4F', color: 'white', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}
           >
             Bekijk Foodprepper →
@@ -241,9 +239,9 @@ export default function FoodprepperVsFoodbag() {
               <strong>3× €15 korting</strong> op eerste 3 bestellingen (tot €45). Automatisch toegepast via onze link — geen code nodig.
             </p>
             <a
-              href={FOODPREPPER_KORTING}
+              href="/ga/foodprepper"
               target="_blank"
-              rel="sponsored nofollow"
+              rel="noopener sponsored nofollow"
               style={{ display: 'block', background: '#2D6A4F', color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
             >
               €15 korting op eerste 3 bestellingen →
@@ -265,9 +263,9 @@ export default function FoodprepperVsFoodbag() {
               <strong>3× €20 korting</strong> op eerste 3 bestellingen (tot €60). Automatisch toegepast via onze link — geen code nodig.
             </p>
             <a
-              href={fb.affiliateUrl}
+              href="/ga/foodbag"
               target="_blank"
-              rel="sponsored nofollow"
+              rel="noopener sponsored nofollow"
               style={{ display: 'block', background: '#1E40AF', color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
             >
               Bekijk Foodbag →
@@ -334,9 +332,9 @@ export default function FoodprepperVsFoodbag() {
           </p>
           <div className="two-col-grid" style={{ gap: 12 }}>
             <a
-              href={FOODPREPPER_CTA}
+              href="/ga/foodprepper?c=cta"
               target="_blank"
-              rel="sponsored nofollow"
+              rel="noopener sponsored nofollow"
               style={{ display: 'block', background: '#2D6A4F', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}
             >
               Bekijk Foodprepper →

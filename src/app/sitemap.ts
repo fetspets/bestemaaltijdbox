@@ -7,7 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     'foodprepper', 'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
     'crowd-cooks',
   ];
-  const situaties = ['koppel', 'gezin', 'vegetarisch', 'budget', 'bio', 'singles'];
+  const situaties = ['koppel', 'vegan', 'gezin', 'vegetarisch', 'budget', 'bio', 'singles'];
   const vergelijkingen = [
     'hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon',
     'foodbag-vs-marley-spoon', 'hellofresh-vs-ekomenu',
@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const gidsen = ['goedkoopste-maaltijdbox-belgie'];
   const blogSlugs = [
     'maaltijdbox-zonder-abonnement-belgie',
+    'maaltijdbox-maaltijdcheques-belgie',
     'maaltijdbox-of-zelf-koken-belgie',
     'hoe-maaltijdbox-opzeggen-belgie',
     'vegetarisch-koken-maaltijdbox',

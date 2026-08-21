@@ -202,9 +202,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                       Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Krijg <strong>€15 korting</strong> op elk van je eerste 3 bestellingen, automatisch toegepast via onze link — geen code nodig.
                     </p>
                     <a
-                      href="https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u="
+                      href="/ga/foodprepper"
                       target="_blank"
-                      rel="sponsored nofollow"
+                      rel="noopener sponsored nofollow"
                       style={{ display: 'inline-block', background: '#2D6A4F', color: 'white', padding: '10px 18px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
                     >
                       €15 korting op de eerste 3 bestellingen →

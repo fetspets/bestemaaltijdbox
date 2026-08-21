@@ -1,6 +1,13 @@
 export interface KortingsCode {
   code: string | null;
+  /** Loopt in een zin mee, bv. `Activeer ${bedrag} →`. */
   bedrag: string;
+  /** Compacte weergave voor de badge op /kortingscodes, bv. 'tot €60'. */
+  bedragKort: string;
+  /** Eenregelige samenvatting van de aanbieding. */
+  deal: string;
+  /** Kleine lettertjes: geldigheid en beperkingen. */
+  voorwaarden: string;
   beschrijving: string;
 }
 
@@ -8,6 +15,8 @@ export interface Aanbieder {
   slug: string;
   naam: string;
   logo: string;
+  /** Merkkleur voor accenten en CTA-knoppen. */
+  merkKleur: string;
   tagline: string;
   beschrijving: string;
   uitgebreideReview: {
@@ -48,6 +57,11 @@ export interface Aanbieder {
   vegetarisch: boolean;
   bio: boolean;
   affiliateUrl: string;
+  /**
+   * Alternatieve affiliate-links voor losse campagnes van dezelfde partner.
+   * Aanroepbaar via `/ga/<slug>?c=<sleutel>`; zonder `c` geldt affiliateUrl.
+   */
+  affiliateCampagnes?: Record<string, string>;
   ctaUrl?: string;
   kortingsCode?: KortingsCode;
   ctaSubtekst?: string;
@@ -72,6 +86,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'hellofresh',
     naam: 'HelloFresh',
     logo: '/logos/hellofresh.png',
+    merkKleur: '#1B4332',
     tagline: 'Marktleider in België — sterkste prijs-kwaliteitverhouding',
     beschrijving: 'HelloFresh is een van de populairste maaltijdboxen in België en wereldwijd. Met meer dan 40 recepten per week, gratis bezorging en een flexibel abonnement biedt het een uitstekende balans tussen prijs, keuze en gemak.',
     uitgebreideReview: {
@@ -99,6 +114,9 @@ export const aanbieders: Aanbieder[] = [
     kortingsCode: {
       code: null,
       bedrag: 'tot €60 korting',
+      bedragKort: 'tot €60',
+      deal: 'tot €60 korting op je eerste 3 boxen',
+      voorwaarden: 'Exclusief voor nieuwe klanten · korting over je eerste 3 boxen · automatisch via link · wekelijks opzegbaar',
       beschrijving: 'Nieuwe klanten krijgen tot €60 korting verdeeld over hun eerste 3 boxen. Korting wordt automatisch toegepast via onze link — geen code nodig.',
     },
     ctaSubtekst: 'tot €60 korting op je eerste 3 boxen — automatisch via onze link',
@@ -117,6 +135,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'foodbag',
     naam: 'Foodbag',
     logo: '/logos/foodbag.png',
+    merkKleur: '#1E40AF',
     tagline: 'Belgische maaltijdbox met lokale ingrediënten en 5 kookstijlen',
     beschrijving: 'Foodbag is een Belgische maaltijdbox met focus op lokale ingrediënten en korte keten. Met verse ingrediënten van lokale Belgische boeren, 20+ recepten per week en eigen bezorgers is het een sterke keuze voor wie bewust lokaal wil eten. Eigendom van Colruyt Group.',
     uitgebreideReview: {
@@ -144,7 +163,10 @@ export const aanbieders: Aanbieder[] = [
     kortingsCode: {
       code: null,
       bedrag: '€60 korting',
-      beschrijving: '3× €20 korting op je eerste 3 bestellingen. Korting wordt automatisch toegepast via onze link — geen code nodig.',
+      bedragKort: '€60 totaal',
+      deal: '3x €20 korting op je eerste 3 bestellingen',
+      voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · Geldig t.e.m. 01/01/2027 · 3x €20 op de eerste 3 bestellingen',
+      beschrijving: 'Krijg 3× €20 korting verspreid over je eerste 3 Foodbag-bestellingen. Totale besparing: €60. De korting wordt automatisch toegepast via onze link — geen code nodig.',
     },
     ctaSubtekst: '3× €20 korting · automatisch via onze link',
     kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kookstijlen', '✓ Zonder abonnement', '🔀 Voorheen ook Smartmat & 15gram'],    pros: ['100% Belgische en lokale ingrediënten', 'Uitstekende smaakscores', 'Eigen bezorgers', '5 kookstijlen incl. Sana (Sandra Bekkari)', 'Geen verplicht abonnement'],
@@ -161,6 +183,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'marley-spoon',
     naam: 'Marley Spoon',
     logo: '/logos/marley-spoon.png',
+    merkKleur: '#7C3AED',
     tagline: 'Creatieve chef-recepten voor kookliefhebbers',
     beschrijving: 'Marley Spoon biedt gevarieerde recepten met vaak iets uitgebreidere bereidingen dan andere maaltijdboxen. Met 40 gerechten per week en een prijs vanaf €8,67 per portie is het een goede keuze voor wie graag kookt. Bezorgt in Vlaanderen en Brussel.',
     uitgebreideReview: {
@@ -214,7 +237,10 @@ export const aanbieders: Aanbieder[] = [
     kortingsCode: {
       code: null,
       bedrag: '50% korting',
-      beschrijving: 'Automatisch via link — geen code nodig. 50% + 20% + 15% + 10% korting op je eerste 4 boxen voor nieuwe klanten.',
+      bedragKort: 'Tot 50%',
+      deal: 'Tot 50% korting verspreid over de eerste 4 boxen',
+      voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 4 boxen · Direct opzegbaar · Reguliere bezorgkost: €5,99/levering',
+      beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 50% + gratis verzending op box 1, 20% op box 2, 15% op box 3, 10% op box 4. Daarna €5,99/levering.',
     },
     ctaSubtekst: 'Korting automatisch via link · geen code nodig',
     ctaTekst: 'Bespaar €49 op je eerste 4 boxen',
@@ -250,6 +276,7 @@ export const aanbieders: Aanbieder[] = [
     seoDescription: 'Foodprepper: Belgische maaltijdbox klaar in 15 minuten. Score 7.8/10, gratis bezorging en geen verplicht abonnement. Nu tot €45 korting.',
     naam: 'Foodprepper',
     logo: '/logos/foodprepper.png',
+    merkKleur: '#2D6A4F',
     tagline: 'De snelste maaltijdbox van België — klaar in 15 minuten',
     beschrijving: 'Foodprepper is een Belgische maaltijdbox opgericht in 2021 door Tessa van Meerten. Dankzij voorgegaarde groenten, gemarineerd vlees en voorbereide sauzen staat het eten in 15 minuten op tafel. Onderdeel van Smartmat NV, sinds 2025 in handen van Colruyt Group.',
     uitgebreideReview: {
@@ -302,11 +329,21 @@ export const aanbieders: Aanbieder[] = [
     belgisch: true,
     vegetarisch: true,
     bio: false,
-    affiliateUrl: 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=',
+    // m=2545927 = kortingscampagne. Dit is de URL die vóór de consolidatie in
+    // productie won via de map in /ga/[slug]; de variant zonder &u= die hier
+    // stond werd nooit gebruikt. Verifieer bij TradeTracker welke correct is.
+    affiliateUrl: 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u=',
+    affiliateCampagnes: {
+      // m=2545883 = losse CTA-campagne, stond hardcoded in vergelijk/foodprepper-vs-foodbag.
+      cta: 'https://deals.foodprepper.be/c?c=40691&m=2545883&a=507243&r=&u=',
+    },
     kortingsCode: {
       code: null,
       bedrag: '3× €15 korting',
-      beschrijving: '€15 korting op je eerste 3 bestellingen (totaal €45). Korting wordt automatisch toegepast via onze link — geen code nodig. Geldig voor nieuwe klanten.',
+      bedragKort: '€45 totaal',
+      deal: '3× €15 korting op je eerste 3 bestellingen',
+      voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · 3× €15 op eerste 3 bestellingen · Vrij opzegbaar',
+      beschrijving: 'Krijg €15 korting op elk van je eerste 3 bestellingen. Totale besparing: €45. De korting wordt automatisch toegepast via onze link — geen code nodig. Klaar in 15 minuten dankzij voorbereide ingrediënten.',
     },
     ctaSubtekst: '3× €15 korting op eerste 3 bestellingen · automatisch via onze link',
     ctaTekst: 'Bekijk Foodprepper',
@@ -337,6 +374,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'factor',
     naam: 'Factor',
     logo: '/logos/factor.svg',
+    merkKleur: '#7C3AED',
     tagline: 'Kant-en-klaar chef-maaltijden — geen koken vereist',
     beschrijving: 'Factor (van de HelloFresh Group) levert kant-en-klare chef-maaltijden die je enkel hoeft op te warmen. 18 gerechten per week in 5 dieetstijlen, bezorging in heel België op zondag of maandag.',
     uitgebreideReview: {
@@ -365,6 +403,9 @@ export const aanbieders: Aanbieder[] = [
     kortingsCode: {
       code: null,
       bedrag: '40% + 25% korting',
+      bedragKort: '40% + 25%',
+      deal: '40% korting op je eerste box + 25% op de volgende vijf boxen',
+      voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · Eerste box + vijf volgende boxen · Geldig t.e.m. 27/10/2026',
       beschrijving: 'De korting wordt automatisch toegepast via onze link — je hoeft geen code in te voeren: 40% korting op je eerste box + 25% korting op de volgende vijf boxen. Exclusief voor nieuwe klanten.',
     },
     ctaSubtekst: '40% korting op je eerste box · automatisch via onze link',
@@ -382,6 +423,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'crowd-cooks',
     naam: 'Crowd Cooks',
     logo: '/logos/crowd-cooks.svg',
+    merkKleur: '#1B4332',
     tagline: 'Kant-en-klare chef-maaltijden — vers bereid, thuisbezorgd',
     beschrijving: 'Crowd Cooks is een Belgische kant-en-klare maaltijdservice: verse maaltijden bereid door chefs, die je enkel hoeft op te warmen. Elke week 12 nieuwe gerechten, royale porties van 450+ gram, en bezorging op zondag of maandag (€4,90). Geen koken vereist.',
     uitgebreideReview: {
@@ -410,6 +452,9 @@ export const aanbieders: Aanbieder[] = [
     kortingsCode: {
       code: null,
       bedrag: '€60 totaal',
+      bedragKort: '€60 totaal',
+      deal: '€20 korting in week 1 + €10 korting per week gedurende 4 weken',
+      voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · €20 in week 1 + 4× €10 · Wekelijks opzegbaar',
       beschrijving: '€20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. Korting wordt automatisch toegepast via onze link — geen code nodig.',
     },
     ctaSubtekst: 'tot €60 korting · automatisch via onze link',
@@ -429,6 +474,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'foodmaker',
     naam: 'Foodmaker',
     logo: '/logos/foodmaker.svg',
+    merkKleur: '#1B4332',
     tagline: 'Artisanale kant-en-klaar met Jeroen Meus — Dagelijkse Kost bezorgd',
     beschrijving: 'Foodmaker is de Antwerpse kant-en-klaar maaltijdservice met een unieke samenwerking met Jeroen Meus (Dagelijkse Kost). 32 gerechten per week, gratis bezorging in heel België en een volledig vegan "Vedge Bags" gamma.',
     uitgebreideReview: {
@@ -468,6 +514,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'ekomenu',
     naam: 'Ekomenu',
     logo: '/logos/ekomenu.png',
+    merkKleur: '#166534',
     tagline: '100% biologisch — de groenste keuze in België',
     beschrijving: 'Ekomenu is de meest duurzame maaltijdbox in België. Alle ingrediënten zijn biologisch gecertificeerd, verpakking is milieuvriendelijk, en je kan je persoonlijke CO2-footprint bijhouden. Bezorgt in Vlaanderen en Brussel.',
     uitgebreideReview: {
@@ -507,6 +554,7 @@ export const aanbieders: Aanbieder[] = [
     slug: 'carrefour-simply-you',
     naam: 'Carrefour Simply You',
     logo: '/logos/carrefour-simply-you.svg',
+    merkKleur: '#0F4C81',
     tagline: 'Budgetvriendelijk zonder abonnement — in heel België',
     beschrijving: 'Carrefour Simply You is een betaalbare maaltijdbox van de bekende supermarktketen. Geen verplicht abonnement, bezorging in heel België inclusief Wallonië, en een welkomstkorting voor nieuwe klanten.',
     uitgebreideReview: {
