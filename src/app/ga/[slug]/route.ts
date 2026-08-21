@@ -1,14 +1,6 @@
 import { NextResponse } from 'next/server';
 import { getAanbieder } from '@/lib/aanbieders';
 
-const affiliateLinks: Record<string, string> = {
-  'hellofresh': 'https://hellofreshfr.sjv.io/c/3156055/3896977/45302',
-  'foodbag': 'https://www.foodbag.be/foodbox/?tt=19934_2485209_507243_&r=',
-  'marley-spoon': 'https://go.adt246.net/t/t?a=1709214807&as=2059394978&t=2&tk=1',
-  'factor': 'https://factor-be.sjv.io/c/3156055/3876428/19954',
-  'foodprepper': 'https://deals.foodprepper.be/c?c=40691&m=2545927&a=507243&r=&u=',
-};
-
 export async function GET(
   request: Request,
   { params }: { params: Promise<{ slug: string }> }
@@ -18,8 +10,16 @@ export async function GET(
   if (!aanbieder) {
     return NextResponse.redirect(new URL('/', request.url));
   }
-  const affiliateUrl = affiliateLinks[slug] || aanbieder.affiliateUrl;
-  console.log(`Affiliate click: ${slug} - ${new Date().toISOString()}`);
+
+  // Optionele campagne: /ga/foodprepper?c=cta. Een onbekende sleutel valt terug
+  // op de standaard affiliate-link in plaats van te falen.
+  const campagne = new URL(request.url).searchParams.get('c');
+  const affiliateUrl =
+    (campagne && aanbieder.affiliateCampagnes?.[campagne]) || aanbieder.affiliateUrl;
+
+  console.log(
+    `Affiliate click: ${slug}${campagne ? ` (${campagne})` : ''} - ${new Date().toISOString()}`
+  );
   return NextResponse.redirect(affiliateUrl, {
     status: 302,
     headers: { 'Cache-Control': 'no-store, no-cache, must-revalidate' },
