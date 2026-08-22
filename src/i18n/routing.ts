@@ -69,6 +69,9 @@ export const routing = defineRouting({
 
 export type Locale = (typeof routing.locales)[number];
 
+/** De interne route-sjablonen, bv. '/aanbieder/[slug]'. */
+export type RouteSjabloon = keyof typeof routing.pathnames;
+
 /** Taalcode zoals hreflang en og:locale die verwachten. */
 export const hreflangVoor: Record<Locale, string> = {
   nl: 'nl-BE',

@@ -1,14 +1,22 @@
 import Link from 'next/link';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import type { Metadata } from 'next';
+import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
-  pad: '/voorwaarden',
-  titel: 'Algemene voorwaarden — BesteMaaltijdbox.be',
-  beschrijving: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
-  type: 'website',
-});
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    locale: locale as Locale,
+    route: '/voorwaarden',
+    pad: '/voorwaarden',
+    titel: 'Algemene voorwaarden — BesteMaaltijdbox.be',
+    beschrijving: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
+    type: 'website',
+  });
+}
 
 export default function VoorwaardenPage() {
   return (

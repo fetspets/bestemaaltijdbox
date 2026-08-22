@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import { actieveAanbieders, getAanbieder } from '@/lib/aanbieders';
@@ -10,12 +11,19 @@ import { LAATST_BIJGEWERKT } from '@/lib/site';
 // sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
 export const revalidate = 3600;
 
-export const metadata: Metadata = buildMetadata({
-  pad: '/kortingscodes',
-  titel: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
-  beschrijving: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
-  type: 'website',
-});
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    locale: locale as Locale,
+    route: '/kortingscodes',
+    pad: '/kortingscodes',
+    titel: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
+    beschrijving: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
+    type: 'website',
+  });
+}
 
 // Slugs met een eigen /kortingscode/<slug>-detailpagina (voor de "Bekijk details"-link).
 const heeftDetailpagina = new Set(['hellofresh', 'foodbag', 'foodprepper', 'factor', 'crowd-cooks']);

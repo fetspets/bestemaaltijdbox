@@ -1,13 +1,21 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
-  pad: '/privacy',
-  titel: 'Privacybeleid — BesteMaaltijdbox.be',
-  beschrijving: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
-  type: 'website',
-});
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    locale: locale as Locale,
+    route: '/privacy',
+    pad: '/privacy',
+    titel: 'Privacybeleid — BesteMaaltijdbox.be',
+    beschrijving: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
+    type: 'website',
+  });
+}
 
 export default function PrivacyPage() {
   return (

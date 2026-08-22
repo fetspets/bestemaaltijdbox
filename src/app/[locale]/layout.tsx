@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import './globals.css';
+import '../globals.css';
 import Navbar from '@/components/Navbar';
 import HelloFreshDealBanner from '@/components/HelloFreshDealBanner';
 import SponsoredBanner from '@/components/SponsoredBanner';
@@ -11,6 +11,9 @@ import { isSponsoringActief } from '@/lib/sponsoring';
 import { actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import { SITE_URL, SITE_NAAM, STANDAARD_LOCALE } from '@/lib/seo';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
+import { notFound } from 'next/navigation';
+import { routing, type Locale } from '@/i18n/routing';
 
 const aantalAanbieders = actieveAanbieders.length;
 
@@ -18,6 +21,10 @@ const aantalAanbieders = actieveAanbieders.length;
 // gesponsorde plaatsingen automatisch verdwijnen na hun einddatum, zonder
 // rebuild en zonder de browserklok te gebruiken.
 export const revalidate = 3600;
+
+export function generateStaticParams() {
+  return routing.locales.map(locale => ({ locale }));
+}
 
 export const metadata: Metadata = {
   // Maakt relatieve URL's in openGraph en alternates mogelijk.
@@ -51,11 +58,20 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({
+  children,
+  params,
+}: {
+  children: React.ReactNode;
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!hasLocale(routing.locales, locale)) notFound();
+  const taal = locale as Locale;
   const bannerActief = isSponsoringActief('banner');
 
   return (
-    <html lang="nl">
+    <html lang={taal}>
       <head>
         {/* eslint-disable-next-line @typescript-eslint/ban-ts-comment */}
         {/* @ts-ignore */}
@@ -78,6 +94,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
       </head>
       <body>
+        <NextIntlClientProvider>
         <Navbar />
         {/* Factor-banner op de plaats van de HelloFresh-banner; die laatste
             wordt tijdelijk verborgen zolang de Factor-sponsoring loopt. */}
@@ -87,6 +104,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Footer />
         <CookieBanner />
         <AffiliateTracker />
+        </NextIntlClientProvider>
 
         {/* Google Analytics */}
         <Script

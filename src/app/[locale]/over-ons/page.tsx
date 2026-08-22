@@ -1,13 +1,21 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = buildMetadata({
-  pad: '/over-ons',
-  titel: 'Over BesteMaaltijdbox.be — onafhankelijk advies, eerlijk vergeleken',
-  beschrijving: 'Wie zit er achter BesteMaaltijdbox.be? Hoe we elke Belgische maaltijdbox onderzoeken op gebruikerservaringen, publieke data en eigen analyse.',
-  type: 'website',
-});
+export async function generateMetadata(
+  { params }: { params: Promise<{ locale: string }> }
+): Promise<Metadata> {
+  const { locale } = await params;
+  return buildMetadata({
+    locale: locale as Locale,
+    route: '/over-ons',
+    pad: '/over-ons',
+    titel: 'Over BesteMaaltijdbox.be — onafhankelijk advies, eerlijk vergeleken',
+    beschrijving: 'Wie zit er achter BesteMaaltijdbox.be? Hoe we elke Belgische maaltijdbox onderzoeken op gebruikerservaringen, publieke data en eigen analyse.',
+    type: 'website',
+  });
+}
 
 export default function OverOnsPage() {
   return (
