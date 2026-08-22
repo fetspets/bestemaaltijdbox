@@ -1,20 +1,16 @@
 import type { Metadata } from 'next';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 import Link from 'next/link';
 import { blogPosts } from '@/lib/blog';
 import GesponsordLabel from '@/components/GesponsordLabel';
 
-export const metadata: Metadata = {
-  title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
-  description: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
-  alternates: { canonical: 'https://bestemaaltijdbox.be/blog' },
-  openGraph: {
-    title: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
-    description: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
-    url: 'https://bestemaaltijdbox.be/blog',
-    type: 'website',
-    locale: 'nl_BE',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  pad: '/blog',
+  titel: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
+  beschrijving: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
+  type: 'website',
+});
 
 export default function BlogOverzicht() {
   return (
@@ -81,7 +77,7 @@ export default function BlogOverzicht() {
           gap: 12,
         }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            juni 2026
+            {LAATST_BIJGEWERKT}
           </div>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
             Maaltijdbox zonder abonnement in België 2026 — welke opties zijn er?
@@ -106,7 +102,7 @@ export default function BlogOverzicht() {
           gap: 12,
         }}>
           <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            juni 2026
+            {LAATST_BIJGEWERKT}
           </div>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
             Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?

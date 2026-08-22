@@ -1,20 +1,15 @@
 import type { Metadata } from 'next';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { buildMetadata, SITE_URL, absoluteUrl } from '@/lib/seo';
 
-const CANONICAL = 'https://bestemaaltijdbox.be/kortingscode/foodprepper';
+const CANONICAL = '/kortingscode/foodprepper';
 
-export const metadata: Metadata = {
-  title: 'Foodprepper kortingscode juni 2026 — €45 korting zonder abonnement',
-  description:
-    'Het actuele Foodprepper welkomstvoordeel: €45 korting (3x €15) op je eerste 3 bestellingen — geen abonnement, geen verplichtingen.',
-  alternates: { canonical: CANONICAL },
-  openGraph: {
-    title: 'Foodprepper kortingscode juni 2026 — €45 korting zonder abonnement',
-    description:
-      'Het actuele Foodprepper welkomstvoordeel: €45 korting (3x €15) op je eerste 3 bestellingen — geen abonnement, geen verplichtingen.',
-    type: 'article',
-    url: CANONICAL,
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  pad: CANONICAL,
+  titel: `Foodprepper kortingscode ${LAATST_BIJGEWERKT} — €45 korting zonder abonnement`,
+  beschrijving: 'Het actuele Foodprepper welkomstvoordeel: €45 korting (3x €15) op je eerste 3 bestellingen — geen abonnement, geen verplichtingen.',
+  type: 'article',
+});
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -59,9 +54,9 @@ const breadcrumbJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bestemaaltijdbox.be' },
-    { '@type': 'ListItem', position: 2, name: 'Kortingscodes', item: 'https://bestemaaltijdbox.be/kortingscodes' },
-    { '@type': 'ListItem', position: 3, name: 'Foodprepper kortingscode', item: CANONICAL },
+    { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+    { '@type': 'ListItem', position: 2, name: 'Kortingscodes', item: absoluteUrl('/kortingscodes') },
+    { '@type': 'ListItem', position: 3, name: 'Foodprepper kortingscode', item: absoluteUrl(CANONICAL) },
   ],
 };
 

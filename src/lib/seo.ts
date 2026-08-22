@@ -71,7 +71,8 @@ export function buildMetadata({
       ...(images ? { images } : {}),
     },
     twitter: {
-      card: 'summary_large_image',
+      // Een grote kaart zonder afbeelding levert een lege banner op.
+      card: images ? 'summary_large_image' : 'summary',
       title: titel,
       description: beschrijving,
       ...(images ? { images } : {}),

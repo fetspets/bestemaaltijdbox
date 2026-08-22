@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import { buildMetadata, SITE_URL, absoluteUrl } from '@/lib/seo';
 import { getAanbieder, aanbieders, actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 
@@ -13,18 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!a) return {};
   const title = a.seoTitle ?? `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`;
   const description = a.seoDescription ?? `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`;
-  return {
-    title,
-    description,
-    alternates: { canonical: `https://bestemaaltijdbox.be/aanbieder/${slug}` },
-    openGraph: {
-      title,
-      description,
-      url: `https://bestemaaltijdbox.be/aanbieder/${slug}`,
-      type: 'article',
-      locale: 'nl_BE',
-    },
-  };
+  return buildMetadata({
+    pad: `/aanbieder/${slug}`,
+    titel: title,
+    beschrijving: description,
+    type: 'article',
+  });
 }
 
 const scoreLabels: Record<string, string> = {
@@ -40,7 +35,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
   const a = getAanbieder(slug);
   if (!a) notFound();
 
-  const baseUrl = 'https://bestemaaltijdbox.be';
+  const baseUrl = SITE_URL;
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Review',
@@ -96,9 +91,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bestemaaltijdbox.be' },
-      { '@type': 'ListItem', position: 2, name: 'Aanbieders', item: 'https://bestemaaltijdbox.be/aanbieder' },
-      { '@type': 'ListItem', position: 3, name: a.naam, item: `https://bestemaaltijdbox.be/aanbieder/${a.slug}` },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Aanbieders', item: absoluteUrl('/aanbieder') },
+      { '@type': 'ListItem', position: 3, name: a.naam, item: absoluteUrl(`/aanbieder/${a.slug}`) },
     ],
   };
 

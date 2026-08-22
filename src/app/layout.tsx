@@ -10,6 +10,7 @@ import Script from 'next/script';
 import { isSponsoringActief } from '@/lib/sponsoring';
 import { actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { SITE_URL, SITE_NAAM, STANDAARD_LOCALE } from '@/lib/seo';
 
 const aantalAanbieders = actieveAanbieders.length;
 
@@ -19,6 +20,8 @@ const aantalAanbieders = actieveAanbieders.length;
 export const revalidate = 3600;
 
 export const metadata: Metadata = {
+  // Maakt relatieve URL's in openGraph en alternates mogelijk.
+  metadataBase: new URL(SITE_URL),
   title: {
     default: `Beste maaltijdbox België 2026 — ${aantalAanbieders} boxen eerlijk vergeleken`,
     template: '%s | BesteMaaltijdbox.be',
@@ -28,13 +31,13 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Beste maaltijdbox België 2026 — ${aantalAanbieders} boxen eerlijk vergeleken`,
     description: `Vergelijk HelloFresh, Foodbag, Marley Spoon en ${aantalAanbieders - 3} anderen op prijs, smaak en kortingen. Onafhankelijk beoordeeld · bijgewerkt ${LAATST_BIJGEWERKT} · deals tot €60.`,
-    url: 'https://bestemaaltijdbox.be/',
-    siteName: 'BesteMaaltijdbox.be',
-    locale: 'nl_BE',
+    url: '/',
+    siteName: SITE_NAAM,
+    locale: STANDAARD_LOCALE,
     type: 'website',
   },
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://bestemaaltijdbox.be/' },
+  alternates: { canonical: '/' },
   verification: {
     google: 'dgD6dFbp4JHPwAeuIu27zU6WTq1wEII8Sj_RsjngfgA',
   },
@@ -68,9 +71,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           dangerouslySetInnerHTML={{ __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            "name": "BesteMaaltijdbox.be",
-            "url": "https://bestemaaltijdbox.be",
-            "logo": "https://bestemaaltijdbox.be/favicon-180x180.png"
+            "name": SITE_NAAM,
+            "url": SITE_URL,
+            "logo": `${SITE_URL}/favicon-180x180.png`
           })}}
         />
       </head>

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAanbiedersByFilter } from '@/lib/aanbieders';
 import { situaties, getSituatie, generateSituatieStaticParams } from '@/lib/situaties';
+import { buildMetadata } from '@/lib/seo';
 import ContentBlokken from '@/components/ContentBlokken';
 
 export async function generateStaticParams() {
@@ -13,19 +14,11 @@ export async function generateMetadata({ params }: { params: Promise<{ situatie:
   const { situatie } = await params;
   const s = getSituatie(situatie);
   if (!s) return {};
-  const url = `https://bestemaaltijdbox.be/voor/${situatie}`;
-  return {
-    title: s.seoTitel,
-    description: s.seoDesc,
-    alternates: { canonical: url },
-    openGraph: {
-      title: s.seoTitel,
-      description: s.seoDesc,
-      url,
-      type: 'website',
-      locale: 'nl_BE',
-    },
-  };
+  return buildMetadata({
+    pad: `/voor/${situatie}`,
+    titel: s.seoTitel,
+    beschrijving: s.seoDesc,
+  });
 }
 
 const accentColors: Record<string, string> = {

@@ -1,17 +1,14 @@
 import Link from 'next/link';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Algemene voorwaarden — BesteMaaltijdbox.be',
-  description: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
-  alternates: { canonical: 'https://bestemaaltijdbox.be/voorwaarden' },
-  openGraph: {
-    title: 'Algemene voorwaarden — BesteMaaltijdbox.be',
-    description: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
-    url: 'https://bestemaaltijdbox.be/voorwaarden',
-    type: 'website',
-    locale: 'nl_BE',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  pad: '/voorwaarden',
+  titel: 'Algemene voorwaarden — BesteMaaltijdbox.be',
+  beschrijving: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
+  type: 'website',
+});
 
 export default function VoorwaardenPage() {
   return (
@@ -27,7 +24,7 @@ export default function VoorwaardenPage() {
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 38, fontWeight: 900, lineHeight: 1.1, marginBottom: 8 }}>
         Algemene voorwaarden
       </h1>
-      <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 32 }}>Laatst bijgewerkt: juni 2026</p>
+      <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 32 }}>Laatst bijgewerkt: {LAATST_BIJGEWERKT}</p>
 
       <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
 

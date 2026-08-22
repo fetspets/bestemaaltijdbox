@@ -1,17 +1,13 @@
 import type { Metadata } from 'next';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'Crowd Cooks kortingscode juni 2026 — tot €60 welkomstkorting',
-  description: 'Het actuele Crowd Cooks welkomstvoordeel voor nieuwe klanten in België: tot €60 korting op je eerste boxen met kant-en-klare chef-maaltijden, vers bereid en thuisbezorgd.',
-  alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscode/crowd-cooks' },
-  openGraph: {
-    title: 'Crowd Cooks kortingscode juni 2026 — tot €60 welkomstkorting',
-    description: 'Het actuele Crowd Cooks welkomstvoordeel voor nieuwe klanten in België: tot €60 korting op je eerste boxen met kant-en-klare chef-maaltijden, vers bereid en thuisbezorgd.',
-    url: 'https://bestemaaltijdbox.be/kortingscode/crowd-cooks',
-    type: 'article',
-    locale: 'nl_BE',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  pad: '/kortingscode/crowd-cooks',
+  titel: `Crowd Cooks kortingscode ${LAATST_BIJGEWERKT} — tot €60 welkomstkorting`,
+  beschrijving: 'Het actuele Crowd Cooks welkomstvoordeel voor nieuwe klanten in België: tot €60 korting op je eerste boxen met kant-en-klare chef-maaltijden, vers bereid en thuisbezorgd.',
+  type: 'article',
+});
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;

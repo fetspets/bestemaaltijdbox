@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import { buildMetadata } from '@/lib/seo';
 import { getGids, generateGidsStaticParams, berekenWeekprijs } from '@/lib/gidsen';
 import { getAanbieder } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
@@ -13,19 +14,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const g = getGids(slug);
   if (!g) return {};
-  const url = `https://bestemaaltijdbox.be/gids/${g.slug}`;
-  return {
-    title: g.metaTitle,
-    description: g.metaDescription,
-    alternates: { canonical: url },
-    openGraph: {
-      title: g.metaTitle,
-      description: g.metaDescription,
-      url,
-      type: 'article',
-      locale: 'nl_BE',
-    },
-  };
+  return buildMetadata({
+    pad: `/gids/${g.slug}`,
+    titel: g.metaTitle,
+    beschrijving: g.metaDescription,
+    type: 'article',
+  });
 }
 
 export default async function GidsPagina({ params }: { params: Promise<{ slug: string }> }) {

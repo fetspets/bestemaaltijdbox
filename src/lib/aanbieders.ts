@@ -37,6 +37,11 @@ export interface Aanbieder {
   /** Optionele toelichting bij een niet-actieve status (bv. stopgezet-melding). */
   statusNotitie?: string;
   score: {
+    /**
+     * Redactioneel eindoordeel — bewust GEEN gemiddelde van de subscores
+     * hieronder. Niet "corrigeren" door te middelen; dit cijfer gaat als
+     * ratingValue mee in de Review-markup en is een eigen beoordeling.
+     */
     totaal: number;
     smaak: number;
     prijsKwaliteit: number;
@@ -596,6 +601,21 @@ export const aanbieders: Aanbieder[] = [
 ];
 
 /** Enkel de actieve aanbieders — gebruik dit voor ranglijsten, tabellen en tellingen. */
+// De volgorde van deze array is redactioneel en bepaalt de weergave; het
+// ranking-veld toont datzelfde nummer aan de bezoeker. Wie de array herschikt
+// zonder de nummers bij te werken, laat de site "#3" op plaats 4 tonen.
+// Deze controle vangt dat af tijdens de build in plaats van in productie.
+if (process.env.NEXT_PHASE === 'phase-production-build') {
+  aanbieders.forEach((a, i) => {
+    if (a.ranking !== i + 1) {
+      throw new Error(
+        `Ranking klopt niet: "${a.slug}" staat op positie ${i + 1} in de array ` +
+        `maar heeft ranking ${a.ranking}. Werk src/lib/aanbieders.ts bij.`
+      );
+    }
+  });
+}
+
 export const actieveAanbieders: Aanbieder[] = aanbieders.filter(a => a.status === 'active');
 
 export function getAanbieder(slug: string): Aanbieder | undefined {

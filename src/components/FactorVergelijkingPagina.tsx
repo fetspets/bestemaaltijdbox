@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { SITE_URL, absoluteUrl } from '@/lib/seo';
 import { getAanbieder } from '@/lib/aanbieders';
 import type { FactorVergelijking } from '@/lib/factorVergelijkingen';
 import GesponsordLabel from '@/components/GesponsordLabel';
@@ -16,7 +17,7 @@ export default function FactorVergelijkingPagina({ data }: { data: FactorVergeli
   const factor = getAanbieder('factor')!;
   const kookbox = getAanbieder(data.kookboxSlug)!;
   const accent = kookboxAccent[data.kookboxSlug] ?? '#1B4332';
-  const canonical = `https://bestemaaltijdbox.be/vergelijk/${data.slug}`;
+  const canonical = absoluteUrl(`/vergelijk/${data.slug}`);
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -31,8 +32,8 @@ export default function FactorVergelijkingPagina({ data }: { data: FactorVergeli
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://bestemaaltijdbox.be' },
-      { '@type': 'ListItem', position: 2, name: 'Vergelijk', item: 'https://bestemaaltijdbox.be/vergelijk' },
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Vergelijk', item: absoluteUrl('/vergelijk') },
       { '@type': 'ListItem', position: 3, name: `Factor vs ${kookbox.naam}`, item: canonical },
     ],
   };

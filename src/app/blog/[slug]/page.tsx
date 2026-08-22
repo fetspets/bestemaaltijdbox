@@ -6,11 +6,12 @@ import { blogPosts, getBlogPost, generateBlogStaticParams } from '@/lib/blog';
 import { aanbieders, getAanbieder } from '@/lib/aanbieders';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import KortingscodeBox from '@/components/KortingscodeBox';
+import { buildMetadata } from '@/lib/seo';
 import { Blok } from '@/components/ContentBlokken';
 import type { ContentBlok } from '@/lib/blokken';
 
 // Fallback og-afbeelding (er is nog geen dedicated 1200×630-beeld per blog).
-const OG_IMAGE = 'https://bestemaaltijdbox.be/logo.png';
+const OG_IMAGE = '/logo.png';
 const eur = (n: number) => '€' + n.toFixed(2).replace('.', ',');
 
 export function generateStaticParams() {
@@ -21,26 +22,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const post = getBlogPost(slug);
   if (!post) return {};
-  return {
-    title: post.metaTitle,
-    description: post.metaDescription,
+  return buildMetadata({
+    pad: `/blog/${slug}`,
+    titel: post.metaTitle,
+    beschrijving: post.metaDescription,
     keywords: post.keywords,
-    alternates: { canonical: `https://bestemaaltijdbox.be/blog/${slug}` },
-    openGraph: {
-      title: post.metaTitle,
-      description: post.metaDescription,
-      url: `https://bestemaaltijdbox.be/blog/${slug}`,
-      type: 'article',
-      locale: 'nl_BE',
-      images: [{ url: OG_IMAGE }],
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.metaTitle,
-      description: post.metaDescription,
-      images: [OG_IMAGE],
-    },
-  };
+    type: 'article',
+    afbeelding: OG_IMAGE,
+  });
 }
 
 const RIJKE_BLOKKEN = new Set<string>([

@@ -2,6 +2,7 @@
 import Link from 'next/link';
 import { actieveAanbieders, getAanbieder } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { absoluteUrl } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import Quiz from '@/components/Quiz';
 
@@ -17,7 +18,7 @@ const jsonLd = {
     '@type': 'ListItem',
     position: i + 1,
     name: a.naam,
-    url: `https://bestemaaltijdbox.be/aanbieder/${a.slug}`,
+    url: absoluteUrl(`/aanbieder/${a.slug}`),
   })),
 };
 

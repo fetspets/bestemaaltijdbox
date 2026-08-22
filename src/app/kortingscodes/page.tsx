@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import { actieveAanbieders, getAanbieder } from '@/lib/aanbieders';
 import { getActieveSponsoring } from '@/lib/sponsoring';
@@ -8,18 +10,12 @@ import { LAATST_BIJGEWERKT } from '@/lib/site';
 // sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
 export const revalidate = 3600;
 
-export const metadata = {
-  title: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
-  description: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
-  alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscodes' },
-  openGraph: {
-    title: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
-    description: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
-    url: 'https://bestemaaltijdbox.be/kortingscodes',
-    type: 'website',
-    locale: 'nl_BE',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  pad: '/kortingscodes',
+  titel: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
+  beschrijving: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
+  type: 'website',
+});
 
 // Slugs met een eigen /kortingscode/<slug>-detailpagina (voor de "Bekijk details"-link).
 const heeftDetailpagina = new Set(['hellofresh', 'foodbag', 'foodprepper', 'factor', 'crowd-cooks']);

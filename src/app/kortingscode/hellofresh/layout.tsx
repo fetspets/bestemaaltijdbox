@@ -1,17 +1,13 @@
 import type { Metadata } from 'next';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'HelloFresh kortingscode juni 2026 — tot €60 korting + 8 weken gratis extras',
-  description: 'Het actuele HelloFresh welkomstvoordeel voor nieuwe klanten in België: tot €60 korting + 8 weken gratis extras. Bekijk hoe je profiteert.',
-  alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscode/hellofresh' },
-  openGraph: {
-    title: 'HelloFresh kortingscode juni 2026 — tot €60 korting + 8 weken gratis extras',
-    description: 'Het actuele HelloFresh welkomstvoordeel voor nieuwe klanten in België: tot €60 korting + 8 weken gratis extras. Bekijk hoe je profiteert.',
-    url: 'https://bestemaaltijdbox.be/kortingscode/hellofresh',
-    type: 'article',
-    locale: 'nl_BE',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  pad: '/kortingscode/hellofresh',
+  titel: `HelloFresh kortingscode ${LAATST_BIJGEWERKT} — tot €60 korting op je eerste 3 boxen`,
+  beschrijving: 'Activeer de HelloFresh welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig. Voor nieuwe klanten in België.',
+  type: 'article',
+});
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return <>{children}</>;

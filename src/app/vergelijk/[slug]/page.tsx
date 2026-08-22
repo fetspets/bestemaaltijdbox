@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { getVergelijking, generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
 import { getAanbieder } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
 import ContentBlokken from '@/components/ContentBlokken';
 
 export async function generateStaticParams() {
@@ -17,18 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a2 = getAanbieder(v.aanbieder2Slug)!;
   const title = v.seoTitle ?? `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`;
   const description = v.seoDescription ?? `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €60 op je eerste box.`;
-  return {
-    title,
-    description,
-    alternates: { canonical: `https://bestemaaltijdbox.be/vergelijk/${slug}` },
-    openGraph: {
-      title,
-      description,
-      url: `https://bestemaaltijdbox.be/vergelijk/${slug}`,
-      type: 'article',
-      locale: 'nl_BE',
-    },
-  };
+  return buildMetadata({
+    pad: `/vergelijk/${slug}`,
+    titel: title,
+    beschrijving: description,
+    type: 'article',
+  });
 }
 
 const accentColors: Record<string, string> = {
