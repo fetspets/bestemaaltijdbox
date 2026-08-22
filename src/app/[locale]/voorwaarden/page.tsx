@@ -1,4 +1,7 @@
 import Link from '@/components/TaalLink';
+import { getTranslations } from 'next-intl/server';
+import StatischePaginaFr from '@/components/StatischePaginaFr';
+import { voorwaardenFr } from '@/lib/teksten/paginas.fr';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
@@ -12,13 +15,27 @@ export async function generateMetadata(
     locale: locale as Locale,
     route: '/voorwaarden',
     pad: '/voorwaarden',
-    titel: 'Algemene voorwaarden — BesteMaaltijdbox.be',
-    beschrijving: 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
+    titel: locale === 'fr' ? voorwaardenFr.metaTitle : 'Algemene voorwaarden — BesteMaaltijdbox.be',
+    beschrijving: locale === 'fr' ? voorwaardenFr.metaDescription : 'Lees de algemene voorwaarden en disclaimer van BesteMaaltijdbox.be. Informatief karakter, affiliate disclosure en intellectueel eigendom.',
     type: 'website',
   });
 }
 
-export default function VoorwaardenPage() {
+export default async function VoorwaardenPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
+  if (locale === 'fr') {
+    const t = await getTranslations('voorwaarden');
+    return (
+      <StatischePaginaFr
+        pagina={voorwaardenFr}
+        broodkruimel={t('broodkruimel')}
+        h1={t('h1')}
+        bijgewerktLabel={t('bijgewerkt')}
+      />
+    );
+  }
+
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '32px 20px 64px' }}>
 

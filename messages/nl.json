@@ -259,5 +259,26 @@
     "a2": "Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.",
     "v3": "Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?",
     "a3": "Niet altijd, maar ze besparen je tijd en voedselverspilling. Maaltijdboxen kosten doorgaans meer per portie dan zelf koken."
+  },
+  "overOns": {
+    "broodkruimel": "Over ons",
+    "badge": "ONS VERHAAL",
+    "h1": "Waarom BesteMaaltijdbox.be?",
+    "begin": "Hoe het begon",
+    "onderzoek": "Hoe we onderzoeken",
+    "belofte": "Onze belofte",
+    "contact": "Contact",
+    "contactTekst": "Heb je een vraag, opmerking of wil je samenwerken? Stuur ons een mail via:",
+    "contactAntwoord": "We proberen binnen 2 werkdagen te antwoorden."
+  },
+  "privacy": {
+    "broodkruimel": "Privacybeleid",
+    "h1": "Privacybeleid",
+    "bijgewerkt": "Laatst bijgewerkt"
+  },
+  "voorwaarden": {
+    "broodkruimel": "Algemene voorwaarden",
+    "h1": "Algemene voorwaarden",
+    "bijgewerkt": "Laatst bijgewerkt"
   }
 }

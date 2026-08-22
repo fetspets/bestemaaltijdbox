@@ -1,4 +1,7 @@
 import Link from '@/components/TaalLink';
+import { getTranslations } from 'next-intl/server';
+import StatischePaginaFr from '@/components/StatischePaginaFr';
+import { privacyFr } from '@/lib/teksten/paginas.fr';
 import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
@@ -11,13 +14,27 @@ export async function generateMetadata(
     locale: locale as Locale,
     route: '/privacy',
     pad: '/privacy',
-    titel: 'Privacybeleid — BesteMaaltijdbox.be',
-    beschrijving: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
+    titel: locale === 'fr' ? privacyFr.metaTitle : 'Privacybeleid — BesteMaaltijdbox.be',
+    beschrijving: locale === 'fr' ? privacyFr.metaDescription : 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
     type: 'website',
   });
 }
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
+  if (locale === 'fr') {
+    const t = await getTranslations('privacy');
+    return (
+      <StatischePaginaFr
+        pagina={privacyFr}
+        broodkruimel={t('broodkruimel')}
+        h1={t('h1')}
+        bijgewerktLabel={t('bijgewerkt')}
+      />
+    );
+  }
+
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '32px 20px 64px' }}>
 
