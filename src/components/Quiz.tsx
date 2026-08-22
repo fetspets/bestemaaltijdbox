@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import Link from 'next/link';
@@ -7,49 +8,49 @@ type Scores = { hf: number; fb: number; ms: number; ek: number; fp: number; cc: 
 
 const vragen = [
   {
-    vraag: 'Voor hoeveel personen kook je meestal?',
+    vraagSleutel: 'v0',
     opties: [
-      { label: '1 persoon', scores: { hf: 2, fb: 0, ms: 0, ek: 1, fp: 1, cc: 2 } },
-      { label: '2 personen', scores: { hf: 2, fb: 1, ms: 2, ek: 2, fp: 1, cc: 2 } },
-      { label: '3–4 personen', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 0, cc: 1 } },
-      { label: '5 of meer', scores: { hf: 1, fb: 3, ms: 0, ek: 0, fp: 0, cc: 0 } },
+      { labelSleutel: 'v0o0', scores: { hf: 2, fb: 0, ms: 0, ek: 1, fp: 1, cc: 2 } },
+      { labelSleutel: 'v0o1', scores: { hf: 2, fb: 1, ms: 2, ek: 2, fp: 1, cc: 2 } },
+      { labelSleutel: 'v0o2', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 0, cc: 1 } },
+      { labelSleutel: 'v0o3', scores: { hf: 1, fb: 3, ms: 0, ek: 0, fp: 0, cc: 0 } },
     ],
   },
   {
-    vraag: 'Hoe vaak per week wil je een maaltijdbox gebruiken?',
+    vraagSleutel: 'v1',
     opties: [
-      { label: '2–3 keer per week', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1, cc: 1 } },
-      { label: '3–5 keer per week', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1, cc: 1 } },
-      { label: 'Bijna elke dag', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0, cc: 1 } },
-      { label: 'Af en toe', scores: { hf: 1, fb: 0, ms: 1, ek: 0, fp: 2, cc: 2 } },
+      { labelSleutel: 'v1o0', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1, cc: 1 } },
+      { labelSleutel: 'v1o1', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1, cc: 1 } },
+      { labelSleutel: 'v1o2', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0, cc: 1 } },
+      { labelSleutel: 'v1o3', scores: { hf: 1, fb: 0, ms: 1, ek: 0, fp: 2, cc: 2 } },
     ],
   },
   {
-    vraag: 'Wat vind je het belangrijkst?',
+    vraagSleutel: 'v2',
     opties: [
-      { label: '💰 Zo goedkoop mogelijk', scores: { hf: 3, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 } },
-      { label: '⚡ Snel en makkelijk koken', scores: { hf: 2, fb: 1, ms: 1, ek: 0, fp: 3, cc: 3 } },
-      { label: '🥗 Gezond / vegetarisch / vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
-      { label: '👨‍🍳 Lekker koken, culinaire ervaring', scores: { hf: 0, fb: 1, ms: 3, ek: 0, fp: 0, cc: 0 } },
-      { label: '🇧🇪 Lokale Belgische producten', scores: { hf: 0, fb: 3, ms: 0, ek: 0, fp: 1, cc: 2 } },
+      { labelSleutel: 'v2o0', scores: { hf: 3, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 } },
+      { labelSleutel: 'v2o1', scores: { hf: 2, fb: 1, ms: 1, ek: 0, fp: 3, cc: 3 } },
+      { labelSleutel: 'v2o2', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
+      { labelSleutel: 'v2o3', scores: { hf: 0, fb: 1, ms: 3, ek: 0, fp: 0, cc: 0 } },
+      { labelSleutel: 'v2o4', scores: { hf: 0, fb: 3, ms: 0, ek: 0, fp: 1, cc: 2 } },
     ],
   },
   {
-    vraag: 'Hoeveel tijd heb je gemiddeld om te koken?',
+    vraagSleutel: 'v3',
     opties: [
-      { label: 'Minder dan 20 minuten', scores: { hf: 2, fb: 0, ms: 0, ek: 0, fp: 3, cc: 3 } },
-      { label: '20–40 minuten', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 0 } },
-      { label: '40–60 minuten', scores: { hf: 0, fb: 1, ms: 2, ek: 1, fp: 0, cc: 0 } },
-      { label: 'Ik kook graag uitgebreid', scores: { hf: 0, fb: 0, ms: 3, ek: 0, fp: 0, cc: 0 } },
+      { labelSleutel: 'v3o0', scores: { hf: 2, fb: 0, ms: 0, ek: 0, fp: 3, cc: 3 } },
+      { labelSleutel: 'v3o1', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 0 } },
+      { labelSleutel: 'v3o2', scores: { hf: 0, fb: 1, ms: 2, ek: 1, fp: 0, cc: 0 } },
+      { labelSleutel: 'v3o3', scores: { hf: 0, fb: 0, ms: 3, ek: 0, fp: 0, cc: 0 } },
     ],
   },
   {
-    vraag: 'Heb je specifieke dieetvoorkeuren?',
+    vraagSleutel: 'v4',
     opties: [
-      { label: 'Geen specifieke voorkeur', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 2 } },
-      { label: 'Vegetarisch', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
-      { label: 'Vegan', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
-      { label: 'Gezond & caloriebewust', scores: { hf: 1, fb: 0, ms: 0, ek: 2, fp: 0, cc: 1 } },
+      { labelSleutel: 'v4o0', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 2 } },
+      { labelSleutel: 'v4o1', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
+      { labelSleutel: 'v4o2', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
+      { labelSleutel: 'v4o3', scores: { hf: 1, fb: 0, ms: 0, ek: 2, fp: 0, cc: 1 } },
     ],
   },
 ];
@@ -136,6 +137,7 @@ function getWinnaar(scores: Scores): string {
 }
 
 export default function Quiz() {
+  const tq = useTranslations('quiz');
   const [step, setStep] = useState(0);
   const [scores, setScores] = useState<Scores>({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 });
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
@@ -198,7 +200,7 @@ export default function Quiz() {
       {!done ? (
         <>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(16px, 3vw, 20px)', fontWeight: 700, marginBottom: 18, color: 'var(--ink)', lineHeight: 1.3 }}>
-            {vragen[step].vraag}
+            {tq(vragen[step].vraagSleutel)}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {vragen[step].opties.map((opt, i) => (
@@ -222,7 +224,7 @@ export default function Quiz() {
                   transition: 'background 0.15s',
                 }}
               >
-                {opt.label}
+                {tq(opt.labelSleutel)}
               </button>
             ))}
           </div>

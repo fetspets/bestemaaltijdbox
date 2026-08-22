@@ -49,6 +49,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
   const { locale } = await params;
   const taal = locale as Locale;
   const t = await getTranslations('kortingscodes');
+  const tl = await getTranslations('labels');
   const actief = actieveAanbiedersVoor(taal);
   const metKorting = actief.filter(a => a.kortingsCode);
   const zonderKorting = actief.filter(a => !a.kortingsCode);
@@ -63,7 +64,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
       <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24 }}>
         <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
         {' → '}
-        <strong style={{ color: 'var(--ink)' }}>Kortingscodes</strong>
+        <strong style={{ color: 'var(--ink)' }}>{t('kop')}</strong>
       </div>
 
       {/* Header */}
@@ -72,7 +73,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
           🏷️ {t('bijgewerkt')} {laatstBijgewerkt(taal)}
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
-          Kortingscodes maaltijdbox<br />België 2026
+          {t('kop')}
         </h1>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563', maxWidth: 600 }}>
           {t('intro')}
@@ -84,7 +85,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
         <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 70%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '22px 24px', marginBottom: 36, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
-            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Uitgelicht</span>
+            <span style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{tl('uitgelicht')}</span>
             <GesponsordLabel />
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }}>
@@ -93,14 +94,14 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
             </div>
             <div style={{ flex: 1, minWidth: 220 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 4 }}>
-                Factor welkomstdeal
+                {t('factorTitel')}
               </div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: '#B45309', marginBottom: 4 }}>40% korting op je eerste box + 25% op de volgende vijf boxen</div>
-              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>Kant-en-klare chef-maaltijden zonder koken. De korting wordt automatisch toegepast via de link — je hoeft geen code in te voeren.</div>
-              <div style={{ fontSize: 11, color: 'var(--muted)' }}>Geldig voor nieuwe klanten · Geldig t.e.m. 27/10/2026</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#B45309', marginBottom: 4 }}>{factor.kortingsCode?.deal}</div>
+              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{factor.kortingsCode?.beschrijving}</div>
+              <div style={{ fontSize: 11, color: 'var(--muted)' }}>{factor.kortingsCode?.voorwaarden}</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 160 }}>
-              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>40% + 25%</div>
+              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>{factor.kortingsCode?.bedragKort}</div>
               <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>{t('activeerDeal')}</Link>
             </div>
           </div>
@@ -181,10 +182,10 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>{t('hoeGebruiken')}</h2>
         <div className="two-col-grid">
           {[
-            { num: '1', titel: 'Klik op "Activeer deal"', desc: 'Klik op de knop naast de maaltijdbox van je keuze. Je wordt doorgestuurd naar de website.' },
-            { num: '2', titel: 'Kies je box', desc: 'Selecteer het aantal personen en maaltijden per week dat je wil ontvangen.' },
-            { num: '3', titel: 'Korting wordt toegepast', desc: 'Je hebt geen code nodig — de korting wordt bij alle aanbieders automatisch toegepast via onze link. Rond gewoon je bestelling af en je voordeel staat al verrekend.' },
-            { num: '4', titel: 'Direct opzegbaar', desc: 'Je zit nergens aan vast. De meeste aanbieders laat je wekelijks opzeggen of pauzeren.' },
+            { num: '1', titel: t('s1t'), desc: t('s1d') },
+            { num: '2', titel: t('s2t'), desc: t('s2d') },
+            { num: '3', titel: t('s3t'), desc: t('s3d') },
+            { num: '4', titel: t('s4t'), desc: t('s4d') },
           ].map(({ num, titel, desc }) => (
             <div key={num} style={{ display: 'flex', gap: 12 }}>
               <div style={{ width: 28, height: 28, borderRadius: '50%', background: '#1B4332', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 13, fontWeight: 700, flexShrink: 0 }}>{num}</div>

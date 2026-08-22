@@ -22,6 +22,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
       "À Bruxelles, en revanche, les deux sont disponibles et le choix devient intéressant. Les deux appartiennent au même groupe (Smartmat, Colruyt Group) mais visent des usages opposés : Foodbag est un box à cuisiner classique, Foodprepper livre des ingrédients déjà préparés que vous assemblez en un quart d'heure.",
       "Ci-dessous, la comparaison complète sur le temps, le menu, le prix et la livraison.",
     ],
+    primaireCta: { slug: 'foodprepper', tekst: 'Voir Foodprepper →', campagne: 'cta' },
     blokken: [
       {
         type: 'kenmerkTabel',
@@ -154,6 +155,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
       "Pour un lecteur bruxellois, le choix se pose vraiment. HelloFresh est le leader mondial : plus de 40 recettes par semaine et des fiches en français. Foodprepper est belge, plus jeune, et construit autour d'une promesse : à table en quinze minutes, parce que les légumes sont précuits et la viande marinée.",
       "Nous comparons ci-dessous le temps, le menu, le prix, l'origine et la livraison.",
     ],
+    primaireCta: { slug: 'foodprepper', tekst: 'Voir Foodprepper →', campagne: 'cta' },
     blokken: [
       {
         type: 'kenmerkTabel',

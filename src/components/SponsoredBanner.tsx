@@ -1,4 +1,5 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import GesponsordLabel from './GesponsordLabel';
@@ -11,6 +12,7 @@ const DISMISS_KEY = 'factorBannerDismissed';
 // patroon uit CookieBanner.tsx). Geen code in beeld — de CTA stuurt bezoekers via
 // onze affiliate-link zodat de klik telt.
 export default function SponsoredBanner({ active }: { active: boolean }) {
+  const tb = useTranslations('banner');
   const [dismissed, setDismissed] = useState(false);
 
   useEffect(() => {
@@ -45,7 +47,7 @@ export default function SponsoredBanner({ active }: { active: boolean }) {
       <GesponsordLabel />
       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontSize: 13.5, fontWeight: 600, lineHeight: 1.4, textAlign: 'center' }}>
         <img src="/logos/factor.svg" alt="Factor" style={{ height: 15, width: 'auto', display: 'block', flexShrink: 0 }} />
-        <span>Kant-en-klare chef-maaltijden zonder koken — <strong>40% korting</strong> op je eerste box.</span>
+        <span>{tb('factorPitch')} <strong>40% korting</strong> op je eerste box.</span>
       </span>
       <Link
         href="/ga/factor"

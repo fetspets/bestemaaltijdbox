@@ -168,10 +168,10 @@ export function Blok({ blok, taal = routing.defaultLocale }: { blok: ContentBlok
 
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                   <Link href={`/ga/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-                    Bekijk deal →
+                    {taal === 'fr' ? "Voir l'offre →" : 'Bekijk deal →'}
                   </Link>
                   <Link href={`/aanbieder/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '10px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)' }}>
-                    Lees volledige review
+                    {taal === 'fr' ? "Lire l'avis complet" : 'Lees volledige review'}
                   </Link>
                 </div>
               </div>
@@ -199,7 +199,7 @@ export function Blok({ blok, taal = routing.defaultLocale }: { blok: ContentBlok
                     <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', margin: 0 }}>{omschrijving}</p>
                   </div>
                   <Link href={`/aanbieder/${slug}`} style={{ fontSize: 13, fontWeight: 600, color: '#1B4332', textDecoration: 'underline', whiteSpace: 'nowrap' }}>
-                    Meer info →
+                    {taal === 'fr' ? 'Plus d’infos →' : 'Meer info →'}
                   </Link>
                 </div>
               );

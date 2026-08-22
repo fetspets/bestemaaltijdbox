@@ -7,6 +7,7 @@ import { generateSituatieStaticParams } from '@/lib/situaties';
 import { situatiesVoor, situatieVoor } from '@/lib/teksten';
 import { buildMetadata } from '@/lib/seo';
 import ContentBlokken from '@/components/ContentBlokken';
+import { getTranslations } from 'next-intl/server';
 
 export async function generateStaticParams() {
   return generateSituatieStaticParams();
@@ -34,6 +35,8 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
   const { situatie, locale } = await params;
   const taal = locale as Locale;
   const s = situatieVoor(situatie, taal);
+  const tc = await getTranslations('cta');
+  const tl = await getTranslations('labels');
   if (!s) notFound();
 
   const gefilterd = getAanbiedersByFilter(situatie);
@@ -78,7 +81,7 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
       {/* Uitgewerkte situaties brengen hun eigen opbouw mee; de rest krijgt de
           standaardranglijst uit aanbieders.ts. */}
       {s.blokken ? (
-        <ContentBlokken blokken={s.blokken} />
+        <ContentBlokken blokken={s.blokken} taal={taal} />
       ) : (
         <>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 12, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
@@ -124,9 +127,9 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
 
                 <div className="three-col-stats-grid" style={{ border: '1px solid var(--rule)', borderRadius: 10, overflow: 'hidden', fontSize: 12, marginBottom: 14 }}>
                   {[
-                    { val: `vanaf €${a.prijsPerPortie.toFixed(2).replace('.', ',')}`, key: 'Per portie' },
-                    { val: `${a.receptenPerWeek}+`, key: 'Recepten/week' },
-                    { val: a.gratisBezorging ? 'Gratis' : `€${(a.bezorgkosten ?? 0).toFixed(2).replace('.', ',')}`, key: 'Bezorging' },
+                    { val: `vanaf €${a.prijsPerPortie.toFixed(2).replace('.', ',')}`, key: tl('perPortie') },
+                    { val: `${a.receptenPerWeek}+`, key: tl('receptenWeek') },
+                    { val: a.gratisBezorging ? 'Gratis' : `€${(a.bezorgkosten ?? 0).toFixed(2).replace('.', ',')}`, key: tl('bezorging') },
                   ].map(({ val, key }) => (
                     <div key={key} style={{ padding: '8px 6px', borderRight: '1px solid var(--rule)', textAlign: 'center' }}>
                       <div style={{ fontWeight: 700, fontSize: 14 }}>{val}</div>
@@ -136,7 +139,7 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
                 </div>
 
                 <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
-                  {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
+                  {a.kortingsCode ? tc('activeerBedrag', { bedrag: a.kortingsCode.bedrag }) : tc('bekijkAanbieder', { naam: a.naam })}
                 </Link>
                 <Link href={`/aanbieder/${a.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '10px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)' }}>
                   Lees volledige review
@@ -176,7 +179,7 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
 
       {/* Andere categorieën */}
       <div style={{ background: 'white', borderRadius: 16, padding: 24, border: '1px solid var(--rule)', marginBottom: 24 }}>
-        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 900, marginBottom: 14 }}>Bekijk andere categorieën</h2>
+        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 900, marginBottom: 14 }}>{tl('andereCategorieen')}</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
           {Object.entries(situatiesVoor(taal)).filter(([key]) => key !== situatie).map(([key, val]) => (
             <Link key={key} href={`/voor/${key}`} style={{
@@ -191,7 +194,7 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
         </div>
       </div>
 
-      <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar alle maaltijdboxen</Link>
+      <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{tl('bekijkAlleBoxen')}</Link>
     </div>
   );
 }

@@ -36,6 +36,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
   const taal = locale as Locale;
   const a = aanbiederVoor(slug, taal);
   const t = await getTranslations('review');
+  const tl = await getTranslations('labels');
   const datum = laatstBijgewerkt(taal);
   if (!a) notFound();
 
@@ -250,7 +251,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
                   <thead>
                     <tr style={{ background: 'var(--cream)' }}>
-                      {['Box', 'Normale prijs', 'Korting', 'Jij betaalt', 'Besparing'].map(h => (
+                      {['Box', 'Normale prijs', 'Korting', 'Jij betaalt', tl('besparing')].map(h => (
                         <th key={h} style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--rule)', fontWeight: 700, color: 'var(--ink)', whiteSpace: 'nowrap' }}>{h}</th>
                       ))}
                     </tr>
@@ -285,7 +286,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* Testervaring */}
           <div style={{ marginBottom: 24 }}>
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 12, paddingBottom: 10, borderBottom: '2px solid var(--ink)' }}>
-              Onze bevindingen
+              {tl('onzeBevindingen')}
             </h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151' }}>{a.uitgebreideReview.testervaring}</p>
           </div>
@@ -394,7 +395,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
           )}
 
-          <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar alle maaltijdboxen</Link>
+          <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{tl('bekijkAlleBoxen')}</Link>
         </div>
 
         {/* STICKY SIDEBAR */}
@@ -420,7 +421,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 [t('opzegbaar'), a.opzegTermijn],
                 [t('belgisch'), a.belgisch ? '🇧🇪 Ja' : 'Nee'],
                 ['Vegetarisch', a.vegetarisch ? '✓ Ja' : 'Nee'],
-                ['Biologisch', a.bio ? '✓ Ja' : 'Nee'],
+                [tl('biologisch'), a.bio ? '✓ Ja' : 'Nee'],
               ].map(([k, v]) => (
                 <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--rule)', fontSize: 13 }}>
                   <span style={{ color: 'var(--muted)' }}>{k}</span>
@@ -430,7 +431,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
 
             {a.gratisBezorging ? (
-              <div style={{ textAlign: 'center', fontSize: 13, color: '#16A34A', fontWeight: 600, marginBottom: 12 }}>✓ Gratis bezorging inbegrepen</div>
+              <div style={{ textAlign: 'center', fontSize: 13, color: '#16A34A', fontWeight: 600, marginBottom: 12 }}>{tl('gratisBezorgingInbegrepen')}</div>
             ) : a.bezorgkosten ? (
               <div style={{ textAlign: 'center', fontSize: 13, color: '#D97706', fontWeight: 600, marginBottom: 12 }}>+ €{a.bezorgkosten} bezorgkost per levering</div>
             ) : null}
@@ -456,7 +457,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </Link>
 
             <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted)', textAlign: 'center', lineHeight: 1.5 }}>
-              Affiliate disclosure: kleine commissie via onze links, zonder meerprijs voor jou.
+              {tl('affiliateKort')}
             </div>
           </div>
         </div>

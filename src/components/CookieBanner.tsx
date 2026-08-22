@@ -1,9 +1,11 @@
 'use client';
+import { useTranslations } from 'next-intl';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function CookieBanner() {
+  const t = useTranslations('cookies');
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -32,8 +34,8 @@ export default function CookieBanner() {
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
         <p style={{ fontSize: 13, color: 'var(--ink)', lineHeight: 1.6, margin: 0, flex: 1, minWidth: 240 }}>
-          🍪 We gebruiken cookies voor analytics (Google Analytics) en affiliate tracking zodat we de site kunnen verbeteren.{' '}
-          <Link href="/privacy" style={{ color: 'var(--green)', fontWeight: 600, textDecoration: 'underline' }}>Meer info</Link>
+          {t('tekst')}{' '}
+          <Link href="/privacy" style={{ color: 'var(--green)', fontWeight: 600, textDecoration: 'underline' }}>{t('meerInfo')}</Link>
         </p>
         <div style={{ display: 'flex', gap: 10, flexShrink: 0, flexWrap: 'wrap' }}>
           <button
@@ -43,7 +45,7 @@ export default function CookieBanner() {
               background: 'white', border: '1.5px solid var(--rule)', color: 'var(--ink)',
             }}
           >
-            Alleen functioneel
+            {t('alleenFunctioneel')}
           </button>
           <button
             onClick={() => accept('all')}

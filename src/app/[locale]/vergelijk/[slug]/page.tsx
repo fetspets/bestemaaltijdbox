@@ -17,7 +17,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug, locale } = await params;
   const taal = locale as Locale;
   const v = vergelijkingVoor(slug, taal);
-  const tl = await getTranslations('labels');
   if (!v) return {};
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;

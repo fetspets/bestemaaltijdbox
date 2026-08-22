@@ -29,6 +29,14 @@ export type AanbiederTeksten = Pick<
 
 export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   hellofresh: {
+    kortingsCode: {
+      code: null,
+      bedrag: "jusqu'à 60 € de réduction",
+      bedragKort: "jusqu'à 60 €",
+      deal: "jusqu'à 60 € de réduction sur vos 3 premières box",
+      voorwaarden: "Réservé aux nouveaux clients · réparti sur vos 3 premières box · automatique via le lien · résiliable chaque semaine · livre dans tout le pays",
+      beschrijving: "Les nouveaux clients reçoivent jusqu'à 60 € de réduction répartis sur leurs trois premières box. La réduction est appliquée automatiquement via notre lien — aucun code à saisir. HelloFresh livre dans les trois régions, Wallonie comprise.",
+    },
     tagline: 'Leader du marché — livre partout en Belgique, Wallonie comprise',
     beschrijving:
       "HelloFresh est le box repas le plus utilisé en Belgique, et l'un des rares à livrer dans les trois régions. Avec plus de 40 recettes par semaine, la livraison gratuite et un abonnement que vous pouvez mettre en pause chaque semaine, c'est le point de départ le plus sûr si vous habitez en Wallonie.",
@@ -68,6 +76,14 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   foodbag: {
+    kortingsCode: {
+      code: null,
+      bedrag: "60 € de réduction",
+      bedragKort: "60 € au total",
+      deal: "3 × 20 € de réduction sur vos 3 premières commandes",
+      voorwaarden: "Réservé aux nouveaux clients · automatique via notre lien · valable jusqu’au 01/01/2027 · 3 × 20 € sur les 3 premières commandes · livre en Wallonie",
+      beschrijving: "Recevez 3 × 20 € de réduction répartis sur vos trois premières commandes Foodbag, soit 60 € d'économie. Appliqué automatiquement via notre lien, aucun code à saisir. Livraison gratuite dans tout le pays.",
+    },
     tagline: 'Ingrédients belges en circuit court — livre aussi en Wallonie',
     beschrijving:
       "Foodbag travaille avec des producteurs belges et livre dans tout le pays, Wallonie comprise. C'est le choix des lecteurs qui veulent manger local sans renoncer à la livraison à domicile. Plus cher que la moyenne, ce que la filière courte explique en partie.",
@@ -103,6 +119,14 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   'marley-spoon': {
+    kortingsCode: {
+      code: null,
+      bedrag: "50 % de réduction",
+      bedragKort: "Jusqu'à 50 %",
+      deal: "Jusqu'à 50 % de réduction répartis sur les 4 premières box",
+      voorwaarden: "Réservé aux nouveaux clients · aucun code requis · 4 premières box · résiliable · livraison 5,99 €/commande · Flandre et Bruxelles uniquement",
+      beschrijving: "Aucun code nécessaire — la réduction s'applique automatiquement via notre lien. Répartition : 50 % + livraison offerte sur la box 1, 20 % sur la box 2, 15 % sur la box 3, 10 % sur la box 4. Ensuite 5,99 € par livraison. Attention : pas de livraison en Wallonie.",
+    },
     tagline: 'Recettes de chef — mais pas de livraison en Wallonie',
     beschrijving:
       "Marley Spoon propose les recettes les plus travaillées de notre comparatif. Attention toutefois : la livraison est limitée à la Flandre et à Bruxelles. Si vous habitez en Wallonie, ce fournisseur n'est pas une option.",
@@ -140,6 +164,14 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   foodprepper: {
+    kortingsCode: {
+      code: null,
+      bedrag: "3 × 15 € de réduction",
+      bedragKort: "45 € au total",
+      deal: "3 × 15 € de réduction sur vos 3 premières commandes",
+      voorwaarden: "Réservé aux nouveaux clients · automatique via notre lien · 3 × 15 € sur les 3 premières commandes · sans abonnement · Flandre et Bruxelles uniquement",
+      beschrijving: "Recevez 15 € de réduction sur chacune de vos trois premières commandes, soit 45 € d'économie. Appliqué automatiquement via notre lien, aucun code à saisir. Prêt en quinze minutes grâce aux ingrédients préparés. Attention : pas de livraison en Wallonie.",
+    },
     tagline: 'Prêt en 15 minutes — Flandre et Bruxelles uniquement',
     beschrijving:
       "Foodprepper livre des ingrédients déjà préparés : légumes précuits, viande marinée, sauces prêtes. Vous assemblez en un quart d'heure. La livraison est toutefois limitée à la Flandre et à Bruxelles — pas de Wallonie.",
@@ -178,6 +210,14 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   factor: {
+    kortingsCode: {
+      code: null,
+      bedrag: "40 % + 25 % de réduction",
+      bedragKort: "40 % + 25 %",
+      deal: "40 % sur votre première box + 25 % sur les cinq suivantes",
+      voorwaarden: "Réservé aux nouveaux clients · automatique via notre lien · première box + cinq suivantes · valable jusqu’au 27/10/2026 · livre dans tout le pays",
+      beschrijving: "La réduction est appliquée automatiquement via notre lien — aucun code à saisir. 40 % sur votre première box, puis 25 % sur chacune des cinq suivantes. Réservé aux nouveaux clients. Factor livre dans toute la Belgique, Wallonie comprise.",
+    },
     tagline: 'Plats prêts à réchauffer — livrés partout en Belgique',
     beschrijving:
       "Factor livre des plats déjà cuisinés qu'il suffit de réchauffer : aucune préparation, aucune vaisselle. La livraison couvre toute la Belgique, ce qui en fait l'une des rares options prêtes à consommer accessibles en Wallonie.",
@@ -216,6 +256,14 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   'crowd-cooks': {
+    kortingsCode: {
+      code: null,
+      bedrag: "60 € au total",
+      bedragKort: "60 € au total",
+      deal: "20 € la première semaine + 10 € par semaine pendant 4 semaines",
+      voorwaarden: "Réservé aux nouveaux clients · 20 € en semaine 1 + 4 × 10 € · résiliable chaque semaine · vérifiez votre code postal",
+      beschrijving: "20 € de réduction la première semaine, puis 10 € par semaine pendant quatre semaines — 60 € au total. Commandez via notre lien : Crowd Cooks affiche le code promo en haut de sa page de commande, vous n'avez donc rien à chercher.",
+    },
     tagline: 'Plats belges préparés par des chefs — large couverture wallonne',
     beschrijving:
       "Crowd Cooks prépare des plats belges à réchauffer, avec de grosses portions. La livraison couvre Bruxelles, le Brabant wallon, Liège, Charleroi et Namur, en plus de la Flandre — une couverture wallonne bien plus large que la moyenne des concurrents rapides.",

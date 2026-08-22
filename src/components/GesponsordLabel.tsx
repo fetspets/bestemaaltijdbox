@@ -38,7 +38,7 @@ export default function GesponsordLabel({
         ...stijl,
       }}
     >
-      {tekst}
+      {label}
     </span>
   );
 }

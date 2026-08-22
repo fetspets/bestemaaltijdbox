@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
@@ -32,6 +33,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
   const taal = locale as Locale;
   const g = gidsVoor(slug, taal);
   if (!g) notFound();
+  const tl = await getTranslations('labels');
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -201,7 +203,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
                     <Link href={`/ga/${keuze.slug}`} style={{ display: 'block', background: keuze.accent, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none', whiteSpace: 'nowrap' }}>
-                      Bekijk deal →
+                      {tl('bekijkDeal')}
                     </Link>
                     <Link href={`/aanbieder/${keuze.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '8px 16px', borderRadius: 10, fontWeight: 600, fontSize: 12, textDecoration: 'none', color: 'var(--ink)', whiteSpace: 'nowrap' }}>
                       Lees review

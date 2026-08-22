@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { getTranslations } from 'next-intl/server';
-import { laatstBijgewerkt(taal) } from '@/lib/site';
+import { laatstBijgewerkt } from '@/lib/site';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import Link from 'next/link';
@@ -15,8 +15,8 @@ export async function generateMetadata(
     locale: locale as Locale,
     route: '/blog',
     pad: '/blog',
-    titel: 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
-    beschrijving: 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
+    titel: locale === 'fr' ? 'Blog box repas 2026 — guides, comparatifs et astuces' : 'Maaltijdbox blog 2026 — gidsen, vergelijkingen en bespaartips',
+    beschrijving: locale === 'fr' ? 'Articles indépendants sur les box repas en Belgique : comparatifs, analyses de prix et guides pratiques, avec les zones de livraison.' : 'Onafhankelijke artikels over maaltijdboxen in België: vergelijkingen, kostenanalyses en praktische gidsen. Lees voor je je eerste box bestelt.',
     type: 'website',
   });
 }
@@ -68,7 +68,7 @@ export default async function BlogOverzicht({ params }: { params: Promise<{ loca
                     {post.excerpt}
                   </p>
                   <span style={{ fontSize: 13, fontWeight: 700, color: '#B45309' }}>
-                    Lees artikel →
+                    {tl('leesArtikel')}
                   </span>
                 </article>
               </Link>
@@ -130,7 +130,7 @@ export default async function BlogOverzicht({ params }: { params: Promise<{ loca
                 {post.excerpt}
               </p>
               <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
-                Lees artikel →
+                {tl('leesArtikel')}
               </span>
             </article>
           </Link>

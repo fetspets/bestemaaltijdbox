@@ -2,10 +2,11 @@
 import Link from 'next/link';
 import type { Aanbieder } from '@/lib/aanbieders';
 import type { Locale } from '@/i18n/routing';
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { laatstBijgewerkt } from '@/lib/site';
 import { absoluteUrl } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import Quiz from '@/components/Quiz';
+import { useTranslations } from 'next-intl';
 
 
 /** De ItemList-markup hangt af van de lijst en dus van de taal. */
@@ -50,6 +51,11 @@ export default function HomePageClient({
   aanbieders: Aanbieder[];
   taal: Locale;
 }) {
+  const t = useTranslations('home');
+  const tf = useTranslations('homeFaq');
+  const tc = useTranslations('cta');
+  const tf2 = useTranslations('homeFaq2');
+  const faqLijst = [0, 1, 2, 3].map(i => ({ q: tf(`v${i}`), a: tf(`a${i}`) }));
   const aantalAanbieders = lijst.length;
   const jsonLd = bouwJsonLd(lijst, taal);
   const top3 = lijst.slice(0, 3);
@@ -61,26 +67,23 @@ export default function HomePageClient({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org', '@type': 'FAQPage',
-        mainEntity: [
-          { '@type': 'Question', name: 'Welke maaltijdbox is de beste in België in 2026?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh scoort het hoogst als allrounder: groot receptaanbod, gratis bezorging en een sterke welkomstdeal met tot €60 korting op je eerste 3 boxen. Foodbag is de beste Belgische keuze met lokale ingrediënten en €60 korting, automatisch toegepast via de link.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox is de goedkoopste in België?', acceptedAnswer: { '@type': 'Answer', text: 'Foodprepper is de voordeligste met gratis bezorging (v.a. €4,75 per portie, zonder verplicht abonnement). Factor ligt in aankoopprijs iets lager (v.a. €4,99) maar rekent €5,99 bezorgkosten. HelloFresh kost v.a. €7,99 maar geeft nieuwe klanten tot €60 korting verdeeld over hun eerste 3 boxen.' }},
-          { '@type': 'Question', name: 'Welke maaltijdbox heeft nu de beste welkomstaanbieding?', acceptedAnswer: { '@type': 'Answer', text: 'HelloFresh heeft een sterke welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen, automatisch toegepast via de link. Foodbag geeft €60 korting — 3x €20 op je eerste 3 bestellingen, automatisch via de link, geldig t.e.m. 01/01/2027.' }},
-          { '@type': 'Question', name: 'Kan ik een maaltijdbox uitproberen zonder abonnement?', acceptedAnswer: { '@type': 'Answer', text: 'Ja. Foodprepper, Foodbag en Foodmaker werken zonder verplicht abonnement — je bestelt wanneer het uitkomt. Foodprepper geeft daarbij €45 welkomstkorting over de eerste 3 bestellingen.' }},
-        ]
+        mainEntity: faqLijst.map(({ q, a }) => ({
+          '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
       }) }} />
 
       {/* HERO */}
       <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 24px' }}>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 8vw, 52px)', fontWeight: 900, lineHeight: 1.1, letterSpacing: '-0.02em', marginBottom: 12 }}>
-          De beste maaltijdbox<br />van <span style={{ color: 'var(--mint)' }}>België</span> in 2026
+          {t('h1Regel1')}<br />{t('h1Regel2')} <span style={{ color: 'var(--mint)' }}>{t('h1Land')}</span> {t('h1Jaar')}
         </h1>
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
-          We onderzochten alle {aantalAanbieders} actieve maaltijdboxen uitgebreid op basis van gebruikerservaringen, publieke data en officiële productinformatie. Eerlijke scores op smaak, prijs, gemak en duurzaamheid — onze scores en rangschikking worden nooit betaald.
+          {t('intro', { n: aantalAanbieders })}
         </p>
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
-          {[[String(aantalAanbieders), 'boxen vergeleken'], ['5', 'criteria beoordeeld'], ['2026', 'bijgewerkt']].map(([num, label]) => (
+          {[[String(aantalAanbieders), t('statBoxen')], ['5', t('statCriteria')], ['2026', t('statBijgewerkt')]].map(([num, label]) => (
             <div key={label}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: '#1B4332' }}>{num}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 2 }}>{label}</div>
@@ -90,9 +93,9 @@ export default function HomePageClient({
 
         {/* Trust card */}
         <div style={{ background: 'white', borderRadius: 16, padding: 20, boxShadow: '0 4px 24px rgba(0,0,0,.08)', border: '1px solid var(--rule)', marginBottom: 32 }}>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>Waarom onze rankings vertrouwen?</div>
+          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 12 }}>{t('waaromVertrouwen')}</div>
           <div className="two-col-grid" style={{ gap: 10 }}>
-            {[['🧪', 'Uitgebreid onderzocht'], ['📊', 'Gebaseerd op gebruikersdata'], ['🔄', 'Regelmatig bijgewerkt'], ['🇧🇪', 'Focus op België']].map(([icon, text]) => (
+            {[['🧪', t('uitgebreidOnderzocht')], ['📊', t('gebaseerdOpData')], ['🔄', t('regelmatigBijgewerkt')], ['🇧🇪', t('focusBelgie')]].map(([icon, text]) => (
               <div key={text} style={{ display: 'flex', alignItems: 'center', gap: 8, fontSize: 13 }}>
                 <div style={{ width: 28, height: 28, borderRadius: 6, background: '#E8F5EE', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 14, flexShrink: 0 }}>{icon}</div>
                 {text}
@@ -100,14 +103,14 @@ export default function HomePageClient({
             ))}
           </div>
           <div style={{ marginTop: 12, padding: '8px 10px', background: 'var(--cream)', borderRadius: 8, fontSize: 11, color: 'var(--muted)', textAlign: 'center', border: '1px solid var(--rule)' }}>
-            ⚡ Affiliate disclosure: kleine commissie via onze links, zonder meerprijs voor jou.
+            {t('disclosure')}
           </div>
         </div>
 
         {/* SECTION HEADER */}
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
-          <h2 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900 }}>Onze rankings</h2>
-          <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt {LAATST_BIJGEWERKT} · {aantalAanbieders} aanbieders</div>
+          <h2 style={{ fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900 }}>{t('onzeRankings')}</h2>
+          <div style={{ fontSize: 13, color: 'var(--muted)' }}>{t('bijgewerktRegel', { datum: laatstBijgewerkt(taal), n: aantalAanbieders })}</div>
         </div>
 
         {/* TOP 3 CARDS */}
@@ -141,9 +144,9 @@ export default function HomePageClient({
                 <div className="ranking-stats-grid">
                   {[
                     { val: a.score.totaal.toFixed(1), key: 'Score' },
-                    { val: `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: 'Per portie' },
+                    { val: `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: t('perPortie') },
                     { val: `${a.receptenPerWeek}+`, key: 'Recepten' },
-                    { val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`, key: 'Bezorging' },
+                    { val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`, key: t('bezorging') },
                   ].map(({ val, key }) => (
                     <div key={key} style={{ padding: '8px 6px', borderRight: '1px solid var(--rule)', textAlign: 'center' }}>
                       <div style={{ fontWeight: 700, fontSize: 14 }}>{val}</div>
@@ -159,7 +162,7 @@ export default function HomePageClient({
                 </div>
 
                 <Link href={a.ctaUrl || `/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
-                  {a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bekijk ${a.naam} →`}
+                  {a.kortingsCode ? tc('activeerBedrag', { bedrag: a.kortingsCode.bedrag }) : tc('bekijkAanbieder', { naam: a.naam })}
                 </Link>
                 {a.ctaSubtekst && (
                   <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>{a.ctaSubtekst}</div>
@@ -182,11 +185,11 @@ export default function HomePageClient({
 
         {/* MICRO-CONVERSION TIP */}
         <div style={{ background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 10, padding: '10px 14px', fontSize: 12, color: '#92400E', marginBottom: 8 }}>
-          💡 <strong>Tip:</strong> Welkomstdeals zijn alleen geldig voor nieuwe klanten en zijn beschikbaar voor beperkte tijd.
+          💡 <strong>{t('tipLabel')}</strong> {t('tipTekst')}
         </div>
 
         {/* REST (#4+) */}
-        <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '24px 0 12px' }}>Overige aanbieders</div>
+        <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '24px 0 12px' }}>{t('overigeAanbieders')}</div>
         {rest.map(a => (
           <div key={a.slug} className="small-card" style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 8, padding: '14px 16px' }}>
             <div style={{ fontFamily: 'Fraunces, serif', fontSize: 28, fontWeight: 900, color: 'var(--rule)', lineHeight: 1, flexShrink: 0, minWidth: 28 }}>{a.ranking}</div>
@@ -201,7 +204,7 @@ export default function HomePageClient({
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4, flexShrink: 0 }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4, background: '#E8F5EE', borderRadius: 100, padding: '3px 10px', fontSize: 12, fontWeight: 700, color: '#1B4332' }}>{a.score.totaal.toFixed(1)} ★</div>
-              <Link href={`/aanbieder/${a.slug}`} style={{ fontSize: 12, fontWeight: 700, color: '#1B4332', textDecoration: 'none' }}>Review →</Link>
+              <Link href={`/aanbieder/${a.slug}`} style={{ fontSize: 12, fontWeight: 700, color: '#1B4332', textDecoration: 'none' }}>{t('review')}</Link>
             </div>
           </div>
         ))}
@@ -211,7 +214,7 @@ export default function HomePageClient({
         {sponsoringActief && factor && (
           <div style={{ marginTop: 28, marginBottom: 8 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>In de kijker</div>
+              <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{t('inDeKijker')}</div>
               <GesponsordLabel />
             </div>
             <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 60%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '20px 20px 18px', position: 'relative', overflow: 'hidden' }}>
@@ -232,13 +235,13 @@ export default function HomePageClient({
               </div>
 
               <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
-                Activeer 40% korting op je eerste box →
+                {t('factorCta')}
               </Link>
               <Link href="/kortingscode/factor" style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>
-                Bekijk de Factor-deal
+                {t('bekijkDeal', { partner: 'Factor' })}
               </Link>
               <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10, textAlign: 'center' }}>
-                Gesponsorde plaatsing. Onze scores en rangschikking staan hier los van en worden niet betaald.
+                {t('gesponsordeUitleg')}
               </div>
             </div>
           </div>
@@ -248,10 +251,10 @@ export default function HomePageClient({
         {/* QUIZ */}
         <div style={{ marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
-            <h2 style={{ fontSize: 'clamp(18px, 4vw, 28px)', fontWeight: 900 }}>Welke maaltijdbox past bij jou?</h2>
+            <h2 style={{ fontSize: 'clamp(18px, 4vw, 28px)', fontWeight: 900 }}>{t('welkePastBijJou')}</h2>
           </div>
           <p style={{ fontSize: 14, color: '#4B5563', marginBottom: 16, lineHeight: 1.6 }}>
-            Twijfel je welke maaltijdbox het beste bij jou past? Doe onze korte test van 5 vragen en ontdek jouw persoonlijke aanbeveling.
+            {t('quizIntro')}
           </p>
           <Quiz />
         </div>
@@ -259,15 +262,15 @@ export default function HomePageClient({
         {/* VERGELIJKINGSTABEL */}
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
-            <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijk alle maaltijdboxen</h2>
+            <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>{t('vergelijkAlle')}</h2>
             <div style={{ fontSize: 13, color: 'var(--muted)' }}>{aantalAanbieders} aanbieders</div>
           </div>
-          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt {LAATST_BIJGEWERKT}.</p>
+          <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>{t('tabelIntro', { datum: laatstBijgewerkt(taal) })}</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 12, minWidth: 700 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  {['Aanbieder', 'Score', 'Prijs/portie', 'Min. maaltijden/week', 'Bezorgkost', '🇧🇪', 'Leverdag kiezen', 'Tijdslot kiezen', 'Los bestellen', 'Beste voor', ''].map(h => (
+                  {[t('aanbieder'), 'Score', t('prijsPortie'), t('minMaaltijden'), t('bezorgkost'), '🇧🇪', t('leverdagKiezen'), t('tijdslotKiezen'), t('losBestellen'), t('besteVoor'), ''].map(h => (
                     <th key={h} style={{ padding: '10px 10px', textAlign: 'left', fontWeight: 600, fontSize: 10, letterSpacing: '0.05em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
@@ -298,7 +301,7 @@ export default function HomePageClient({
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.losBestellenMogelijk ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.losBestellenMogelijk ? '✓' : '✗'}</td>
                     <td style={{ padding: '10px 10px', fontSize: 11, color: '#374151', whiteSpace: 'nowrap' }}>{a.besteVoor}</td>
                     <td style={{ padding: '10px 10px' }}>
-                      <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 11, whiteSpace: 'nowrap' }}>Review →</Link>
+                      <Link href={`/aanbieder/${a.slug}`} style={{ color: '#1B4332', fontWeight: 700, textDecoration: 'none', fontSize: 11, whiteSpace: 'nowrap' }}>{t('review')}</Link>
                     </td>
                   </tr>
                   );
@@ -307,21 +310,21 @@ export default function HomePageClient({
             </table>
           </div>
           <div style={{ marginTop: 8, fontSize: 11, color: 'var(--muted)' }}>
-            <strong>Leverdag kiezen</strong> = je kan zelf je bezorgdag selecteren · <strong>Tijdslot kiezen</strong> = je kan zelf een tijdstip/leverslot kiezen · ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie. Raadpleeg de website van de aanbieder voor de meest actuele prijzen en aanbiedingen.
+            <strong>{t('leverdagKiezen')}</strong> <span dangerouslySetInnerHTML={{ __html: t('legenda') }} />
           </div>
         </div>
 
         {/* VERGELIJKINGEN & GIDSEN */}
         <div style={{ marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
-            <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>Vergelijkingen & Gidsen</h2>
+            <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>{t('vergelijkingenGidsen')}</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: 12 }}>
             {[
-              { href: '/vergelijk/hellofresh-vs-foodbag', icon: '⚖️', label: 'HelloFresh vs Foodbag', sub: 'Welke is goedkoper en beter?' },
-              { href: '/vergelijk/hellofresh-vs-marley-spoon', icon: '⚖️', label: 'HelloFresh vs Marley Spoon', sub: 'Prijs vs culinaire kwaliteit' },
-              { href: '/voor/gezin', icon: '👨‍👩‍👧', label: 'Beste maaltijdbox voor gezinnen', sub: 'Top 3 voor grote porties & snelle recepten' },
-              { href: '/gids/goedkoopste-maaltijdbox-belgie', icon: '💰', label: 'Goedkoopste maaltijdbox', sub: 'Prijsvergelijking inclusief welkomstdeals' },
+              { href: '/vergelijk/hellofresh-vs-foodbag', icon: '⚖️', label: t('l1'), sub: t('s1') },
+              { href: '/vergelijk/hellofresh-vs-marley-spoon', icon: '⚖️', label: t('l2'), sub: t('s2') },
+              { href: '/voor/gezin', icon: '👨‍👩‍👧', label: t('l3'), sub: t('s3') },
+              { href: '/gids/goedkoopste-maaltijdbox-belgie', icon: '💰', label: t('l4'), sub: t('s4') },
             ].map(({ href, icon, label, sub }) => (
               <Link key={href} href={href} style={{ display: 'flex', alignItems: 'center', gap: 14, background: 'white', borderRadius: 12, border: '1px solid var(--rule)', padding: '16px 18px', textDecoration: 'none', color: 'var(--ink)' }}>
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: '#E8F5EE', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0 }}>{icon}</div>
@@ -339,19 +342,19 @@ export default function HomePageClient({
         <div style={{ marginBottom: 40 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 20 }}>
             <div style={{ background: 'white', borderRadius: 16, padding: 24, border: '1px solid var(--rule)' }}>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 14 }}>Hoe werkt een maaltijdbox?</h2>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 10 }}>Een maaltijdbox is een wekelijkse bezorgservice waarbij je alle ingrediënten en recepten krijgt om thuis te koken. Je kiest hoeveel porties en maaltijden je wil per week, en alles wordt vers geleverd aan je deur.</p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 10 }}>Het grote voordeel: je hoeft niet meer na te denken over wat je kookt, de boodschappen zijn al gedaan, en je verspilt minder voedsel omdat alles exact afgemeten wordt geleverd.</p>
-              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563' }}>De meeste maaltijdboxen in België werken op abonnementsbasis, maar zijn vrij opzegbaar. Je betaalt gemiddeld €5 tot €10 per portie afhankelijk van de aanbieder en het gekozen plan. We updaten deze pagina regelmatig op basis van nieuwe ervaringen en actuele informatie.</p>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 14 }}>{t('hoeWerkt')}</h2>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 10 }}>{t('uitleg1')}</p>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 10 }}>{t('uitleg2')}</p>
+              <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563' }}>{t('uitleg3')}</p>
             </div>
             <div style={{ background: 'white', borderRadius: 16, padding: 24, border: '1px solid var(--rule)' }}>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 14 }}>Voor wie is een maaltijdbox geschikt?</h2>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 14 }}>{t('voorWie')}</h2>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {[
-                  { icon: '👫', title: 'Koppels', desc: 'HelloFresh en Foodbag zijn de populairste keuzes voor 2 personen.' },
-                  { icon: '👨‍👩‍👧', title: 'Gezinnen', desc: 'Foodbag en HelloFresh: grote porties en snelle recepten voor het hele gezin.' },
-                  { icon: '🌱', title: 'Vegetariërs', desc: 'Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.' },
-                  { icon: '💰', title: 'Budget', desc: 'Foodprepper (v.a. €4,75/portie, gratis bezorging, geen verplicht abonnement) is een budgetvriendelijke optie.' },
+                  { icon: '👫', title: t('vw1t'), desc: t('vw1d') },
+                  { icon: '👨‍👩‍👧', title: t('vw2t'), desc: t('vw2d') },
+                  { icon: '🌱', title: t('vw3t'), desc: t('vw3d') },
+                  { icon: '💰', title: t('vw4t'), desc: t('vw4d') },
                 ].map(({ icon, title, desc }) => (
                   <div key={title} style={{ display: 'flex', gap: 10, alignItems: 'flex-start' }}>
                     <div style={{ fontSize: 18, flexShrink: 0, marginTop: 2 }}>{icon}</div>
@@ -369,16 +372,11 @@ export default function HomePageClient({
         {/* FAQ */}
         <div style={{ marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
-            <h2 style={{ fontSize: 'clamp(18px, 4vw, 28px)', fontWeight: 900 }}>Veelgestelde vragen</h2>
+            <h2 style={{ fontSize: 'clamp(18px, 4vw, 28px)', fontWeight: 900 }}>{t('veelgesteldeVragen')}</h2>
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 14 }}>
             {[
-              { q: 'Wat is de goedkoopste maaltijdbox in België?', a: 'Foodprepper is een budgetvriendelijke optie met een lage prijs per portie (v.a. €4,75), gratis bezorging en zonder verplicht abonnement. Factor heeft ook een lage instapprijs maar rekent bezorgkosten aan.' },
-              { q: 'Kan ik een maaltijdbox makkelijk opzeggen?', a: 'Je kan je abonnement meestal flexibel pauzeren of stopzetten, vaak tot enkele dagen voor de volgende levering. HelloFresh vraagt 5 dagen op voorhand, Foodbag en Marley Spoon ook wekelijks. Foodprepper en Foodmaker hebben geen verplicht abonnement. De exacte voorwaarden verschillen per aanbieder.' },
-              { q: 'Welke maaltijdbox is het beste voor gezinnen?', a: 'Foodbag is onze keuze voor gezinnen: lokale ingrediënten en snelle recepten voor 2-5 personen.' },
-              { q: 'Zijn maaltijdboxen goedkoper dan zelf boodschappen doen?', a: 'Niet altijd, maar ze besparen je tijd en voedselverspilling. Maaltijdboxen kosten doorgaans meer per portie dan zelf boodschappen doen, maar je verspilt nauwelijks voedsel omdat alles exact afgemeten wordt geleverd.' },
-              { q: 'Welke maaltijdbox heeft de beste vegetarische opties?', a: 'Ekomenu is de beste keuze voor vegetariërs met 100% biologische ingrediënten. Marley Spoon en HelloFresh bieden ook veel vegetarische menus.' },
-              { q: 'Hoe lang van tevoren moet ik bestellen?', a: 'De meeste aanbieders vragen 3–5 dagen op voorhand. HelloFresh vraagt 5 dagen voor de gewenste leverdag, Foodbag en Marley Spoon doorgaans 4–5 werkdagen. Beschikbare leverdagen en regio\'s kunnen per aanbieder verschillen — Marley Spoon levert bijvoorbeeld niet in Wallonië.' },
+              ...[0, 1, 2, 3].map(i => ({ q: tf2(`v${i}`), a: tf2(`a${i}`) })),
             ].map(({ q, a }) => (
               <div key={q} style={{ background: 'white', borderRadius: 12, padding: 20, border: '1px solid var(--rule)' }}>
                 <div style={{ fontFamily: 'Fraunces, serif', fontSize: 14, fontWeight: 700, marginBottom: 8, color: 'var(--ink)' }}>{q}</div>

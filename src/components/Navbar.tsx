@@ -1,8 +1,10 @@
 'use client';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Navbar() {
+  const t = useTranslations('nav');
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -21,12 +23,12 @@ export default function Navbar() {
           {/* Desktop links */}
           <div style={{ display: 'flex', gap: 4, alignItems: 'center' }} className="desktop-nav">
             {[
-              { href: '/', label: 'Vergelijken' },
-              { href: '/kortingscodes', label: 'Kortingscodes' },
-              { href: '/blog', label: 'Blog' },
-              { href: '/gids/goedkoopste-maaltijdbox-belgie', label: 'Goedkoopste' },
-              { href: '/voor/koppel', label: 'Voor koppels' },
-              { href: '/voor/gezin', label: 'Voor gezinnen' },
+              { href: '/', label: t('vergelijken') },
+              { href: '/kortingscodes', label: t('kortingscodes') },
+              { href: '/blog', label: t('blog') },
+              { href: '/gids/goedkoopste-maaltijdbox-belgie', label: t('goedkoopste') },
+              { href: '/voor/koppel', label: t('voorKoppels') },
+              { href: '/voor/gezin', label: t('voorGezinnen') },
             ].map(link => (
               <Link key={link.href} href={link.href} style={{ padding: '6px 12px', fontSize: 13, fontWeight: 600, color: 'var(--ink)', textDecoration: 'none', borderRadius: 6, fontFamily: 'DM Sans, sans-serif' }}>
                 {link.label}
