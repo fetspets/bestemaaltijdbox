@@ -1,76 +1,51 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/seo';
+import { aanbieders } from '@/lib/aanbieders';
+import { situaties } from '@/lib/situaties';
+import { vergelijkingen } from '@/lib/vergelijkingen';
+import { factorVergelijkingen } from '@/lib/factorVergelijkingen';
+import { gidsen } from '@/lib/gidsen';
+import { blogPosts } from '@/lib/blog';
+
+/**
+ * Afgeleid uit de databestanden in plaats van uit handmatige sluglijsten.
+ *
+ * De vorige versie had zes lijsten die naast vijf databestanden bijgehouden
+ * moesten worden en daar al van afweken: /voor/vegan en de maaltijdcheques-blog
+ * ontbraken, terwijl de stopgezette Carrefour er nog in stond.
+ */
+
+// Slugs met een eigen /kortingscode/<slug>-pagina.
+const kortingscodePaginas = ['hellofresh', 'foodbag', 'factor', 'foodprepper', 'crowd-cooks'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://bestemaaltijdbox.be';
-  const aanbieders = [
-    'hellofresh', 'foodbag', 'marley-spoon',
-    'foodprepper', 'ekomenu', 'carrefour-simply-you', 'factor', 'foodmaker',
-    'crowd-cooks',
-  ];
-  const situaties = ['koppel', 'vegan', 'gezin', 'vegetarisch', 'budget', 'bio', 'singles'];
-  const vergelijkingen = [
-    'hellofresh-vs-foodbag', 'hellofresh-vs-marley-spoon',
-    'foodbag-vs-marley-spoon', 'hellofresh-vs-ekomenu',
-    'foodprepper-vs-foodbag', 'foodprepper-vs-hellofresh',
-    'crowd-cooks-vs-factor',
-    'factor-vs-hellofresh', 'factor-vs-foodbag', 'factor-vs-marley-spoon',
-  ];
-  const gidsen = ['goedkoopste-maaltijdbox-belgie'];
-  const blogSlugs = [
-    'maaltijdbox-zonder-abonnement-belgie',
-    'maaltijdbox-maaltijdcheques-belgie',
-    'maaltijdbox-of-zelf-koken-belgie',
-    'hoe-maaltijdbox-opzeggen-belgie',
-    'vegetarisch-koken-maaltijdbox',
-    'maaltijdbox-starten-beginners',
-    'factor-review-belgie',
-    'kant-en-klare-maaltijden-zonder-koken-belgie',
-    'gezond-eten-zonder-tijd-belgie',
-  ];
-  const kortingscodes = ['hellofresh', 'foodbag', 'factor', 'foodprepper', 'crowd-cooks'];
+  const nu = new Date();
+  const entry = (
+    pad: string,
+    priority: number,
+    changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'monthly'
+  ) => ({ url: `${SITE_URL}${pad}`, lastModified: nu, changeFrequency, priority });
 
   return [
-    { url: baseUrl, lastModified: new Date(), changeFrequency: 'weekly', priority: 1 },
-    { url: `${baseUrl}/kortingscodes`, lastModified: new Date(), changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/over-ons`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${baseUrl}/privacy`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
-    { url: `${baseUrl}/voorwaarden`, lastModified: new Date(), changeFrequency: 'monthly', priority: 0.3 },
-    ...aanbieders.map(slug => ({
-      url: `${baseUrl}/aanbieder/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    })),
-    ...situaties.map(s => ({
-      url: `${baseUrl}/voor/${s}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    })),
-    ...vergelijkingen.map(slug => ({
-      url: `${baseUrl}/vergelijk/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.85,
-    })),
-    ...gidsen.map(slug => ({
-      url: `${baseUrl}/gids/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    })),
-    ...kortingscodes.map(slug => ({
-      url: `${baseUrl}/kortingscode/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.8,
-    })),
-    { url: `${baseUrl}/blog`, lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.7 },
-    ...blogSlugs.map(slug => ({
-      url: `${baseUrl}/blog/${slug}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.6,
-    })),
+    entry('', 1, 'weekly'),
+    entry('/kortingscodes', 0.9, 'weekly'),
+    entry('/blog', 0.7, 'weekly'),
+    entry('/over-ons', 0.5),
+    entry('/privacy', 0.3),
+    entry('/voorwaarden', 0.3),
+
+    // Stopgezette aanbieders horen niet in de sitemap.
+    ...aanbieders
+      .filter(a => a.status === 'active')
+      .map(a => entry(`/aanbieder/${a.slug}`, 0.8)),
+
+    ...Object.keys(situaties).map(s => entry(`/voor/${s}`, 0.7)),
+
+    ...vergelijkingen.map(v => entry(`/vergelijk/${v.slug}`, 0.85)),
+    ...factorVergelijkingen.map(v => entry(`/vergelijk/${v.slug}`, 0.85)),
+
+    ...gidsen.map(g => entry(`/gids/${g.slug}`, 0.8)),
+    ...blogPosts.map(p => entry(`/blog/${p.slug}`, 0.6)),
+    ...kortingscodePaginas.map(s => entry(`/kortingscode/${s}`, 0.8)),
   ];
 }
