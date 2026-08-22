@@ -102,7 +102,7 @@ export function Blok({ blok, taal = routing.defaultLocale }: { blok: ContentBlok
                 </ul>
               )}
             </div>
-            <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
+            <Link data-plaatsing="blok-topaanbieder" href={`/ga/${a.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
               {blok.knoptekst}
             </Link>
           </div>
@@ -167,7 +167,7 @@ export function Blok({ blok, taal = routing.defaultLocale }: { blok: ContentBlok
                 </div>
 
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  <Link href={`/ga/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+                  <Link data-plaatsing="blok-topaanbieder" href={`/ga/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
                     {taal === 'fr' ? "Voir l'offre →" : 'Bekijk deal →'}
                   </Link>
                   <Link href={`/aanbieder/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '10px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)' }}>
@@ -350,7 +350,7 @@ export function Blok({ blok, taal = routing.defaultLocale }: { blok: ContentBlok
               <div key={item.slug} style={{ background: 'white', border: '1.5px solid var(--rule)', borderRadius: 14, padding: 20 }}>
                 <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 800, marginBottom: 8 }}>{item.kop}</div>
                 <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{item.tekst}</p>
-                <Link href={href} rel="noopener sponsored nofollow" style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+                <Link data-plaatsing="blok-kortingkaart" href={href} rel="noopener sponsored nofollow" style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
                   {item.knoptekst}
                 </Link>
               </div>
@@ -364,7 +364,7 @@ export function Blok({ blok, taal = routing.defaultLocale }: { blok: ContentBlok
         <div style={{ background: '#1B4332', borderRadius: 16, padding: 28, textAlign: 'center', color: 'white', marginBottom: 36 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900, marginBottom: 8 }}>{blok.kop}</div>
           <p style={{ fontSize: 14, lineHeight: 1.7, opacity: 0.85, maxWidth: 480, margin: '0 auto 20px' }}>{blok.tekst}</p>
-          <Link href={blok.campagne ? `/ga/${blok.slug}?c=${blok.campagne}` : `/ga/${blok.slug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+          <Link data-plaatsing="blok-slotcta" href={blok.campagne ? `/ga/${blok.slug}?c=${blok.campagne}` : `/ga/${blok.slug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
             {blok.knoptekst}
           </Link>
           <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>{blok.subtekst}</div>

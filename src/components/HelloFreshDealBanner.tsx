@@ -28,6 +28,7 @@ export default function HelloFreshDealBanner() {
         🥗 HelloFresh-deal: tot €60 korting op je eerste 3 boxen — automatisch via onze link, geen code nodig.
       </span>
       <Link
+        data-plaatsing="hellofresh-banner"
         href="/ga/hellofresh"
         rel="noopener sponsored nofollow"
         style={{

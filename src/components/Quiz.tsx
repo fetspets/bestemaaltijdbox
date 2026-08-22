@@ -248,7 +248,7 @@ export default function Quiz() {
               </li>
             ))}
           </ul>
-          <Link href={`/ga/${winnaar.slug}`} style={{
+          <Link data-plaatsing="quiz-uitslag" href={`/ga/${winnaar.slug}`} style={{
             display: 'block',
             background: 'var(--green)',
             color: 'white',

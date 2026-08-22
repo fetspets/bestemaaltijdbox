@@ -109,7 +109,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                 </Link>
               </div>
             </div>
-            <Link href={`/ga/${g.winnaar.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
+            <Link data-plaatsing="gids-winnaar" href={`/ga/${g.winnaar.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
               Bekijk {g.winnaar.naam} →
             </Link>
           </div>
@@ -156,7 +156,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                     </td>
                     <td style={{ padding: '10px 12px' }}>
                       <Link
-                        href={r.isActief ? `/ga/${r.slug}` : `/aanbieder/${r.slug}`}
+                        data-plaatsing="gids-tabel" href={r.isActief ? `/ga/${r.slug}` : `/aanbieder/${r.slug}`}
                         style={{
                           display: 'inline-block',
                           background: i === 0 ? '#1B4332' : 'transparent',
@@ -202,7 +202,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                     </div>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-                    <Link href={`/ga/${keuze.slug}`} style={{ display: 'block', background: keuze.accent, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none', whiteSpace: 'nowrap' }}>
+                    <Link data-plaatsing="gids-topkeuze" href={`/ga/${keuze.slug}`} style={{ display: 'block', background: keuze.accent, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none', whiteSpace: 'nowrap' }}>
                       {tl('bekijkDeal')}
                     </Link>
                     <Link href={`/aanbieder/${keuze.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '8px 16px', borderRadius: 10, fontWeight: 600, fontSize: 12, textDecoration: 'none', color: 'var(--ink)', whiteSpace: 'nowrap' }}>

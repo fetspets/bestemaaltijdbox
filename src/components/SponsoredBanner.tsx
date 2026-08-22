@@ -50,6 +50,7 @@ export default function SponsoredBanner({ active }: { active: boolean }) {
         <span>{tb('factorPitch')} <strong>40% korting</strong> op je eerste box.</span>
       </span>
       <Link
+        data-plaatsing="factor-banner"
         href="/ga/factor"
         rel="noopener sponsored nofollow"
         style={{

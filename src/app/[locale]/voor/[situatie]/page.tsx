@@ -138,7 +138,7 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
                   ))}
                 </div>
 
-                <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
+                <Link data-plaatsing="situatie-ranking" href={`/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
                   {a.kortingsCode ? tc('activeerBedrag', { bedrag: a.kortingsCode.bedrag }) : tc('bekijkAanbieder', { naam: a.naam })}
                 </Link>
                 <Link href={`/aanbieder/${a.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '10px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)' }}>

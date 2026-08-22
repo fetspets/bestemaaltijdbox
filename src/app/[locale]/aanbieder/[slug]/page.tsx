@@ -233,7 +233,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* Hero CTA */}
           {a.ctaTekst && a.kortingsCode && (
             <div style={{ textAlign: 'center', marginBottom: 24 }}>
-              <Link href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '14px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+              <Link data-plaatsing="review-cta" href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '14px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
                 {a.ctaTekst} →
               </Link>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>
@@ -274,7 +274,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               )}
               {a.ctaTekst2 && (
                 <div style={{ textAlign: 'center' }}>
-                  <Link href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+                  <Link data-plaatsing="review-cta" href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
                     {a.ctaTekst2} →
                   </Link>
                   <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>Opzegbaar na je eerste box.</div>
@@ -351,7 +351,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 <div style={{ color: '#F59E0B', fontSize: 18 }}>{'★'.repeat(Math.round(a.score.totaal / 2))}{'☆'.repeat(5 - Math.round(a.score.totaal / 2))}</div>
               </div>
               {a.status === 'active' && (
-                <Link href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+                <Link data-plaatsing="review-cta" href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
                   {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
                 </Link>
               )}
@@ -437,7 +437,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             ) : null}
 
             {a.status === 'active' && (
-              <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
+              <Link data-plaatsing="review-cta" href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
                 {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
               </Link>
             )}

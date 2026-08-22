@@ -102,7 +102,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 160 }}>
               <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>{factor.kortingsCode?.bedragKort}</div>
-              <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>{t('activeerDeal')}</Link>
+              <Link data-plaatsing="factor-kortingscodes" href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>{t('activeerDeal')}</Link>
             </div>
           </div>
         </div>
@@ -139,7 +139,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
             <div style={{ textAlign: 'center', padding: '10px', background: 'var(--cream)', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: a.merkKleur }}>
               {kc.bedragKort}
             </div>
-            <Link href={dealCta[a.slug] ?? `/ga/${a.slug}`} style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+            <Link data-plaatsing="kortingscodes-rij" href={dealCta[a.slug] ?? `/ga/${a.slug}`} style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
               {t('activeerDeal')}
             </Link>
             {heeftDetailpagina.has(a.slug) && (

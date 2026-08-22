@@ -240,7 +240,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             const kleur = block.slug ? (aanbiederVoor(block.slug, taal)?.merkKleur ?? '#1B4332') : '#B45309';
             return (
               <div key={i} style={{ margin: '24px 0' }}>
-                <Link href={`/ga/${doelSlug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: kleur, color: 'white', padding: '13px 24px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+                <Link data-plaatsing="blog-cta" href={`/ga/${doelSlug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: kleur, color: 'white', padding: '13px 24px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
                   {block.tekst} →
                 </Link>
               </div>

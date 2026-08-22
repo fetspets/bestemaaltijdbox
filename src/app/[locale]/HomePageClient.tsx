@@ -234,7 +234,7 @@ export default function HomePageClient({
                 ))}
               </div>
 
-              <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
+              <Link data-plaatsing="factor-home" href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
                 {t('factorCta')}
               </Link>
               <Link href="/kortingscode/factor" style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>

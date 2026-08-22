@@ -129,6 +129,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         {v.primaireCta && (
           <div style={{ marginBottom: 36 }}>
             <Link
+              data-plaatsing="vergelijk-primair"
               href={v.primaireCta.campagne ? `/ga/${v.primaireCta.slug}?c=${v.primaireCta.campagne}` : `/ga/${v.primaireCta.slug}`}
               rel="noopener sponsored nofollow"
               style={{ display: 'inline-block', background: aanbiederVoor(v.primaireCta.slug, taal)?.merkKleur ?? '#1B4332', color: 'white', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}
