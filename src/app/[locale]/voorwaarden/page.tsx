@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 
 export default function FoodbagKortingscode() {
   return (

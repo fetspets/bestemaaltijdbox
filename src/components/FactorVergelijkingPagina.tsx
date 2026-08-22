@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { SITE_URL, absoluteUrl } from '@/lib/seo';
 import { getAanbieder } from '@/lib/aanbieders';
 import type { FactorVergelijking } from '@/lib/factorVergelijkingen';

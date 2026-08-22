@@ -19,13 +19,14 @@ export const SITE_URL = 'https://bestemaaltijdbox.be';
 export const SITE_NAAM = 'BesteMaaltijdbox.be';
 
 /**
- * Talen die nog niet vertaald zijn en dus niet geïndexeerd mogen worden.
+ * Talen die (nog) niet geïndexeerd mogen worden.
  *
- * Zolang /fr/ Nederlandse teksten toont, is elke Franse pagina duplicate
- * content van zijn Nederlandse tegenhanger. Indexeren zou de Nederlandse
- * versie schaden. Haal een taal hier weg zodra de vertaling van fase 4 af is.
+ * Stond tot fase 6 op ['fr'], omdat de Franse pagina's toen nog Nederlandse
+ * teksten toonden en dus duplicate content waren. Sinds de vertaling af is,
+ * is de lijst leeg en zijn beide talen indexeerbaar. Zet een taal hier terug
+ * als je hem tijdelijk uit de index wil halen; de sitemap volgt automatisch.
  */
-export const NIET_INDEXEREN: readonly string[] = ['fr'];
+export const NIET_INDEXEREN: readonly string[] = [];
 
 /** Blijft bestaan voor plekken die geen locale meekrijgen (bv. de root-layout). */
 export const STANDAARD_LOCALE = ogLocaleVoor[routing.defaultLocale];

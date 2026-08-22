@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { getTranslations } from 'next-intl/server';
 import { aanbieders } from '@/lib/aanbieders';
 

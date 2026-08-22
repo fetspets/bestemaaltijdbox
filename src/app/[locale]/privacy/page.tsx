@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';

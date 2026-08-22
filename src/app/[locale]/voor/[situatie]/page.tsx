@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import type { Metadata } from 'next';
 import { getAanbiedersByFilter } from '@/lib/aanbieders';
 import type { Locale } from '@/i18n/routing';

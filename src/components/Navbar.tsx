@@ -1,6 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
+import Taalwissel from '@/components/Taalwissel';
 import { useState } from 'react';
 
 export default function Navbar() {
@@ -34,6 +35,7 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            <Taalwissel />
           </div>
 
           {/* Hamburger */}

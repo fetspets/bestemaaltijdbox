@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 // De metadata voor deze route staat in layout.tsx. Stond hier eerder ook,

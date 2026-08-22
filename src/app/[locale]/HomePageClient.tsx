@@ -1,5 +1,5 @@
 'use client';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import type { Aanbieder } from '@/lib/aanbieders';
 import type { Locale } from '@/i18n/routing';
 import { laatstBijgewerkt } from '@/lib/site';

@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata, SITE_URL, absoluteUrl } from '@/lib/seo';
 import { aanbieders } from '@/lib/aanbieders';

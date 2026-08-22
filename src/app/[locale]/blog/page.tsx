@@ -3,7 +3,7 @@ import { getTranslations } from 'next-intl/server';
 import { laatstBijgewerkt } from '@/lib/site';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { blogPostsVoor } from '@/lib/teksten';
 import GesponsordLabel from '@/components/GesponsordLabel';
 

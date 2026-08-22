@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 
 type Scores = { hf: number; fb: number; ms: number; ek: number; fp: number; cc: number };
 

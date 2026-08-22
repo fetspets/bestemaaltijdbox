@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 
 // Herbruikbare deal-box voor gesponsorde content. Toont géén kortingscode:
 // de korting geldt automatisch via de affiliate-link, zodat de bezoeker

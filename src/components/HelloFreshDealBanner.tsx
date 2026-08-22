@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 
 const SHOW_ON = ['/', '/aanbieder/hellofresh', '/vergelijk/hellofresh-vs-foodbag', '/vergelijk/hellofresh-vs-marley-spoon'];
 

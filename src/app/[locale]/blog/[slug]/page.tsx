@@ -1,7 +1,7 @@
 import { Fragment } from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import type { Locale } from '@/i18n/routing';
 import { generateBlogStaticParams } from '@/lib/blog';
 import { blogPostsVoor, blogPostVoor, aanbiederVoor, aanbiedersVoor } from '@/lib/teksten';

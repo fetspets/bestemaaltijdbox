@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { getAanbieder } from '@/lib/aanbieders';
 import { berekenWeekprijs } from '@/lib/gidsen';
 import type { ContentBlok, BlokTabelKolom } from '@/lib/blokken';
