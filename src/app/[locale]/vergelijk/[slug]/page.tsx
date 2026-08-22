@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
 import { generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
@@ -16,6 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug, locale } = await params;
   const taal = locale as Locale;
   const v = vergelijkingVoor(slug, taal);
+  const tl = await getTranslations('labels');
   if (!v) return {};
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
@@ -43,13 +45,14 @@ const accentColors: Record<string, string> = {
   foodprepper: '#2D6A4F',
 };
 
-const categorieLabelMap: Record<string, string> = {
-  prijs: 'Prijs per portie',
-  smaak: 'Smaak',
-  variatie: 'Receptvariatie',
-  flexibiliteit: 'Flexibiliteit',
-  bezorging: 'Bezorging',
-  duurzaamheid: 'Duurzaamheid',
+/** De categorielabels komen uit messages/<taal>.json. */
+const categorieLabelSleutels: Record<string, string> = {
+  prijs: 'prijsPerPortie',
+  smaak: 'smaak',
+  variatie: 'receptvariatie',
+  flexibiliteit: 'flexibiliteit',
+  bezorging: 'bezorging',
+  duurzaamheid: 'duurzaamheid',
 };
 
 const categorieValueMap = (slug: string, cat: string, taal: Locale) => {
@@ -170,7 +173,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Categorie</th>
+                  <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{tl('categorie')}</th>
                   <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{a1.naam}</th>
                   <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{a2.naam}</th>
                   <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Winnaar</th>
@@ -205,7 +208,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
 
         )}
 
-        {v.blokken && <ContentBlokken blokken={v.blokken} />}
+        {v.blokken && <ContentBlokken blokken={v.blokken} taal={taal} />}
 
         {/* Eindverdicht */}
         <div style={{ background: 'white', borderRadius: 16, border: `1.5px solid ${accentColors[winnaar.slug]}`, padding: 28, marginBottom: 32, position: 'relative', overflow: 'hidden' }}>
@@ -244,7 +247,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
 
         {/* Footer links */}
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-          <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Bekijk alle maaltijdboxen</Link>
+          <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{tl('bekijkAlleBoxen')}</Link>
           <Link href={`/aanbieder/${a1.slug}`} style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>Volledige review {a1.naam} →</Link>
           <Link href={`/aanbieder/${a2.slug}`} style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>Volledige review {a2.naam} →</Link>
         </div>
