@@ -2,8 +2,10 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata, SITE_URL, absoluteUrl } from '@/lib/seo';
-import { getAanbieder, aanbieders, actieveAanbieders } from '@/lib/aanbieders';
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { aanbieders } from '@/lib/aanbieders';
+import { aanbiederVoor, actieveAanbiedersVoor, rangVoor } from '@/lib/teksten';
+import { getTranslations } from 'next-intl/server';
+import { laatstBijgewerkt } from '@/lib/site';
 
 export async function generateStaticParams() {
   return aanbieders.map(a => ({ slug: a.slug }));
@@ -11,7 +13,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const a = getAanbieder(slug);
+  const a = aanbiederVoor(slug, locale as Locale);
   if (!a) return {};
   const title = a.seoTitle ?? `${a.naam} review (2026): ${a.score.totaal}/10 — voor wie is het écht?`;
   const description = a.seoDescription ?? `Onze eerlijke ${a.naam} review op basis van echte gebruikerservaringen en onafhankelijk onderzoek. Smaak, prijs, flexibiliteit en voor wie het past.`;
@@ -26,17 +28,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-const scoreLabels: Record<string, string> = {
-  smaak: 'Smaak',
-  prijsKwaliteit: 'Prijs-kwaliteit',
-  flexibiliteit: 'Flexibiliteit',
-  duurzaamheid: 'Duurzaamheid',
-  gemak: 'Gemak',
-};
+// De labels van de subscores komen uit messages/<taal>.json.
+const scoreSleutels = ['smaak', 'prijsKwaliteit', 'flexibiliteit', 'duurzaamheid', 'gemak'] as const;
 
-export default async function AanbiederPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const a = getAanbieder(slug);
+export default async function AanbiederPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  const taal = locale as Locale;
+  const a = aanbiederVoor(slug, taal);
+  const t = await getTranslations('review');
+  const datum = laatstBijgewerkt(taal);
   if (!a) notFound();
 
   const baseUrl = SITE_URL;
@@ -123,11 +123,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div>
             <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
             {' → '}
-            <Link href="/aanbieder" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Aanbieders</Link>
+            <Link href="/aanbieder" style={{ color: 'var(--muted)', textDecoration: 'none' }}>{t('aanbieders')}</Link>
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>
-          <span className="hide-mobile" style={{ fontSize: 12 }}>Bijgewerkt: {LAATST_BIJGEWERKT}</span>
+          <span className="hide-mobile" style={{ fontSize: 12 }}>{t('bijgewerkt')}: {datum}</span>
         </div>
       </div>
 
@@ -137,7 +137,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         <div>
           {/* Header */}
           <div style={{ marginBottom: 28 }}>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--mint)', marginBottom: 8 }}>REVIEW</div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--mint)', marginBottom: 8 }}>{t('badge')}</div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 10 }}>
               <div style={{ width: 64, height: 64, borderRadius: 16, background: 'var(--cream)', border: '2px solid var(--rule)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 34 }}>
                 {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 6 }} /> : a.logo}
@@ -148,12 +148,12 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               </div>
             </div>
             <div style={{ display: 'flex', gap: 16, fontSize: 13, color: 'var(--muted)', flexWrap: 'wrap' }}>
-              <span>Door <strong style={{ color: 'var(--ink)' }}>Redactie BesteMaaltijdbox</strong></span>
-              <span>·</span><span>Bijgewerkt <strong style={{ color: 'var(--ink)' }}>{LAATST_BIJGEWERKT}</strong></span>
-              <span>·</span><span>Gebaseerd op <strong style={{ color: 'var(--ink)' }}>gebruikersdata & onderzoek</strong></span>
+              <span>{t('door')} <strong style={{ color: 'var(--ink)' }}>{t('redactie')}</strong></span>
+              <span>·</span><span>{t('bijgewerkt')} <strong style={{ color: 'var(--ink)' }}>{datum}</strong></span>
+              <span>·</span><span>{t('gebaseerdOp')} <strong style={{ color: 'var(--ink)' }}>{t('bron')}</strong></span>
               {a.status === 'active'
-                ? <><span>·</span><span>Ranking: <strong style={{ color: '#1B4332' }}>#{a.ranking} van {actieveAanbieders.length}</strong></span></>
-                : <><span>·</span><span><strong style={{ color: '#B45309' }}>Stopgezet — niet meer beschikbaar</strong></span></>}
+                ? <><span>·</span><span>{t('ranking')} <strong style={{ color: '#1B4332' }}>#{rangVoor(a.slug, taal) ?? a.ranking} {t('rankingVan')} {actieveAanbiedersVoor(taal).length}</strong></span></>
+                : <><span>·</span><span><strong style={{ color: '#B45309' }}>{t('stopgezet')}</strong></span></>}
             </div>
           </div>
 
@@ -171,14 +171,15 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           <div style={{ background: 'white', border: '1.5px solid var(--mint)', borderRadius: 16, padding: 24, marginBottom: 24, position: 'relative', overflow: 'hidden' }}>
             <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700 }}>Onze beoordeling</div>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700 }}>{t('onzeBeoordeling')}</div>
               <div style={{ display: 'flex', alignItems: 'baseline', gap: 4 }}>
                 <span style={{ fontFamily: 'Fraunces, serif', fontSize: 52, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</span>
                 <span style={{ fontSize: 20, color: 'var(--muted)' }}>/10</span>
               </div>
             </div>
             <div className="score-grid">
-              {Object.entries(scoreLabels).map(([key, label]) => {
+              {scoreSleutels.map((key) => {
+                const label = t(key);
                 const val = a.score[key as keyof typeof a.score] as number;
                 return (
                   <div key={key}>
@@ -192,19 +193,19 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               })}
             </div>
             <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted)', lineHeight: 1.5 }}>
-              De totaalscore is ons redactionele eindoordeel — geen rekenkundig gemiddelde van de subscores hierboven.
+              {t('scoreUitleg')}
             </div>
           </div>
 
           {/* Specs grid */}
           <div className="specs-grid">
             {[
-              { icon: '💰', label: 'Prijs per portie', val: a.prijsPerPortieLabel ?? `vanaf €${a.prijsPerPortie.toFixed(2)}` },
-              { icon: '📋', label: 'Recepten per week', val: `${a.receptenPerWeek}+` },
-              { icon: '🚚', label: 'Bezorging', val: a.gratisBezorging ? '✓ Gratis' : `€${a.bezorgkosten}` },
-              { icon: '👥', label: 'Personen', val: `${a.minPersonen}–${a.maxPersonen}` },
-              { icon: '📅', label: 'Opzegbaar', val: a.opzegTermijn },
-              { icon: '🇧🇪', label: 'Belgisch', val: a.belgisch ? '✓ Ja' : 'Nee' },
+              { icon: '💰', label: t('prijsPerPortie'), val: a.prijsPerPortieLabel ?? `${t('vanaf')} €${a.prijsPerPortie.toFixed(2).replace('.', ',')}` },
+              { icon: '📋', label: t('receptenPerWeek'), val: `${a.receptenPerWeek}+` },
+              { icon: '🚚', label: t('bezorging'), val: a.gratisBezorging ? '✓ Gratis' : `€${a.bezorgkosten}` },
+              { icon: '👥', label: t('personen'), val: `${a.minPersonen}–${a.maxPersonen}` },
+              { icon: '📅', label: t('opzegbaar'), val: a.opzegTermijn },
+              { icon: '🇧🇪', label: t('belgisch'), val: a.belgisch ? '✓ Ja' : 'Nee' },
             ].map(({ icon, label, val }) => (
               <div key={label} style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 10, padding: '12px 14px', display: 'flex', alignItems: 'center', gap: 10 }}>
                 <div style={{ fontSize: 20, flexShrink: 0 }}>{icon}</div>
@@ -340,12 +341,12 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
 
           {/* Eindoordeel */}
           <div style={{ background: 'var(--cream)', border: '2px solid #1B4332', borderRadius: 12, padding: 24, marginBottom: 28 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12, color: '#1B4332' }}>Ons eindoordeel</h2>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12, color: '#1B4332' }}>{t('onsEindoordeel')}</h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: '0 0 16px' }}>{a.uitgebreideReview.eindoordeel}</p>
             <div style={{ display: 'flex', alignItems: 'center', gap: 16, flexWrap: 'wrap' }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 48, fontWeight: 900, color: '#1B4332', lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</div>
               <div>
-                <div style={{ fontSize: 13, color: 'var(--muted)' }}>Onze score</div>
+                <div style={{ fontSize: 13, color: 'var(--muted)' }}>{t('onzeScore')}</div>
                 <div style={{ color: '#F59E0B', fontSize: 18 }}>{'★'.repeat(Math.round(a.score.totaal / 2))}{'☆'.repeat(5 - Math.round(a.score.totaal / 2))}</div>
               </div>
               {a.status === 'active' && (
@@ -412,12 +413,12 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
 
             <div style={{ marginBottom: 16 }}>
               {[
-                ['Prijs/portie', a.prijsPerPortieLabel ?? `vanaf €${a.prijsPerPortie.toFixed(2)}`],
+                ['Prijs/portie', a.prijsPerPortieLabel ?? `${t('vanaf')} €${a.prijsPerPortie.toFixed(2).replace('.', ',')}`],
                 ['Populaire box', `€${a.prijsPopulaireBox.toFixed(2)}/week`],
                 ['Recepten/week', `${a.receptenPerWeek}+`],
-                ['Personen', `${a.minPersonen}–${a.maxPersonen}`],
-                ['Opzegbaar', a.opzegTermijn],
-                ['Belgisch', a.belgisch ? '🇧🇪 Ja' : 'Nee'],
+                [t('personen'), `${a.minPersonen}–${a.maxPersonen}`],
+                [t('opzegbaar'), a.opzegTermijn],
+                [t('belgisch'), a.belgisch ? '🇧🇪 Ja' : 'Nee'],
                 ['Vegetarisch', a.vegetarisch ? '✓ Ja' : 'Nee'],
                 ['Biologisch', a.bio ? '✓ Ja' : 'Nee'],
               ].map(([k, v]) => (

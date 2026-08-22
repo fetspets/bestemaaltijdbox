@@ -57,6 +57,20 @@ export function gerangschiktVoor(locale: Locale): Aanbieder[] {
   return [...levert, ...levertNiet];
 }
 
+/**
+ * De positie zoals de bezoeker van deze taalversie hem hoort te zien.
+ *
+ * In het Nederlands is dat het redactionele ranking-veld. In het Frans volgt
+ * de positie de rangschikking waarin de aanbieders die niet in Wallonië
+ * leveren achteraan staan — anders zou een pagina "Classement #3" tonen en er
+ * twee alinea's verder bij zeggen dat er niet geleverd wordt.
+ */
+export function rangVoor(slug: string, locale: Locale): number | undefined {
+  if (locale === 'nl') return aanbieders.find(a => a.slug === slug)?.ranking;
+  const i = gerangschiktVoor(locale).findIndex(a => a.slug === slug);
+  return i === -1 ? undefined : i + 1;
+}
+
 /** Hoeveel aanbieders er in heel het land (dus ook in Wallonië) leveren. */
 export function aantalMetNationaleDekking(locale: Locale): number {
   return actieveAanbiedersVoor(locale).filter(a => a.levergebied !== 'vlaanderen-brussel').length;
