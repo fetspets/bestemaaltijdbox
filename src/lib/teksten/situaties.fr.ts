@@ -223,6 +223,149 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
       },
     ],
     nietGeschiktAls: [],
+    blokken: [
+      {
+        type: 'notitie',
+        kop: '⚠️ À lire avant tout : où habitez-vous ?',
+        achtergrond: '#FEF3C7',
+        rand: '#FCD34D',
+        regels: [
+          {
+            label: 'En Flandre ou à Bruxelles :',
+            tekst: "Ekomenu vous livre. C'est le seul box entièrement végétal et biologique de Belgique, et le choix évident si vous mangez 100 % végétal.",
+          },
+          {
+            label: 'En Wallonie :',
+            tekst: "Ekomenu ne livre pas chez vous, et aucun autre fournisseur n'est entièrement végétal. Il vous reste les recettes végétariennes de HelloFresh et la ligne veggie de Foodbag, qui livrent partout — mais ce ne sont pas des box végétaux et une sélection hebdomadaire reste nécessaire.",
+          },
+        ],
+      },
+      {
+        type: 'topAanbieders',
+        kop: 'Les quatre options, classées par disponibilité',
+        items: [
+          {
+            slug: 'hellofresh',
+            badge: '⭐ Livre partout',
+            badgeAchtergrond: '#E8F5EE',
+            badgeTekst: '#1B4332',
+            tagline: 'Recettes végétariennes · livraison dans tout le pays',
+            waarom:
+              "HelloFresh propose chaque semaine une sélection végétarienne dans un catalogue de plus de 40 recettes, et livre dans les trois régions. C'est l'option la plus accessible si vous habitez en Wallonie et voulez manger végétal plusieurs fois par semaine. Attention : ce n'est pas un box végétal — vous devez sélectionner activement, et la plupart des recettes contiennent viande ou poisson.",
+            deal: "jusqu'à 60 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
+            waarschuwing: '⚠️ Pas 100 % végétal',
+          },
+          {
+            slug: 'foodbag',
+            badge: '🇧🇪 Belge',
+            badgeAchtergrond: '#FEF9C3',
+            badgeTekst: '#854D0E',
+            tagline: 'Ligne veggie · ingrédients belges · livre en Wallonie',
+            waarom:
+              "Foodbag propose cinq styles de cuisine, dont une ligne veggie composée de plats végétariens et végétaux, avec des ingrédients de fermes belges. Livraison gratuite dans tout le pays. Là encore, ce n'est pas un box végétal : les autres lignes contiennent viande et poisson.",
+            deal: '3 × 20 € de réduction — appliqué automatiquement via notre lien',
+            waarschuwing: '⚠️ Pas 100 % végétal',
+          },
+          {
+            slug: 'ekomenu',
+            badge: '🌱 100 % végétal et bio',
+            badgeAchtergrond: '#E8F5EE',
+            badgeTekst: '#1B4332',
+            tagline: 'Le seul box entièrement végétal — Flandre et Bruxelles uniquement',
+            waarom:
+              "Ekomenu est le seul fournisseur belge intégralement végétal et biologique. Aucun tri à faire : tout le catalogue est plantaardig et certifié bio. Le prix par portion est même inférieur à celui de plusieurs box classiques. Le seul obstacle est la carte : la livraison s'arrête à la Flandre et à Bruxelles.",
+            deal: 'Aucun code permanent — consultez leur offre de bienvenue sur ekomenu.be',
+            waarschuwing: '⚠️ Pas de livraison en Wallonie',
+          },
+          {
+            slug: 'marley-spoon',
+            badge: '👨‍🍳 Recettes de chef',
+            badgeAchtergrond: '#F3E8FF',
+            badgeTekst: '#7C3AED',
+            tagline: 'Options végétariennes · Flandre et Bruxelles uniquement',
+            waarom:
+              "Marley Spoon inclut des recettes végétariennes dans son menu hebdomadaire, plus élaborées que la moyenne. Ce n'est pas un box végétal, et la livraison ne dépasse pas la Flandre et Bruxelles — deux restrictions qui l'écartent pour une grande partie des lecteurs francophones.",
+            deal: 'Réduction appliquée automatiquement via notre lien — vérifiez votre code postal',
+            waarschuwing: '⚠️ Pas 100 % végétal · pas en Wallonie',
+          },
+        ],
+      },
+      {
+        type: 'tabel',
+        kop: 'Comparatif : 4 fournisseurs pour une alimentation végétale',
+        slugs: ['hellofresh', 'foodbag', 'ekomenu', 'marley-spoon'],
+        portiesPerWeek: 6,
+        kolommen: [
+          {
+            kop: 'Livre en Wallonie',
+            soort: 'tekst',
+            waarden: {
+              hellofresh: 'Oui',
+              foodbag: 'Oui',
+              ekomenu: 'Non',
+              'marley-spoon': 'Non',
+            },
+          },
+          {
+            kop: 'Offre végétale',
+            soort: 'tekst',
+            waarden: {
+              hellofresh: 'Recettes végétariennes',
+              foodbag: 'Ligne veggie',
+              ekomenu: '100 % végétal et bio ✓',
+              'marley-spoon': 'Recettes végétariennes',
+            },
+          },
+          { kop: '€/portion', soort: 'portie' },
+          { kop: 'Note', soort: 'score' },
+          { kop: 'Réduction', soort: 'korting' },
+        ],
+        voetnoot:
+          'Prix indicatifs — vérifiez les tarifs actuels sur le site du fournisseur.',
+      },
+      {
+        type: 'scenarios',
+        kop: 'Quelle option pour quelle situation ?',
+        items: [
+          {
+            scenario: 'Vous voulez du 100 % végétal et habitez en Flandre ou à Bruxelles',
+            aanbeveling: 'Ekomenu',
+            slug: 'ekomenu',
+            uitleg:
+              "Le seul fournisseur belge entièrement végétal et biologique. Rien à filtrer, rien à vérifier : tout le catalogue est plantaardig. Consultez leur offre de bienvenue en cours.",
+            achtergrond: '#E8F5EE',
+            rand: '#BBF7D0',
+          },
+          {
+            scenario: 'Vous voulez du végétal et habitez en Wallonie',
+            aanbeveling: 'HelloFresh ou Foodbag',
+            slug: 'hellofresh',
+            uitleg:
+              "Aucun box entièrement végétal ne livre en Wallonie aujourd'hui. HelloFresh propose une sélection végétarienne chaque semaine, Foodbag une ligne veggie avec des ingrédients belges. Les deux livrent gratuitement au sud du pays.",
+            achtergrond: '#DBEAFE',
+            rand: '#BFDBFE',
+          },
+          {
+            scenario: 'Vous voulez manger végétal quelques fois par semaine',
+            aanbeveling: 'HelloFresh',
+            slug: 'hellofresh',
+            uitleg:
+              "Avec plus de 40 recettes hebdomadaires, vous composez vous-même : deux ou trois repas végétariens par semaine sans vous engager sur un box entièrement végétal. C'est aussi l'entrée la moins chère grâce à la réduction de bienvenue.",
+            achtergrond: '#FEF3C7',
+            rand: '#FCD34D',
+          },
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Manger végétal, où que vous habitiez',
+        tekst:
+          "Si Ekomenu livre chez vous, c'est le choix le plus cohérent. Sinon, HelloFresh reste la façon la plus simple de composer des repas végétariens chaque semaine, avec livraison partout en Belgique.",
+        slug: 'hellofresh',
+        knoptekst: 'Voir HelloFresh →',
+        subtekst: 'Livraison gratuite dans les trois régions · résiliable à tout moment',
+      },
+    ],
   },
 
   gezin: {
