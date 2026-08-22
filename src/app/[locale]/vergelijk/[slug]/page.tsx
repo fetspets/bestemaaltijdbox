@@ -75,6 +75,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
   const v = vergelijkingVoor(slug, taal);
   if (!v) notFound();
 
+  const tl = await getTranslations('labels');
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
   const winnaar = aanbiederVoor(v.verdictSlug, taal)!;
@@ -184,7 +185,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
                   const winnaarSlug = categorieWinnaars![cat];
                   return (
                     <tr key={cat} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
-                      <td style={{ padding: '12px 16px', fontWeight: 700 }}>{categorieLabelMap[cat]}</td>
+                      <td style={{ padding: '12px 16px', fontWeight: 700 }}>{tl(categorieLabelSleutels[cat])}</td>
                       <td style={{ padding: '12px 16px', textAlign: 'center', fontWeight: winnaarSlug === a1.slug ? 700 : 400, color: winnaarSlug === a1.slug ? accentColors[a1.slug] : 'var(--ink)' }}>
                         {categorieValueMap(a1.slug, cat, taal)}
                         {winnaarSlug === a1.slug && <span style={{ marginLeft: 6, fontSize: 12, color: '#16A34A' }}>✓</span>}
