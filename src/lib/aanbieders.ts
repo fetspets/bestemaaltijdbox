@@ -37,6 +37,11 @@ export interface Aanbieder {
   /** Optionele toelichting bij een niet-actieve status (bv. stopgezet-melding). */
   statusNotitie?: string;
   score: {
+    /**
+     * Redactioneel eindoordeel — bewust GEEN gemiddelde van de subscores
+     * hieronder. Niet "corrigeren" door te middelen; dit cijfer gaat als
+     * ratingValue mee in de Review-markup en is een eigen beoordeling.
+     */
     totaal: number;
     smaak: number;
     prijsKwaliteit: number;
@@ -455,7 +460,7 @@ export const aanbieders: Aanbieder[] = [
       bedragKort: '€60 totaal',
       deal: '€20 korting in week 1 + €10 korting per week gedurende 4 weken',
       voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · €20 in week 1 + 4× €10 · Wekelijks opzegbaar',
-      beschrijving: '€20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. Korting wordt automatisch toegepast via onze link — geen code nodig.',
+      beschrijving: '€20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. Bestel via onze link: Crowd Cooks toont de actiecode zelf bovenaan de bestelpagina, dus je hoeft niets op te zoeken.',
     },
     ctaSubtekst: 'tot €60 korting · automatisch via onze link',
     kenmerken: ['⚡ Kant-en-klaar', '🇧🇪 Belgisch', '🚚 Bezorging €4,90', '🍽️ 450+ g per maaltijd'],
@@ -596,6 +601,21 @@ export const aanbieders: Aanbieder[] = [
 ];
 
 /** Enkel de actieve aanbieders — gebruik dit voor ranglijsten, tabellen en tellingen. */
+// De volgorde van deze array is redactioneel en bepaalt de weergave; het
+// ranking-veld toont datzelfde nummer aan de bezoeker. Wie de array herschikt
+// zonder de nummers bij te werken, laat de site "#3" op plaats 4 tonen.
+// Deze controle vangt dat af tijdens de build in plaats van in productie.
+if (process.env.NEXT_PHASE === 'phase-production-build') {
+  aanbieders.forEach((a, i) => {
+    if (a.ranking !== i + 1) {
+      throw new Error(
+        `Ranking klopt niet: "${a.slug}" staat op positie ${i + 1} in de array ` +
+        `maar heeft ranking ${a.ranking}. Werk src/lib/aanbieders.ts bij.`
+      );
+    }
+  });
+}
+
 export const actieveAanbieders: Aanbieder[] = aanbieders.filter(a => a.status === 'active');
 
 export function getAanbieder(slug: string): Aanbieder | undefined {

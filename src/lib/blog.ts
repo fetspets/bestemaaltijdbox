@@ -1,8 +1,17 @@
+import type { ContentBlok } from './blokken';
+
+/**
+ * Proza-blokken voor gewone artikels, plus het gedeelde blokvocabulaire uit
+ * blokken.ts voor uitgewerkte vergelijkingsartikels.
+ */
 export type BlogContentBlock =
+  | ContentBlok
   | { type: 'h2'; text: string }
-  | { type: 'p'; text: string }
+  // `html` staat inline links en <strong> toe; gebruik het alleen voor eigen tekst.
+  | { type: 'p'; text: string; html?: boolean }
   | { type: 'ul'; items: string[] }
-  | { type: 'cta'; tekst: string }
+  // `slug` bepaalt de bestemming; zonder slug gaat de CTA naar de sponsor.
+  | { type: 'cta'; tekst: string; slug?: string }
   // Kortingscode-box met CTA (gesponsorde content). `tekst` = knoplabel.
   | { type: 'codebox'; tekst: string }
   // Berekend prijsvoorbeeld voor de partner (data-driven uit aanbieders.ts).
@@ -22,6 +31,9 @@ export interface BlogPost {
   relatedSlugs: string[];
   /** Contextuele links naar andere blogs/pagina's ("Lees ook"). */
   relatedLinks?: Array<{ label: string; href: string }>;
+  /** Optionele FAQ; rendert een sectie en levert FAQPage-markup. */
+  faq?: Array<{ q: string; a: string }>;
+  faqKop?: string;
   /** Artikelspecifieke meta-keywords (overschrijven de generieke set uit layout). */
   keywords?: string[];
   /** Aanwezig bij betaalde/gesponsorde artikels — toont een disclosure en stuurt CTA's via /ga/<gaSlug>. */
@@ -29,6 +41,252 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: 'maaltijdbox-zonder-abonnement-belgie',
+    titel: 'Maaltijdbox zonder abonnement in België 2026 — welke opties zijn er?',
+    metaTitle: 'Maaltijdbox zonder abonnement in België 2026 — opties vergeleken',
+    metaDescription: 'Geen abonnement maar toch een maaltijdbox? Bekijk welke Belgische aanbieders leveren zonder vast contract. Vergelijk prijs en bespaar.',
+    gepubliceerd: 'juni 2026',
+    datumISO: '2026-06-02',
+    excerpt: 'Drie Belgische aanbieders leveren zonder verplicht abonnement. We vergelijken ze op prijs, bezorging en welkomstkorting — en leggen uit wie welke optie het best past.',
+    content: [
+      { type: 'p', html: true, text: 'Wil je een maaltijdbox proberen zonder je vast in te schrijven? Drie Belgische aanbieders leveren zonder verplicht abonnement: <a href="/aanbieder/foodprepper" style="color:#1B4332;font-weight:600">Foodprepper</a> en <a href="/aanbieder/foodmaker" style="color:#1B4332;font-weight:600">Foodmaker</a> vereisen echt geen abonnement — je bestelt wanneer het jou uitkomt, zonder opzegtermijn. <a href="/aanbieder/foodbag" style="color:#1B4332;font-weight:600">Foodbag</a> laat je ook los bestellen zonder wekelijkse verplichting.' },
+      { type: 'p', html: true, text: 'Hieronder vergelijken we de drie actieve opties op prijs, bezorging en welkomstkorting — en leggen we uit wie welke optie het best past. <em>Noot: Carrefour Simply You was eerder ook beschikbaar zonder abonnement, maar is stopgezet in 2026.</em>' },
+      {
+        type: 'winnaar',
+        kop: '🏆 Beste maaltijdbox zonder abonnement',
+        slug: 'foodbag',
+        prijsRegel: 'Los bestellen · gratis bezorging in heel België',
+        dealRegel: '3× €20 korting op je eerste 3 bestellingen, automatisch via onze link.',
+        knoptekst: 'Bekijk Foodbag →',
+        alternatief: {
+          inleiding: 'Op zoek naar de laagste prijs? →',
+          slug: 'foodprepper',
+          label: 'Foodprepper: vanaf €4,75/portie',
+        },
+      },
+      {
+        type: 'tabel',
+        kop: 'Vergelijking: maaltijdboxen zonder abonnement',
+        slugs: ['foodbag', 'foodprepper', 'foodmaker'],
+        portiesPerWeek: 6,
+        kolommen: [
+          {
+            kop: 'Abonnement',
+            soort: 'tekst',
+            waarden: {
+              foodbag: 'Los bestellen mogelijk',
+              foodprepper: 'Geen abo vereist',
+              foodmaker: 'Geen abo vereist',
+            },
+          },
+          { kop: '€/portie', soort: 'portie' },
+          { kop: 'Bezorging', soort: 'bezorging' },
+          { kop: 'Korting', soort: 'korting' },
+        ],
+        voetnoot: 'Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder. Kortingen gelden voor nieuwe klanten en worden automatisch toegepast via onze link.',
+      },
+      {
+        type: 'topAanbieders',
+        kop: 'De drie opties uitgewerkt',
+        items: [
+          {
+            slug: 'foodbag',
+            badge: '🏆 Beste keuze zonder abo',
+            badgeAchtergrond: '#DBEAFE',
+            badgeTekst: '#1E40AF',
+            tagline: 'Lokale Belgische ingrediënten · 5 kookstijlen',
+            waarom: 'Foodbag is de #2 maaltijdbox in België, eigendom van de Colruyt Group. Met 100% lokale Belgische ingrediënten, 5 kookstijlen (waaronder Sana van Sandra Bekkari) en gratis bezorging in heel België — inclusief Wallonië — is het de meest complete keuze als je af en toe los wil bestellen. Je hebt geen vast abonnement nodig: je plaatst een bestelling wanneer het jou uitkomt. Via onze link krijg je 3× €20 korting op je eerste 3 bestellingen (in totaal €60 voordeel), automatisch toegepast — geen code nodig.',
+            deal: '3× €20 korting op eerste 3 bestellingen',
+          },
+          {
+            slug: 'foodprepper',
+            badge: '💰 Goedkoopst zonder abo',
+            badgeAchtergrond: '#E8F5EE',
+            badgeTekst: '#1B4332',
+            tagline: 'Klaar in 15 minuten · geen opzegtermijn',
+            waarom: 'Foodprepper is de snelste kookbox van België: alles staat in 15 minuten op tafel dankzij voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. Er is geen verplicht abonnement en geen opzegtermijn — je bestelt eenmalig, wekelijks of tweewekelijks zoals het jou past. Bijna alle ingrediënten komen van Belgische leveranciers. Bezorging is gratis in Vlaanderen en Brussel. Via onze link bespaar je tot €45 op je eerste 3 bestellingen — automatisch toegepast, geen code nodig.',
+            deal: '3× €15 korting op eerste 3 bestellingen',
+          },
+          {
+            slug: 'foodmaker',
+            badge: '👨‍🍳 Artisanale Belgische kwaliteit',
+            badgeAchtergrond: '#FEF3C7',
+            badgeTekst: '#92400E',
+            tagline: 'Jeroen Meus-recepten · opwarmen, niet koken',
+            waarom: 'Foodmaker is een Antwerpse kant-en-klare maaltijdservice met een unieke samenwerking met Jeroen Meus (Dagelijkse Kost). Je warmt de maaltijden op in enkele minuten — koken is niet nodig. Foodmaker heeft geen verplicht abonnement: je bestelt wanneer het jou past. Met 32 gerechten per week, een volledig vegan "Vedge Bags" gamma en gratis bezorging in heel België is het een sterke optie voor wie Belgische kwaliteit wil zonder vast contract. Minimumbestelling €39,90.',
+            deal: 'Geen actieve kortingscode — bekijk de welkomstaanbieding op hun site',
+          },
+        ],
+      },
+      {
+        type: 'scenarios',
+        kop: 'Voor wie is welke optie?',
+        items: [
+          {
+            scenario: 'Je wil eenmalig een maaltijdbox proberen',
+            aanbeveling: 'Foodprepper',
+            slug: 'foodprepper',
+            uitleg: 'Geen abonnement, geen opzegtermijn. Tot €45 welkomstkorting, automatisch via onze link. Ideaal om risicovrij te starten.',
+            achtergrond: '#F0FDF4',
+            rand: '#BBF7D0',
+          },
+          {
+            scenario: 'Drukke avonden — klaar in 15 minuten',
+            aanbeveling: 'Foodprepper',
+            slug: 'foodprepper',
+            uitleg: 'Voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. De snelste kookbox van België, en geen vast wekelijks schema vereist.',
+            achtergrond: '#EFF6FF',
+            rand: '#BFDBFE',
+          },
+          {
+            scenario: 'Belgische kwaliteit zonder vaste verplichting',
+            aanbeveling: 'Foodbag',
+            slug: 'foodbag',
+            uitleg: 'Lokale ingrediënten, 5 kookstijlen, gratis bezorging in heel België. Los bestellen mogelijk zonder abonnement. €60 korting over eerste 3 bestellingen, automatisch via onze link.',
+            achtergrond: '#DBEAFE',
+            rand: '#93C5FD',
+          },
+          {
+            scenario: 'Belgische smaak klaar zonder koken',
+            aanbeveling: 'Foodmaker',
+            slug: 'foodmaker',
+            uitleg: 'Jeroen Meus-recepten, vers bereid in Antwerpen, klaar in enkele minuten. Geen abo, gratis bezorging in heel België. Minimumbestelling €39,90.',
+            achtergrond: '#FFF7ED',
+            rand: '#FED7AA',
+          },
+        ],
+      },
+    ],
+    faqKop: 'Veelgestelde vragen over maaltijdboxen zonder abonnement',
+    faq: [
+      { q: 'Welke maaltijdbox heeft geen abonnement?', a: 'Foodprepper en Foodmaker werken volledig zonder verplicht abonnement — je bestelt wanneer het jou uitkomt, zonder wekelijkse verplichting of opzegtermijn. Foodbag laat je ook los bestellen: je kiest zelf wanneer je een box plaatst, zonder je vast in te schrijven op een wekelijks schema.' },
+      { q: 'Kan ik een maaltijdbox eenmalig bestellen?', a: 'Ja. Bij Foodprepper en Foodmaker is een eenmalige bestelling standaard mogelijk — geen abonnement, geen opzegtermijn. Ook bij Foodbag kun je los bestellen zonder vast contract. Zo probeer je een maaltijdbox risicovrij, zonder langetermijnverplichting.' },
+      { q: 'Wat is de goedkoopste maaltijdbox zonder abonnement?', a: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €4,75/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 (3× €15 op de eerste 3 bestellingen), automatisch toegepast via onze link. Foodbag kost €9,50/portie maar biedt €60 korting via onze link en bezorgt in heel België inclusief Wallonië.' },
+    ],
+    relatedSlugs: ['maaltijdbox-maaltijdcheques-belgie', 'maaltijdbox-starten-beginners'],
+  },
+  {
+    slug: 'maaltijdbox-maaltijdcheques-belgie',
+    titel: 'Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?',
+    metaTitle: 'Maaltijdbox betalen met maaltijdcheques in België (2026) — wie accepteert ze?',
+    metaDescription: 'Welke maaltijdbox accepteert maaltijdcheques van Monizze, Pluxee of Edenred? Foodbag, HelloFresh en Foodprepper vergeleken. Direct antwoord + beste deal.',
+    gepubliceerd: 'juni 2026',
+    datumISO: '2026-06-02',
+    excerpt: 'Drie maaltijdboxen accepteren elektronische maaltijdcheques van Monizze, Pluxee (Sodexo) en Edenred: Foodbag, HelloFresh en Foodprepper. De andere aanbieders doen dit (nog) niet.',
+    content: [
+      {
+        type: 'tabel',
+        kop: 'Welke maaltijdbox accepteert maaltijdcheques?',
+        slugs: ['foodbag', 'hellofresh', 'foodprepper', 'marley-spoon', 'factor', 'ekomenu', 'foodmaker', 'crowd-cooks'],
+        portiesPerWeek: 6,
+        rijMarkering: {
+          foodbag: 'positief',
+          hellofresh: 'positief',
+          foodprepper: 'positief',
+          'marley-spoon': 'negatief',
+          factor: 'negatief',
+          ekomenu: 'negatief',
+          foodmaker: 'negatief',
+          'crowd-cooks': 'negatief',
+        },
+        kolommen: [
+          {
+            kop: 'Maaltijdcheques',
+            soort: 'tekst',
+            waarden: {
+              foodbag: '✅ JA',
+              hellofresh: '✅ JA (via omweg)',
+              foodprepper: '✅ JA',
+              'marley-spoon': '❌ NEE',
+              factor: '❌ NEE',
+              ekomenu: '❌ NEE',
+              foodmaker: '❌ NEE',
+              'crowd-cooks': '❌ NEE',
+            },
+          },
+          {
+            kop: 'Uitgevers',
+            soort: 'tekst',
+            waarden: {
+              foodbag: 'Monizze, Pluxee (Sodexo), Edenred',
+              hellofresh: 'Monizze (via Virtual Visa), Edenred',
+              foodprepper: 'Monizze, Pluxee (Sodexo), Edenred',
+            },
+          },
+          {
+            kop: 'Beperking',
+            soort: 'tekst',
+            waarden: {
+              foodbag: 'Alleen bij eenmalige bestelling, niet bij abonnement',
+              hellofresh: 'Je moet eerst Monizze Virtual Visa activeren in de app',
+              foodprepper: 'Alleen bij eenmalige bestelling, niet bij abonnement',
+            },
+          },
+        ],
+        voetnoot: 'Uitgevers en beperkingen zijn geverifieerd bij de aanbieders; controleer bij twijfel de betaalmethodes op hun afrekenpagina.',
+      },
+      {
+        type: 'winnaar',
+        kop: '⭐ Beste keuze met maaltijdcheques',
+        slug: 'foodbag',
+        prijsRegel: 'Monizze, Pluxee en Edenred — zonder omweg',
+        dealRegel: 'Geen abonnement nodig, dus ideaal om je cheques in één keer te gebruiken.',
+        knoptekst: 'Bekijk Foodbag →',
+        punten: [
+          'Geen abonnement — ideaal voor eenmalige betaling met je cheques',
+          'Accepteert Monizze, Pluxee en Edenred',
+          'Verse Belgische ingrediënten, bezorging gratis',
+        ],
+      },
+      { type: 'h2', text: 'Foodbag betalen met maaltijdcheques' },
+      { type: 'p', text: 'Foodbag is de eenvoudigste keuze: je betaalt gewoon met je Monizze-, Pluxee- of Edenred-kaart bij het afrekenen. Let op: dit werkt alleen bij een eenmalige bestelling. Sla je je bestelling op als abonnement, dan kan je de cheques niet koppelen. Ideaal als je af en toe wil bestellen zonder vast te zitten aan een terugkerend plan.' },
+      { type: 'cta', tekst: 'Bestel Foodbag met maaltijdcheques', slug: 'foodbag' },
+      { type: 'h2', text: 'HelloFresh betalen met maaltijdcheques' },
+      { type: 'p', text: 'HelloFresh werkt samen met Monizze en Edenred, maar vereist een extra stap: activeer de Monizze Virtual Visa-kaart in de Monizze-app en voeg die toe als betaalmethode in je HelloFresh-account. Via Edenred gebruik je de kaartgegevens op de achterkant van je kaart. Eenmaal ingesteld wordt je HelloFresh-abonnement wekelijks afgeschreven van je cheque-saldo.' },
+      { type: 'cta', tekst: 'Bekijk HelloFresh', slug: 'hellofresh' },
+      { type: 'h2', text: 'Foodprepper betalen met maaltijdcheques' },
+      { type: 'p', text: 'Foodprepper accepteert Monizze, Pluxee en Edenred-cheques. Net als bij Foodbag geldt: alleen bij eenmalige bestellingen, niet bij een terugkerend abonnement. Foodprepper levert enkel in Vlaanderen en Brussel en zet een verse maaltijd in 15 minuten op tafel.' },
+      { type: 'cta', tekst: 'Bestel Foodprepper', slug: 'foodprepper' },
+      {
+        type: 'infokaarten',
+        kop: 'Hoe betaal je met maaltijdcheques — 3 stappen',
+        items: [
+          { icon: '1️⃣', titel: 'Kies een aanbieder die maaltijdcheques accepteert', tekst: 'Foodbag, HelloFresh of Foodprepper zijn de enige maaltijdboxen in België die elektronische maaltijdcheques aanvaarden.' },
+          { icon: '2️⃣', titel: 'Kies voor een eenmalige bestelling', tekst: 'Bij Foodbag en Foodprepper werkt de betaling met maaltijdcheques uitsluitend bij eenmalige bestellingen. Bij HelloFresh kan je ook met abonnement betalen via de Monizze Virtual Visa-kaart of Edenred.' },
+          { icon: '3️⃣', titel: 'Kies je betaalmethode bij het afrekenen', tekst: 'Selecteer je Monizze-, Pluxee- of Edenred-kaart als betaalmethode op de afrekenpagina. Bij HelloFresh via Monizze: voeg eerst de Virtual Visa-kaart toe in je accountinstellingen.' },
+        ],
+      },
+      {
+        type: 'notitie',
+        kop: '💡 Nieuw in 2026: hoger maximumbedrag',
+        achtergrond: '#FEF3C7',
+        rand: '#FCD34D',
+        regels: [
+          { label: 'Maximum per dag:', tekst: 'het maximumbedrag voor maaltijdcheques stijgt naar €10 per dag (was €8). Dat betekent meer koopkracht voor jouw wekelijkse maaltijdbox.' },
+          { label: 'Wat dat concreet scheelt:', tekst: 'een gemiddelde Foodbag-bestelling voor 2 personen (3 maaltijden) kost rond €57 — met je maaltijdcheques betaal je een groot deel niet uit eigen zak.' },
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Klaar om te bestellen?',
+        tekst: 'Foodbag is de eenvoudigste manier om je maaltijdcheques te gebruiken: geen abonnement nodig, en alle drie de uitgevers worden aanvaard bij het afrekenen.',
+        slug: 'foodbag',
+        knoptekst: 'Bekijk Foodbag →',
+        subtekst: 'Monizze · Pluxee · Edenred · gratis bezorging',
+      },
+    ],
+    faqKop: 'Veelgestelde vragen over maaltijdcheques',
+    faq: [
+      { q: 'Kan ik mijn HelloFresh abonnement betalen met maaltijdcheques?', a: 'Ja, maar niet rechtstreeks. Je moet de Monizze Virtual Visa-kaart activeren in de Monizze-app en toevoegen als betaalmethode bij HelloFresh. Via Edenred gebruik je de kaartgegevens van je Edenred-kaart.' },
+      { q: 'Kan ik Foodbag betalen met maaltijdcheques?', a: 'Ja. Foodbag accepteert Monizze, Pluxee (Sodexo) en Edenred. Let op: dit werkt alleen bij eenmalige bestellingen, niet bij een abonnement.' },
+      { q: 'Welke maaltijdbox accepteert maaltijdcheques?', a: 'In België zijn Foodbag, HelloFresh en Foodprepper de enige maaltijdboxen die elektronische maaltijdcheques accepteren.' },
+      { q: 'Kan ik mijn abonnement betalen met maaltijdcheques?', a: 'Alleen bij HelloFresh via de Monizze Virtual Visa-kaart of Edenred. Bij Foodbag en Foodprepper werken maaltijdcheques enkel bij eenmalige bestellingen.' },
+      { q: 'Welke maaltijdcheques worden aanvaard?', a: 'Monizze, Pluxee (vroeger Sodexo) en Edenred (Ticket Restaurant).' },
+      { q: 'Hoeveel kan ik per dag betalen met maaltijdcheques?', a: 'Vanaf 2026 is het maximumbedrag €10 per dag per cheque.' },
+    ],
+    relatedSlugs: ['maaltijdbox-zonder-abonnement-belgie', 'maaltijdbox-of-zelf-koken-belgie'],
+  },
   {
     slug: 'maaltijdbox-of-zelf-koken-belgie',
     titel: 'Maaltijdbox of zelf koken in België: wat is goedkoper?',

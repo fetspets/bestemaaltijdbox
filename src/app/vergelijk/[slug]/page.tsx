@@ -3,6 +3,8 @@ import { notFound } from 'next/navigation';
 import { getVergelijking, generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
 import { getAanbieder } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { buildMetadata } from '@/lib/seo';
+import ContentBlokken from '@/components/ContentBlokken';
 
 export async function generateStaticParams() {
   return generateVergelijkingStaticParams();
@@ -16,18 +18,12 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a2 = getAanbieder(v.aanbieder2Slug)!;
   const title = v.seoTitle ?? `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`;
   const description = v.seoDescription ?? `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €60 op je eerste box.`;
-  return {
-    title,
-    description,
-    alternates: { canonical: `https://bestemaaltijdbox.be/vergelijk/${slug}` },
-    openGraph: {
-      title,
-      description,
-      url: `https://bestemaaltijdbox.be/vergelijk/${slug}`,
-      type: 'article',
-      locale: 'nl_BE',
-    },
-  };
+  return buildMetadata({
+    pad: `/vergelijk/${slug}`,
+    titel: title,
+    beschrijving: description,
+    type: 'article',
+  });
 }
 
 const accentColors: Record<string, string> = {
@@ -83,7 +79,10 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
     })),
   };
 
-  const categories = Object.keys(v.winnaarPerCategorie) as Array<keyof typeof v.winnaarPerCategorie>;
+  const categorieWinnaars = v.winnaarPerCategorie;
+  const categories = categorieWinnaars
+    ? (Object.keys(categorieWinnaars) as Array<keyof typeof categorieWinnaars>)
+    : [];
 
   return (
     <>
@@ -106,12 +105,28 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             ✓ Onafhankelijk vergeleken · {LAATST_BIJGEWERKT}
           </div>
           <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(26px, 7vw, 42px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
-            {a1.naam} vs {a2.naam}:<br />welke maaltijdbox is beter?
+            {v.h1 ?? <>{a1.naam} vs {a2.naam}:<br />welke maaltijdbox is beter?</>}
           </h1>
-          <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 600 }}>
-            We vergeleken {a1.naam} en {a2.naam} op prijs, smaak, variatie, flexibiliteit, bezorging en duurzaamheid. Eerlijk en onafhankelijk — onze scores en rangschikking worden nooit betaald.
-          </p>
+          {v.introParagrafen ? v.introParagrafen.map((tekst, i) => (
+            <p key={i} style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 680, marginBottom: 12 }} dangerouslySetInnerHTML={{ __html: tekst }} />
+          )) : (
+            <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 600 }}>
+              We vergeleken {a1.naam} en {a2.naam} op prijs, smaak, variatie, flexibiliteit, bezorging en duurzaamheid. Eerlijk en onafhankelijk — onze scores en rangschikking worden nooit betaald.
+            </p>
+          )}
         </div>
+
+        {v.primaireCta && (
+          <div style={{ marginBottom: 36 }}>
+            <Link
+              href={v.primaireCta.campagne ? `/ga/${v.primaireCta.slug}?c=${v.primaireCta.campagne}` : `/ga/${v.primaireCta.slug}`}
+              rel="noopener sponsored nofollow"
+              style={{ display: 'inline-block', background: getAanbieder(v.primaireCta.slug)?.merkKleur ?? '#1B4332', color: 'white', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}
+            >
+              {v.primaireCta.tekst}
+            </Link>
+          </div>
+        )}
 
         {/* Score-overzicht: 2 kolommen */}
         <div className="two-col-grid" style={{ marginBottom: 36 }}>
@@ -139,6 +154,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         </div>
 
         {/* Categorie-voor-categorie tabel */}
+        {categories.length > 0 && (
         <div style={{ marginBottom: 36 }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
             Categorie per categorie
@@ -155,7 +171,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
               </thead>
               <tbody>
                 {categories.map((cat, i) => {
-                  const winnaarSlug = v.winnaarPerCategorie[cat];
+                  const winnaarSlug = categorieWinnaars![cat];
                   return (
                     <tr key={cat} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                       <td style={{ padding: '12px 16px', fontWeight: 700 }}>{categorieLabelMap[cat]}</td>
@@ -180,6 +196,10 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
           </div>
         </div>
 
+        )}
+
+        {v.blokken && <ContentBlokken blokken={v.blokken} />}
+
         {/* Eindverdicht */}
         <div style={{ background: 'white', borderRadius: 16, border: `1.5px solid ${accentColors[winnaar.slug]}`, padding: 28, marginBottom: 32, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: accentColors[winnaar.slug] }} />
@@ -187,7 +207,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             ⭐ Ons verdict
           </div>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 10 }}>
-            Onze keuze: {winnaar.naam}
+            {v.verdictKop ?? `Onze keuze: ${winnaar.naam}`}
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>{v.verdictTekst}</p>
           <div className="two-col-grid" style={{ gap: 12 }}>

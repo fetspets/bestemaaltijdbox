@@ -1,18 +1,8 @@
-import type { Metadata } from 'next';
 import Link from 'next/link';
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 
-export const metadata: Metadata = {
-  title: 'HelloFresh kortingscode juni 2026 — tot €60 korting op je eerste 3 boxen',
-  description: 'Activeer de HelloFresh welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig. Voor nieuwe klanten in België.',
-  alternates: { canonical: 'https://bestemaaltijdbox.be/kortingscode/hellofresh' },
-  openGraph: {
-    title: 'HelloFresh kortingscode juni 2026 — tot €60 korting op je eerste 3 boxen',
-    description: 'Activeer de HelloFresh welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig.',
-    url: 'https://bestemaaltijdbox.be/kortingscode/hellofresh',
-    type: 'article',
-    locale: 'nl_BE',
-  },
-};
+// De metadata voor deze route staat in layout.tsx. Stond hier eerder ook,
+// met een afwijkende titel; Next koos dan deze en de layout-versie was dood.
 
 export default function HelloFreshKortingscode() {
   return (
@@ -29,12 +19,12 @@ export default function HelloFreshKortingscode() {
 
       {/* Badge */}
       <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#FEF3C7', border: '1px solid #FCD34D', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 700, color: '#92400E', marginBottom: 16 }}>
-        🔥 Tijdelijke actie · juni 2026
+        🔥 Tijdelijke actie · {LAATST_BIJGEWERKT}
       </div>
 
       {/* H1 */}
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 900, color: '#1C1C1C', lineHeight: 1.15, marginBottom: 12 }}>
-        HelloFresh kortingscode juni 2026 — tot €60 korting op je eerste 3 boxen
+        HelloFresh kortingscode {LAATST_BIJGEWERKT} — tot €60 korting op je eerste 3 boxen
       </h1>
 
       <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 28 }}>

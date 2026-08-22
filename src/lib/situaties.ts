@@ -1,3 +1,5 @@
+import type { ContentBlok } from './blokken';
+
 /**
  * Content voor de /voor/<situatie>-pagina's.
  *
@@ -8,34 +10,6 @@
  * Cijfers (prijs, score, recepten, bezorgkost, korting) staan hier bewust
  * NIET: die komen uit aanbieders.ts en worden bij het renderen berekend.
  */
-
-/** Aanbieder die uitgebreid wordt voorgesteld; cijfers komen uit aanbieders.ts. */
-export interface SituatieTopItem {
-  slug: string;
-  badge: string;
-  badgeAchtergrond: string;
-  badgeTekst: string;
-  /** Overschrijft de tagline uit aanbieders.ts voor deze context. */
-  tagline: string;
-  waarom: string;
-  deal: string;
-  /** Optionele waarschuwing naast de badge, bv. '⚠️ Niet 100% vegan'. */
-  waarschuwing?: string;
-}
-
-/** Kolom in een vergelijkingstabel. Afgeleide kolommen lezen uit aanbieders.ts. */
-export type SituatieTabelKolom =
-  | { kop: string; soort: 'portie' | 'weekprijs' | 'recepten' | 'korting' | 'score' }
-  | { kop: string; soort: 'tekst'; waarden: Record<string, string> };
-
-export type SituatieBlok =
-  | { type: 'notitie'; kop: string; achtergrond: string; rand: string; regels: Array<{ label: string; tekst: string }> }
-  | { type: 'infokaarten'; kop: string; items: Array<{ icon: string; titel: string; tekst: string }> }
-  | { type: 'topAanbieders'; kop: string; items: SituatieTopItem[] }
-  | { type: 'overigeAanbieders'; kop: string; items: Array<{ slug: string; omschrijving: string }> }
-  | { type: 'tabel'; kop: string; slugs: string[]; kolommen: SituatieTabelKolom[]; portiesPerWeek: number; voetnoot: string }
-  | { type: 'scenarios'; kop: string; items: Array<{ scenario: string; aanbeveling: string; slug: string; uitleg: string; achtergrond: string; rand: string }> }
-  | { type: 'slotCta'; kop: string; tekst: string; slug: string; knoptekst: string; subtekst: string };
 
 export interface Situatie {
   titel: string;
@@ -50,7 +24,7 @@ export interface Situatie {
   faqKop?: string;
   nietGeschiktAls: string[];
   /** Aanwezig bij uitgewerkte pagina's; vervangt de standaardranglijst. */
-  blokken?: SituatieBlok[];
+  blokken?: ContentBlok[];
 }
 
 export const situaties: Record<string, Situatie> = {
@@ -446,3 +420,6 @@ export function getSituatie(sleutel: string): Situatie | undefined {
 export function generateSituatieStaticParams() {
   return Object.keys(situaties).map(situatie => ({ situatie }));
 }
+
+// Het blokvocabulaire is gedeeld met de gidsen en de blogposts.
+export type { ContentBlok as SituatieBlok, BlokTopItem as SituatieTopItem, BlokTabelKolom as SituatieTabelKolom } from './blokken';

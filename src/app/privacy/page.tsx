@@ -1,17 +1,13 @@
 import Link from 'next/link';
+import type { Metadata } from 'next';
+import { buildMetadata } from '@/lib/seo';
 
-export const metadata = {
-  title: 'Privacybeleid — BesteMaaltijdbox.be',
-  description: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
-  alternates: { canonical: 'https://bestemaaltijdbox.be/privacy' },
-  openGraph: {
-    title: 'Privacybeleid — BesteMaaltijdbox.be',
-    description: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
-    url: 'https://bestemaaltijdbox.be/privacy',
-    type: 'website',
-    locale: 'nl_BE',
-  },
-};
+export const metadata: Metadata = buildMetadata({
+  pad: '/privacy',
+  titel: 'Privacybeleid — BesteMaaltijdbox.be',
+  beschrijving: 'Privacybeleid van BesteMaaltijdbox.be. Hoe we omgaan met je gegevens en affiliate links.',
+  type: 'website',
+});
 
 export default function PrivacyPage() {
   return (
