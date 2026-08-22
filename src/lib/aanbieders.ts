@@ -460,7 +460,7 @@ export const aanbieders: Aanbieder[] = [
       bedragKort: '€60 totaal',
       deal: '€20 korting in week 1 + €10 korting per week gedurende 4 weken',
       voorwaarden: 'Geldig voor nieuwe klanten · Automatisch via onze link · €20 in week 1 + 4× €10 · Wekelijks opzegbaar',
-      beschrijving: '€20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. Korting wordt automatisch toegepast via onze link — geen code nodig.',
+      beschrijving: '€20 korting in week 1 + €10 korting per week gedurende 4 weken. Totale besparing: €60. Bestel via onze link: Crowd Cooks toont de actiecode zelf bovenaan de bestelpagina, dus je hoeft niets op te zoeken.',
     },
     ctaSubtekst: 'tot €60 korting · automatisch via onze link',
     kenmerken: ['⚡ Kant-en-klaar', '🇧🇪 Belgisch', '🚚 Bezorging €4,90', '🍽️ 450+ g per maaltijd'],
