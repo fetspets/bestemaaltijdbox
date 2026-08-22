@@ -22,6 +22,105 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
       "À Bruxelles, en revanche, les deux sont disponibles et le choix devient intéressant. Les deux appartiennent au même groupe (Smartmat, Colruyt Group) mais visent des usages opposés : Foodbag est un box à cuisiner classique, Foodprepper livre des ingrédients déjà préparés que vous assemblez en un quart d'heure.",
       "Ci-dessous, la comparaison complète sur le temps, le menu, le prix et la livraison.",
     ],
+    blokken: [
+      {
+        type: 'kenmerkTabel',
+        kop: 'En un coup d’œil',
+        kolomSlugs: ['foodprepper', 'foodbag'],
+        rijen: [
+          { kenmerk: 'Livre en Wallonie', waarden: ['Non', 'Oui'] },
+          { kenmerk: 'Zone de livraison', waarden: ['Flandre et Bruxelles', 'Toute la Belgique'] },
+          { kenmerk: 'Temps de préparation', waarden: ['~15 min', '~30 min'] },
+          { kenmerk: 'Types de repas', waarden: ['Petit-déjeuner, midi, soir, en-cas', 'Surtout le soir'] },
+          { kenmerk: 'Abonnement obligatoire', waarden: ['Non', 'Non'] },
+          { kenmerk: 'Livraison', waarden: ['Gratuite, dim/lun', 'Gratuite'] },
+          { kenmerk: 'Ingrédients belges', waarden: ['Oui', 'Oui'] },
+          { kenmerk: 'Maison mère', waarden: ['Smartmat / Colruyt Group', 'Smartmat / Colruyt Group'] },
+        ],
+        voetnoot:
+          'Les prix peuvent changer. Vérifiez les tarifs actuels sur le site du fournisseur.',
+      },
+      {
+        type: 'sectie',
+        kop: 'La zone de livraison avant tout le reste',
+        html: true,
+        paragrafen: [
+          "<strong>Foodprepper</strong> livre en Flandre et dans la Région de Bruxelles-Capitale. Pas en Wallonie. Ce n'est pas un détail administratif : si vous habitez à Liège, Namur ou Charleroi, vous ne pouvez tout simplement pas commander, quelle que soit la qualité du produit.",
+          "<strong>Foodbag</strong> livre dans tout le pays, gratuitement, du vendredi au lundi. C'est l'un des rares acteurs vraiment locaux — ingrédients de fermes belges — qui dessert aussi le sud. Pour un lecteur wallon qui veut manger belge, c'est de fait le choix par défaut.",
+        ],
+      },
+      {
+        type: 'sectie',
+        kop: 'Le temps : quinze minutes contre une vraie séance de cuisine',
+        html: true,
+        paragrafen: [
+          "<strong>Foodprepper</strong> supprime la barrière du temps : le chef a déjà fait la découpe, la marinade et les sauces. Vous cuisez, réchauffez ou mélangez — et après quinze minutes, c'est prêt. Pas de cuisine à nettoyer, pas de longue préparation.",
+          "<strong>Foodbag</strong> assume l'expérience classique : légumes belges frais, découpe et cuisson par vos soins, 25 à 35 minutes. Si cuisiner vous détend, vous y trouverez davantage. Si vous disposez de vingt minutes maximum en semaine, Foodbag peut sembler laborieux.",
+        ],
+      },
+      {
+        type: 'sectie',
+        kop: 'Menu et variété',
+        html: true,
+        paragrafen: [
+          "<strong>Foodprepper</strong> se distingue par une offre qui couvre toute la journée : petit-déjeuner, midi, soir et en-cas, avec un « marché frais » en ligne pour compléter. Le menu hebdomadaire tourne, mais reste plus restreint que chez Foodbag.",
+          "<strong>Foodbag</strong> propose plus de 20 recettes par semaine réparties sur 5 styles de cuisine, dont la ligne Sana de Sandra Bekkari et les plats Busy Day prêts en 20 minutes. Petit-déjeuner et déjeuner n'en font pas partie.",
+        ],
+      },
+      {
+        type: 'kortingKaarten',
+        items: [
+          {
+            slug: 'foodprepper',
+            kop: '🏷️ Réduction de bienvenue Foodprepper',
+            tekst:
+              "3 × 15 € sur vos trois premières commandes (jusqu'à 45 €). Appliqué automatiquement via notre lien, aucun code à saisir. Réservé aux nouveaux clients ; vérifiez la validité et votre code postal sur foodprepper.be.",
+            knoptekst: '15 € de réduction sur les 3 premières commandes →',
+          },
+          {
+            slug: 'foodbag',
+            kop: '🏷️ Réduction de bienvenue Foodbag',
+            tekst:
+              "3 × 20 € sur vos trois premières commandes (jusqu'à 60 €). Appliqué automatiquement via notre lien, aucun code à saisir. Réservé aux nouveaux clients ; vérifiez la validité sur foodbag.be.",
+            knoptekst: 'Voir Foodbag →',
+          },
+        ],
+      },
+      {
+        type: 'keuzelijst',
+        kop: 'Choisissez Foodprepper si…',
+        slug: 'foodprepper',
+        items: [
+          "Vous habitez en Flandre ou à Bruxelles — Foodprepper ne livre pas en Wallonie",
+          'Vous voulez cuisiner moins de vingt minutes en semaine',
+          'Vous voulez aussi couvrir le petit-déjeuner et le midi via un seul fournisseur',
+          'Vous avez des enfants et peu de marge dans la routine du soir',
+          'Vous voulez du frais sans le gros du travail de préparation',
+        ],
+      },
+      {
+        type: 'keuzelijst',
+        kop: 'Choisissez Foodbag si…',
+        slug: 'foodbag',
+        items: [
+          'Vous habitez en Wallonie — Foodbag y livre, Foodprepper non',
+          'Vous aimez cuisiner et voyez cela comme un moment de détente',
+          'Vous prenez volontiers trente minutes en soirée',
+          'Vous voulez plus de variété : 20+ repas par semaine en 5 styles',
+          'Vous voulez la ligne Sana de Sandra Bekkari ou les plats Busy Day',
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Pas encore décidé ?',
+        tekst:
+          "Aucun des deux n'impose d'abonnement : vous pouvez commander une fois et comparer vous-même. Vérifiez d'abord votre code postal si vous visez Foodprepper.",
+        slug: 'foodprepper',
+        knoptekst: 'Voir Foodprepper →',
+        subtekst: 'Sans abonnement · livraison gratuite en Flandre et à Bruxelles',
+        campagne: 'cta',
+      },
+    ],
     verdictKop: "Foodbag si vous êtes en Wallonie, sinon cela dépend de votre soirée",
     verdictTekst:
       "Il n'y a pas de gagnant absolu entre ces deux box — sauf sur un point : si vous habitez en Wallonie, seul Foodbag vous livre, et la question est réglée. À Bruxelles et en Flandre, choisissez selon votre rythme : Foodprepper si vous voulez manger en quinze minutes et couvrir aussi le petit-déjeuner et le midi, Foodbag si cuisiner fait partie de la soirée et que vous voulez plus de variété. Les deux utilisent des ingrédients belges et appartiennent au même groupe ; la différence est le concept, pas la qualité.",
