@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import HomePageClient from './HomePageClient';
 import { buildMetadata } from '@/lib/seo';
-import { actieveAanbieders } from '@/lib/aanbieders';
+import { actieveAanbiedersVoor, gerangschiktVoor } from '@/lib/teksten';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import { isSponsoringActief } from '@/lib/sponsoring';
 import type { Locale } from '@/i18n/routing';
@@ -14,7 +14,7 @@ export async function generateMetadata(
   { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
   const { locale } = await params;
-  const n = actieveAanbieders.length;
+  const n = actieveAanbiedersVoor(locale as Locale).length;
   return buildMetadata({
     locale: locale as Locale,
     route: '/',
@@ -24,10 +24,13 @@ export async function generateMetadata(
   });
 }
 
-export default function HomePage() {
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const taal = locale as Locale;
   // Datumbepaling gebeurt hier server-side; de client krijgt enkel een boolean,
   // dus de zichtbaarheid hangt nooit van de browserklok af.
   const sponsoringActief = isSponsoringActief('homepageBlok');
 
-  return <HomePageClient sponsoringActief={sponsoringActief} />;
+  // In het Frans staan de aanbieders die niet in Wallonië leveren achteraan.
+  return <HomePageClient sponsoringActief={sponsoringActief} aanbieders={gerangschiktVoor(taal)} taal={taal} />;
 }

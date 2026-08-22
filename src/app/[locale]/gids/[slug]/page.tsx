@@ -3,8 +3,9 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
-import { getGids, generateGidsStaticParams, berekenWeekprijs } from '@/lib/gidsen';
-import { getAanbieder } from '@/lib/aanbieders';
+import { generateGidsStaticParams, berekenWeekprijs } from '@/lib/gidsen';
+import { gidsVoor, aanbiederVoor } from '@/lib/teksten';
+
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 
 export async function generateStaticParams() {
@@ -13,7 +14,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const g = getGids(slug);
+  const g = gidsVoor(slug, locale as Locale);
   if (!g) return {};
   return buildMetadata({
     locale: locale as Locale,
@@ -26,9 +27,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   });
 }
 
-export default async function GidsPagina({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const g = getGids(slug);
+export default async function GidsPagina({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  const taal = locale as Locale;
+  const g = gidsVoor(slug, taal);
   if (!g) notFound();
 
   const faqJsonLd = {
@@ -44,7 +46,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
   // Prijzen komen uit aanbieders.ts; alleen badge, noot en volgorde zijn redactioneel.
   const porties = g.prijsTabel.portiesPerWeek;
   const tabelRijen = g.prijsTabel.rijen.flatMap(rij => {
-    const a = getAanbieder(rij.slug);
+    const a = aanbiederVoor(rij.slug, taal);
     if (!a) return [];
     return [{
       ...rij,
@@ -185,7 +187,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
           <p style={{ fontSize: 14, color: '#4B5563', lineHeight: 1.7, marginBottom: 20 }}>{g.topKeuzes.intro}</p>
           {g.topKeuzes.items.map((keuze, idx) => {
             const rang = idx + 1;
-            const a = getAanbieder(keuze.slug);
+            const a = aanbiederVoor(keuze.slug, taal);
             return (
               <div key={keuze.slug} style={{ background: 'white', borderRadius: 16, border: rang === 1 ? '1.5px solid var(--mint)' : '1.5px solid var(--rule)', padding: 24, marginBottom: 16, position: 'relative', overflow: 'hidden' }}>
                 {rang === 1 && <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))' }} />}

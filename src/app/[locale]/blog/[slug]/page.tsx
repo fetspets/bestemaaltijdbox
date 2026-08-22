@@ -2,11 +2,12 @@ import { Fragment } from 'react';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
-import { blogPosts, getBlogPost, generateBlogStaticParams } from '@/lib/blog';
-import { aanbieders, getAanbieder } from '@/lib/aanbieders';
+import type { Locale } from '@/i18n/routing';
+import { generateBlogStaticParams } from '@/lib/blog';
+import { blogPostsVoor, blogPostVoor, aanbiederVoor, aanbiedersVoor } from '@/lib/teksten';
+
 import GesponsordLabel from '@/components/GesponsordLabel';
 import KortingscodeBox from '@/components/KortingscodeBox';
-import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import { Blok } from '@/components/ContentBlokken';
 import type { ContentBlok } from '@/lib/blokken';
@@ -21,7 +22,7 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }): Promise<Metadata> {
   const { slug, locale } = await params;
-  const post = getBlogPost(slug);
+  const post = blogPostVoor(slug, locale as Locale);
   if (!post) return {};
   return buildMetadata({
     locale: locale as Locale,
@@ -41,12 +42,13 @@ const RIJKE_BLOKKEN = new Set<string>([
   'overigeAanbieders', 'tabel', 'scenarios', 'slotCta',
 ]);
 
-export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const post = getBlogPost(slug);
+export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  const taal = locale as Locale;
+  const post = blogPostVoor(slug, taal);
   if (!post) notFound();
 
-  const relatedAanbieders = aanbieders.filter(a => post.relatedSlugs.includes(a.slug));
+  const relatedAanbieders = aanbiedersVoor(taal).filter(a => post.relatedSlugs.includes(a.slug));
 
   return (
     <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
@@ -174,7 +176,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           // Gedeelde blokken (tabel, winnaar, scenario's, ...) gaan naar
           // ContentBlokken; hieronder blijven de proza-blokken staan.
           if (RIJKE_BLOKKEN.has(block.type)) {
-            return <Blok key={i} blok={block as ContentBlok} />;
+            return <Blok key={i} blok={block as ContentBlok} taal={taal} />;
           }
           if (block.type === 'h2') {
             return (
@@ -235,7 +237,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             const doelSlug = block.slug ?? post.sponsor?.gaSlug ?? 'factor';
             // Een CTA naar een specifieke aanbieder krijgt diens merkkleur;
             // de gesponsorde variant houdt zijn eigen accent.
-            const kleur = block.slug ? (getAanbieder(block.slug)?.merkKleur ?? '#1B4332') : '#B45309';
+            const kleur = block.slug ? (aanbiederVoor(block.slug, taal)?.merkKleur ?? '#1B4332') : '#B45309';
             return (
               <div key={i} style={{ margin: '24px 0' }}>
                 <Link href={`/ga/${doelSlug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: kleur, color: 'white', padding: '13px 24px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
@@ -248,7 +250,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             return <KortingscodeBox key={i} partnerSlug={post.sponsor?.gaSlug} ctaTekst={block.tekst} />;
           }
           if (block.type === 'prijsvoorbeeld') {
-            const f = getAanbieder(post.sponsor?.gaSlug ?? 'factor');
+            const f = aanbiederVoor(post.sponsor?.gaSlug ?? 'factor', taal);
             if (!f) return null;
             const maaltijden = 6;
             const maaltijdKost = maaltijden * f.prijsPerPortie;

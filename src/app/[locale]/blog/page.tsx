@@ -3,7 +3,7 @@ import { LAATST_BIJGEWERKT } from '@/lib/site';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import Link from 'next/link';
-import { blogPosts } from '@/lib/blog';
+import { blogPostsVoor } from '@/lib/teksten';
 import GesponsordLabel from '@/components/GesponsordLabel';
 
 export async function generateMetadata(
@@ -20,7 +20,9 @@ export async function generateMetadata(
   });
 }
 
-export default function BlogOverzicht() {
+export default async function BlogOverzicht({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const taal = locale as Locale;
   return (
     <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 20px' }}>
       <style>{`
@@ -36,10 +38,10 @@ export default function BlogOverzicht() {
       </p>
 
       {/* Uitgelicht — gesponsorde Factor-artikels, bovenaan met label */}
-      {blogPosts.some(p => p.sponsor) && (
+      {blogPostsVoor(taal).some(p => p.sponsor) && (
         <div style={{ marginBottom: 32 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: 16 }}>
-            {blogPosts.filter(p => p.sponsor).map(post => (
+            {blogPostsVoor(taal).filter(p => p.sponsor).map(post => (
               <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
                 <article style={{
                   border: '2px solid #FCD34D',
@@ -125,7 +127,7 @@ export default function BlogOverzicht() {
       </Link>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
-        {blogPosts.filter(post => !post.sponsor).map(post => (
+        {blogPostsVoor(taal).filter(post => !post.sponsor).map(post => (
           <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
             <article className="blog-card" style={{
               border: '2px solid var(--rule)',

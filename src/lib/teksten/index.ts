@@ -4,6 +4,10 @@ import { vergelijkingen, type Vergelijking } from '../vergelijkingen';
 import { vergelijkingenFr } from './vergelijkingen.fr';
 import { situaties, type Situatie } from '../situaties';
 import { situatiesFr } from './situaties.fr';
+import { gidsen, type Gids } from '../gidsen';
+import { gidsenFr } from './gidsen.fr';
+import { blogPosts, type BlogPost } from '../blog';
+import { blogFr } from './blog.fr';
 import type { Locale } from '@/i18n/routing';
 
 /**
@@ -110,4 +114,30 @@ export function situatiesVoor(locale: Locale): Record<string, Situatie> {
 
 export function situatieVoor(sleutel: string, locale: Locale): Situatie | undefined {
   return situatiesVoor(locale)[sleutel];
+}
+
+/** Gidsen in de gevraagde taal. */
+export function gidsenVoor(locale: Locale): Gids[] {
+  if (locale === 'nl') return gidsen;
+  return gidsen.map(g => {
+    const fr = gidsenFr[g.slug];
+    return fr ? { ...g, ...fr } : g;
+  });
+}
+
+export function gidsVoor(slug: string, locale: Locale): Gids | undefined {
+  return gidsenVoor(locale).find(g => g.slug === slug);
+}
+
+/** Blogposts in de gevraagde taal. De sponsorvelden blijven uit blog.ts komen. */
+export function blogPostsVoor(locale: Locale): BlogPost[] {
+  if (locale === 'nl') return blogPosts;
+  return blogPosts.map(p => {
+    const fr = blogFr[p.slug];
+    return fr ? { ...p, ...fr } : p;
+  });
+}
+
+export function blogPostVoor(slug: string, locale: Locale): BlogPost | undefined {
+  return blogPostsVoor(locale).find(p => p.slug === slug);
 }

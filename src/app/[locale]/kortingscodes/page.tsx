@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
-import { actieveAanbieders, getAanbieder } from '@/lib/aanbieders';
+import { actieveAanbiedersVoor, aanbiederVoor } from '@/lib/teksten';
 import { getActieveSponsoring } from '@/lib/sponsoring';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 
@@ -31,8 +31,7 @@ const heeftDetailpagina = new Set(['hellofresh', 'foodbag', 'foodprepper', 'fact
 // Afgeleid uit de centrale bron: een aanbieder heeft een lopende deal zodra
 // hij een kortingsCode draagt. Stopgezette aanbieders vallen al weg via
 // actieveAanbieders.
-const metKorting = actieveAanbieders.filter(a => a.kortingsCode);
-const zonderKorting = actieveAanbieders.filter(a => !a.kortingsCode);
+
 
 // Alleen op deze pagina stuurt HelloFresh eerst naar zijn eigen
 // kortingscodepagina; elders blijft de CTA rechtstreeks /ga/hellofresh.
@@ -40,10 +39,15 @@ const dealCta: Record<string, string> = {
   hellofresh: '/kortingscode/hellofresh',
 };
 
-export default function KortingscodesPagina() {
+export default async function KortingscodesPagina({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  const taal = locale as Locale;
+  const actief = actieveAanbiedersVoor(taal);
+  const metKorting = actief.filter(a => a.kortingsCode);
+  const zonderKorting = actief.filter(a => !a.kortingsCode);
   // Server-side: toon het uitgelichte Factor-blok enkel binnen de sponsoringsperiode.
   const sponsoring = getActieveSponsoring();
-  const factor = getAanbieder('factor');
+  const factor = aanbiederVoor('factor', taal);
 
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px' }}>
