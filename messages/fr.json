@@ -259,5 +259,26 @@
     "a2": "Oui. Vous pouvez généralement mettre en pause ou résilier votre abonnement jusqu'à quelques jours avant la livraison suivante. Foodbag et Foodmaker ne demandent même aucun abonnement.",
     "v3": "Quel box repas convient le mieux aux familles ?",
     "a3": "Foodbag est notre choix pour les familles : ingrédients locaux, recettes rapides pour 2 à 5 personnes, et livraison dans tout le pays."
+  },
+  "overOns": {
+    "broodkruimel": "À propos",
+    "badge": "NOTRE HISTOIRE",
+    "h1": "Pourquoi BesteMaaltijdbox.be ?",
+    "begin": "Comment cela a commencé",
+    "onderzoek": "Notre méthode",
+    "belofte": "Notre engagement",
+    "contact": "Contact",
+    "contactTekst": "Une question, une remarque ou une proposition de collaboration ? Écrivez-nous :",
+    "contactAntwoord": "Nous répondons généralement dans les deux jours ouvrables."
+  },
+  "privacy": {
+    "broodkruimel": "Politique de confidentialité",
+    "h1": "Politique de confidentialité",
+    "bijgewerkt": "Dernière mise à jour"
+  },
+  "voorwaarden": {
+    "broodkruimel": "Conditions générales",
+    "h1": "Conditions générales",
+    "bijgewerkt": "Dernière mise à jour"
   }
 }

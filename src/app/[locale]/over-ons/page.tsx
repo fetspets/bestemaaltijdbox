@@ -1,4 +1,7 @@
 import Link from '@/components/TaalLink';
+import { getTranslations } from 'next-intl/server';
+import StatischePaginaFr from '@/components/StatischePaginaFr';
+import { overOnsFr } from '@/lib/teksten/paginas.fr';
 import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
@@ -11,13 +14,26 @@ export async function generateMetadata(
     locale: locale as Locale,
     route: '/over-ons',
     pad: '/over-ons',
-    titel: 'Over BesteMaaltijdbox.be — onafhankelijk advies, eerlijk vergeleken',
-    beschrijving: 'Wie zit er achter BesteMaaltijdbox.be? Hoe we elke Belgische maaltijdbox onderzoeken op gebruikerservaringen, publieke data en eigen analyse.',
+    titel: locale === 'fr' ? overOnsFr.metaTitle : 'Over BesteMaaltijdbox.be — onafhankelijk advies, eerlijk vergeleken',
+    beschrijving: locale === 'fr' ? overOnsFr.metaDescription : 'Wie zit er achter BesteMaaltijdbox.be? Hoe we elke Belgische maaltijdbox onderzoeken op gebruikerservaringen, publieke data en eigen analyse.',
     type: 'website',
   });
 }
 
-export default function OverOnsPage() {
+export default async function OverOnsPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
+  if (locale === 'fr') {
+    const t = await getTranslations('overOns');
+    return (
+      <StatischePaginaFr
+        pagina={overOnsFr}
+        broodkruimel={t('broodkruimel')}
+        h1={t('h1')}
+      />
+    );
+  }
+
   return (
     <div style={{ maxWidth: 800, margin: '0 auto', padding: '32px 20px 64px' }}>
 
