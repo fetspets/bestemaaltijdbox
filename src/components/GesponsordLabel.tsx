@@ -1,3 +1,5 @@
+'use client';
+import { useTranslations } from 'next-intl';
 // Herbruikbaar label voor betaalde/gesponsorde plaatsingen.
 // Volgt het bestaande pill/badge-patroon (zie src/app/page.tsx badge en de
 // "✓ Actief"-pill in src/app/kortingscodes/page.tsx). Altijd in of direct boven
@@ -5,11 +7,13 @@
 
 export default function GesponsordLabel({
   variant = 'op-licht',
-  tekst = 'Gesponsord',
+  tekst,
 }: {
   variant?: 'op-licht' | 'op-donker';
   tekst?: string;
 }) {
+  const t = useTranslations('labels');
+  const label = tekst ?? t('gesponsord');
   // Bewust subtiel gehouden (geen opvallende vulkleur), maar met leesbaar
   // contrast — de term "Gesponsord" moet duidelijk herkenbaar blijven.
   const stijl =
