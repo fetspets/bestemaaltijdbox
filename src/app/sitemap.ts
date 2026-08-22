@@ -1,5 +1,5 @@
 import { MetadataRoute } from 'next';
-import { SITE_URL } from '@/lib/seo';
+import { SITE_URL, NIET_INDEXEREN } from '@/lib/seo';
 import { routing, hreflangVoor, type Locale, type RouteSjabloon } from '@/i18n/routing';
 import { getPathname } from '@/i18n/navigation';
 import { aanbieders } from '@/lib/aanbieders';
@@ -51,15 +51,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const urlVoor = (route: RouteSjabloon, locale: Locale, params?: Record<string, string>) =>
     SITE_URL + getPathname({ locale, href: (params ? { pathname: route, params } : route) as never });
 
+  // Talen die op noindex staan horen niet in de sitemap; zolang /fr/ nog
+  // Nederlandse teksten toont zou je Google om duplicate content vragen.
+  const zichtbareTalen = routing.locales.filter(l => !NIET_INDEXEREN.includes(l));
+
   return ingangen.flatMap(({ route, params, priority, frequentie = 'monthly' }) =>
-    routing.locales.map(locale => ({
+    zichtbareTalen.map(locale => ({
       url: urlVoor(route, locale, params),
       lastModified: nu,
       changeFrequency: frequentie,
       priority,
       alternates: {
         languages: Object.fromEntries(
-          routing.locales.map(l => [hreflangVoor[l], urlVoor(route, l, params)])
+          zichtbareTalen.map(l => [hreflangVoor[l], urlVoor(route, l, params)])
         ),
       },
     }))
