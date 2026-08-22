@@ -42,6 +42,159 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
       },
     ],
     nietGeschiktAls: [],
+    blokken: [
+      {
+        type: 'infokaarten',
+        kop: 'Ce qui compte pour un couple',
+        items: [
+          {
+            icon: '📍',
+            titel: 'La zone de livraison',
+            tekst: "Vérifiez-la avant tout le reste. Marley Spoon et Foodprepper ne livrent pas en Wallonie ; HelloFresh, Foodbag, Factor et Foodmaker si.",
+          },
+          {
+            icon: '💶',
+            titel: 'Le prix pour deux',
+            tekst: "Comptez six portions par semaine (2 personnes × 3 repas). Cela monte vite : de 33 € chez HelloFresh à 57 € chez Foodbag.",
+          },
+          {
+            icon: '🍽️',
+            titel: 'La variété',
+            tekst: "À deux, on se lasse plus vite que seul. Choisissez un fournisseur avec 40+ recettes par semaine pour ne jamais répéter.",
+          },
+          {
+            icon: '🔀',
+            titel: 'La flexibilité',
+            tekst: "Pouvez-vous sauter une semaine facilement ? HelloFresh, Foodbag et Marley Spoon permettent d'adapter jusqu'à 5 jours avant.",
+          },
+        ],
+      },
+      {
+        type: 'topAanbieders',
+        kop: 'Notre top 3 pour les couples',
+        items: [
+          {
+            slug: 'hellofresh',
+            badge: '⭐ Meilleur choix',
+            badgeAchtergrond: '#E8F5EE',
+            badgeTekst: '#1B4332',
+            tagline: 'Livre partout · le plus grand choix de recettes',
+            waarom:
+              "Avec plus de 40 recettes par semaine, un couple ne mange presque jamais deux fois la même chose. HelloFresh est flexible — pause ou résiliation jusqu'à 5 jours avant la livraison — et surtout, il livre dans les trois régions. Pour un couple wallon, c'est le point de départ évident.",
+            deal: "jusqu'à 60 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
+          },
+          {
+            slug: 'foodbag',
+            badge: '🇧🇪 Belge',
+            badgeAchtergrond: '#DBEAFE',
+            badgeTekst: '#1E40AF',
+            tagline: 'Ingrédients belges · livre aussi en Wallonie',
+            waarom:
+              "Les couples qui veulent manger belge choisissent Foodbag. Les ingrédients viennent de fermes locales via une filière courte, ce qui se remarque à la fraîcheur. Cinq styles de cuisine, dont la ligne Sana de Sandra Bekkari, laissent de la marge si vos goûts divergent. Livraison gratuite dans tout le pays.",
+            deal: '3 × 20 € de réduction — appliqué automatiquement via notre lien, aucun code à saisir',
+          },
+          {
+            slug: 'foodmaker',
+            badge: '👨‍🍳 Sans cuisiner',
+            badgeAchtergrond: '#FEF3C7',
+            badgeTekst: '#92400E',
+            tagline: 'Plats belges prêts · livraison gratuite nationale',
+            waarom:
+              "Pour les couples qui n'ont pas envie de cuisiner tous les soirs. Foodmaker prépare ses plats à Anvers, avec une collaboration signée Jeroen Meus, et livre gratuitement dans tout le pays sans abonnement. Une trentaine de plats par semaine, dont une gamme entièrement végane.",
+            deal: 'Aucun code permanent — consultez leur offre de bienvenue actuelle',
+          },
+        ],
+      },
+      {
+        type: 'overigeAanbieders',
+        kop: 'Les autres options pour un couple',
+        items: [
+          {
+            slug: 'factor',
+            omschrijving:
+              "Plats de chef prêts à réchauffer, sans cuisson. Livre dans toute la Belgique. Pratique les soirs chargés, mais vous perdez le plaisir de cuisiner ensemble. Comptez 5,99 € de livraison.",
+          },
+          {
+            slug: 'marley-spoon',
+            omschrijving:
+              "Les recettes les plus travaillées de notre comparatif et la meilleure note de goût — mais la livraison s'arrête à la Flandre et à Bruxelles. Si vous habitez en Wallonie, ce n'est pas une option.",
+          },
+          {
+            slug: 'foodprepper',
+            omschrijving:
+              "L'option la plus rapide : un repas frais en 15 minutes, sans abonnement et au prix par portion le plus bas. Livraison limitée à la Flandre et à Bruxelles.",
+          },
+        ],
+      },
+      {
+        type: 'tabel',
+        kop: 'Comparatif : 6 fournisseurs pour un couple',
+        slugs: ['hellofresh', 'foodbag', 'foodmaker', 'factor', 'marley-spoon', 'foodprepper'],
+        portiesPerWeek: 6,
+        kolommen: [
+          {
+            kop: 'Livre en Wallonie',
+            soort: 'tekst',
+            waarden: {
+              hellofresh: 'Oui',
+              foodbag: 'Oui',
+              foodmaker: 'Oui',
+              factor: 'Oui',
+              'marley-spoon': 'Non',
+              foodprepper: 'Non',
+            },
+          },
+          { kop: '€/portion', soort: 'portie' },
+          { kop: '€/semaine (2p, 3×)', soort: 'weekprijs' },
+          { kop: 'Recettes/semaine', soort: 'recepten' },
+          { kop: 'Réduction', soort: 'korting' },
+        ],
+        voetnoot:
+          "Le prix par semaine inclut les frais de livraison lorsqu'ils s'appliquent (5,99 € chez Marley Spoon et Factor). Prix indicatifs — vérifiez les tarifs actuels sur le site du fournisseur.",
+      },
+      {
+        type: 'scenarios',
+        kop: 'Lequel choisir ?',
+        items: [
+          {
+            scenario: 'Vous habitez en Wallonie',
+            aanbeveling: 'HelloFresh ou Foodbag',
+            slug: 'hellofresh',
+            uitleg:
+              "Ce sont les deux seuls box à cuisiner qui livrent au sud du pays. HelloFresh pour le choix et le prix, Foodbag si vous tenez aux ingrédients belges. Les deux livrent gratuitement.",
+            achtergrond: '#E8F5EE',
+            rand: '#BBF7D0',
+          },
+          {
+            scenario: 'Vous voulez le meilleur rapport qualité-prix',
+            aanbeveling: 'HelloFresh',
+            slug: 'hellofresh',
+            uitleg:
+              "Avec la réduction de bienvenue (jusqu'à 60 € sur vos trois premières box), vous payez 5 à 6 € par personne et par soir les premières semaines. Après, HelloFresh reste parmi les box à cuisiner les moins chers de Belgique.",
+            achtergrond: '#DBEAFE',
+            rand: '#BFDBFE',
+          },
+          {
+            scenario: 'Vous voulez vraiment prendre plaisir à cuisiner',
+            aanbeveling: 'Marley Spoon ou Foodbag',
+            slug: 'foodbag',
+            uitleg:
+              "Marley Spoon pour le défi culinaire (recettes de chef, 45 à 60 minutes) — à condition d'être en Flandre ou à Bruxelles. Foodbag si vous voulez aussi la qualité belge et une livraison partout.",
+            achtergrond: '#F3E8FF',
+            rand: '#DDD6FE',
+          },
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Prêts à commencer ?',
+        tekst:
+          "HelloFresh est le box repas le plus choisi par les couples en Belgique, et l'un des rares à livrer dans les trois régions. Avec la réduction de bienvenue, c'est aussi la façon la moins chère de tester.",
+        slug: 'hellofresh',
+        knoptekst: "Activer jusqu'à 60 € de réduction →",
+        subtekst: "Jusqu'à 60 € sur vos 3 premières box · automatique via le lien · résiliable à tout moment",
+      },
+    ],
   },
 
   vegan: {
