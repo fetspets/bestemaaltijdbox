@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { getTranslations } from 'next-intl/server';
+import { laatstBijgewerkt(taal) } from '@/lib/site';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import Link from 'next/link';
@@ -23,6 +24,7 @@ export async function generateMetadata(
 export default async function BlogOverzicht({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const taal = locale as Locale;
+  const tl = await getTranslations('labels');
   return (
     <div style={{ maxWidth: 900, margin: '0 auto', padding: '40px 20px' }}>
       <style>{`
@@ -34,7 +36,7 @@ export default async function BlogOverzicht({ params }: { params: Promise<{ loca
         Blog
       </h1>
       <p style={{ fontSize: 17, color: '#555', marginBottom: 32, lineHeight: 1.6 }}>
-        Tips, vergelijkingen en praktische gidsen over maaltijdboxen in België.
+        {tl('blogIntro')}
       </p>
 
       {/* Uitgelicht — gesponsorde Factor-artikels, bovenaan met label */}
@@ -75,56 +77,32 @@ export default async function BlogOverzicht({ params }: { params: Promise<{ loca
         </div>
       )}
 
-      {/* Uitgelichte artikels */}
-      <Link href="/blog/maaltijdbox-zonder-abonnement-belgie" style={{ textDecoration: 'none', display: 'block', marginBottom: 16 }}>
-        <article className="blog-card" style={{
-          border: '2px solid var(--green)',
-          borderRadius: 12,
-          padding: 24,
-          background: '#F0FDF4',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-        }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            {LAATST_BIJGEWERKT}
-          </div>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
-            Maaltijdbox zonder abonnement in België 2026 — welke opties zijn er?
-          </h2>
-          <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, margin: 0 }}>
-            Foodbag, Foodprepper en Foodmaker leveren zonder vast contract. Vergelijk prijs, bezorging en welkomstkorting — en ontdek welke optie het best bij jou past.
-          </p>
-          <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
-            Lees artikel →
-          </span>
-        </article>
-      </Link>
-
-      <Link href="/blog/maaltijdbox-maaltijdcheques-belgie" style={{ textDecoration: 'none', display: 'block', marginBottom: 32 }}>
-        <article className="blog-card" style={{
-          border: '2px solid var(--green)',
-          borderRadius: 12,
-          padding: 24,
-          background: '#F0FDF4',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 12,
-        }}>
-          <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-            {LAATST_BIJGEWERKT}
-          </div>
-          <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
-            Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?
-          </h2>
-          <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, margin: 0 }}>
-            Foodbag, HelloFresh en Foodprepper accepteren Monizze, Pluxee en Edenred. De andere aanbieders doen dit (nog) niet. Direct antwoord + vergelijkingstabel.
-          </p>
-          <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
-            Lees artikel →
-          </span>
-        </article>
-      </Link>
+      {/* Uitgelichte artikels — uit de data, zodat de taalversie meeschuift.
+          Stonden hier eerder hardgecodeerd in het Nederlands. */}
+      {['maaltijdbox-zonder-abonnement-belgie', 'maaltijdbox-maaltijdcheques-belgie']
+        .map(slug => blogPostsVoor(taal).find(p => p.slug === slug))
+        .filter((p): p is NonNullable<typeof p> => Boolean(p))
+        .map(post => (
+          <Link key={post.slug} href={`/blog/${post.slug}`} style={{ textDecoration: 'none', display: 'block', marginBottom: 16 }}>
+            <article className="blog-card" style={{
+              border: '2px solid var(--green)', borderRadius: 12, padding: 24,
+              background: '#F0FDF4', display: 'flex', flexDirection: 'column', gap: 12,
+            }}>
+              <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--green)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+                {laatstBijgewerkt(taal)}
+              </div>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, color: 'var(--ink)', lineHeight: 1.3, margin: 0 }}>
+                {post.titel}
+              </h2>
+              <p style={{ fontSize: 14, color: '#555', lineHeight: 1.6, margin: 0 }}>
+                {post.excerpt}
+              </p>
+              <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--green)' }}>
+                {tl('leesArtikel')}
+              </span>
+            </article>
+          </Link>
+        ))}
 
       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: 24 }}>
         {blogPostsVoor(taal).filter(post => !post.sponsor).map(post => (
