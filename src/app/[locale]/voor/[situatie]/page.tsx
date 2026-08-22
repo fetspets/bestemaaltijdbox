@@ -2,8 +2,9 @@ import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { getAanbiedersByFilter } from '@/lib/aanbieders';
-import { situaties, getSituatie, generateSituatieStaticParams } from '@/lib/situaties';
 import type { Locale } from '@/i18n/routing';
+import { generateSituatieStaticParams } from '@/lib/situaties';
+import { situatiesVoor, situatieVoor } from '@/lib/teksten';
 import { buildMetadata } from '@/lib/seo';
 import ContentBlokken from '@/components/ContentBlokken';
 
@@ -13,7 +14,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ situatie: string; locale: string }> }): Promise<Metadata> {
   const { situatie, locale } = await params;
-  const s = getSituatie(situatie);
+  const s = situatieVoor(situatie, locale as Locale);
   if (!s) return {};
   return buildMetadata({
     locale: locale as Locale,
@@ -29,9 +30,10 @@ const accentColors: Record<string, string> = {
   hellofresh: '#1B4332', foodbag: '#1E40AF', 'marley-spoon': '#7C3AED',
 };
 
-export default async function SituatiePage({ params }: { params: Promise<{ situatie: string }> }) {
-  const { situatie } = await params;
-  const s = getSituatie(situatie);
+export default async function SituatiePage({ params }: { params: Promise<{ situatie: string; locale: string }> }) {
+  const { situatie, locale } = await params;
+  const taal = locale as Locale;
+  const s = situatieVoor(situatie, taal);
   if (!s) notFound();
 
   const gefilterd = getAanbiedersByFilter(situatie);
@@ -176,7 +178,7 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
       <div style={{ background: 'white', borderRadius: 16, padding: 24, border: '1px solid var(--rule)', marginBottom: 24 }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 900, marginBottom: 14 }}>Bekijk andere categorieën</h2>
         <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-          {Object.entries(situaties).filter(([key]) => key !== situatie).map(([key, val]) => (
+          {Object.entries(situatiesVoor(taal)).filter(([key]) => key !== situatie).map(([key, val]) => (
             <Link key={key} href={`/voor/${key}`} style={{
               display: 'inline-flex', alignItems: 'center', gap: 6,
               padding: '8px 16px', borderRadius: 100, border: '1.5px solid var(--rule)',

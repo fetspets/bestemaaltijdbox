@@ -2,6 +2,8 @@ import { aanbieders, type Aanbieder } from '../aanbieders';
 import { aanbiedersFr } from './aanbieders.fr';
 import { vergelijkingen, type Vergelijking } from '../vergelijkingen';
 import { vergelijkingenFr } from './vergelijkingen.fr';
+import { situaties, type Situatie } from '../situaties';
+import { situatiesFr } from './situaties.fr';
 import type { Locale } from '@/i18n/routing';
 
 /**
@@ -93,4 +95,19 @@ export function vergelijkingenVoor(locale: Locale): Vergelijking[] {
 
 export function vergelijkingVoor(slug: string, locale: Locale): Vergelijking | undefined {
   return vergelijkingenVoor(locale).find(v => v.slug === slug);
+}
+
+/** Situatiepagina's in de gevraagde taal. */
+export function situatiesVoor(locale: Locale): Record<string, Situatie> {
+  if (locale === 'nl') return situaties;
+  return Object.fromEntries(
+    Object.entries(situaties).map(([sleutel, s]) => {
+      const fr = situatiesFr[sleutel];
+      return [sleutel, fr ? { ...s, ...fr } : s];
+    })
+  );
+}
+
+export function situatieVoor(sleutel: string, locale: Locale): Situatie | undefined {
+  return situatiesVoor(locale)[sleutel];
 }
