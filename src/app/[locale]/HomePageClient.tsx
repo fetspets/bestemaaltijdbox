@@ -1,26 +1,31 @@
 'use client';
 import Link from 'next/link';
-import { actieveAanbieders, getAanbieder } from '@/lib/aanbieders';
+import type { Aanbieder } from '@/lib/aanbieders';
+import type { Locale } from '@/i18n/routing';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import { absoluteUrl } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import Quiz from '@/components/Quiz';
 
-const aantalAanbieders = actieveAanbieders.length;
 
-const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'ItemList',
-  name: 'Beste Maaltijdbox België 2026',
-  description: 'Onafhankelijke vergelijking van maaltijdboxen in België',
-  numberOfItems: aantalAanbieders,
-  itemListElement: actieveAanbieders.map((a, i) => ({
-    '@type': 'ListItem',
-    position: i + 1,
-    name: a.naam,
-    url: absoluteUrl(`/aanbieder/${a.slug}`),
-  })),
-};
+/** De ItemList-markup hangt af van de lijst en dus van de taal. */
+function bouwJsonLd(lijst: Aanbieder[], taal: Locale) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: taal === 'fr' ? 'Meilleur box repas en Belgique 2026' : 'Beste Maaltijdbox België 2026',
+    description: taal === 'fr'
+      ? 'Comparaison indépendante des box repas en Belgique'
+      : 'Onafhankelijke vergelijking van maaltijdboxen in België',
+    numberOfItems: lijst.length,
+    itemListElement: lijst.map((a, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: a.naam,
+      url: absoluteUrl(taal === 'fr' ? `/fr/fournisseur/${a.slug}` : `/aanbieder/${a.slug}`),
+    })),
+  };
+}
 
 function ScoreBar({ label, value }: { label: string; value: number }) {
   return (
@@ -38,12 +43,18 @@ const accentColors: Record<string, string> = {
 
 export default function HomePageClient({
   sponsoringActief,
+  aanbieders: lijst,
+  taal,
 }: {
   sponsoringActief: boolean;
+  aanbieders: Aanbieder[];
+  taal: Locale;
 }) {
-  const top3 = actieveAanbieders.slice(0, 3);
-  const rest = actieveAanbieders.slice(3);
-  const factor = getAanbieder('factor');
+  const aantalAanbieders = lijst.length;
+  const jsonLd = bouwJsonLd(lijst, taal);
+  const top3 = lijst.slice(0, 3);
+  const rest = lijst.slice(3);
+  const factor = lijst.find(a => a.slug === 'factor');
 
   return (
     <>
@@ -262,7 +273,7 @@ export default function HomePageClient({
                 </tr>
               </thead>
               <tbody>
-                {actieveAanbieders.map((a, i) => {
+                {lijst.map((a, i) => {
                   const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`;
                   const bezorgGratis = a.gratisBezorging;
                   return (
