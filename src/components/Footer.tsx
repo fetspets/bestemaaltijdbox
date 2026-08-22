@@ -1,6 +1,10 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
+import { getTranslations } from 'next-intl/server';
+import { aanbieders } from '@/lib/aanbieders';
 
-export default function Footer() {
+export default async function Footer() {
+  const t = await getTranslations('footer');
+  const tn = await getTranslations('nav');
   return (
     <footer style={{ background: '#1C1C1C', color: 'white', padding: '40px 20px 24px', marginTop: 48 }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
@@ -16,24 +20,20 @@ export default function Footer() {
           <div>
             <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 10 }}>BesteMaaltijdbox</div>
             <p style={{ fontSize: 13, color: '#9CA3AF', lineHeight: 1.7, marginBottom: 12 }}>
-              Onafhankelijke vergelijking van alle maaltijdboxen in België. Onze scores en rangschikking worden nooit betaald.
+              {t('slogan')}
             </p>
             <div style={{ fontSize: 12, color: '#6B7280' }}>© 2026 BesteMaaltijdbox.be</div>
           </div>
 
           {/* Aanbieders */}
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Aanbieders</div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>{t('aanbieders')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
-                { naam: 'HelloFresh review', slug: 'hellofresh' },
-                { naam: 'Foodbag review', slug: 'foodbag' },
-                { naam: 'Marley Spoon review', slug: 'marley-spoon' },
-                { naam: 'Ekomenu review', slug: 'ekomenu' },
-                { naam: 'Factor review', slug: 'factor' },
-                { naam: 'Foodmaker review', slug: 'foodmaker' },
-                { naam: 'Crowd Cooks review', slug: 'crowd-cooks' },
-                { naam: 'Carrefour Simply You (stopgezet)', slug: 'carrefour-simply-you' },
+                ...aanbieders.map(a => ({
+                  naam: `${a.naam} ${t('reviewSuffix')}${a.status === 'active' ? '' : ` ${t('stopgezet')}`}`,
+                  slug: a.slug,
+                })),
               ].map(a => (
                 <Link key={a.slug} href={`/aanbieder/${a.slug}`} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{a.naam}</Link>
               ))}
@@ -42,7 +42,7 @@ export default function Footer() {
 
           {/* Op situatie */}
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Op situatie</div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>{t('opSituatie')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
                 { label: 'Voor koppels', href: '/voor/koppel' },
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Vergelijk & Gidsen */}
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Vergelijk & Gidsen</div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>{t('vergelijkGidsen')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
                 { label: 'HelloFresh vs Foodbag', href: '/vergelijk/hellofresh-vs-foodbag' },
@@ -99,7 +99,7 @@ export default function Footer() {
 
           {/* Info */}
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Info</div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>{t('info')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
                 { label: 'Kortingscodes', href: '/kortingscodes' },

@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { SITE_URL, absoluteUrl } from '@/lib/seo';
 import { getAanbieder } from '@/lib/aanbieders';
 import type { FactorVergelijking } from '@/lib/factorVergelijkingen';
@@ -161,7 +161,7 @@ export default function FactorVergelijkingPagina({ data }: { data: FactorVergeli
             <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: FACTOR_ACCENT, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
               Bekijk Factor →
             </Link>
-            <Link href={`/ga/${kookbox.slug}`} rel="noopener sponsored nofollow" style={{ display: 'block', background: 'white', color: accent, textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: `2px solid ${accent}` }}>
+            <Link data-plaatsing="factor-vergelijk" href={`/ga/${kookbox.slug}`} rel="noopener sponsored nofollow" style={{ display: 'block', background: 'white', color: accent, textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: `2px solid ${accent}` }}>
               Bekijk {kookbox.naam} →
             </Link>
           </div>

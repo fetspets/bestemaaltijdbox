@@ -1,5 +1,7 @@
 import { MetadataRoute } from 'next';
-import { SITE_URL } from '@/lib/seo';
+import { SITE_URL, NIET_INDEXEREN } from '@/lib/seo';
+import { routing, hreflangVoor, type Locale, type RouteSjabloon } from '@/i18n/routing';
+import { getPathname } from '@/i18n/navigation';
 import { aanbieders } from '@/lib/aanbieders';
 import { situaties } from '@/lib/situaties';
 import { vergelijkingen } from '@/lib/vergelijkingen';
@@ -8,44 +10,62 @@ import { gidsen } from '@/lib/gidsen';
 import { blogPosts } from '@/lib/blog';
 
 /**
- * Afgeleid uit de databestanden in plaats van uit handmatige sluglijsten.
+ * Afgeleid uit de databestanden, en tweetalig.
  *
- * De vorige versie had zes lijsten die naast vijf databestanden bijgehouden
- * moesten worden en daar al van afweken: /voor/vegan en de maaltijdcheques-blog
- * ontbraken, terwijl de stopgezette Carrefour er nog in stond.
+ * Elke pagina komt één keer per taal voor, met een `alternates.languages`-blok
+ * dat naar de andere taal verwijst. Google leest dat als hreflang-signaal, net
+ * als de link-tags in de <head>.
  */
 
 // Slugs met een eigen /kortingscode/<slug>-pagina.
 const kortingscodePaginas = ['hellofresh', 'foodbag', 'factor', 'foodprepper', 'crowd-cooks'];
 
+type Ingang = { route: RouteSjabloon; params?: Record<string, string>; priority: number; frequentie?: MetadataRoute.Sitemap[number]['changeFrequency'] };
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const nu = new Date();
-  const entry = (
-    pad: string,
-    priority: number,
-    changeFrequency: MetadataRoute.Sitemap[number]['changeFrequency'] = 'monthly'
-  ) => ({ url: `${SITE_URL}${pad}`, lastModified: nu, changeFrequency, priority });
 
-  return [
-    entry('', 1, 'weekly'),
-    entry('/kortingscodes', 0.9, 'weekly'),
-    entry('/blog', 0.7, 'weekly'),
-    entry('/over-ons', 0.5),
-    entry('/privacy', 0.3),
-    entry('/voorwaarden', 0.3),
+  const ingangen: Ingang[] = [
+    { route: '/', priority: 1, frequentie: 'weekly' },
+    { route: '/kortingscodes', priority: 0.9, frequentie: 'weekly' },
+    { route: '/blog', priority: 0.7, frequentie: 'weekly' },
+    { route: '/over-ons', priority: 0.5 },
+    { route: '/privacy', priority: 0.3 },
+    { route: '/voorwaarden', priority: 0.3 },
 
     // Stopgezette aanbieders horen niet in de sitemap.
     ...aanbieders
       .filter(a => a.status === 'active')
-      .map(a => entry(`/aanbieder/${a.slug}`, 0.8)),
+      .map(a => ({ route: '/aanbieder/[slug]' as const, params: { slug: a.slug }, priority: 0.8 })),
 
-    ...Object.keys(situaties).map(s => entry(`/voor/${s}`, 0.7)),
+    ...Object.keys(situaties).map(s => ({ route: '/voor/[situatie]' as const, params: { situatie: s }, priority: 0.7 })),
 
-    ...vergelijkingen.map(v => entry(`/vergelijk/${v.slug}`, 0.85)),
-    ...factorVergelijkingen.map(v => entry(`/vergelijk/${v.slug}`, 0.85)),
+    ...vergelijkingen.map(v => ({ route: '/vergelijk/[slug]' as const, params: { slug: v.slug }, priority: 0.85 })),
+    ...factorVergelijkingen.map(v => ({ route: '/vergelijk/[slug]' as const, params: { slug: v.slug }, priority: 0.85 })),
 
-    ...gidsen.map(g => entry(`/gids/${g.slug}`, 0.8)),
-    ...blogPosts.map(p => entry(`/blog/${p.slug}`, 0.6)),
-    ...kortingscodePaginas.map(s => entry(`/kortingscode/${s}`, 0.8)),
+    ...gidsen.map(g => ({ route: '/gids/[slug]' as const, params: { slug: g.slug }, priority: 0.8 })),
+    ...blogPosts.map(p => ({ route: '/blog/[slug]' as const, params: { slug: p.slug }, priority: 0.6 })),
+    ...kortingscodePaginas.map(s => ({ route: '/kortingscode/[slug]' as const, params: { slug: s }, priority: 0.8 })),
   ];
+
+  const urlVoor = (route: RouteSjabloon, locale: Locale, params?: Record<string, string>) =>
+    SITE_URL + getPathname({ locale, href: (params ? { pathname: route, params } : route) as never });
+
+  // Talen die op noindex staan horen niet in de sitemap; zolang /fr/ nog
+  // Nederlandse teksten toont zou je Google om duplicate content vragen.
+  const zichtbareTalen = routing.locales.filter(l => !NIET_INDEXEREN.includes(l));
+
+  return ingangen.flatMap(({ route, params, priority, frequentie = 'monthly' }) =>
+    zichtbareTalen.map(locale => ({
+      url: urlVoor(route, locale, params),
+      lastModified: nu,
+      changeFrequency: frequentie,
+      priority,
+      alternates: {
+        languages: Object.fromEntries(
+          zichtbareTalen.map(l => [hreflangVoor[l], urlVoor(route, l, params)])
+        ),
+      },
+    }))
+  );
 }

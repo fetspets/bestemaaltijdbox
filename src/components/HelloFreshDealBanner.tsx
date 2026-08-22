@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 
 const SHOW_ON = ['/', '/aanbieder/hellofresh', '/vergelijk/hellofresh-vs-foodbag', '/vergelijk/hellofresh-vs-marley-spoon'];
 
@@ -28,6 +28,7 @@ export default function HelloFreshDealBanner() {
         🥗 HelloFresh-deal: tot €60 korting op je eerste 3 boxen — automatisch via onze link, geen code nodig.
       </span>
       <Link
+        data-plaatsing="hellofresh-banner"
         href="/ga/hellofresh"
         rel="noopener sponsored nofollow"
         style={{

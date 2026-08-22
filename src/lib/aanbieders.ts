@@ -58,6 +58,12 @@ export interface Aanbieder {
   minPersonen: number;
   maxPersonen: number;
   opzegTermijn: string;
+  /**
+   * Waar de aanbieder daadwerkelijk levert. Feitelijk gegeven, geen tekst —
+   * en doorslaggevend voor de Franstalige site: drie aanbieders leveren niet
+   * in Wallonië, waardoor de nuttige ranglijst daar korter is.
+   */
+  levergebied: 'heel-belgie' | 'vlaanderen-brussel' | 'gedeeltelijk';
   belgisch: boolean;
   vegetarisch: boolean;
   bio: boolean;
@@ -112,6 +118,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 1,
     maxPersonen: 6,
     opzegTermijn: '5 dagen op voorhand',
+    levergebied: 'heel-belgie',
     belgisch: false,
     vegetarisch: true,
     bio: false,
@@ -161,6 +168,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 1,
     maxPersonen: 5,
     opzegTermijn: 'Wekelijks opzegbaar',
+    levergebied: 'heel-belgie',
     belgisch: true,
     vegetarisch: true,
     bio: false,
@@ -235,6 +243,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 2,
     maxPersonen: 4,
     opzegTermijn: 'Wekelijks opzegbaar',
+    levergebied: 'vlaanderen-brussel',
     belgisch: false,
     vegetarisch: true,
     bio: false,
@@ -331,6 +340,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 1,
     maxPersonen: 4,
     opzegTermijn: 'Vrij opzegbaar',
+    levergebied: 'vlaanderen-brussel',
     belgisch: true,
     vegetarisch: true,
     bio: false,
@@ -401,6 +411,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 1,
     maxPersonen: 4,
     opzegTermijn: 'Wekelijks opzegbaar',
+    levergebied: 'heel-belgie',
     belgisch: false,
     vegetarisch: true,
     bio: false,
@@ -450,6 +461,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 1,
     maxPersonen: 4,
     opzegTermijn: 'Wekelijks opzegbaar',
+    levergebied: 'gedeeltelijk',
     belgisch: true,
     vegetarisch: false,
     bio: false,
@@ -500,6 +512,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 1,
     maxPersonen: 4,
     opzegTermijn: 'Geen abonnement',
+    levergebied: 'heel-belgie',
     belgisch: true,
     vegetarisch: true,
     bio: false,
@@ -540,6 +553,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 2,
     maxPersonen: 4,
     opzegTermijn: 'Wekelijks opzegbaar',
+    levergebied: 'vlaanderen-brussel',
     belgisch: false,
     vegetarisch: true,
     bio: true,
@@ -583,6 +597,7 @@ export const aanbieders: Aanbieder[] = [
     minPersonen: 1,
     maxPersonen: 4,
     opzegTermijn: 'Geen abonnement',
+    levergebied: 'heel-belgie',
     belgisch: true,
     vegetarisch: true,
     bio: false,
@@ -614,6 +629,14 @@ if (process.env.NEXT_PHASE === 'phase-production-build') {
       );
     }
   });
+}
+
+/**
+ * Levert deze aanbieder in Wallonië? Brussel valt buiten deze check: daar
+ * leveren alle aanbieders, ook de Vlaams-Brusselse.
+ */
+export function levertInWallonie(a: Aanbieder): boolean {
+  return a.levergebied !== 'vlaanderen-brussel';
 }
 
 export const actieveAanbieders: Aanbieder[] = aanbieders.filter(a => a.status === 'active');

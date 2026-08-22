@@ -1,7 +1,9 @@
-import Link from 'next/link';
+import Link from '@/components/TaalLink';
 import { getAanbieder } from '@/lib/aanbieders';
 import { berekenWeekprijs } from '@/lib/gidsen';
 import type { ContentBlok, BlokTabelKolom } from '@/lib/blokken';
+import { aanbiederVoor } from '@/lib/teksten';
+import { routing, type Locale } from '@/i18n/routing';
 
 const euro = (n: number) => `€${n.toFixed(2).replace('.', ',')}`;
 
@@ -15,26 +17,33 @@ const kopStijl = {
 } as const;
 
 /** Waarde van één tabelcel; afgeleide kolommen lezen uit aanbieders.ts. */
-function celWaarde(kolom: BlokTabelKolom, slug: string, porties: number): string {
-  const a = getAanbieder(slug);
+const woorden = {
+  nl: { vanaf: 'vanaf', gratis: 'Gratis' },
+  fr: { vanaf: 'à partir de', gratis: 'Gratuite' },
+} as const;
+
+function celWaarde(kolom: BlokTabelKolom, slug: string, porties: number, taal: Locale): string {
+  const a = aanbiederVoor(slug, taal);
+  const w = woorden[taal];
   if (!a) return '—';
   switch (kolom.soort) {
-    case 'portie': return `vanaf ${euro(a.prijsPerPortie)}`;
+    case 'portie': return `${w.vanaf} ${euro(a.prijsPerPortie)}`;
     case 'weekprijs': return euro(berekenWeekprijs(a, porties));
     case 'recepten': return `${a.receptenPerWeek}+`;
     case 'score': return `${a.score.totaal.toFixed(1)}/10`;
     case 'korting': return a.kortingsCode?.bedragKort ?? '—';
     case 'opzeg': return a.opzegTermijn;
-    case 'bezorging': return a.gratisBezorging ? 'Gratis' : euro(a.bezorgkosten ?? 0);
+    case 'bezorging': return a.gratisBezorging ? w.gratis : euro(a.bezorgkosten ?? 0);
     case 'tekst': return kolom.waarden[slug] ?? '—';
   }
 }
 
-export default function ContentBlokken({ blokken }: { blokken: ContentBlok[] }) {
-  return <>{blokken.map((blok, i) => <Blok key={`${blok.type}-${i}`} blok={blok} />)}</>;
+export default function ContentBlokken({ blokken, taal = routing.defaultLocale }: { blokken: ContentBlok[]; taal?: Locale }) {
+  return <>{blokken.map((blok, i) => <Blok key={`${blok.type}-${i}`} blok={blok} taal={taal} />)}</>;
 }
 
-export function Blok({ blok }: { blok: ContentBlok }) {
+export function Blok({ blok, taal = routing.defaultLocale }: { blok: ContentBlok; taal?: Locale }) {
+  const w = woorden[taal];
   switch (blok.type) {
     case 'notitie':
       return (
@@ -68,7 +77,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
       );
 
     case 'winnaar': {
-      const a = getAanbieder(blok.slug);
+      const a = aanbiederVoor(blok.slug, taal);
       if (!a) return null;
       return (
         <div style={{ background: '#F0FDF4', border: '1.5px solid #52B788', borderRadius: 16, marginBottom: 36, overflow: 'hidden' }}>
@@ -93,7 +102,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
                 </ul>
               )}
             </div>
-            <Link href={`/ga/${a.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
+            <Link data-plaatsing="blok-topaanbieder" href={`/ga/${a.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
               {blok.knoptekst}
             </Link>
           </div>
@@ -106,7 +115,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
         <div style={{ marginBottom: 36 }}>
           <h2 style={kopStijl}>{blok.kop}</h2>
           {blok.items.map((item, i) => {
-            const a = getAanbieder(item.slug);
+            const a = aanbiederVoor(item.slug, taal);
             if (!a) return null;
             return (
               <div key={item.slug} style={{
@@ -141,10 +150,10 @@ export function Blok({ blok }: { blok: ContentBlok }) {
 
                 <div className="ranking-stats-grid" style={{ marginBottom: 14 }}>
                   {[
-                    { val: `vanaf ${euro(a.prijsPerPortie)}`, key: 'Per portie' },
-                    { val: euro(berekenWeekprijs(a, 6)), key: 'Per week (2p, 3×)' },
-                    { val: `${a.receptenPerWeek}+`, key: 'Recepten/week' },
-                    { val: a.gratisBezorging ? 'Gratis' : euro(a.bezorgkosten ?? 0), key: 'Bezorging' },
+                    { val: `${w.vanaf} ${euro(a.prijsPerPortie)}`, key: taal === 'fr' ? 'Par portion' : 'Per portie' },
+                    { val: euro(berekenWeekprijs(a, 6)), key: taal === 'fr' ? 'Par semaine (2p, 3×)' : 'Per week (2p, 3×)' },
+                    { val: `${a.receptenPerWeek}+`, key: taal === 'fr' ? 'Recettes/semaine' : 'Recepten/week' },
+                    { val: a.gratisBezorging ? w.gratis : euro(a.bezorgkosten ?? 0), key: taal === 'fr' ? 'Livraison' : 'Bezorging' },
                   ].map(({ val, key }, idx, arr) => (
                     <div key={key} style={{ padding: '8px 6px', borderRight: idx < arr.length - 1 ? '1px solid var(--rule)' : 'none', textAlign: 'center' }}>
                       <div style={{ fontWeight: 700, fontSize: 13 }}>{val}</div>
@@ -158,11 +167,11 @@ export function Blok({ blok }: { blok: ContentBlok }) {
                 </div>
 
                 <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
-                  <Link href={`/ga/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-                    Bekijk deal →
+                  <Link data-plaatsing="blok-topaanbieder" href={`/ga/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '12px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+                    {taal === 'fr' ? "Voir l'offre →" : 'Bekijk deal →'}
                   </Link>
                   <Link href={`/aanbieder/${a.slug}`} style={{ flex: 1, minWidth: 160, display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '10px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)' }}>
-                    Lees volledige review
+                    {taal === 'fr' ? "Lire l'avis complet" : 'Lees volledige review'}
                   </Link>
                 </div>
               </div>
@@ -177,7 +186,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
           <h2 style={kopStijl}>{blok.kop}</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {blok.items.map(({ slug, omschrijving }) => {
-              const a = getAanbieder(slug);
+              const a = aanbiederVoor(slug, taal);
               if (!a) return null;
               return (
                 <div key={slug} style={{ background: 'white', borderRadius: 12, padding: 16, border: '1px solid var(--rule)', display: 'flex', gap: 16, alignItems: 'flex-start', flexWrap: 'wrap' }}>
@@ -190,7 +199,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
                     <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', margin: 0 }}>{omschrijving}</p>
                   </div>
                   <Link href={`/aanbieder/${slug}`} style={{ fontSize: 13, fontWeight: 600, color: '#1B4332', textDecoration: 'underline', whiteSpace: 'nowrap' }}>
-                    Meer info →
+                    {taal === 'fr' ? 'Plus d’infos →' : 'Meer info →'}
                   </Link>
                 </div>
               );
@@ -207,14 +216,14 @@ export function Blok({ blok }: { blok: ContentBlok }) {
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, background: 'white', borderRadius: 12, overflow: 'hidden', border: '1px solid var(--rule)' }}>
               <thead>
                 <tr style={{ background: 'var(--cream)', borderBottom: '2px solid var(--rule)' }}>
-                  {['Aanbieder', ...blok.kolommen.map(k => k.kop)].map(h => (
+                  {[(taal === 'fr' ? 'Fournisseur' : 'Aanbieder'), ...blok.kolommen.map(k => k.kop)].map(h => (
                     <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 700, whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
               </thead>
               <tbody>
                 {blok.slugs.map((slug, i) => {
-                  const a = getAanbieder(slug);
+                  const a = aanbiederVoor(slug, taal);
                   if (!a) return null;
                   const markering = blok.rijMarkering?.[slug];
                   return (
@@ -228,7 +237,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
                         <Link href={`/aanbieder/${slug}`} style={{ color: 'var(--ink)', textDecoration: 'none' }}>{a.naam}</Link>
                       </td>
                       {blok.kolommen.map(kolom => {
-                        const waarde = celWaarde(kolom, slug, blok.portiesPerWeek);
+                        const waarde = celWaarde(kolom, slug, blok.portiesPerWeek, taal);
                         const isLeeg = waarde === '—';
                         const isKorting = kolom.soort === 'korting';
                         return (
@@ -282,7 +291,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
       );
 
     case 'kenmerkTabel': {
-      const kolommen = blok.kolomSlugs.map(s => getAanbieder(s));
+      const kolommen = blok.kolomSlugs.map(s => aanbiederVoor(s, taal));
       return (
         <div style={{ marginBottom: 36 }}>
           <h2 style={kopStijl}>{blok.kop}</h2>
@@ -290,7 +299,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, background: 'white', border: '1px solid var(--rule)', borderRadius: 12, overflow: 'hidden' }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Kenmerk</th>
+                  <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{taal === 'fr' ? 'Caractéristique' : 'Kenmerk'}</th>
                   {kolommen.map((a, i) => (
                     <th key={blok.kolomSlugs[i]} style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
                       {a?.naam ?? blok.kolomSlugs[i]}
@@ -334,14 +343,14 @@ export function Blok({ blok }: { blok: ContentBlok }) {
       return (
         <div className="two-col-grid" style={{ gap: 12, marginBottom: 36 }}>
           {blok.items.map(item => {
-            const a = getAanbieder(item.slug);
+            const a = aanbiederVoor(item.slug, taal);
             if (!a) return null;
             const href = item.campagne ? `/ga/${item.slug}?c=${item.campagne}` : `/ga/${item.slug}`;
             return (
               <div key={item.slug} style={{ background: 'white', border: '1.5px solid var(--rule)', borderRadius: 14, padding: 20 }}>
                 <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 800, marginBottom: 8 }}>{item.kop}</div>
                 <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{item.tekst}</p>
-                <Link href={href} rel="noopener sponsored nofollow" style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+                <Link data-plaatsing="blok-kortingkaart" href={href} rel="noopener sponsored nofollow" style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
                   {item.knoptekst}
                 </Link>
               </div>
@@ -355,7 +364,7 @@ export function Blok({ blok }: { blok: ContentBlok }) {
         <div style={{ background: '#1B4332', borderRadius: 16, padding: 28, textAlign: 'center', color: 'white', marginBottom: 36 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900, marginBottom: 8 }}>{blok.kop}</div>
           <p style={{ fontSize: 14, lineHeight: 1.7, opacity: 0.85, maxWidth: 480, margin: '0 auto 20px' }}>{blok.tekst}</p>
-          <Link href={blok.campagne ? `/ga/${blok.slug}?c=${blok.campagne}` : `/ga/${blok.slug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+          <Link data-plaatsing="blok-slotcta" href={blok.campagne ? `/ga/${blok.slug}?c=${blok.campagne}` : `/ga/${blok.slug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
             {blok.knoptekst}
           </Link>
           <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>{blok.subtekst}</div>
