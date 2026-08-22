@@ -1,11 +1,12 @@
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
+import { getTranslations } from 'next-intl/server';
 import { buildMetadata } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import { actieveAanbiedersVoor, aanbiederVoor } from '@/lib/teksten';
 import { getActieveSponsoring } from '@/lib/sponsoring';
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { laatstBijgewerkt } from '@/lib/site';
 
 // ISR: het gesponsorde, uitgelichte Factor-blok verdwijnt vanzelf na de
 // sponsoringsperiode (server-side datumcheck, niet uit de browserklok).
@@ -15,12 +16,17 @@ export async function generateMetadata(
   { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
   const { locale } = await params;
+  const datum = laatstBijgewerkt(locale);
+  const frans = locale === 'fr';
   return buildMetadata({
     locale: locale as Locale,
     route: '/kortingscodes',
-    pad: '/kortingscodes',
-    titel: `Kortingscodes maaltijdbox België ${LAATST_BIJGEWERKT} — bespaar tot €60 op je eerste box`,
-    beschrijving: `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${LAATST_BIJGEWERKT}.`,
+    titel: frans
+      ? `Codes promo box repas Belgique ${datum} — jusqu'à 60 € de réduction`
+      : `Kortingscodes maaltijdbox België ${datum} — bespaar tot €60 op je eerste box`,
+    beschrijving: frans
+      ? `Toutes les offres de bienvenue actives pour les box repas en Belgique, avec la zone de livraison de chaque fournisseur. Mis à jour en ${datum}.`
+      : `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${datum}.`,
     type: 'website',
   });
 }
@@ -42,6 +48,7 @@ const dealCta: Record<string, string> = {
 export default async function KortingscodesPagina({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const taal = locale as Locale;
+  const t = await getTranslations('kortingscodes');
   const actief = actieveAanbiedersVoor(taal);
   const metKorting = actief.filter(a => a.kortingsCode);
   const zonderKorting = actief.filter(a => !a.kortingsCode);
@@ -62,13 +69,13 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-          🏷️ Bijgewerkt {LAATST_BIJGEWERKT}
+          🏷️ {t('bijgewerkt')} {laatstBijgewerkt(taal)}
         </div>
         <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
           Kortingscodes maaltijdbox<br />België 2026
         </h1>
         <p style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563', maxWidth: 600 }}>
-          Alle actieve kortingscodes en welkomstdeals voor maaltijdboxen in België. We houden deze pagina maandelijks bij zodat je altijd de beste deal krijgt.
+          {t('intro')}
         </p>
       </div>
 
@@ -94,7 +101,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 160 }}>
               <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>40% + 25%</div>
-              <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>Activeer deal →</Link>
+              <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>{t('activeerDeal')}</Link>
             </div>
           </div>
         </div>
@@ -102,8 +109,8 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
 
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>Actieve deals</h2>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt {LAATST_BIJGEWERKT}</div>
+        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>{t('actieveDeals')}</h2>
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt {laatstBijgewerkt(taal)}</div>
       </div>
 
       {metKorting.map((a, i) => {
@@ -121,7 +128,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 4 }}>
               <span style={{ fontFamily: 'Fraunces, serif', fontSize: 18, fontWeight: 700 }}>{a.naam}</span>
-              <span style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332' }}>✓ Actief</span>
+              <span style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332' }}>{t('actief')}</span>
             </div>
             <div style={{ fontSize: 14, fontWeight: 700, color: a.merkKleur, marginBottom: 4 }}>{kc.deal}</div>
             <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{kc.beschrijving}</div>
@@ -132,11 +139,11 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
               {kc.bedragKort}
             </div>
             <Link href={dealCta[a.slug] ?? `/ga/${a.slug}`} style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
-              Activeer deal →
+              {t('activeerDeal')}
             </Link>
             {heeftDetailpagina.has(a.slug) && (
               <Link href={`/kortingscode/${a.slug}`} style={{ display: 'block', textAlign: 'center', padding: '8px', borderRadius: 10, fontWeight: 600, fontSize: 12, textDecoration: 'none', color: a.merkKleur, border: `1.5px solid ${a.merkKleur}` }}>
-                Bekijk details →
+                {t('bekijkDetails')}
               </Link>
             )}
           </div>
@@ -146,7 +153,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
 
       {/* Geen actieve code */}
       <div style={{ marginTop: 40, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--rule)' }}>
-        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, color: 'var(--muted)' }}>Geen actieve kortingscode</h2>
+        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, color: 'var(--muted)' }}>{t('geenActieveCode')}</h2>
       </div>
 
       {zonderKorting.map(a => (
@@ -160,18 +167,18 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
           <div>
             <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 2 }}>{a.naam}</div>
             <div style={{ fontSize: 13, color: 'var(--muted)' }}>
-              Momenteel geen actieve kortingscode. Bekijk de website voor de huidige welkomstaanbieding.
+              {t('geenCodeTekst')}
             </div>
           </div>
           <Link href={`/aanbieder/${a.slug}`} style={{ fontSize: 13, fontWeight: 700, color: '#1B4332', textDecoration: 'none', whiteSpace: 'nowrap' }}>
-            Bekijk review →
+            {t('bekijkReview')}
           </Link>
         </div>
       ))}
 
       {/* Info box */}
       <div style={{ marginTop: 48, background: 'white', borderRadius: 16, padding: 28, border: '1px solid var(--rule)' }}>
-        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>Hoe gebruik je een kortingscode?</h2>
+        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>{t('hoeGebruiken')}</h2>
         <div className="two-col-grid">
           {[
             { num: '1', titel: 'Klik op "Activeer deal"', desc: 'Klik op de knop naast de maaltijdbox van je keuze. Je wordt doorgestuurd naar de website.' },
