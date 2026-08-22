@@ -1,5 +1,7 @@
 import { aanbieders, type Aanbieder } from '../aanbieders';
 import { aanbiedersFr } from './aanbieders.fr';
+import { vergelijkingen, type Vergelijking } from '../vergelijkingen';
+import { vergelijkingenFr } from './vergelijkingen.fr';
 import type { Locale } from '@/i18n/routing';
 
 /**
@@ -74,4 +76,21 @@ export function rangVoor(slug: string, locale: Locale): number | undefined {
 /** Hoeveel aanbieders er in heel het land (dus ook in Wallonië) leveren. */
 export function aantalMetNationaleDekking(locale: Locale): number {
   return actieveAanbiedersVoor(locale).filter(a => a.levergebied !== 'vlaanderen-brussel').length;
+}
+
+/**
+ * Vergelijkingen in de gevraagde taal. Slugs, aanbieders, campagnes en de
+ * verdictSlug blijven uit vergelijkingen.ts komen; alleen tekst wordt
+ * overschreven.
+ */
+export function vergelijkingenVoor(locale: Locale): Vergelijking[] {
+  if (locale === 'nl') return vergelijkingen;
+  return vergelijkingen.map(v => {
+    const fr = vergelijkingenFr[v.slug];
+    return fr ? { ...v, ...fr } : v;
+  });
+}
+
+export function vergelijkingVoor(slug: string, locale: Locale): Vergelijking | undefined {
+  return vergelijkingenVoor(locale).find(v => v.slug === slug);
 }

@@ -1,9 +1,10 @@
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getVergelijking, generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
-import { getAanbieder } from '@/lib/aanbieders';
-import { LAATST_BIJGEWERKT } from '@/lib/site';
 import type { Locale } from '@/i18n/routing';
+import { generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
+import { vergelijkingVoor, aanbiederVoor } from '@/lib/teksten';
+
+import { LAATST_BIJGEWERKT } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
 import ContentBlokken from '@/components/ContentBlokken';
 
@@ -13,10 +14,11 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const v = getVergelijking(slug);
+  const taal = locale as Locale;
+  const v = vergelijkingVoor(slug, taal);
   if (!v) return {};
-  const a1 = getAanbieder(v.aanbieder1Slug)!;
-  const a2 = getAanbieder(v.aanbieder2Slug)!;
+  const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
+  const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
   const title = v.seoTitle ?? `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`;
   const description = v.seoDescription ?? `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €60 op je eerste box.`;
   return buildMetadata({
@@ -50,8 +52,8 @@ const categorieLabelMap: Record<string, string> = {
   duurzaamheid: 'Duurzaamheid',
 };
 
-const categorieValueMap = (slug: string, cat: string) => {
-  const a = getAanbieder(slug);
+const categorieValueMap = (slug: string, cat: string, taal: Locale) => {
+  const a = aanbiederVoor(slug, taal);
   if (!a) return '—';
   switch (cat) {
     case 'prijs': return `v.a. €${a.prijsPerPortie.toFixed(2)}/portie`;
@@ -64,14 +66,15 @@ const categorieValueMap = (slug: string, cat: string) => {
   }
 };
 
-export default async function VergelijkingPagina({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
-  const v = getVergelijking(slug);
+export default async function VergelijkingPagina({ params }: { params: Promise<{ slug: string; locale: string }> }) {
+  const { slug, locale } = await params;
+  const taal = locale as Locale;
+  const v = vergelijkingVoor(slug, taal);
   if (!v) notFound();
 
-  const a1 = getAanbieder(v.aanbieder1Slug)!;
-  const a2 = getAanbieder(v.aanbieder2Slug)!;
-  const winnaar = getAanbieder(v.verdictSlug)!;
+  const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
+  const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
+  const winnaar = aanbiederVoor(v.verdictSlug, taal)!;
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -125,7 +128,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             <Link
               href={v.primaireCta.campagne ? `/ga/${v.primaireCta.slug}?c=${v.primaireCta.campagne}` : `/ga/${v.primaireCta.slug}`}
               rel="noopener sponsored nofollow"
-              style={{ display: 'inline-block', background: getAanbieder(v.primaireCta.slug)?.merkKleur ?? '#1B4332', color: 'white', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}
+              style={{ display: 'inline-block', background: aanbiederVoor(v.primaireCta.slug, taal)?.merkKleur ?? '#1B4332', color: 'white', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}
             >
               {v.primaireCta.tekst}
             </Link>
@@ -180,16 +183,16 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
                     <tr key={cat} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
                       <td style={{ padding: '12px 16px', fontWeight: 700 }}>{categorieLabelMap[cat]}</td>
                       <td style={{ padding: '12px 16px', textAlign: 'center', fontWeight: winnaarSlug === a1.slug ? 700 : 400, color: winnaarSlug === a1.slug ? accentColors[a1.slug] : 'var(--ink)' }}>
-                        {categorieValueMap(a1.slug, cat)}
+                        {categorieValueMap(a1.slug, cat, taal)}
                         {winnaarSlug === a1.slug && <span style={{ marginLeft: 6, fontSize: 12, color: '#16A34A' }}>✓</span>}
                       </td>
                       <td style={{ padding: '12px 16px', textAlign: 'center', fontWeight: winnaarSlug === a2.slug ? 700 : 400, color: winnaarSlug === a2.slug ? accentColors[a2.slug] : 'var(--ink)' }}>
-                        {categorieValueMap(a2.slug, cat)}
+                        {categorieValueMap(a2.slug, cat, taal)}
                         {winnaarSlug === a2.slug && <span style={{ marginLeft: 6, fontSize: 12, color: '#16A34A' }}>✓</span>}
                       </td>
                       <td style={{ padding: '12px 16px', textAlign: 'center' }}>
                         <span style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332' }}>
-                          {getAanbieder(winnaarSlug)?.naam}
+                          {aanbiederVoor(winnaarSlug, taal)?.naam}
                         </span>
                       </td>
                     </tr>
