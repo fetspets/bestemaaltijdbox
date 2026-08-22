@@ -269,12 +269,93 @@ export function Blok({ blok }: { blok: ContentBlok }) {
         </div>
       );
 
+    case 'sectie':
+      return (
+        <div style={{ marginBottom: 36 }}>
+          <h2 style={kopStijl}>{blok.kop}</h2>
+          {blok.paragrafen.map((tekst, i) => (
+            blok.html
+              ? <p key={i} style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563', marginBottom: 12 }} dangerouslySetInnerHTML={{ __html: tekst }} />
+              : <p key={i} style={{ fontSize: 15, lineHeight: 1.8, color: '#4B5563', marginBottom: 12 }}>{tekst}</p>
+          ))}
+        </div>
+      );
+
+    case 'kenmerkTabel': {
+      const kolommen = blok.kolomSlugs.map(s => getAanbieder(s));
+      return (
+        <div style={{ marginBottom: 36 }}>
+          <h2 style={kopStijl}>{blok.kop}</h2>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, background: 'white', border: '1px solid var(--rule)', borderRadius: 12, overflow: 'hidden' }}>
+              <thead>
+                <tr style={{ background: '#1B4332', color: 'white' }}>
+                  <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Kenmerk</th>
+                  {kolommen.map((a, i) => (
+                    <th key={blok.kolomSlugs[i]} style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>
+                      {a?.naam ?? blok.kolomSlugs[i]}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody>
+                {blok.rijen.map(({ kenmerk, waarden }, i) => (
+                  <tr key={kenmerk} style={{ borderBottom: '1px solid var(--rule)', background: i % 2 === 0 ? 'white' : '#FAFAFA' }}>
+                    <td style={{ padding: '12px 16px', fontWeight: 600 }}>{kenmerk}</td>
+                    {waarden.map((w, k) => (
+                      <td key={k} style={{ padding: '12px 16px', textAlign: 'center' }}>{w}</td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {blok.voetnoot && <p style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>{blok.voetnoot}</p>}
+          </div>
+        </div>
+      );
+    }
+
+    case 'keuzelijst':
+      return (
+        <div style={{ marginBottom: 36 }}>
+          <h2 style={kopStijl}>{blok.kop}</h2>
+          <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: 8 }}>
+            {blok.items.map(item => (
+              <li key={item} style={{ display: 'flex', gap: 10, fontSize: 14, lineHeight: 1.6, color: '#4B5563', background: 'white', border: '1px solid var(--rule)', borderRadius: 8, padding: '12px 16px' }}>
+                <span aria-hidden="true">✓</span>
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      );
+
+    case 'kortingKaarten':
+      return (
+        <div className="two-col-grid" style={{ gap: 12, marginBottom: 36 }}>
+          {blok.items.map(item => {
+            const a = getAanbieder(item.slug);
+            if (!a) return null;
+            const href = item.campagne ? `/ga/${item.slug}?c=${item.campagne}` : `/ga/${item.slug}`;
+            return (
+              <div key={item.slug} style={{ background: 'white', border: '1.5px solid var(--rule)', borderRadius: 14, padding: 20 }}>
+                <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 800, marginBottom: 8 }}>{item.kop}</div>
+                <p style={{ fontSize: 13, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{item.tekst}</p>
+                <Link href={href} rel="noopener sponsored nofollow" style={{ display: 'block', background: a.merkKleur, color: 'white', textAlign: 'center', padding: '10px 16px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>
+                  {item.knoptekst}
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+      );
+
     case 'slotCta':
       return (
         <div style={{ background: '#1B4332', borderRadius: 16, padding: 28, textAlign: 'center', color: 'white', marginBottom: 36 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900, marginBottom: 8 }}>{blok.kop}</div>
           <p style={{ fontSize: 14, lineHeight: 1.7, opacity: 0.85, maxWidth: 480, margin: '0 auto 20px' }}>{blok.tekst}</p>
-          <Link href={`/ga/${blok.slug}`} style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
+          <Link href={blok.campagne ? `/ga/${blok.slug}?c=${blok.campagne}` : `/ga/${blok.slug}`} rel="noopener sponsored nofollow" style={{ display: 'inline-block', background: 'white', color: '#1B4332', padding: '13px 28px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none' }}>
             {blok.knoptekst}
           </Link>
           <div style={{ fontSize: 12, opacity: 0.6, marginTop: 10 }}>{blok.subtekst}</div>

@@ -57,4 +57,24 @@ export type ContentBlok =
       rijMarkering?: Record<string, 'positief' | 'negatief'>;
     }
   | { type: 'scenarios'; kop: string; items: Array<{ scenario: string; aanbeveling: string; slug: string; uitleg: string; achtergrond: string; rand: string }> }
-  | { type: 'slotCta'; kop: string; tekst: string; slug: string; knoptekst: string; subtekst: string };
+  /** Kop met een of meer alinea's; `html` staat inline <strong> en links toe. */
+  | { type: 'sectie'; kop: string; paragrafen: string[]; html?: boolean }
+  /**
+   * Kenmerken als rijen, aanbieders als kolommen — de omgekeerde opzet van
+   * `tabel`, voor een een-op-een-vergelijking.
+   */
+  | {
+      type: 'kenmerkTabel';
+      kop: string;
+      kolomSlugs: string[];
+      rijen: Array<{ kenmerk: string; waarden: string[] }>;
+      voetnoot?: string;
+    }
+  /** "Kies X als…" — een lijst met redenen om voor één aanbieder te kiezen. */
+  | { type: 'keuzelijst'; kop: string; slug: string; items: string[] }
+  /** Kortingskaarten naast elkaar, één per aanbieder. */
+  | {
+      type: 'kortingKaarten';
+      items: Array<{ slug: string; kop: string; tekst: string; knoptekst: string; campagne?: string }>;
+    }
+  | { type: 'slotCta'; kop: string; tekst: string; slug: string; knoptekst: string; subtekst: string; campagne?: string };
