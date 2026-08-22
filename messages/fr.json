@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "vergelijken": "Comparer",
+    "kortingscodes": "Codes promo",
+    "blog": "Blog",
+    "goedkoopste": "La moins chère",
+    "voorKoppels": "Pour les couples",
+    "voorGezinnen": "Pour les familles",
+    "menu": "Menu",
+    "taalwissel": "Nederlands"
+  },
+  "footer": {
+    "aanbieders": "Fournisseurs",
+    "opSituatie": "Par situation",
+    "vergelijkGidsen": "Comparatifs & guides",
+    "blog": "Blog",
+    "info": "Infos",
+    "copyright": "© 2026 BesteMaaltijdbox.be",
+    "disclosure": "Divulgation d'affiliation : nous percevons une petite commission via ces liens, sans surcoût pour vous. Cela n'influence pas nos évaluations."
+  },
+  "cookies": {
+    "tekst": "🍪 Nous utilisons des cookies pour les statistiques (Google Analytics) et le suivi d'affiliation afin d'améliorer le site.",
+    "meerInfo": "Plus d'infos",
+    "alleenFunctioneel": "Fonctionnels uniquement",
+    "accepteren": "Accepter"
+  },
+  "cta": {
+    "bekijkDeal": "Voir l'offre →",
+    "leesReview": "Lire l'avis complet",
+    "meerInfo": "Plus d'infos →",
+    "terugNaarHome": "← Retour à tous les box repas",
+    "terugNaarBlog": "← Retour au blog",
+    "bekijkDetails": "Voir les détails →",
+    "activeerDeal": "Activer l'offre →"
+  },
+  "labels": {
+    "perPortie": "Par portion",
+    "perWeek": "Par semaine (2p, 3×)",
+    "receptenPerWeek": "Recettes/semaine",
+    "bezorging": "Livraison",
+    "gratis": "Gratuite",
+    "vanaf": "à partir de",
+    "score": "Note",
+    "aanbieder": "Fournisseur",
+    "korting": "Réduction",
+    "besteKeuze": "⭐ Meilleur choix",
+    "belgisch": "🇧🇪 Belge",
+    "bio": "🌿 Bio",
+    "gesponsord": "Sponsorisé",
+    "bijgewerkt": "Mis à jour en {datum}",
+    "veelgesteldeVragen": "Questions fréquentes",
+    "andereCategorieen": "Voir les autres catégories",
+    "home": "Accueil"
+  }
+}
