@@ -1,0 +1,55 @@
+{
+  "nav": {
+    "vergelijken": "Vergelijken",
+    "kortingscodes": "Kortingscodes",
+    "blog": "Blog",
+    "goedkoopste": "Goedkoopste",
+    "voorKoppels": "Voor koppels",
+    "voorGezinnen": "Voor gezinnen",
+    "menu": "Menu",
+    "taalwissel": "Français"
+  },
+  "footer": {
+    "aanbieders": "Aanbieders",
+    "opSituatie": "Op situatie",
+    "vergelijkGidsen": "Vergelijk & Gidsen",
+    "blog": "Blog",
+    "info": "Info",
+    "copyright": "© 2026 BesteMaaltijdbox.be",
+    "disclosure": "Affiliate disclosure: we ontvangen een kleine commissie via deze links, zonder meerprijs voor jou. Dit heeft geen invloed op onze beoordeling."
+  },
+  "cookies": {
+    "tekst": "🍪 We gebruiken cookies voor analytics (Google Analytics) en affiliate tracking zodat we de site kunnen verbeteren.",
+    "meerInfo": "Meer info",
+    "alleenFunctioneel": "Alleen functioneel",
+    "accepteren": "Accepteren"
+  },
+  "cta": {
+    "bekijkDeal": "Bekijk deal →",
+    "leesReview": "Lees volledige review",
+    "meerInfo": "Meer info →",
+    "terugNaarHome": "← Terug naar alle maaltijdboxen",
+    "terugNaarBlog": "← Terug naar blog",
+    "bekijkDetails": "Bekijk details →",
+    "activeerDeal": "Activeer deal →"
+  },
+  "labels": {
+    "perPortie": "Per portie",
+    "perWeek": "Per week (2p, 3×)",
+    "receptenPerWeek": "Recepten/week",
+    "bezorging": "Bezorging",
+    "gratis": "Gratis",
+    "vanaf": "vanaf",
+    "score": "Score",
+    "aanbieder": "Aanbieder",
+    "korting": "Korting",
+    "besteKeuze": "⭐ Beste keuze",
+    "belgisch": "🇧🇪 Belgisch",
+    "bio": "🌿 Bio",
+    "gesponsord": "Gesponsord",
+    "bijgewerkt": "Bijgewerkt {datum}",
+    "veelgesteldeVragen": "Veelgestelde vragen",
+    "andereCategorieen": "Bekijk andere categorieën",
+    "home": "Home"
+  }
+}
