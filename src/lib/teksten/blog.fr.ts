@@ -12,6 +12,342 @@ import type { BlogPost } from '../blog';
  * kan wegvallen.
  */
 export const blogFr: Record<string, Partial<BlogPost>> = {
+  'maaltijdbox-maaltijdcheques-belgie': {
+    titel: 'Payer un box repas avec des titres-repas en Belgique : qui les accepte ?',
+    metaTitle: 'Box repas et titres-repas en Belgique (2026) — qui les accepte ?',
+    metaDescription:
+      "Quel box repas accepte les titres-repas Monizze, Pluxee ou Edenred ? Foodbag, HelloFresh et Foodprepper comparés, avec la zone de livraison.",
+    excerpt:
+      "Trois box repas acceptent les titres-repas électroniques Monizze, Pluxee (Sodexo) et Edenred : Foodbag, HelloFresh et Foodprepper. Mais l'un des trois ne livre pas en Wallonie.",
+    faqKop: 'Questions fréquentes sur les titres-repas',
+    content: [
+      {
+        type: 'tabel',
+        kop: 'Quel box repas accepte les titres-repas ?',
+        slugs: ['foodbag', 'hellofresh', 'foodprepper', 'marley-spoon', 'factor', 'ekomenu', 'foodmaker', 'crowd-cooks'],
+        portiesPerWeek: 6,
+        rijMarkering: {
+          foodbag: 'positief',
+          hellofresh: 'positief',
+          foodprepper: 'positief',
+          'marley-spoon': 'negatief',
+          factor: 'negatief',
+          ekomenu: 'negatief',
+          foodmaker: 'negatief',
+          'crowd-cooks': 'negatief',
+        },
+        kolommen: [
+          {
+            kop: 'Titres-repas',
+            soort: 'tekst',
+            waarden: {
+              foodbag: '✅ OUI',
+              hellofresh: '✅ OUI (via une étape)',
+              foodprepper: '✅ OUI',
+              'marley-spoon': '❌ NON',
+              factor: '❌ NON',
+              ekomenu: '❌ NON',
+              foodmaker: '❌ NON',
+              'crowd-cooks': '❌ NON',
+            },
+          },
+          {
+            kop: 'Livre en Wallonie',
+            soort: 'tekst',
+            waarden: {
+              foodbag: 'Oui',
+              hellofresh: 'Oui',
+              foodprepper: 'Non',
+              'marley-spoon': 'Non',
+              factor: 'Oui',
+              ekomenu: 'Non',
+              foodmaker: 'Oui',
+              'crowd-cooks': 'Partiellement',
+            },
+          },
+          {
+            kop: 'Émetteurs',
+            soort: 'tekst',
+            waarden: {
+              foodbag: 'Monizze, Pluxee (Sodexo), Edenred',
+              hellofresh: 'Monizze (via Virtual Visa), Edenred',
+              foodprepper: 'Monizze, Pluxee (Sodexo), Edenred',
+            },
+          },
+          {
+            kop: 'Restriction',
+            soort: 'tekst',
+            waarden: {
+              foodbag: 'Commande ponctuelle uniquement, pas en abonnement',
+              hellofresh: "Il faut d'abord activer la carte Monizze Virtual Visa",
+              foodprepper: 'Commande ponctuelle uniquement, pas en abonnement',
+            },
+          },
+        ],
+        voetnoot:
+          "Émetteurs et restrictions vérifiés auprès des fournisseurs. En cas de doute, contrôlez les moyens de paiement sur leur page de commande.",
+      },
+      {
+        type: 'winnaar',
+        kop: '⭐ Le meilleur choix avec des titres-repas',
+        slug: 'foodbag',
+        prijsRegel: 'Monizze, Pluxee et Edenred — sans détour',
+        dealRegel: "Aucun abonnement nécessaire, et livraison dans tout le pays, Wallonie comprise.",
+        knoptekst: 'Voir Foodbag →',
+        punten: [
+          "Aucun abonnement — idéal pour un paiement ponctuel avec vos chèques",
+          'Accepte Monizze, Pluxee et Edenred',
+          'Ingrédients belges frais, livraison gratuite partout en Belgique',
+        ],
+      },
+      { type: 'h2', text: 'Payer Foodbag avec des titres-repas' },
+      {
+        type: 'p',
+        text: "Foodbag est le choix le plus simple : vous payez avec votre carte Monizze, Pluxee ou Edenred au moment de la commande. Attention, cela ne fonctionne que pour une commande ponctuelle. Si vous enregistrez votre commande en abonnement, les chèques ne peuvent pas être liés. Avantage supplémentaire pour un lecteur francophone : Foodbag livre dans les trois régions.",
+      },
+      { type: 'cta', tekst: 'Commander Foodbag avec des titres-repas', slug: 'foodbag' },
+      { type: 'h2', text: 'Payer HelloFresh avec des titres-repas' },
+      {
+        type: 'p',
+        text: "HelloFresh travaille avec Monizze et Edenred, mais demande une étape supplémentaire : activez la carte Monizze Virtual Visa dans l'application Monizze, puis ajoutez-la comme moyen de paiement dans votre compte HelloFresh. Via Edenred, vous utilisez les données figurant au dos de votre carte. Une fois configuré, votre abonnement HelloFresh est débité chaque semaine sur votre solde. HelloFresh livre également dans tout le pays.",
+      },
+      { type: 'cta', tekst: 'Voir HelloFresh', slug: 'hellofresh' },
+      { type: 'h2', text: 'Payer Foodprepper avec des titres-repas' },
+      {
+        type: 'p',
+        text: "Foodprepper accepte Monizze, Pluxee et Edenred. Comme chez Foodbag, cela vaut uniquement pour une commande ponctuelle, pas pour un abonnement récurrent. Réserve importante : Foodprepper ne livre qu'en Flandre et à Bruxelles. Si vous habitez en Wallonie, cette option ne vous concerne pas, même si vos chèques y sont acceptés.",
+      },
+      { type: 'cta', tekst: 'Commander Foodprepper', slug: 'foodprepper' },
+      {
+        type: 'infokaarten',
+        kop: 'Payer avec des titres-repas en 3 étapes',
+        items: [
+          {
+            icon: '1️⃣',
+            titel: 'Choisissez un fournisseur qui les accepte et qui livre chez vous',
+            tekst:
+              "Foodbag, HelloFresh et Foodprepper sont les seuls box repas belges à accepter les titres-repas électroniques. Des trois, seuls Foodbag et HelloFresh livrent en Wallonie.",
+          },
+          {
+            icon: '2️⃣',
+            titel: 'Optez pour une commande ponctuelle',
+            tekst:
+              "Chez Foodbag et Foodprepper, le paiement par titres-repas ne fonctionne que pour une commande unique. Chez HelloFresh, l'abonnement est possible via la carte Monizze Virtual Visa ou via Edenred.",
+          },
+          {
+            icon: '3️⃣',
+            titel: 'Sélectionnez le moyen de paiement au moment de payer',
+            tekst:
+              "Choisissez votre carte Monizze, Pluxee ou Edenred sur la page de paiement. Chez HelloFresh via Monizze : ajoutez d'abord la carte Virtual Visa dans les paramètres de votre compte.",
+          },
+        ],
+      },
+      {
+        type: 'notitie',
+        kop: '💡 Nouveauté 2026 : plafond relevé',
+        achtergrond: '#FEF3C7',
+        rand: '#FCD34D',
+        regels: [
+          {
+            label: 'Plafond journalier :',
+            tekst:
+              "le montant maximum des titres-repas passe à 10 € par jour (contre 8 €). Cela représente un pouvoir d'achat plus élevé pour votre box hebdomadaire.",
+          },
+          {
+            label: 'Ce que cela change concrètement :',
+            tekst:
+              "une commande Foodbag moyenne pour deux personnes (trois repas) coûte environ 57 € — avec vos titres-repas, une grande partie ne sort donc pas de votre poche.",
+          },
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Prêt à commander ?',
+        tekst:
+          "Foodbag est la façon la plus simple d'utiliser vos titres-repas : aucun abonnement nécessaire, les trois émetteurs sont acceptés, et la livraison couvre tout le pays.",
+        slug: 'foodbag',
+        knoptekst: 'Voir Foodbag →',
+        subtekst: 'Monizze · Pluxee · Edenred · livraison gratuite partout en Belgique',
+      },
+    ],
+    faq: [
+      {
+        q: 'Puis-je payer mon abonnement HelloFresh avec des titres-repas ?',
+        a: "Oui, mais pas directement. Vous devez activer la carte Monizze Virtual Visa dans l'application Monizze et l'ajouter comme moyen de paiement chez HelloFresh. Via Edenred, vous utilisez les données de votre carte Edenred.",
+      },
+      {
+        q: 'Puis-je payer Foodbag avec des titres-repas ?',
+        a: "Oui. Foodbag accepte Monizze, Pluxee (Sodexo) et Edenred. Attention : uniquement pour une commande ponctuelle, pas pour un abonnement.",
+      },
+      {
+        q: 'Quels box repas acceptent les titres-repas ?',
+        a: "En Belgique, Foodbag, HelloFresh et Foodprepper sont les seuls box repas à accepter les titres-repas électroniques.",
+      },
+      {
+        q: 'Lesquels acceptent les titres-repas ET livrent en Wallonie ?',
+        a: "Foodbag et HelloFresh. Foodprepper accepte bien les titres-repas mais ne livre qu'en Flandre et à Bruxelles.",
+      },
+      {
+        q: 'Quels émetteurs sont acceptés ?',
+        a: 'Monizze, Pluxee (anciennement Sodexo) et Edenred (Ticket Restaurant).',
+      },
+      {
+        q: 'Combien puis-je payer par jour avec des titres-repas ?',
+        a: 'Depuis 2026, le plafond est de 10 € par jour et par chèque.',
+      },
+    ],
+  },
+
+  'maaltijdbox-zonder-abonnement-belgie': {
+    titel: 'Box repas sans abonnement en Belgique 2026 : quelles options ?',
+    metaTitle: 'Box repas sans abonnement en Belgique 2026 — options comparées',
+    metaDescription:
+      "Un box repas sans engagement ? Voyez quels fournisseurs belges livrent sans contrat fixe — et lesquels desservent la Wallonie.",
+    excerpt:
+      "Trois fournisseurs belges livrent sans abonnement obligatoire. Nous les comparons sur le prix, la livraison et la réduction de bienvenue — en commençant par la question de savoir qui livre chez vous.",
+    faqKop: 'Questions fréquentes sur les box sans abonnement',
+    content: [
+      {
+        type: 'p',
+        html: true,
+        text: "Vous voulez essayer un box repas sans vous engager ? Trois fournisseurs belges livrent sans abonnement obligatoire : <a href=\"/fr/fournisseur/foodprepper\" style=\"color:#1B4332;font-weight:600\">Foodprepper</a> et <a href=\"/fr/fournisseur/foodmaker\" style=\"color:#1B4332;font-weight:600\">Foodmaker</a> ne demandent réellement aucun abonnement, et <a href=\"/fr/fournisseur/foodbag\" style=\"color:#1B4332;font-weight:600\">Foodbag</a> permet aussi la commande ponctuelle.",
+      },
+      {
+        type: 'p',
+        html: true,
+        text: "Une précision qui change tout selon l'endroit où vous habitez : <strong>Foodprepper ne livre qu'en Flandre et à Bruxelles</strong>. En Wallonie, il ne reste donc que Foodbag et Foodmaker. <em>Note : Carrefour Simply You proposait également une formule sans abonnement, mais le service a été arrêté en 2026.</em>",
+      },
+      {
+        type: 'winnaar',
+        kop: '🏆 Le meilleur box sans abonnement qui livre partout',
+        slug: 'foodbag',
+        prijsRegel: 'Commande ponctuelle · livraison gratuite dans tout le pays',
+        dealRegel: '3 × 20 € de réduction sur vos trois premières commandes, appliqué automatiquement via notre lien.',
+        knoptekst: 'Voir Foodbag →',
+        alternatief: {
+          inleiding: 'Vous cherchez le prix le plus bas et habitez en Flandre ou à Bruxelles ? →',
+          slug: 'foodprepper',
+          label: 'Foodprepper : à partir de 4,75 €/portion',
+        },
+      },
+      {
+        type: 'tabel',
+        kop: 'Comparatif : les box sans abonnement',
+        slugs: ['foodbag', 'foodmaker', 'foodprepper'],
+        portiesPerWeek: 6,
+        kolommen: [
+          {
+            kop: 'Livre en Wallonie',
+            soort: 'tekst',
+            waarden: { foodbag: 'Oui', foodmaker: 'Oui', foodprepper: 'Non' },
+          },
+          {
+            kop: 'Abonnement',
+            soort: 'tekst',
+            waarden: {
+              foodbag: 'Commande ponctuelle possible',
+              foodmaker: 'Aucun abonnement requis',
+              foodprepper: 'Aucun abonnement requis',
+            },
+          },
+          { kop: '€/portion', soort: 'portie' },
+          { kop: 'Livraison', soort: 'bezorging' },
+          { kop: 'Réduction', soort: 'korting' },
+        ],
+        voetnoot:
+          "Prix indicatifs — vérifiez les tarifs actuels sur le site du fournisseur. Les réductions valent pour les nouveaux clients et sont appliquées automatiquement via notre lien.",
+      },
+      {
+        type: 'topAanbieders',
+        kop: 'Les trois options en détail',
+        items: [
+          {
+            slug: 'foodbag',
+            badge: '🏆 Meilleur choix sans abonnement',
+            badgeAchtergrond: '#DBEAFE',
+            badgeTekst: '#1E40AF',
+            tagline: 'Ingrédients belges · livre dans tout le pays',
+            waarom:
+              "Foodbag est le numéro deux du marché belge et appartient au groupe Colruyt. Ingrédients 100 % belges, cinq styles de cuisine dont la ligne Sana de Sandra Bekkari, et livraison gratuite dans les trois régions — Wallonie comprise. Aucun abonnement n'est nécessaire : vous commandez quand cela vous arrange. Via notre lien, vous recevez 3 × 20 € sur vos trois premières commandes, soit 60 € au total, sans code à saisir.",
+            deal: '3 × 20 € de réduction sur les 3 premières commandes',
+          },
+          {
+            slug: 'foodmaker',
+            badge: '👨‍🍳 Qualité artisanale belge',
+            badgeAchtergrond: '#FEF3C7',
+            badgeTekst: '#92400E',
+            tagline: 'Recettes Jeroen Meus · réchauffer, pas cuisiner',
+            waarom:
+              "Foodmaker est un service anversois de plats préparés, avec une collaboration signée Jeroen Meus. Vous réchauffez en quelques minutes, sans cuisiner. Aucun abonnement obligatoire, une trentaine de plats par semaine, une gamme entièrement végane et une livraison gratuite dans toute la Belgique. Commande minimum : 39,90 €.",
+            deal: "Aucun code permanent — consultez leur offre de bienvenue actuelle",
+          },
+          {
+            slug: 'foodprepper',
+            badge: '💰 Le moins cher sans abonnement',
+            badgeAchtergrond: '#E8F5EE',
+            badgeTekst: '#1B4332',
+            tagline: 'Prêt en 15 minutes · Flandre et Bruxelles uniquement',
+            waarom:
+              "Foodprepper est le box le plus rapide de Belgique : tout est sur la table en quinze minutes grâce aux légumes précuits, à la viande marinée et aux sauces prêtes. Aucun abonnement, aucun préavis — vous commandez ponctuellement ou chaque semaine. Presque tous les ingrédients viennent de fournisseurs belges. Réserve : la livraison s'arrête à la Flandre et à Bruxelles.",
+            deal: '3 × 15 € de réduction sur les 3 premières commandes',
+            waarschuwing: '⚠️ Pas de livraison en Wallonie',
+          },
+        ],
+      },
+      {
+        type: 'scenarios',
+        kop: 'Quelle option pour quelle situation ?',
+        items: [
+          {
+            scenario: 'Vous habitez en Wallonie',
+            aanbeveling: 'Foodbag',
+            slug: 'foodbag',
+            uitleg:
+              "Le seul box à cuisiner sans abonnement qui livre au sud du pays, avec des ingrédients belges et la livraison gratuite. 60 € de réduction répartis sur vos trois premières commandes. Foodmaker est l'alternative si vous préférez ne pas cuisiner du tout.",
+            achtergrond: '#DBEAFE',
+            rand: '#93C5FD',
+          },
+          {
+            scenario: 'Vous voulez essayer une seule fois, sans risque',
+            aanbeveling: 'Foodprepper',
+            slug: 'foodprepper',
+            uitleg:
+              "Aucun abonnement, aucun préavis, jusqu'à 45 € de réduction de bienvenue via notre lien. Idéal pour tester — à condition d'habiter en Flandre ou à Bruxelles.",
+            achtergrond: '#F0FDF4',
+            rand: '#BBF7D0',
+          },
+          {
+            scenario: 'Vous ne voulez pas cuisiner du tout',
+            aanbeveling: 'Foodmaker',
+            slug: 'foodmaker',
+            uitleg:
+              "Recettes Jeroen Meus préparées à Anvers, prêtes en quelques minutes. Aucun abonnement, livraison gratuite dans tout le pays. Commande minimum de 39,90 €.",
+            achtergrond: '#FFF7ED',
+            rand: '#FED7AA',
+          },
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Quels box repas sans abonnement livrent en Wallonie ?',
+        a: "Foodbag et Foodmaker livrent dans tout le pays sans abonnement obligatoire. Foodprepper fonctionne aussi sans abonnement mais ne livre qu'en Flandre et à Bruxelles.",
+      },
+      {
+        q: 'Quel box repas n’a pas d’abonnement ?',
+        a: "Foodprepper et Foodmaker fonctionnent entièrement sans abonnement obligatoire : vous commandez quand cela vous arrange, sans engagement hebdomadaire ni préavis. Foodbag permet également la commande ponctuelle.",
+      },
+      {
+        q: 'Puis-je commander un box repas une seule fois ?',
+        a: "Oui. Chez Foodprepper et Foodmaker, la commande unique est le fonctionnement standard. Chez Foodbag aussi, vous pouvez commander sans contrat fixe. Vous testez ainsi sans engagement de long terme.",
+      },
+      {
+        q: 'Quel est le box sans abonnement le moins cher ?',
+        a: "Foodprepper, à partir de 4,75 € la portion avec livraison gratuite — mais uniquement en Flandre et à Bruxelles. En Wallonie, Foodbag est l'option la plus accessible à 9,50 € la portion, avec 60 € de réduction via notre lien.",
+      },
+    ],
+  },
+
   'maaltijdbox-of-zelf-koken-belgie': {
     titel: 'Box repas ou cuisiner soi-même : lequel coûte vraiment le moins cher ?',
     metaTitle: 'Box repas ou courses en Belgique 2026 — le calcul complet',
