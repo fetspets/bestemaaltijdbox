@@ -154,6 +154,113 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
       "Pour un lecteur bruxellois, le choix se pose vraiment. HelloFresh est le leader mondial : plus de 40 recettes par semaine et des fiches en français. Foodprepper est belge, plus jeune, et construit autour d'une promesse : à table en quinze minutes, parce que les légumes sont précuits et la viande marinée.",
       "Nous comparons ci-dessous le temps, le menu, le prix, l'origine et la livraison.",
     ],
+    blokken: [
+      {
+        type: 'kenmerkTabel',
+        kop: 'En un coup d’œil',
+        kolomSlugs: ['foodprepper', 'hellofresh'],
+        rijen: [
+          { kenmerk: 'Livre en Wallonie', waarden: ['Non', 'Oui'] },
+          { kenmerk: 'Zone de livraison', waarden: ['Flandre et Bruxelles', 'Toute la Belgique'] },
+          { kenmerk: 'Temps de préparation', waarden: ['~15 min', '~30–45 min'] },
+          { kenmerk: 'Types de repas', waarden: ['Petit-déjeuner, midi, soir, en-cas', 'Surtout le soir'] },
+          { kenmerk: 'Abonnement', waarden: ['Flexible, non obligatoire', 'Abonnement, mise en pause possible'] },
+          { kenmerk: 'Origine', waarden: ['100 % belge', 'International'] },
+          { kenmerk: 'Filière courte', waarden: ['Oui', 'Non'] },
+        ],
+        voetnoot:
+          'Les prix peuvent changer. Vérifiez toujours les tarifs actuels sur foodprepper.be et hellofresh.be.',
+      },
+      {
+        type: 'sectie',
+        kop: 'La carte de livraison décide pour beaucoup de lecteurs',
+        html: true,
+        paragrafen: [
+          "<strong>HelloFresh</strong> livre en Flandre, à Bruxelles et en Wallonie. C'est l'un des rares fournisseurs à couvrir les trois régions, et cela explique en grande partie sa position dans notre classement francophone.",
+          "<strong>Foodprepper</strong> s'arrête à la Flandre et à la Région de Bruxelles-Capitale. Le produit est excellent pour qui manque de temps, mais si vous habitez au sud du sillon Sambre-et-Meuse, il n'est pas disponible — inutile de comparer plus loin.",
+        ],
+      },
+      {
+        type: 'sectie',
+        kop: 'Temps de préparation et confort',
+        html: true,
+        paragrafen: [
+          "<strong>Foodprepper</strong> l'emporte nettement ici. Le gros du travail est fait : légumes précuits et découpés, viande ou poisson mariné, sauces prêtes. Vous cuisez, réchauffez ou mélangez — quinze minutes et c'est à table. Pas de planche à découper, presque pas de vaisselle.",
+          "<strong>HelloFresh</strong> demande 30 à 45 minutes : vous recevez des ingrédients bruts et une recette pas à pas. Les instructions sont claires, adaptées aux débutants, et existent en français. Si cuisiner vous détend, c'est un avantage ; après une longue journée, quarante minutes peuvent peser.",
+        ],
+      },
+      {
+        type: 'sectie',
+        kop: 'Menu et choix',
+        html: true,
+        paragrafen: [
+          "<strong>HelloFresh</strong> propose plus de 40 recettes par semaine, réparties en catégories : Quick & Easy, végétarien, familial, cuisines du monde. Pour rester longtemps chez le même fournisseur sans lassitude, c'est un vrai atout.",
+          "<strong>Foodprepper</strong> a une offre plus restreinte mais plus large en catégorie : au-delà du repas du soir, il couvre le petit-déjeuner, le midi et les en-cas via son marché frais. Un seul fournisseur peut donc couvrir toute la journée.",
+        ],
+      },
+      {
+        type: 'sectie',
+        kop: 'Belge contre international',
+        html: true,
+        paragrafen: [
+          "<strong>Foodprepper</strong> travaille presque exclusivement avec des fournisseurs belges. La filière est courte, ce qui se remarque à la fraîcheur et correspond à une consommation locale assumée. L'ancrage belge est structurel : la société fait partie de Smartmat NV, dans le groupe Colruyt.",
+          "<strong>HelloFresh</strong> est un acteur international avec une capacité d'achat mondiale. Cette échelle explique les prix plus bas, mais aussi une origine moins locale. En contrepartie, HelloFresh livre dans tout le pays, Wallonie comprise — un avantage pratique décisif hors de Flandre.",
+        ],
+      },
+      {
+        type: 'kortingKaarten',
+        items: [
+          {
+            slug: 'foodprepper',
+            kop: '🏷️ Réduction de bienvenue Foodprepper',
+            tekst:
+              "3 × 15 € sur vos trois premières commandes (jusqu'à 45 €). Appliqué automatiquement via notre lien. Réservé aux nouveaux clients ; vérifiez votre code postal sur foodprepper.be.",
+            knoptekst: '15 € de réduction sur les 3 premières commandes →',
+          },
+          {
+            slug: 'hellofresh',
+            kop: '🏷️ Réduction de bienvenue HelloFresh',
+            tekst:
+              "Jusqu'à 60 € répartis sur vos trois premières box. Appliqué automatiquement via notre lien, aucun code à saisir. Réservé aux nouveaux clients ; valable dans toute la Belgique.",
+            knoptekst: 'Voir HelloFresh →',
+          },
+        ],
+      },
+      {
+        type: 'keuzelijst',
+        kop: 'Choisissez Foodprepper si…',
+        slug: 'foodprepper',
+        items: [
+          'Vous habitez en Flandre ou à Bruxelles — pas de livraison en Wallonie',
+          'Vous voulez cuisiner quinze minutes maximum en semaine',
+          'Vous voulez consommer belge et local',
+          'Vous voulez aussi le petit-déjeuner et le midi chez le même fournisseur',
+          'Vous voulez une formule souple, sans abonnement obligatoire',
+        ],
+      },
+      {
+        type: 'keuzelijst',
+        kop: 'Choisissez HelloFresh si…',
+        slug: 'hellofresh',
+        items: [
+          'Vous habitez en Wallonie — HelloFresh y livre, Foodprepper non',
+          'Vous aimez cuisiner et prenez volontiers 30 à 45 minutes',
+          'Vous voulez un grand choix : plus de 40 recettes par semaine',
+          'Vous voulez des fiches recettes et un service client en français',
+          'Vous cherchez le prix par portion fixe le plus bas',
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Commencer sans abonnement ?',
+        tekst:
+          "Foodprepper n'impose aucun abonnement et met un repas frais sur la table en quinze minutes. Les nouveaux clients reçoivent 3 × 15 € via notre lien — à condition d'être dans la zone de livraison.",
+        slug: 'foodprepper',
+        knoptekst: 'Voir Foodprepper →',
+        subtekst: 'Sans abonnement · livraison en Flandre et à Bruxelles',
+        campagne: 'cta',
+      },
+    ],
     verdictKop: 'HelloFresh en Wallonie, Foodprepper à Bruxelles si le temps presse',
     verdictTekst:
       "Si vous habitez en Wallonie, HelloFresh est le seul des deux qui vous livre — inutile d'aller plus loin. À Bruxelles et en Flandre, Foodprepper l'emporte sur la rapidité et l'ancrage belge : quinze minutes contre trente à quarante-cinq, et des fournisseurs locaux. HelloFresh garde l'avantage sur le choix (40+ recettes), la couverture et un prix par portion stable. Si vous aimez cuisiner, prenez HelloFresh ; si vous voulez surtout gagner du temps et que vous êtes dans la zone de livraison, prenez Foodprepper.",
