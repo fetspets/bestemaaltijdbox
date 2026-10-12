@@ -449,7 +449,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
     faq: [
       {
         q: 'Quel est le box le moins cher qui livre en Wallonie ?',
-        a: "HelloFresh, surtout avec la réduction de bienvenue sur les trois premières box, et avec une livraison gratuite. Factor a un prix par portion plus bas mais facture 5,99 € de livraison, ce qui rapproche les deux.",
+        a: "HelloFresh, surtout avec la réduction de bienvenue sur les trois premières box et la première livraison offerte. Factor a un prix par portion plus bas mais facture 5,99 € de livraison, ce qui rapproche les deux.",
       },
       {
         q: 'Faut-il compter les frais de livraison ?',
@@ -472,7 +472,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
     intro:
       "Cuisiner pour soi, c'est souvent trop d'ingrédients pour trop peu de repas. Quels fournisseurs proposent réellement des portions individuelles, et lesquels livrent chez vous ?",
     uitleg:
-      "Peu de box sont conçus pour une seule personne. HelloFresh est le seul grand fournisseur à proposer une formule pour une personne, avec livraison gratuite dans tout le pays. Les plats prêts de Factor et Foodmaker conviennent bien aussi : vous commandez le nombre exact de repas, sans reste. Foodprepper permet également de commander à l'unité, mais uniquement en Flandre et à Bruxelles.",
+      "Peu de box sont conçus pour une seule personne. HelloFresh est le seul grand fournisseur à proposer une formule pour une personne, avec livraison dans tout le pays. Les plats prêts de Factor et Foodmaker conviennent bien aussi : vous commandez le nombre exact de repas, sans reste. Foodprepper permet également de commander à l'unité, mais uniquement en Flandre et à Bruxelles.",
     seoTitel: 'Box repas pour 1 personne en Belgique 2026 — sans gaspillage',
     seoDesc:
       "Quel box repas pour une personne seule ? Portions individuelles, prix et livraison comparés pour toute la Belgique.",
@@ -480,7 +480,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
     faq: [
       {
         q: 'Quel box propose des portions pour une personne ?',
-        a: "HelloFresh est le seul grand box à cuisiner qui propose une formule pour une personne, avec livraison gratuite partout. Factor et Foodmaker livrent des plats individuels prêts à réchauffer, ce qui revient au même sans cuisiner.",
+        a: "HelloFresh est le seul grand box à cuisiner qui propose une formule pour une personne, avec livraison partout en Belgique. Factor et Foodmaker livrent des plats individuels prêts à réchauffer, ce qui revient au même sans cuisiner.",
       },
       {
         q: 'Est-ce rentable pour une seule personne ?',

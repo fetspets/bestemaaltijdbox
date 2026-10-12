@@ -114,7 +114,7 @@ export default function HelloFreshKortingscode() {
         </h2>
         <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 12 }}>
           HelloFresh is de grootste maaltijdbox ter wereld en ook in België de populairste keuze.
-          Met meer dan 40 recepten per week, gratis bezorging en een score van 8,4/10 op deze site
+          Met meer dan 40 recepten per week, levering in heel België en een score van 8,4/10 op deze site
           biedt het de beste balans tussen prijs, variatie en gemak. Bereidingstijd gemiddeld 25–35 minuten.
         </p>
         <Link href="/aanbieder/hellofresh" style={{ fontSize: 14, fontWeight: 700, color: '#1B4332', textDecoration: 'underline' }}>

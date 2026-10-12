@@ -39,7 +39,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     },
     tagline: 'Leader du marché — livre partout en Belgique, Wallonie comprise',
     beschrijving:
-      "HelloFresh est le box repas le plus utilisé en Belgique, et l'un des rares à livrer dans les trois régions. Avec plus de 40 recettes par semaine, la livraison gratuite et un abonnement que vous pouvez mettre en pause chaque semaine, c'est le point de départ le plus sûr si vous habitez en Wallonie.",
+      "HelloFresh est le box repas le plus utilisé en Belgique, et l'un des rares à livrer dans les trois régions. Avec plus de 40 recettes par semaine, la première livraison offerte et un abonnement que vous pouvez mettre en pause chaque semaine, c'est le point de départ le plus sûr si vous habitez en Wallonie.",
     opzegTermijn: "5 jours avant la livraison",
     uitgebreideReview: {
       intro:
@@ -55,11 +55,11 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       eindoordeel:
         "HelloFresh mérite sa première place, et davantage encore pour un lecteur wallon : c'est la combinaison la plus complète de couverture nationale, de choix et de prix. La réduction de bienvenue rend le test peu risqué.",
     },
-    kenmerken: ['✓ Livraison gratuite', '✓ Résiliable chaque semaine', '✓ 40+ recettes/semaine', '✓ Livre en Wallonie'],
+    kenmerken: ['✓ 1re livraison offerte', '✓ Résiliable chaque semaine', '✓ 40+ recettes/semaine', '✓ Livre en Wallonie'],
     pros: [
       "Livre dans toute la Belgique, Wallonie comprise",
       'Le plus grand choix de recettes (40+ par semaine)',
-      'Livraison gratuite',
+      'Première livraison offerte',
       'Pause et résiliation flexibles',
       'Fiches recettes et service client en français',
     ],
@@ -67,6 +67,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       'Ingrédients non belges',
       'Plus de plastique que chez les acteurs locaux',
       'Prix standard élevé après la période de bienvenue',
+      'Livraison de 5,99 € par box après la première',
     ],
     besteVoor: 'le meilleur choix global, surtout en Wallonie',
     ctaSubtekst: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",

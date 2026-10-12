@@ -69,7 +69,7 @@ const resultaten: Record<string, {
     bullets: [
       'Tot 40 recepten per week — nooit hetzelfde',
       'Geschikt voor 1 t/m 6 personen',
-      'Gratis bezorging, flexibel opzegbaar',
+      'Eerste levering gratis, flexibel opzegbaar',
     ],
     runnerUp: { slug: 'foodbag', naam: 'Foodbag', vergelijkSlug: 'hellofresh-vs-foodbag' },
   },
