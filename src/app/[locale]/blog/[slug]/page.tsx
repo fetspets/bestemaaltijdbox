@@ -115,6 +115,45 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
     return l.label;
   };
 
+  // Op /blog/<aanbieder>-opzeggen staat het conversieblok onder de uitleg en
+  // laten we de aanbieder die je net opzegt weg uit de alternatieven.
+  const opzegAanbieder = slug.endsWith('-opzeggen') ? slug.slice(0, -'-opzeggen'.length) : null;
+  const opzegBlok = (
+
+        <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: '24px 20px', marginBottom: 40 }}>
+          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(18px, 4vw, 24px)', fontWeight: 900, color: '#1C1C1C', marginBottom: 12 }}>
+            {u.opzegKop}
+          </div>
+          <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 20, maxWidth: 600 }}>
+            {u.opzegIntro}
+          </p>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+            {OPZEG_DEALS[fr ? 'fr' : 'nl'].filter(a => a.href !== `/ga/${opzegAanbieder}`).map(a => (
+              <div key={a.naam} style={{ background: 'white', borderRadius: 12, border: '1.5px solid #E5E7EB', padding: '16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
+                <div style={{ width: 40, height: 40, borderRadius: 10, background: a.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0, overflow: 'hidden' }}>
+                  {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} /> : a.logo}
+                </div>
+                <div style={{ flex: 1, minWidth: 180 }}>
+                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 2 }}>{a.naam}</div>
+                  <div style={{ fontSize: 14, fontWeight: 600, color: a.kleur, marginBottom: 2 }}>{a.deal}</div>
+                  <div style={{ fontSize: 12, color: '#6B7280' }}>{a.detail}</div>
+                </div>
+                <Link href={a.href} style={{ display: 'inline-block', background: a.kleur, color: 'white', padding: '10px 18px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none', flexShrink: 0, whiteSpace: 'nowrap' }}>
+                  {a.cta} →
+                </Link>
+              </div>
+            ))}
+          </div>
+
+          {!opzegAanbieder && (
+            <p style={{ fontSize: 12, color: '#9CA3AF', marginTop: 16, marginBottom: 0 }}>
+              {u.opzegNoot}
+            </p>
+          )}
+        </div>
+  );
+
   return (
     <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
 
@@ -150,39 +189,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         </div>
       )}
 
-      {/* Conversieblok — alleen op opzeg-pagina */}
-      {slug === 'hoe-maaltijdbox-opzeggen-belgie' && (
-        <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: '24px 20px', marginBottom: 40 }}>
-          <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(18px, 4vw, 24px)', fontWeight: 900, color: '#1C1C1C', marginBottom: 12 }}>
-            {u.opzegKop}
-          </div>
-          <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 20, maxWidth: 600 }}>
-            {u.opzegIntro}
-          </p>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {OPZEG_DEALS[fr ? 'fr' : 'nl'].map(a => (
-              <div key={a.naam} style={{ background: 'white', borderRadius: 12, border: '1.5px solid #E5E7EB', padding: '16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
-                <div style={{ width: 40, height: 40, borderRadius: 10, background: a.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0, overflow: 'hidden' }}>
-                  {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} /> : a.logo}
-                </div>
-                <div style={{ flex: 1, minWidth: 180 }}>
-                  <div style={{ fontWeight: 700, fontSize: 15, marginBottom: 2 }}>{a.naam}</div>
-                  <div style={{ fontSize: 14, fontWeight: 600, color: a.kleur, marginBottom: 2 }}>{a.deal}</div>
-                  <div style={{ fontSize: 12, color: '#6B7280' }}>{a.detail}</div>
-                </div>
-                <Link href={a.href} style={{ display: 'inline-block', background: a.kleur, color: 'white', padding: '10px 18px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none', flexShrink: 0, whiteSpace: 'nowrap' }}>
-                  {a.cta} →
-                </Link>
-              </div>
-            ))}
-          </div>
-
-          <p style={{ fontSize: 12, color: '#9CA3AF', marginTop: 16, marginBottom: 0 }}>
-            {u.opzegNoot}
-          </p>
-        </div>
-      )}
+      {/* Conversieblok — bovenaan op de algemene opzeg-pagina */}
+      {slug === 'hoe-maaltijdbox-opzeggen-belgie' && opzegBlok}
 
       {/* Content */}
       <article style={{ fontSize: 16, lineHeight: 1.75, color: 'var(--ink)' }}>
@@ -286,6 +294,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           return null;
         })}
       </article>
+
+      {opzegAanbieder && <div style={{ marginTop: 40 }}>{opzegBlok}</div>}
 
       {post.faq && post.faq.length > 0 && (
         <div style={{ marginTop: 40, marginBottom: 40 }}>
