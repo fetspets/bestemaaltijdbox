@@ -258,7 +258,7 @@ export const vergelijkingen: Vergelijking[] = [
     verdictSlug: 'foodprepper',
     verdictTekst: 'Foodprepper is de sterkste keuze voor drukke gezinnen en tweeverdieners die vers willen eten in 15 minuten, bewust Belgisch consumeren en ook ontbijt of lunch willen regelen. HelloFresh wint op receptenvariatie (40+), bereik (heel België) en een vaste lage prijs per portie. Wie van koken houdt of in Wallonië woont, kiest HelloFresh. Wie snelheid en lokale herkomst boven menugrootte stelt, kiest Foodprepper.',
     faq: [
-      { q: 'Is Foodprepper goedkoper dan HelloFresh?', a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,99 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, automatisch toegepast via onze link, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.' },
+      { q: 'Is Foodprepper goedkoper dan HelloFresh?', a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,92 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, automatisch toegepast via onze link, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.' },
       { q: 'Levert HelloFresh ook in Vlaanderen?', a: 'Ja, HelloFresh levert in heel België inclusief Vlaanderen, Brussel en Wallonië. Foodprepper levert enkel in Vlaanderen en het Brussels Hoofdstedelijk Gewest. Voor wie in Wallonië woont, is HelloFresh de enige keuze van de twee.' },
       { q: 'Welke is het beste voor drukke gezinnen?', a: 'Foodprepper heeft op drukke avonden een praktisch voordeel: klaar in 15 minuten dankzij voorbereide ingrediënten. HelloFresh vraagt 25–40 minuten. Voor gezinnen met weinig marge in de avondroutine is Foodprepper sneller. HelloFresh biedt meer receptkeuze en een groter weekmenu, wat handig is als je lang op één aanbieder wil blijven zonder eentonigheid.' },
       { q: 'Kan ik beide maaltijdboxen combineren?', a: 'Ja, dat kan. Foodprepper heeft geen verplicht abonnement en je kan eenmalig of wekelijks bestellen. HelloFresh werkt met een flexibel abonnement dat je wekelijks kan pauzeren. Sommige gezinnen combineren een snelle Foodprepper-bestelling op drukke weken met HelloFresh op rustigere weken.' },
@@ -267,7 +267,7 @@ export const vergelijkingen: Vergelijking[] = [
   {
     slug: 'hellofresh-vs-foodbag',
     seoTitle: 'HelloFresh vs Foodbag 2026: welke wint? Eerlijke vergelijking',
-    seoDescription: 'HelloFresh of Foodbag — welke is goedkoper en beter? We vergeleken prijs, smaak en flexibiliteit. HelloFresh v.a. €7,99 · Foodbag v.a. €9,50.',
+    seoDescription: 'HelloFresh of Foodbag — welke is goedkoper en beter? We vergeleken prijs, smaak en flexibiliteit. HelloFresh v.a. €7,92 · Foodbag v.a. €9,50.',
     aanbieder1Slug: 'hellofresh',
     aanbieder2Slug: 'foodbag',
     winnaarPerCategorie: {

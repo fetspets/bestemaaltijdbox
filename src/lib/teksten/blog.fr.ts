@@ -374,7 +374,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       {
         type: 'ul',
         items: [
-          'HelloFresh : à partir de 7,99 € la portion, livraison 5,99 € (première box offerte), livre dans tout le pays',
+          'HelloFresh : à partir de 7,92 € la portion, livraison 5,99 € (première box offerte), livre dans tout le pays',
           'Foodbag : à partir de 9,50 €, ingrédients belges en filière courte, livre aussi en Wallonie',
           'Ekomenu : à partir de 6,18 €, entièrement bio — mais pas de livraison en Wallonie',
           'Foodprepper : à partir de 4,75 €, le prix le plus bas — Flandre et Bruxelles uniquement',

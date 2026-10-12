@@ -25,7 +25,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
       kop: '🏆 Le moins cher qui livre partout en Belgique',
       slug: 'hellofresh',
       naam: 'HelloFresh',
-      prijsRegel: '53,93 €/semaine · livraison 5,99 € incluse · livre en Wallonie',
+      prijsRegel: '53,49 €/semaine · livraison 5,99 € incluse · livre en Wallonie',
       dealRegel: "Jusqu'à 70 € de réduction sur vos 3 premières box",
       alternatiefInleiding: 'Vous êtes en Flandre ou à Bruxelles et cherchez le prix par portion le plus bas ? →',
       alternatiefSlug: 'foodprepper',
@@ -58,7 +58,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           badge: '⭐ Meilleur choix pour la plupart des gens',
           accent: '#1B4332',
           metDeal: "jusqu'à 70 € de réduction sur vos 3 premières box",
-          naDeal: '53,93 €/semaine (tarif standard, livraison 5,99 € comprise)',
+          naDeal: '53,49 €/semaine (tarif standard, livraison 5,99 € comprise)',
           uitleg:
             "HelloFresh combine un grand choix (40+ recettes par semaine), une première livraison offerte, une offre de bienvenue solide et — ce qui compte ici — une livraison dans les trois régions. Répartition : 45 € sur la box 1, 15 € sur la box 2, 10 € sur la box 3. Aucun code à saisir. Résiliable chaque semaine, de 1 à 6 personnes.",
           dealOpmerking: "Jusqu'à 70 € sur vos 3 premières box · nouveaux clients · automatique via le lien · livre en Wallonie.",
@@ -118,7 +118,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
     faq: [
       {
         q: 'Quel est le box repas le moins cher qui livre en Wallonie ?',
-        a: "HelloFresh, à 53,93 € par semaine pour deux personnes et trois repas, livraison de 5,99 € comprise, et avec une réduction de bienvenue allant jusqu'à 70 €. Factor affiche un prix par portion plus bas (4,99 €) mais facture 5,99 € de livraison, ce qui donne 35,93 € par semaine — moins cher, mais il s'agit de plats prêts et non d'un box à cuisiner.",
+        a: "HelloFresh, à 53,49 € par semaine pour deux personnes et trois repas, livraison de 5,99 € comprise, et avec une réduction de bienvenue allant jusqu'à 70 €. Factor affiche un prix par portion plus bas (4,99 €) mais facture 5,99 € de livraison, ce qui donne 35,93 € par semaine — moins cher, mais il s'agit de plats prêts et non d'un box à cuisiner.",
       },
       {
         q: 'Foodprepper est-il vraiment le moins cher ?',
@@ -141,7 +141,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           winnaarNaam: 'HelloFresh',
           slug: 'hellofresh',
           detail:
-            "53,93 €/semaine au tarif standard, livraison de 5,99 € comprise, et jusqu'à 70 € de réduction sur les trois premières box. C'est le box à cuisiner le moins cher qui dessert réellement le sud du pays. Foodbag est l'alternative si vous voulez du belge et local.",
+            "53,49 €/semaine au tarif standard, livraison de 5,99 € comprise, et jusqu'à 70 € de réduction sur les trois premières box. C'est le box à cuisiner le moins cher qui dessert réellement le sud du pays. Foodbag est l'alternative si vous voulez du belge et local.",
           achtergrond: '#F0FDF4',
           rand: '#BBF7D0',
         },
