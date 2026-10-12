@@ -1,5 +1,5 @@
 'use client';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 
 import { useState } from 'react';
 import Link from '@/components/TaalLink';
@@ -130,6 +130,34 @@ const resultaten: Record<string, {
   },
 };
 
+/** Franse teksten voor de quizresultaten, met het levergebied waar dat telt. */
+const resultatenFr: Record<string, { tagline: string; bullets: string[] }> = {
+  hf: {
+    tagline: 'Le choix populaire pour la facilité, la variété et un bon rapport qualité-prix.',
+    bullets: ['Jusqu’à 40 recettes par semaine, jamais les mêmes', 'Pour 1 à 6 personnes', 'Première livraison offerte, livre aussi en Wallonie'],
+  },
+  fb: {
+    tagline: 'La qualité belge, avec des ingrédients locaux et des produits frais.',
+    bullets: ['Chaîne 100 % belge, fournisseurs locaux', 'Idéal pour les familles de 2 à 5 personnes', 'Recettes prêtes en 20 à 40 minutes, livre aussi en Wallonie'],
+  },
+  ms: {
+    tagline: 'Pour ceux qui cuisinent par plaisir : des recettes élaborées pour les gourmets.',
+    bullets: ['Recettes culinaires avec de vraies techniques', 'Grande variété, avec des plats de saison', 'Attention : livre uniquement en Flandre et à Bruxelles'],
+  },
+  ek: {
+    tagline: 'Le meilleur choix pour manger de façon consciente, végétarienne ou végane.',
+    bullets: ['Ingrédients 100 % biologiques', 'Large choix de recettes végétariennes et véganes', 'Attention : pas de livraison en Wallonie'],
+  },
+  fp: {
+    tagline: 'Le box repas le plus rapide de Belgique : des repas frais prêts en 15 minutes.',
+    bullets: ['Prêt en 15 minutes grâce aux ingrédients déjà préparés', 'Sans abonnement obligatoire, commandez quand vous voulez', 'Attention : livre uniquement en Flandre et à Bruxelles'],
+  },
+  cc: {
+    tagline: 'Des plats belges prêts à manger : préparés frais, il suffit de réchauffer.',
+    bullets: ['Rien à cuisiner, prêt en quelques minutes', 'Livraison le dimanche ou le lundi (4,90 €)', 'Belge, avec de grandes portions de 450 g et plus'],
+  },
+};
+
 function getWinnaar(scores: Scores): string {
   const entries = Object.entries(scores) as [string, number][];
   entries.sort((a, b) => b[1] - a[1]);
@@ -138,6 +166,7 @@ function getWinnaar(scores: Scores): string {
 
 export default function Quiz() {
   const tq = useTranslations('quiz');
+  const fr = useLocale() === 'fr';
   const [step, setStep] = useState(0);
   const [scores, setScores] = useState<Scores>({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 });
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
@@ -170,7 +199,8 @@ export default function Quiz() {
     setHoveredIdx(null);
   }
 
-  const winnaar = done ? resultaten[getWinnaar(scores)] : null;
+  const winnaarKey = done ? getWinnaar(scores) : '';
+  const winnaar = done ? resultaten[winnaarKey] : null;
 
   return (
     <div style={{
@@ -183,7 +213,7 @@ export default function Quiz() {
       {/* Progress bar */}
       <div style={{ marginBottom: 20 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 6, fontSize: 12, color: 'var(--muted)' }}>
-          <span>{done ? 'Klaar!' : `Vraag ${step + 1} van ${totalSteps}`}</span>
+          <span>{done ? (fr ? 'Terminé !' : 'Klaar!') : fr ? `Question ${step + 1} sur ${totalSteps}` : `Vraag ${step + 1} van ${totalSteps}`}</span>
           <span>{Math.round(progress)}%</span>
         </div>
         <div style={{ background: 'var(--rule)', borderRadius: 100, height: 6, overflow: 'hidden' }}>
@@ -232,16 +262,16 @@ export default function Quiz() {
       ) : winnaar ? (
         <>
           <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--mint)', marginBottom: 6 }}>
-            Jouw beste match
+            {fr ? 'Votre meilleur choix' : 'Jouw beste match'}
           </div>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(22px, 5vw, 30px)', fontWeight: 900, color: 'var(--ink)', marginBottom: 6 }}>
             {winnaar.naam}
           </div>
           <p style={{ fontSize: 14, color: '#4B5563', marginBottom: 14, lineHeight: 1.6 }}>
-            {winnaar.tagline}
+            {fr ? resultatenFr[winnaarKey]?.tagline ?? winnaar.tagline : winnaar.tagline}
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 6 }}>
-            {winnaar.bullets.map((b, i) => (
+            {(fr ? resultatenFr[winnaarKey]?.bullets ?? winnaar.bullets : winnaar.bullets).map((b, i) => (
               <li key={i} style={{ fontSize: 13, color: 'var(--ink)', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                 <span style={{ color: 'var(--mint)', fontWeight: 700, flexShrink: 0 }}>✔</span>
                 {b}
@@ -260,7 +290,7 @@ export default function Quiz() {
             textDecoration: 'none',
             marginBottom: 8,
           }}>
-            Bekijk {winnaar.naam} →
+            {fr ? `Voir ${winnaar.naam} →` : `Bekijk ${winnaar.naam} →`}
           </Link>
           <Link href={`/aanbieder/${winnaar.slug}`} style={{
             display: 'block',
@@ -274,13 +304,13 @@ export default function Quiz() {
             color: 'var(--ink)',
             marginBottom: 14,
           }}>
-            Lees volledige review
+            {fr ? 'Lire l’avis complet' : 'Lees volledige review'}
           </Link>
           {winnaar.runnerUp.vergelijkSlug && (
             <p style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 10 }}>
-              Twijfel je nog?{' '}
+              {fr ? 'Vous hésitez encore ?' : 'Twijfel je nog?'}{' '}
               <Link href={`/vergelijk/${winnaar.runnerUp.vergelijkSlug}`} style={{ color: 'var(--green)', textDecoration: 'underline' }}>
-                Vergelijk {winnaar.naam} met {winnaar.runnerUp.naam}
+                {fr ? `Comparer ${winnaar.naam} et ${winnaar.runnerUp.naam}` : `Vergelijk ${winnaar.naam} met ${winnaar.runnerUp.naam}`}
               </Link>
             </p>
           )}
@@ -288,7 +318,7 @@ export default function Quiz() {
             onClick={reset}
             style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: 12, color: 'var(--muted)', padding: 0, textDecoration: 'underline' }}
           >
-            Opnieuw doen
+            {fr ? 'Recommencer' : 'Opnieuw doen'}
           </button>
         </>
       ) : null}

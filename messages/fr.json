@@ -220,7 +220,10 @@
     "a3": "Oui. Foodbag et Foodmaker fonctionnent sans abonnement obligatoire et livrent dans tout le pays — vous commandez quand cela vous arrange. Foodprepper aussi, mais uniquement en Flandre et à Bruxelles."
   },
   "banner": {
-    "factorPitch": "Des plats de chef prêts à réchauffer —"
+    "factorPitch": "Des plats de chef prêts à réchauffer —",
+    "factorKorting": "40 % de réduction",
+    "factorRest": "sur votre première box.",
+    "bekijkDeal": "Voir l'offre →"
   },
   "quiz": {
     "v0": "Pour combien de personnes cuisinez-vous ?",

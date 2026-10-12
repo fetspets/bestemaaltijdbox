@@ -37,6 +37,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
   const a = aanbiederVoor(slug, taal);
   const t = await getTranslations('review');
   const tl = await getTranslations('labels');
+  const fr = taal === 'fr';
+  const eur = (n: number) => (fr ? `${n.toFixed(2).replace('.', ',')} €` : `€${n.toFixed(2).replace('.', ',')}`);
+  const jaNee = (b: boolean, ja: string) => (b ? (fr ? ja.replace('Ja', 'Oui') : ja) : fr ? 'Non' : 'Nee');
   const datum = laatstBijgewerkt(taal);
   if (!a) notFound();
 
@@ -97,7 +100,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: 'Aanbieders', item: absoluteUrl('/aanbieder') },
+      { '@type': 'ListItem', position: 2, name: fr ? 'Fournisseurs' : 'Aanbieders', item: absoluteUrl(fr ? '/fr/fournisseur' : '/aanbieder') },
       { '@type': 'ListItem', position: 3, name: a.naam, item: absoluteUrl(`/aanbieder/${a.slug}`) },
     ],
   };
@@ -163,7 +166,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             <div style={{ background: '#FEF3C7', border: '1.5px solid #F59E0B', borderRadius: 12, padding: '16px 20px', marginBottom: 24, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
               <span style={{ fontSize: 20, flexShrink: 0 }}>⚠️</span>
               <p style={{ margin: 0, fontSize: 14, lineHeight: 1.7, color: '#92400E' }}>
-                <strong>{a.status === 'discontinued' ? 'Stopgezet' : 'Tijdelijk niet beschikbaar'}:</strong> {a.statusNotitie ?? `${a.naam} is momenteel niet beschikbaar.`} Bekijk hieronder onze aanbevolen alternatieven.
+                <strong>{a.status === 'discontinued' ? (fr ? 'Service arrêté' : 'Stopgezet') : (fr ? 'Temporairement indisponible' : 'Tijdelijk niet beschikbaar')}:</strong> {a.statusNotitie ?? (fr ? `${a.naam} n'est actuellement pas disponible.` : `${a.naam} is momenteel niet beschikbaar.`)} {fr ? 'Découvrez ci-dessous nos alternatives recommandées.' : 'Bekijk hieronder onze aanbevolen alternatieven.'}
               </p>
             </div>
           )}
@@ -237,7 +240,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 {a.ctaTekst} →
               </Link>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>
-                Korting wordt automatisch toegepast via onze link — geen code nodig.
+                {fr ? 'La réduction est appliquée automatiquement via notre lien : aucun code à saisir.' : 'Korting wordt automatisch toegepast via onze link — geen code nodig.'}
               </div>
             </div>
           )}
@@ -245,13 +248,13 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* Prijstabel */}
           {a.uitgebreideReview.prijsTabel && (
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>Wat kost {a.naam} per maand in België?</h2>
-              <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>Welkomstdeal (2 personen / 3 maaltijden/week) — automatisch via de link, geen code nodig:</p>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>{fr ? `Combien coûte ${a.naam} par mois en Belgique ?` : `Wat kost ${a.naam} per maand in België?`}</h2>
+              <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>{fr ? 'Offre de bienvenue (2 personnes / 3 repas par semaine), automatique via le lien, sans code :' : 'Welkomstdeal (2 personen / 3 maaltijden/week) — automatisch via de link, geen code nodig:'}</p>
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
                   <thead>
                     <tr style={{ background: 'var(--cream)' }}>
-                      {['Box', 'Normale prijs', 'Korting', 'Jij betaalt', tl('besparing')].map(h => (
+                      {(fr ? ['Box', 'Prix normal', 'Réduction', 'Vous payez', tl('besparing')] : ['Box', 'Normale prijs', 'Korting', 'Jij betaalt', tl('besparing')]).map(h => (
                         <th key={h} style={{ textAlign: 'left', padding: '8px 12px', borderBottom: '2px solid var(--rule)', fontWeight: 700, color: 'var(--ink)', whiteSpace: 'nowrap' }}>{h}</th>
                       ))}
                     </tr>
@@ -277,7 +280,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                   <Link data-plaatsing="review-cta" href={`/ga/${a.slug}`} style={{ display: 'inline-block', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
                     {a.ctaTekst2} →
                   </Link>
-                  <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>Opzegbaar na je eerste box.</div>
+                  <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>{fr ? 'Résiliable après votre première box.' : 'Opzegbaar na je eerste box.'}</div>
                 </div>
               )}
             </div>
@@ -294,7 +297,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* Pros & Cons */}
           <div className="pros-cons-grid">
             <div style={{ background: '#F0FDF4', border: '1px solid #86EFAC', borderRadius: 12, padding: 20 }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#15803D', marginBottom: 12 }}>✓ Voordelen</div>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#15803D', marginBottom: 12 }}>{fr ? '✓ Avantages' : '✓ Voordelen'}</div>
               {a.pros.map(p => (
                 <div key={p} style={{ display: 'flex', gap: 8, fontSize: 13, color: '#166534', marginBottom: 6 }}>
                   <span style={{ color: '#16A34A', fontWeight: 700, flexShrink: 0 }}>✓</span>{p}
@@ -302,7 +305,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               ))}
             </div>
             <div style={{ background: '#FFF5F5', border: '1px solid #FCA5A5', borderRadius: 12, padding: 20 }}>
-              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#B91C1C', marginBottom: 12 }}>✗ Nadelen</div>
+              <div style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, color: '#B91C1C', marginBottom: 12 }}>{fr ? '✗ Inconvénients' : '✗ Nadelen'}</div>
               {a.cons.map(c => (
                 <div key={c} style={{ display: 'flex', gap: 8, fontSize: 13, color: '#7F1D1D', marginBottom: 6 }}>
                   <span style={{ color: '#EF4444', fontWeight: 700, flexShrink: 0 }}>✗</span>{c}
@@ -313,11 +316,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
 
           {/* Voor wie */}
           <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>Voor wie is {a.naam} geschikt?</h2>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>{fr ? `Pour qui ${a.naam} est-il fait ?` : `Voor wie is ${a.naam} geschikt?`}</h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: a.uitgebreideReview.nietGeschiktVoor ? '0 0 20px' : 0 }}>{a.uitgebreideReview.voorWie}</p>
             {a.uitgebreideReview.nietGeschiktVoor && (
               <>
-                <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 10, color: '#B91C1C' }}>Voor wie is {a.naam} niet de juiste keuze?</h3>
+                <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 700, marginBottom: 10, color: '#B91C1C' }}>{fr ? `Pour qui ${a.naam} n'est-il pas le bon choix ?` : `Voor wie is ${a.naam} niet de juiste keuze?`}</h3>
                 {a.uitgebreideReview.nietGeschiktVoor.map((punt, i) => (
                   <div key={i} style={{ display: 'flex', gap: 8, fontSize: 13, color: '#374151', marginBottom: 8, lineHeight: 1.6 }}>
                     <span style={{ color: '#EF4444', fontWeight: 700, flexShrink: 0 }}>✗</span>
@@ -330,13 +333,13 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
 
           {/* Hoe werkt het */}
           <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>Hoe werkt {a.naam} in België?</h2>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>{fr ? `Comment fonctionne ${a.naam} en Belgique ?` : `Hoe werkt ${a.naam} in België?`}</h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{a.uitgebreideReview.hoeWerktHet}</p>
           </div>
 
           {/* Vergelijking */}
           <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
-            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>{a.naam} vs. de concurrentie</h2>
+            <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12 }}>{fr ? `${a.naam} face à la concurrence` : `${a.naam} vs. de concurrentie`}</h2>
             <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{a.uitgebreideReview.vergelijking}</p>
           </div>
 
@@ -352,7 +355,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               </div>
               {a.status === 'active' && (
                 <Link data-plaatsing="review-cta" href={`/ga/${a.slug}`} style={{ marginLeft: 'auto', background: accentColor, color: 'white', padding: '12px 24px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-                  {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `Activeer ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `Claim ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+                  {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode?.code ? `${fr ? 'Activer' : 'Activeer'} ${a.kortingsCode.bedrag} →` : a.kortingsCode ? `${fr ? 'Profiter de' : 'Claim'} ${a.kortingsCode.bedrag} →` : `${fr ? 'Visiter' : 'Bezoek'} ${a.naam} →`}
                 </Link>
               )}
             </div>
@@ -361,7 +364,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {/* FAQ */}
           {a.uitgebreideReview.faq && (
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
-              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16 }}>Veelgestelde vragen over {a.naam}</h2>
+              <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16 }}>{fr ? `Questions fréquentes sur ${a.naam}` : `Veelgestelde vragen over ${a.naam}`}</h2>
               {a.uitgebreideReview.faq.map((item, i) => (
                 <div key={i} style={{ marginBottom: i < a.uitgebreideReview.faq!.length - 1 ? 20 : 0 }}>
                   <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700, marginBottom: 6, color: 'var(--ink)' }}>{item.vraag}</h3>
@@ -375,16 +378,16 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {a.status !== 'active' && (
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 28 }}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>
-                Op zoek naar een maaltijdbox zonder abonnement?
+                {fr ? 'Vous cherchez un box repas sans abonnement ?' : 'Op zoek naar een maaltijdbox zonder abonnement?'}
               </h2>
               <p style={{ fontSize: 14, color: 'var(--muted)', marginBottom: 20, lineHeight: 1.7 }}>
-                Net zoals Carrefour Simply You werken deze aanbieders zonder verplicht abonnement — je bestelt wanneer je wil.
+                {fr ? 'Comme Carrefour Simply You, ces fournisseurs fonctionnent sans abonnement obligatoire : vous commandez quand vous voulez.' : 'Net zoals Carrefour Simply You werken deze aanbieders zonder verplicht abonnement — je bestelt wanneer je wil.'}
               </p>
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: 16 }}>
                 {[
-                  { slug: 'foodprepper', naam: 'Foodprepper', sub: 'Klaar in 15 min · geen abonnement · Monizze/Pluxee/Edenred' },
-                  { slug: 'foodmaker', naam: 'Foodmaker', sub: 'Chef-kwaliteit · geen abonnement · v.a. €10/portie' },
-                  { slug: 'foodbag', naam: 'Foodbag', sub: 'Belgische ingrediënten · eenmalig bestellen mogelijk' },
+                  { slug: 'foodprepper', naam: 'Foodprepper', sub: fr ? 'Prêt en 15 min · sans abonnement · Flandre et Bruxelles' : 'Klaar in 15 min · geen abonnement · Monizze/Pluxee/Edenred' },
+                  { slug: 'foodmaker', naam: 'Foodmaker', sub: fr ? 'Qualité chef · sans abonnement · dès 10 €/portion' : 'Chef-kwaliteit · geen abonnement · v.a. €10/portie' },
+                  { slug: 'foodbag', naam: 'Foodbag', sub: fr ? 'Ingrédients belges · commande ponctuelle possible' : 'Belgische ingrediënten · eenmalig bestellen mogelijk' },
                 ].map(alt => (
                   <Link key={alt.slug} href={`/ga/${alt.slug}`} style={{ display: 'block', background: 'var(--cream)', border: '1px solid var(--rule)', borderRadius: 10, padding: '16px', textDecoration: 'none', color: 'var(--ink)' }}>
                     <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{alt.naam} →</div>
@@ -414,14 +417,14 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
 
             <div style={{ marginBottom: 16 }}>
               {[
-                ['Prijs/portie', a.prijsPerPortieLabel ?? `${t('vanaf')} €${a.prijsPerPortie.toFixed(2).replace('.', ',')}`],
-                ['Populaire box', `€${a.prijsPopulaireBox.toFixed(2)}/week`],
-                ['Recepten/week', `${a.receptenPerWeek}+`],
+                [fr ? 'Prix/portion' : 'Prijs/portie', a.prijsPerPortieLabel ?? `${t('vanaf')} ${eur(a.prijsPerPortie)}`],
+                [fr ? 'Box populaire' : 'Populaire box', fr ? `${eur(a.prijsPopulaireBox)}/semaine` : `€${a.prijsPopulaireBox.toFixed(2)}/week`],
+                [fr ? 'Recettes/semaine' : 'Recepten/week', `${a.receptenPerWeek}+`],
                 [t('personen'), `${a.minPersonen}–${a.maxPersonen}`],
                 [t('opzegbaar'), a.opzegTermijn],
-                [t('belgisch'), a.belgisch ? '🇧🇪 Ja' : 'Nee'],
-                ['Vegetarisch', a.vegetarisch ? '✓ Ja' : 'Nee'],
-                [tl('biologisch'), a.bio ? '✓ Ja' : 'Nee'],
+                [t('belgisch'), jaNee(a.belgisch, '🇧🇪 Ja')],
+                [fr ? 'Végétarien' : 'Vegetarisch', jaNee(a.vegetarisch, '✓ Ja')],
+                [tl('biologisch'), jaNee(a.bio, '✓ Ja')],
               ].map(([k, v]) => (
                 <div key={k} style={{ display: 'flex', justifyContent: 'space-between', padding: '6px 0', borderBottom: '1px solid var(--rule)', fontSize: 13 }}>
                   <span style={{ color: 'var(--muted)' }}>{k}</span>
@@ -433,12 +436,12 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             {a.gratisBezorging ? (
               <div style={{ textAlign: 'center', fontSize: 13, color: '#16A34A', fontWeight: 600, marginBottom: 12 }}>{tl('gratisBezorgingInbegrepen')}</div>
             ) : a.bezorgkosten ? (
-              <div style={{ textAlign: 'center', fontSize: 13, color: '#D97706', fontWeight: 600, marginBottom: 12 }}>+ €{a.bezorgkosten} bezorgkost per levering</div>
+              <div style={{ textAlign: 'center', fontSize: 13, color: '#D97706', fontWeight: 600, marginBottom: 12 }}>{fr ? `+ ${eur(a.bezorgkosten)} de livraison par box` : `+ €${a.bezorgkosten} bezorgkost per levering`}</div>
             ) : null}
 
             {a.status === 'active' && (
               <Link data-plaatsing="review-cta" href={`/ga/${a.slug}`} style={{ display: 'block', background: accentColor, color: 'white', textAlign: 'center', padding: '14px', borderRadius: 10, fontWeight: 700, fontSize: 15, textDecoration: 'none', marginBottom: 4 }}>
-                {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode ? `Activeer ${a.kortingsCode.bedrag} →` : `Bezoek ${a.naam} →`}
+                {a.ctaTekst ? `${a.ctaTekst} →` : a.kortingsCode ? `${fr ? 'Activer' : 'Activeer'} ${a.kortingsCode.bedrag} →` : `${fr ? 'Visiter' : 'Bezoek'} ${a.naam} →`}
               </Link>
             )}
             {a.ctaSubtekst && (
@@ -453,7 +456,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             )}
 
             <Link href="/" style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)' }}>
-              ← Alle maaltijdboxen vergelijken
+              {fr ? '← Comparer tous les box repas' : '← Alle maaltijdboxen vergelijken'}
             </Link>
 
             <div style={{ marginTop: 14, fontSize: 11, color: 'var(--muted)', textAlign: 'center', lineHeight: 1.5 }}>

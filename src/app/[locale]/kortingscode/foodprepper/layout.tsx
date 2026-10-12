@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { LAATST_BIJGEWERKT, laatstBijgewerkt } from '@/lib/site';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata, SITE_URL, absoluteUrl } from '@/lib/seo';
 
@@ -14,8 +14,12 @@ export async function generateMetadata(
     route: '/kortingscode/[slug]',
     params: { slug: 'foodprepper' },
     pad: CANONICAL,
-    titel: `Foodprepper kortingscode ${LAATST_BIJGEWERKT} — €45 korting zonder abonnement`,
-    beschrijving: 'Het actuele Foodprepper welkomstvoordeel: €45 korting (3x €15) op je eerste 3 bestellingen — geen abonnement, geen verplichtingen.',
+    titel: locale === 'fr'
+      ? `Code promo Foodprepper ${laatstBijgewerkt('fr')} — 45 € de réduction sans abonnement`
+      : `Foodprepper kortingscode ${LAATST_BIJGEWERKT} — €45 korting zonder abonnement`,
+    beschrijving: locale === 'fr'
+      ? 'L’offre de bienvenue Foodprepper : 45 € de réduction (3 x 15 €) sur vos 3 premières commandes, sans abonnement. Livraison en Flandre et à Bruxelles uniquement.'
+      : 'Het actuele Foodprepper welkomstvoordeel: €45 korting (3x €15) op je eerste 3 bestellingen — geen abonnement, geen verplichtingen.',
     type: 'article',
   });
 }

@@ -2,25 +2,27 @@ import type { Metadata } from 'next';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 import FactorVergelijkingPagina from '@/components/FactorVergelijkingPagina';
-import { getFactorVergelijking } from '@/lib/factorVergelijkingen';
+import { getFactorVergelijkingVoor } from '@/lib/factorVergelijkingen';
 
-const data = getFactorVergelijking('factor-vs-hellofresh')!;
+const SLUG = 'factor-vs-hellofresh';
 
 export async function generateMetadata(
   { params }: { params: Promise<{ locale: string }> }
 ): Promise<Metadata> {
   const { locale } = await params;
+  const data = getFactorVergelijkingVoor(SLUG, locale)!;
   return buildMetadata({
     locale: locale as Locale,
     route: '/vergelijk/[slug]',
-    params: { slug: 'factor-vs-hellofresh' },
-    pad: '/vergelijk/factor-vs-hellofresh',
+    params: { slug: SLUG },
+    pad: '/vergelijk/' + SLUG,
     titel: data.seoTitle,
     beschrijving: data.seoDescription,
     type: 'article',
   });
 }
 
-export default function Page() {
-  return <FactorVergelijkingPagina data={data} />;
+export default async function Page({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return <FactorVergelijkingPagina data={getFactorVergelijkingVoor(SLUG, locale)!} taal={locale as Locale} />;
 }

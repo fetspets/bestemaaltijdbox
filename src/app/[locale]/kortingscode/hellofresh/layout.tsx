@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { LAATST_BIJGEWERKT, laatstBijgewerkt } from '@/lib/site';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata } from '@/lib/seo';
 
@@ -12,8 +12,12 @@ export async function generateMetadata(
     route: '/kortingscode/[slug]',
     params: { slug: 'hellofresh' },
     pad: '/kortingscode/hellofresh',
-    titel: `HelloFresh kortingscode ${LAATST_BIJGEWERKT} — tot €70 korting op je eerste 3 boxen`,
-    beschrijving: 'Activeer de HelloFresh welkomstdeal: tot €70 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig. Voor nieuwe klanten in België.',
+    titel: locale === 'fr'
+      ? `Code promo HelloFresh ${laatstBijgewerkt('fr')} — jusqu’à 70 € de réduction sur vos 3 premières box`
+      : `HelloFresh kortingscode ${LAATST_BIJGEWERKT} — tot €70 korting op je eerste 3 boxen`,
+    beschrijving: locale === 'fr'
+      ? 'Activez l’offre de bienvenue HelloFresh : jusqu’à 70 € de réduction répartis sur vos 3 premières box. Appliquée automatiquement via notre lien. Livraison partout en Belgique, Wallonie comprise.'
+      : 'Activeer de HelloFresh welkomstdeal: tot €70 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig. Voor nieuwe klanten in België.',
     type: 'article',
   });
 }

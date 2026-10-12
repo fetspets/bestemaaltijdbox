@@ -1,15 +1,18 @@
 'use client';
 import { useState } from 'react';
 import { usePathname } from 'next/navigation';
+import { useLocale } from 'next-intl';
 import Link from '@/components/TaalLink';
 
 const SHOW_ON = ['/', '/aanbieder/hellofresh', '/vergelijk/hellofresh-vs-foodbag', '/vergelijk/hellofresh-vs-marley-spoon'];
+const SHOW_ON_FR = ['/fr', '/fr/fournisseur/hellofresh', '/fr/comparatif/hellofresh-vs-foodbag', '/fr/comparatif/hellofresh-vs-marley-spoon'];
 
 export default function HelloFreshDealBanner() {
   const pathname = usePathname();
+  const fr = useLocale() === 'fr';
   const [dismissed, setDismissed] = useState(false);
 
-  if (dismissed || !SHOW_ON.includes(pathname)) return null;
+  if (dismissed || !(fr ? SHOW_ON_FR : SHOW_ON).includes(pathname)) return null;
 
   return (
     <div style={{
@@ -25,7 +28,9 @@ export default function HelloFreshDealBanner() {
       zIndex: 50,
     }}>
       <span style={{ fontSize: 14, fontWeight: 600, textAlign: 'center', lineHeight: 1.5 }}>
-        🥗 HelloFresh-deal: tot €70 korting op je eerste 3 boxen — automatisch via onze link, geen code nodig.
+        {fr
+          ? '🥗 Offre HelloFresh : jusqu’à 70 € de réduction sur vos 3 premières box, appliquée automatiquement via notre lien, sans code.'
+          : '🥗 HelloFresh-deal: tot €70 korting op je eerste 3 boxen — automatisch via onze link, geen code nodig.'}
       </span>
       <Link
         data-plaatsing="hellofresh-banner"
@@ -43,11 +48,11 @@ export default function HelloFreshDealBanner() {
           flexShrink: 0,
         }}
       >
-        Bekijk de deal →
+        {fr ? 'Voir l’offre →' : 'Bekijk de deal →'}
       </Link>
       <button
         onClick={() => setDismissed(true)}
-        aria-label="Sluiten"
+        aria-label={fr ? 'Fermer' : 'Sluiten'}
         style={{
           background: 'transparent',
           border: 'none',

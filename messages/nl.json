@@ -220,7 +220,10 @@
     "a3": "Ja. Foodprepper, Foodbag en Foodmaker werken zonder verplicht abonnement — je bestelt wanneer het uitkomt. Foodprepper geeft daarbij €45 welkomstkorting over de eerste 3 bestellingen."
   },
   "banner": {
-    "factorPitch": "Kant-en-klare chef-maaltijden zonder koken —"
+    "factorPitch": "Kant-en-klare chef-maaltijden zonder koken —",
+    "factorKorting": "40% korting",
+    "factorRest": "op je eerste box.",
+    "bekijkDeal": "Bekijk de deal →"
   },
   "quiz": {
     "v0": "Voor hoeveel personen kook je meestal?",

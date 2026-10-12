@@ -47,7 +47,7 @@ export default function SponsoredBanner({ active }: { active: boolean }) {
       <GesponsordLabel />
       <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, fontSize: 13.5, fontWeight: 600, lineHeight: 1.4, textAlign: 'center' }}>
         <img src="/logos/factor.svg" alt="Factor" style={{ height: 15, width: 'auto', display: 'block', flexShrink: 0 }} />
-        <span>{tb('factorPitch')} <strong>40% korting</strong> op je eerste box.</span>
+        <span>{tb('factorPitch')} <strong>{tb('factorKorting')}</strong> {tb('factorRest')}</span>
       </span>
       <Link
         data-plaatsing="factor-banner"
@@ -65,7 +65,7 @@ export default function SponsoredBanner({ active }: { active: boolean }) {
           flexShrink: 0,
         }}
       >
-        Bekijk de deal →
+        {tb('bekijkDeal')}
       </Link>
       <button
         onClick={dismiss}

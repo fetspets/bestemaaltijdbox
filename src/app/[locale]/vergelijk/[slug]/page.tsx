@@ -5,7 +5,7 @@ import type { Locale } from '@/i18n/routing';
 import { generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
 import { vergelijkingVoor, aanbiederVoor } from '@/lib/teksten';
 
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { laatstBijgewerkt } from '@/lib/site';
 import { buildMetadata } from '@/lib/seo';
 import ContentBlokken from '@/components/ContentBlokken';
 
@@ -20,8 +20,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!v) return {};
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
-  const title = v.seoTitle ?? `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`;
-  const description = v.seoDescription ?? `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €70 op je eerste box.`;
+  const fr = taal === 'fr';
+  const title = v.seoTitle ?? (fr ? `${a1.naam} ou ${a2.naam} 2026 — comparés sur le prix, le goût et la flexibilité` : `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`);
+  const description = v.seoDescription ?? (fr ? `${a1.naam} ou ${a2.naam} ? Comparés sur le prix par portion, le goût, la variété et les offres de bienvenue. Jusqu'à 70 € de réduction sur votre première box.` : `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €70 op je eerste box.`);
   return buildMetadata({
     locale: locale as Locale,
     route: '/vergelijk/[slug]',
@@ -58,11 +59,11 @@ const categorieValueMap = (slug: string, cat: string, taal: Locale) => {
   const a = aanbiederVoor(slug, taal);
   if (!a) return '—';
   switch (cat) {
-    case 'prijs': return `v.a. €${a.prijsPerPortie.toFixed(2)}/portie`;
+    case 'prijs': return taal === 'fr' ? `dès ${a.prijsPerPortie.toFixed(2).replace('.', ',')} €/portion` : `v.a. €${a.prijsPerPortie.toFixed(2)}/portie`;
     case 'smaak': return `${a.score.smaak}/10`;
-    case 'variatie': return `${a.receptenPerWeek}+ recepten/week`;
+    case 'variatie': return taal === 'fr' ? `${a.receptenPerWeek}+ recettes/semaine` : `${a.receptenPerWeek}+ recepten/week`;
     case 'flexibiliteit': return `${a.score.flexibiliteit}/10`;
-    case 'bezorging': return a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten}`;
+    case 'bezorging': return a.gratisBezorging ? (taal === 'fr' ? 'Gratuite' : 'Gratis') : taal === 'fr' ? `${(a.bezorgkosten ?? 0).toFixed(2).replace('.', ',')} €` : `€${a.bezorgkosten}`;
     case 'duurzaamheid': return `${a.score.duurzaamheid}/10`;
     default: return '—';
   }
@@ -75,6 +76,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
   if (!v) notFound();
 
   const tl = await getTranslations('labels');
+  const fr = taal === 'fr';
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
   const winnaar = aanbiederVoor(v.verdictSlug, taal)!;
@@ -102,9 +104,9 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
 
         {/* Breadcrumb */}
         <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24 }}>
-          <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
+          <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>{fr ? 'Accueil' : 'Home'}</Link>
           {' → '}
-          <span style={{ color: 'var(--muted)' }}>Vergelijk</span>
+          <span style={{ color: 'var(--muted)' }}>{fr ? 'Comparatif' : 'Vergelijk'}</span>
           {' → '}
           <strong style={{ color: 'var(--ink)' }}>{a1.naam} vs {a2.naam}</strong>
         </div>
@@ -112,16 +114,18 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         {/* Header */}
         <div style={{ marginBottom: 36 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-            ✓ Onafhankelijk vergeleken · {LAATST_BIJGEWERKT}
+            {fr ? '✓ Comparaison indépendante' : '✓ Onafhankelijk vergeleken'} · {laatstBijgewerkt(taal)}
           </div>
           <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(26px, 7vw, 42px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 12 }}>
-            {v.h1 ?? <>{a1.naam} vs {a2.naam}:<br />welke maaltijdbox is beter?</>}
+            {v.h1 ?? (fr ? <>{a1.naam} ou {a2.naam} :<br />quel box repas choisir ?</> : <>{a1.naam} vs {a2.naam}:<br />welke maaltijdbox is beter?</>)}
           </h1>
           {v.introParagrafen ? v.introParagrafen.map((tekst, i) => (
             <p key={i} style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 680, marginBottom: 12 }} dangerouslySetInnerHTML={{ __html: tekst }} />
           )) : (
             <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.7, maxWidth: 600 }}>
-              We vergeleken {a1.naam} en {a2.naam} op prijs, smaak, variatie, flexibiliteit, bezorging en duurzaamheid. Eerlijk en onafhankelijk — onze scores en rangschikking worden nooit betaald.
+              {fr
+                ? `Nous avons comparé ${a1.naam} et ${a2.naam} sur le prix, le goût, la variété, la flexibilité, la livraison et la durabilité. Honnête et indépendant : nos notes et notre classement ne sont jamais payés.`
+                : `We vergeleken ${a1.naam} en ${a2.naam} op prijs, smaak, variatie, flexibiliteit, bezorging en duurzaamheid. Eerlijk en onafhankelijk — onze scores en rangschikking worden nooit betaald.`}
             </p>
           )}
         </div>
@@ -150,15 +154,15 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
                 <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: accentColors[a.slug] }} />
               )}
               {v.verdictSlug === a.slug && (
-                <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332', marginBottom: 10 }}>⭐ Onze keuze</div>
+                <div style={{ display: 'inline-block', fontSize: 10, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332', marginBottom: 10 }}>{fr ? '⭐ Notre choix' : '⭐ Onze keuze'}</div>
               )}
               <div style={{ fontSize: 32, marginBottom: 8 }}>
                 {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: 48, height: 48, objectFit: 'contain' }} /> : a.logo}
               </div>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 4 }}>{a.naam}</div>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 40, fontWeight: 900, color: accentColors[a.slug], lineHeight: 1 }}>{a.score.totaal.toFixed(1)}</div>
-              <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 12 }}>/10 totaalscore</div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: accentColors[a.slug] }}>v.a. €{a.prijsPerPortie.toFixed(2)}/portie</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)', marginBottom: 12 }}>{fr ? '/10 note globale' : '/10 totaalscore'}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: accentColors[a.slug] }}>{fr ? `dès ${a.prijsPerPortie.toFixed(2).replace('.', ',')} €/portion` : `v.a. €${a.prijsPerPortie.toFixed(2)}/portie`}</div>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 4 }}>{a.tagline}</div>
             </div>
           ))}
@@ -168,7 +172,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         {categories.length > 0 && (
         <div style={{ marginBottom: 36 }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
-            Categorie per categorie
+            {fr ? 'Critère par critère' : 'Categorie per categorie'}
           </h2>
           <div style={{ borderRadius: 12, overflowX: 'auto', border: '1.5px solid var(--rule)' }}>
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
@@ -177,7 +181,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
                   <th style={{ padding: '12px 16px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{tl('categorie')}</th>
                   <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{a1.naam}</th>
                   <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{a2.naam}</th>
-                  <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Winnaar</th>
+                  <th style={{ padding: '12px 16px', textAlign: 'center', fontWeight: 600, fontSize: 11, letterSpacing: '0.05em', textTransform: 'uppercase' }}>{fr ? 'Gagnant' : 'Winnaar'}</th>
                 </tr>
               </thead>
               <tbody>
@@ -215,18 +219,18 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         <div style={{ background: 'white', borderRadius: 16, border: `1.5px solid ${accentColors[winnaar.slug]}`, padding: 28, marginBottom: 32, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: accentColors[winnaar.slug] }} />
           <div style={{ fontSize: 11, fontWeight: 700, padding: '3px 10px', borderRadius: 100, background: '#E8F5EE', color: '#1B4332', display: 'inline-block', marginBottom: 12 }}>
-            ⭐ Ons verdict
+            {fr ? '⭐ Notre verdict' : '⭐ Ons verdict'}
           </div>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 10 }}>
-            {v.verdictKop ?? `Onze keuze: ${winnaar.naam}`}
+            {v.verdictKop ?? (fr ? `Notre choix : ${winnaar.naam}` : `Onze keuze: ${winnaar.naam}`)}
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>{v.verdictTekst}</p>
           <div className="two-col-grid" style={{ gap: 12 }}>
             <Link href={`/ga/${a1.slug}`} style={{ display: 'block', background: accentColors[a1.slug], color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
-              Ga naar {a1.naam} →
+              {fr ? `Aller chez ${a1.naam} →` : `Ga naar ${a1.naam} →`}
             </Link>
             <Link href={`/ga/${a2.slug}`} style={{ display: 'block', background: 'white', color: accentColors[a2.slug], textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: `2px solid ${accentColors[a2.slug]}` }}>
-              Ga naar {a2.naam} →
+              {fr ? `Aller chez ${a2.naam} →` : `Ga naar ${a2.naam} →`}
             </Link>
           </div>
         </div>
@@ -234,7 +238,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         {/* FAQ */}
         <div style={{ marginBottom: 40 }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
-            Veelgestelde vragen
+            {fr ? 'Questions fréquentes' : 'Veelgestelde vragen'}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {v.faq.map(({ q, a }) => (
@@ -249,8 +253,8 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         {/* Footer links */}
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
           <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{tl('bekijkAlleBoxen')}</Link>
-          <Link href={`/aanbieder/${a1.slug}`} style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>Volledige review {a1.naam} →</Link>
-          <Link href={`/aanbieder/${a2.slug}`} style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>Volledige review {a2.naam} →</Link>
+          <Link href={`/aanbieder/${a1.slug}`} style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{fr ? `Avis complet sur ${a1.naam} →` : `Volledige review ${a1.naam} →`}</Link>
+          <Link href={`/aanbieder/${a2.slug}`} style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{fr ? `Avis complet sur ${a2.naam} →` : `Volledige review ${a2.naam} →`}</Link>
         </div>
       </div>
     </>

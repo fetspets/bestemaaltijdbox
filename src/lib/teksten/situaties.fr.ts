@@ -273,7 +273,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             badgeTekst: '#1B4332',
             tagline: 'Le seul box entièrement végétal — Flandre et Bruxelles uniquement',
             waarom:
-              "Ekomenu est le seul fournisseur belge intégralement végétal et biologique. Aucun tri à faire : tout le catalogue est plantaardig et certifié bio. Le prix par portion est même inférieur à celui de plusieurs box classiques. Le seul obstacle est la carte : la livraison s'arrête à la Flandre et à Bruxelles.",
+              "Ekomenu est le seul fournisseur belge intégralement végétal et biologique. Aucun tri à faire : tout le catalogue est végétal et certifié bio. Le prix par portion est même inférieur à celui de plusieurs box classiques. Le seul obstacle est la carte : la livraison s'arrête à la Flandre et à Bruxelles.",
             deal: 'Aucun code permanent — consultez leur offre de bienvenue sur ekomenu.be',
             waarschuwing: '⚠️ Pas de livraison en Wallonie',
           },
@@ -332,7 +332,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             aanbeveling: 'Ekomenu',
             slug: 'ekomenu',
             uitleg:
-              "Le seul fournisseur belge entièrement végétal et biologique. Rien à filtrer, rien à vérifier : tout le catalogue est plantaardig. Consultez leur offre de bienvenue en cours.",
+              "Le seul fournisseur belge entièrement végétal et biologique. Rien à filtrer, rien à vérifier : tout le catalogue est végétal. Consultez leur offre de bienvenue en cours.",
             achtergrond: '#E8F5EE',
             rand: '#BBF7D0',
           },
@@ -369,6 +369,11 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
   },
 
   gezin: {
+    uitlegParagraphs: [
+      "Comment préparer des repas variés et sains un mardi soir chargé, avec des enfants qui attendent, des devoirs à faire et aucune envie de réfléchir au contenu du frigo ?",
+      "La ligne « Busy Day » de Foodbag est conçue pour ce problème : des repas prêts en 20 minutes, peu de vaisselle, et des ingrédients frais de fermes belges. HelloFresh est intéressant pour une famille nombreuse ou si vous voulez plus de choix : comme vous choisissez vous-même chaque semaine, vous adaptez la sélection à ce que les enfants aiment. Les deux livrent aussi en Wallonie. Consultez notre <a href=\"/fr/comparatif/hellofresh-vs-foodbag\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">comparatif HelloFresh ou Foodbag</a> pour aller plus loin.",
+      "Pensez aussi aux jours de livraison. Foodbag livre du vendredi au lundi, pratique pour organiser le week-end. HelloFresh est plus flexible, avec plusieurs jours en semaine. Les deux livrent dans toute la Belgique, Wallonie comprise ; Marley Spoon non.",
+    ],
     titel: 'Pour les familles',
     h1: 'Meilleur box repas pour les familles en Belgique (2026)',
     intro:
@@ -405,6 +410,11 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
   },
 
   vegetarisch: {
+    uitlegParagraphs: [
+      "Tous les box repas avec des « options végétariennes » ne conviennent pas à ceux qui mangent vraiment végétarien ou végan. Il y a une différence fondamentale : certains box proposent quelques recettes végétales par semaine à côté de la viande, d'autres sont entièrement végétaux. Ce choix pèse plus sur votre quotidien qu'on ne le pense.",
+      "Ekomenu est le seul fournisseur en Belgique entièrement végétal : vous n'avez jamais à choisir ni à filtrer. Le « Groenteteller » vous aide à suivre si vous mangez assez de légumes chaque semaine. Lisez notre <a href=\"/fr/fournisseur/ekomenu\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">avis complet sur Ekomenu</a> pour tous les détails. Inconvénient : Ekomenu livre uniquement en Flandre et à Bruxelles, pas en Wallonie.",
+      "Si vous voulez manger végétarien mais pas votre partenaire, ou si vous habitez en Wallonie, HelloFresh est l'option la plus pratique : vous choisissez chaque semaine vos recettes, y compris entièrement végétales, et il livre partout en Belgique. Il faut alors filtrer activement chaque semaine. Marley Spoon offre la même liberté, mais uniquement en Flandre et à Bruxelles. Voir notre <a href=\"/fr/fournisseur/hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">avis sur HelloFresh</a>.",
+    ],
     titel: 'Végétarien',
     h1: 'Meilleur box repas végétarien en Belgique (2026)',
     intro:
@@ -436,6 +446,10 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
   },
 
   budget: {
+    uitlegParagraphs: [
+      "Le box repas le moins cher n'est pas toujours la meilleure affaire. <a href=\"/fr/fournisseur/factor\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Factor</a> a le prix par portion le plus bas (4,99 €), mais facture 5,99 € de livraison : pour deux personnes, comptez environ 35 € par semaine. <a href=\"/fr/fournisseur/hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">HelloFresh</a> semble plus cher à première vue (7,92 €/portion), mais avec jusqu'à 70 € de réduction de bienvenue et la première livraison offerte, c'est souvent le choix le plus avantageux les premières semaines. Ensuite, HelloFresh facture aussi 5,99 € de livraison par box. Les deux livrent en Wallonie. <a href=\"/fr/fournisseur/foodprepper\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Foodprepper</a> est une option intermédiaire sans abonnement (45 € de réduction de bienvenue), mais uniquement en Flandre et à Bruxelles.",
+      "Calculez toujours le vrai montant par semaine : prix par portion × nombre de portions + livraison − réduction de bienvenue. Un prix par portion bas avec une livraison chère peut revenir plus cher qu'un box « plus cher » avec livraison gratuite et une belle réduction de bienvenue. Notre <a href=\"/fr/guide/goedkoopste-maaltijdbox-belgie\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">guide du box repas le moins cher</a> détaille le calcul par fournisseur.",
+    ],
     titel: 'Petit budget',
     h1: 'Box repas pas cher en Belgique (2026) — le vrai prix par semaine',
     intro:
@@ -467,6 +481,11 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
   },
 
   singles: {
+    uitlegParagraphs: [
+      "Quand on vit seul, on se heurte vite à un problème : la plupart des box repas livrent au minimum pour 2 personnes. Résultat : trop de nourriture ou des portions jetées, ce qui annule l'avantage d'un box repas.",
+      "HelloFresh est le seul box à cuisiner classique qui livre pour 1 personne, et il livre partout en Belgique, Wallonie comprise. Vous choisissez chaque semaine le nombre de repas et les recettes, parmi plus de 40. Pratique et flexible. Lisez notre <a href=\"/fr/fournisseur/hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">avis complet sur HelloFresh</a> pour tous les détails.",
+      "Factor est une alternative intéressante si vous n'avez pas envie de cuisiner : des plats préparés à réchauffer, commandés à l'unité pour 1 personne, livrés aussi en Wallonie. Pas de plaisir de cuisiner, mais un maximum de facilité. Foodprepper permet de commander sans abonnement, idéal pour tester le concept, mais il ne livre qu'en Flandre et à Bruxelles. Voir notre <a href=\"/fr/fournisseur/factor\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">avis sur Factor</a>.",
+    ],
     titel: 'Pour une personne',
     h1: 'Box repas pour une personne en Belgique (2026)',
     intro:
@@ -498,6 +517,10 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
   },
 
   bio: {
+    uitlegParagraphs: [
+      "Pour manger vraiment bio, <a href=\"/fr/fournisseur/ekomenu\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Ekomenu</a> est le seul choix sérieux en Belgique. C'est le seul box repas avec une certification biologique reconnue : tous les ingrédients sont 100 % bio, l'emballage est compostable et chaque commande affiche votre empreinte CO2. Avec 20 à 25 recettes par semaine et une offre entièrement végétale, c'est aussi le meilleur choix pour les végétariens et les végans. Détail étonnant : Ekomenu ne coûte que 6,18 € par portion, moins que HelloFresh (7,92 €) ou Marley Spoon (8,67 €). Attention : Ekomenu ne livre pas en Wallonie.",
+      "<a href=\"/fr/fournisseur/foodbag\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Foodbag</a> est la meilleure alternative si vous mangez aussi de la viande ou si vous habitez en Wallonie. Foodbag n'est pas certifié bio, mais travaille avec des fermes belges et ses propres livreurs : une chaîne plus courte et des ingrédients frais. Pour manger de façon consciente sans aller jusqu'au bio strict, c'est un bon compromis. Voir la différence en détail dans notre <a href=\"/fr/comparatif/hellofresh-vs-ekomenu\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">comparatif avec Ekomenu</a>.",
+    ],
     titel: 'Bio',
     h1: 'Box repas bio en Belgique 2026 — et pourquoi la Wallonie est mal servie',
     intro:

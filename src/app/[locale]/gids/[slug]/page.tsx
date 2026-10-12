@@ -7,7 +7,7 @@ import { buildMetadata } from '@/lib/seo';
 import { generateGidsStaticParams, berekenWeekprijs } from '@/lib/gidsen';
 import { gidsVoor, aanbiederVoor } from '@/lib/teksten';
 
-import { LAATST_BIJGEWERKT } from '@/lib/site';
+import { laatstBijgewerkt } from '@/lib/site';
 
 export async function generateStaticParams() {
   return generateGidsStaticParams();
@@ -34,6 +34,8 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
   const g = gidsVoor(slug, taal);
   if (!g) notFound();
   const tl = await getTranslations('labels');
+  const fr = taal === 'fr';
+  const eur = (n: number) => (fr ? `${n.toFixed(2).replace('.', ',')} €` : `€${n.toFixed(2)}`);
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -69,7 +71,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
 
         {/* Breadcrumb */}
         <div style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 24 }}>
-          <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
+          <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>{fr ? 'Accueil' : 'Home'}</Link>
           {' → '}
           <strong style={{ color: 'var(--ink)' }}>{g.broodkruimel}</strong>
         </div>
@@ -77,7 +79,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
         {/* Header */}
         <div style={{ marginBottom: 36 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-            ✓ Prijzen geverifieerd · {LAATST_BIJGEWERKT}
+            {fr ? '✓ Prix vérifiés' : '✓ Prijzen geverifieerd'} · {laatstBijgewerkt(taal)}
           </div>
           <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 7vw, 40px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 16 }}>
             {g.titel}
@@ -110,7 +112,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
               </div>
             </div>
             <Link data-plaatsing="gids-winnaar" href={`/ga/${g.winnaar.slug}`} style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '14px 28px', borderRadius: 12, fontWeight: 700, fontSize: 15, textDecoration: 'none', whiteSpace: 'nowrap', flexShrink: 0, boxShadow: '0 2px 8px rgba(27,67,50,0.18)' }}>
-              Bekijk {g.winnaar.naam} →
+              {fr ? `Voir ${g.winnaar.naam} →` : `Bekijk ${g.winnaar.naam} →`}
             </Link>
           </div>
         </div>
@@ -125,7 +127,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
             <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13, background: 'white', border: '1px solid var(--rule)', borderRadius: 12, overflow: 'hidden' }}>
               <thead>
                 <tr style={{ background: '#1B4332', color: 'white' }}>
-                  {['Aanbieder', 'Onze keuze', '€/portie', 'Bezorging', `€/week (2p, 3×)`, 'Welkomstdeal', 'Bekijk'].map(h => (
+                  {(fr ? ['Fournisseur', 'Notre avis', '€/portion', 'Livraison', `€/semaine (2p, 3×)`, 'Offre de bienvenue', 'Voir'] : ['Aanbieder', 'Onze keuze', '€/portie', 'Bezorging', `€/week (2p, 3×)`, 'Welkomstdeal', 'Bekijk']).map(h => (
                     <th key={h} style={{ padding: '10px 12px', textAlign: 'left', fontWeight: 600, fontSize: 11, letterSpacing: '0.04em', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>{h}</th>
                   ))}
                 </tr>
@@ -146,10 +148,10 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                     </td>
                     <td style={{ padding: '10px 12px' }}>vanaf €{r.portie.toFixed(2)}</td>
                     <td style={{ padding: '10px 12px', color: r.bezorging === 0 ? '#16A34A' : '#D97706', fontWeight: 600 }}>
-                      {r.bezorging === 0 ? 'Gratis' : `€${r.bezorging}`}
+                      {r.bezorging === 0 ? (fr ? 'Gratuite' : 'Gratis') : fr ? eur(r.bezorging) : `€${r.bezorging}`}
                     </td>
                     <td style={{ padding: '10px 12px', fontFamily: 'Fraunces, serif', fontWeight: 900, fontSize: 15, color: i < 3 ? '#1B4332' : 'var(--ink)' }}>
-                      €{r.weekprijs.toFixed(2)}
+                      {eur(r.weekprijs)}
                     </td>
                     <td style={{ padding: '10px 12px', fontSize: 12, color: r.welkomst === '—' ? 'var(--muted)' : '#15803D', fontWeight: r.welkomst === '—' ? 400 : 600 }}>
                       {r.welkomst}
@@ -170,7 +172,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                           whiteSpace: 'nowrap',
                         }}
                       >
-                        Bekijk →
+                        {fr ? 'Voir →' : 'Bekijk →'}
                       </Link>
                     </td>
                   </tr>
@@ -206,7 +208,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                       {tl('bekijkDeal')}
                     </Link>
                     <Link href={`/aanbieder/${keuze.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '8px 16px', borderRadius: 10, fontWeight: 600, fontSize: 12, textDecoration: 'none', color: 'var(--ink)', whiteSpace: 'nowrap' }}>
-                      Lees review
+                      {fr ? 'Lire l’avis' : 'Lees review'}
                     </Link>
                   </div>
                 </div>
@@ -217,7 +219,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
                     <div style={{ fontSize: 13, fontWeight: 600, color: '#14532D' }}>{keuze.metDeal}</div>
                   </div>
                   <div style={{ background: '#FFF7ED', border: '1px solid #FED7AA', borderRadius: 8, padding: '10px 12px' }}>
-                    <div style={{ fontSize: 11, fontWeight: 700, color: '#92400E', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 3 }}>Reguliere prijs</div>
+                    <div style={{ fontSize: 11, fontWeight: 700, color: '#92400E', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: 3 }}>{fr ? 'Prix normal' : 'Reguliere prijs'}</div>
                     <div style={{ fontSize: 13, fontWeight: 600, color: '#78350F' }}>{keuze.naDeal}</div>
                   </div>
                 </div>
@@ -278,7 +280,7 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
           </div>
         </div>
 
-        <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar alle maaltijdboxen</Link>
+        <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{fr ? '← Retour à tous les box repas' : '← Terug naar alle maaltijdboxen'}</Link>
       </div>
     </>
   );

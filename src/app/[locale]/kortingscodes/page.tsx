@@ -111,7 +111,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
       {/* Actieve deals eerst */}
       <div style={{ marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900 }}>{t('actieveDeals')}</h2>
-        <div style={{ fontSize: 13, color: 'var(--muted)' }}>Bijgewerkt {laatstBijgewerkt(taal)}</div>
+        <div style={{ fontSize: 13, color: 'var(--muted)' }}>{taal === 'fr' ? 'Mis à jour' : 'Bijgewerkt'} {laatstBijgewerkt(taal)}</div>
       </div>
 
       {metKorting.map((a, i) => {
@@ -199,7 +199,7 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
       </div>
 
       <div style={{ marginTop: 24 }}>
-        <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>← Terug naar alle maaltijdboxen</Link>
+        <Link href="/" style={{ fontSize: 14, color: 'var(--muted)', textDecoration: 'none' }}>{taal === 'fr' ? '← Retour à tous les box repas' : '← Terug naar alle maaltijdboxen'}</Link>
       </div>
     </div>
   );

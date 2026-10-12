@@ -29,6 +29,7 @@ export type AanbiederTeksten = Pick<
 
 export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   hellofresh: {
+    badge: { label: '⭐ Meilleur choix', bg: '#E8F5EE', color: '#1B4332' },
     kortingsCode: {
       code: null,
       bedrag: "jusqu'à 70 € de réduction",
@@ -77,6 +78,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   foodbag: {
+    badge: { label: '🇧🇪 Choix belge', bg: '#DBEAFE', color: '#1E40AF' },
     kortingsCode: {
       code: null,
       bedrag: "60 € de réduction",
@@ -120,6 +122,9 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   'marley-spoon': {
+    badge: { label: '👨‍🍳 Pour les passionnés de cuisine', bg: '#F3E8FF', color: '#7C3AED' },
+    ctaTekst: 'Économisez 49 € sur vos 4 premières box',
+    ctaTekst2: 'Essayez votre première box pour 25,99 €',
     kortingsCode: {
       code: null,
       bedrag: "50 % de réduction",
@@ -133,6 +138,31 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       "Marley Spoon propose les recettes les plus travaillées de notre comparatif. Attention toutefois : la livraison est limitée à la Flandre et à Bruxelles. Si vous habitez en Wallonie, ce fournisseur n'est pas une option.",
     opzegTermijn: '5 jours avant la livraison',
     uitgebreideReview: {
+      prijsTabel: [
+        { box: 'Box 1', normaal: '51,99 €', korting: '50 % + livraison offerte', betaal: '25,99 €', besparing: '26,00 €' },
+        { box: 'Box 2', normaal: '51,99 €', korting: '20 %', betaal: '41,59 €', besparing: '10,40 €' },
+        { box: 'Box 3', normaal: '51,99 €', korting: '15 %', betaal: '44,19 €', besparing: '7,80 €' },
+        { box: 'Box 4', normaal: '51,99 €', korting: '10 %', betaal: '46,79 €', besparing: '5,20 €' },
+        { box: 'Total', normaal: '207,96 €', korting: '—', betaal: '158,56 €', besparing: '49,40 €' },
+      ],
+      prijsUitleg: "Après la période de bienvenue, vous payez à deux, avec 3 repas par semaine, 207,96 € par mois (4 × 51,99 €). Pour 4 personnes, cela monte à 251,80 € par mois (4 × 62,95 €). Est-ce cher par rapport aux courses classiques ? Oui. Mais les clients de Marley Spoon citent toujours les mêmes raisons : pas de gaspillage, plus besoin de réfléchir chaque jour au menu, et le temps gagné en évitant le magasin tous les soirs. Attention : Marley Spoon ne livre qu'en Flandre et à Bruxelles.",
+      nietGeschiktVoor: [
+        "Vous habitez en Wallonie : Marley Spoon n'y livre pas, uniquement en Flandre et à Bruxelles.",
+        'Vous avez peu de temps pour cuisiner : comptez 45 à 60 minutes par recette.',
+        'Vous cherchez le box repas le moins cher : le prix par portion est plus élevé que chez la plupart des concurrents.',
+        'Vous cuisinez pour de jeunes enfants aux goûts simples : les recettes sont parfois complexes ou plus relevées.',
+        'Vous voulez choisir vos ingrédients à la carte : vous choisissez dans un menu, pas ingrédient par ingrédient.',
+      ],
+      faq: [
+        {
+          vraag: 'Puis-je résilier Marley Spoon après la première box ?',
+          antwoord: "Oui. Marley Spoon est résiliable chaque semaine, sans durée minimale ni frais de résiliation. Vous arrêtez ou suspendez votre abonnement via votre compte : si vous le faites avant la date limite hebdomadaire, aucune nouvelle box n'est créée.",
+        },
+        {
+          vraag: 'Marley Spoon livre-t-il dans ma commune ?',
+          antwoord: "Marley Spoon livre en Flandre et dans la Région de Bruxelles-Capitale. La Wallonie n'est actuellement pas desservie. Vous hésitez pour votre code postal ? Saisissez-le sur le site de Marley Spoon : vous verrez tout de suite si la livraison est possible.",
+        },
+      ],
       intro:
         "Disons-le d'emblée : Marley Spoon ne livre pas en Wallonie. Si vous habitez au sud du pays, cet avis n'a d'intérêt que pour comprendre ce que vous ne pouvez pas commander. À Bruxelles, en revanche, l'offre est disponible et vaut le détour.",
       testervaring:
@@ -165,6 +195,8 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   foodprepper: {
+    badge: { label: '⚡ Le plus rapide', bg: '#ECFDF5', color: '#2D6A4F' },
+    ctaTekst: 'Voir Foodprepper',
     kortingsCode: {
       code: null,
       bedrag: "3 × 15 € de réduction",
@@ -178,6 +210,35 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       "Foodprepper livre des ingrédients déjà préparés : légumes précuits, viande marinée, sauces prêtes. Vous assemblez en un quart d'heure. La livraison est toutefois limitée à la Flandre et à Bruxelles — pas de Wallonie.",
     opzegTermijn: 'aucun abonnement obligatoire',
     uitgebreideReview: {
+      prijsUitleg: "Foodprepper applique un système de prix flexible, sans engagement minimum. Vous payez par repas ou par box, selon votre choix. Les prix varient : vérifiez l'offre actuelle sur foodprepper.be, car ils peuvent changer.\n\nLes nouveaux clients reçoivent trois fois 15 € de réduction sur leurs trois premières commandes, soit 45 € d'avantage au maximum. La réduction est appliquée automatiquement via notre lien, sans code. Attention : Foodprepper livre uniquement en Flandre et à Bruxelles.",
+      nietGeschiktVoor: [
+        'Vous habitez en Wallonie : Foodprepper livre uniquement en Flandre et dans la Région de Bruxelles-Capitale.',
+        "Vous cherchez une vraie expérience de cuisine : la découpe et la préparation sont déjà faites, le plaisir de cuisiner est donc plus limité.",
+        "Vous voulez l'option la moins chère du marché : Foodprepper n'est pas le choix le plus économique du comparatif.",
+        'Vous attendez plus de 20 recettes par semaine : le menu change, mais il est plus limité que chez HelloFresh ou Foodbag.',
+      ],
+      faq: [
+        {
+          vraag: 'Foodprepper est-il cher ?',
+          antwoord: "Foodprepper n'est ni le box repas le moins cher de Belgique, ni le plus cher. Le prix dépend des repas choisis et du nombre de personnes. Les nouveaux clients profitent d'une réduction de bienvenue : 3 x 15 € sur les 3 premières commandes (jusqu'à 45 €), appliquée automatiquement via notre lien, sans code. Les prix actuels sont sur foodprepper.be et peuvent changer.",
+        },
+        {
+          vraag: 'Puis-je commander sans abonnement ?',
+          antwoord: "Oui. L'abonnement n'est pas obligatoire chez Foodprepper. Vous pouvez commander une seule fois, ou choisir une livraison chaque semaine ou toutes les deux semaines. Pause et résiliation sont libres, sans pénalité ni préavis.",
+        },
+        {
+          vraag: 'Foodprepper livre-t-il en Wallonie ?',
+          antwoord: "Non. Foodprepper livre actuellement uniquement en Flandre et dans la Région de Bruxelles-Capitale. La Wallonie n'est pas desservie. Vérifiez sur foodprepper.be si votre code postal est dans la zone de livraison.",
+        },
+        {
+          vraag: 'Quelle est la différence avec Foodbag ?',
+          antwoord: "Foodprepper et Foodbag appartiennent à la même maison mère (Smartmat NV, groupe Colruyt), mais visent un usage différent. Foodbag est un box à cuisiner classique, avec 25 à 35 minutes de préparation et un large choix de recettes, et il livre aussi en Wallonie. Foodprepper mise sur la rapidité : prêt en 15 minutes grâce à des légumes précuits, de la viande marinée et des sauces déjà préparées. Foodprepper propose aussi petit-déjeuner, lunch et snacks via le menu du jour et le marché frais.",
+        },
+        {
+          vraag: 'En combien de temps reçois-je ma box ?',
+          antwoord: 'Foodprepper livre chaque semaine le dimanche ou le lundi, au frais et à domicile. Vous commandez sur foodprepper.be avant la date limite de la semaine. La livraison est gratuite.',
+        },
+      ],
       intro:
         "Foodprepper est la formule la plus rapide du marché belge, mais sa zone de livraison couvre uniquement la Flandre et la Région de Bruxelles-Capitale. Pour un lecteur wallon, c'est rédhibitoire ; pour un Bruxellois pressé, c'est probablement le meilleur rapport temps-qualité.",
       testervaring:
@@ -303,6 +364,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   foodmaker: {
+    ctaSubtekst: 'Jeroen Meus · livraison gratuite partout en Belgique',
     tagline: 'Qualité artisanale anversoise — livrée dans toute la Belgique',
     beschrijving:
       "Foodmaker prépare des plats à réchauffer à Anvers, avec une collaboration signée Jeroen Meus. La livraison est gratuite dans tout le pays, Wallonie comprise, et il n'y a pas d'abonnement obligatoire.",
@@ -336,6 +398,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   },
 
   ekomenu: {
+    ctaSubtekst: '100 % bio · livraison gratuite · pas en Wallonie',
     tagline: '100 % bio et végétal — Flandre et Bruxelles uniquement',
     beschrijving:
       "Ekomenu est le seul box entièrement biologique et végétal de Belgique. La livraison se limite toutefois à la Flandre et à Bruxelles : la Wallonie n'est pas desservie.",

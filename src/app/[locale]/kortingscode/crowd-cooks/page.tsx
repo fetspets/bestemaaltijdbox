@@ -1,102 +1,86 @@
-import Link from '@/components/TaalLink';
+import KortingscodeDetail, { type KortingscodeTekst } from '@/components/KortingscodeDetail';
 
-export default function CrowdCooksKortingscode() {
+const TEKST: Record<'nl' | 'fr', KortingscodeTekst> = {
+  nl: {
+    kruimelHome: 'Home',
+    kruimelCodes: 'Kortingscodes',
+    kruimelNaam: 'Crowd Cooks kortingscode',
+    badge: '✓ Gecontroleerd geldig 2026',
+    h1: 'Crowd Cooks kortingscode 2026 — tot €60 welkomstkorting',
+    intro: <>Met de Crowd Cooks welkomstdeal krijg je <strong>€20 korting in je eerste week</strong> en daarna <strong>€10 korting per week gedurende 4 weken</strong> — samen tot <strong>€60 voordeel</strong>. Geldig voor nieuwe klanten — de korting wordt <strong>automatisch toegepast via onze link</strong>, je hoeft geen code in te voeren.</>,
+    voordeelLabel: 'Jouw voordeel',
+    voordeelGroot: 'tot €60 korting',
+    voordeelSub: '€20 in week 1 + 4× €10 — geen code nodig',
+    ctaTekst: 'Activeer tot €60 korting bij Crowd Cooks →',
+    stappenKop: 'Hoe activeer je de korting?',
+    stapLabel: 'Stap',
+    stappen: [
+      'Klik op "Activeer tot €60 korting bij Crowd Cooks" hierboven',
+      'Je gaat via onze link naar Crowd Cooks en maakt een account aan',
+      'De korting staat al klaar — je hoeft geen code in te voeren',
+      'Geniet van €20 korting in week 1 en €10 korting per week gedurende 4 weken (tot €60 totaal)',
+    ],
+    voorwaardenKop: 'Voorwaarden',
+    voorwaarden: [
+      'Geldig voor nieuwe Crowd Cooks-klanten',
+      '€20 korting op je eerste week',
+      '€10 korting per week gedurende 4 weken',
+      'Totale besparing tot €60',
+      'Automatisch toegepast via onze link — geen code nodig',
+      'Bezorging €4,90 op zondag of maandag in België',
+    ],
+    overKop: 'Waarom Crowd Cooks?',
+    overAlineas: [
+      'Crowd Cooks is een Belgische kant-en-klare maaltijdservice — geen kookbox, maar verse maaltijden bereid door chefs die je in een paar minuten opwarmt. Elke week kies je uit 12 nieuwe gerechten met royale porties van 450+ gram, 5 dagen houdbaar in de koelkast. De bezorging (€4,90) gebeurt op zondag of maandag en het abonnement is flexibel: pauzeren of annuleren kan met één klik. Ideaal voor drukke professionals, singles en koppels die gezond willen eten zonder kooktijd.',
+    ],
+    reviewTekst: 'Lees onze volledige Crowd Cooks review →',
+    allesTekst: '← Alle kortingscodes bekijken',
+  },
+  fr: {
+    kruimelHome: 'Accueil',
+    kruimelCodes: 'Codes promo',
+    kruimelNaam: 'Code promo Crowd Cooks',
+    badge: '✓ Validité vérifiée 2026',
+    h1: "Code promo Crowd Cooks 2026 — jusqu'à 60 € de réduction de bienvenue",
+    intro: <>Avec l&apos;offre de bienvenue de Crowd Cooks, vous recevez <strong>20 € de réduction la première semaine</strong>, puis <strong>10 € de réduction par semaine pendant 4 semaines</strong> — soit <strong>jusqu&apos;à 60 € d&apos;avantage</strong>. Valable pour les nouveaux clients : la réduction est <strong>appliquée automatiquement via notre lien</strong>, aucun code à saisir.</>,
+    waarschuwing: 'Crowd Cooks ne livre pas partout en Belgique. Vérifiez votre code postal sur le site de Crowd Cooks avant de commander.',
+    voordeelLabel: 'Votre avantage',
+    voordeelGroot: "jusqu'à 60 €",
+    voordeelSub: '20 € la semaine 1 + 4 x 10 € — sans code',
+    ctaTekst: "Activer jusqu'à 60 € de réduction chez Crowd Cooks →",
+    stappenKop: 'Comment activer la réduction ?',
+    stapLabel: 'Étape',
+    stappen: [
+      "Cliquez sur « Activer jusqu'à 60 € de réduction chez Crowd Cooks » ci-dessus",
+      'Notre lien vous amène chez Crowd Cooks, où vous créez un compte',
+      'La réduction est déjà prête : aucun code à saisir',
+      "Profitez de 20 € de réduction la première semaine, puis de 10 € par semaine pendant 4 semaines (jusqu'à 60 € au total)",
+    ],
+    voorwaardenKop: 'Conditions',
+    voorwaarden: [
+      'Valable pour les nouveaux clients Crowd Cooks',
+      '20 € de réduction la première semaine',
+      '10 € de réduction par semaine pendant 4 semaines',
+      "Économie totale jusqu'à 60 €",
+      'Appliquée automatiquement via notre lien — sans code',
+      'Livraison 4,90 € le dimanche ou le lundi (selon votre code postal)',
+    ],
+    overKop: 'Pourquoi Crowd Cooks ?',
+    overAlineas: [
+      "Crowd Cooks est un service belge de plats préparés : pas un box à cuisiner, mais des repas frais préparés par des chefs, à réchauffer en quelques minutes. Chaque semaine, vous choisissez parmi 12 nouveaux plats aux portions généreuses (450 g et plus), qui se conservent 5 jours au réfrigérateur. La livraison (4,90 €) a lieu le dimanche ou le lundi et l'abonnement est flexible : pause ou annulation en un clic. Idéal pour les professionnels pressés, les personnes seules et les couples qui veulent manger sainement sans cuisiner.",
+    ],
+    reviewTekst: 'Lire notre avis complet sur Crowd Cooks →',
+    allesTekst: '← Voir tous les codes promo',
+  },
+};
+
+export default async function CrowdCooksKortingscode({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   return (
-    <div style={{ maxWidth: 680, margin: '0 auto', padding: '40px 20px 64px' }}>
-
-      {/* Breadcrumb */}
-      <div style={{ fontSize: 13, color: '#9CA3AF', marginBottom: 28 }}>
-        <Link href="/" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Home</Link>
-        {' → '}
-        <Link href="/kortingscodes" style={{ color: '#9CA3AF', textDecoration: 'none' }}>Kortingscodes</Link>
-        {' → '}
-        <strong style={{ color: '#1C1C1C' }}>Crowd Cooks kortingscode</strong>
-      </div>
-
-      {/* Badge */}
-      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, background: '#E8F5EE', border: '1px solid #A7DFC0', borderRadius: 100, padding: '5px 14px', fontSize: 12, fontWeight: 600, color: '#1B4332', marginBottom: 16 }}>
-        ✓ Gecontroleerd geldig 2026
-      </div>
-
-      {/* H1 */}
-      <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 5vw, 38px)', fontWeight: 900, color: '#1C1C1C', lineHeight: 1.15, marginBottom: 12 }}>
-        Crowd Cooks kortingscode 2026 — tot €60 welkomstkorting
-      </h1>
-
-      <p style={{ fontSize: 16, color: '#4B5563', lineHeight: 1.7, marginBottom: 32 }}>
-        Met de Crowd Cooks welkomstdeal krijg je <strong>€20 korting in je eerste week</strong> en daarna <strong>€10 korting per week gedurende 4 weken</strong> — samen tot <strong>€60 voordeel</strong>. Geldig voor nieuwe klanten — de korting wordt <strong>automatisch toegepast via onze link</strong>, je hoeft geen code in te voeren.
-      </p>
-
-      {/* Deal highlight */}
-      <div style={{ background: '#E8F5EE', border: '2px solid #A7DFC0', borderRadius: 16, padding: '28px 24px', textAlign: 'center', marginBottom: 24 }}>
-        <div style={{ fontSize: 12, fontWeight: 600, color: '#1B4332', textTransform: 'uppercase', letterSpacing: '0.08em', marginBottom: 8 }}>Jouw voordeel</div>
-        <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 6vw, 42px)', fontWeight: 900, color: '#1B4332', marginBottom: 8 }}>
-          tot €60 korting
-        </div>
-        <div style={{ fontSize: 14, color: '#4B5563' }}>€20 in week 1 + 4× €10 — geen code nodig</div>
-      </div>
-
-      {/* CTA */}
-      <Link
-        href="/ga/crowd-cooks"
-        rel="noopener sponsored nofollow"
-        style={{ display: 'block', background: '#1B4332', color: 'white', textAlign: 'center', padding: '16px', borderRadius: 12, fontWeight: 700, fontSize: 16, textDecoration: 'none', marginBottom: 32 }}
-      >
-        Activeer tot €60 korting bij Crowd Cooks →
-      </Link>
-
-      {/* Stappenplan */}
-      <div style={{ marginBottom: 32 }}>
-        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 16, color: '#1C1C1C' }}>
-          Hoe activeer je de korting?
-        </h2>
-        <ol style={{ paddingLeft: 20, display: 'flex', flexDirection: 'column', gap: 12 }}>
-          {[
-            'Klik op "Activeer tot €60 korting bij Crowd Cooks" hierboven',
-            'Je gaat via onze link naar Crowd Cooks en maakt een account aan',
-            'De korting staat al klaar — je hoeft geen code in te voeren',
-            'Geniet van €20 korting in week 1 en €10 korting per week gedurende 4 weken (tot €60 totaal)',
-          ].map((stap, i) => (
-            <li key={i} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.6 }}>
-              <strong style={{ color: '#1C1C1C' }}>Stap {i + 1}:</strong> {stap}
-            </li>
-          ))}
-        </ol>
-      </div>
-
-      {/* Deal details */}
-      <div style={{ background: 'white', border: '1.5px solid #E5E7EB', borderRadius: 12, padding: 20, marginBottom: 32 }}>
-        <h3 style={{ fontFamily: 'Fraunces, serif', fontSize: 16, fontWeight: 800, marginBottom: 12, color: '#1C1C1C' }}>Voorwaarden</h3>
-        <ul style={{ paddingLeft: 18, display: 'flex', flexDirection: 'column', gap: 6 }}>
-          {[
-            'Geldig voor nieuwe Crowd Cooks-klanten',
-            '€20 korting op je eerste week',
-            '€10 korting per week gedurende 4 weken',
-            'Totale besparing tot €60',
-            'Automatisch toegepast via onze link — geen code nodig',
-            'Bezorging €4,90 op zondag of maandag in België',
-          ].map((v, i) => (
-            <li key={i} style={{ fontSize: 14, color: '#4B5563' }}>✓ {v}</li>
-          ))}
-        </ul>
-      </div>
-
-      {/* Over Crowd Cooks */}
-      <div style={{ marginBottom: 32 }}>
-        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12, color: '#1C1C1C' }}>
-          Waarom Crowd Cooks?
-        </h2>
-        <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 12 }}>
-          Crowd Cooks is een Belgische kant-en-klare maaltijdservice — geen kookbox, maar verse maaltijden bereid door chefs die je in een paar minuten opwarmt. Elke week kies je uit 12 nieuwe gerechten met royale porties van 450+ gram, 5 dagen houdbaar in de koelkast. De bezorging (€4,90) gebeurt op zondag of maandag en het abonnement is flexibel: pauzeren of annuleren kan met één klik. Ideaal voor drukke professionals, singles en koppels die gezond willen eten zonder kooktijd.
-        </p>
-        <Link href="/aanbieder/crowd-cooks" style={{ fontSize: 14, fontWeight: 700, color: '#1B4332', textDecoration: 'underline' }}>
-          Lees onze volledige Crowd Cooks review →
-        </Link>
-      </div>
-
-      <Link href="/kortingscodes" style={{ fontSize: 14, color: '#9CA3AF', textDecoration: 'none' }}>
-        ← Alle kortingscodes bekijken
-      </Link>
-    </div>
+    <KortingscodeDetail
+      slug="crowd-cooks"
+      t={TEKST[locale === 'fr' ? 'fr' : 'nl']}
+      kleur={{ accent: '#1B4332', achtergrond: '#E8F5EE', rand: '#A7DFC0', link: '#1B4332' }}
+    />
   );
 }

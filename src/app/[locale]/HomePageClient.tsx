@@ -144,9 +144,9 @@ export default function HomePageClient({
                 <div className="ranking-stats-grid">
                   {[
                     { val: a.score.totaal.toFixed(1), key: 'Score' },
-                    { val: `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: t('perPortie') },
-                    { val: `${a.receptenPerWeek}+`, key: 'Recepten' },
-                    { val: a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`, key: t('bezorging') },
+                    { val: taal === 'fr' ? `dès ${a.prijsPerPortie.toFixed(2).replace('.', ',')} €` : `v.a. €${a.prijsPerPortie.toFixed(2)}`, key: t('perPortie') },
+                    { val: `${a.receptenPerWeek}+`, key: taal === 'fr' ? 'Recettes' : 'Recepten' },
+                    { val: a.gratisBezorging ? (taal === 'fr' ? 'Gratuite' : 'Gratis') : taal === 'fr' ? `${a.bezorgkosten?.toFixed(2).replace('.', ',')} €` : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`, key: t('bezorging') },
                   ].map(({ val, key }) => (
                     <div key={key} style={{ padding: '8px 6px', borderRight: '1px solid var(--rule)', textAlign: 'center' }}>
                       <div style={{ fontWeight: 700, fontSize: 14 }}>{val}</div>
@@ -168,16 +168,16 @@ export default function HomePageClient({
                   <div style={{ textAlign: 'center', fontSize: 11, color: 'var(--muted)', marginBottom: 8 }}>{a.ctaSubtekst}</div>
                 )}
                 <Link href={`/aanbieder/${a.slug}`} style={{ display: 'block', border: '1.5px solid var(--rule)', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: 'var(--ink)', marginTop: 8 }}>
-                  Lees volledige review
+                  {taal === 'fr' ? 'Lire l’avis complet' : 'Lees volledige review'}
                 </Link>
               </div>
 
               <div className="ranking-scores-grid">
-                <ScoreBar label="Smaak" value={a.score.smaak} />
-                <ScoreBar label="Prijs" value={a.score.prijsKwaliteit} />
-                <ScoreBar label="Flex." value={a.score.flexibiliteit} />
-                <ScoreBar label="Duurzaam" value={a.score.duurzaamheid} />
-                <ScoreBar label="Gemak" value={a.score.gemak} />
+                <ScoreBar label={taal === 'fr' ? 'Goût' : 'Smaak'} value={a.score.smaak} />
+                <ScoreBar label={taal === 'fr' ? 'Prix' : 'Prijs'} value={a.score.prijsKwaliteit} />
+                <ScoreBar label={taal === 'fr' ? 'Flex.' : 'Flex.'} value={a.score.flexibiliteit} />
+                <ScoreBar label={taal === 'fr' ? 'Durable' : 'Duurzaam'} value={a.score.duurzaamheid} />
+                <ScoreBar label={taal === 'fr' ? 'Facilité' : 'Gemak'} value={a.score.gemak} />
               </div>
             </div>
           );
@@ -200,7 +200,7 @@ export default function HomePageClient({
             </div>
             <div style={{ flex: 1, minWidth: 0 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 15, fontWeight: 700 }}>{a.naam} {a.belgisch && '🇧🇪'}</div>
-              <div style={{ fontSize: 12, color: 'var(--muted)' }}>v.a. €{a.prijsPerPortie.toFixed(2)}/portie</div>
+              <div style={{ fontSize: 12, color: 'var(--muted)' }}>{taal === 'fr' ? `dès ${a.prijsPerPortie.toFixed(2).replace('.', ',')} €/portion` : `v.a. €${a.prijsPerPortie.toFixed(2)}/portie`}</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 4, flexShrink: 0 }}>
               <div style={{ display: 'inline-flex', alignItems: 'center', gap: 4, background: '#E8F5EE', borderRadius: 100, padding: '3px 10px', fontSize: 12, fontWeight: 700, color: '#1B4332' }}>{a.score.totaal.toFixed(1)} ★</div>
@@ -263,7 +263,7 @@ export default function HomePageClient({
         <div style={{ marginTop: 48, marginBottom: 48 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 8, paddingBottom: 14, borderBottom: '2px solid var(--ink)', flexWrap: 'wrap', gap: 8 }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 26px)', fontWeight: 900 }}>{t('vergelijkAlle')}</h2>
-            <div style={{ fontSize: 13, color: 'var(--muted)' }}>{aantalAanbieders} aanbieders</div>
+            <div style={{ fontSize: 13, color: 'var(--muted)' }}>{aantalAanbieders} {taal === 'fr' ? 'fournisseurs' : 'aanbieders'}</div>
           </div>
           <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 16 }}>{t('tabelIntro', { datum: laatstBijgewerkt(taal) })}</p>
           <div className="table-wrap" style={{ overflowX: 'auto' }}>
@@ -277,7 +277,7 @@ export default function HomePageClient({
               </thead>
               <tbody>
                 {lijst.map((a, i) => {
-                  const bezorgLabel = a.gratisBezorging ? 'Gratis' : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`;
+                  const bezorgLabel = a.gratisBezorging ? (taal === 'fr' ? 'Gratuite' : 'Gratis') : taal === 'fr' ? `${a.bezorgkosten?.toFixed(2).replace('.', ',')} €` : `€${a.bezorgkosten?.toFixed(2).replace('.', ',')}`;
                   const bezorgGratis = a.gratisBezorging;
                   return (
                   <tr key={a.slug} style={{ borderBottom: '1px solid var(--rule)', background: i === 0 ? '#F0FDF4' : 'white' }}>
@@ -293,7 +293,7 @@ export default function HomePageClient({
                     </td>
                     <td style={{ padding: '10px 10px', fontWeight: 800, color: '#1B4332' }}>{a.score.totaal}</td>
                     <td style={{ padding: '10px 10px' }}>v.a. €{a.prijsPerPortie.toFixed(2).replace('.', ',')}</td>
-                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.minMaaltijdenPerWeek === 1 ? '—' : `${a.minMaaltijdenPerWeek}/week`}</td>
+                    <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.minMaaltijdenPerWeek === 1 ? '—' : `${a.minMaaltijdenPerWeek}/${taal === 'fr' ? 'semaine' : 'week'}`}</td>
                     <td style={{ padding: '10px 10px', color: bezorgGratis ? '#16A34A' : '#DC2626', fontWeight: 600 }}>{bezorgLabel}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center' }}>{a.belgisch ? '🇧🇪' : '—'}</td>
                     <td style={{ padding: '10px 10px', textAlign: 'center', color: a.leverdag ? '#16A34A' : '#DC2626', fontWeight: 700 }}>{a.leverdag ? '✓' : '✗'}</td>

@@ -1,10 +1,34 @@
 import Link from '@/components/TaalLink';
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { aanbieders } from '@/lib/aanbieders';
+
+const FR_LABELS: Record<string, string> = {
+  "Voor koppels": "Pour les couples",
+  "Voor gezinnen": "Pour les familles",
+  "Voor singles": "Pour les personnes seules",
+  "Vegetarisch": "Végétarien",
+  "Beste budget": "Meilleur petit budget",
+  "Biologisch": "Bio",
+  "Beste voor gezinnen": "Le meilleur pour les familles",
+  "Beste voor singles": "Le meilleur pour les personnes seules",
+  "Goedkoopste maaltijdbox": "Le box repas le moins cher",
+  "Beste biologische box": "Le meilleur box bio",
+  "Alle artikels": "Tous les articles",
+  "Maaltijdbox of zelf koken?": "Box repas ou cuisiner soi-même ?",
+  "Maaltijdbox opzeggen": "Résilier un box repas",
+  "Vegetarisch koken": "Cuisiner végétarien",
+  "Gids voor beginners": "Guide pour débutants",
+  "Kortingscodes": "Codes promo",
+  "Over ons": "À propos",
+  "Privacybeleid": "Confidentialité",
+  "Algemene voorwaarden": "Conditions générales",
+};
 
 export default async function Footer() {
   const t = await getTranslations('footer');
   const tn = await getTranslations('nav');
+  const fr = (await getLocale()) === 'fr';
+  const vertaal = (label: string) => (fr ? FR_LABELS[label] ?? label : label);
   return (
     <footer style={{ background: '#1C1C1C', color: 'white', padding: '40px 20px 24px', marginTop: 48 }}>
       <div style={{ maxWidth: 1100, margin: '0 auto' }}>
@@ -52,7 +76,7 @@ export default async function Footer() {
                 { label: 'Beste budget', href: '/voor/budget' },
                 { label: 'Biologisch', href: '/voor/bio' },
               ].map(l => (
-                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{vertaal(l.label)}</Link>
               ))}
             </div>
           </div>
@@ -76,14 +100,14 @@ export default async function Footer() {
                 { label: 'Goedkoopste maaltijdbox', href: '/gids/goedkoopste-maaltijdbox-belgie' },
                 { label: 'Beste biologische box', href: '/voor/bio' },
               ].map(l => (
-                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{vertaal(l.label)}</Link>
               ))}
             </div>
           </div>
 
           {/* Blog */}
           <div>
-            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>Blog</div>
+            <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#6B7280', marginBottom: 14 }}>{t('blog')}</div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
               {[
                 { label: 'Alle artikels', href: '/blog' },
@@ -92,7 +116,7 @@ export default async function Footer() {
                 { label: 'Vegetarisch koken', href: '/blog/vegetarisch-koken-maaltijdbox' },
                 { label: 'Gids voor beginners', href: '/blog/maaltijdbox-starten-beginners' },
               ].map(l => (
-                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{vertaal(l.label)}</Link>
               ))}
             </div>
           </div>
@@ -107,7 +131,7 @@ export default async function Footer() {
                 { label: 'Privacybeleid', href: '/privacy' },
                 { label: 'Algemene voorwaarden', href: '/voorwaarden' },
               ].map(l => (
-                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{l.label}</Link>
+                <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{vertaal(l.label)}</Link>
               ))}
             </div>
           </div>
@@ -115,7 +139,9 @@ export default async function Footer() {
 
         {/* Bottom */}
         <div style={{ paddingTop: 20, borderTop: '1px solid #374151', fontSize: 12, color: '#6B7280', lineHeight: 1.6 }}>
-          Affiliate disclosure: BesteMaaltijdbox.be ontvangt een kleine commissie wanneer je via onze links een abonnement afsluit. Dit is zonder meerprijs voor jou en heeft geen invloed op onze rankings.
+          {fr
+            ? t('disclosure')
+            : 'Affiliate disclosure: BesteMaaltijdbox.be ontvangt een kleine commissie wanneer je via onze links een abonnement afsluit. Dit is zonder meerprijs voor jou en heeft geen invloed op onze rankings.'}
         </div>
       </div>
     </footer>

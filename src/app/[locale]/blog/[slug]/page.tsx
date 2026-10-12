@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import Link from '@/components/TaalLink';
 import type { Locale } from '@/i18n/routing';
 import { generateBlogStaticParams } from '@/lib/blog';
+import { getFactorVergelijkingVoor } from '@/lib/factorVergelijkingen';
 import { blogPostsVoor, blogPostVoor, aanbiederVoor, aanbiedersVoor } from '@/lib/teksten';
 
 import GesponsordLabel from '@/components/GesponsordLabel';
@@ -14,7 +15,60 @@ import type { ContentBlok } from '@/lib/blokken';
 
 // Fallback og-afbeelding (er is nog geen dedicated 1200×630-beeld per blog).
 const OG_IMAGE = '/logo.png';
-const eur = (n: number) => '€' + n.toFixed(2).replace('.', ',');
+const eurNl = (n: number) => '€' + n.toFixed(2).replace('.', ',');
+const eurFr = (n: number) => n.toFixed(2).replace('.', ',') + ' €';
+
+// Deals voor het conversieblok op de opzeg-pagina, per taal. In het Frans
+// staat erbij welke aanbieders niet in Wallonië leveren.
+const OPZEG_DEALS = {
+  nl: [
+    { naam: 'Factor', logo: '/logos/factor.svg', deal: '40% op eerste box, 25% op volgende 5 boxen', detail: 'Automatisch via onze link · 40% op eerste box + 25% op volgende 5 · nieuwe klanten', cta: 'Activeer Factor deal', href: '/ga/factor', kleur: '#D97706', bg: '#FFFBEB' },
+    { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '€60 korting op je eerste 3 bestellingen', detail: 'Automatisch via onze link · 3x €20 · geldig t.e.m. 01/01/2027', cta: 'Activeer €60 korting', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
+    { naam: 'HelloFresh', logo: '/logos/hellofresh.png', deal: 'Tot €70 korting op je eerste 3 boxen', detail: 'Automatisch via onze link · nieuwe klanten', cta: 'Activeer HelloFresh deal', href: '/ga/hellofresh', kleur: '#1B4332', bg: '#F0FDF4' },
+    { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: 'Tot 50% korting op je eerste 4 boxen', detail: 'Geen code nodig · korting automatisch via onze link', cta: 'Activeer Marley Spoon deal', href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
+    { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3× €15 korting op je eerste 3 bestellingen', detail: 'Automatisch via onze link · €45 totaal · klaar in 15 minuten', cta: 'Activeer Foodprepper deal', href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
+  ],
+  fr: [
+    { naam: 'Factor', logo: '/logos/factor.svg', deal: '40 % sur la première box, 25 % sur les 5 suivantes', detail: 'Automatique via notre lien · nouveaux clients · livre en Wallonie', cta: "Activer l'offre Factor", href: '/ga/factor', kleur: '#D97706', bg: '#FFFBEB' },
+    { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '60 € de réduction sur vos 3 premières commandes', detail: "Automatique via notre lien · 3 x 20 € · valable jusqu'au 01/01/2027 · livre en Wallonie", cta: 'Activer 60 € de réduction', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
+    { naam: 'HelloFresh', logo: '/logos/hellofresh.png', deal: "Jusqu'à 70 € de réduction sur vos 3 premières box", detail: 'Automatique via notre lien · nouveaux clients · livre en Wallonie', cta: "Activer l'offre HelloFresh", href: '/ga/hellofresh', kleur: '#1B4332', bg: '#F0FDF4' },
+    { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: "Jusqu'à 50 % de réduction sur vos 4 premières box", detail: 'Sans code · Flandre et Bruxelles uniquement', cta: "Activer l'offre Marley Spoon", href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
+    { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3 x 15 € de réduction sur vos 3 premières commandes', detail: 'Automatique via notre lien · 45 € au total · Flandre et Bruxelles uniquement', cta: "Activer l'offre Foodprepper", href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
+  ],
+};
+
+const UI = {
+  nl: {
+    sponsor: (p: string) => `Dit artikel kwam tot stand in samenwerking met ${p}. Onze scores en rangschikking blijven onafhankelijk.`,
+    opzegKop: 'Overweeg je te stoppen? Misschien is overstappen slimmer.',
+    opzegIntro: 'Als je maaltijdbox niet meer past — té duur, te weinig variatie, verkeerde porties — is het soms slimmer om te wisselen dan volledig te stoppen. Nieuwe klanten krijgen bij alle grote aanbieders een flinke welkomstdeal. Hieronder de beste alternatieven van dit moment.',
+    opzegNoot: 'Instructies om op te zeggen vind je hieronder. Wil je liever pauzeren dan opzeggen? Dat kan bij de meeste aanbieders wekelijks via je account.',
+    snellerKop: 'Op zoek naar iets snellers dan HelloFresh?',
+    snellerTekst: <>Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Krijg <strong>€15 korting</strong> op elk van je eerste 3 bestellingen, automatisch toegepast via onze link — geen code nodig.</>,
+    snellerCta: '€15 korting op de eerste 3 bestellingen →',
+    prijsKop: (m: number) => `Prijsvoorbeeld — ${m} maaltijden per week`,
+    prijsRegel1: (m: number, pp: string, tot: string) => `${m} × ${pp} = ${tot} aan maaltijden`,
+    bezorgkosten: 'bezorgkosten', perWeek: 'per week', normaal: '(normaal tarief)',
+    eersteWeek: 'Eerste week met 40% welkomstkorting op de maaltijden:',
+    richtprijs: (m: number) => `Richtprijs op basis van ${m} maaltijden; prijzen kunnen variëren per keuze en promotie.`,
+    faq: 'Veelgestelde vragen', bekijkOok: 'Bekijk ook', review: 'review', leesMeer: 'Lees meer →', leesOok: 'Lees ook', terug: '← Terug naar blog',
+  },
+  fr: {
+    sponsor: (p: string) => `Cet article a été réalisé en collaboration avec ${p}. Nos notes et notre classement restent indépendants.`,
+    opzegKop: 'Vous envisagez d’arrêter ? Changer de box est parfois plus malin.',
+    opzegIntro: "Si votre box repas ne vous convient plus (trop cher, pas assez varié, mauvaises portions), il est parfois plus malin de changer que d'arrêter complètement. Les nouveaux clients reçoivent une belle offre de bienvenue chez tous les grands fournisseurs. Voici les meilleures alternatives du moment.",
+    opzegNoot: 'Les instructions pour résilier se trouvent ci-dessous. Vous préférez mettre en pause plutôt que résilier ? C’est possible chaque semaine via votre compte chez la plupart des fournisseurs.',
+    snellerKop: 'Vous cherchez plus rapide que HelloFresh ?',
+    snellerTekst: <>Foodprepper met un repas frais sur la table en 15 minutes, sans longue découpe. Profitez de <strong>15 € de réduction</strong> sur chacune de vos 3 premières commandes, appliqués automatiquement via notre lien. Attention : Foodprepper livre uniquement en Flandre et à Bruxelles.</>,
+    snellerCta: '15 € de réduction sur les 3 premières commandes →',
+    prijsKop: (m: number) => `Exemple de prix — ${m} repas par semaine`,
+    prijsRegel1: (m: number, pp: string, tot: string) => `${m} × ${pp} = ${tot} de repas`,
+    bezorgkosten: 'de livraison', perWeek: 'par semaine', normaal: '(tarif normal)',
+    eersteWeek: 'Première semaine avec 40 % de réduction de bienvenue sur les repas :',
+    richtprijs: (m: number) => `Prix indicatif sur la base de ${m} repas ; les prix peuvent varier selon vos choix et les promotions.`,
+    faq: 'Questions fréquentes', bekijkOok: 'Voir aussi', review: '', leesMeer: 'Lire →', leesOok: 'À lire aussi', terug: '← Retour au blog',
+  },
+};
 
 export function generateStaticParams() {
   return generateBlogStaticParams();
@@ -49,6 +103,17 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
   if (!post) notFound();
 
   const relatedAanbieders = aanbiedersVoor(taal).filter(a => post.relatedSlugs.includes(a.slug));
+  const fr = taal === 'fr';
+  const u = UI[fr ? 'fr' : 'nl'];
+  const eur = fr ? eurFr : eurNl;
+  // In het Frans halen we de linklabels uit de Franse titel van de doelpagina.
+  const linkLabel = (l: { label: string; href: string }) => {
+    if (!fr) return l.label;
+    if (l.href === '/kortingscodes') return 'Tous les codes promo pour box repas';
+    if (l.href.startsWith('/blog/')) return blogPostVoor(l.href.slice(6), taal)?.titel ?? l.label;
+    if (l.href.startsWith('/vergelijk/')) return getFactorVergelijkingVoor(l.href.slice(11), taal)?.seoTitle ?? l.label;
+    return l.label;
+  };
 
   return (
     <div style={{ maxWidth: 780, margin: '0 auto', padding: '40px 20px' }}>
@@ -80,7 +145,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
         <div style={{ display: 'flex', alignItems: 'center', gap: 10, background: '#FFFBEB', border: '1px solid #FDE68A', borderRadius: 10, padding: '10px 14px', marginBottom: 28 }}>
           <GesponsordLabel />
           <span style={{ fontSize: 13, color: '#92400E', lineHeight: 1.5 }}>
-            Dit artikel kwam tot stand in samenwerking met {post.sponsor.partner}. Onze scores en rangschikking blijven onafhankelijk.
+            {u.sponsor(post.sponsor.partner)}
           </span>
         </div>
       )}
@@ -89,65 +154,14 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       {slug === 'hoe-maaltijdbox-opzeggen-belgie' && (
         <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 16, padding: '24px 20px', marginBottom: 40 }}>
           <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(18px, 4vw, 24px)', fontWeight: 900, color: '#1C1C1C', marginBottom: 12 }}>
-            Overweeg je te stoppen? Misschien is overstappen slimmer.
+            {u.opzegKop}
           </div>
           <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 20, maxWidth: 600 }}>
-            Als je maaltijdbox niet meer past — té duur, te weinig variatie, verkeerde porties — is het soms slimmer om te wisselen dan volledig te stoppen. Nieuwe klanten krijgen bij alle grote aanbieders een flinke welkomstdeal. Hieronder de beste alternatieven van dit moment.
+            {u.opzegIntro}
           </p>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-            {[
-              {
-                naam: 'Factor',
-                logo: '/logos/factor.svg',
-                deal: '40% op eerste box, 25% op volgende 5 boxen',
-                detail: 'Automatisch via onze link · 40% op eerste box + 25% op volgende 5 · nieuwe klanten',
-                cta: 'Activeer Factor deal',
-                href: '/ga/factor',
-                kleur: '#D97706',
-                bg: '#FFFBEB',
-              },
-              {
-                naam: 'Foodbag',
-                logo: '/logos/foodbag.png',
-                deal: '€60 korting op je eerste 3 bestellingen',
-                detail: 'Automatisch via onze link · 3x €20 · geldig t.e.m. 01/01/2027',
-                cta: 'Activeer €60 korting',
-                href: '/ga/foodbag',
-                kleur: '#1E40AF',
-                bg: '#EFF6FF',
-              },
-              {
-                naam: 'HelloFresh',
-                logo: '/logos/hellofresh.png',
-                deal: 'Tot €70 korting op je eerste 3 boxen',
-                detail: 'Automatisch via onze link · nieuwe klanten',
-                cta: 'Activeer HelloFresh deal',
-                href: '/ga/hellofresh',
-                kleur: '#1B4332',
-                bg: '#F0FDF4',
-              },
-              {
-                naam: 'Marley Spoon',
-                logo: '/logos/marley-spoon.png',
-                deal: 'Tot 50% korting op je eerste 4 boxen',
-                detail: 'Geen code nodig · korting automatisch via onze link',
-                cta: 'Activeer Marley Spoon deal',
-                href: '/ga/marley-spoon',
-                kleur: '#7C3AED',
-                bg: '#F5F3FF',
-              },
-              {
-                naam: 'Foodprepper',
-                logo: '/logos/foodprepper.png',
-                deal: '3× €15 korting op je eerste 3 bestellingen',
-                detail: 'Automatisch via onze link · €45 totaal · klaar in 15 minuten',
-                cta: 'Activeer Foodprepper deal',
-                href: '/ga/foodprepper',
-                kleur: '#2D6A4F',
-                bg: '#ECFDF5',
-              },
-            ].map(a => (
+            {OPZEG_DEALS[fr ? 'fr' : 'nl'].map(a => (
               <div key={a.naam} style={{ background: 'white', borderRadius: 12, border: '1.5px solid #E5E7EB', padding: '16px', display: 'flex', alignItems: 'center', gap: 14, flexWrap: 'wrap' }}>
                 <div style={{ width: 40, height: 40, borderRadius: 10, background: a.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 20, flexShrink: 0, overflow: 'hidden' }}>
                   {a.logo.startsWith('/') ? <img src={a.logo} alt={a.naam} style={{ width: '100%', height: '100%', objectFit: 'contain', padding: 4 }} /> : a.logo}
@@ -165,7 +179,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </div>
 
           <p style={{ fontSize: 12, color: '#9CA3AF', marginTop: 16, marginBottom: 0 }}>
-            Instructies om op te zeggen vind je hieronder. Wil je liever pauzeren dan opzeggen? Dat kan bij de meeste aanbieders wekelijks via je account.
+            {u.opzegNoot}
           </p>
         </div>
       )}
@@ -208,10 +222,10 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                   </ul>
                   <div style={{ background: '#F0FDF4', border: '1.5px solid #A7DFC0', borderRadius: 12, padding: '20px', marginBottom: 16, marginTop: 8 }}>
                     <p style={{ fontWeight: 800, fontSize: 16, color: '#1C1C1C', marginBottom: 8, marginTop: 0 }}>
-                      Op zoek naar iets snellers dan HelloFresh?
+                      {u.snellerKop}
                     </p>
                     <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 16, marginTop: 0 }}>
-                      Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Krijg <strong>€15 korting</strong> op elk van je eerste 3 bestellingen, automatisch toegepast via onze link — geen code nodig.
+                      {u.snellerTekst}
                     </p>
                     <a
                       href="/ga/foodprepper"
@@ -219,7 +233,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                       rel="noopener sponsored nofollow"
                       style={{ display: 'inline-block', background: '#2D6A4F', color: 'white', padding: '10px 18px', borderRadius: 8, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}
                     >
-                      €15 korting op de eerste 3 bestellingen →
+                      {u.snellerCta}
                     </a>
                   </div>
                 </Fragment>
@@ -259,13 +273,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             const eersteWeek = maaltijdKost * 0.6 + bezorg; // 40% welkomstkorting op de maaltijden, bezorging apart
             return (
               <div key={i} style={{ background: '#F9FAFB', border: '1px solid var(--rule)', borderRadius: 12, padding: '18px 20px', margin: '24px 0' }}>
-                <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 800, fontSize: 16, marginBottom: 8 }}>Prijsvoorbeeld — {maaltijden} maaltijden per week</div>
+                <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 800, fontSize: 16, marginBottom: 8 }}>{u.prijsKop(maaltijden)}</div>
                 <ul style={{ margin: 0, paddingLeft: 18, fontSize: 15, lineHeight: 1.8 }}>
-                  <li>{maaltijden} × {eur(f.prijsPerPortie)} = {eur(maaltijdKost)} aan maaltijden</li>
-                  <li>+ {eur(bezorg)} bezorgkosten = <strong>{eur(week)} per week</strong> (normaal tarief)</li>
-                  <li>Eerste week met 40% welkomstkorting op de maaltijden: <strong>{eur(eersteWeek)}</strong></li>
+                  <li>{u.prijsRegel1(maaltijden, eur(f.prijsPerPortie), eur(maaltijdKost))}</li>
+                  <li>+ {eur(bezorg)} {u.bezorgkosten} = <strong>{eur(week)} {u.perWeek}</strong> {u.normaal}</li>
+                  <li>{u.eersteWeek} <strong>{eur(eersteWeek)}</strong></li>
                 </ul>
-                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>Richtprijs op basis van {maaltijden} maaltijden; prijzen kunnen variëren per keuze en promotie.</div>
+                <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 8 }}>{u.richtprijs(maaltijden)}</div>
               </div>
             );
           }
@@ -276,7 +290,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       {post.faq && post.faq.length > 0 && (
         <div style={{ marginTop: 40, marginBottom: 40 }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid var(--ink)' }}>
-            {post.faqKop ?? 'Veelgestelde vragen'}
+            {post.faqKop ?? u.faq}
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 12 }}>
             {post.faq.map(({ q, a }) => (
@@ -293,7 +307,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       {relatedAanbieders.length > 0 && (
         <section style={{ marginTop: 48, paddingTop: 32, borderTop: '2px solid var(--rule)' }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 800, marginBottom: 20, color: 'var(--ink)' }}>
-            Bekijk ook
+            {u.bekijkOok}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {relatedAanbieders.map(a => (
@@ -309,8 +323,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                 fontSize: 14,
                 fontWeight: 600,
               }}>
-                <span>{a.naam} review</span>
-                <span style={{ color: 'var(--green)' }}>Lees meer →</span>
+                <span>{fr ? `Avis ${a.naam}` : `${a.naam} review`}</span>
+                <span style={{ color: 'var(--green)' }}>{u.leesMeer}</span>
               </Link>
             ))}
           </div>
@@ -321,13 +335,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       {post.relatedLinks && post.relatedLinks.length > 0 && (
         <section style={{ marginTop: 32 }}>
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 800, marginBottom: 20, color: 'var(--ink)' }}>
-            Lees ook
+            {u.leesOok}
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
             {post.relatedLinks.map(l => (
               <Link key={l.href} href={l.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, padding: '14px 16px', border: '2px solid var(--rule)', borderRadius: 10, textDecoration: 'none', color: 'var(--ink)', fontSize: 14, fontWeight: 600 }}>
-                <span>{l.label}</span>
-                <span style={{ color: 'var(--green)', whiteSpace: 'nowrap' }}>Lees meer →</span>
+                <span>{linkLabel(l)}</span>
+                <span style={{ color: 'var(--green)', whiteSpace: 'nowrap' }}>{u.leesMeer}</span>
               </Link>
             ))}
           </div>
@@ -337,7 +351,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       {/* Back to blog */}
       <div style={{ marginTop: 40 }}>
         <Link href="/blog" style={{ fontSize: 14, fontWeight: 600, color: 'var(--green)', textDecoration: 'none' }}>
-          ← Terug naar blog
+          {u.terug}
         </Link>
       </div>
 

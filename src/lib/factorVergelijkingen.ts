@@ -121,3 +121,12 @@ export const factorVergelijkingen: FactorVergelijking[] = [
 export function getFactorVergelijking(slug: string): FactorVergelijking | undefined {
   return factorVergelijkingen.find(v => v.slug === slug);
 }
+
+/** Zelfde vergelijking, met de Franse teksten erover gelegd voor locale 'fr'. */
+export function getFactorVergelijkingVoor(slug: string, locale: string): FactorVergelijking | undefined {
+  const basis = getFactorVergelijking(slug);
+  if (!basis || locale !== 'fr') return basis;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { factorVergelijkingenFr } = require('./teksten/factorVergelijkingen.fr') as typeof import('./teksten/factorVergelijkingen.fr');
+  return { ...basis, ...(factorVergelijkingenFr[slug] ?? {}) };
+}
