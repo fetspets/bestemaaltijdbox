@@ -25,7 +25,7 @@ export default function HelloFreshDealBanner() {
       zIndex: 50,
     }}>
       <span style={{ fontSize: 14, fontWeight: 600, textAlign: 'center', lineHeight: 1.5 }}>
-        🥗 HelloFresh-deal: tot €60 korting op je eerste 3 boxen — automatisch via onze link, geen code nodig.
+        🥗 HelloFresh-deal: tot €70 korting op je eerste 3 boxen — automatisch via onze link, geen code nodig.
       </span>
       <Link
         data-plaatsing="hellofresh-banner"

@@ -81,7 +81,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Livre partout · le plus grand choix de recettes',
             waarom:
               "Avec plus de 40 recettes par semaine, un couple ne mange presque jamais deux fois la même chose. HelloFresh est flexible — pause ou résiliation jusqu'à 5 jours avant la livraison — et surtout, il livre dans les trois régions. Pour un couple wallon, c'est le point de départ évident.",
-            deal: "jusqu'à 60 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
+            deal: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
           },
           {
             slug: 'foodbag',
@@ -170,7 +170,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             aanbeveling: 'HelloFresh',
             slug: 'hellofresh',
             uitleg:
-              "Avec la réduction de bienvenue (jusqu'à 60 € sur vos trois premières box), vous payez 5 à 6 € par personne et par soir les premières semaines. Après, HelloFresh reste parmi les box à cuisiner les moins chers de Belgique.",
+              "Avec la réduction de bienvenue (jusqu'à 70 € sur vos trois premières box), vous payez 5 à 6 € par personne et par soir les premières semaines. Après, HelloFresh reste parmi les box à cuisiner les moins chers de Belgique.",
             achtergrond: '#DBEAFE',
             rand: '#BFDBFE',
           },
@@ -191,8 +191,8 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
         tekst:
           "HelloFresh est le box repas le plus choisi par les couples en Belgique, et l'un des rares à livrer dans les trois régions. Avec la réduction de bienvenue, c'est aussi la façon la moins chère de tester.",
         slug: 'hellofresh',
-        knoptekst: "Activer jusqu'à 60 € de réduction →",
-        subtekst: "Jusqu'à 60 € sur vos 3 premières box · automatique via le lien · résiliable à tout moment",
+        knoptekst: "Activer jusqu'à 70 € de réduction →",
+        subtekst: "Jusqu'à 70 € sur vos 3 premières box · automatique via le lien · résiliable à tout moment",
       },
     ],
   },
@@ -252,7 +252,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Recettes végétariennes · livraison dans tout le pays',
             waarom:
               "HelloFresh propose chaque semaine une sélection végétarienne dans un catalogue de plus de 40 recettes, et livre dans les trois régions. C'est l'option la plus accessible si vous habitez en Wallonie et voulez manger végétal plusieurs fois par semaine. Attention : ce n'est pas un box végétal — vous devez sélectionner activement, et la plupart des recettes contiennent viande ou poisson.",
-            deal: "jusqu'à 60 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
+            deal: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
             waarschuwing: '⚠️ Pas 100 % végétal',
           },
           {

@@ -26,7 +26,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
       slug: 'hellofresh',
       naam: 'HelloFresh',
       prijsRegel: '47,94 €/semaine · livraison gratuite · livre en Wallonie',
-      dealRegel: "Jusqu'à 60 € de réduction sur vos 3 premières box",
+      dealRegel: "Jusqu'à 70 € de réduction sur vos 3 premières box",
       alternatiefInleiding: 'Vous êtes en Flandre ou à Bruxelles et cherchez le prix par portion le plus bas ? →',
       alternatiefSlug: 'foodprepper',
       alternatiefLabel: 'Foodprepper : à partir de 4,75 €/portion',
@@ -57,11 +57,11 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           slug: 'hellofresh',
           badge: '⭐ Meilleur choix pour la plupart des gens',
           accent: '#1B4332',
-          metDeal: "jusqu'à 60 € de réduction sur vos 3 premières box",
+          metDeal: "jusqu'à 70 € de réduction sur vos 3 premières box",
           naDeal: '47,94 €/semaine (tarif standard)',
           uitleg:
-            "HelloFresh combine un grand choix (40+ recettes par semaine), la livraison gratuite, une offre de bienvenue solide et — ce qui compte ici — une livraison dans les trois régions. Répartition : 27,50 € sur la box 1, 10 € sur la box 2, 7,50 € sur la box 3. Aucun code à saisir. Résiliable chaque semaine, de 1 à 6 personnes.",
-          dealOpmerking: "Jusqu'à 60 € sur vos 3 premières box · nouveaux clients · automatique via le lien · livre en Wallonie.",
+            "HelloFresh combine un grand choix (40+ recettes par semaine), la livraison gratuite, une offre de bienvenue solide et — ce qui compte ici — une livraison dans les trois régions. Répartition : 45 € sur la box 1, 15 € sur la box 2, 10 € sur la box 3. Aucun code à saisir. Résiliable chaque semaine, de 1 à 6 personnes.",
+          dealOpmerking: "Jusqu'à 70 € sur vos 3 premières box · nouveaux clients · automatique via le lien · livre en Wallonie.",
         },
         {
           slug: 'ekomenu',
@@ -118,7 +118,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
     faq: [
       {
         q: 'Quel est le box repas le moins cher qui livre en Wallonie ?',
-        a: "HelloFresh, à 47,94 € par semaine pour deux personnes et trois repas, livraison gratuite comprise, et avec une réduction de bienvenue allant jusqu'à 60 €. Factor affiche un prix par portion plus bas (4,99 €) mais facture 5,99 € de livraison, ce qui donne 35,93 € par semaine — moins cher, mais il s'agit de plats prêts et non d'un box à cuisiner.",
+        a: "HelloFresh, à 47,94 € par semaine pour deux personnes et trois repas, livraison gratuite comprise, et avec une réduction de bienvenue allant jusqu'à 70 €. Factor affiche un prix par portion plus bas (4,99 €) mais facture 5,99 € de livraison, ce qui donne 35,93 € par semaine — moins cher, mais il s'agit de plats prêts et non d'un box à cuisiner.",
       },
       {
         q: 'Foodprepper est-il vraiment le moins cher ?',
@@ -126,7 +126,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
       },
       {
         q: 'Combien coûte un box repas par mois en Belgique ?',
-        a: "Pour un couple avec trois repas par semaine, comptez en moyenne 130 à 145 € par mois chez HelloFresh ou Marley Spoon au tarif standard. La réduction de bienvenue HelloFresh, jusqu'à 60 € sur les trois premières box, allège nettement les premières semaines. Foodbag est plus cher : environ 228 € par mois au tarif normal.",
+        a: "Pour un couple avec trois repas par semaine, comptez en moyenne 130 à 145 € par mois chez HelloFresh ou Marley Spoon au tarif standard. La réduction de bienvenue HelloFresh, jusqu'à 70 € sur les trois premières box, allège nettement les premières semaines. Foodbag est plus cher : environ 228 € par mois au tarif normal.",
       },
       {
         q: 'Quand un box repas devient-il moins cher que les courses ?',

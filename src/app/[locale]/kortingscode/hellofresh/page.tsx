@@ -24,12 +24,12 @@ export default function HelloFreshKortingscode() {
 
       {/* H1 */}
       <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(24px, 5vw, 36px)', fontWeight: 900, color: '#1C1C1C', lineHeight: 1.15, marginBottom: 12 }}>
-        HelloFresh kortingscode {LAATST_BIJGEWERKT} — tot €60 korting op je eerste 3 boxen
+        HelloFresh kortingscode {LAATST_BIJGEWERKT} — tot €70 korting op je eerste 3 boxen
       </h1>
 
       <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 28 }}>
         HelloFresh geeft nieuwe klanten momenteel{' '}
-        <strong>tot €60 korting verdeeld over je eerste 3 boxen</strong>. De korting wordt{' '}
+        <strong>tot €70 korting verdeeld over je eerste 3 boxen</strong>. De korting wordt{' '}
         <strong>automatisch toegepast via onze link</strong> — je hoeft geen code in te voeren.
         Exclusief voor nieuwe klanten in België.
       </p>
@@ -42,7 +42,7 @@ export default function HelloFreshKortingscode() {
       }}>
         <div style={{ fontSize: 40, marginBottom: 10 }}>🥗</div>
         <div style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(20px, 5vw, 28px)', fontWeight: 900, color: '#1B4332', lineHeight: 1.2, marginBottom: 8 }}>
-          Tot €60 korting op je eerste 3 boxen
+          Tot €70 korting op je eerste 3 boxen
         </div>
         <div style={{ fontSize: 14, color: '#4B5563', marginBottom: 20, lineHeight: 1.6 }}>
           Automatisch toegepast via onze link · geen code nodig
@@ -74,7 +74,7 @@ export default function HelloFreshKortingscode() {
             'Klik op "Activeer deal" hierboven.',
             'Je wordt doorgestuurd naar HelloFresh — geen code nodig, de korting staat klaar via onze link.',
             'Meld je aan als nieuwe klant en stel je eerste box samen.',
-            'De korting wordt automatisch verdeeld over je eerste 3 boxen — samen tot €60 voordeel.',
+            'De korting wordt automatisch verdeeld over je eerste 3 boxen — samen tot €70 voordeel (€45 + €15 + €10).',
           ].map((stap, i) => (
             <li key={i} style={{ display: 'flex', gap: 12, alignItems: 'flex-start', fontSize: 14, color: '#4B5563', lineHeight: 1.6, background: 'white', border: '1px solid #E8E3DC', borderRadius: 10, padding: '12px 14px' }}>
               <span style={{ width: 24, height: 24, borderRadius: '50%', background: '#1B4332', color: 'white', fontWeight: 800, fontSize: 13, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -94,9 +94,9 @@ export default function HelloFreshKortingscode() {
         <ul style={{ paddingLeft: 0, listStyle: 'none', display: 'flex', flexDirection: 'column', gap: 6 }}>
           {[
             'Exclusief voor nieuwe klanten of klanten die >1 jaar geleden hebben opgezegd',
-            'Kortingsverdeling over je eerste 3 boxen: €27,50 + €10 + €7,50 (= €45 effectief, door HelloFresh gecommuniceerd als "tot €60")',
+            'Kortingsverdeling over je eerste 3 boxen: €45 + €15 + €10 (samen €70)',
             'Eerste bezorging gratis, daarna worden bezorgkosten aangerekend',
-            'Korting vervalt 70 dagen na bestelling van je 1e box',
+            'Korting vervalt 56 dagen na bestelling van je 1e box',
             'Wekelijks opzegbaar + 14 dagen herroepingsrecht',
           ].map((v, i) => (
             <li key={i} style={{ fontSize: 13, color: '#4B5563', display: 'flex', gap: 8 }}>

@@ -12,8 +12,8 @@ export async function generateMetadata(
     route: '/kortingscode/[slug]',
     params: { slug: 'hellofresh' },
     pad: '/kortingscode/hellofresh',
-    titel: `HelloFresh kortingscode ${LAATST_BIJGEWERKT} — tot €60 korting op je eerste 3 boxen`,
-    beschrijving: 'Activeer de HelloFresh welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig. Voor nieuwe klanten in België.',
+    titel: `HelloFresh kortingscode ${LAATST_BIJGEWERKT} — tot €70 korting op je eerste 3 boxen`,
+    beschrijving: 'Activeer de HelloFresh welkomstdeal: tot €70 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig. Voor nieuwe klanten in België.',
     type: 'article',
   });
 }

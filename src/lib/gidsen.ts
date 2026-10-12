@@ -81,7 +81,7 @@ export const gidsen: Gids[] = [
       slug: 'hellofresh',
       naam: 'HelloFresh',
       prijsRegel: '€47,94/week · gratis bezorging',
-      dealRegel: 'Tot €60 korting op je eerste 3 boxen',
+      dealRegel: 'Tot €70 korting op je eerste 3 boxen',
       alternatiefInleiding: 'Wil je absoluut de laagste prijs per portie zonder verplicht abonnement? →',
       alternatiefSlug: 'foodprepper',
       alternatiefLabel: 'Foodprepper: v.a. €4,75/portie',
@@ -110,10 +110,10 @@ export const gidsen: Gids[] = [
           slug: 'hellofresh',
           badge: '⭐ Beste keuze voor de meeste mensen',
           accent: '#1B4332',
-          metDeal: 'tot €60 korting op je eerste 3 boxen',
+          metDeal: 'tot €70 korting op je eerste 3 boxen',
           naDeal: '€47,94/week (reguliere prijs)',
-          uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), gratis bezorging en een sterke welkomstdeal: tot €60 korting verdeeld over je eerste 3 boxen (€27,50 op box 1, €10 op box 2, €7,50 op box 3). De korting wordt automatisch toegepast via de link — geen code nodig. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
-          dealOpmerking: 'Tot €60 korting op je eerste 3 boxen · exclusief voor nieuwe klanten · automatisch via link.',
+          uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), gratis bezorging en een sterke welkomstdeal: tot €70 korting verdeeld over je eerste 3 boxen (€45 op box 1, €15 op box 2, €10 op box 3). De korting wordt automatisch toegepast via de link — geen code nodig. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
+          dealOpmerking: 'Tot €70 korting op je eerste 3 boxen · exclusief voor nieuwe klanten · automatisch via link.',
         },
         {
           slug: 'ekomenu',
@@ -164,7 +164,7 @@ export const gidsen: Gids[] = [
     faq: [
       {
         q: 'Wat kost een maaltijdbox gemiddeld per maand in België?',
-        a: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). HelloFresh heeft een welkomstdeal met tot €60 korting op je eerste 3 boxen, waardoor de eerste weken fors goedkoper uitvallen. Foodbag is duurder: €228/maand aan reguliere prijs.',
+        a: 'Voor een koppel met 3 maaltijden per week betaal je gemiddeld €130–145/maand bij HelloFresh of Marley Spoon (reguliere prijs). HelloFresh heeft een welkomstdeal met tot €70 korting op je eerste 3 boxen, waardoor de eerste weken fors goedkoper uitvallen. Foodbag is duurder: €228/maand aan reguliere prijs.',
       },
       {
         q: 'Is Factor echt de goedkoopste maaltijdbox in België?',
@@ -194,7 +194,7 @@ export const gidsen: Gids[] = [
           situatie: 'Goedkoopste kookbox voor een gezin (4p)',
           winnaarNaam: 'HelloFresh',
           slug: 'hellofresh',
-          detail: '€95,88/week (4p, 3 maaltijden, 12 porties × €7,99), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Welkomstdeal: tot €60 korting op je eerste 3 boxen.',
+          detail: '€95,88/week (4p, 3 maaltijden, 12 porties × €7,99), gratis bezorging. HelloFresh levert als enige voor tot 6 personen. Welkomstdeal: tot €70 korting op je eerste 3 boxen.',
           achtergrond: '#EEF2FF',
           rand: '#C7D2FE',
         },

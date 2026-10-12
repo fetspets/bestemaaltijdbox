@@ -223,7 +223,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
             slug: 'hellofresh',
             kop: '🏷️ Réduction de bienvenue HelloFresh',
             tekst:
-              "Jusqu'à 60 € répartis sur vos trois premières box. Appliqué automatiquement via notre lien, aucun code à saisir. Réservé aux nouveaux clients ; valable dans toute la Belgique.",
+              "Jusqu'à 70 € sur vos trois premières box (45 € + 15 € + 10 €). Appliqué automatiquement via notre lien, aucun code à saisir. Réservé aux nouveaux clients ; valable dans toute la Belgique.",
             knoptekst: 'Voir HelloFresh →',
           },
         ],

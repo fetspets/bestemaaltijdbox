@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
   const title = v.seoTitle ?? `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`;
-  const description = v.seoDescription ?? `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €60 op je eerste box.`;
+  const description = v.seoDescription ?? `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €70 op je eerste box.`;
   return buildMetadata({
     locale: locale as Locale,
     route: '/vergelijk/[slug]',

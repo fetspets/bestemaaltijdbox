@@ -25,7 +25,7 @@ export async function generateMetadata(
     beschrijving:
       locale === 'fr'
         ? `Comparez HelloFresh, Foodbag, Factor et ${n - 3} autres sur le prix, le goût et les réductions — et voyez lesquels livrent en Wallonie. Indépendant · mis à jour en ${laatstBijgewerkt(locale)}.`
-        : `Vergelijk HelloFresh, Foodbag, Marley Spoon en ${n - 3} anderen op prijs, smaak en kortingen. Onafhankelijk beoordeeld · bijgewerkt ${LAATST_BIJGEWERKT} · deals tot €60.`,
+        : `Vergelijk HelloFresh, Foodbag, Marley Spoon en ${n - 3} anderen op prijs, smaak en kortingen. Onafhankelijk beoordeeld · bijgewerkt ${LAATST_BIJGEWERKT} · deals tot €70.`,
     keywords:
       locale === 'fr'
         ? ['meilleur box repas belgique', 'box repas wallonie', 'comparatif box repas', 'hellofresh avis', 'box repas 2026']

@@ -31,11 +31,11 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   hellofresh: {
     kortingsCode: {
       code: null,
-      bedrag: "jusqu'à 60 € de réduction",
-      bedragKort: "jusqu'à 60 €",
-      deal: "jusqu'à 60 € de réduction sur vos 3 premières box",
+      bedrag: "jusqu'à 70 € de réduction",
+      bedragKort: "jusqu'à 70 €",
+      deal: "jusqu'à 70 € de réduction sur vos 3 premières box",
       voorwaarden: "Réservé aux nouveaux clients · réparti sur vos 3 premières box · automatique via le lien · résiliable chaque semaine · livre dans tout le pays",
-      beschrijving: "Les nouveaux clients reçoivent jusqu'à 60 € de réduction répartis sur leurs trois premières box. La réduction est appliquée automatiquement via notre lien — aucun code à saisir. HelloFresh livre dans les trois régions, Wallonie comprise.",
+      beschrijving: "Les nouveaux clients reçoivent jusqu'à 70 € de réduction sur leurs trois premières box : 45 € sur la box 1, 15 € sur la box 2 et 10 € sur la box 3. La réduction est appliquée automatiquement via notre lien — aucun code à saisir. HelloFresh livre dans les trois régions, Wallonie comprise.",
     },
     tagline: 'Leader du marché — livre partout en Belgique, Wallonie comprise',
     beschrijving:
@@ -69,7 +69,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       'Prix standard élevé après la période de bienvenue',
     ],
     besteVoor: 'le meilleur choix global, surtout en Wallonie',
-    ctaSubtekst: "jusqu'à 60 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
+    ctaSubtekst: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
     seoTitle: 'HelloFresh avis (2026) : que vaut-il vraiment en Belgique ?',
     seoDescription:
       "Notre avis sur HelloFresh en Belgique : prix, choix de recettes, livraison en Wallonie et flexibilité. Comparé aux alternatives qui livrent au sud du pays.",

@@ -215,7 +215,7 @@ export const vergelijkingen: Vergelijking[] = [
           {
             slug: 'hellofresh',
             kop: '🏷️ Welkomstkorting HelloFresh',
-            tekst: 'Tot €60 korting verdeeld over je eerste 3 boxen. Automatisch toegepast via onze link — geen code nodig. Geldig voor nieuwe klanten; controleer geldigheid op hellofresh.be.',
+            tekst: 'Tot €70 korting verdeeld over je eerste 3 boxen (€45 + €15 + €10). Automatisch toegepast via onze link — geen code nodig. Geldig voor nieuwe klanten; controleer geldigheid op hellofresh.be.',
             knoptekst: 'Bekijk HelloFresh →',
           },
         ],

@@ -422,7 +422,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       },
       {
         q: 'Quel box est le moins cher en Wallonie ?',
-        a: "HelloFresh, avec la livraison gratuite et une réduction de bienvenue allant jusqu'à 60 €. Foodprepper est moins cher par portion mais ne livre pas au sud du pays.",
+        a: "HelloFresh, avec la livraison gratuite et une réduction de bienvenue allant jusqu'à 70 €. Foodprepper est moins cher par portion mais ne livre pas au sud du pays.",
       },
     ],
   },

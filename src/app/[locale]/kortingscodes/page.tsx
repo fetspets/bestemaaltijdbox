@@ -22,11 +22,11 @@ export async function generateMetadata(
     locale: locale as Locale,
     route: '/kortingscodes',
     titel: frans
-      ? `Codes promo box repas Belgique ${datum} — jusqu'à 60 € de réduction`
-      : `Kortingscodes maaltijdbox België ${datum} — bespaar tot €60 op je eerste box`,
+      ? `Codes promo box repas Belgique ${datum} — jusqu'à 70 € de réduction`
+      : `Kortingscodes maaltijdbox België ${datum} — bespaar tot €70 op je eerste box`,
     beschrijving: frans
       ? `Toutes les offres de bienvenue actives pour les box repas en Belgique, avec la zone de livraison de chaque fournisseur. Mis à jour en ${datum}.`
-      : `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €60 op je eerste box. Bijgewerkt ${datum}.`,
+      : `Het actuele overzicht van geldige aanbiedingen voor HelloFresh, Foodbag, Marley Spoon en meer. Bespaar tot €70 op je eerste box. Bijgewerkt ${datum}.`,
     type: 'website',
   });
 }
