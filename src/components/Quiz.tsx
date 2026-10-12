@@ -91,7 +91,7 @@ const resultaten: Record<string, {
     bullets: [
       'Culinaire recepten met echte kooktechnieken',
       'Grote variatie, ook seizoensgebonden gerechten',
-      'Ideaal voor 2 tot 4 personen',
+      'Ook voor 1 persoon of tot 6 porties per maaltijd',
     ],
     runnerUp: { slug: 'foodbag', naam: 'Foodbag', vergelijkSlug: 'foodbag-vs-marley-spoon' },
   },

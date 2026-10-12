@@ -67,7 +67,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     kiesFactorAls: [
       'Je geen tijd of zin hebt om te koken en meteen wil eten',
       'Je gezond wil eten met vaste voedingswaarden (High-Protein, Calorie-Conscious)',
-      'Je de laagste prijs per portie wil (€4,99 tegenover €9,50)',
+      'Je de laagste prijs per portie wil (€4,99 tegenover €8,43)',
       'Snelheid en gemak zwaarder wegen dan lokale herkomst',
     ],
     kiesKookboxAls: [
@@ -79,7 +79,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     verdictTekst: 'Er is geen absolute winnaar — het hangt af van of je wil koken. Foodbag scoort overall hoger en is de betere keuze voor wie bewust Belgisch en vers wil koken, met uitstekende smaak en lokale ingrediënten. Factor is de sterkere keuze voor wie níét wil koken: klaar in enkele minuten, met dieetstijlen en een lagere prijs per portie. Hou je van koken en lokale herkomst? Kies Foodbag. Wil je enkel opwarmen? Kies Factor.',
     faq: [
       { q: 'Wat is het verschil tussen Factor en Foodbag?', a: 'Factor is kant-en-klaar: opwarmen in 2–3 minuten. Foodbag is een klassieke kookbox met verse, lokale Belgische ingrediënten waarbij je zelf kookt in 25–35 minuten. Foodbag hoort bij de Colruyt Group, Factor bij de HelloFresh Group.' },
-      { q: 'Welke is goedkoper: Factor of Foodbag?', a: 'Factor heeft een veel lagere prijs per portie (v.a. €4,99 tegenover €9,50 bij Foodbag), maar rekent €5,99 bezorgkosten per levering; Foodbag bezorgt gratis. Foodbag geeft nieuwe klanten €60 korting, automatisch toegepast via onze link. Reken je totaalprijs uit inclusief bezorging.' },
+      { q: 'Welke is goedkoper: Factor of Foodbag?', a: 'Factor heeft een veel lagere prijs per portie (v.a. €4,99 tegenover €8,43 bij Foodbag), maar rekent €5,99 bezorgkosten per levering; Foodbag bezorgt gratis. Foodbag geeft nieuwe klanten €60 korting, automatisch toegepast via onze link. Reken je totaalprijs uit inclusief bezorging.' },
       { q: 'Welke heeft de betere smaak?', a: 'Foodbag scoort hoger op smaak in onze test (8,6 tegenover 7,8), dankzij verse en lokale ingrediënten die je zelf bereidt. Factor is verrassend goed voor een opwarmmaaltijd, maar haalt de versheid van zelf koken niet.' },
       { q: 'Kan ik beide zonder abonnement of flexibel gebruiken?', a: 'Foodbag kan je los bestellen zonder verplicht abonnement. Factor werkt met een flexibel abonnement dat je wekelijks kan aanpassen, pauzeren of opzeggen.' },
     ],
@@ -111,7 +111,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     verdictTekst: 'Er is geen absolute winnaar — het hangt af van of je wil koken. De scores liggen dicht bij elkaar. Marley Spoon is de betere keuze voor wie van koken geniet, de hoogste smaak en culinaire diepgang zoekt — al bezorgt het enkel in Vlaanderen en Brussel. Factor is de sterkere keuze voor wie níét wil koken, in heel België wil bestellen of gezond wil eten met dieetstijlen. Kook je graag? Marley Spoon. Wil je opwarmen of woon je in Wallonië? Factor.',
     faq: [
       { q: 'Wat is het verschil tussen Factor en Marley Spoon?', a: 'Factor is kant-en-klaar: opwarmen in 2–3 minuten. Marley Spoon is een kookbox met uitgebreide chef-recepten die 45–60 minuten bereidingstijd vragen. Factor levert in heel België; Marley Spoon enkel in Vlaanderen en Brussel.' },
-      { q: 'Welke is goedkoper: Factor of Marley Spoon?', a: 'Factor heeft de lagere prijs per portie (v.a. €4,99 tegenover €8,67). Beide rekenen €5,99 bezorgkosten per levering. Marley Spoon geeft nieuwe klanten een sterke welkomstdeal (tot 50% op de eerste boxen). Reken je totaalprijs uit inclusief bezorging.' },
+      { q: 'Welke is goedkoper: Factor of Marley Spoon?', a: 'Factor heeft de lagere prijs per portie (v.a. €4,99 tegenover €7,79). Factor rekent €5,99 bezorgkosten per levering, Marley Spoon €6,99. Marley Spoon geeft nieuwe klanten een sterke welkomstdeal (tot 50% op de eerste boxen). Reken je totaalprijs uit inclusief bezorging.' },
       { q: 'Levert Marley Spoon in heel België?', a: 'Nee. Marley Spoon bezorgt enkel in Vlaanderen en het Brussels Hoofdstedelijk Gewest. Factor levert wél in heel België, inclusief Wallonië — een praktisch voordeel als je daar woont.' },
       { q: 'Welke heeft de betere smaak?', a: 'Marley Spoon scoort het hoogst op smaak in onze test (8,6), met chef-recepten en aandacht voor techniek. Factor is goed voor een opwarmmaaltijd, maar mikt op gemak eerder dan op culinaire diepgang.' },
     ],

@@ -39,7 +39,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
       rijen: [
         { slug: 'hellofresh', badge: '⭐ Meilleur choix national' },
         { slug: 'ekomenu', badge: '🌱 Meilleur bio', noot: 'pas de livraison en Wallonie' },
-        { slug: 'marley-spoon', badge: '🎯 Meilleure offre', noot: 'pas de livraison en Wallonie · + 5,99 € de livraison' },
+        { slug: 'marley-spoon', badge: '🎯 Meilleure offre', noot: 'pas de livraison en Wallonie · + 6,99 € de livraison' },
         { slug: 'foodprepper', badge: '💸 Prix/portion le plus bas', noot: 'pas de livraison en Wallonie · min. 55 €' },
         { slug: 'factor', noot: '+ 5,99 € de livraison' },
         { slug: 'foodbag' },
@@ -77,10 +77,10 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           slug: 'marley-spoon',
           badge: '🎯 Meilleure offre de bienvenue par portion',
           accent: '#7C3AED',
-          metDeal: '~44 €/semaine en moyenne · box 1 à 25,99 € (50 % + livraison offerte)',
-          naDeal: '58,01 €/semaine (tarif standard)',
+          metDeal: '~41 €/semaine en moyenne · box 1 à 23,37 € (50 % + livraison offerte)',
+          naDeal: '53,73 €/semaine (tarif standard, livraison 6,99 € comprise)',
           uitleg:
-            "50 % + 20 % + 15 % + 10 % sur les quatre premières box rendent Marley Spoon particulièrement avantageux au démarrage : votre première box coûte 25,99 €, livraison comprise. Recettes de qualité chef, plus de 40 choix par semaine. Après la période de bienvenue : 52,02 €/semaine + 5,99 € de livraison. Livraison en Flandre et à Bruxelles uniquement.",
+            "50 % + 20 % + 15 % + 10 % sur les quatre premières box rendent Marley Spoon particulièrement avantageux au démarrage : votre première box coûte 23,37 €, livraison comprise. Recettes de qualité chef, plus de 40 choix par semaine. Après la période de bienvenue : 46,74 €/semaine + 6,99 € de livraison. Livraison en Flandre et à Bruxelles uniquement.",
           dealOpmerking: 'Réduction automatique via le lien · 4 box · Flandre et Bruxelles uniquement.',
         },
       ],
@@ -98,7 +98,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           icon: '📦',
           titel: 'Les frais de livraison',
           tekst:
-            "Factor facture 5,99 € par livraison, Marley Spoon également — cela pèse sur une commande hebdomadaire. HelloFresh, Foodbag, Ekomenu et Foodprepper livrent gratuitement. Comparez toujours le prix par semaine, pas le prix par portion seul.",
+            "Factor facture 5,99 € par livraison, Marley Spoon 6,99 € et HelloFresh 5,99 € à partir de la deuxième box — cela pèse sur une commande hebdomadaire. Foodbag, Ekomenu et Foodprepper livrent gratuitement. Comparez toujours le prix par semaine, pas le prix par portion seul.",
         },
         {
           icon: '📈',

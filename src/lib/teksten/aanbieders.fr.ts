@@ -123,15 +123,15 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
 
   'marley-spoon': {
     badge: { label: '👨‍🍳 Pour les passionnés de cuisine', bg: '#F3E8FF', color: '#7C3AED' },
-    ctaTekst: 'Économisez 49 € sur vos 4 premières box',
-    ctaTekst2: 'Essayez votre première box pour 25,99 €',
+    ctaTekst: 'Économisez 44 € sur vos 4 premières box',
+    ctaTekst2: 'Essayez votre première box pour 23,37 €',
     kortingsCode: {
       code: null,
       bedrag: "50 % de réduction",
       bedragKort: "Jusqu'à 50 %",
       deal: "Jusqu'à 50 % de réduction répartis sur les 4 premières box",
-      voorwaarden: "Réservé aux nouveaux clients · aucun code requis · 4 premières box · résiliable · livraison 5,99 €/commande · Flandre et Bruxelles uniquement",
-      beschrijving: "Aucun code nécessaire — la réduction s'applique automatiquement via notre lien. Répartition : 50 % + livraison offerte sur la box 1, 20 % sur la box 2, 15 % sur la box 3, 10 % sur la box 4. Ensuite 5,99 € par livraison. Attention : pas de livraison en Wallonie.",
+      voorwaarden: "Réservé aux nouveaux clients · aucun code requis · 4 premières box · résiliable · livraison 6,99 €/commande · Flandre et Bruxelles uniquement",
+      beschrijving: "Aucun code nécessaire — la réduction s'applique automatiquement via notre lien. Répartition : 50 % + livraison offerte sur la box 1, 20 % sur la box 2, 15 % sur la box 3, 10 % sur la box 4. Ensuite 6,99 € par livraison. Attention : pas de livraison en Wallonie.",
     },
     tagline: 'Recettes de chef — mais pas de livraison en Wallonie',
     beschrijving:
@@ -139,13 +139,13 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     opzegTermijn: '5 jours avant la livraison',
     uitgebreideReview: {
       prijsTabel: [
-        { box: 'Box 1', normaal: '51,99 €', korting: '50 % + livraison offerte', betaal: '25,99 €', besparing: '26,00 €' },
-        { box: 'Box 2', normaal: '51,99 €', korting: '20 %', betaal: '41,59 €', besparing: '10,40 €' },
-        { box: 'Box 3', normaal: '51,99 €', korting: '15 %', betaal: '44,19 €', besparing: '7,80 €' },
-        { box: 'Box 4', normaal: '51,99 €', korting: '10 %', betaal: '46,79 €', besparing: '5,20 €' },
-        { box: 'Total', normaal: '207,96 €', korting: '—', betaal: '158,56 €', besparing: '49,40 €' },
+        { box: 'Box 1', normaal: '46,74 €', korting: '50 % + livraison offerte', betaal: '23,37 €', besparing: '23,37 €' },
+        { box: 'Box 2', normaal: '46,74 €', korting: '20 %', betaal: '37,39 €', besparing: '9,35 €' },
+        { box: 'Box 3', normaal: '46,74 €', korting: '15 %', betaal: '39,73 €', besparing: '7,01 €' },
+        { box: 'Box 4', normaal: '46,74 €', korting: '10 %', betaal: '42,07 €', besparing: '4,67 €' },
+        { box: 'Total', normaal: '186,96 €', korting: '—', betaal: '142,56 €', besparing: '44,40 €' },
       ],
-      prijsUitleg: "Après la période de bienvenue, vous payez à deux, avec 3 repas par semaine, 207,96 € par mois (4 × 51,99 €). Pour 4 personnes, cela monte à 251,80 € par mois (4 × 62,95 €). Est-ce cher par rapport aux courses classiques ? Oui. Mais les clients de Marley Spoon citent toujours les mêmes raisons : pas de gaspillage, plus besoin de réfléchir chaque jour au menu, et le temps gagné en évitant le magasin tous les soirs. Attention : Marley Spoon ne livre qu'en Flandre et à Bruxelles.",
+      prijsUitleg: "Après la période de bienvenue, vous payez à deux, avec 3 repas par semaine, 46,74 € par box plus 6,99 € de livraison, soit 214,92 € par mois (4 × 53,73 €). Est-ce cher par rapport aux courses classiques ? Oui. Mais les clients de Marley Spoon citent toujours les mêmes raisons : pas de gaspillage, plus besoin de réfléchir chaque jour au menu, et le temps gagné en évitant le magasin tous les soirs. Attention : Marley Spoon ne livre qu'en Flandre et à Bruxelles.",
       nietGeschiktVoor: [
         "Vous habitez en Wallonie : Marley Spoon n'y livre pas, uniquement en Flandre et à Bruxelles.",
         'Vous avez peu de temps pour cuisiner : comptez 45 à 60 minutes par recette.',
@@ -166,17 +166,17 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       intro:
         "Disons-le d'emblée : Marley Spoon ne livre pas en Wallonie. Si vous habitez au sud du pays, cet avis n'a d'intérêt que pour comprendre ce que vous ne pouvez pas commander. À Bruxelles, en revanche, l'offre est disponible et vaut le détour.",
       testervaring:
-        "C'est la meilleure note de goût de notre comparatif. Les recettes demandent plus de technique et davantage de temps — 45 à 60 minutes plutôt que 30 — mais le résultat s'en ressent. Les mélanges d'épices et la qualité des produits se situent au-dessus de la moyenne. Frais de livraison de 5,99 € par commande, à intégrer au calcul.",
+        "C'est la meilleure note de goût de notre comparatif. Les recettes demandent plus de technique et davantage de temps — 45 à 60 minutes plutôt que 30 — mais le résultat s'en ressent. Les mélanges d'épices et la qualité des produits se situent au-dessus de la moyenne. Frais de livraison de 6,99 € par commande, à intégrer au calcul.",
       voorWie:
         "Pour les Bruxellois et les Flamands qui considèrent la cuisine comme un moment en soi. À éviter si vous cherchez la rapidité, si le budget est serré, ou si vous habitez en Wallonie — la livraison n'y est tout simplement pas proposée.",
       hoeWerktHet:
-        "Commande sur marleyspoon.be, choix des recettes chaque semaine, pause ou résiliation jusqu'à 5 jours avant la livraison. Les frais de port de 5,99 € s'ajoutent au prix par portion.",
+        "Commande sur marleyspoon.be, choix des recettes chaque semaine, pause ou résiliation jusqu'à 5 jours avant la livraison. Les frais de port de 6,99 € s'ajoutent au prix par portion.",
       vergelijking:
         "Marley Spoon bat HelloFresh sur le goût et la profondeur culinaire, mais perd sur le prix, la livraison et la couverture géographique. Pour un lecteur francophone hors Bruxelles, la comparaison s'arrête à la zone de livraison.",
       eindoordeel:
         "Excellent produit, disponibilité limitée. À Bruxelles, c'est le choix des amateurs de cuisine. En Wallonie, tournez-vous vers Foodbag ou HelloFresh.",
     },
-    kenmerken: ['👨‍🍳 Recettes de chef', '⚠️ Pas de livraison en Wallonie', '✓ 40+ recettes/semaine', '+ 5,99 € de livraison'],
+    kenmerken: ['👨‍🍳 Recettes de chef', '⚠️ Pas de livraison en Wallonie', '✓ 40+ recettes/semaine', '+ 6,99 € de livraison'],
     pros: [
       'La meilleure note de goût du comparatif',
       'Recettes plus travaillées et plus variées',
@@ -184,7 +184,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     ],
     cons: [
       'Ne livre pas en Wallonie — Flandre et Bruxelles uniquement',
-      'Frais de livraison de 5,99 € par commande',
+      'Frais de livraison de 6,99 € par commande',
       'Temps de préparation plus long (45 à 60 minutes)',
     ],
     besteVoor: 'les amateurs de cuisine à Bruxelles et en Flandre',

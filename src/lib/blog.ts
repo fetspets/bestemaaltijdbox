@@ -162,7 +162,7 @@ export const blogPosts: BlogPost[] = [
     faq: [
       { q: 'Welke maaltijdbox heeft geen abonnement?', a: 'Foodprepper en Foodmaker werken volledig zonder verplicht abonnement — je bestelt wanneer het jou uitkomt, zonder wekelijkse verplichting of opzegtermijn. Foodbag laat je ook los bestellen: je kiest zelf wanneer je een box plaatst, zonder je vast in te schrijven op een wekelijks schema.' },
       { q: 'Kan ik een maaltijdbox eenmalig bestellen?', a: 'Ja. Bij Foodprepper en Foodmaker is een eenmalige bestelling standaard mogelijk — geen abonnement, geen opzegtermijn. Ook bij Foodbag kun je los bestellen zonder vast contract. Zo probeer je een maaltijdbox risicovrij, zonder langetermijnverplichting.' },
-      { q: 'Wat is de goedkoopste maaltijdbox zonder abonnement?', a: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €4,75/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 (3× €15 op de eerste 3 bestellingen), automatisch toegepast via onze link. Foodbag kost €9,50/portie maar biedt €60 korting via onze link en bezorgt in heel België inclusief Wallonië.' },
+      { q: 'Wat is de goedkoopste maaltijdbox zonder abonnement?', a: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €4,75/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 (3× €15 op de eerste 3 bestellingen), automatisch toegepast via onze link. Foodbag kost €8,43/portie maar biedt €60 korting via onze link en bezorgt in heel België inclusief Wallonië.' },
     ],
     relatedSlugs: ['maaltijdbox-maaltijdcheques-belgie', 'maaltijdbox-starten-beginners'],
   },
@@ -264,7 +264,7 @@ export const blogPosts: BlogPost[] = [
         rand: '#FCD34D',
         regels: [
           { label: 'Maximum per dag:', tekst: 'het maximumbedrag voor maaltijdcheques stijgt naar €10 per dag (was €8). Dat betekent meer koopkracht voor jouw wekelijkse maaltijdbox.' },
-          { label: 'Wat dat concreet scheelt:', tekst: 'een gemiddelde Foodbag-bestelling voor 2 personen (3 maaltijden) kost rond €57 — met je maaltijdcheques betaal je een groot deel niet uit eigen zak.' },
+          { label: 'Wat dat concreet scheelt:', tekst: 'een gemiddelde Foodbag-bestelling voor 2 personen (3 maaltijden) kost vanaf €50,60 — met je maaltijdcheques betaal je een groot deel niet uit eigen zak.' },
         ],
       },
       {
@@ -301,10 +301,10 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'Maaltijdboxen leveren exacte hoeveelheden. Je gooit niets weg. Dat verschil in verspilling kan oplopen tot €30–60 per maand voor een gezin van 2 à 4 personen.' },
       { type: 'h2', text: 'Wat kost een maaltijdbox per portie in België?' },
       { type: 'ul', items: [
-        'HelloFresh: tussen €5 en €9 per portie, afhankelijk van het abonnement',
-        'Foodbag: vergelijkbaar, met nadruk op Belgische ingrediënten',
-        'Marley Spoon: iets duurder per portie, maar uitgebreidere recepten',
-        'Ekomenu: duurste optie vanwege 100% biologische ingrediënten',
+        'HelloFresh: van €6,17 (4 personen) tot €14,17 (1 persoon) per portie, €7,92 voor 2 personen',
+        'Foodbag: vanaf €8,43 per portie, met Belgische ingrediënten en gratis levering',
+        'Marley Spoon: vanaf €7,79 per portie, plus €6,99 bezorgkosten',
+        'Ekomenu: €6,18 per portie, en toch 100% biologisch',
       ]},
       { type: 'h2', text: 'Wanneer is zelf koken goedkoper?' },
       { type: 'p', text: 'Als je disciplineerd boodschappen doet, weinig wegooit en in bulk inkoopt, kan zelf koken goedkoper uitkomen. Zeker voor eenvoudige maaltijden zoals pasta, soep of omeletten.' },

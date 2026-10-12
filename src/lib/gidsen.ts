@@ -94,7 +94,7 @@ export const gidsen: Gids[] = [
       rijen: [
         { slug: 'hellofresh', badge: '⭐ Beste keuze' },
         { slug: 'ekomenu', badge: '🌱 Beste bio' },
-        { slug: 'marley-spoon', badge: '🎯 Beste deal', noot: '+ €5,99 bezorgkost' },
+        { slug: 'marley-spoon', badge: '🎯 Beste deal', noot: '+ €6,99 bezorgkost' },
         { slug: 'foodprepper', badge: '💸 Laagste prijs/portie', noot: 'min. bestelbedrag €55' },
         { slug: 'factor', noot: '+ €5,99 bezorgkost' },
         { slug: 'foodbag' },
@@ -128,9 +128,9 @@ export const gidsen: Gids[] = [
           slug: 'marley-spoon',
           badge: '🎯 Beste welkomstdeal per portie',
           accent: '#7C3AED',
-          metDeal: '~€44/week gemiddeld · box 1 €25,99 (50% + gratis bezorging)',
-          naDeal: '€58,01/week (reguliere prijs)',
-          uitleg: '50% + 20% + 15% + 10% korting op de eerste 4 boxen maakt Marley Spoon tijdens de welkomstperiode bijzonder voordelig — je eerste box kost €25,99 inclusief gratis bezorging. Chef-kwaliteitsrecepten met 40+ keuzes per week. Na de welkomstperiode: €52,02/week + €5,99 bezorgkost. Bezorging enkel in Vlaanderen en Brussel.',
+          metDeal: '~€41/week gemiddeld · box 1 €23,37 (50% + gratis bezorging)',
+          naDeal: '€53,73/week (reguliere prijs, incl. €6,99 bezorging)',
+          uitleg: '50% + 20% + 15% + 10% korting op de eerste 4 boxen maakt Marley Spoon tijdens de welkomstperiode bijzonder voordelig — je eerste box kost €23,37 inclusief gratis bezorging. Chef-kwaliteitsrecepten met 40+ keuzes per week. Na de welkomstperiode: €46,74/week + €6,99 bezorgkost. Bezorging enkel in Vlaanderen en Brussel.',
           dealOpmerking: 'Korting automatisch via link · 4 boxen · enkel Vlaanderen & Brussel',
         },
       ],
@@ -141,7 +141,7 @@ export const gidsen: Gids[] = [
         {
           icon: '📦',
           titel: 'Bezorgkost',
-          tekst: 'Factor rekent €5,99 per levering, Marley Spoon eveneens €5,99 — dat tikt aan bij wekelijks bestellen. HelloFresh, Foodbag, Ekomenu en Foodprepper leveren gratis. Vergelijk altijd de weekprijs inclusief bezorgkost, niet enkel de portieprijs.',
+          tekst: 'Factor rekent €5,99 per levering, Marley Spoon €6,99 en HelloFresh €5,99 vanaf de tweede box — dat tikt aan bij wekelijks bestellen. Foodbag, Ekomenu en Foodprepper leveren gratis. Vergelijk altijd de weekprijs inclusief bezorgkost, niet enkel de portieprijs.',
         },
         {
           icon: '📏',
@@ -230,7 +230,7 @@ export function generateGidsStaticParams() {
 /**
  * Weekprijs bij het reguliere tarief, inclusief bezorgkost. Berekend in plaats
  * van overgetypt: de vorige, handmatige tabel had Marley Spoon op €57,98 staan
- * terwijl 6 × €8,67 + €5,99 = €58,01.
+ * terwijl 6 × €8,67 + €5,99 = €58,01 was.
  */
 export function berekenWeekprijs(
   a: { prijsPerPortie: number; gratisBezorging: boolean; bezorgkosten?: number },

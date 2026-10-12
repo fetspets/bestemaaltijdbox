@@ -55,7 +55,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
           {
             icon: '💶',
             titel: 'Le prix pour deux',
-            tekst: "Comptez six portions par semaine (2 personnes × 3 repas). Cela monte vite : de 33 € chez HelloFresh à 57 € chez Foodbag.",
+            tekst: "Comptez six portions par semaine (2 personnes × 3 repas). Cela monte vite : de 28,50 € chez Foodprepper à 50,60 € chez Foodbag, hors frais de livraison éventuels.",
           },
           {
             icon: '🍽️',
@@ -150,7 +150,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
           { kop: 'Réduction', soort: 'korting' },
         ],
         voetnoot:
-          "Le prix par semaine inclut les frais de livraison lorsqu'ils s'appliquent (5,99 € chez Marley Spoon et Factor). Prix indicatifs — vérifiez les tarifs actuels sur le site du fournisseur.",
+          "Le prix par semaine inclut les frais de livraison lorsqu'ils s'appliquent (5,99 € chez Factor et HelloFresh, 6,99 € chez Marley Spoon). Prix indicatifs — vérifiez les tarifs actuels sur le site du fournisseur.",
       },
       {
         type: 'scenarios',
@@ -161,7 +161,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             aanbeveling: 'HelloFresh ou Foodbag',
             slug: 'hellofresh',
             uitleg:
-              "Ce sont les deux seuls box à cuisiner qui livrent au sud du pays. HelloFresh pour le choix et le prix, Foodbag si vous tenez aux ingrédients belges. Les deux livrent gratuitement.",
+              "Ce sont les deux seuls box à cuisiner qui livrent au sud du pays. HelloFresh pour le choix et le prix, Foodbag si vous tenez aux ingrédients belges. Foodbag livre gratuitement ; chez HelloFresh, seule la première livraison est offerte.",
             achtergrond: '#E8F5EE',
             rand: '#BBF7D0',
           },
@@ -341,7 +341,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             aanbeveling: 'HelloFresh ou Foodbag',
             slug: 'hellofresh',
             uitleg:
-              "Aucun box entièrement végétal ne livre en Wallonie aujourd'hui. HelloFresh propose une sélection végétarienne chaque semaine, Foodbag une ligne veggie avec des ingrédients belges. Les deux livrent gratuitement au sud du pays.",
+              "Aucun box entièrement végétal ne livre en Wallonie aujourd'hui. HelloFresh propose une sélection végétarienne chaque semaine, Foodbag une ligne veggie avec des ingrédients belges. Les deux livrent au sud du pays (gratuitement chez Foodbag ; chez HelloFresh, la première livraison est offerte).",
             achtergrond: '#DBEAFE',
             rand: '#BFDBFE',
           },
@@ -467,7 +467,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
       },
       {
         q: 'Faut-il compter les frais de livraison ?',
-        a: "Oui, toujours. Factor et Marley Spoon facturent 5,99 € par livraison, Crowd Cooks 4,90 €. Sur une commande hebdomadaire, cela représente plus de 250 € par an. HelloFresh, Foodbag, Foodmaker et Foodprepper livrent gratuitement.",
+        a: "Oui, toujours. Factor facture 5,99 € par livraison, Marley Spoon 6,99 €, Crowd Cooks 4,90 € et HelloFresh 5,99 € à partir de la deuxième box. Sur une commande hebdomadaire, cela représente plus de 250 € par an. Foodbag, Foodmaker et Foodprepper livrent gratuitement.",
       },
       {
         q: 'Un box repas est-il moins cher que les courses ?',
@@ -518,7 +518,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
 
   bio: {
     uitlegParagraphs: [
-      "Pour manger vraiment bio, <a href=\"/fr/fournisseur/ekomenu\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Ekomenu</a> est le seul choix sérieux en Belgique. C'est le seul box repas avec une certification biologique reconnue : tous les ingrédients sont 100 % bio, l'emballage est compostable et chaque commande affiche votre empreinte CO2. Avec 20 à 25 recettes par semaine et une offre entièrement végétale, c'est aussi le meilleur choix pour les végétariens et les végans. Détail étonnant : Ekomenu ne coûte que 6,18 € par portion, moins que HelloFresh (7,92 €) ou Marley Spoon (8,67 €). Attention : Ekomenu ne livre pas en Wallonie.",
+      "Pour manger vraiment bio, <a href=\"/fr/fournisseur/ekomenu\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Ekomenu</a> est le seul choix sérieux en Belgique. C'est le seul box repas avec une certification biologique reconnue : tous les ingrédients sont 100 % bio, l'emballage est compostable et chaque commande affiche votre empreinte CO2. Avec 20 à 25 recettes par semaine et une offre entièrement végétale, c'est aussi le meilleur choix pour les végétariens et les végans. Détail étonnant : Ekomenu ne coûte que 6,18 € par portion, moins que HelloFresh (7,92 €) ou Marley Spoon (7,79 €). Attention : Ekomenu ne livre pas en Wallonie.",
       "<a href=\"/fr/fournisseur/foodbag\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Foodbag</a> est la meilleure alternative si vous mangez aussi de la viande ou si vous habitez en Wallonie. Foodbag n'est pas certifié bio, mais travaille avec des fermes belges et ses propres livreurs : une chaîne plus courte et des ingrédients frais. Pour manger de façon consciente sans aller jusqu'au bio strict, c'est un bon compromis. Voir la différence en détail dans notre <a href=\"/fr/comparatif/hellofresh-vs-ekomenu\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">comparatif avec Ekomenu</a>.",
     ],
     titel: 'Bio',

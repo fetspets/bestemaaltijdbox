@@ -75,7 +75,7 @@ export const vergelijkingen: Vergelijking[] = [
         html: true,
         paragrafen: [
           '<strong>Foodprepper</strong> onderscheidt zich met een volledig dagmenu: ontbijt, lunch, diner én snacks. Via de versmarkt — een soort online buurtsupermarkt — kan je ook soepen, bijgerechten en snacks bijbestellen. Het weekmenu wisselt, maar is kleiner dan bij Foodbag.',
-          '<strong>Foodbag</strong> biedt 20+ recepten per week verdeeld over 5 kookstijlen, waaronder de populaire Sana-lijn van Sandra Bekkari en de Busy Day-gerechten (klaar in 20 min). Wie afwisseling wil in avondmaaltijden, vindt hier een breed aanbod. Ontbijt en lunch zitten er niet bij.',
+          '<strong>Foodbag</strong> biedt 40 gerechten per week verdeeld over 5 kookstijlen, waaronder de populaire Sana-lijn van Sandra Bekkari en de Busy Day-gerechten (klaar in 20 min). Wie afwisseling wil in avondmaaltijden, vindt hier een breed aanbod. Ontbijt en lunch zitten er niet bij.',
         ],
       },
       {
@@ -267,7 +267,7 @@ export const vergelijkingen: Vergelijking[] = [
   {
     slug: 'hellofresh-vs-foodbag',
     seoTitle: 'HelloFresh vs Foodbag 2026: welke wint? Eerlijke vergelijking',
-    seoDescription: 'HelloFresh of Foodbag — welke is goedkoper en beter? We vergeleken prijs, smaak en flexibiliteit. HelloFresh v.a. €7,92 · Foodbag v.a. €9,50.',
+    seoDescription: 'HelloFresh of Foodbag — welke is goedkoper en beter? We vergeleken prijs, smaak en flexibiliteit. HelloFresh v.a. €7,92 · Foodbag v.a. €8,43.',
     aanbieder1Slug: 'hellofresh',
     aanbieder2Slug: 'foodbag',
     winnaarPerCategorie: {

@@ -49,7 +49,7 @@ export const situaties: Record<string, Situatie> = {
         type: 'infokaarten',
         kop: 'Wat telt voor koppels?',
         items: [
-          { icon: '💶', titel: 'Prijs voor 2', tekst: 'Reken met 6 porties per week (2 personen × 3 maaltijden). Dat loopt snel op: van €33 bij HelloFresh tot €57 bij Foodbag.' },
+          { icon: '💶', titel: 'Prijs voor 2', tekst: 'Reken met 6 porties per week (2 personen × 3 maaltijden). Dat loopt snel op: van €28,50 bij Foodprepper tot €50,60 bij Foodbag, exclusief eventuele bezorgkosten.' },
           { icon: '📦', titel: 'Minimumafname', tekst: 'De meeste aanbieders vereisen minimum 2 maaltijden per week. Foodbag en Foodprepper zijn flexibeler — geen verplicht abonnement.' },
           { icon: '🍽️', titel: 'Receptvariatie', tekst: 'Koppels vervelen sneller dan singles. Kies een aanbieder met 40+ recepten per week zodat je nooit twee keer hetzelfde eet.' },
           { icon: '🔀', titel: 'Flexibiliteit', tekst: 'Kunnen jullie makkelijk pauzeren of een week overslaan? HelloFresh, Foodbag en Marley Spoon laten je tot 5 dagen voor levering aanpassen.' },
@@ -108,7 +108,7 @@ export const situaties: Record<string, Situatie> = {
           { kop: 'Recepten/week', soort: 'recepten' },
           { kop: 'Korting', soort: 'korting' },
         ],
-        voetnoot: 'Weekprijs is inclusief bezorgkost waar die van toepassing is (Marley Spoon en Factor rekenen €5,99 per levering). Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder.',
+        voetnoot: 'Weekprijs is inclusief bezorgkost waar die van toepassing is (Factor en HelloFresh rekenen €5,99 per levering, Marley Spoon €6,99). Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder.',
       },
       {
         type: 'scenarios',
@@ -162,7 +162,7 @@ export const situaties: Record<string, Situatie> = {
     faq: [
       { q: 'Wat is het verschil tussen een vegan maaltijdbox en een vegetarische maaltijdbox?', a: 'Een vegan maaltijdbox bevat geen enkele dierlijke producten — geen vlees, vis, eieren of zuivel. Een vegetarische maaltijdbox sluit vlees en vis uit, maar kan nog wel eieren, kaas of melk bevatten. In België is Ekomenu de enige aanbieder met een volledig vegan en biologisch aanbod. HelloFresh, Foodbag en Marley Spoon bieden vegetarische receptopties maar zijn geen vegan boxen.' },
       { q: 'Bestaat er een 100% vegan maaltijdbox in België?', a: 'Ja. Ekomenu is de enige aanbieder in België met een volledig plantaardig en biologisch aanbod. Alle ingrediënten zijn 100% bio-gecertificeerd en er worden geen dierlijke producten gebruikt. De andere aanbieders — HelloFresh, Foodbag en Marley Spoon — hebben vegetarische recepten in hun assortiment, maar zijn geen exclusief vegan boxen.' },
-      { q: 'Is een vegan maaltijdbox duurder dan een gewone maaltijdbox?', a: 'Ekomenu kost €6,18 per portie — goedkoper dan HelloFresh (€7,92) of Marley Spoon (€8,67). Het hogere tarief bij die aanbieders weerspiegelt hun bredere receptaanbod. Foodbag is met €9,50 per portie de duurste optie. Als je vegan wil eten via een andere aanbieder zoals HelloFresh, betaal je de reguliere prijs maar heb je een beperktere keuze aan vegan-geschikte recepten.' },
+      { q: 'Is een vegan maaltijdbox duurder dan een gewone maaltijdbox?', a: 'Ekomenu kost €6,18 per portie — goedkoper dan HelloFresh (€7,92) of Marley Spoon (€7,79). Het hogere tarief bij die aanbieders weerspiegelt hun bredere receptaanbod. Foodbag is met €8,43 per portie de duurste optie. Als je vegan wil eten via een andere aanbieder zoals HelloFresh, betaal je de reguliere prijs maar heb je een beperktere keuze aan vegan-geschikte recepten.' },
     ],
     nietGeschiktAls: [],
     blokken: [
@@ -267,7 +267,7 @@ export const situaties: Record<string, Situatie> = {
             scenario: 'Je wil Belgisch én veggie, en je budget is ruimer',
             aanbeveling: 'Foodbag',
             slug: 'foodbag',
-            uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (vanaf €9,50/portie), maar de versheid en lokale herkomst zijn merkbaar. Via onze link krijg je €60 korting op je eerste bestellingen — automatisch toegepast, geen code nodig.',
+            uitleg: 'Foodbag heeft een aparte "veggie"-kookstijl met Belgische ingrediënten van lokale boerderijen. De prijs is hoger (vanaf €8,43/portie), maar de versheid en lokale herkomst zijn merkbaar. Via onze link krijg je €60 korting op je eerste bestellingen — automatisch toegepast, geen code nodig.',
             achtergrond: '#FEF3C7',
             rand: '#FCD34D',
           },
@@ -391,7 +391,7 @@ export const situaties: Record<string, Situatie> = {
     intro: 'Welke maaltijdbox is écht biologisch gecertificeerd — en welke doet alleen alsof? Wij vergeleken alle duurzame opties in België op bio-certificering, verpakking, bezorgzone en de echte prijs per portie.',
     uitleg: '',
     uitlegParagraphs: [
-      'Voor wie echt biologisch wil eten, is <a href="/aanbieder/ekomenu" style="color:#1B4332;font-weight:600;text-decoration:underline">Ekomenu</a> de enige serieuze keuze in België. Het is de enige maaltijdbox met een erkende biologische certificering: alle ingrediënten zijn 100% bio, de verpakking is composteerbaar, en bij elke bestelling zie je je persoonlijke CO2-footprint. Met 20–25 recepten per week en een volledig plantaardig aanbod is het ook meteen de sterkste keuze voor vegetariërs en vegans. Verrassend detail: Ekomenu kost maar €6,18 per portie — dat is goedkoper dan HelloFresh (€7,92) of Marley Spoon (€8,67). Biologisch eten hoeft dus niet per se duurder te zijn.',
+      'Voor wie echt biologisch wil eten, is <a href="/aanbieder/ekomenu" style="color:#1B4332;font-weight:600;text-decoration:underline">Ekomenu</a> de enige serieuze keuze in België. Het is de enige maaltijdbox met een erkende biologische certificering: alle ingrediënten zijn 100% bio, de verpakking is composteerbaar, en bij elke bestelling zie je je persoonlijke CO2-footprint. Met 20–25 recepten per week en een volledig plantaardig aanbod is het ook meteen de sterkste keuze voor vegetariërs en vegans. Verrassend detail: Ekomenu kost maar €6,18 per portie — dat is goedkoper dan HelloFresh (€7,92) of Marley Spoon (€7,79). Biologisch eten hoeft dus niet per se duurder te zijn.',
       '<a href="/aanbieder/foodbag" style="color:#1B4332;font-weight:600;text-decoration:underline">Foodbag</a> is het beste alternatief als je ook vlees wil eten of in Wallonië woont. Foodbag is niet bio gecertificeerd, maar werkt met lokale Belgische boerderijen en eigen bezorgers — dat betekent een aantoonbaar kortere keten en verse ingrediënten. Voor wie bewust wil eten zonder strikt biologisch te gaan, is Foodbag een sterk compromis. Bekijk het verschil in detail in onze <a href="/vergelijk/hellofresh-vs-ekomenu" style="color:#1B4332;font-weight:600;text-decoration:underline">Ekomenu vergelijking</a>.',
     ],
     icon: '🌿',
@@ -399,7 +399,7 @@ export const situaties: Record<string, Situatie> = {
     seoDesc: 'Ekomenu (100% bio, CO2-tracker, €6,18/portie) of Foodbag (lokale ingrediënten)? Vergeleken op bio-certificering, prijs per portie en bezorgzone in België.',
     faq: [
       { q: 'Welke maaltijdbox is 100% biologisch in België?', a: 'Ekomenu is de enige maaltijdbox in België met een erkende biologische certificering. Alle ingrediënten zijn bio, de verpakking is composteerbaar en je krijgt bij elke bestelling een persoonlijk CO2-rapport. Foodbag werkt met lokale Belgische ingrediënten maar is niet bio gecertificeerd.' },
-      { q: 'Is een biologische maaltijdbox duurder?', a: 'Minder dan je denkt. Ekomenu kost vanaf €6,18 per portie — goedkoper dan HelloFresh (€7,92) of Marley Spoon (€8,67). Voor een koppel met 3 maaltijden per week betaal je €37,08/week bij Ekomenu, tegenover €53,49 bij HelloFresh (incl. bezorging). Biologisch eten hoeft dus niet meer te kosten dan een mainstream kookbox.' },
+      { q: 'Is een biologische maaltijdbox duurder?', a: 'Minder dan je denkt. Ekomenu kost vanaf €6,18 per portie — goedkoper dan HelloFresh (€7,92) of Marley Spoon (€7,79). Voor een koppel met 3 maaltijden per week betaal je €37,08/week bij Ekomenu, tegenover €53,49 bij HelloFresh (incl. bezorging). Biologisch eten hoeft dus niet meer te kosten dan een mainstream kookbox.' },
       { q: 'Wat is het verschil tussen biologisch en lokaal bij maaltijdboxen?', a: 'Biologisch (bio) betekent dat ingrediënten geteeld zijn zonder synthetische pesticiden of kunstmest en gecertificeerd zijn door een erkend controleorgaan. Lokaal slaat op de herkomst — korte aanvoerroute en streekeigen producten. Ekomenu combineert beide: bio gecertificeerd én hoofdzakelijk lokaal. Foodbag kiest voor lokale Belgische ingrediënten maar heeft geen bio-certificering.' },
       { q: 'Bezorgt Ekomenu ook in Wallonië of op zaterdag?', a: 'Nee. Ekomenu bezorgt momenteel alleen in Vlaanderen en Brussel, op maandag en vrijdag. Als je in Wallonië woont of een andere bezorgdag nodig hebt, is Foodbag het beste alternatief — dat bezorgt in heel België.' },
       { q: 'Kan ik biologisch eten als ik ook vlees wil?', a: 'Ekomenu is volledig plantaardig — er is geen vlees of vis beschikbaar. Als je biologisch bewust wil eten maar ook vlees wil, is Foodbag de beste keuze: lokale Belgische ingrediënten, kortere keten, en zowel vlees- als visopties in het menu.' },
@@ -408,7 +408,7 @@ export const situaties: Record<string, Situatie> = {
     nietGeschiktAls: [
       'Je in Wallonië woont en 100% biologisch wil — Ekomenu bezorgt daar momenteel niet, kies dan Foodbag.',
       'Je ook vlees wil eten — Ekomenu is volledig plantaardig.',
-      'Je een heel strak budget hebt — Foodbag (€9,50/portie) is duurder, al valt Ekomenu (€6,18/portie) mee.',
+      'Je een heel strak budget hebt — Foodbag (€8,43/portie) is duurder, al valt Ekomenu (€6,18/portie) mee.',
     ],
   },
 };

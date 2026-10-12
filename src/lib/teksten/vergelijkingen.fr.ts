@@ -65,7 +65,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
         html: true,
         paragrafen: [
           "<strong>Foodprepper</strong> se distingue par une offre qui couvre toute la journée : petit-déjeuner, midi, soir et en-cas, avec un « marché frais » en ligne pour compléter. Le menu hebdomadaire tourne, mais reste plus restreint que chez Foodbag.",
-          "<strong>Foodbag</strong> propose plus de 20 recettes par semaine réparties sur 5 styles de cuisine, dont la ligne Sana de Sandra Bekkari et les plats Busy Day prêts en 20 minutes. Petit-déjeuner et déjeuner n'en font pas partie.",
+          "<strong>Foodbag</strong> propose 40 plats par semaine répartis sur 5 styles de cuisine, dont la ligne Sana de Sandra Bekkari et les plats Busy Day prêts en 20 minutes. Petit-déjeuner et déjeuner n'en font pas partie.",
         ],
       },
       {

@@ -156,7 +156,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
           {
             label: 'Ce que cela change concrètement :',
             tekst:
-              "une commande Foodbag moyenne pour deux personnes (trois repas) coûte environ 57 € — avec vos titres-repas, une grande partie ne sort donc pas de votre poche.",
+              "une commande Foodbag moyenne pour deux personnes (trois repas) coûte à partir de 50,60 € — avec vos titres-repas, une grande partie ne sort donc pas de votre poche.",
           },
         ],
       },
@@ -343,7 +343,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       },
       {
         q: 'Quel est le box sans abonnement le moins cher ?',
-        a: "Foodprepper, à partir de 4,75 € la portion avec livraison gratuite — mais uniquement en Flandre et à Bruxelles. En Wallonie, Foodbag est l'option la plus accessible à 9,50 € la portion, avec 60 € de réduction via notre lien.",
+        a: "Foodprepper, à partir de 4,75 € la portion avec livraison gratuite — mais uniquement en Flandre et à Bruxelles. En Wallonie, Foodbag est l'option la plus accessible à 8,43 € la portion, avec 60 € de réduction via notre lien.",
       },
     ],
   },
@@ -375,7 +375,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         type: 'ul',
         items: [
           'HelloFresh : à partir de 7,92 € la portion, livraison 5,99 € (première box offerte), livre dans tout le pays',
-          'Foodbag : à partir de 9,50 €, ingrédients belges en filière courte, livre aussi en Wallonie',
+          'Foodbag : à partir de 8,43 €, ingrédients belges en filière courte, livre aussi en Wallonie',
           'Ekomenu : à partir de 6,18 €, entièrement bio — mais pas de livraison en Wallonie',
           'Foodprepper : à partir de 4,75 €, le prix le plus bas — Flandre et Bruxelles uniquement',
           'Factor : à partir de 4,99 €, plats prêts, + 5,99 € de livraison, couvre tout le pays',
@@ -590,8 +590,8 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         type: 'ul',
         items: [
           'Prix par semaine = portions × prix par portion + frais de livraison',
-          'Factor et Marley Spoon facturent 5,99 € par livraison, Crowd Cooks 4,90 €',
-          'HelloFresh, Foodbag, Foodmaker, Ekomenu et Foodprepper livrent gratuitement',
+          'Factor facture 5,99 € par livraison, Marley Spoon 6,99 €, Crowd Cooks 4,90 €, HelloFresh 5,99 € à partir de la deuxième box',
+          'Foodbag, Foodmaker, Ekomenu et Foodprepper livrent gratuitement',
           'La réduction de bienvenue couvre 3 à 5 box selon le fournisseur',
         ],
       },

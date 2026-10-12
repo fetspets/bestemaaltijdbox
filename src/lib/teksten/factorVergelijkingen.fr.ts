@@ -49,7 +49,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     kiesFactorAls: [
       "Vous n'avez ni le temps ni l'envie de cuisiner et voulez manger tout de suite",
       'Vous voulez manger sainement avec des valeurs nutritionnelles fixes (High-Protein, Calorie-Conscious)',
-      'Vous cherchez le prix par portion le plus bas (4,99 € contre 9,50 €)',
+      'Vous cherchez le prix par portion le plus bas (4,99 € contre 8,43 €)',
       "La rapidité et la facilité comptent plus que l'origine locale",
     ],
     kiesKookboxAls: [
@@ -61,7 +61,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     verdictTekst: "Il n'y a pas de gagnant absolu : tout dépend de votre envie de cuisiner. Foodbag obtient une meilleure note globale et convient mieux à ceux qui veulent cuisiner frais et belge, avec un excellent goût et des ingrédients locaux. Factor est le meilleur choix si vous ne voulez pas cuisiner : prêt en quelques minutes, avec des styles alimentaires et un prix par portion plus bas. Les deux livrent en Wallonie. Vous aimez cuisiner et le local ? Foodbag. Vous voulez juste réchauffer ? Factor.",
     faq: [
       { q: 'Quelle est la différence entre Factor et Foodbag ?', a: "Factor, ce sont des plats préparés à réchauffer en 2 à 3 minutes. Foodbag est un box à cuisiner classique avec des ingrédients frais et locaux belges, que vous préparez en 25 à 35 minutes. Foodbag appartient au groupe Colruyt, Factor au groupe HelloFresh." },
-      { q: 'Lequel est le moins cher : Factor ou Foodbag ?', a: "Factor a un prix par portion bien plus bas (dès 4,99 € contre 9,50 € chez Foodbag), mais facture 5,99 € de livraison ; Foodbag livre gratuitement. Foodbag offre 60 € de réduction aux nouveaux clients, appliquée automatiquement via notre lien. Calculez votre prix total, livraison comprise." },
+      { q: 'Lequel est le moins cher : Factor ou Foodbag ?', a: "Factor a un prix par portion bien plus bas (dès 4,99 € contre 8,43 € chez Foodbag), mais facture 5,99 € de livraison ; Foodbag livre gratuitement. Foodbag offre 60 € de réduction aux nouveaux clients, appliquée automatiquement via notre lien. Calculez votre prix total, livraison comprise." },
       { q: 'Lequel a le meilleur goût ?', a: "Foodbag obtient une meilleure note de goût dans notre test (8,6 contre 7,8), grâce à des ingrédients frais et locaux que vous cuisinez vous-même. Factor est étonnamment bon pour un plat à réchauffer, mais n'atteint pas la fraîcheur d'un repas cuisiné." },
       { q: 'Puis-je les utiliser sans abonnement ?', a: 'Chez Foodbag, vous pouvez commander ponctuellement, sans abonnement obligatoire. Factor fonctionne avec un abonnement flexible que vous pouvez modifier, suspendre ou résilier chaque semaine.' },
     ],
@@ -91,7 +91,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     verdictTekst: "Il n'y a pas de gagnant absolu : tout dépend de votre envie de cuisiner, et de l'endroit où vous habitez. Les notes sont proches. Marley Spoon convient mieux à ceux qui aiment cuisiner et recherchent le meilleur goût et de la profondeur culinaire, mais il ne livre qu'en Flandre et à Bruxelles. Factor est le meilleur choix si vous ne voulez pas cuisiner, si vous habitez en Wallonie ou si vous voulez manger sainement avec des styles alimentaires. Vous aimez cuisiner et habitez à Bruxelles ? Marley Spoon. Vous voulez réchauffer ou habitez en Wallonie ? Factor.",
     faq: [
       { q: 'Quelle est la différence entre Factor et Marley Spoon ?', a: "Factor, ce sont des plats préparés à réchauffer en 2 à 3 minutes. Marley Spoon est un box à cuisiner avec des recettes de chef élaborées, qui demandent 45 à 60 minutes de préparation. Factor livre dans toute la Belgique ; Marley Spoon uniquement en Flandre et à Bruxelles." },
-      { q: 'Lequel est le moins cher : Factor ou Marley Spoon ?', a: "Factor a le prix par portion le plus bas (dès 4,99 € contre 8,67 €). Les deux facturent 5,99 € de livraison. Marley Spoon propose une solide offre de bienvenue aux nouveaux clients (jusqu'à 50 % sur les premières box). Calculez votre prix total, livraison comprise." },
+      { q: 'Lequel est le moins cher : Factor ou Marley Spoon ?', a: "Factor a le prix par portion le plus bas (dès 4,99 € contre 7,79 €). Factor facture 5,99 € de livraison, Marley Spoon 6,99 €. Marley Spoon propose une solide offre de bienvenue aux nouveaux clients (jusqu'à 50 % sur les premières box). Calculez votre prix total, livraison comprise." },
       { q: 'Marley Spoon livre-t-il en Wallonie ?', a: "Non. Marley Spoon livre uniquement en Flandre et dans la Région de Bruxelles-Capitale. Factor livre en revanche dans toute la Belgique, Wallonie comprise : un avantage pratique si vous y habitez." },
       { q: 'Lequel a le meilleur goût ?', a: "Marley Spoon obtient la meilleure note de goût de notre test (8,6), avec des recettes de chef et une attention à la technique. Factor est bon pour un plat à réchauffer, mais mise sur la facilité plutôt que sur la profondeur culinaire." },
     ],
