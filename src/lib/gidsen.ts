@@ -186,7 +186,7 @@ export const gidsen: Gids[] = [
           situatie: 'Goedkoopste kookbox voor een koppel (2p)',
           winnaarNaam: 'Ekomenu',
           slug: 'ekomenu',
-          detail: '€38,52/week (reguliere prijs, €6,42/portie), gratis bezorging — de voordeligste klassieke kookbox. HelloFresh is een goed alternatief als je meer receptkeuze wil (40+ recepten).',
+          detail: '€38,52/week (reguliere prijs, €6,42/portie), gratis bezorging — de voordeligste klassieke kookbox. HelloFresh is een goed alternatief als je meer receptkeuze wil (80+ recepten).',
           achtergrond: '#F0FDF4',
           rand: '#BBF7D0',
         },

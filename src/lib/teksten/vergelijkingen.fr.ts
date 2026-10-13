@@ -65,7 +65,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
         html: true,
         paragrafen: [
           "<strong>Foodprepper</strong> se distingue par une offre qui couvre toute la journée : petit-déjeuner, midi, soir et en-cas, avec un « marché frais » en ligne pour compléter. Le menu hebdomadaire tourne, mais reste plus restreint que chez Foodbag.",
-          "<strong>Foodbag</strong> propose 40 plats par semaine répartis sur 5 styles de cuisine, dont la ligne Sana de Sandra Bekkari et les plats Busy Day prêts en 20 minutes. Petit-déjeuner et déjeuner n'en font pas partie.",
+          "<strong>Foodbag</strong> propose 40 plats par semaine répartis sur 5 styles de cuisine, dont la ligne Sana de Sandra Bekkari, les plats rapides Quick&Easy et Kant&Klaar (prêt à réchauffer). Petit-déjeuner et déjeuner n'en font pas partie.",
         ],
       },
       {
@@ -108,7 +108,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
           'Vous aimez cuisiner et voyez cela comme un moment de détente',
           'Vous prenez volontiers trente minutes en soirée',
           'Vous voulez plus de variété : 40 plats par semaine en 5 styles',
-          'Vous voulez la ligne Sana de Sandra Bekkari ou les plats Busy Day',
+          'Vous voulez la ligne Sana de Sandra Bekkari ou les plats rapides Quick&Easy',
         ],
       },
       {
@@ -152,7 +152,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
     h1: 'Foodprepper ou HelloFresh : lequel choisir en Belgique francophone ?',
     introParagrafen: [
       "La différence la plus concrète entre ces deux box n'est pas le temps de préparation mais la carte : <strong>HelloFresh livre dans les trois régions, Foodprepper uniquement en Flandre et à Bruxelles</strong>. En Wallonie, la comparaison n'a donc qu'un seul candidat.",
-      "Pour un lecteur bruxellois, le choix se pose vraiment. HelloFresh est le leader mondial : plus de 40 recettes par semaine et des fiches en français. Foodprepper est belge, plus jeune, et construit autour d'une promesse : à table en quinze minutes, parce que les légumes sont précuits et la viande marinée.",
+      "Pour un lecteur bruxellois, le choix se pose vraiment. HelloFresh est le leader mondial : plus de 80 recettes par semaine et des fiches en français. Foodprepper est belge, plus jeune, et construit autour d'une promesse : à table en quinze minutes, parce que les légumes sont précuits et la viande marinée.",
       "Nous comparons ci-dessous le temps, le menu, le prix, l'origine et la livraison.",
     ],
     primaireCta: { slug: 'foodprepper', tekst: 'Voir Foodprepper →', campagne: 'cta' },
@@ -196,7 +196,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
         kop: 'Menu et choix',
         html: true,
         paragrafen: [
-          "<strong>HelloFresh</strong> propose plus de 40 recettes par semaine, réparties en catégories : Quick & Easy, végétarien, familial, cuisines du monde. Pour rester longtemps chez le même fournisseur sans lassitude, c'est un vrai atout.",
+          "<strong>HelloFresh</strong> propose plus de 80 recettes par semaine, réparties en catégories : Quick & Easy, végétarien, familial, cuisines du monde. Pour rester longtemps chez le même fournisseur sans lassitude, c'est un vrai atout.",
           "<strong>Foodprepper</strong> a une offre plus restreinte mais plus large en catégorie : au-delà du repas du soir, il couvre le petit-déjeuner, le midi et les en-cas via son marché frais. Un seul fournisseur peut donc couvrir toute la journée.",
         ],
       },
@@ -247,7 +247,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
         items: [
           'Vous habitez en Wallonie — HelloFresh y livre, Foodprepper non',
           'Vous aimez cuisiner et prenez volontiers 30 à 45 minutes',
-          'Vous voulez un grand choix : plus de 40 recettes par semaine',
+          'Vous voulez un grand choix : plus de 80 recettes par semaine',
           'Vous voulez des fiches recettes et un service client en français',
           'Vous cherchez le prix par portion fixe le plus bas',
         ],
@@ -265,7 +265,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
     ],
     verdictKop: 'HelloFresh en Wallonie, Foodprepper à Bruxelles si le temps presse',
     verdictTekst:
-      "Si vous habitez en Wallonie, HelloFresh est le seul des deux qui vous livre — inutile d'aller plus loin. À Bruxelles et en Flandre, Foodprepper l'emporte sur la rapidité et l'ancrage belge : quinze minutes contre trente à quarante-cinq, et des fournisseurs locaux. HelloFresh garde l'avantage sur le choix (40+ recettes), la couverture et un prix par portion stable. Si vous aimez cuisiner, prenez HelloFresh ; si vous voulez surtout gagner du temps et que vous êtes dans la zone de livraison, prenez Foodprepper.",
+      "Si vous habitez en Wallonie, HelloFresh est le seul des deux qui vous livre — inutile d'aller plus loin. À Bruxelles et en Flandre, Foodprepper l'emporte sur la rapidité et l'ancrage belge : quinze minutes contre trente à quarante-cinq, et des fournisseurs locaux. HelloFresh garde l'avantage sur le choix (80+ recettes), la couverture et un prix par portion stable. Si vous aimez cuisiner, prenez HelloFresh ; si vous voulez surtout gagner du temps et que vous êtes dans la zone de livraison, prenez Foodprepper.",
     faq: [
       {
         q: 'HelloFresh livre-t-il en Wallonie ?',
@@ -307,7 +307,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
       },
       {
         q: 'Lequel est plus pratique si je manque de temps ?',
-        a: "Foodbag propose une ligne « Busy Day » avec des repas prêts en 20 minutes. HelloFresh a une catégorie « Quick & Easy » en 25 à 30 minutes. Les deux sont faisables en semaine ; Foodbag a un léger avantage si la rapidité prime.",
+        a: "Foodbag propose une ligne rapide Quick&Easy, un filtre par temps de préparation et une ligne Kant&Klaar pour ne pas cuisiner du tout. HelloFresh signale ses recettes les plus rapides. Les deux sont faisables en semaine.",
       },
       {
         q: 'Puis-je résilier quand je veux ?',

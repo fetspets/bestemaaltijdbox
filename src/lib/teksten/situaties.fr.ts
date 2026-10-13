@@ -61,12 +61,12 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
           {
             icon: '🍽️',
             titel: 'La variété',
-            tekst: "À deux, on se lasse plus vite que seul. Choisissez un fournisseur avec 40+ recettes par semaine pour ne jamais répéter.",
+            tekst: "À deux, on se lasse plus vite que seul. Choisissez un grand menu : HelloFresh et Marley Spoon proposent plus de 80 recettes par semaine, Foodbag une quarantaine.",
           },
           {
             icon: '🔀',
             titel: 'La flexibilité',
-            tekst: "Pouvez-vous sauter une semaine facilement ? HelloFresh, Foodbag et Marley Spoon permettent d'adapter jusqu'à 5 jours avant.",
+            tekst: "Pouvez-vous sauter une semaine facilement ? Chez HelloFresh, jusqu'à quelques jours avant la livraison ; chez Marley Spoon, au moins une semaine avant. Foodbag et Foodprepper se commandent sans abonnement.",
           },
         ],
       },
@@ -81,7 +81,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             badgeTekst: '#1B4332',
             tagline: 'Livre partout · le plus grand choix de recettes',
             waarom:
-              "Avec plus de 40 recettes par semaine, un couple ne mange presque jamais deux fois la même chose. HelloFresh est flexible — pause ou résiliation jusqu'à 5 jours avant la livraison — et surtout, il livre dans les trois régions. Pour un couple wallon, c'est le point de départ évident.",
+              "Avec plus de 80 recettes par semaine, un couple ne mange presque jamais deux fois la même chose. HelloFresh est flexible — pause ou résiliation jusqu'à quelques jours avant la livraison — et surtout, il livre dans les trois régions. Pour un couple wallon, c'est le point de départ évident.",
             deal: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
           },
           {
@@ -252,7 +252,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             badgeTekst: '#1B4332',
             tagline: 'Recettes végétariennes · livraison dans tout le pays',
             waarom:
-              "HelloFresh propose chaque semaine une sélection végétarienne dans un catalogue de plus de 40 recettes, et livre dans les trois régions. C'est l'option la plus accessible si vous habitez en Wallonie et voulez manger végétal plusieurs fois par semaine. Attention : ce n'est pas un box végétal — vous devez sélectionner activement, et la plupart des recettes contiennent viande ou poisson.",
+              "HelloFresh propose chaque semaine une sélection végétarienne dans un catalogue de plus de 80 recettes, et livre dans les trois régions. C'est l'option la plus accessible si vous habitez en Wallonie et voulez manger végétal plusieurs fois par semaine. Attention : ce n'est pas un box végétal — vous devez sélectionner activement, et la plupart des recettes contiennent viande ou poisson.",
             deal: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
             waarschuwing: '⚠️ Pas 100 % végétal',
           },
@@ -370,43 +370,157 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
   },
 
   gezin: {
-    uitlegParagraphs: [
-      "Comment préparer des repas variés et sains un mardi soir chargé, avec des enfants qui attendent, des devoirs à faire et aucune envie de réfléchir au contenu du frigo ?",
-      "La ligne « Busy Day » de Foodbag est conçue pour ce problème : des repas prêts en 20 minutes, peu de vaisselle, et des ingrédients frais de fermes belges. HelloFresh est intéressant pour une famille nombreuse ou si vous voulez plus de choix : comme vous choisissez vous-même chaque semaine, vous adaptez la sélection à ce que les enfants aiment. Les deux livrent aussi en Wallonie. Consultez notre <a href=\"/fr/comparatif/hellofresh-vs-foodbag\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">comparatif HelloFresh ou Foodbag</a> pour aller plus loin.",
-      "Pensez aussi aux jours de livraison. Foodbag livre du vendredi au lundi, pratique pour organiser le week-end. HelloFresh est plus flexible, avec plusieurs jours en semaine. Les deux livrent dans toute la Belgique, Wallonie comprise ; Marley Spoon non.",
-    ],
     titel: 'Pour les familles',
     h1: 'Meilleur box repas pour les familles en Belgique (2026)',
     intro:
-      "Quel box convient à une famille avec enfants ? Nous avons comparé les portions, le temps de préparation, les recettes adaptées aux enfants et — surtout — qui livre chez vous.",
-    uitleg:
-      "Comment servir des repas variés un mardi soir chargé, avec des enfants qui attendent et des devoirs à finir ? Un box repas répond à cela, à condition qu'il livre dans votre région. HelloFresh va jusqu'à six personnes et couvre tout le pays, Wallonie comprise. Foodbag propose la ligne Busy Day, prête en vingt minutes, et livre également partout. Foodprepper est plus rapide encore mais s'arrête à la Flandre et à Bruxelles.",
-    seoTitel: 'Box repas pour famille en Belgique 2026 — rapide et adapté aux enfants',
+      "Quel box convient à une famille avec enfants ? Nous avons comparé le nombre de personnes possible, le temps de préparation, les recettes adaptées aux enfants et — surtout — qui livre chez vous.",
+    uitleg: '',
+    uitlegParagraphs: [
+      "Un mardi soir chargé : les enfants ont faim, les devoirs ne sont pas finis et personne n'a envie de réfléchir au contenu du frigo. C'est exactement le problème qu'un box repas résout — mais pour une famille, d'autres critères comptent que pour un couple.",
+      "Regardez d'abord le nombre de personnes. HelloFresh et Marley Spoon vont jusqu'à 6, Foodbag jusqu'à 5 ; Foodprepper, Factor et Ekomenu s'arrêtent à 4. Ensuite, la cuisine : HelloFresh et Marley Spoon proposent chacun une préférence de menu familiale, qui place les recettes adaptées aux enfants en tête de votre menu. Foodbag cuisine avec des ingrédients belges et a une ligne rapide Quick&Easy.",
+      "Et surtout, vérifiez où vous habitez : Marley Spoon, Foodprepper et Ekomenu ne livrent qu'en Flandre et à Bruxelles. En Wallonie, le choix se fait entre HelloFresh, Foodbag et Factor. Consultez notre <a href=\"/fr/comparatif/hellofresh-vs-foodbag\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">comparatif HelloFresh ou Foodbag</a> pour départager les deux.",
+    ],
+    seoTitel: 'Box repas pour famille en Belgique 2026 — jusqu’à 6 personnes',
     seoDesc:
-      "Quel box repas pour une famille ? Portions, temps de préparation et zone de livraison comparés, avec les options adaptées aux enfants.",
+      "Quel box repas pour votre famille ? Nombre de personnes, recettes pour enfants, temps de préparation et zone de livraison de 6 fournisseurs comparés.",
     faqKop: 'Questions fréquentes pour les familles',
     faq: [
       {
-        q: 'Quel box est le plus rapide pour une famille ?',
-        a: "La ligne Busy Day de Foodbag propose des repas prêts en vingt minutes, avec peu de vaisselle, et livre dans tout le pays. Les recettes Quick & Easy de HelloFresh demandent 25 à 30 minutes. Les deux tiennent la route un soir de semaine.",
+        q: 'Pour combien de personnes peut-on commander ?',
+        a: "HelloFresh et Marley Spoon vont jusqu'à 6 personnes ; chez HelloFresh, une famille plus grande peut commander un box supplémentaire. Foodbag va jusqu'à 5 personnes et vous choisissez le nombre par plat. Foodprepper, Factor et Ekomenu livrent jusqu'à 4 personnes.",
       },
       {
-        q: 'Quel box propose les plus grandes portions ?',
-        a: "Foodbag et HelloFresh proposent des box jusqu'à cinq personnes. HelloFresh est le seul à aller jusqu'à six, ce qui est utile pour les grandes familles ou quand quelqu'un s'ajoute régulièrement à table.",
+        q: 'Quels box livrent en Wallonie pour une famille ?',
+        a: "HelloFresh, Foodbag et Factor livrent dans tout le pays. Marley Spoon, Foodprepper et Ekomenu se limitent à la Flandre et à Bruxelles.",
       },
       {
-        q: 'Et si un enfant est difficile ?',
-        a: "HelloFresh dispose d'un filtre « Famille » permettant de sélectionner des recettes adaptées aux enfants. La ligne Originals de Foodbag contient beaucoup de classiques belges qui passent bien auprès des plus jeunes.",
+        q: 'Quel box propose des recettes pour les enfants ?',
+        a: "Chez HelloFresh, choisissez la préférence de menu familiale : les recettes pour la famille apparaissent en tête de votre menu. Marley Spoon a une préférence équivalente, avec des recettes classiques et simples. Dans les deux cas, vous pouvez ensuite choisir dans tout le menu.",
+      },
+      {
+        q: 'Quel box est le plus rapide un soir d’école ?',
+        a: "Foodprepper est le plus rapide : les ingrédients sont préparés, vous êtes à table en un quart d'heure (Flandre et Bruxelles uniquement). Foodbag a une ligne Quick&Easy et un filtre par temps de préparation, et HelloFresh signale ses recettes les plus rapides. Pour ne pas cuisiner du tout, Factor est prêt à réchauffer.",
       },
       {
         q: 'Et en cas d’allergie alimentaire ?',
-        a: "HelloFresh propose les filtres par allergène les plus complets (gluten, lactose, fruits à coque). Foodbag en propose moins, mais les listes d'ingrédients sont détaillées par recette, ce qui permet de vérifier soi-même.",
+        a: "Tous les grands fournisseurs indiquent les allergènes par recette, et vous choisissez vous-même chaque semaine. Marley Spoon a une préférence sans gluten ajouté, mais elle ne convient pas en cas de maladie cœliaque à cause du risque de contamination croisée. En cas d'allergie sévère, vérifiez toujours la liste des ingrédients.",
       },
     ],
     nietGeschiktAls: [
-      "Vous cuisinez seulement une ou deux fois par semaine — le coût par repas devient alors élevé.",
-      "Vos enfants mangent très peu de choses différentes ; la variété devient un inconvénient plutôt qu'un atout.",
+      "Vous cuisinez seulement une ou deux fois par semaine — le coût par repas pèse alors plus lourd.",
+      "Vos enfants ne mangent qu'une poignée de plats et refusent la nouveauté.",
       "Vous habitez en Wallonie et visez un fournisseur qui n'y livre pas — vérifiez toujours votre code postal.",
+    ],
+    blokken: [
+      {
+        type: 'infokaarten',
+        kop: 'Ce qui compte pour une famille',
+        items: [
+          { icon: '📍', titel: 'La zone de livraison', tekst: "HelloFresh, Foodbag et Factor livrent dans toute la Belgique. Marley Spoon, Foodprepper et Ekomenu s'arrêtent à la Flandre et à Bruxelles." },
+          { icon: '👨‍👩‍👧‍👦', titel: 'Le nombre de personnes', tekst: "HelloFresh et Marley Spoon vont jusqu'à 6, Foodbag jusqu'à 5. Foodprepper, Factor et Ekomenu s'arrêtent à 4." },
+          { icon: '🧒', titel: 'Des recettes pour les enfants', tekst: "HelloFresh et Marley Spoon ont une préférence de menu familiale qui place les plats simples et classiques en tête du menu." },
+          { icon: '⏱️', titel: 'Le temps un soir d’école', tekst: "Foodprepper est prêt en 15 minutes. Foodbag a une ligne Quick&Easy, HelloFresh signale ses recettes les plus rapides. Factor se réchauffe simplement." },
+        ],
+      },
+      {
+        type: 'topAanbieders',
+        kop: 'Notre top 3 pour les familles',
+        items: [
+          {
+            slug: 'hellofresh',
+            badge: '⭐ Meilleur choix',
+            badgeAchtergrond: '#E8F5EE',
+            badgeTekst: '#1B4332',
+            tagline: "Jusqu'à 6 personnes · menu familial · toute la Belgique",
+            waarom:
+              "Avec plus de 80 recettes par semaine et la préférence de menu familiale, vous trouvez facilement des plats que les enfants aiment — et vous pouvez les choisir ensemble. HelloFresh livre jusqu'à 6 personnes (un box supplémentaire pour une famille plus grande) et couvre les trois régions.",
+            deal: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
+          },
+          {
+            slug: 'foodbag',
+            badge: '🇧🇪 Belge',
+            badgeAchtergrond: '#DBEAFE',
+            badgeTekst: '#1E40AF',
+            tagline: 'Ingrédients belges · livraison gratuite · avec ou sans abonnement',
+            waarom:
+              "Foodbag cuisine avec des ingrédients de fournisseurs belges et propose cinq styles, dont la ligne rapide Quick&Easy et Kant&Klaar pour les soirs vraiment chargés. Vous choisissez le nombre de personnes par plat, pouvez payer en chèques-repas, et la livraison est toujours gratuite, Wallonie comprise.",
+            deal: '3 × 20 € de réduction — appliqué automatiquement via notre lien, aucun code à saisir',
+          },
+          {
+            slug: 'factor',
+            badge: '🍱 Sans cuisiner',
+            badgeAchtergrond: '#FEF3C7',
+            badgeTekst: '#92400E',
+            tagline: 'Plats prêts · livre dans toute la Belgique',
+            waarom:
+              "Pour les soirs où personne n'a envie de cuisiner : Factor livre des plats prêts à réchauffer en quelques minutes, dans tout le pays. Limité à 4 personnes, et la livraison est payante, mais c'est la solution la plus simple pour une famille wallonne pressée.",
+            deal: '40 % sur votre premier box + 25 % sur les cinq suivants',
+          },
+        ],
+      },
+      {
+        type: 'overigeAanbieders',
+        kop: 'Les autres options pour une famille',
+        items: [
+          { slug: 'marley-spoon', omschrijving: "Plus de 80 recettes, des box pour 2, 3, 4 ou 6 personnes et une préférence de menu familiale. Mais la livraison s'arrête à la Flandre et à Bruxelles, et les modifications se font au moins une semaine à l'avance." },
+          { slug: 'foodprepper', omschrijving: "Le box à cuisiner le plus rapide : ingrédients préparés, un quart d'heure en cuisine, sans abonnement et au prix par portion le plus bas. Jusqu'à 4 personnes, en Flandre et à Bruxelles uniquement." },
+          { slug: 'ekomenu', omschrijving: "100 % bio et jusqu'à 4 personnes. Une option pour les familles qui veulent manger bio, avec livraison en Flandre et à Bruxelles uniquement." },
+        ],
+      },
+      {
+        type: 'tabel',
+        kop: 'Comparatif : 6 fournisseurs pour une famille',
+        slugs: ['hellofresh', 'foodbag', 'factor', 'marley-spoon', 'foodprepper', 'ekomenu'],
+        portiesPerWeek: 12,
+        kolommen: [
+          { kop: 'Livre en Wallonie', soort: 'tekst', waarden: { hellofresh: 'Oui', foodbag: 'Oui', factor: 'Oui', 'marley-spoon': 'Non', foodprepper: 'Non', ekomenu: 'Non' } },
+          { kop: 'Max. personnes', soort: 'tekst', waarden: { hellofresh: '6', foodbag: '5', factor: '4', 'marley-spoon': '6', foodprepper: '4', ekomenu: '4' } },
+          { kop: '€/portion', soort: 'portie' },
+          { kop: 'Recettes/semaine', soort: 'recepten' },
+          { kop: 'Réduction', soort: 'korting' },
+        ],
+        voetnoot:
+          "Le prix par portion est le prix indicatif pour 2 personnes ; pour 4 personnes, il est plus bas chez la plupart des fournisseurs. Factor, HelloFresh et Marley Spoon facturent la livraison, les autres livrent gratuitement. Vérifiez les tarifs actuels sur le site du fournisseur.",
+      },
+      {
+        type: 'scenarios',
+        kop: 'Lequel convient à votre famille ?',
+        items: [
+          {
+            scenario: 'Vous habitez en Wallonie',
+            aanbeveling: 'HelloFresh ou Foodbag',
+            slug: 'hellofresh',
+            uitleg: "Les deux seuls box à cuisiner qui livrent au sud du pays. HelloFresh pour le choix et les familles jusqu'à 6 personnes, Foodbag pour les ingrédients belges et la livraison gratuite.",
+            achtergrond: '#E8F5EE',
+            rand: '#BBF7D0',
+          },
+          {
+            scenario: 'Grande famille ou enfants difficiles',
+            aanbeveling: 'HelloFresh',
+            slug: 'hellofresh',
+            uitleg: "Jusqu'à 6 personnes, plus de 80 recettes et un menu familial : le plus de choix pour trouver ce que tout le monde aime.",
+            achtergrond: '#DBEAFE',
+            rand: '#BFDBFE',
+          },
+          {
+            scenario: 'Chaque minute compte',
+            aanbeveling: 'Foodprepper ou Factor',
+            slug: 'factor',
+            uitleg: "Foodprepper est prêt en 15 minutes, en Flandre et à Bruxelles. Factor se réchauffe en quelques minutes et livre partout, Wallonie comprise.",
+            achtergrond: '#FEF3C7',
+            rand: '#FDE68A',
+          },
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Prêts à commencer ?',
+        tekst:
+          "HelloFresh offre le plus grand choix aux familles : jusqu'à 6 personnes, un menu familial et une livraison dans les trois régions. Avec la réduction de bienvenue, c'est aussi la façon la moins chère de tester.",
+        slug: 'hellofresh',
+        knoptekst: "Activer jusqu'à 70 € de réduction →",
+        subtekst: "Jusqu'à 70 € sur vos 3 premières box · automatique via le lien · résiliable chaque semaine",
+      },
     ],
   },
 
@@ -482,38 +596,153 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
   },
 
   singles: {
-    uitlegParagraphs: [
-      "Quand on vit seul, on se heurte vite à un problème : la plupart des box repas livrent au minimum pour 2 personnes. Résultat : trop de nourriture ou des portions jetées, ce qui annule l'avantage d'un box repas.",
-      "HelloFresh est le seul box à cuisiner classique qui livre pour 1 personne, et il livre partout en Belgique, Wallonie comprise. Vous choisissez chaque semaine le nombre de repas et les recettes, parmi plus de 40. Pratique et flexible. Lisez notre <a href=\"/fr/fournisseur/hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">avis complet sur HelloFresh</a> pour tous les détails.",
-      "Factor est une alternative intéressante si vous n'avez pas envie de cuisiner : des plats préparés à réchauffer, commandés à l'unité pour 1 personne, livrés aussi en Wallonie. Pas de plaisir de cuisiner, mais un maximum de facilité. Foodprepper permet de commander sans abonnement, idéal pour tester le concept, mais il ne livre qu'en Flandre et à Bruxelles. Voir notre <a href=\"/fr/fournisseur/factor\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">avis sur Factor</a>.",
-    ],
     titel: 'Pour une personne',
     h1: 'Box repas pour une personne en Belgique (2026)',
     intro:
-      "Cuisiner pour soi, c'est souvent trop d'ingrédients pour trop peu de repas. Quels fournisseurs proposent réellement des portions individuelles, et lesquels livrent chez vous ?",
-    uitleg:
-      "Peu de box sont conçus pour une seule personne. HelloFresh est le seul grand fournisseur à proposer une formule pour une personne, avec livraison dans tout le pays. Les plats prêts de Factor et Foodmaker conviennent bien aussi : vous commandez le nombre exact de repas, sans reste. Foodprepper permet également de commander à l'unité, mais uniquement en Flandre et à Bruxelles.",
-    seoTitel: 'Box repas pour 1 personne en Belgique 2026 — sans gaspillage',
+      "Cuisiner pour soi, c'est souvent trop d'ingrédients pour trop peu de repas. Quels box livrent vraiment pour une personne, quel est le minimum à commander, et lesquels livrent chez vous ?",
+    uitleg: '',
+    uitlegParagraphs: [
+      "Quand on vit seul, on achète vite un sachet d'épinards pour un seul repas et on jette le reste. Un box repas règle ce problème — à condition qu'il livre des portions pour une personne.",
+      "C'est possible chez plus de fournisseurs qu'on ne le pense. HelloFresh livre chacun de ses box pour une personne, avec au minimum trois plats par semaine et une livraison dans toute la Belgique, Wallonie comprise. Marley Spoon a une formule séparée pour une personne, avec des recettes très rapides et des options prêtes, mais ne livre qu'en Flandre et à Bruxelles. Lisez notre <a href=\"/fr/fournisseur/hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">avis complet sur HelloFresh</a> pour tous les détails.",
+      "Pas envie de cuisiner ? Factor et Foodmaker livrent des portions prêtes à réchauffer, partout en Belgique. Foodbag et Foodprepper se commandent sans abonnement — pratique pour tester d'abord.",
+    ],
+    seoTitel: 'Box repas pour 1 personne en Belgique 2026 — 6 options comparées',
     seoDesc:
-      "Quel box repas pour une personne seule ? Portions individuelles, prix et livraison comparés pour toute la Belgique.",
+      "Quels box repas livrent vraiment pour une personne ? HelloFresh, Factor, Foodbag et d'autres comparés sur le minimum, le prix et la zone de livraison.",
     faqKop: 'Questions fréquentes pour une personne',
     faq: [
       {
-        q: 'Quel box propose des portions pour une personne ?',
-        a: "HelloFresh est le seul grand box à cuisiner qui propose une formule pour une personne, avec livraison partout en Belgique. Factor et Foodmaker livrent des plats individuels prêts à réchauffer, ce qui revient au même sans cuisiner.",
+        q: 'Quel box livre pour une personne en Belgique ?',
+        a: "HelloFresh livre tous ses box pour une personne, dans tout le pays. Marley Spoon a une formule séparée pour une personne, mais seulement en Flandre et à Bruxelles. Factor et Foodmaker livrent des portions individuelles prêtes à réchauffer. Chez Foodbag, vous choisissez le nombre de personnes par plat.",
+      },
+      {
+        q: 'Que faut-il commander au minimum ?',
+        a: "Chez HelloFresh, trois plats par semaine ; deux plats par semaine ne sont pas possibles pour une personne. Chez Foodbag, trois plats minimum par commande, avec ou sans abonnement. Foodprepper et Foodmaker se commandent sans abonnement.",
       },
       {
         q: 'Est-ce rentable pour une seule personne ?',
-        a: "Le prix par portion est un peu plus élevé sur les petites formules, mais vous ne jetez rien. Pour qui cuisine seul et gaspille souvent des ingrédients frais, le coût réel est souvent comparable aux courses classiques.",
+        a: "Le prix par portion est généralement un peu plus élevé pour une personne que pour deux. En contrepartie, vous ne jetez presque rien puisque tout arrive dosé. Si vous laissez souvent des légumes frais se perdre, le coût réel est proche de vos courses habituelles.",
       },
       {
-        q: 'Puis-je commander sans abonnement ?',
+        q: 'Puis-je commander sans abonnement en Wallonie ?',
         a: "Oui. Foodbag et Foodmaker n'imposent aucun abonnement et livrent dans tout le pays. Foodprepper non plus, mais uniquement en Flandre et à Bruxelles.",
       },
     ],
     nietGeschiktAls: [
-      "Vous mangez rarement chez vous ou avez un rythme très irrégulier.",
+      "Vous ne mangez chez vous qu'une ou deux fois par semaine — vous n'atteindrez pas le minimum de la plupart des box.",
       "Vous cuisinez volontiers en grande quantité pour congeler ; un box perd alors son intérêt.",
+      "Vous partez souvent à l'improviste et oubliez la date limite pour sauter une semaine.",
+    ],
+    blokken: [
+      {
+        type: 'infokaarten',
+        kop: 'Ce qui compte quand on mange seul',
+        items: [
+          { icon: '📍', titel: 'La zone de livraison', tekst: "HelloFresh, Foodbag, Factor et Foodmaker livrent dans toute la Belgique. Marley Spoon et Foodprepper s'arrêtent à la Flandre et à Bruxelles." },
+          { icon: '🧑', titel: 'Vraiment pour une personne', tekst: "HelloFresh livre chaque box pour une personne. Marley Spoon a une formule séparée. Factor et Foodmaker livrent des portions individuelles." },
+          { icon: '📦', titel: 'Le minimum', tekst: "HelloFresh demande trois plats par semaine pour une personne. Foodbag trois plats par commande, mais sans abonnement obligatoire." },
+          { icon: '🔓', titel: 'Abonnement ou non', tekst: "Foodbag, Foodprepper et Foodmaker se commandent sans abonnement. Chez HelloFresh, Marley Spoon et Factor, vous mettez en pause ou résiliez chaque semaine." },
+        ],
+      },
+      {
+        type: 'topAanbieders',
+        kop: 'Notre top 3 pour une personne',
+        items: [
+          {
+            slug: 'hellofresh',
+            badge: '⭐ Meilleur choix',
+            badgeAchtergrond: '#E8F5EE',
+            badgeTekst: '#1B4332',
+            tagline: 'Chaque box pour une personne · toute la Belgique',
+            waarom:
+              "HelloFresh livre tous ses box pour une personne, avec des portions pesées pour un seul repas. Vous choisissez au moins trois plats par semaine parmi plus de 80 recettes, et mettez en pause ou résiliez depuis votre compte. Il livre dans les trois régions.",
+            deal: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
+          },
+          {
+            slug: 'factor',
+            badge: '🍱 Sans cuisiner',
+            badgeAchtergrond: '#FEF3C7',
+            badgeTekst: '#92400E',
+            tagline: 'Portions prêtes · toute la Belgique',
+            waarom:
+              "Pas envie de cuisiner après le travail ? Factor livre des plats prêts par portion, à réchauffer en quelques minutes. Vous commandez exactement le nombre de repas qu'il vous faut, sans reste. Livraison dans tout le pays, mais payante.",
+            deal: '40 % sur votre premier box + 25 % sur les cinq suivants',
+          },
+          {
+            slug: 'foodbag',
+            badge: '🇧🇪 Belge',
+            badgeAchtergrond: '#DBEAFE',
+            badgeTekst: '#1E40AF',
+            tagline: 'Sans abonnement · livraison gratuite partout',
+            waarom:
+              "Foodbag cuisine avec des ingrédients belges et livre gratuitement dans tout le pays, Wallonie comprise. Vous choisissez le nombre de personnes par plat et commandez au moins trois plats, avec ou sans abonnement — idéal pour tester sans engagement.",
+            deal: '3 × 20 € de réduction — appliqué automatiquement via notre lien, aucun code à saisir',
+          },
+        ],
+      },
+      {
+        type: 'overigeAanbieders',
+        kop: 'Les autres options pour une personne',
+        items: [
+          { slug: 'foodmaker', omschrijving: "Plats belges prêts, sans abonnement et livrés gratuitement dans tout le pays. Une alternative à Factor si vous ne voulez pas vous engager." },
+          { slug: 'marley-spoon', omschrijving: "Une formule séparée pour une personne, avec des recettes très rapides et des options prêtes. Livraison en Flandre et à Bruxelles uniquement ; les modifications se font au moins une semaine à l'avance." },
+          { slug: 'foodprepper', omschrijving: "Prêt en 15 minutes grâce aux ingrédients préparés, sans abonnement et au prix par portion le plus bas. Flandre et Bruxelles uniquement." },
+        ],
+      },
+      {
+        type: 'tabel',
+        kop: 'Comparatif : 6 fournisseurs pour une personne',
+        slugs: ['hellofresh', 'factor', 'foodbag', 'foodmaker', 'marley-spoon', 'foodprepper'],
+        portiesPerWeek: 3,
+        kolommen: [
+          { kop: 'Livre en Wallonie', soort: 'tekst', waarden: { hellofresh: 'Oui', factor: 'Oui', foodbag: 'Oui', foodmaker: 'Oui', 'marley-spoon': 'Non', foodprepper: 'Non' } },
+          { kop: 'Pour 1 personne', soort: 'tekst', waarden: { hellofresh: 'Oui, chaque box', factor: 'Oui, par portion', foodbag: 'Au choix par plat', foodmaker: 'Oui, par portion', 'marley-spoon': 'Oui, formule séparée', foodprepper: 'Oui' } },
+          { kop: 'Abonnement', soort: 'tekst', waarden: { hellofresh: 'Oui, résiliable', factor: 'Oui, résiliable', foodbag: 'Facultatif', foodmaker: 'Non', 'marley-spoon': 'Oui, résiliable', foodprepper: 'Non' } },
+          { kop: '€/portion', soort: 'portie' },
+          { kop: 'Réduction', soort: 'korting' },
+        ],
+        voetnoot:
+          "Le prix par portion est le prix indicatif pour 2 personnes ; pour une personne, il est généralement un peu plus élevé. Factor, HelloFresh et Marley Spoon facturent la livraison. Vérifiez les tarifs actuels sur le site du fournisseur.",
+      },
+      {
+        type: 'scenarios',
+        kop: 'Lequel vous convient ?',
+        items: [
+          {
+            scenario: 'Vous aimez cuisiner, même pour vous seul',
+            aanbeveling: 'HelloFresh',
+            slug: 'hellofresh',
+            uitleg: "Chaque box pour une personne, plus de 80 recettes et une livraison dans toute la Belgique. Avec la réduction de bienvenue, les premières semaines sont les moins chères.",
+            achtergrond: '#E8F5EE',
+            rand: '#BBF7D0',
+          },
+          {
+            scenario: 'Vous ne voulez pas cuisiner',
+            aanbeveling: 'Factor ou Foodmaker',
+            slug: 'factor',
+            uitleg: "Des portions prêtes à réchauffer, livrées partout. Factor a la plus grosse réduction de bienvenue ; Foodmaker fonctionne sans abonnement et livre gratuitement.",
+            achtergrond: '#FEF3C7',
+            rand: '#FDE68A',
+          },
+          {
+            scenario: 'Vous voulez tester sans engagement',
+            aanbeveling: 'Foodbag',
+            slug: 'foodbag',
+            uitleg: "Commandez une fois, sans abonnement, avec livraison gratuite dans tout le pays. Vous choisissez le nombre de personnes par plat.",
+            achtergrond: '#DBEAFE',
+            rand: '#BFDBFE',
+          },
+        ],
+      },
+      {
+        type: 'slotCta',
+        kop: 'Prêt à commencer ?',
+        tekst:
+          "HelloFresh est le box à cuisiner le plus flexible pour une personne en Belgique : chaque box se commande pour un, avec livraison dans les trois régions. Avec la réduction de bienvenue, c'est la façon la moins chère de tester.",
+        slug: 'hellofresh',
+        knoptekst: "Activer jusqu'à 70 € de réduction →",
+        subtekst: "Jusqu'à 70 € sur vos 3 premières box · automatique via le lien · résiliable chaque semaine",
+      },
     ],
   },
 

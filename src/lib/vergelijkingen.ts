@@ -75,7 +75,7 @@ export const vergelijkingen: Vergelijking[] = [
         html: true,
         paragrafen: [
           '<strong>Foodprepper</strong> onderscheidt zich met een volledig dagmenu: ontbijt, lunch, diner én snacks. Via de versmarkt — een soort online buurtsupermarkt — kan je ook soepen, bijgerechten en snacks bijbestellen. Het weekmenu wisselt, maar is kleiner dan bij Foodbag.',
-          '<strong>Foodbag</strong> biedt 40 gerechten per week verdeeld over 5 kookstijlen, waaronder de populaire Sana-lijn van Sandra Bekkari en de Busy Day-gerechten (klaar in 20 min). Wie afwisseling wil in avondmaaltijden, vindt hier een breed aanbod. Ontbijt en lunch zitten er niet bij.',
+          '<strong>Foodbag</strong> biedt 40 gerechten per week verdeeld over 5 kookstijlen, waaronder de populaire Sana-lijn van Sandra Bekkari, de snelle Quick&Easy-gerechten en Kant&Klaar. Wie afwisseling wil in avondmaaltijden, vindt hier een breed aanbod. Ontbijt en lunch zitten er niet bij.',
         ],
       },
       {
@@ -116,7 +116,7 @@ export const vergelijkingen: Vergelijking[] = [
           'Je de avond als rusttijd ervaart en er 30 minuten voor neemt',
           'Je veel receptvariatie wil: 40 gerechten per week uit 5 kookstijlen',
           'Je bewust lokaal en Belgisch wil eten met kortere keten',
-          'Je de Sandra Bekkari Sana-lijn of Busy Day-gerechten wil',
+          'Je de Sandra Bekkari Sana-lijn of de snelle Quick&Easy-gerechten wil',
         ],
       },
       {
@@ -142,12 +142,12 @@ export const vergelijkingen: Vergelijking[] = [
   {
     slug: 'foodprepper-vs-hellofresh',
     seoTitle: 'Foodprepper vs HelloFresh 2026: welke maaltijdbox wint?',
-    seoDescription: 'Foodprepper klaar in 15 minuten en 100% Belgisch, HelloFresh met 40+ recepten en levering in heel België. Eerlijke vergelijking op tijd, menu en prijs.',
+    seoDescription: 'Foodprepper klaar in 15 minuten en 100% Belgisch, HelloFresh met 80+ recepten en levering in heel België. Eerlijke vergelijking op tijd, menu en prijs.',
     aanbieder1Slug: 'foodprepper',
     aanbieder2Slug: 'hellofresh',
     h1: 'Foodprepper vs HelloFresh: welke maaltijdbox wint in België?',
     introParagrafen: [
-      'HelloFresh is de wereldmarktleider: actief in 18 landen, meer dan 8 miljoen klanten en een indrukwekkend weekmenu van 40+ recepten. Foodprepper is iets heel anders: 100% Belgisch, opgericht in 2021, en gebouwd rond één belofte — op tafel in 15 minuten.',
+      'HelloFresh is de wereldmarktleider: actief in 18 landen, meer dan 8 miljoen klanten en een indrukwekkend weekmenu van 80+ recepten. Foodprepper is iets heel anders: 100% Belgisch, opgericht in 2021, en gebouwd rond één belofte — op tafel in 15 minuten.',
       'Beide zijn kookboxen waarbij je zelf de laatste stap zet, maar de vergelijking houdt daarna snel op. HelloFresh stuurt je ruwe ingrediënten en een recept. Foodprepper stuurt voorbereide ingrediënten: groenten zijn voorgesneden en voorgegaard, vlees is gemarineerd, sauzen zijn klaar. Jij werkt alles samen in een kwartier.',
       'Hieronder vergelijken we beide eerlijk op kooktijd, menu, prijs, herkomst en levering — zodat je weet welke het beste bij jou past.',
     ],
@@ -181,7 +181,7 @@ export const vergelijkingen: Vergelijking[] = [
         kop: 'Menu & keuze',
         html: true,
         paragrafen: [
-          '<strong>HelloFresh</strong> biedt meer dan 40 recepten per week, verdeeld over meerdere categorieën: Quick & Easy, vegetarisch, familie, wereldkeukens. Voor wie lang op één aanbieder wil blijven zonder eentonigheid, is dat een groot voordeel.',
+          '<strong>HelloFresh</strong> biedt meer dan 80 recepten per week, verdeeld over meerdere categorieën: Quick & Easy, vegetarisch, familie, wereldkeukens. Voor wie lang op één aanbieder wil blijven zonder eentonigheid, is dat een groot voordeel.',
           '<strong>Foodprepper</strong> heeft een kleiner maar uniek aanbod: naast avondmaaltijden ook ontbijt, lunch en snacks via de versmarkt. Zo kan je één leverancier voor je hele dagmenu gebruiken. Het weekmenu is wisselend en beperkter dan bij HelloFresh, maar de categorie is breder.',
         ],
       },
@@ -238,7 +238,7 @@ export const vergelijkingen: Vergelijking[] = [
         slug: 'hellofresh',
         items: [
           'Je van echt koken houdt en 30–45 minuten in de keuken staat',
-          'Je een groot en gevarieerd weekmenu wil: 40+ recepten per week',
+          'Je een groot en gevarieerd weekmenu wil: 80+ recepten per week',
           'Je in Wallonië woont of in heel België wil bestellen',
           'Je een bewezen internationale aanbieder met brede support wil',
           'Je op zoek bent naar de laagste vaste prijs per portie',
@@ -283,7 +283,7 @@ export const vergelijkingen: Vergelijking[] = [
     faq: [
       { q: 'Wat is goedkoper: HelloFresh of Foodbag?', a: 'HelloFresh is merkbaar goedkoper per portie. Foodbag kost aanzienlijk meer, maar dat weerspiegelt de lokale inkoop en kortere keten. Voor wie budget een rol speelt, is HelloFresh de duidelijke keuze — zeker met de welkomstkorting voor nieuwe klanten.' },
       { q: 'Welke box heeft betere ingrediënten?', a: 'Foodbag wint op ingrediëntenkwaliteit. De grondstoffen komen van Belgische boerderijen via een kortere keten — dat is merkbaar aan de versheid. HelloFresh koopt internationaal in, wat de lagere prijs verklaart maar ook het verschil in kwaliteitsbeleving.' },
-      { q: 'Welke box is praktischer als je weinig kooktijd hebt?', a: 'Foodbag heeft een "Busy Day" lijn met maaltijden klaar in 20 minuten. HelloFresh heeft een "Quick & Easy" categorie met recepten klaar in 25–30 minuten. Beide zijn goed haalbaar op drukke avonden — Foodbag heeft een licht voordeel als snelheid je prioriteit is.' },
+      { q: 'Welke box is praktischer als je weinig kooktijd hebt?', a: 'Foodbag heeft een snelle Quick&Easy-lijn, een filter op bereidingstijd en een Kant&Klaar-lijn voor als je helemaal niet wil koken. HelloFresh markeert zijn snelste recepten als "Supersnel". Beide zijn goed haalbaar op drukke avonden.' },
       { q: 'Kan ik beide maaltijdboxen opzeggen wanneer ik wil?', a: 'Ja. Zowel HelloFresh als Foodbag zijn wekelijks opzegbaar of te pauzeren, tot 5 dagen voor je volgende levering. Foodbag heeft bovendien een optie om los te bestellen zonder abonnement.' },
     ],
   },

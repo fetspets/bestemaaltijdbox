@@ -24,7 +24,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     ],
     kiesKookboxAls: [
       'Vous aimez cuisiner et le plaisir de cuisiner compte pour vous',
-      'Vous voulez beaucoup de variété : plus de 40 recettes par semaine',
+      'Vous voulez beaucoup de variété : plus de 80 recettes par semaine',
       'Vous cherchez le box le mieux noté (8,4/10 dans notre test)',
     ],
     verdictTekst: "Il n'y a pas de gagnant absolu : tout dépend de votre envie de cuisiner. HelloFresh obtient une meilleure note globale et convient mieux à ceux qui aiment cuisiner, veulent de la variété et une bonne offre de bienvenue. Factor est le meilleur choix si vous ne voulez pas cuisiner : prêt en 2 à 3 minutes, avec des styles alimentaires pour les sportifs et ceux qui surveillent leurs calories. Les deux livrent dans toute la Belgique, Wallonie comprise. Vous aimez cuisiner ? HelloFresh. Vous voulez juste réchauffer ? Factor.",

@@ -586,7 +586,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       },
       {
         q: 'Combien de recettes végétariennes par semaine chez HelloFresh ?',
-        a: "Entre 8 et 12 par semaine, dans un catalogue de plus de 40 recettes. Un filtre dédié permet de les afficher directement.",
+        a: "Entre 8 et 12 par semaine, dans un catalogue de plus de 80 recettes. Un filtre dédié permet de les afficher directement.",
       },
     ],
   },
@@ -868,7 +868,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       },
       { type: 'cta', tekst: 'Voir Factor', slug: 'factor' },
       { type: 'h2', text: 'Cuisiner vite : prêt pour la prochaine mission' },
-      { type: 'p', html: true, text: 'Si un quart d\'heure en cuisine ne vous dérange pas, un box à cuisiner revient moins cher. En Wallonie, <a href="/fr/fournisseur/hellofresh" style="color:#1B4332;font-weight:600">HelloFresh</a> est l\'option la plus pratique : plus de 40 recettes par semaine, dont vous choisissez les plus rapides. <a href="/fr/fournisseur/foodprepper" style="color:#1B4332;font-weight:600">Foodprepper</a> est prêt en environ 15 minutes, mais ne livre qu\'en Flandre et à Bruxelles.' },
+      { type: 'p', html: true, text: 'Si un quart d\'heure en cuisine ne vous dérange pas, un box à cuisiner revient moins cher. En Wallonie, <a href="/fr/fournisseur/hellofresh" style="color:#1B4332;font-weight:600">HelloFresh</a> est l\'option la plus pratique : plus de 80 recettes par semaine, dont vous choisissez les plus rapides. <a href="/fr/fournisseur/foodprepper" style="color:#1B4332;font-weight:600">Foodprepper</a> est prêt en environ 15 minutes, mais ne livre qu\'en Flandre et à Bruxelles.' },
       {
         type: 'tabel',
         kop: 'Box à cuisiner rapides comparés',
