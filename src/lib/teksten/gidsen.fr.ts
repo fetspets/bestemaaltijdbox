@@ -60,7 +60,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           metDeal: "jusqu'à 70 € de réduction sur vos 3 premières box",
           naDeal: '53,49 €/semaine (tarif standard, livraison 5,99 € comprise)',
           uitleg:
-            "HelloFresh combine un grand choix (40+ recettes par semaine), une première livraison offerte, une offre de bienvenue solide et — ce qui compte ici — une livraison dans les trois régions. Répartition : 45 € sur la box 1, 15 € sur la box 2, 10 € sur la box 3. Aucun code à saisir. Résiliable chaque semaine, de 1 à 6 personnes.",
+            "HelloFresh combine un grand choix (80+ recettes par semaine), une première livraison offerte, une offre de bienvenue solide et — ce qui compte ici — une livraison dans les trois régions. Répartition : 45 € sur la box 1, 15 € sur la box 2, 10 € sur la box 3. Aucun code à saisir. Résiliable chaque semaine, de 1 à 6 personnes.",
           dealOpmerking: "Jusqu'à 70 € sur vos 3 premières box · nouveaux clients · automatique via le lien · livre en Wallonie.",
         },
         {

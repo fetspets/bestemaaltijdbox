@@ -13,7 +13,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     kookboxLevergebied: 'Toute la Belgique',
     intro: [
       "Factor et HelloFresh répondent tous deux à la question « qu'est-ce qu'on mange ce soir ? », mais de façon très différente. Avec HelloFresh, vous cuisinez vous-même des ingrédients frais ; avec Factor, vous réchauffez un plat préparé en 2 à 3 minutes. Cette différence détermine lequel vous convient.",
-      "HelloFresh est notre numéro 1 et obtient une meilleure note globale (8,4 contre 7,8) : plus de variété (40+ recettes par semaine) et une solide offre de bienvenue. Factor mise sur la facilité maximale : rien à cuisiner, prêt en quelques minutes, avec cinq styles alimentaires comme High-Protein et Calorie-Conscious.",
+      "HelloFresh est notre numéro 1 et obtient une meilleure note globale (8,4 contre 7,8) : plus de variété (80+ recettes par semaine) et une solide offre de bienvenue. Factor mise sur la facilité maximale : rien à cuisiner, prêt en quelques minutes, avec cinq styles alimentaires comme High-Protein et Calorie-Conscious.",
       'La question clé est simple : avez-vous envie de cuisiner ou non ?',
     ],
     kiesFactorAls: [

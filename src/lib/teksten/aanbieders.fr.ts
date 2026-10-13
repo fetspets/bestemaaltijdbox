@@ -48,7 +48,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       testervaring:
         "Les retours d'utilisateurs sont constants sur la livraison : colis réfrigéré, bien emballé, à l'heure. Les fiches recettes sont claires, avec photos et étapes numérotées, et existent en français — un point qui n'est pas acquis chez tous les concurrents. Comptez 25 à 40 minutes de préparation. Le reproche qui revient : davantage d'emballage plastique que chez les acteurs locaux.",
       voorWie:
-        "HelloFresh convient aux couples, aux familles et aux personnes seules qui veulent varier sans y consacrer une soirée. La variété (40+ recettes) permet de composer autour des goûts de chacun. Moins indiqué si vous tenez au circuit court ou au bio : l'approvisionnement est international, ce qui explique aussi le prix.",
+        "HelloFresh convient aux couples, aux familles et aux personnes seules qui veulent varier sans y consacrer une soirée. La variété (80+ recettes) permet de composer autour des goûts de chacun. Moins indiqué si vous tenez au circuit court ou au bio : l'approvisionnement est international, ce qui explique aussi le prix.",
       hoeWerktHet:
         "Vous composez votre box sur hellofresh.be : nombre de personnes (1 à 6) et nombre de repas par semaine (3 à 5). Chaque semaine, vous choisissez vous-même vos recettes parmi l'offre. La livraison est gratuite et plusieurs jours sont proposés. Pause ou résiliation jusqu'à 5 jours avant la livraison suivante.",
       vergelijking:
@@ -59,7 +59,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     kenmerken: ['✓ 1re livraison offerte', '✓ Résiliable chaque semaine', '✓ 80+ recettes/semaine', '✓ Livre en Wallonie'],
     pros: [
       "Livre dans toute la Belgique, Wallonie comprise",
-      'Le plus grand choix de recettes (40+ par semaine)',
+      'Un très large choix de recettes (80+ par semaine)',
       'Première livraison offerte',
       'Pause et résiliation flexibles',
       'Fiches recettes et service client en français',
@@ -116,7 +116,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     cons: ['Prix par portion élevé', 'Moins de recettes par semaine que HelloFresh'],
     besteVoor: 'manger belge et local avec livraison nationale',
     ctaSubtekst: '3 × 20 € de réduction · appliqué automatiquement via notre lien',
-    seoTitle: 'Foodbag avis (2026) : le box repas belge en circuit court',
+    seoTitle: 'Foodbag avis et prix (2026) : combien coûte le box belge ?',
     seoDescription:
       "Notre avis sur Foodbag : ingrédients belges, livraison gratuite dans tout le pays et sans abonnement. Prix, qualité et comparaison avec les alternatives.",
   },

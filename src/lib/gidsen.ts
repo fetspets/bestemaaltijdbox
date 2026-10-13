@@ -112,7 +112,7 @@ export const gidsen: Gids[] = [
           accent: '#1B4332',
           metDeal: 'tot €70 korting op je eerste 3 boxen',
           naDeal: '€53,49/week (reguliere prijs, incl. €5,99 bezorging)',
-          uitleg: 'HelloFresh combineert een grote receptkeuze (40+ per week), levering in heel België en een sterke welkomstdeal: tot €70 korting verdeeld over je eerste 3 boxen (€45 op box 1, €15 op box 2, €10 op box 3). De korting wordt automatisch toegepast via de link — geen code nodig. Je eerste levering is gratis, daarna €5,99 bezorgkosten per box. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
+          uitleg: 'HelloFresh combineert een grote receptkeuze (80+ per week), levering in heel België en een sterke welkomstdeal: tot €70 korting verdeeld over je eerste 3 boxen (€45 op box 1, €15 op box 2, €10 op box 3). De korting wordt automatisch toegepast via de link — geen code nodig. Je eerste levering is gratis, daarna €5,99 bezorgkosten per box. Wekelijks opzegbaar, leverbaar voor 1 tot 6 personen.',
           dealOpmerking: 'Tot €70 korting op je eerste 3 boxen · exclusief voor nieuwe klanten · automatisch via link.',
         },
         {

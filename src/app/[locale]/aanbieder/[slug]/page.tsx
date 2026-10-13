@@ -159,11 +159,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
             </div>
             <div style={{ display: 'flex', gap: 16, fontSize: 13, color: 'var(--muted)', flexWrap: 'wrap' }}>
               <span>{t('door')} <strong style={{ color: 'var(--ink)' }}>{t('redactie')}</strong></span>
-              <span>·</span><span>{t('bijgewerkt')} <strong style={{ color: 'var(--ink)' }}>{datum}</strong></span>
-              <span>·</span><span>{t('gebaseerdOp')} <strong style={{ color: 'var(--ink)' }}>{t('bron')}</strong></span>
+              <span className="hide-mobile">·</span><span>{t('bijgewerkt')} <strong style={{ color: 'var(--ink)' }}>{datum}</strong></span>
+              <span className="hide-mobile">·</span><span>{t('gebaseerdOp')} <strong style={{ color: 'var(--ink)' }}>{t('bron')}</strong></span>
               {a.status === 'active'
-                ? <><span>·</span><span>{t('ranking')} <strong style={{ color: '#1B4332' }}>#{rangVoor(a.slug, taal) ?? a.ranking} {t('rankingVan')} {actieveAanbiedersVoor(taal).length}</strong></span></>
-                : <><span>·</span><span><strong style={{ color: '#B45309' }}>{t('stopgezet')}</strong></span></>}
+                ? <><span className="hide-mobile">·</span><span>{t('ranking')} <strong style={{ color: '#1B4332' }}>#{rangVoor(a.slug, taal) ?? a.ranking} {t('rankingVan')} {actieveAanbiedersVoor(taal).length}</strong></span></>
+                : <><span className="hide-mobile">·</span><span><strong style={{ color: '#B45309' }}>{t('stopgezet')}</strong></span></>}
             </div>
           </div>
 

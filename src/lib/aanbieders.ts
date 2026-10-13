@@ -103,7 +103,7 @@ export const aanbieders: Aanbieder[] = [
     uitgebreideReview: {
       intro: 'HelloFresh is een van de populairste maaltijdboxen in België en dat is niet zonder reden. Uit ons uitgebreid onderzoek en brede gebruikerservaringen blijkt dat weinig andere boxen dezelfde balans bieden tussen prijs, variatie en gebruiksgemak. Of je nu kookt voor 2 of voor een heel gezin — HelloFresh past zich aan.',
       testervaring: 'Op basis van uitgebreide gebruikerservaringen scoort HelloFresh consistent goed op bezorging: gekoeld, goed verpakt en op tijd. De receptkaarten zijn helder met stap-voor-stap instructies en foto\'s. Bereidingstijd ligt tussen 25 en 40 minuten. Gebruikers benadrukken de variatie als grote troef: van Thaise curry tot Belgische waterzooi, van pasta tot wokgerechten — het aanbod is breed en gevarieerd. Klantenservice wordt positief beoordeeld: problemen worden snel opgelost. Terugkerend punt in reviews: er zit wat meer plasticverpakking in dan bij lokale alternatieven.',
-      voorWie: 'HelloFresh is een sterke keuze voor koppels, gezinnen en singles die weinig tijd hebben maar toch gevarieerd willen eten. Dankzij de grote receptvariatie (40+) vinden ook kieskeurige eters altijd iets naar hun smaak. Minder geschikt voor wie bewust lokaal of biologisch wil kopen.',
+      voorWie: 'HelloFresh is een sterke keuze voor koppels, gezinnen en singles die weinig tijd hebben maar toch gevarieerd willen eten. Dankzij de grote receptvariatie (80+) vinden ook kieskeurige eters altijd iets naar hun smaak. Minder geschikt voor wie bewust lokaal of biologisch wil kopen.',
       hoeWerktHet: 'Je stelt je box samen op hellofresh.be: kies het aantal personen (1-6) en het aantal maaltijden per week (3-5). Je kiest dan elke week zelf welke recepten je wil uit het aanbod van 40+. Je eerste levering is gratis, daarna betaal je €5,99 bezorgkosten per box. Je kan kiezen uit meerdere bezorgdagen. Pauzeren of opzeggen kan tot 5 dagen voor je volgende levering.',
       vergelijking: 'Ten opzichte van Foodbag is HelloFresh voordeliger maar gebruikt het minder lokale Belgische ingrediënten. Marley Spoon is vergelijkbaar in prijs maar biedt meer chef-recepten. Voor pure budgetvriendelijkheid wint HelloFresh met korting altijd.',
       eindoordeel: 'HelloFresh verdient zijn #1 positie. De combinatie van prijs, variatie en gemak is moeilijk te evenaren in België. Zeker met de regelmatige welkomstaanbiedingen voor nieuwe klanten is het zeker de moeite waard om te proberen.',
@@ -134,7 +134,7 @@ export const aanbieders: Aanbieder[] = [
     },
     ctaSubtekst: 'tot €70 korting op je eerste 3 boxen — automatisch via onze link',
     kenmerken: ['✓ 1e levering gratis', '✓ Direct opzegbaar', '✓ 80+ recepten/week', '✓ Tot €70 welkomstkorting'],
-    pros: ['Grootste receptvariatie (40+ per week)', 'Levert in heel België, ook in Wallonië', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Sterke welkomstdeal: tot €70 korting voor nieuwe klanten'],
+    pros: ['Ruime receptvariatie (80+ per week)', 'Levert in heel België, ook in Wallonië', 'Flexibel pauzeren en opzeggen', 'Gebruiksvriendelijke app', 'Sterke welkomstdeal: tot €70 korting voor nieuwe klanten'],
     cons: ['Niet 100% Belgische ingrediënten', 'Meer plasticverpakking dan lokale alternatieven', 'Standaardprijs hoger na korting', '€5,99 bezorgkosten per box na je eerste levering, met een toeslag voor sommige tijdsloten en regio\'s'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'singles', 'budget'],
     losBestellenMogelijk: false,
@@ -192,6 +192,8 @@ export const aanbieders: Aanbieder[] = [
     besteVoor: 'Belgische kwaliteit',
     minMaaltijdenPerWeek: 1,
     badge: { label: '🇧🇪 Belgische keuze', bg: '#DBEAFE', color: '#1E40AF' },
+    seoTitle: 'Foodbag prijs & review 2026: wat kost het echt? (8,1/10)',
+    seoDescription: 'Wat kost Foodbag? Vanaf €8,43 per portie, altijd gratis bezorging en 40 gerechten per week. Onze review: prijs per persoon, smaak, voor wie het past en de minpunten.',
   },
   {
     slug: 'marley-spoon',
@@ -435,6 +437,8 @@ export const aanbieders: Aanbieder[] = [
     tijdstip: true,
     besteVoor: 'Ready-to-eat',
     minMaaltijdenPerWeek: 1,
+    seoTitle: 'Factor review 2026: kant-en-klaar van HelloFresh · 7,8/10',
+    seoDescription: 'Factor is de kant-en-klare maaltijddienst van de HelloFresh Group. Vanaf €4,99 per maaltijd + €5,99 bezorging. Onze review van smaak, prijs, dieetstijlen en opzeggen.',
   },
   {
     slug: 'crowd-cooks',
@@ -485,8 +489,8 @@ export const aanbieders: Aanbieder[] = [
     tijdstip: false,
     besteVoor: 'Ready-to-eat',
     minMaaltijdenPerWeek: 1,
-    seoTitle: 'Crowd Cooks review 2026: kant-en-klaar · €60 korting',
-    seoDescription: 'Crowd Cooks: Belgische kant-en-klare maaltijden, vers bereid door chefs. Onze eerlijke review + tot €60 welkomstkorting.',
+    seoTitle: 'Crowd Cooks review 2026: Belgische chef-maaltijden aan huis',
+    seoDescription: 'Crowd Cooks: verse kant-en-klare maaltijden van Belgische chefs, porties van 450+ g. Prijs, bezorging (€4,90), levergebied en onze eerlijke score: 7,8/10. Plus tot €60 welkomstkorting.',
   },
   {
     slug: 'foodmaker',

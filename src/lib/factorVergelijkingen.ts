@@ -30,7 +30,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     kookboxLevergebied: 'heel België',
     intro: [
       'Factor en HelloFresh lossen allebei het "wat eten we vanavond"-probleem op, maar op een totaal andere manier. Bij HelloFresh kook je zelf met verse ingrediënten; bij Factor warm je een kant-en-klare maaltijd op in 2 tot 3 minuten. Dat verschil bepaalt welke bij jou past.',
-      'HelloFresh is onze nummer 1 en scoort overall hoger (8,4 tegenover 7,8): meer receptvariatie (40+ per week) en een sterke welkomstdeal. Factor kiest voor maximaal gemak — geen koken, klaar in enkele minuten, met vijf dieetstijlen zoals High-Protein en Calorie-Conscious.',
+      'HelloFresh is onze nummer 1 en scoort overall hoger (8,4 tegenover 7,8): meer receptvariatie (80+ per week) en een sterke welkomstdeal. Factor kiest voor maximaal gemak — geen koken, klaar in enkele minuten, met vijf dieetstijlen zoals High-Protein en Calorie-Conscious.',
       'De kernvraag is simpel: wil je koken of niet?',
     ],
     kiesFactorAls: [
