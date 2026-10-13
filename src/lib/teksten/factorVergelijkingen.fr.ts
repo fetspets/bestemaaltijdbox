@@ -85,7 +85,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     kiesKookboxAls: [
       'Cuisiner vous détend et vous voulez y consacrer 45 à 60 minutes',
       'Vous voulez la meilleure note de goût et des recettes de chef avec de la technique',
-      'Vous voulez beaucoup de variété : 40 recettes par semaine',
+      'Vous voulez beaucoup de variété : plus de 80 recettes par semaine',
       "Vous habitez en Flandre ou à Bruxelles (Marley Spoon ne livre pas en Wallonie)",
     ],
     verdictTekst: "Il n'y a pas de gagnant absolu : tout dépend de votre envie de cuisiner, et de l'endroit où vous habitez. Les notes sont proches. Marley Spoon convient mieux à ceux qui aiment cuisiner et recherchent le meilleur goût et de la profondeur culinaire, mais il ne livre qu'en Flandre et à Bruxelles. Factor est le meilleur choix si vous ne voulez pas cuisiner, si vous habitez en Wallonie ou si vous voulez manger sainement avec des styles alimentaires. Vous aimez cuisiner et habitez à Bruxelles ? Marley Spoon. Vous voulez réchauffer ou habitez en Wallonie ? Factor.",

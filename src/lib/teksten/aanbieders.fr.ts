@@ -56,7 +56,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       eindoordeel:
         "HelloFresh mérite sa première place, et davantage encore pour un lecteur wallon : c'est la combinaison la plus complète de couverture nationale, de choix et de prix. La réduction de bienvenue rend le test peu risqué.",
     },
-    kenmerken: ['✓ 1re livraison offerte', '✓ Résiliable chaque semaine', '✓ 40+ recettes/semaine', '✓ Livre en Wallonie'],
+    kenmerken: ['✓ 1re livraison offerte', '✓ Résiliable chaque semaine', '✓ 80+ recettes/semaine', '✓ Livre en Wallonie'],
     pros: [
       "Livre dans toute la Belgique, Wallonie comprise",
       'Le plus grand choix de recettes (40+ par semaine)',
@@ -68,7 +68,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       'Ingrédients non belges',
       'Plus de plastique que chez les acteurs locaux',
       'Prix standard élevé après la période de bienvenue',
-      'Livraison de 5,99 € par box après la première',
+      'Livraison de 5,99 € par box après la première, avec un supplément pour certains créneaux et régions',
     ],
     besteVoor: 'le meilleur choix global, surtout en Wallonie',
     ctaSubtekst: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
@@ -176,7 +176,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       eindoordeel:
         "Excellent produit, disponibilité limitée. À Bruxelles, c'est le choix des amateurs de cuisine. En Wallonie, tournez-vous vers Foodbag ou HelloFresh.",
     },
-    kenmerken: ['👨‍🍳 Recettes de chef', '⚠️ Pas de livraison en Wallonie', '✓ 40+ recettes/semaine', '+ 6,99 € de livraison'],
+    kenmerken: ['👨‍🍳 Recettes de chef', '⚠️ Pas de livraison en Wallonie', '✓ 80+ recettes/semaine', '+ 6,99 € de livraison'],
     pros: [
       'La meilleure note de goût du comparatif',
       'Recettes plus travaillées et plus variées',

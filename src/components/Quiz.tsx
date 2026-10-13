@@ -67,7 +67,7 @@ const resultaten: Record<string, {
     slug: 'hellofresh',
     tagline: 'Populaire keuze voor gemak, variatie en een goede prijs-kwaliteitverhouding.',
     bullets: [
-      'Tot 40 recepten per week — nooit hetzelfde',
+      '80+ recepten per week — nooit hetzelfde',
       'Geschikt voor 1 t/m 6 personen',
       'Eerste levering gratis, flexibel opzegbaar',
     ],
@@ -134,7 +134,7 @@ const resultaten: Record<string, {
 const resultatenFr: Record<string, { tagline: string; bullets: string[] }> = {
   hf: {
     tagline: 'Le choix populaire pour la facilité, la variété et un bon rapport qualité-prix.',
-    bullets: ['Jusqu’à 40 recettes par semaine, jamais les mêmes', 'Pour 1 à 6 personnes', 'Première livraison offerte, livre aussi en Wallonie'],
+    bullets: ['Plus de 80 recettes par semaine, jamais les mêmes', 'Pour 1 à 6 personnes', 'Première livraison offerte, livre aussi en Wallonie'],
   },
   fb: {
     tagline: 'La qualité belge, avec des ingrédients locaux et des produits frais.',

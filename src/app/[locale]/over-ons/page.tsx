@@ -78,10 +78,10 @@ export default async function OverOnsPage({ params }: { params: Promise<{ locale
           {[
             { icon: '🍽️', titel: 'Smaak', desc: 'Gebaseerd op gebruikerservaringen en reviews' },
             { icon: '💰', titel: 'Prijs-kwaliteit', desc: 'Eerlijke vergelijking van de totale kost' },
-            { icon: '🔄', titel: 'Flexibiliteit', desc: 'Hoe makkelijk kan je opzeggen of pauzeren?' },
+            { icon: '🔄', titel: 'Flexibiliteit', desc: 'Opzeggen, pauzeren en bestellen met of zonder abonnement (niet de bezorging)' },
             { icon: '🌱', titel: 'Duurzaamheid', desc: 'Lokale ingrediënten en verpakking' },
             { icon: '⚡', titel: 'Gemak', desc: 'Bereidingstijd en gebruiksgemak' },
-            { icon: '🚚', titel: 'Bezorging', desc: 'Betrouwbaarheid en flexibiliteit van levering' },
+            { icon: '🚚', titel: 'Bezorging', desc: 'Bezorgkosten, levergebied en keuze in leverdagen' },
           ].map(({ icon, titel, desc }) => (
             <div key={titel} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: 12, background: 'var(--cream)', borderRadius: 10 }}>
               <div style={{ fontSize: 20, flexShrink: 0 }}>{icon}</div>

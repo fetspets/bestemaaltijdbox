@@ -107,7 +107,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
           'Vous habitez en Wallonie — Foodbag y livre, Foodprepper non',
           'Vous aimez cuisiner et voyez cela comme un moment de détente',
           'Vous prenez volontiers trente minutes en soirée',
-          'Vous voulez plus de variété : 20+ repas par semaine en 5 styles',
+          'Vous voulez plus de variété : 40 plats par semaine en 5 styles',
           'Vous voulez la ligne Sana de Sandra Bekkari ou les plats Busy Day',
         ],
       },

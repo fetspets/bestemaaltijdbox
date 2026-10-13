@@ -114,7 +114,7 @@ export const vergelijkingen: Vergelijking[] = [
         items: [
           'Je van koken houdt en het als een ontspannend moment ziet',
           'Je de avond als rusttijd ervaart en er 30 minuten voor neemt',
-          'Je veel receptvariatie wil: 20+ maaltijden per week uit 5 kookstijlen',
+          'Je veel receptvariatie wil: 40 gerechten per week uit 5 kookstijlen',
           'Je bewust lokaal en Belgisch wil eten met kortere keten',
           'Je de Sandra Bekkari Sana-lijn of Busy Day-gerechten wil',
         ],

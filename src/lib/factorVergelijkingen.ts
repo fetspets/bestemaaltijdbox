@@ -41,7 +41,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     ],
     kiesKookboxAls: [
       'Je graag zelf kookt en de kookbeleving belangrijk vindt',
-      'Je veel receptvariatie wil: 40+ recepten per week',
+      'Je veel receptvariatie wil: 80+ recepten per week',
       'Je de hoogst scorende allrounder zoekt (8,4/10 in onze test)',
     ],
     verdictTekst: 'Er is geen absolute winnaar — het hangt af van of je wil koken. HelloFresh scoort overall hoger en is de betere keuze voor wie graag kookt, veel variatie wil en een sterke welkomstdeal zoekt. Factor is de sterkere keuze voor wie níét wil koken: klaar in 2–3 minuten, met dieetstijlen voor sporters en caloriebewuste eters. Kook je graag? Dan is HelloFresh de logische keuze. Wil je enkel opwarmen? Dan is Factor jouw box.',
@@ -105,7 +105,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     kiesKookboxAls: [
       'Je koken als ontspanning ziet en er 45–60 minuten voor wil nemen',
       'Je de hoogste smaakscore en chef-recepten met techniek wil',
-      'Je veel receptvariatie wil: 40 recepten per week',
+      'Je veel receptvariatie wil: 80+ recepten per week',
       'Je in Vlaanderen of Brussel woont (Marley Spoon levert niet in Wallonië)',
     ],
     verdictTekst: 'Er is geen absolute winnaar — het hangt af van of je wil koken. De scores liggen dicht bij elkaar. Marley Spoon is de betere keuze voor wie van koken geniet, de hoogste smaak en culinaire diepgang zoekt — al bezorgt het enkel in Vlaanderen en Brussel. Factor is de sterkere keuze voor wie níét wil koken, in heel België wil bestellen of gezond wil eten met dieetstijlen. Kook je graag? Marley Spoon. Wil je opwarmen of woon je in Wallonië? Factor.',
