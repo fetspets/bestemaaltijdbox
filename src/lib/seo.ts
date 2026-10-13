@@ -192,7 +192,11 @@ export function articleJsonLd(opties: {
     image: absoluteUrl(ogAfbeelding(opties.titel, locale)),
     ...(opties.gepubliceerd ? { datePublished: opties.gepubliceerd } : {}),
     ...(gewijzigd ? { dateModified: gewijzigd } : {}),
-    author: { '@type': 'Organization', name: SITE_NAAM, url: SITE_URL },
+    author: {
+      '@type': 'Organization',
+      name: 'Redactie BesteMaaltijdbox',
+      url: absoluteUrl(locale === 'fr' ? '/fr/a-propos#redactie' : '/over-ons#redactie'),
+    },
     publisher: {
       '@type': 'Organization',
       name: SITE_NAAM,

@@ -14,7 +14,8 @@
 export interface StatischePagina {
   metaTitle: string;
   metaDescription: string;
-  alineas: Array<{ kop?: string; tekst: string[] }>;
+  /** `id` maakt een anker, bv. 'redactie' voor de link in de reviewkop. */
+  alineas: Array<{ kop?: string; tekst: string[]; id?: string }>;
 }
 
 export const overOnsFr: StatischePagina = {
@@ -34,6 +35,16 @@ export const overOnsFr: StatischePagina = {
       tekst: [
         "Nous évaluons chaque box sur cinq critères : le goût, le rapport qualité-prix, la flexibilité, la durabilité et la facilité. Les notes reposent sur des retours d'utilisateurs, des données d'avis publiques et les informations officielles des fournisseurs.",
         "Pour la version francophone, un sixième élément pèse lourd : la zone de livraison. Trois des huit fournisseurs actifs — Marley Spoon, Foodprepper et Ekomenu — ne livrent qu'en Flandre et à Bruxelles. Un classement qui recommanderait ces box à un lecteur wallon serait inutile, quelle que soit leur qualité. Notre classement francophone place donc les fournisseurs qui ne desservent pas la Wallonie plus bas, et le dit explicitement sur chaque page concernée.",
+      ],
+    },
+    {
+      kop: 'La rédaction',
+      id: 'redactie',
+      tekst: [
+        "Tous les textes de BesteMaaltijdbox.be sont écrits par la Rédaction BesteMaaltijdbox : une petite rédaction belge indépendante, sans lien avec une entreprise de box repas.",
+        "Les prix et les conditions viennent de la source. Chaque mois, nous vérifions le prix par portion, les frais de livraison, les offres de bienvenue et les conditions de résiliation sur le site de chaque fournisseur. La date de ce dernier contrôle figure en haut de chaque page.",
+        "Les étapes et délais de résiliation proviennent des pages d'aide officielles des fournisseurs, avec la date à laquelle nous les avons vérifiés. Nos notes combinent retours d'utilisateurs, avis publics et ces informations officielles ; quand nous n'avons pas pu vérifier quelque chose nous-mêmes, nous le disons.",
+        "Vous voyez une erreur ? Lecteurs et fournisseurs peuvent toujours nous corriger via info@bestemaaltijdbox.be. Nous adaptons la page et indiquons la nouvelle date de contrôle.",
       ],
     },
     {

@@ -304,7 +304,7 @@ export const blogPosts: BlogPost[] = [
         'HelloFresh: van €6,17 (4 personen) tot €14,17 (1 persoon) per portie, €7,92 voor 2 personen',
         'Foodbag: vanaf €8,43 per portie, met Belgische ingrediënten en gratis levering',
         'Marley Spoon: vanaf €7,79 per portie, plus €6,99 bezorgkosten',
-        'Ekomenu: €6,18 per portie, en toch 100% biologisch',
+        'Ekomenu: vanaf €6,42 per portie, en toch 100% biologisch',
       ]},
       { type: 'h2', text: 'Wanneer is zelf koken goedkoper?' },
       { type: 'p', text: 'Als je disciplineerd boodschappen doet, weinig wegooit en in bulk inkoopt, kan zelf koken goedkoper uitkomen. Zeker voor eenvoudige maaltijden zoals pasta, soep of omeletten.' },

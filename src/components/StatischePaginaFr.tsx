@@ -36,8 +36,8 @@ export default function StatischePaginaFr({
         </p>
       )}
 
-      {pagina.alineas.map(({ kop, tekst }) => (
-        <section key={kop ?? tekst[0].slice(0, 30)} style={{ marginBottom: 28 }}>
+      {pagina.alineas.map(({ kop, tekst, id }) => (
+        <section key={kop ?? tekst[0].slice(0, 30)} id={id} style={{ marginBottom: 28, scrollMarginTop: 80 }}>
           {kop && (
             <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 800, marginBottom: 10 }}>
               {kop}

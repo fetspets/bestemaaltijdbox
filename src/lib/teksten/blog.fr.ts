@@ -376,7 +376,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         items: [
           'HelloFresh : à partir de 7,92 € la portion, livraison 5,99 € (première box offerte), livre dans tout le pays',
           'Foodbag : à partir de 8,43 €, ingrédients belges en filière courte, livre aussi en Wallonie',
-          'Ekomenu : à partir de 6,18 €, entièrement bio — mais pas de livraison en Wallonie',
+          'Ekomenu : à partir de 6,42 €, entièrement bio — mais pas de livraison en Wallonie',
           'Foodprepper : à partir de 4,75 €, le prix le plus bas — Flandre et Bruxelles uniquement',
           'Factor : à partir de 4,99 €, plats prêts, + 5,99 € de livraison, couvre tout le pays',
         ],
@@ -576,13 +576,13 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Notre conclusion' },
       {
         type: 'p',
-        text: "Pour manger entièrement végétal, Ekomenu reste le meilleur choix en Belgique — à condition d'habiter en Flandre ou à Bruxelles. Si vous voulez rester flexible (parfois viande, parfois non), HelloFresh l'emporte grâce à l'ampleur du choix et à sa couverture nationale. En Wallonie et pour du végétal de qualité, Foodbag est l'option la plus solide.",
+        text: "Pour manger végétal, c'est chez Ekomenu que vous trouverez le plus de plats végétariens et végans (avec un filtre, et 100 % bio) — à condition d'habiter en Flandre ou à Bruxelles. Si vous voulez rester flexible (parfois viande, parfois non), HelloFresh l'emporte grâce à l'ampleur du choix et à sa couverture nationale. En Wallonie et pour du végétal de qualité, Foodbag est l'option la plus solide.",
       },
     ],
     faq: [
       {
         q: 'Existe-t-il un box entièrement végétal livré en Wallonie ?',
-        a: "Non. Ekomenu est le seul box entièrement végétal de Belgique et ne livre qu'en Flandre et à Bruxelles. En Wallonie, il faut composer avec les recettes végétariennes de HelloFresh ou la ligne veggie de Foodbag.",
+        a: "Non. Aucun box de notre comparatif n'est entièrement végétal, et Ekomenu, qui offre le plus de plats végans, ne livre qu'en Flandre et à Bruxelles. En Wallonie, il faut composer avec les recettes végétariennes de HelloFresh ou la ligne veggie de Foodbag.",
       },
       {
         q: 'Combien de recettes végétariennes par semaine chez HelloFresh ?',

@@ -58,7 +58,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
       bestRating: 10,
       worstRating: 1,
     },
-    author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: SITE_URL },
+    author: { '@type': 'Organization', name: 'Redactie BesteMaaltijdbox', url: absoluteUrl(fr ? '/fr/a-propos#redactie' : '/over-ons#redactie') },
     publisher: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: SITE_URL },
     dateModified: LAATST_GECONTROLEERD_ISO,
     inLanguage: fr ? 'fr-BE' : 'nl-BE',
@@ -158,7 +158,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               </div>
             </div>
             <div style={{ display: 'flex', gap: 16, fontSize: 13, color: 'var(--muted)', flexWrap: 'wrap' }}>
-              <span>{t('door')} <strong style={{ color: 'var(--ink)' }}>{t('redactie')}</strong></span>
+              <span>{t('door')} <Link href="/over-ons#redactie" style={{ color: 'var(--ink)', fontWeight: 700, textDecoration: 'underline' }}>{t('redactie')}</Link></span>
               <span className="hide-mobile">·</span><span>{t('bijgewerkt')} <strong style={{ color: 'var(--ink)' }}>{datum}</strong></span>
               <span className="hide-mobile">·</span><span>{t('gebaseerdOp')} <strong style={{ color: 'var(--ink)' }}>{t('bron')}</strong></span>
               {a.status === 'active'

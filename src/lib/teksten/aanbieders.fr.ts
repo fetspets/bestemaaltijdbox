@@ -399,39 +399,39 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
 
   ekomenu: {
     ctaSubtekst: '100 % bio · livraison gratuite · pas en Wallonie',
-    tagline: '100 % bio et végétal — Flandre et Bruxelles uniquement',
+    tagline: '100 % bio — Flandre et Bruxelles uniquement',
     beschrijving:
-      "Ekomenu est le seul box entièrement biologique et végétal de Belgique. La livraison se limite toutefois à la Flandre et à Bruxelles : la Wallonie n'est pas desservie.",
+      "Ekomenu est le seul box 100 % bio de notre comparatif, avec une large offre végétarienne. La livraison se limite toutefois à la Flandre et à Bruxelles : la Wallonie n'est pas desservie.",
     opzegTermijn: 'résiliable chaque semaine',
     uitgebreideReview: {
       intro:
-        "Ekomenu occupe une niche que personne d'autre ne couvre en Belgique : 100 % bio et 100 % végétal. Le problème pour une partie de nos lecteurs est simple : la livraison ne dépasse pas la Flandre et Bruxelles.",
+        "Ekomenu occupe une place à part dans notre comparatif : 100 % bio, avec une large offre végétarienne et végane. Le problème pour une partie de nos lecteurs est simple : la livraison ne dépasse pas la Flandre et Bruxelles.",
       testervaring:
-        "Les ingrédients sont certifiés biologiques et la qualité des légumes s'en ressent. Le prix par portion est plus bas que chez plusieurs concurrents non bio, ce qui surprend. L'offre hebdomadaire est plus restreinte, logique pour une gamme entièrement végétale.",
+        "Les ingrédients sont certifiés biologiques et la qualité des légumes s'en ressent. Le prix par portion est plus bas que chez plusieurs concurrents non bio, ce qui surprend. L'offre hebdomadaire (plus de 35 plats, dont du poisson et de la viande) reste plus restreinte que chez HelloFresh.",
       voorWie:
-        "Pour les Bruxellois et Flamands qui mangent végétal et tiennent au bio, sans vouloir filtrer les recettes chaque semaine. Sans objet en Wallonie.",
+        "Pour les Bruxellois et Flamands qui tiennent au bio et mangent souvent végétarien ou végan. Sans objet en Wallonie.",
       hoeWerktHet:
         "Commande sur ekomenu.be, livraison gratuite en Flandre et à Bruxelles, résiliable chaque semaine.",
       vergelijking:
-        "Aucun concurrent belge ne propose une offre entièrement bio et végétale. La vraie comparaison porte donc sur la zone de livraison : en Wallonie, il faut se rabattre sur les options végétariennes de HelloFresh ou la ligne veggie de Foodbag.",
+        "Aucun autre box de notre comparatif n'est entièrement bio. La vraie comparaison porte donc sur la zone de livraison : en Wallonie, il faut se rabattre sur les options végétariennes de HelloFresh ou la ligne veggie de Foodbag.",
       eindoordeel:
-        "Le meilleur choix végétal du pays, mais uniquement si vous habitez en Flandre ou à Bruxelles.",
+        "Le meilleur choix bio de notre comparatif, mais uniquement si vous habitez en Flandre ou à Bruxelles.",
     },
-    kenmerken: ['🌱 100 % bio et végétal', '⚠️ Pas de livraison en Wallonie', '✓ Livraison gratuite', '✓ Résiliable chaque semaine'],
+    kenmerken: ['🌱 100 % bio', '⚠️ Pas de livraison en Wallonie', '✓ Livraison gratuite', '✓ Résiliable chaque semaine'],
     pros: [
-      'Seul box 100 % bio et végétal de Belgique',
+      'Seul box 100 % bio de notre comparatif',
       'Prix par portion inférieur à plusieurs concurrents',
       'Livraison gratuite',
     ],
     cons: [
       'Ne livre pas en Wallonie — Flandre et Bruxelles uniquement',
-      'Offre hebdomadaire restreinte',
+      'Moins de choix que HelloFresh',
       'Aucune réduction de bienvenue permanente',
     ],
     besteVoor: 'manger bio et végétal à Bruxelles ou en Flandre',
-    seoTitle: 'Ekomenu avis (2026) : le box bio et végétal livre-t-il en Wallonie ?',
+    seoTitle: 'Ekomenu avis (2026) : le box 100 % bio livre-t-il en Wallonie ?',
     seoDescription:
-      "Ekomenu est le seul box 100 % bio et végétal de Belgique, mais ne livre qu'en Flandre et à Bruxelles. Notre avis et les alternatives pour la Wallonie.",
+      "Ekomenu est le seul box 100 % bio de notre comparatif, mais ne livre qu'en Flandre et à Bruxelles. Notre avis et les alternatives pour la Wallonie.",
   },
 
   'carrefour-simply-you': {

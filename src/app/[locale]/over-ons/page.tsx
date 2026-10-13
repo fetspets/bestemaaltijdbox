@@ -94,6 +94,20 @@ export default async function OverOnsPage({ params }: { params: Promise<{ locale
         </div>
       </div>
 
+      <div id="redactie" style={{ background: 'white', borderRadius: 16, padding: 32, border: '1px solid var(--rule)', marginBottom: 24, scrollMarginTop: 80 }}>
+        <div style={{ fontSize: 40, marginBottom: 16 }}>✍️</div>
+        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, marginBottom: 16 }}>De redactie</h2>
+        <p style={{ fontSize: 15, lineHeight: 1.8, color: '#374151', marginBottom: 16 }}>
+          Alle teksten op BesteMaaltijdbox.be komen van de <strong>Redactie BesteMaaltijdbox</strong>: een kleine, onafhankelijke Belgische redactie zonder banden met een maaltijdboxbedrijf. Zo werken we:
+        </p>
+        <ul style={{ fontSize: 15, lineHeight: 1.8, color: '#374151', paddingLeft: 20, margin: '0 0 16px' }}>
+          <li style={{ marginBottom: 8 }}><strong>Prijzen en voorwaarden halen we bij de bron.</strong> Elke maand controleren we de prijs per portie, de bezorgkosten, de welkomstkortingen en de opzegvoorwaarden op de websites van de aanbieders zelf. Wanneer dat het laatst gebeurde, staat bovenaan elke pagina.</li>
+          <li style={{ marginBottom: 8 }}><strong>Opzegstappen en deadlines komen uit de officiële helppagina&apos;s</strong> van de aanbieders, met de datum waarop we ze nakeken.</li>
+          <li style={{ marginBottom: 8 }}><strong>Scores combineren</strong> gebruikerservaringen, publieke reviews en die officiële informatie. Konden we iets niet zelf nagaan, dan zeggen we dat.</li>
+          <li><strong>Zie je een fout?</strong> Lezers en aanbieders mogen ons altijd corrigeren via info@bestemaaltijdbox.be. We passen het aan en zetten de nieuwe controledatum erbij.</li>
+        </ul>
+      </div>
+
       <div style={{ background: 'white', borderRadius: 16, padding: 32, border: '1px solid var(--rule)', marginBottom: 24 }}>
         <div style={{ fontSize: 40, marginBottom: 16 }}>🤝</div>
         <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 24, fontWeight: 900, marginBottom: 16 }}>Onze belofte</h2>

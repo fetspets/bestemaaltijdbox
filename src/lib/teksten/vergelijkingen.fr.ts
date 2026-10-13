@@ -373,7 +373,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
     seoDescription:
       "Ekomenu est 100 % bio et végétal mais ne livre qu'en Flandre et à Bruxelles. HelloFresh couvre tout le pays. Comparaison prix, choix et livraison.",
     verdictTekst:
-      "Ekomenu occupe une niche que personne d'autre ne couvre en Belgique : 100 % bio et 100 % végétal. Mais sa zone de livraison s'arrête à la Flandre et à Bruxelles, ce qui l'exclut d'office pour une grande partie de nos lecteurs. HelloFresh l'emporte sur le prix, la variété et la couverture nationale, et propose des recettes végétariennes sans être un box végétal. Si vous habitez en Wallonie et cherchez du végétal, la ligne veggie de Foodbag est l'alternative la plus proche.",
+      "Ekomenu occupe une place à part dans notre comparatif : 100 % bio, avec une large offre végétarienne et végane. Mais sa zone de livraison s'arrête à la Flandre et à Bruxelles, ce qui l'exclut d'office pour une grande partie de nos lecteurs. HelloFresh l'emporte sur le prix, la variété et la couverture nationale, et propose des recettes végétariennes sans être un box végétal. Si vous habitez en Wallonie et cherchez du végétal, la ligne veggie de Foodbag est l'alternative la plus proche.",
     faq: [
       {
         q: 'Ekomenu livre-t-il en Wallonie ?',

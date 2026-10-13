@@ -67,10 +67,10 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           slug: 'ekomenu',
           badge: '🌱 Meilleur choix bio',
           accent: '#15803D',
-          metDeal: '37,08 €/semaine',
-          naDeal: '37,08 €/semaine (tarif standard)',
+          metDeal: '38,52 €/semaine',
+          naDeal: '38,52 €/semaine (tarif standard)',
           uitleg:
-            "Ekomenu est le box à cuisiner biologique le moins cher : 6,18 € la portion, livraison gratuite, sans frais supplémentaires. À 37,08 € par semaine pour deux personnes et trois repas, il se situe sous la plupart des box conventionnels. Résiliable chaque semaine. Réserve importante : la livraison s'arrête à la Flandre et à Bruxelles.",
+            "Ekomenu est le box à cuisiner biologique le moins cher : 6,42 € la portion, livraison gratuite, sans frais supplémentaires. À 38,52 € par semaine pour deux personnes et trois repas, il se situe sous la plupart des box conventionnels. Résiliable chaque semaine. Réserve importante : la livraison s'arrête à la Flandre et à Bruxelles.",
           dealOpmerking: 'Ingrédients biologiques · livraison gratuite · pas de livraison en Wallonie.',
         },
         {
@@ -159,7 +159,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
           winnaarNaam: 'Ekomenu',
           slug: 'ekomenu',
           detail:
-            "37,08 €/semaine, livraison gratuite, tout certifié biologique — moins cher que plusieurs box non bio. Uniquement en Flandre et à Bruxelles ; en Wallonie, aucun box entièrement bio n'est disponible.",
+            "38,52 €/semaine, livraison gratuite, tout certifié biologique — moins cher que plusieurs box non bio. Uniquement en Flandre et à Bruxelles ; en Wallonie, aucun box entièrement bio n'est disponible.",
           achtergrond: '#FFF7ED',
           rand: '#FED7AA',
         },
