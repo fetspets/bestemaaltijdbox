@@ -7,7 +7,12 @@
     "voorKoppels": "Pour les couples",
     "voorGezinnen": "Pour les familles",
     "menu": "Menu",
-    "taalwissel": "Nederlands"
+    "taalwissel": "Nederlands",
+    "voorSingles": "Pour les célibataires",
+    "vegetarisch": "Végétarien",
+    "budget": "Petit budget",
+    "gidsGoedkoopste": "Guide : le box repas le moins cher",
+    "overOns": "À propos"
   },
   "footer": {
     "aanbieders": "Fournisseurs",
@@ -25,7 +30,8 @@
     "tekst": "🍪 Nous utilisons des cookies pour les statistiques (Google Analytics) et le suivi d'affiliation afin d'améliorer le site.",
     "meerInfo": "Plus d'infos",
     "alleenFunctioneel": "Fonctionnels uniquement",
-    "accepteren": "Accepter"
+    "accepteren": "Accepter",
+    "alleAccepteren": "Accepter tous les cookies"
   },
   "cta": {
     "bekijkDeal": "Voir l'offre →",

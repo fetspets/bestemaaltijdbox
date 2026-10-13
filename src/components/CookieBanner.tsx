@@ -33,11 +33,11 @@ export default function CookieBanner() {
       padding: '16px 20px',
     }}>
       <div style={{ maxWidth: 1100, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'wrap' }}>
-        <p style={{ fontSize: 13, color: 'var(--ink)', lineHeight: 1.6, margin: 0, flex: 1, minWidth: 240 }}>
+        <p style={{ fontSize: 13, color: 'var(--ink)', lineHeight: 1.6, margin: 0, flex: '1 1 240px', minWidth: 0 }}>
           {t('tekst')}{' '}
           <Link href="/privacy" style={{ color: 'var(--green)', fontWeight: 600, textDecoration: 'underline' }}>{t('meerInfo')}</Link>
         </p>
-        <div style={{ display: 'flex', gap: 10, flexShrink: 0, flexWrap: 'wrap' }}>
+        <div style={{ display: 'flex', gap: 10, flexWrap: 'wrap', maxWidth: '100%' }}>
           <button
             onClick={() => accept('minimal')}
             style={{
@@ -54,7 +54,7 @@ export default function CookieBanner() {
               background: 'var(--green)', border: 'none', color: 'white',
             }}
           >
-            Accepteer alle cookies
+            {t('alleAccepteren')}
           </button>
         </div>
       </div>

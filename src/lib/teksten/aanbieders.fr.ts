@@ -40,7 +40,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     },
     tagline: 'Leader du marché — livre partout en Belgique, Wallonie comprise',
     beschrijving:
-      "HelloFresh est le box repas le plus utilisé en Belgique, et l'un des rares à livrer dans les trois régions. Avec plus de 40 recettes par semaine, la première livraison offerte et un abonnement que vous pouvez mettre en pause chaque semaine, c'est le point de départ le plus sûr si vous habitez en Wallonie.",
+      "HelloFresh est le box repas le plus utilisé en Belgique, et l'un des rares à livrer dans les trois régions. Avec plus de 80 recettes par semaine, la première livraison offerte et un abonnement que vous pouvez mettre en pause chaque semaine, c'est le point de départ le plus sûr si vous habitez en Wallonie.",
     opzegTermijn: "5 jours avant la livraison",
     uitgebreideReview: {
       intro:

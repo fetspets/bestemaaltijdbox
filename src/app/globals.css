@@ -122,6 +122,11 @@ h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
   gap: 40px;
   align-items: start;
 }
+/* Zonder dit duwt een brede tabel (in een scrollcontainer) de kolom breder
+   dan het scherm: 1fr heeft als minimum de breedte van de inhoud. */
+.page-grid > * {
+  min-width: 0;
+}
 
 .score-grid {
   display: grid;
@@ -175,7 +180,7 @@ h1, h2, h3, h4 { font-family: 'Fraunces', serif; }
 
 @media (max-width: 768px) {
   .page-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 24px;
   }
   .page-grid-sidebar {

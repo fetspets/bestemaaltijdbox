@@ -55,19 +55,18 @@ export default function Navbar() {
         {menuOpen && (
           <div style={{ borderTop: '1px solid var(--rule)', background: 'white' }}>
             {[
-              { href: '/', label: '🏆 Vergelijken' },
-              { href: '/kortingscodes', label: '🏷️ Kortingscodes' },
-              { href: '/voor/koppel', label: '👫 Voor koppels' },
-              { href: '/voor/gezin', label: '👨‍👩‍👧 Voor gezinnen' },
-              { href: '/voor/singles', label: '🧑 Voor singles' },
-              { href: '/voor/vegetarisch', label: '🌱 Vegetarisch' },
-              { href: '/voor/budget', label: '💰 Budget' },
-              { href: '/blog', label: '📝 Blog' },
+              { href: '/', label: `🏆 ${t('vergelijken')}` },
+              { href: '/kortingscodes', label: `🏷️ ${t('kortingscodes')}` },
+              { href: '/voor/koppel', label: `👫 ${t('voorKoppels')}` },
+              { href: '/voor/gezin', label: `👨‍👩‍👧 ${t('voorGezinnen')}` },
+              { href: '/voor/singles', label: `🧑 ${t('voorSingles')}` },
+              { href: '/voor/vegetarisch', label: `🌱 ${t('vegetarisch')}` },
+              { href: '/voor/budget', label: `💰 ${t('budget')}` },
+              { href: '/blog', label: `📝 ${t('blog')}` },
               { href: '/vergelijk/hellofresh-vs-foodbag', label: '⚖️ HelloFresh vs Foodbag' },
               { href: '/vergelijk/hellofresh-vs-marley-spoon', label: '⚖️ HelloFresh vs Marley Spoon' },
-              { href: '/voor/gezin', label: '👨‍👩‍👧 Voor gezinnen' },
-              { href: '/gids/goedkoopste-maaltijdbox-belgie', label: '💰 Gids: Goedkoopste' },
-              { href: '/over-ons', label: 'ℹ️ Over ons' },
+              { href: '/gids/goedkoopste-maaltijdbox-belgie', label: `💰 ${t('gidsGoedkoopste')}` },
+              { href: '/over-ons', label: `ℹ️ ${t('overOns')}` },
             ].map(link => (
               <Link key={link.href} href={link.href}
                 onClick={() => setMenuOpen(false)}
@@ -75,6 +74,10 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+            {/* De taalwissel staat op desktop in de balk; op gsm hoort hij hier. */}
+            <div style={{ padding: '14px 20px' }} onClick={() => setMenuOpen(false)}>
+              <Taalwissel />
+            </div>
           </div>
         )}
       </nav>

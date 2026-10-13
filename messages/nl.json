@@ -7,7 +7,12 @@
     "voorKoppels": "Voor koppels",
     "voorGezinnen": "Voor gezinnen",
     "menu": "Menu",
-    "taalwissel": "Français"
+    "taalwissel": "Français",
+    "voorSingles": "Voor singles",
+    "vegetarisch": "Vegetarisch",
+    "budget": "Budget",
+    "gidsGoedkoopste": "Gids: goedkoopste maaltijdbox",
+    "overOns": "Over ons"
   },
   "footer": {
     "aanbieders": "Aanbieders",
@@ -25,7 +30,8 @@
     "tekst": "🍪 We gebruiken cookies voor analytics (Google Analytics) en affiliate tracking zodat we de site kunnen verbeteren.",
     "meerInfo": "Meer info",
     "alleenFunctioneel": "Alleen functioneel",
-    "accepteren": "Accepteren"
+    "accepteren": "Accepteren",
+    "alleAccepteren": "Accepteer alle cookies"
   },
   "cta": {
     "bekijkDeal": "Bekijk deal →",

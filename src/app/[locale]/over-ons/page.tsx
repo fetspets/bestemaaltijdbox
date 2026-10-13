@@ -47,7 +47,7 @@ export default async function OverOnsPage({ params }: { params: Promise<{ locale
       {/* Header */}
       <div style={{ marginBottom: 40 }}>
         <div style={{ fontSize: 11, fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--mint)', marginBottom: 12 }}>ONS VERHAAL</div>
-        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 42, fontWeight: 900, lineHeight: 1.1, marginBottom: 20 }}>
+        <h1 style={{ fontFamily: 'Fraunces, serif', fontSize: 'clamp(28px, 8vw, 42px)', fontWeight: 900, lineHeight: 1.1, marginBottom: 20, overflowWrap: 'anywhere' }}>
           Waarom BesteMaaltijdbox.be?
         </h1>
         <div style={{ width: 60, height: 3, background: 'linear-gradient(90deg, #1B4332, var(--mint))', borderRadius: 2, marginBottom: 24 }} />
