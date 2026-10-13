@@ -10,7 +10,7 @@ import Script from 'next/script';
 import { isSponsoringActief } from '@/lib/sponsoring';
 import { actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
-import { SITE_URL, SITE_NAAM, STANDAARD_LOCALE } from '@/lib/seo';
+import { SITE_URL, SITE_NAAM, STANDAARD_LOCALE, ogAfbeelding } from '@/lib/seo';
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { routing, type Locale } from '@/i18n/routing';
@@ -42,7 +42,9 @@ export const metadata: Metadata = {
     siteName: SITE_NAAM,
     locale: STANDAARD_LOCALE,
     type: 'website',
+    images: [{ url: ogAfbeelding('Beste maaltijdbox België 2026'), width: 1200, height: 630 }],
   },
+  twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
   alternates: { canonical: '/' },
   verification: {

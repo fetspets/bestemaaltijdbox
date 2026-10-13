@@ -9,12 +9,12 @@ import { blogPostsVoor, blogPostVoor, aanbiederVoor, aanbiedersVoor } from '@/li
 
 import GesponsordLabel from '@/components/GesponsordLabel';
 import KortingscodeBox from '@/components/KortingscodeBox';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, articleJsonLd } from '@/lib/seo';
+import { maandNaarISO } from '@/lib/site';
+import { lokaliseerPad } from '@/i18n/paden';
 import { Blok } from '@/components/ContentBlokken';
 import type { ContentBlok } from '@/lib/blokken';
 
-// Fallback og-afbeelding (er is nog geen dedicated 1200×630-beeld per blog).
-const OG_IMAGE = '/logo.png';
 const eurNl = (n: number) => '€' + n.toFixed(2).replace('.', ',');
 const eurFr = (n: number) => n.toFixed(2).replace('.', ',') + ' €';
 
@@ -87,7 +87,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     beschrijving: post.metaDescription,
     keywords: post.keywords,
     type: 'article',
-    afbeelding: OG_IMAGE,
   });
 }
 
@@ -387,15 +386,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            '@context': 'https://schema.org',
-            '@type': 'Article',
-            headline: post.titel,
-            description: post.metaDescription,
-            datePublished: post.datumISO ?? post.gepubliceerd,
-            dateModified: post.datumISO ?? post.gepubliceerd,
-            author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be' },
-          }),
+          __html: JSON.stringify(articleJsonLd({
+            titel: post.titel,
+            beschrijving: post.metaDescription,
+            pad: lokaliseerPad(`/blog/${post.slug}`, taal),
+            gepubliceerd: post.datumISO ?? maandNaarISO(post.gepubliceerd),
+            locale: taal,
+          })),
         }}
       />
     </div>

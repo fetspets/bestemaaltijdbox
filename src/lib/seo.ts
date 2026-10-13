@@ -37,6 +37,11 @@ export function absoluteUrl(pad: string): string {
   return `${SITE_URL}${pad.startsWith('/') ? pad : `/${pad}`}`;
 }
 
+/** URL van de gegenereerde deelafbeelding voor een titel. */
+export function ogAfbeelding(titel: string, locale: Locale = routing.defaultLocale): string {
+  return `/og?t=${encodeURIComponent(titel)}&l=${locale}`;
+}
+
 export interface MetadataInput {
   /**
    * Pad zonder domein, bv. '/aanbieder/hellofresh'. Alleen nodig als er geen
@@ -87,7 +92,10 @@ export function buildMetadata({
   const eigenPad = route ? hrefVoor(locale) : pad;
   if (!eigenPad) throw new Error('buildMetadata heeft pad of route nodig');
   const url = absoluteUrl(eigenPad);
-  const images = afbeelding ? [{ url: absoluteUrl(afbeelding) }] : undefined;
+  // Zonder eigen afbeelding krijgt elke pagina een gegenereerde deelafbeelding
+  // met haar eigen titel (zie src/app/og/route.tsx).
+  const beeld = afbeelding ?? ogAfbeelding(titel, locale);
+  const images = [{ url: absoluteUrl(beeld), width: 1200, height: 630, alt: titel }];
 
   // Hreflang kan alleen als we het route-sjabloon kennen; anders zou de
   // verwijzing naar een niet-bestaande vertaling wijzen, wat erger is dan geen
@@ -121,14 +129,13 @@ export function buildMetadata({
       siteName: SITE_NAAM,
       locale: ogLocaleVoor[locale],
       type,
-      ...(images ? { images } : {}),
+      images,
     },
     twitter: {
-      // Een grote kaart zonder afbeelding levert een lege banner op.
-      card: images ? 'summary_large_image' : 'summary',
+      card: 'summary_large_image',
       title: titel,
       description: beschrijving,
-      ...(images ? { images } : {}),
+      images,
     },
   };
 }
@@ -169,16 +176,28 @@ export function articleJsonLd(opties: {
   pad: string;
   gepubliceerd?: string;
   gewijzigd?: string;
+  locale?: Locale;
 }) {
+  const locale = opties.locale ?? routing.defaultLocale;
+  const url = absoluteUrl(opties.pad);
+  const gewijzigd = opties.gewijzigd ?? opties.gepubliceerd;
   return {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: opties.titel,
     description: opties.beschrijving,
-    url: absoluteUrl(opties.pad),
+    url,
+    mainEntityOfPage: url,
+    inLanguage: hreflangVoor[locale],
+    image: absoluteUrl(ogAfbeelding(opties.titel, locale)),
     ...(opties.gepubliceerd ? { datePublished: opties.gepubliceerd } : {}),
-    dateModified: opties.gewijzigd ?? opties.gepubliceerd,
-    author: { '@type': 'Organization', name: SITE_NAAM },
-    publisher: { '@type': 'Organization', name: SITE_NAAM, url: SITE_URL },
+    ...(gewijzigd ? { dateModified: gewijzigd } : {}),
+    author: { '@type': 'Organization', name: SITE_NAAM, url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAAM,
+      url: SITE_URL,
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/favicon-180x180.png` },
+    },
   };
 }

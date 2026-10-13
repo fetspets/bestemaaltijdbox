@@ -5,7 +5,7 @@ import { buildMetadata, SITE_URL, absoluteUrl } from '@/lib/seo';
 import { aanbieders } from '@/lib/aanbieders';
 import { aanbiederVoor, actieveAanbiedersVoor, rangVoor } from '@/lib/teksten';
 import { getTranslations } from 'next-intl/server';
-import { laatstBijgewerkt } from '@/lib/site';
+import { laatstBijgewerkt, LAATST_GECONTROLEERD_ISO } from '@/lib/site';
 
 export async function generateStaticParams() {
   return aanbieders.map(a => ({ slug: a.slug }));
@@ -27,6 +27,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     type: 'article',
   });
 }
+
+// Aanbieders met een eigen opzegpagina op /blog/<slug>-opzeggen.
+const OPZEG_SLUGS = new Set(['hellofresh', 'factor', 'marley-spoon', 'foodbag']);
 
 // De labels van de subscores komen uit messages/<taal>.json.
 const scoreSleutels = ['smaak', 'prijsKwaliteit', 'flexibiliteit', 'duurzaamheid', 'gemak'] as const;
@@ -55,7 +58,10 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
       bestRating: 10,
       worstRating: 1,
     },
-    author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be' },
+    author: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: SITE_URL },
+    publisher: { '@type': 'Organization', name: 'BesteMaaltijdbox.be', url: SITE_URL },
+    dateModified: LAATST_GECONTROLEERD_ISO,
+    inLanguage: fr ? 'fr-BE' : 'nl-BE',
     itemReviewed: {
       '@type': 'Product',
       name: a.naam,
@@ -101,7 +107,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
       { '@type': 'ListItem', position: 2, name: fr ? 'Fournisseurs' : 'Aanbieders', item: absoluteUrl(fr ? '/fr/fournisseur' : '/aanbieder') },
-      { '@type': 'ListItem', position: 3, name: a.naam, item: absoluteUrl(`/aanbieder/${a.slug}`) },
+      { '@type': 'ListItem', position: 3, name: a.naam, item: absoluteUrl(fr ? `/fr/fournisseur/${a.slug}` : `/aanbieder/${a.slug}`) },
     ],
   };
 
@@ -371,6 +377,19 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                   <p style={{ fontSize: 14, lineHeight: 1.8, color: '#374151', margin: 0 }}>{item.antwoord}</p>
                 </div>
               ))}
+            </div>
+          )}
+
+          {/* Al klant? Link naar de opzegpagina van deze aanbieder */}
+          {OPZEG_SLUGS.has(a.slug) && (
+            <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: '18px 24px', marginBottom: 28, display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 12, flexWrap: 'wrap' }}>
+              <div style={{ fontSize: 14, color: '#374151', lineHeight: 1.6 }}>
+                <strong style={{ color: 'var(--ink)' }}>{fr ? `Déjà client et envie d'arrêter ?` : 'Al klant en wil je stoppen?'}</strong>{' '}
+                {fr ? `Les étapes et le délai pour résilier ${a.naam}.` : `De stappen en de deadline om ${a.naam} op te zeggen.`}
+              </div>
+              <Link href={`/blog/${a.slug}-opzeggen`} style={{ fontSize: 14, fontWeight: 700, color: 'var(--green)', textDecoration: 'underline', whiteSpace: 'nowrap' }}>
+                {fr ? `Résilier ${a.naam} →` : `${a.naam} opzeggen →`}
+              </Link>
             </div>
           )}
 

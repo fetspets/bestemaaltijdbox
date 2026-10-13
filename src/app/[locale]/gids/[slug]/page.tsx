@@ -3,11 +3,12 @@ import { getTranslations } from 'next-intl/server';
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
-import { buildMetadata } from '@/lib/seo';
+import { buildMetadata, articleJsonLd } from '@/lib/seo';
+import { lokaliseerPad } from '@/i18n/paden';
 import { generateGidsStaticParams, berekenWeekprijs } from '@/lib/gidsen';
 import { gidsVoor, aanbiederVoor } from '@/lib/teksten';
 
-import { laatstBijgewerkt } from '@/lib/site';
+import { laatstBijgewerkt, LAATST_GECONTROLEERD_ISO } from '@/lib/site';
 
 export async function generateStaticParams() {
   return generateGidsStaticParams();
@@ -66,6 +67,18 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd({
+            titel: g.metaTitle,
+            beschrijving: g.metaDescription,
+            pad: lokaliseerPad(`/gids/${g.slug}`, taal),
+            gewijzigd: LAATST_GECONTROLEERD_ISO,
+            locale: taal,
+          })),
+        }}
+      />
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px' }}>
 

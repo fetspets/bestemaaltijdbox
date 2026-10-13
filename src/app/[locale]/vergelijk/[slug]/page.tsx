@@ -5,12 +5,20 @@ import type { Locale } from '@/i18n/routing';
 import { generateVergelijkingStaticParams } from '@/lib/vergelijkingen';
 import { vergelijkingVoor, aanbiederVoor } from '@/lib/teksten';
 
-import { laatstBijgewerkt } from '@/lib/site';
-import { buildMetadata } from '@/lib/seo';
+import { laatstBijgewerkt, LAATST_GECONTROLEERD_ISO } from '@/lib/site';
+import { buildMetadata, articleJsonLd } from '@/lib/seo';
+import { lokaliseerPad } from '@/i18n/paden';
 import ContentBlokken from '@/components/ContentBlokken';
 
 export async function generateStaticParams() {
   return generateVergelijkingStaticParams();
+}
+
+/** Titel en beschrijving, gedeeld door de metadata en de Article-markup. */
+function metaTeksten(v: { seoTitle?: string; seoDescription?: string }, n1: string, n2: string, fr: boolean) {
+  const title = v.seoTitle ?? (fr ? `${n1} ou ${n2} 2026 — comparés sur le prix, le goût et la flexibilité` : `${n1} vs ${n2} 2026 — getest op prijs, smaak en flexibiliteit`);
+  const description = v.seoDescription ?? (fr ? `${n1} ou ${n2} ? Comparés sur le prix par portion, le goût, la variété et les offres de bienvenue. Jusqu'à 70 € de réduction sur votre première box.` : `${n1} of ${n2}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €70 op je eerste box.`);
+  return { title, description };
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string; locale: string }> }) {
@@ -20,9 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!v) return {};
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
-  const fr = taal === 'fr';
-  const title = v.seoTitle ?? (fr ? `${a1.naam} ou ${a2.naam} 2026 — comparés sur le prix, le goût et la flexibilité` : `${a1.naam} vs ${a2.naam} 2026 — getest op prijs, smaak en flexibiliteit`);
-  const description = v.seoDescription ?? (fr ? `${a1.naam} ou ${a2.naam} ? Comparés sur le prix par portion, le goût, la variété et les offres de bienvenue. Jusqu'à 70 € de réduction sur votre première box.` : `${a1.naam} of ${a2.naam}? Beide vergeleken op prijs per portie, smaak, variatie en welkomstvoordelen. Bespaar tot €70 op je eerste box.`);
+  const { title, description } = metaTeksten(v, a1.naam, a2.naam, taal === 'fr');
   return buildMetadata({
     locale: locale as Locale,
     route: '/vergelijk/[slug]',
@@ -80,6 +86,7 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
   const a1 = aanbiederVoor(v.aanbieder1Slug, taal)!;
   const a2 = aanbiederVoor(v.aanbieder2Slug, taal)!;
   const winnaar = aanbiederVoor(v.verdictSlug, taal)!;
+  const meta = metaTeksten(v, a1.naam, a2.naam, fr);
 
   const faqJsonLd = {
     '@context': 'https://schema.org',
@@ -99,6 +106,18 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleJsonLd({
+            titel: meta.title,
+            beschrijving: meta.description,
+            pad: lokaliseerPad(`/vergelijk/${slug}`, taal),
+            gewijzigd: LAATST_GECONTROLEERD_ISO,
+            locale: taal,
+          })),
+        }}
+      />
 
       <div style={{ maxWidth: 900, margin: '0 auto', padding: '32px 20px 64px' }}>
 
