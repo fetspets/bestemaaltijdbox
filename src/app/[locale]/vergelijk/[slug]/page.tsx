@@ -245,10 +245,10 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
           </h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>{v.verdictTekst}</p>
           <div className="two-col-grid" style={{ gap: 12 }}>
-            <Link href={`/ga/${a1.slug}`} style={{ display: 'block', background: accentColors[a1.slug], color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+            <Link data-plaatsing="vergelijk-winnaar" href={`/ga/${a1.slug}`} style={{ display: 'block', background: accentColors[a1.slug], color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
               {fr ? `Aller chez ${a1.naam} →` : `Ga naar ${a1.naam} →`}
             </Link>
-            <Link href={`/ga/${a2.slug}`} style={{ display: 'block', background: 'white', color: accentColors[a2.slug], textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: `2px solid ${accentColors[a2.slug]}` }}>
+            <Link data-plaatsing="vergelijk-tweede" href={`/ga/${a2.slug}`} style={{ display: 'block', background: 'white', color: accentColors[a2.slug], textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: `2px solid ${accentColors[a2.slug]}` }}>
               {fr ? `Aller chez ${a2.naam} →` : `Ga naar ${a2.naam} →`}
             </Link>
           </div>

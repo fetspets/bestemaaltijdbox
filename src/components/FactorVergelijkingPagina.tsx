@@ -195,7 +195,7 @@ export default function FactorVergelijkingPagina({ data, taal = 'nl' }: { data: 
           <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 10 }}>{L.verdictKop(kookbox.naam)}</h2>
           <p style={{ fontSize: 14, lineHeight: 1.8, color: '#4B5563', marginBottom: 20 }}>{data.verdictTekst}</p>
           <div className="two-col-grid" style={{ gap: 12 }}>
-            <Link href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: FACTOR_ACCENT, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
+            <Link data-plaatsing="factor-vergelijking-cta" href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: FACTOR_ACCENT, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none' }}>
               {L.bekijk('Factor')}
             </Link>
             <Link data-plaatsing="factor-vergelijk" href={`/ga/${kookbox.slug}`} rel="noopener sponsored nofollow" style={{ display: 'block', background: 'white', color: accent, textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', border: `2px solid ${accent}` }}>

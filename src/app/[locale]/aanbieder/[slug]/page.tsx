@@ -408,7 +408,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                   { slug: 'foodmaker', naam: 'Foodmaker', sub: fr ? 'Qualité chef · sans abonnement · dès 10 €/portion' : 'Chef-kwaliteit · geen abonnement · v.a. €10/portie' },
                   { slug: 'foodbag', naam: 'Foodbag', sub: fr ? 'Ingrédients belges · commande ponctuelle possible' : 'Belgische ingrediënten · eenmalig bestellen mogelijk' },
                 ].map(alt => (
-                  <Link key={alt.slug} href={`/ga/${alt.slug}`} style={{ display: 'block', background: 'var(--cream)', border: '1px solid var(--rule)', borderRadius: 10, padding: '16px', textDecoration: 'none', color: 'var(--ink)' }}>
+                  <Link data-plaatsing="review-alternatief" key={alt.slug} href={`/ga/${alt.slug}`} style={{ display: 'block', background: 'var(--cream)', border: '1px solid var(--rule)', borderRadius: 10, padding: '16px', textDecoration: 'none', color: 'var(--ink)' }}>
                     <div style={{ fontFamily: 'Fraunces, serif', fontWeight: 700, fontSize: 15, marginBottom: 6 }}>{alt.naam} →</div>
                     <div style={{ fontSize: 12, color: 'var(--muted)', lineHeight: 1.5 }}>{alt.sub}</div>
                   </Link>

@@ -94,7 +94,7 @@ export default function KortingscodeDetail({
       </div>
 
       {/* CTA */}
-      <Link
+      <Link data-plaatsing="kortingscode-cta"
         href={`/ga/${slug}`}
         rel="noopener sponsored nofollow"
         style={{ display: 'block', background: kleur.accent, color: 'white', textAlign: 'center', padding: '16px', borderRadius: 12, fontWeight: 700, fontSize: 16, textDecoration: 'none', marginBottom: 32 }}

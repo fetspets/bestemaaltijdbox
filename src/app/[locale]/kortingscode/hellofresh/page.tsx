@@ -145,7 +145,7 @@ export default async function HelloFreshKortingscode({ params }: { params: Promi
         <div style={{ fontSize: 14, color: '#4B5563', marginBottom: 20, lineHeight: 1.6 }}>
           {t.kaartSub}
         </div>
-        <Link
+        <Link data-plaatsing="kortingscode-cta"
           href="/ga/hellofresh"
           rel="noopener sponsored nofollow"
           style={{

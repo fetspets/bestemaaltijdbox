@@ -234,7 +234,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
                     <p style={{ fontSize: 14, lineHeight: 1.75, color: '#374151', marginBottom: 16, marginTop: 0 }}>
                       {u.snellerTekst}
                     </p>
-                    <a
+                    <a data-plaatsing="blog-foodprepper-box"
                       href="/ga/foodprepper"
                       target="_blank"
                       rel="noopener sponsored nofollow"

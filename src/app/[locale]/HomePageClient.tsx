@@ -161,7 +161,7 @@ export default function HomePageClient({
                   ))}
                 </div>
 
-                <Link href={a.ctaUrl || `/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
+                <Link data-plaatsing="home-ranking" href={a.ctaUrl || `/ga/${a.slug}`} style={{ display: 'block', background: accent, color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 4 }}>
                   {a.kortingsCode ? tc('activeerBedrag', { bedrag: a.kortingsCode.bedrag }) : tc('bekijkAanbieder', { naam: a.naam })}
                 </Link>
                 {a.ctaSubtekst && (
