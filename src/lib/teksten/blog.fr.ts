@@ -14,9 +14,9 @@ import type { BlogPost } from '../blog';
 export const blogFr: Record<string, Partial<BlogPost>> = {
   'maaltijdbox-maaltijdcheques-belgie': {
     titel: 'Payer un box repas avec des titres-repas en Belgique : qui les accepte ?',
-    metaTitle: 'Payer un box repas en titres-repas : Foodbag, HelloFresh et Foodprepper (2026)',
+    metaTitle: 'Payer un box repas en titres-repas (2026) : quels 3 box les acceptent et comment ?',
     metaDescription:
-      "Oui, c'est possible : Foodbag, HelloFresh et Foodprepper acceptent Monizze, Pluxee et Edenred. Comment payer étape par étape, et ce que vous pouvez acheter avec vos titres-repas.",
+      "Oui, mais pas chez tous les box repas. Quels 3 box acceptent Monizze, Pluxee et Edenred, comment payer (même avec abonnement) et ce que vous pouvez acheter avec vos titres-repas.",
     excerpt:
       "Trois box repas acceptent les titres-repas électroniques Monizze, Pluxee (Sodexo) et Edenred : Foodbag, HelloFresh et Foodprepper. Mais l'un des trois ne livre pas en Wallonie.",
     faqKop: 'Questions fréquentes sur les titres-repas',

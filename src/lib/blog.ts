@@ -169,8 +169,8 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'maaltijdbox-maaltijdcheques-belgie',
     titel: 'Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?',
-    metaTitle: 'Maaltijdbox betalen met maaltijdcheques: Foodbag, HelloFresh en Foodprepper (2026)',
-    metaDescription: 'Ja, dat kan: Foodbag, HelloFresh en Foodprepper aanvaarden Monizze, Pluxee en Edenred. Zo betaal je stap voor stap, en wat je verder met maaltijdcheques mag kopen.',
+    metaTitle: 'Maaltijdbox betalen met maaltijdcheques (2026): welke 3 aanvaarden ze en hoe?',
+    metaDescription: 'Ja, het kan, maar niet bij elke maaltijdbox. Welke 3 boxen Monizze, Pluxee en Edenred aanvaarden, hoe je betaalt (ook met abonnement) en wat je met maaltijdcheques mag kopen.',
     gepubliceerd: 'juni 2026',
     datumISO: '2026-06-02',
     excerpt: 'Drie maaltijdboxen accepteren elektronische maaltijdcheques van Monizze, Pluxee (Sodexo) en Edenred: Foodbag, HelloFresh en Foodprepper. De andere aanbieders doen dit (nog) niet.',
