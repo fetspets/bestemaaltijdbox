@@ -20,6 +20,9 @@ interface Tekst {
   stappen: string[];
   voorwaardenKop: string;
   voorwaarden: string[];
+  /** Oude GreenPan-actie: de verwijzing van de oude actiepagina komt hier aan. */
+  greenpanKop: string;
+  greenpan: string[];
   waaromKop: string;
   waarom: string;
   review: string;
@@ -58,6 +61,11 @@ const TEKST: Record<'nl' | 'fr', Tekst> = {
       'Korting vervalt 56 dagen na bestelling van je 1e box',
       'Wekelijks opzegbaar + 14 dagen herroepingsrecht',
     ],
+    greenpanKop: 'Krijg je nog een gratis GreenPan-pan bij HelloFresh?',
+    greenpan: [
+      'Nee. De actie waarbij nieuwe klanten een gratis GreenPan-pan kregen, liep in mei en juni 2026 en is afgelopen. Bij onze laatste controle (13 oktober 2026) zagen we geen nieuwe actie met een pan.',
+      'Wat er nu wel is: tot €70 korting op je eerste 3 boxen (€45 + €15 + €10), automatisch via onze link. Komt er een nieuwe pan-actie, dan zetten we die hier.',
+    ],
     waaromKop: 'Waarom HelloFresh?',
     waarom: 'HelloFresh is de grootste maaltijdbox ter wereld en ook in België de populairste keuze. Met meer dan 80 recepten per week, levering in heel België en een score van 8,4/10 op deze site biedt het de beste balans tussen prijs, variatie en gemak. Bereidingstijd gemiddeld 25–35 minuten.',
     review: 'Lees onze volledige HelloFresh review →',
@@ -92,6 +100,11 @@ const TEKST: Record<'nl' | 'fr', Tekst> = {
       'Répartition sur vos 3 premières box : 45 € + 15 € + 10 € (70 € au total)',
       'Première livraison gratuite, ensuite des frais de livraison sont facturés',
       'Résiliable chaque semaine + droit de rétractation de 14 jours',
+    ],
+    greenpanKop: 'Reçoit-on encore une poêle GreenPan offerte chez HelloFresh ?',
+    greenpan: [
+      "Non. L'action qui offrait une poêle GreenPan aux nouveaux clients a eu lieu en mai et juin 2026 et est terminée. Lors de notre dernier contrôle (13 octobre 2026), nous n'avons vu aucune nouvelle action avec une poêle.",
+      "Ce qui existe aujourd'hui : jusqu'à 70 € de réduction sur vos 3 premières box (45 € + 15 € + 10 €), automatiquement via notre lien. Si une nouvelle action avec une poêle arrive, nous l'ajouterons ici.",
     ],
     waaromKop: 'Pourquoi HelloFresh ?',
     waarom: 'HelloFresh est le plus grand box repas au monde et aussi le choix le plus populaire en Belgique. Avec plus de 80 recettes par semaine, une livraison dans toute la Belgique (Wallonie comprise) et une note de 8,4/10 sur ce site, il offre le meilleur équilibre entre prix, variété et facilité. Temps de préparation : 25 à 35 minutes en moyenne.',
@@ -192,6 +205,16 @@ export default async function HelloFreshKortingscode({ params }: { params: Promi
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* GreenPan: wie de oude actiepagina zocht, komt hier terecht */}
+      <div id="greenpan" style={{ marginBottom: 32, scrollMarginTop: 80 }}>
+        <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 12, color: '#1C1C1C' }}>
+          {t.greenpanKop}
+        </h2>
+        {t.greenpan.map((alinea, i) => (
+          <p key={i} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 10 }}>{alinea}</p>
+        ))}
       </div>
 
       {/* Over HelloFresh */}

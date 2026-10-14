@@ -14,9 +14,9 @@ import type { BlogPost } from '../blog';
 export const blogFr: Record<string, Partial<BlogPost>> = {
   'maaltijdbox-maaltijdcheques-belgie': {
     titel: 'Payer un box repas avec des titres-repas en Belgique : qui les accepte ?',
-    metaTitle: 'Box repas et titres-repas en Belgique (2026) — qui les accepte ?',
+    metaTitle: 'Payer un box repas en titres-repas : Foodbag, HelloFresh et Foodprepper (2026)',
     metaDescription:
-      "Quel box repas accepte les titres-repas Monizze, Pluxee ou Edenred ? Foodbag, HelloFresh et Foodprepper comparés, avec la zone de livraison.",
+      "Oui, c'est possible : Foodbag, HelloFresh et Foodprepper acceptent Monizze, Pluxee et Edenred. Comment payer étape par étape, et ce que vous pouvez acheter avec vos titres-repas.",
     excerpt:
       "Trois box repas acceptent les titres-repas électroniques Monizze, Pluxee (Sodexo) et Edenred : Foodbag, HelloFresh et Foodprepper. Mais l'un des trois ne livre pas en Wallonie.",
     faqKop: 'Questions fréquentes sur les titres-repas',
@@ -149,9 +149,9 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         rand: '#FCD34D',
         regels: [
           {
-            label: 'Plafond journalier :',
+            label: 'Plafond par titre :',
             tekst:
-              "le montant maximum des titres-repas passe à 10 € par jour (contre 8 €). Cela représente un pouvoir d'achat plus élevé pour votre box hebdomadaire.",
+              "depuis le 1er janvier 2026, un titre-repas peut valoir jusqu'à 10 € (contre 8 €). Ce n'est pas automatique : votre employeur ou votre secteur doit convenir de la hausse. Renseignez-vous auprès de votre employeur.",
           },
           {
             label: 'Ce que cela change concrètement :',
@@ -160,6 +160,15 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
           },
         ],
       },
+      { type: 'h2', text: 'Que peut-on acheter avec des titres-repas ?' },
+      { type: 'p', text: "Les titres-repas sont destinés à l'alimentation. Vous pouvez les utiliser pour :" },
+      { type: 'ul', items: [
+        'Les courses au supermarché : légumes, fruits, pain, viande, poisson, plats préparés et boissons non alcoolisées.',
+        'Le boulanger, le boucher, le traiteur et le marché, s’ils acceptent les titres-repas électroniques.',
+        'Les restaurants, les sandwicheries et la livraison de repas.',
+        'Les box repas : Foodbag, HelloFresh et Foodprepper.',
+      ] },
+      { type: 'p', text: "Non autorisés : l'alcool (même au supermarché), le tabac et tout ce qui n'est pas alimentaire, comme les produits d'entretien, les soins, la nourriture pour animaux ou les ustensiles de cuisine. Avec un box repas, vous dépensez donc vos titres-repas pour exactement ce à quoi ils servent : des ingrédients frais et une recette." },
       {
         type: 'slotCta',
         kop: 'Prêt à commander ?',
@@ -192,8 +201,12 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         a: 'Monizze, Pluxee (anciennement Sodexo) et Edenred (Ticket Restaurant).',
       },
       {
-        q: 'Combien puis-je payer par jour avec des titres-repas ?',
-        a: 'Depuis 2026, le plafond est de 10 € par jour et par chèque.',
+        q: 'Combien vaut un titre-repas ?',
+        a: "Depuis le 1er janvier 2026, un titre-repas peut valoir jusqu'à 10 € par jour presté. La hausse de 8 à 10 € n'est pas automatique : votre employeur ou votre secteur doit la convenir.",
+      },
+      {
+        q: 'Que peut-on acheter avec des titres-repas ?',
+        a: "Uniquement de l'alimentation et des boissons non alcoolisées : au supermarché, chez le boulanger ou le boucher, au restaurant et chez les box repas comme Foodbag, HelloFresh et Foodprepper. L'alcool, le tabac et les produits non alimentaires (produits d'entretien, soins) sont exclus.",
       },
     ],
   },
