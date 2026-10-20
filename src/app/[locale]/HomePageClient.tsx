@@ -43,11 +43,11 @@ const accentColors: Record<string, string> = {
 };
 
 export default function HomePageClient({
-  sponsoringActief,
+  sponsor,
   aanbieders: lijst,
   taal,
 }: {
-  sponsoringActief: boolean;
+  sponsor?: { slug: string; plaatsing: string };
   aanbieders: Aanbieder[];
   taal: Locale;
 }) {
@@ -60,7 +60,7 @@ export default function HomePageClient({
   const jsonLd = bouwJsonLd(lijst, taal);
   const top3 = lijst.slice(0, 3);
   const rest = lijst.slice(3);
-  const factor = lijst.find(a => a.slug === 'factor');
+  const gesponsord = sponsor ? lijst.find(a => a.slug === sponsor.slug) : undefined;
 
   return (
     <>
@@ -209,9 +209,9 @@ export default function HomePageClient({
           </div>
         ))}
 
-        {/* UITGELICHT — GESPONSORD (Factor). Onder de redactionele rangschikking;
-            server-side gated via sponsoringActief zodat het na de looptijd verdwijnt. */}
-        {sponsoringActief && factor && (
+        {/* UITGELICHT — GESPONSORD (Factor, HelloFresh, ...). Onder de redactionele rangschikking;
+            server-side gated via `sponsor` zodat het na de looptijd verdwijnt. */}
+        {sponsor && gesponsord && (
           <div style={{ marginTop: 28, marginBottom: 8 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
               <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{t('inDeKijker')}</div>
@@ -221,24 +221,24 @@ export default function HomePageClient({
               <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
               <div style={{ marginBottom: 14 }}>
                 <div style={{ display: 'inline-flex', alignItems: 'center', background: 'white', border: '1.5px solid #FDE68A', borderRadius: 12, padding: '10px 18px', marginBottom: 10 }}>
-                  <img src={factor.logo} alt={factor.naam} style={{ height: 26, width: 'auto', display: 'block' }} />
+                  <img src={gesponsord.logo} alt={gesponsord.naam} style={{ height: 26, width: 'auto', display: 'block' }} />
                 </div>
-                <div style={{ fontSize: 13, color: 'var(--muted)' }}>{factor.tagline}</div>
+                <div style={{ fontSize: 13, color: 'var(--muted)' }}>{gesponsord.tagline}</div>
               </div>
 
-              <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{factor.beschrijving}</div>
+              <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{gesponsord.beschrijving}</div>
 
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 14 }}>
-                {factor.kenmerken?.slice(0, 3).map(k => (
+                {gesponsord.kenmerken?.slice(0, 3).map(k => (
                   <span key={k} style={{ fontSize: 11, padding: '4px 10px', borderRadius: 6, fontWeight: 600, background: '#FEF3C7', color: '#92400E' }}>{k}</span>
                 ))}
               </div>
 
-              <Link data-plaatsing="factor-home" href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
-                {t('factorCta')}
+              <Link data-plaatsing={sponsor.plaatsing} href={`/ga/${gesponsord.slug}`} rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
+                {gesponsord.slug === 'hellofresh' ? t('hellofreshCta') : t('factorCta')}
               </Link>
-              <Link href="/kortingscode/factor" style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>
-                {t('bekijkDeal', { partner: 'Factor' })}
+              <Link href={`/kortingscode/${gesponsord.slug}`} style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>
+                {t('bekijkDeal', { partner: gesponsord.naam })}
               </Link>
               <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10, textAlign: 'center' }}>
                 {t('gesponsordeUitleg')}

@@ -3,11 +3,11 @@ import HomePageClient from './HomePageClient';
 import { buildMetadata } from '@/lib/seo';
 import { actieveAanbiedersVoor, gerangschiktVoor } from '@/lib/teksten';
 import { LAATST_BIJGEWERKT, laatstBijgewerkt } from '@/lib/site';
-import { isSponsoringActief } from '@/lib/sponsoring';
+import { getActieveSponsoring } from '@/lib/sponsoring';
 import type { Locale } from '@/i18n/routing';
 
 // ISR (uurlijks): server-datum schuift mee zodat het tijdelijke gesponsorde
-// Factor-blok automatisch verdwijnt na de looptijd, zonder rebuild.
+// blok automatisch verdwijnt na de looptijd, zonder rebuild.
 export const revalidate = 3600;
 
 export async function generateMetadata(
@@ -36,10 +36,11 @@ export async function generateMetadata(
 export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const taal = locale as Locale;
-  // Datumbepaling gebeurt hier server-side; de client krijgt enkel een boolean,
+  // Datumbepaling gebeurt hier server-side; de client krijgt enkel de partner,
   // dus de zichtbaarheid hangt nooit van de browserklok af.
-  const sponsoringActief = isSponsoringActief('homepageBlok');
+  const s = getActieveSponsoring();
+  const sponsor = s?.plaatsingen.homepageBlok ? { slug: s.partnerSlug, plaatsing: s.tracking.homepageBlok } : undefined;
 
   // In het Frans staan de aanbieders die niet in Wallonië leveren achteraan.
-  return <HomePageClient sponsoringActief={sponsoringActief} aanbieders={gerangschiktVoor(taal)} taal={taal} />;
+  return <HomePageClient sponsor={sponsor} aanbieders={gerangschiktVoor(taal)} taal={taal} />;
 }

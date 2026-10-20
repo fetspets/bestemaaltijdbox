@@ -5,7 +5,7 @@ import { getTranslations } from 'next-intl/server';
 import { buildMetadata } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
 import { actieveAanbiedersVoor, aanbiederVoor } from '@/lib/teksten';
-import { getActieveSponsoring } from '@/lib/sponsoring';
+import { getUitgelichtKortingscodes } from '@/lib/sponsoring';
 import { laatstBijgewerkt } from '@/lib/site';
 
 // ISR: het gesponsorde, uitgelichte Factor-blok verdwijnt vanzelf na de
@@ -53,9 +53,10 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
   const actief = actieveAanbiedersVoor(taal);
   const metKorting = actief.filter(a => a.kortingsCode);
   const zonderKorting = actief.filter(a => !a.kortingsCode);
-  // Server-side: toon het uitgelichte Factor-blok enkel binnen de sponsoringsperiode.
-  const sponsoring = getActieveSponsoring();
-  const factor = aanbiederVoor('factor', taal);
+  // Server-side: uitgelicht is de lopende sponsor, of buiten een sponsorperiode
+  // de blijvende HelloFresh-plaatsing (contract okt 2026).
+  const uitgelichtSlug = getUitgelichtKortingscodes();
+  const uitgelicht = uitgelichtSlug ? aanbiederVoor(uitgelichtSlug, taal) : undefined;
 
   return (
     <div style={{ maxWidth: 1100, margin: '0 auto', padding: '32px 20px 64px' }}>
@@ -80,8 +81,8 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
         </p>
       </div>
 
-      {/* Uitgelicht — gesponsorde Factor-plaatsing (server-gated op de sponsoringsperiode, verdwijnt na 27/10/2026) */}
-      {sponsoring?.partnerSlug === 'factor' && factor && (
+      {/* Uitgelicht — gesponsorde plaatsing (server-gated: lopende sponsor of blijvende HelloFresh-plaatsing) */}
+      {uitgelicht && (
         <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 70%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '22px 24px', marginBottom: 36, position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
           <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 14 }}>
@@ -90,19 +91,19 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 18, flexWrap: 'wrap' }}>
             <div style={{ width: 56, height: 56, borderRadius: 12, background: 'white', border: '1.5px solid #FDE68A', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', flexShrink: 0 }}>
-              <img src={factor.logo} alt="Factor" style={{ height: 22, width: 'auto', maxWidth: 44, objectFit: 'contain' }} />
+              <img src={uitgelicht.logo} alt={uitgelicht.naam} style={{ height: 22, width: 'auto', maxWidth: 44, objectFit: 'contain' }} />
             </div>
             <div style={{ flex: 1, minWidth: 220 }}>
               <div style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 4 }}>
-                {t('factorTitel')}
+                {uitgelicht.slug === 'hellofresh' ? t('hellofreshTitel') : t('factorTitel')}
               </div>
-              <div style={{ fontSize: 14, fontWeight: 700, color: '#B45309', marginBottom: 4 }}>{factor.kortingsCode?.deal}</div>
-              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{factor.kortingsCode?.beschrijving}</div>
-              <div style={{ fontSize: 11, color: 'var(--muted)' }}>{factor.kortingsCode?.voorwaarden}</div>
+              <div style={{ fontSize: 14, fontWeight: 700, color: '#B45309', marginBottom: 4 }}>{uitgelicht.kortingsCode?.deal}</div>
+              <div style={{ fontSize: 13, color: '#4B5563', marginBottom: 4 }}>{uitgelicht.kortingsCode?.beschrijving}</div>
+              <div style={{ fontSize: 11, color: 'var(--muted)' }}>{uitgelicht.kortingsCode?.voorwaarden}</div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 8, minWidth: 160 }}>
-              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>{factor.kortingsCode?.bedragKort}</div>
-              <Link data-plaatsing="factor-kortingscodes" href="/ga/factor" rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>{t('activeerDeal')}</Link>
+              <div style={{ textAlign: 'center', padding: '10px', background: 'white', border: '1.5px dashed #FCD34D', borderRadius: 10, fontFamily: 'Fraunces, serif', fontSize: 22, fontWeight: 900, color: '#B45309' }}>{uitgelicht.kortingsCode?.bedragKort}</div>
+              <Link data-plaatsing={`${uitgelicht.slug}-kortingscodes`} href={`/ga/${uitgelicht.slug}`} rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 700, fontSize: 13, textDecoration: 'none' }}>{t('activeerDeal')}</Link>
             </div>
           </div>
         </div>

@@ -50,7 +50,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       voorWie:
         "HelloFresh convient aux couples, aux familles et aux personnes seules qui veulent varier sans y consacrer une soirée. La variété (80+ recettes) permet de composer autour des goûts de chacun. Moins indiqué si vous tenez au circuit court ou au bio : l'approvisionnement est international, ce qui explique aussi le prix.",
       hoeWerktHet:
-        "Vous composez votre box sur hellofresh.be : nombre de personnes (1 à 6) et nombre de repas par semaine (3 à 5). Chaque semaine, vous choisissez vous-même vos recettes parmi l'offre. La livraison est gratuite et plusieurs jours sont proposés. Pause ou résiliation jusqu'à 5 jours avant la livraison suivante.",
+        "Vous composez votre box sur hellofresh.be : nombre de personnes (1 à 6) et nombre de repas par semaine (3 à 5). Chaque semaine, vous choisissez vous-même vos recettes parmi plus de 50, variantes en plus. La première livraison est offerte, ensuite 5,99 € par box, et plusieurs jours sont proposés. Pause ou résiliation jusqu'à la date limite, 3 à 6 jours avant la livraison suivante.",
       vergelijking:
         "Face à Foodbag, HelloFresh est moins cher mais moins local — les deux livrent en Wallonie. Marley Spoon propose des recettes plus travaillées mais ne livre pas au sud du pays, ce qui le sort d'office de la comparaison pour une grande partie des lecteurs francophones. Pour un premier essai avec réduction, HelloFresh reste l'option la plus accessible.",
       eindoordeel:

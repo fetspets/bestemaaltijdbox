@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import AffiliateTracker from '@/components/AffiliateTracker';
 import Script from 'next/script';
-import { isSponsoringActief } from '@/lib/sponsoring';
+import { getActieveSponsoring } from '@/lib/sponsoring';
 import { actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import { SITE_URL, SITE_NAAM, STANDAARD_LOCALE, ogAfbeelding } from '@/lib/seo';
@@ -70,7 +70,8 @@ export default async function RootLayout({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   const taal = locale as Locale;
-  const bannerActief = isSponsoringActief('banner');
+  const sponsoring = getActieveSponsoring();
+  const bannerActief = !!sponsoring?.plaatsingen.banner;
 
   return (
     <html lang={taal}>
@@ -98,9 +99,9 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider>
         <Navbar />
-        {/* Factor-banner op de plaats van de HelloFresh-banner; die laatste
-            wordt tijdelijk verborgen zolang de Factor-sponsoring loopt. */}
-        <SponsoredBanner active={bannerActief} />
+        {/* Gesponsorde banner (Factor, daarna HelloFresh) op de plaats van de
+            gewone HelloFresh-banner; die laatste verdwijnt zolang er een sponsor loopt. */}
+        <SponsoredBanner active={bannerActief} partner={sponsoring?.partnerSlug} plaatsing={sponsoring?.tracking.banner} />
         {!bannerActief && <HelloFreshDealBanner />}
         <main>{children}</main>
         <Footer />

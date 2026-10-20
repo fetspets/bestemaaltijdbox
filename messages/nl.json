@@ -185,7 +185,8 @@
     "vw3t": "Vegetariërs",
     "vw3d": "Ekomenu (100% bio) en Marley Spoon bieden de meeste vegan opties.",
     "vw4t": "Budget",
-    "vw4d": "Foodprepper (v.a. €4,75/portie, gratis bezorging, geen verplicht abonnement) is een budgetvriendelijke optie."
+    "vw4d": "Foodprepper (v.a. €4,75/portie, gratis bezorging, geen verplicht abonnement) is een budgetvriendelijke optie.",
+    "hellofreshCta": "Activeer tot €70 korting op je eerste 3 boxen →"
   },
   "kortingscodes": {
     "actieveDeals": "Actieve deals",
@@ -213,7 +214,8 @@
     "s3t": "Korting wordt toegepast",
     "s3d": "Je hebt geen code nodig — de korting wordt bij alle aanbieders automatisch toegepast via onze link.",
     "s4t": "Direct opzegbaar",
-    "s4d": "Je zit nergens aan vast. De meeste aanbieders laten je wekelijks opzeggen of pauzeren."
+    "s4d": "Je zit nergens aan vast. De meeste aanbieders laten je wekelijks opzeggen of pauzeren.",
+    "hellofreshTitel": "HelloFresh welkomstdeal"
   },
   "homeFaq": {
     "v0": "Welke maaltijdbox is de beste in België in 2026?",
@@ -229,7 +231,10 @@
     "factorPitch": "Kant-en-klare chef-maaltijden zonder koken —",
     "factorKorting": "40% korting",
     "factorRest": "op je eerste box.",
-    "bekijkDeal": "Bekijk de deal →"
+    "bekijkDeal": "Bekijk de deal →",
+    "hellofreshPitch": "HelloFresh: elke week een nieuw menu om uit te kiezen —",
+    "hellofreshKorting": "tot €70 korting",
+    "hellofreshRest": "op je eerste 3 boxen."
   },
   "quiz": {
     "v0": "Voor hoeveel personen kook je meestal?",

@@ -37,7 +37,29 @@ export const sponsoringen: Sponsoring[] = [
       homepageBlok: 'factor-home',
     },
   },
+  {
+    // Insertion order HelloFresh / Hearts & Science, getekend okt 2026 (€350, via Impact).
+    partnerSlug: 'hellofresh',
+    startDatum: '2026-10-28', // woensdag — sluit aan op de Factor-periode
+    eindDatum: '2027-01-27', // t.e.m. 27 januari 2027
+    kortingsCode: '', // Korting geldt automatisch via de affiliate-link.
+    plaatsingen: {
+      banner: true,
+      homepageBlok: true,
+    },
+    tracking: {
+      banner: 'hellofresh-sponsor-banner',
+      homepageBlok: 'hellofresh-sponsor-home',
+    },
+  },
 ];
+
+/**
+ * Blijvende plaatsing op /kortingscodes (contract HelloFresh: "prominente
+ * plaatsing van de welkomstkorting", ook na de tijdelijke periode).
+ * Buiten een lopende sponsoring wordt vanaf `vanaf` deze partner uitgelicht.
+ */
+export const permanentUitgelichtKortingscodes = { partnerSlug: 'hellofresh', vanaf: '2026-10-28' };
 
 /** Actief zolang start <= now < eindDatum + 1 dag (eindDatum is inclusief). */
 function loopt(s: Sponsoring, now: Date): boolean {
@@ -51,11 +73,23 @@ function loopt(s: Sponsoring, now: Date): boolean {
 // Zet SPONSORING_PREVIEW=1 in .env.local (niet gecommit) om de banner + het blok
 // lokaal te zien vóór de startdatum. In productie staat dit niet aan, dus daar
 // geldt altijd de echte looptijd (startDatum/eindDatum).
-const previewMode = process.env.SPONSORING_PREVIEW === '1';
+// SPONSORING_PREVIEW=1 toont de eerste sponsoring; SPONSORING_PREVIEW=<slug>
+// (bv. hellofresh) toont die van een specifieke partner.
+const preview = process.env.SPONSORING_PREVIEW;
 
 /** De momenteel lopende sponsoring (of undefined). */
 export function getActieveSponsoring(now: Date = new Date()): Sponsoring | undefined {
-  return sponsoringen.find(s => previewMode || loopt(s, now));
+  if (preview === '1') return sponsoringen[0];
+  if (preview) return sponsoringen.find(s => s.partnerSlug === preview);
+  return sponsoringen.find(s => loopt(s, now));
+}
+
+/** Welke partner staat uitgelicht op /kortingscodes (lopende sponsoring of de blijvende plaatsing)? */
+export function getUitgelichtKortingscodes(now: Date = new Date()): string | undefined {
+  const actief = getActieveSponsoring(now);
+  if (actief) return actief.partnerSlug;
+  const p = permanentUitgelichtKortingscodes;
+  return now >= new Date(`${p.vanaf}T00:00:00`) ? p.partnerSlug : undefined;
 }
 
 /** Is een specifieke plaatsing nu actief? Server-side aanroepen met de servertijd. */

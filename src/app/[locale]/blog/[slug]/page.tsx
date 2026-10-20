@@ -268,7 +268,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             );
           }
           if (block.type === 'codebox') {
-            return <KortingscodeBox key={i} partnerSlug={post.sponsor?.gaSlug} ctaTekst={block.tekst} />;
+            return <KortingscodeBox key={i} partnerSlug={post.sponsor?.gaSlug} ctaTekst={block.tekst} taal={taal} />;
           }
           if (block.type === 'prijsvoorbeeld') {
             const f = aanbiederVoor(post.sponsor?.gaSlug ?? 'factor', taal);
