@@ -1,4 +1,5 @@
 import Link from '@/components/TaalLink';
+import HelloFreshGidsen from '@/components/HelloFreshGidsen';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
@@ -253,6 +254,8 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
             </Link>
           </div>
         </div>
+
+        {v.slug.includes('hellofresh') && <HelloFreshGidsen taal={taal === 'fr' ? 'fr' : 'nl'} />}
 
         {/* FAQ */}
         <div style={{ marginBottom: 40 }}>

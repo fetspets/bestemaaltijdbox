@@ -47,7 +47,7 @@ export default function HomePageClient({
   aanbieders: lijst,
   taal,
 }: {
-  sponsor?: { slug: string; plaatsing: string };
+  sponsor?: { slug: string; plaatsing: string; positie?: 'onderTop3' | 'onderaan' };
   aanbieders: Aanbieder[];
   taal: Locale;
 }) {
@@ -61,6 +61,46 @@ export default function HomePageClient({
   const top3 = lijst.slice(0, 3);
   const rest = lijst.slice(3);
   const gesponsord = sponsor ? lijst.find(a => a.slug === sponsor.slug) : undefined;
+
+  // Gesponsord blok "In de kijker". Standaard onder de volledige rangschikking;
+  // met positie 'onderTop3' (HelloFresh) tussen de top 3 en de overige aanbieders.
+  // De redactionele volgorde verandert niet; enkel waar het blok staat.
+  const sponsorBlok = sponsor && gesponsord ? (
+
+          <div style={{ marginTop: 28, marginBottom: 8 }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
+              <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{t('inDeKijker')}</div>
+              <GesponsordLabel />
+            </div>
+            <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 60%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '20px 20px 18px', position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
+              <div style={{ marginBottom: 14 }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', background: 'white', border: '1.5px solid #FDE68A', borderRadius: 12, padding: '10px 18px', marginBottom: 10 }}>
+                  <img src={gesponsord.logo} alt={gesponsord.naam} style={{ height: 26, width: 'auto', display: 'block' }} />
+                </div>
+                <div style={{ fontSize: 13, color: 'var(--muted)' }}>{gesponsord.tagline}</div>
+              </div>
+
+              <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{gesponsord.beschrijving}</div>
+
+              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 14 }}>
+                {gesponsord.kenmerken?.slice(0, 3).map(k => (
+                  <span key={k} style={{ fontSize: 11, padding: '4px 10px', borderRadius: 6, fontWeight: 600, background: '#FEF3C7', color: '#92400E' }}>{k}</span>
+                ))}
+              </div>
+
+              <Link data-plaatsing={sponsor.plaatsing} href={`/ga/${gesponsord.slug}`} rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
+                {gesponsord.slug === 'hellofresh' ? t('hellofreshCta') : t('factorCta')}
+              </Link>
+              <Link href={`/kortingscode/${gesponsord.slug}`} style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>
+                {t('bekijkDeal', { partner: gesponsord.naam })}
+              </Link>
+              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10, textAlign: 'center' }}>
+                {t('gesponsordeUitleg')}
+              </div>
+            </div>
+          </div>
+  ) : null;
 
   return (
     <>
@@ -188,6 +228,8 @@ export default function HomePageClient({
           💡 <strong>{t('tipLabel')}</strong> {t('tipTekst')}
         </div>
 
+        {sponsor?.positie === 'onderTop3' && sponsorBlok}
+
         {/* REST (#4+) */}
         <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em', margin: '24px 0 12px' }}>{t('overigeAanbieders')}</div>
         {rest.map(a => (
@@ -209,44 +251,7 @@ export default function HomePageClient({
           </div>
         ))}
 
-        {/* UITGELICHT — GESPONSORD (Factor, HelloFresh, ...). Onder de redactionele rangschikking;
-            server-side gated via `sponsor` zodat het na de looptijd verdwijnt. */}
-        {sponsor && gesponsord && (
-          <div style={{ marginTop: 28, marginBottom: 8 }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: 8, marginBottom: 12 }}>
-              <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--muted)', textTransform: 'uppercase', letterSpacing: '0.06em' }}>{t('inDeKijker')}</div>
-              <GesponsordLabel />
-            </div>
-            <div style={{ background: 'linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 60%)', border: '1.5px solid #FCD34D', borderRadius: 16, padding: '20px 20px 18px', position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'linear-gradient(90deg, #F59E0B, #FBBF24)' }} />
-              <div style={{ marginBottom: 14 }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', background: 'white', border: '1.5px solid #FDE68A', borderRadius: 12, padding: '10px 18px', marginBottom: 10 }}>
-                  <img src={gesponsord.logo} alt={gesponsord.naam} style={{ height: 26, width: 'auto', display: 'block' }} />
-                </div>
-                <div style={{ fontSize: 13, color: 'var(--muted)' }}>{gesponsord.tagline}</div>
-              </div>
-
-              <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{gesponsord.beschrijving}</div>
-
-              <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 14 }}>
-                {gesponsord.kenmerken?.slice(0, 3).map(k => (
-                  <span key={k} style={{ fontSize: 11, padding: '4px 10px', borderRadius: 6, fontWeight: 600, background: '#FEF3C7', color: '#92400E' }}>{k}</span>
-                ))}
-              </div>
-
-              <Link data-plaatsing={sponsor.plaatsing} href={`/ga/${gesponsord.slug}`} rel="noopener sponsored nofollow" style={{ display: 'block', background: '#B45309', color: 'white', textAlign: 'center', padding: '13px', borderRadius: 10, fontWeight: 700, fontSize: 14, textDecoration: 'none', marginBottom: 8 }}>
-                {gesponsord.slug === 'hellofresh' ? t('hellofreshCta') : t('factorCta')}
-              </Link>
-              <Link href={`/kortingscode/${gesponsord.slug}`} style={{ display: 'block', border: '1.5px solid #FDE68A', textAlign: 'center', padding: '11px', borderRadius: 10, fontWeight: 600, fontSize: 13, textDecoration: 'none', color: '#92400E' }}>
-                {t('bekijkDeal', { partner: gesponsord.naam })}
-              </Link>
-              <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10, textAlign: 'center' }}>
-                {t('gesponsordeUitleg')}
-              </div>
-            </div>
-          </div>
-        )}
-
+        {sponsor?.positie !== 'onderTop3' && sponsorBlok}
 
         {/* QUIZ */}
         <div style={{ marginBottom: 48 }}>

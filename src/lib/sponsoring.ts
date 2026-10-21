@@ -18,6 +18,8 @@ export interface Sponsoring {
   kortingsCode: string;
   /** Welke tijdelijke plaatsingen contractueel actief zijn */
   plaatsingen: Record<Plaatsing, boolean>;
+  /** Waar het homepageblok staat: onder de top 3 of onderaan de rangschikking (standaard). */
+  homepagePositie?: 'onderTop3' | 'onderaan';
   /** Bron-identifier per plaatsing voor klik-tracking (Fase 3) */
   tracking: Record<Plaatsing, string>;
 }
@@ -43,6 +45,8 @@ export const sponsoringen: Sponsoring[] = [
     startDatum: '2026-10-28', // woensdag — sluit aan op de Factor-periode
     eindDatum: '2027-01-27', // t.e.m. 27 januari 2027
     kortingsCode: '', // Korting geldt automatisch via de affiliate-link.
+    // Factor-periode: 1 klik/week op het blok onderaan. Hoger zetten = meer zichtbaar op gsm.
+    homepagePositie: 'onderTop3',
     plaatsingen: {
       banner: true,
       homepageBlok: true,

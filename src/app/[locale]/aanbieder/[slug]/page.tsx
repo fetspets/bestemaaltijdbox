@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import HelloFreshGidsen from '@/components/HelloFreshGidsen';
 import Link from '@/components/TaalLink';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata, SITE_URL, absoluteUrl } from '@/lib/seo';
@@ -366,6 +367,8 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               )}
             </div>
           </div>
+
+          {a.slug === 'hellofresh' && <HelloFreshGidsen taal={taal === 'fr' ? 'fr' : 'nl'} />}
 
           {/* FAQ */}
           {a.uitgebreideReview.faq && (

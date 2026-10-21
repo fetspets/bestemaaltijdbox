@@ -85,7 +85,7 @@ export default function SponsoredBanner({
           flexShrink: 0,
         }}
       >
-        {tb('bekijkDeal')}
+        {partner === 'hellofresh' ? tb('hellofreshCta') : tb('bekijkDeal')}
       </Link>
       <button
         onClick={dismiss}

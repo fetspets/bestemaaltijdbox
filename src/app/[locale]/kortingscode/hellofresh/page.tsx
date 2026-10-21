@@ -1,4 +1,5 @@
 import type { ReactNode } from 'react';
+import HelloFreshGidsen from '@/components/HelloFreshGidsen';
 import Link from '@/components/TaalLink';
 import { laatstBijgewerkt } from '@/lib/site';
 
@@ -216,6 +217,8 @@ export default async function HelloFreshKortingscode({ params }: { params: Promi
           <p key={i} style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 10 }}>{alinea}</p>
         ))}
       </div>
+
+      <HelloFreshGidsen taal={taal} />
 
       {/* Over HelloFresh */}
       <div style={{ marginBottom: 32 }}>

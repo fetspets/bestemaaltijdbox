@@ -39,7 +39,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   // Datumbepaling gebeurt hier server-side; de client krijgt enkel de partner,
   // dus de zichtbaarheid hangt nooit van de browserklok af.
   const s = getActieveSponsoring();
-  const sponsor = s?.plaatsingen.homepageBlok ? { slug: s.partnerSlug, plaatsing: s.tracking.homepageBlok } : undefined;
+  const sponsor = s?.plaatsingen.homepageBlok ? { slug: s.partnerSlug, plaatsing: s.tracking.homepageBlok, positie: s.homepagePositie } : undefined;
 
   // In het Frans staan de aanbieders die niet in Wallonië leveren achteraan.
   return <HomePageClient sponsor={sponsor} aanbieders={gerangschiktVoor(taal)} taal={taal} />;
