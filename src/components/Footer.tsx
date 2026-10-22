@@ -1,6 +1,7 @@
 import Link from '@/components/TaalLink';
 import { getLocale, getTranslations } from 'next-intl/server';
 import { aanbieders } from '@/lib/aanbieders';
+import CookieInstellingenKnop from '@/components/CookieInstellingenKnop';
 
 const FR_LABELS: Record<string, string> = {
   "Voor koppels": "Pour les couples",
@@ -133,6 +134,7 @@ export default async function Footer() {
               ].map(l => (
                 <Link key={l.href} href={l.href} style={{ fontSize: 13, color: '#D1D5DB', textDecoration: 'none' }}>{vertaal(l.label)}</Link>
               ))}
+              <CookieInstellingenKnop />
             </div>
           </div>
         </div>

@@ -80,7 +80,7 @@ export const privacyFr: StatischePagina = {
     {
       kop: '3. Cookies',
       tekst: [
-        "Nous utilisons des cookies pour les statistiques de visite et le suivi d'affiliation. Vous pouvez à tout moment supprimer les cookies via les paramètres de votre navigateur ou en bloquer le dépôt.",
+        "Nous utilisons des cookies fonctionnels, nécessaires au fonctionnement du site. Google Analytics et le script de mesure de TradeTracker ne se chargent que si vous acceptez tous les cookies dans la bannière ; si vous choisissez « Fonctionnels uniquement », ils ne se chargent pas. Vous pouvez modifier votre choix à tout moment via « Paramètres des cookies » en bas de chaque page.",
       ],
     },
     {
