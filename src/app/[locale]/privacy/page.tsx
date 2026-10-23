@@ -62,7 +62,7 @@ export default async function PrivacyPage({ params }: { params: Promise<{ locale
         },
         {
           titel: '4. Cookies',
-          tekst: 'We maken gebruik van functionele cookies (noodzakelijk voor de werking van de site) en analytische cookies (om het gebruik van de site te analyseren). Affiliate partners zoals Awin plaatsen tracking cookies wanneer je op een affiliate link klikt. Je kan cookies beheren via de instellingen van je browser.',
+          tekst: 'We maken gebruik van functionele cookies (noodzakelijk voor de werking van de site). Google Analytics en het meetscript van TradeTracker laden enkel als je in de cookiebanner alle cookies aanvaardt; kies je "Alleen functioneel", dan laden ze niet. Je kan je keuze altijd wijzigen via "Cookie-instellingen" onderaan elke pagina. Daarnaast tellen we bezoeken met Vercel Web Analytics: dat gebruikt geen cookies en bewaart geen IP-adressen, en ziet enkel geanonimiseerde paginabezoeken. Affiliatepartners plaatsen op hun eigen site een cookie wanneer je op een affiliatelink klikt.',
         },
         {
           titel: '5. Delen van gegevens',

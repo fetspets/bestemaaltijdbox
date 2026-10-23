@@ -6,7 +6,8 @@ import SponsoredBanner from '@/components/SponsoredBanner';
 import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import AffiliateTracker from '@/components/AffiliateTracker';
-import Script from 'next/script';
+import ConsentScripts from '@/components/ConsentScripts';
+import { Analytics } from '@vercel/analytics/next';
 import { getActieveSponsoring } from '@/lib/sponsoring';
 import { actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
@@ -107,40 +108,11 @@ export default async function RootLayout({
         <Footer />
         <CookieBanner />
         <AffiliateTracker />
+        <ConsentScripts />
+        {/* Vercel Web Analytics: telt alle bezoekers zonder cookies (geen toestemming nodig) */}
+        <Analytics />
         </NextIntlClientProvider>
 
-        {/* Google Analytics */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-MPESC3XFFN"
-          strategy="afterInteractive"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-MPESC3XFFN');
-          `}
-        </Script>
-
-        {/* TradeTracker */}
-        <Script id="tradetracker" strategy="afterInteractive">
-          {`
-            var _TradeTrackerTagOptions = {
-              t: 'a',
-              s: '507243',
-              chk: '13932be1a3acb66bb8b510c670298bb4',
-              overrideOptions: {}
-            };
-            (function() {
-              var tt = document.createElement('script'),
-                s = document.getElementsByTagName('script')[0];
-              tt.setAttribute('type', 'text/javascript');
-              tt.setAttribute('src', (document.location.protocol == 'https:' ? 'https' : 'http') + '://tm.tradetracker.net/tag?t=' + _TradeTrackerTagOptions.t + '&s=' + _TradeTrackerTagOptions.s + '&chk=' + _TradeTrackerTagOptions.chk);
-              s.parentNode.insertBefore(tt, s);
-            })();
-          `}
-        </Script>
       </body>
     </html>
   );

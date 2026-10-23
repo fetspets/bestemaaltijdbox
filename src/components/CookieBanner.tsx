@@ -3,19 +3,38 @@ import { useTranslations } from 'next-intl';
 
 import { useState, useEffect } from 'react';
 import Link from '@/components/TaalLink';
+import { CONSENT_EVENT } from '@/components/ConsentScripts';
+import { OPEN_EVENT } from '@/components/CookieInstellingenKnop';
 
 export default function CookieBanner() {
   const t = useTranslations('cookies');
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    const consent = localStorage.getItem('cookieConsent');
-    if (!consent) setVisible(true);
+    const controleer = () => {
+      let consent: string | null = null;
+      try { consent = localStorage.getItem('cookieConsent'); } catch { /* geblokkeerd */ }
+      if (!consent) setVisible(true);
+    };
+    controleer();
+    const open = () => setVisible(true);
+    window.addEventListener(OPEN_EVENT, open);
+    return () => window.removeEventListener(OPEN_EVENT, open);
   }, []);
 
   function accept(type: 'all' | 'minimal') {
-    localStorage.setItem('cookieConsent', type);
+    let vorige: string | null = null;
+    try {
+      vorige = localStorage.getItem('cookieConsent');
+      localStorage.setItem('cookieConsent', type);
+    } catch { /* keuze geldt dan enkel voor dit bezoek */ }
     setVisible(false);
+    // Van "alles" naar "functioneel": geladen scripts verdwijnen pas na herladen.
+    if (vorige === 'all' && type === 'minimal') {
+      window.location.reload();
+      return;
+    }
+    window.dispatchEvent(new Event(CONSENT_EVENT));
   }
 
   if (!visible) return null;
