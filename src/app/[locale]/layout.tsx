@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import CookieBanner from '@/components/CookieBanner';
 import AffiliateTracker from '@/components/AffiliateTracker';
 import ConsentScripts from '@/components/ConsentScripts';
+import { Analytics } from '@vercel/analytics/next';
 import { getActieveSponsoring } from '@/lib/sponsoring';
 import { actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
@@ -108,6 +109,8 @@ export default async function RootLayout({
         <CookieBanner />
         <AffiliateTracker />
         <ConsentScripts />
+        {/* Vercel Web Analytics: telt alle bezoekers zonder cookies (geen toestemming nodig) */}
+        <Analytics />
         </NextIntlClientProvider>
 
       </body>

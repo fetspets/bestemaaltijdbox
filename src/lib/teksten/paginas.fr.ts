@@ -80,7 +80,7 @@ export const privacyFr: StatischePagina = {
     {
       kop: '3. Cookies',
       tekst: [
-        "Nous utilisons des cookies fonctionnels, nécessaires au fonctionnement du site. Google Analytics et le script de mesure de TradeTracker ne se chargent que si vous acceptez tous les cookies dans la bannière ; si vous choisissez « Fonctionnels uniquement », ils ne se chargent pas. Vous pouvez modifier votre choix à tout moment via « Paramètres des cookies » en bas de chaque page.",
+        "Nous utilisons des cookies fonctionnels, nécessaires au fonctionnement du site. Google Analytics et le script de mesure de TradeTracker ne se chargent que si vous acceptez tous les cookies dans la bannière ; si vous choisissez « Fonctionnels uniquement », ils ne se chargent pas. Vous pouvez modifier votre choix à tout moment via « Paramètres des cookies » en bas de chaque page. Nous comptons aussi les visites avec Vercel Web Analytics, qui n'utilise pas de cookies, ne conserve pas d'adresse IP et ne voit que des visites de pages anonymisées.",
       ],
     },
     {
