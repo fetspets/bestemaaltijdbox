@@ -8,6 +8,7 @@ import { getFactorVergelijkingVoor } from '@/lib/factorVergelijkingen';
 import { blogPostsVoor, blogPostVoor, aanbiederVoor, aanbiedersVoor } from '@/lib/teksten';
 
 import GesponsordLabel from '@/components/GesponsordLabel';
+import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
 import KortingscodeBox from '@/components/KortingscodeBox';
 import { buildMetadata, articleJsonLd } from '@/lib/seo';
 import { maandNaarISO } from '@/lib/site';
@@ -186,6 +187,11 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
             {u.sponsor(post.sponsor.partner)}
           </span>
         </div>
+      )}
+
+      {/* Tijdelijke HelloFresh-actie (november) op de HelloFresh-artikels */}
+      {(post.sponsor?.gaSlug === 'hellofresh' || slug === 'is-hellofresh-het-waard') && (
+        <HelloFreshNovemberActie taal={taal === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-blog" />
       )}
 
       {/* Conversieblok — bovenaan op de algemene opzeg-pagina */}

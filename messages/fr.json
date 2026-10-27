@@ -235,7 +235,10 @@
     "hellofreshPitch": "HelloFresh : un nouveau menu au choix chaque semaine —",
     "hellofreshKorting": "jusqu’à 70 € de réduction",
     "hellofreshRest": "sur vos 3 premières box.",
-    "hellofreshCta": "Profiter de la réduction →"
+    "hellofreshCta": "Profiter de la réduction →",
+    "hellofreshActiePitch": "HelloFresh : set de moulins Peugeot offert (valeur 56 €)",
+    "hellofreshActieKorting": "et jusqu’à 70 € de réduction",
+    "hellofreshActieRest": "— uniquement en novembre."
   },
   "quiz": {
     "v0": "Pour combien de personnes cuisinez-vous ?",

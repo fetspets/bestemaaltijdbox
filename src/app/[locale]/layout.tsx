@@ -9,6 +9,7 @@ import AffiliateTracker from '@/components/AffiliateTracker';
 import ConsentScripts from '@/components/ConsentScripts';
 import { Analytics } from '@vercel/analytics/next';
 import { getActieveSponsoring } from '@/lib/sponsoring';
+import { actieveActie } from '@/lib/acties';
 import { actieveAanbieders } from '@/lib/aanbieders';
 import { LAATST_BIJGEWERKT } from '@/lib/site';
 import { SITE_URL, SITE_NAAM, STANDAARD_LOCALE, ogAfbeelding } from '@/lib/seo';
@@ -102,7 +103,7 @@ export default async function RootLayout({
         <Navbar />
         {/* Gesponsorde banner (Factor, daarna HelloFresh) op de plaats van de
             gewone HelloFresh-banner; die laatste verdwijnt zolang er een sponsor loopt. */}
-        <SponsoredBanner active={bannerActief} partner={sponsoring?.partnerSlug} plaatsing={sponsoring?.tracking.banner} />
+        <SponsoredBanner active={bannerActief} partner={sponsoring?.partnerSlug} plaatsing={sponsoring?.tracking.banner} actie={!!sponsoring && !!actieveActie(sponsoring.partnerSlug)} />
         {!bannerActief && <HelloFreshDealBanner />}
         <main>{children}</main>
         <Footer />

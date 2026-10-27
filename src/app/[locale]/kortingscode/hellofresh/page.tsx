@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
 import HelloFreshGidsen from '@/components/HelloFreshGidsen';
+import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
 import Link from '@/components/TaalLink';
 import { laatstBijgewerkt } from '@/lib/site';
 
@@ -145,6 +146,8 @@ export default async function HelloFreshKortingscode({ params }: { params: Promi
       <p style={{ fontSize: 15, color: '#4B5563', lineHeight: 1.7, marginBottom: 28 }}>
         {t.intro}
       </p>
+
+      <HelloFreshNovemberActie taal={taal} plaatsing="hellofresh-actie-kortingscode" />
 
       {/* Promo-kaart */}
       <div style={{

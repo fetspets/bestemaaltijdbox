@@ -22,10 +22,13 @@ export default function SponsoredBanner({
   active,
   partner = 'factor',
   plaatsing,
+  actie = false,
 }: {
   active: boolean;
   partner?: string;
   plaatsing?: string;
+  /** Lopende tijdelijke actie van de partner (server-side bepaald). */
+  actie?: boolean;
 }) {
   const tb = useTranslations('banner');
   const [dismissed, setDismissed] = useState(false);
@@ -41,7 +44,9 @@ export default function SponsoredBanner({
     setDismissed(true);
   }
 
-  const tekst = partner === 'hellofresh'
+  const tekst = partner === 'hellofresh' && actie
+    ? { pitch: tb('hellofreshActiePitch'), korting: tb('hellofreshActieKorting'), rest: tb('hellofreshActieRest') }
+    : partner === 'hellofresh'
     ? { pitch: tb('hellofreshPitch'), korting: tb('hellofreshKorting'), rest: tb('hellofreshRest') }
     : { pitch: tb('factorPitch'), korting: tb('factorKorting'), rest: tb('factorRest') };
   const logo = LOGO[partner];

@@ -4,6 +4,7 @@ import type { Locale } from '@/i18n/routing';
 import { getTranslations } from 'next-intl/server';
 import { buildMetadata } from '@/lib/seo';
 import GesponsordLabel from '@/components/GesponsordLabel';
+import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
 import { actieveAanbiedersVoor, aanbiederVoor } from '@/lib/teksten';
 import { getUitgelichtKortingscodes } from '@/lib/sponsoring';
 import { laatstBijgewerkt } from '@/lib/site';
@@ -80,6 +81,8 @@ export default async function KortingscodesPagina({ params }: { params: Promise<
           {t('intro')}
         </p>
       </div>
+
+      <HelloFreshNovemberActie taal={taal === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-kortingscodes" />
 
       {/* Uitgelicht — gesponsorde plaatsing (server-gated: lopende sponsor of blijvende HelloFresh-plaatsing) */}
       {uitgelicht && (

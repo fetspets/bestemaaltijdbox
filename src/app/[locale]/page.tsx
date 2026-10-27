@@ -4,6 +4,7 @@ import { buildMetadata } from '@/lib/seo';
 import { actieveAanbiedersVoor, gerangschiktVoor } from '@/lib/teksten';
 import { LAATST_BIJGEWERKT, laatstBijgewerkt } from '@/lib/site';
 import { getActieveSponsoring } from '@/lib/sponsoring';
+import { actieveActie } from '@/lib/acties';
 import type { Locale } from '@/i18n/routing';
 
 // ISR (uurlijks): server-datum schuift mee zodat het tijdelijke gesponsorde
@@ -39,7 +40,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   // Datumbepaling gebeurt hier server-side; de client krijgt enkel de partner,
   // dus de zichtbaarheid hangt nooit van de browserklok af.
   const s = getActieveSponsoring();
-  const sponsor = s?.plaatsingen.homepageBlok ? { slug: s.partnerSlug, plaatsing: s.tracking.homepageBlok, positie: s.homepagePositie } : undefined;
+  const sponsor = s?.plaatsingen.homepageBlok ? { slug: s.partnerSlug, plaatsing: s.tracking.homepageBlok, positie: s.homepagePositie, actie: !!actieveActie(s.partnerSlug) } : undefined;
 
   // In het Frans staan de aanbieders die niet in Wallonië leveren achteraan.
   return <HomePageClient sponsor={sponsor} aanbieders={gerangschiktVoor(taal)} taal={taal} />;

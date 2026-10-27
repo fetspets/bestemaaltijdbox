@@ -47,7 +47,7 @@ export default function HomePageClient({
   aanbieders: lijst,
   taal,
 }: {
-  sponsor?: { slug: string; plaatsing: string; positie?: 'onderTop3' | 'onderaan' };
+  sponsor?: { slug: string; plaatsing: string; positie?: 'onderTop3' | 'onderaan'; actie?: boolean };
   aanbieders: Aanbieder[];
   taal: Locale;
 }) {
@@ -82,6 +82,13 @@ export default function HomePageClient({
               </div>
 
               <div style={{ fontSize: 14, lineHeight: 1.6, color: '#4B5563', marginBottom: 14 }}>{gesponsord.beschrijving}</div>
+              {sponsor.actie && gesponsord.slug === 'hellofresh' && (
+                <div style={{ background: '#FFF7ED', border: '1px solid #FDBA74', borderRadius: 10, padding: '10px 12px', fontSize: 13, fontWeight: 600, color: '#9A3412', marginBottom: 14, lineHeight: 1.5 }}>
+                  {taal === 'fr'
+                    ? '🎁 Uniquement en novembre : un set de moulins Peugeot offert (valeur 56 €) dans votre 5e box, en plus de la réduction.'
+                    : '🎁 Alleen in november: gratis Peugeot peper- en zoutmolenset (t.w.v. €56) in je 5e box, bovenop de korting.'}
+                </div>
+              )}
 
               <div style={{ display: 'flex', gap: 6, flexWrap: 'wrap', marginBottom: 14 }}>
                 {gesponsord.kenmerken?.slice(0, 3).map(k => (
