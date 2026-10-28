@@ -12,6 +12,61 @@ import type { BlogPost } from '../blog';
  * kan wegvallen.
  */
 export const blogFr: Record<string, Partial<BlogPost>> = {
+  'hellofresh-peugeot-molens-actie': {
+    titel: 'Offre HelloFresh Peugeot : comment recevoir les moulins à poivre et sel offerts',
+    metaTitle: 'Offre HelloFresh Peugeot : moulins offerts, mais attention au piège',
+    metaDescription: "Moulins à poivre et sel Peugeot offerts (valeur 56 €) chez HelloFresh, uniquement en novembre. Combien de box commander, combien cela coûte vraiment et à quoi faire attention ?",
+    excerpt: "En commençant HelloFresh en novembre, vous recevez un set de moulins Peugeot Bistro Duo d'une valeur de 56 € en plus de la réduction de bienvenue. Mais seulement avec votre 5e box. Fonctionnement, prix et pour qui cela vaut la peine.",
+    faqKop: 'Questions fréquentes sur l’offre HelloFresh Peugeot',
+    content: [
+      { type: 'p', text: "Du 1er au 30 novembre 2026, les nouveaux clients HelloFresh reçoivent un set de moulins à poivre et sel Peugeot Bistro Duo, en plus de la réduction de bienvenue habituelle jusqu'à 70 €. Un joli bonus, livré dans toute la Belgique, Wallonie comprise. Mais une condition est à connaître d'avance : les moulins n'arrivent qu'avec votre 5e box. Voici comment fonctionne l'offre, ce que vous payez au total et pour qui elle vaut la peine." },
+      {
+        type: 'notitie',
+        kop: 'L’offre en bref',
+        achtergrond: '#FFF7ED',
+        rand: '#FDBA74',
+        regels: [
+          { label: 'Quoi ?', tekst: 'Un set de moulins à poivre et sel Peugeot Bistro Duo (naturel et chocolat), d’une valeur de 56 € (prix conseillé).' },
+          { label: 'Quand ?', tekst: 'Vous vous abonnez entre le 1er et le 30 novembre 2026.' },
+          { label: 'Condition :', tekst: 'Vous recevez au moins 4 box dans les 8 semaines suivant votre inscription.' },
+          { label: 'Livraison :', tekst: 'Le set arrive automatiquement dans votre 5e box, dans la limite des stocks.' },
+          { label: 'En plus :', tekst: 'La réduction de bienvenue jusqu’à 70 € : jusqu’à 45 € sur la 1re box, 15 € sur la 2e et 10 € sur la 3e, et la première livraison est offerte.' },
+        ],
+      },
+      { type: 'codebox', tekst: 'Profiter de l’offre Peugeot' },
+      { type: 'h2', text: 'Recevoir les moulins, étape par étape' },
+      { type: 'ul', items: [
+        'Abonnez-vous comme nouveau client entre le 1er et le 30 novembre via notre lien. La réduction et l’offre sont appliquées automatiquement.',
+        'Recevez au moins 4 box dans les 8 semaines. Vous pouvez donc faire une pause de quelques semaines au maximum.',
+        'Gardez votre abonnement jusqu’à la 5e box : c’est elle qui contient les moulins.',
+      ]},
+      { type: 'h2', text: 'Combien payez-vous au total ?' },
+      { type: 'p', html: true, text: "Les moulins sont offerts, mais vous devez recevoir 5 box. Pour 2 personnes et 3 repas par semaine, une box coûte normalement 47,50 €, plus 5,99 € de livraison à partir de la 2e. Avec la réduction de bienvenue, les 4 premières box vous coûtent ensemble environ 160 à 190 €, selon la réduction appliquée à votre taille de box. La 5e est ensuite au prix normal. Comparaison avec les courses au supermarché : <a href=\"/fr/blog/is-hellofresh-het-waard\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">HelloFresh vaut-il le coup ?</a>" },
+      { type: 'h2', text: 'À quoi faire attention ?' },
+      { type: 'ul', items: [
+        'Dans cette offre, la réduction de bienvenue expire déjà 49 jours après la commande de la 1re box. Recevez donc les box 2 et 3 dans ce délai.',
+        'Ne faites pas une pause trop longue : sans 4 box en 8 semaines, pas de moulins.',
+        'Si vous résiliez avant la 5e box, l’offre est perdue, même en réactivant plus tard.',
+        'Offre réservée aux nouveaux clients (ou résiliation depuis plus d’un an), une fois par foyer, non cumulable avec d’autres offres.',
+        'Dans la limite des stocks disponibles.',
+      ]},
+      { type: 'h2', text: 'Pour qui l’offre vaut-elle la peine ?' },
+      { type: 'p', html: true, text: "Si vous comptez de toute façon essayer HelloFresh pendant un mois ou plus, les moulins sont un beau cadeau en plus de la réduction. Si vous hésitez encore, ne commandez pas uniquement pour les moulins : cinq box, c'est un vrai engagement. Le fonctionnement de l'abonnement et la façon de sauter une semaine sans perdre l'offre sont expliqués dans <a href=\"/fr/blog/hoe-werkt-hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Comment fonctionne HelloFresh ?</a> et <a href=\"/fr/blog/hellofresh-pauzeren-week-overslaan\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Mettre HelloFresh en pause</a>." },
+      { type: 'codebox', tekst: 'Commencer en novembre avec les moulins offerts' },
+    ],
+    faq: [
+      { q: 'Comment recevoir les moulins Peugeot offerts par HelloFresh ?', a: 'Abonnez-vous comme nouveau client entre le 1er et le 30 novembre 2026, recevez au moins 4 box en 8 semaines, et le set arrive automatiquement dans votre 5e box, dans la limite des stocks.' },
+      { q: 'Quelle est la valeur du set de moulins Peugeot ?', a: 'Il s’agit d’un set Peugeot Bistro Duo (naturel et chocolat) d’une valeur de 56 € (prix conseillé).' },
+      { q: 'Est-ce que je reçois aussi la réduction de bienvenue ?', a: 'Oui. Les moulins s’ajoutent à la réduction jusqu’à 70 € : jusqu’à 45 € sur la 1re box, 15 € sur la 2e et 10 € sur la 3e. Dans cette offre, la réduction expire 49 jours après la commande de la 1re box.' },
+      { q: 'Puis-je faire une pause pendant l’offre ?', a: 'Brièvement, mais vous devez recevoir au moins 4 box dans les 8 semaines suivant votre inscription. Si vous résiliez avant la 5e box, l’offre est perdue.' },
+    ],
+    relatedLinks: [
+      { label: 'Comment fonctionne HelloFresh ? Étape par étape', href: '/blog/hoe-werkt-hellofresh' },
+      { label: 'Code promo HelloFresh : jusqu’à 70 € de réduction', href: '/kortingscode/hellofresh' },
+      { label: 'HelloFresh vaut-il le coup ?', href: '/blog/is-hellofresh-het-waard' },
+    ],
+    keywords: ['hellofresh peugeot', 'hellofresh moulins', 'hellofresh moulin poivre sel', 'hellofresh cadeau', 'hellofresh offre novembre'],
+  },
   'hoe-werkt-hellofresh': {
     titel: 'Comment fonctionne HelloFresh ? De la commande à la box devant votre porte',
     metaTitle: 'Comment fonctionne HelloFresh ? À savoir avant votre première box (2026)',

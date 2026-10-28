@@ -8,6 +8,7 @@ import { vergelijkingen } from '@/lib/vergelijkingen';
 import { factorVergelijkingen } from '@/lib/factorVergelijkingen';
 import { gidsen } from '@/lib/gidsen';
 import { blogPosts } from '@/lib/blog';
+import { acties } from '@/lib/acties';
 
 /**
  * Afgeleid uit de databestanden, en tweetalig.
@@ -44,7 +45,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...factorVergelijkingen.map(v => ({ route: '/vergelijk/[slug]' as const, params: { slug: v.slug }, priority: 0.85 })),
 
     ...gidsen.map(g => ({ route: '/gids/[slug]' as const, params: { slug: g.slug }, priority: 0.8 })),
-    ...blogPosts.map(p => ({ route: '/blog/[slug]' as const, params: { slug: p.slug }, priority: 0.6 })),
+    ...blogPosts.filter(p => !(p.slug === 'hellofresh-peugeot-molens-actie' && nu > new Date(`${acties.find(a => a.id === 'hellofresh-peugeot-2026')!.tot}T23:59:59`))).map(p => ({ route: '/blog/[slug]' as const, params: { slug: p.slug }, priority: 0.6 })),
     ...kortingscodePaginas.map(s => ({ route: '/kortingscode/[slug]' as const, params: { slug: s }, priority: 0.8 })),
   ];
 

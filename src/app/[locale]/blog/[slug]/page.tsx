@@ -190,7 +190,7 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       )}
 
       {/* Tijdelijke HelloFresh-actie (november) op de HelloFresh-artikels */}
-      {(post.sponsor?.gaSlug === 'hellofresh' || slug === 'is-hellofresh-het-waard') && (
+      {(post.sponsor?.gaSlug === 'hellofresh' || slug === 'is-hellofresh-het-waard') && slug !== 'hellofresh-peugeot-molens-actie' && (
         <HelloFreshNovemberActie taal={taal === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-blog" />
       )}
 
