@@ -15,7 +15,9 @@ export type BlogContentBlock =
   // Kortingscode-box met CTA (gesponsorde content). `tekst` = knoplabel.
   | { type: 'codebox'; tekst: string }
   // Berekend prijsvoorbeeld voor de partner (data-driven uit aanbieders.ts).
-  | { type: 'prijsvoorbeeld' };
+  | { type: 'prijsvoorbeeld' }
+  // Beeld van de partner (bv. actiebanner); klikt door naar /ga/<sponsor> als `link` aan staat.
+  | { type: 'afbeelding'; src: string; alt: string; link?: boolean };
 
 export interface BlogPost {
   slug: string;
@@ -53,6 +55,7 @@ export const blogPosts: BlogPost[] = [
     faqKop: 'Veelgestelde vragen over de HelloFresh Peugeot-actie',
     content: [
       { type: 'p', text: "Van 1 tot en met 30 november 2026 krijgen nieuwe HelloFresh-klanten een Peugeot Bistro Duo peper- en zoutmolenset cadeau, bovenop de gewone welkomstkorting tot €70. Een mooi extraatje, maar er zit een voorwaarde aan die je beter vooraf kent: de molens komen pas mee in je 5e box. We zetten op een rij hoe de actie werkt, wat je in totaal betaalt en voor wie ze de moeite is." },
+      { type: 'afbeelding', src: '/acties/hellofresh-peugeot-molens.jpg', alt: 'HelloFresh-actie: gratis Peugeot Bistro Duo-molenset én tot €70 korting', link: true },
       {
         type: 'notitie',
         kop: 'De actie in het kort',

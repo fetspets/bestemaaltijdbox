@@ -273,6 +273,16 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </div>
             );
           }
+          if (block.type === 'afbeelding') {
+            const img = <img src={block.src} alt={block.alt} loading="lazy" style={{ display: 'block', width: '100%', maxWidth: 500, height: 'auto', borderRadius: 14, margin: '0 auto' }} />;
+            return (
+              <div key={i} style={{ margin: '24px 0' }}>
+                {block.link && post.sponsor
+                  ? <a data-plaatsing="blog-afbeelding" href={`/ga/${post.sponsor.gaSlug}`} rel="noopener sponsored nofollow">{img}</a>
+                  : img}
+              </div>
+            );
+          }
           if (block.type === 'codebox') {
             return <KortingscodeBox key={i} partnerSlug={post.sponsor?.gaSlug} ctaTekst={block.tekst} taal={taal} />;
           }

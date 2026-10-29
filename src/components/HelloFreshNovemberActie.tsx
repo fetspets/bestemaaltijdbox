@@ -8,6 +8,11 @@ export default function HelloFreshNovemberActie({ taal, plaatsing }: { taal: 'nl
   const fr = taal === 'fr';
   return (
     <div style={{ background: 'linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 75%)', border: '1.5px solid #FDBA74', borderRadius: 14, padding: '18px 20px', margin: '0 0 24px' }}>
+      {!fr && (
+        <a data-plaatsing={`${plaatsing}-beeld`} href="/ga/hellofresh" rel="noopener sponsored nofollow" style={{ float: 'right', marginLeft: 14, marginBottom: 8 }}>
+          <img src="/acties/hellofresh-peugeot-molens.jpg" alt="Gratis Peugeot Bistro Duo-molenset bij HelloFresh" width={110} height={110} style={{ borderRadius: 10, display: 'block' }} />
+        </a>
+      )}
       <div style={{ fontSize: 12, fontWeight: 700, color: '#C2410C', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>
         {fr ? '🎁 Uniquement en novembre' : '🎁 Alleen in november'}
       </div>
@@ -28,7 +33,7 @@ export default function HelloFreshNovemberActie({ taal, plaatsing }: { taal: 'nl
       <Link href="/blog/hellofresh-peugeot-molens-actie" style={{ display: 'inline-block', marginLeft: 14, fontSize: 13, fontWeight: 600, color: '#9A3412', textDecoration: 'underline' }}>
         {fr ? 'Comment ça marche ?' : 'Hoe werkt de actie?'}
       </Link>
-      <div style={{ fontSize: 11, color: 'var(--muted)', marginTop: 10, lineHeight: 1.5 }}>
+      <div style={{ clear: 'both', fontSize: 11, color: 'var(--muted)', marginTop: 10, lineHeight: 1.5 }}>
         {fr
           ? 'Nouveaux clients uniquement · réduction jusqu’à 45 € + 15 € + 10 €, valable 49 jours après la commande de la 1re box · non cumulable avec d’autres offres.'
           : 'Enkel nieuwe klanten · korting tot €45 + €15 + €10, geldig tot 49 dagen na de bestelling van je 1e box · niet te combineren met andere acties.'}
