@@ -454,7 +454,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Plats prêts · livre dans toute la Belgique',
             waarom:
               "Pour les soirs où personne n'a envie de cuisiner : Factor livre des plats prêts à réchauffer en quelques minutes, dans tout le pays. Limité à 4 personnes, et la livraison est payante, mais c'est la solution la plus simple pour une famille wallonne pressée.",
-            deal: '40 % sur votre premier box + 25 % sur les cinq suivants',
+            deal: 'Jusqu’à 40 % sur votre première box + réduction et cadeaux sur les suivantes',
           },
         ],
       },
@@ -666,7 +666,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Portions prêtes · toute la Belgique',
             waarom:
               "Pas envie de cuisiner après le travail ? Factor livre des plats prêts par portion, à réchauffer en quelques minutes. Vous commandez exactement le nombre de repas qu'il vous faut, sans reste. Livraison dans tout le pays, mais payante.",
-            deal: '40 % sur votre premier box + 25 % sur les cinq suivants',
+            deal: 'Jusqu’à 40 % sur votre première box + réduction et cadeaux sur les suivantes',
           },
           {
             slug: 'foodbag',

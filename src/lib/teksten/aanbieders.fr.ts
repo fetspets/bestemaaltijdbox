@@ -274,11 +274,11 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
   factor: {
     kortingsCode: {
       code: null,
-      bedrag: "40 % + 25 % de réduction",
-      bedragKort: "40 % + 25 %",
-      deal: "40 % sur votre première box + 25 % sur les cinq suivantes",
-      voorwaarden: "Réservé aux nouveaux clients · automatique via notre lien · première box + cinq suivantes · valable jusqu’au 27/10/2026 · livre dans tout le pays",
-      beschrijving: "La réduction est appliquée automatiquement via notre lien — aucun code à saisir. 40 % sur votre première box, puis 25 % sur chacune des cinq suivantes. Réservé aux nouveaux clients. Factor livre dans toute la Belgique, Wallonie comprise.",
+      bedrag: "jusqu’à 40 % de réduction + cadeaux",
+      bedragKort: "jusqu’à 40 % + cadeaux",
+      deal: "Jusqu’à 40 % sur votre première box, une réduction sur les box 2 à 4 et un cadeau avec les box 2 à 5",
+      voorwaarden: "Réservé aux nouveaux clients · automatique via notre lien · réduction sur vos 4 premières box · cadeaux avec les box 2 à 5, dans les 9 semaines · livre dans tout le pays",
+      beschrijving: "La réduction est appliquée automatiquement via notre lien — aucun code à saisir. Jusqu’à 40 % sur votre première box, puis une réduction plus petite sur les box 2 à 4 et un cadeau avec chacune des box 2 à 5 (dans les 9 semaines suivant la première livraison). Réservé aux nouveaux clients. Factor livre dans toute la Belgique, Wallonie comprise.",
     },
     tagline: 'Plats prêts à réchauffer — livrés partout en Belgique',
     beschrijving:

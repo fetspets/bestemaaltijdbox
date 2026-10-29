@@ -13,11 +13,11 @@ export async function generateMetadata(
     params: { slug: 'factor' },
     pad: '/kortingscode/factor',
     titel: locale === 'fr'
-      ? `Code promo Factor ${laatstBijgewerkt('fr')} — 40 % de réduction sur votre première box`
-      : `Factor kortingscode ${LAATST_BIJGEWERKT} — 40% korting op je eerste box`,
+      ? `Code promo Factor ${laatstBijgewerkt('fr')} — jusqu’à 40 % de réduction sur votre première box`
+      : `Factor kortingscode ${LAATST_BIJGEWERKT} — tot 40% korting op je eerste box`,
     beschrijving: locale === 'fr'
-      ? 'L’offre de bienvenue Factor pour les nouveaux clients en Belgique : 40 % sur votre première box de plats préparés, livrés partout en Belgique, Wallonie comprise.'
-      : 'Het actuele Factor welkomstvoordeel voor nieuwe klanten in België: 40% korting op je eerste box met kant-en-klare maaltijden zonder kookgedoe.',
+      ? 'L’offre de bienvenue Factor pour les nouveaux clients en Belgique : jusqu’à 40 % sur votre première box de plats préparés, livrés partout en Belgique, Wallonie comprise.'
+      : 'Het actuele Factor welkomstvoordeel voor nieuwe klanten in België: tot 40% korting op je eerste box met kant-en-klare maaltijden zonder kookgedoe.',
     type: 'article',
   });
 }

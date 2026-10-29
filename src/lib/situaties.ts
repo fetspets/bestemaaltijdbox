@@ -532,7 +532,7 @@ export const situaties: Record<string, Situatie> = {
             badgeTekst: '#92400E',
             tagline: 'Kant-en-klare porties · heel België',
             waarom: 'Geen zin om na je werk nog te koken? Factor levert kant-en-klare maaltijden per portie, die je in een paar minuten opwarmt. Je bestelt precies zoveel maaltijden als je nodig hebt, dus er blijft niets over. Factor levert in heel België; je betaalt wel bezorgkosten.',
-            deal: '40% korting op je eerste box + 25% op de volgende vijf boxen',
+            deal: 'Tot 40% korting op je eerste box + korting en cadeaus bij de volgende boxen',
           },
         ],
       },

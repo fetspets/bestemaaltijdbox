@@ -297,7 +297,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
             badgeTekst: '#92400E',
             tagline: 'Plats prêts · toute la Belgique',
             waarom: "Vous arrêtez HelloFresh parce que cuisiner après le travail devient trop lourd ? Factor appartient au même groupe que HelloFresh, mais livre des plats prêts à réchauffer en quelques minutes. Livraison dans tout le pays.",
-            deal: '40 % sur votre premier box + 25 % sur les cinq suivants',
+            deal: 'Jusqu’à 40 % sur votre première box + réduction et cadeaux sur les suivantes',
           },
           {
             slug: 'marley-spoon',
@@ -485,7 +485,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
             badgeTekst: '#92400E',
             tagline: 'Plats prêts · toute la Belgique',
             waarom: "Vous achetez surtout des plats préparés au supermarché ? Factor livre des plats prêts à réchauffer, dans tout le pays.",
-            deal: '40 % sur votre premier box + 25 % sur les cinq suivants',
+            deal: 'Jusqu’à 40 % sur votre première box + réduction et cadeaux sur les suivantes',
           },
         ],
       },
