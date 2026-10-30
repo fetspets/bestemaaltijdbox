@@ -8,11 +8,9 @@ export default function HelloFreshNovemberActie({ taal, plaatsing }: { taal: 'nl
   const fr = taal === 'fr';
   return (
     <div style={{ background: 'linear-gradient(180deg, #FFF7ED 0%, #FFFFFF 75%)', border: '1.5px solid #FDBA74', borderRadius: 14, padding: '18px 20px', margin: '0 0 24px' }}>
-      {!fr && (
-        <a data-plaatsing={`${plaatsing}-beeld`} href="/ga/hellofresh" rel="noopener sponsored nofollow" style={{ float: 'right', marginLeft: 14, marginBottom: 8 }}>
-          <img src="/acties/hellofresh-peugeot-molens.jpg" alt="Gratis Peugeot Bistro Duo-molenset bij HelloFresh" width={110} height={110} style={{ borderRadius: 10, display: 'block' }} />
-        </a>
-      )}
+      <a data-plaatsing={`${plaatsing}-beeld`} href="/ga/hellofresh" rel="noopener sponsored nofollow" style={{ float: 'right', marginLeft: 14, marginBottom: 8 }}>
+        <img src={fr ? '/acties/hellofresh-peugeot-molens-fr.jpg' : '/acties/hellofresh-peugeot-molens.jpg'} alt={fr ? 'Moulins Peugeot Bistro Duo offerts chez HelloFresh' : 'Gratis Peugeot Bistro Duo-molenset bij HelloFresh'} width={110} height={110} style={{ borderRadius: 10, display: 'block' }} />
+      </a>
       <div style={{ fontSize: 12, fontWeight: 700, color: '#C2410C', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>
         {fr ? '🎁 Uniquement en novembre' : '🎁 Alleen in november'}
       </div>

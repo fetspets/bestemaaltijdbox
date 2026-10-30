@@ -20,6 +20,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
     faqKop: 'Questions fréquentes sur l’offre HelloFresh Peugeot',
     content: [
       { type: 'p', text: "Du 1er au 30 novembre 2026, les nouveaux clients HelloFresh reçoivent un set de moulins à poivre et sel Peugeot Bistro Duo, en plus de la réduction de bienvenue habituelle jusqu'à 70 €. Un joli bonus, livré dans toute la Belgique, Wallonie comprise. Mais une condition est à connaître d'avance : les moulins n'arrivent qu'avec votre 5e box. Voici comment fonctionne l'offre, ce que vous payez au total et pour qui elle vaut la peine." },
+      { type: 'afbeelding', src: '/acties/hellofresh-peugeot-molens-fr.jpg', alt: 'Offre HelloFresh : duo de moulins Peugeot Bistro offert et jusqu’à 70 € de réduction', link: true },
       {
         type: 'notitie',
         kop: 'L’offre en bref',
