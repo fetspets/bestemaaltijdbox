@@ -31,7 +31,7 @@ const TEKST: Record<'nl' | 'fr', KortingscodeTekst> = {
     ],
     overKop: 'Waarom Factor?',
     overAlineas: [
-      'Factor (van de HelloFresh Group) is geen klassieke kookbox — het zijn kant-en-klare chef-maaltijden die je in 2–3 minuten opwarmt in de magnetron. Met 18 gerechten per week en 5 dieetstijlen (waaronder High-Protein en Calorie-Conscious) is Factor ideaal voor drukke professionals en sporters die gezond willen eten zonder kooktijd. Bezorging elke week op zondag of maandag in heel België.',
+      'Factor (van de HelloFresh Group) is geen klassieke kookbox — het zijn kant-en-klare chef-maaltijden die je in 2–3 minuten opwarmt in de magnetron. Met 27 gerechten per week en verschillende dieetstijlen (waaronder High-Protein en Calorie-Conscious) is Factor ideaal voor drukke professionals en sporters die gezond willen eten zonder kooktijd. Bezorging elke week op zondag of maandag in heel België.',
     ],
     reviewTekst: 'Lees onze volledige Factor review →',
     allesTekst: '← Alle kortingscodes bekijken',
@@ -66,7 +66,7 @@ const TEKST: Record<'nl' | 'fr', KortingscodeTekst> = {
     ],
     overKop: 'Pourquoi Factor ?',
     overAlineas: [
-      "Factor (du groupe HelloFresh) n'est pas un box à cuisiner classique : ce sont des plats de chef prêts à manger, à réchauffer 2 à 3 minutes au micro-ondes. Avec 18 plats par semaine et 5 styles alimentaires (dont High-Protein et Calorie-Conscious), Factor convient aux professionnels pressés et aux sportifs qui veulent manger sainement sans cuisiner. Livraison chaque semaine le dimanche ou le lundi, partout en Belgique.",
+      "Factor (du groupe HelloFresh) n'est pas un box à cuisiner classique : ce sont des plats de chef prêts à manger, à réchauffer 2 à 3 minutes au micro-ondes. Avec 27 plats par semaine et plusieurs styles alimentaires (dont High-Protein et Calorie-Conscious), Factor convient aux professionnels pressés et aux sportifs qui veulent manger sainement sans cuisiner. Livraison chaque semaine le dimanche ou le lundi, partout en Belgique.",
     ],
     reviewTekst: 'Lire notre avis complet sur Factor →',
     allesTekst: '← Voir tous les codes promo',

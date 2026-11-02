@@ -1161,7 +1161,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
     metaDescription:
       "Notre avis sur Factor : plats de chef prêts à réchauffer, livrés dans toute la Belgique. Prix, goût, styles diététiques et pour qui cela vaut la peine.",
     excerpt:
-      "Factor livre des plats de chef prêts à réchauffer en deux à trois minutes — aucune cuisson. Nous avons testé le prix, le goût, les cinq styles diététiques et la couverture de livraison.",
+      "Factor livre des plats de chef prêts à réchauffer en deux à trois minutes — aucune cuisson. Nous avons testé le prix, le goût, les styles diététiques et la couverture de livraison.",
     faqKop: 'Questions fréquentes sur Factor',
     content: [
       {
@@ -1171,7 +1171,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Qu’est-ce que Factor exactement ?' },
       {
         type: 'p',
-        text: "Un service de plats cuisinés, livrés froids et prêts à réchauffer. Aucune découpe, aucune cuisson, aucune vaisselle. L'offre tourne autour de 18 plats par semaine, répartis en cinq styles diététiques.",
+        text: "Un service de plats cuisinés, livrés froids et prêts à réchauffer. Aucune découpe, aucune cuisson, aucune vaisselle. L'offre tourne autour de 27 plats par semaine, répartis en plusieurs styles diététiques.",
       },
       { type: 'h2', text: 'Comment commander ?' },
       {
@@ -1181,7 +1181,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Goût et qualité' },
       {
         type: 'p',
-        text: "Pour un plat qu'on se contente de réchauffer, le goût est étonnamment correct. Dans notre évaluation, Factor obtient 7,8/10. Les utilisateurs apprécient surtout les cinq styles diététiques : High-Protein pour les sportifs, Calorie-Conscious pour qui surveille son apport.",
+        text: "Pour un plat qu'on se contente de réchauffer, le goût est étonnamment correct. Dans notre évaluation, Factor obtient 7,8/10. Les utilisateurs apprécient surtout les styles diététiques : High-Protein pour les sportifs, Calorie-Conscious pour qui surveille son apport.",
       },
       { type: 'h2', text: 'Combien coûte Factor réellement ?' },
       {
@@ -1242,7 +1242,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       {
         type: 'ul',
         items: [
-          'Factor : le plus grand choix et cinq styles diététiques, livraison dans tout le pays, + 5,99 € par livraison',
+          'Factor : le plus grand choix et plusieurs styles diététiques, livraison dans tout le pays, + 5,99 € par livraison',
           'Crowd Cooks : plats belges, portions de plus de 450 g, livraison à Bruxelles, Liège, Charleroi, Namur et en Brabant wallon, + 4,90 €',
           'Foodmaker : qualité artisanale anversoise avec Jeroen Meus, livraison gratuite nationale, minimum de commande 39,90 €',
         ],
@@ -1310,7 +1310,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Options high-protein et contrôlées en calories' },
       {
         type: 'p',
-        text: "Factor propose cinq styles diététiques, dont High-Protein (apport protéique renforcé, prisé des sportifs) et Calorie-Conscious (apport calorique maîtrisé). Vous choisissez chaque semaine le style qui correspond à votre objectif, sans changer de fournisseur. Factor livre dans toute la Belgique, Wallonie comprise.",
+        text: "Factor propose plusieurs styles diététiques, dont High-Protein (apport protéique renforcé, prisé des sportifs) et Calorie-Conscious (apport calorique maîtrisé). Vous choisissez chaque semaine le style qui correspond à votre objectif, sans changer de fournisseur. Factor livre dans toute la Belgique, Wallonie comprise.",
       },
       { type: 'h2', text: 'Intégrer cela dans une semaine chargée' },
       {

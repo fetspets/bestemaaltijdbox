@@ -30,7 +30,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     kookboxLevergebied: 'heel België',
     intro: [
       'Factor en HelloFresh lossen allebei het "wat eten we vanavond"-probleem op, maar op een totaal andere manier. Bij HelloFresh kook je zelf met verse ingrediënten; bij Factor warm je een kant-en-klare maaltijd op in 2 tot 3 minuten. Dat verschil bepaalt welke bij jou past.',
-      'HelloFresh is onze nummer 1 en scoort overall hoger (8,4 tegenover 7,8): meer receptvariatie (80+ per week) en een sterke welkomstdeal. Factor kiest voor maximaal gemak — geen koken, klaar in enkele minuten, met vijf dieetstijlen zoals High-Protein en Calorie-Conscious.',
+      'HelloFresh is onze nummer 1 en scoort overall hoger (8,4 tegenover 7,8): meer receptvariatie (80+ per week) en een sterke welkomstdeal. Factor kiest voor maximaal gemak — geen koken, klaar in enkele minuten, met verschillende dieetstijlen zoals High-Protein en Calorie-Conscious.',
       'De kernvraag is simpel: wil je koken of niet?',
     ],
     kiesFactorAls: [
@@ -61,7 +61,7 @@ export const factorVergelijkingen: FactorVergelijking[] = [
     kookboxLevergebied: 'heel België',
     intro: [
       'Factor en Foodbag staan voor twee filosofieën: opwarmen versus koken met lokale Belgische ingrediënten. Foodbag (onderdeel van de Colruyt Group) is onze beste Belgische kookbox; Factor is een kant-en-klare service van de HelloFresh Group.',
-      'Foodbag scoort overall hoger (8,1 tegenover 7,8) en blinkt uit in smaak en verse, lokale ingrediënten — met de hoogste smaakscore samen met Marley Spoon (8,6). Factor mikt op gemak: geen koken, vijf dieetstijlen en een lagere prijs per portie.',
+      'Foodbag scoort overall hoger (8,1 tegenover 7,8) en blinkt uit in smaak en verse, lokale ingrediënten — met de hoogste smaakscore samen met Marley Spoon (8,6). Factor mikt op gemak: geen koken, verschillende dieetstijlen en een lagere prijs per portie.',
       'Wil je bewust Belgisch koken, of gewoon snel en gezond opwarmen?',
     ],
     kiesFactorAls: [

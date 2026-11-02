@@ -107,8 +107,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
-      { '@type': 'ListItem', position: 2, name: fr ? 'Fournisseurs' : 'Aanbieders', item: absoluteUrl(fr ? '/fr/fournisseur' : '/aanbieder') },
-      { '@type': 'ListItem', position: 3, name: a.naam, item: absoluteUrl(fr ? `/fr/fournisseur/${a.slug}` : `/aanbieder/${a.slug}`) },
+      { '@type': 'ListItem', position: 2, name: a.naam, item: absoluteUrl(fr ? `/fr/fournisseur/${a.slug}` : `/aanbieder/${a.slug}`) },
     ],
   };
 
@@ -133,8 +132,6 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
         <div style={{ maxWidth: 1100, margin: '0 auto', padding: '0 20px', fontSize: 13, color: 'var(--muted)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div>
             <Link href="/" style={{ color: 'var(--muted)', textDecoration: 'none' }}>Home</Link>
-            {' → '}
-            <Link href="/aanbieder" style={{ color: 'var(--muted)', textDecoration: 'none' }}>{t('aanbieders')}</Link>
             {' → '}
             <strong style={{ color: 'var(--ink)' }}>{a.naam}</strong>
           </div>

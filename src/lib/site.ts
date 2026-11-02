@@ -6,19 +6,19 @@
  * Werk deze waarde bij wanneer de data daadwerkelijk is nagekeken, dan volgt de
  * hele site automatisch.
  */
-export const LAATST_BIJGEWERKT = 'oktober 2026';
+export const LAATST_BIJGEWERKT = 'november 2026';
 
 /**
  * Dezelfde datum per taal. Eén plek bijwerken volstaat; laat de talen niet
  * uit elkaar lopen, anders lijkt de Franse versie ouder dan de Nederlandse.
  */
 export const LAATST_BIJGEWERKT_PER_TAAL: Record<string, string> = {
-  nl: 'oktober 2026',
-  fr: 'octobre 2026',
+  nl: 'november 2026',
+  fr: 'novembre 2026',
 };
 
 /** Dezelfde controledatum in ISO-vorm, voor dateModified in de markup. */
-export const LAATST_GECONTROLEERD_ISO = '2026-10-12';
+export const LAATST_GECONTROLEERD_ISO = '2026-11-02';
 
 const MAANDEN: Record<string, string> = {
   januari: '01', februari: '02', maart: '03', april: '04', mei: '05', juni: '06',

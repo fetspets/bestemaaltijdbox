@@ -65,8 +65,8 @@ const TEKST: Record<'nl' | 'fr', Tekst> = {
     ],
     greenpanKop: 'Krijg je nog een gratis GreenPan-pan bij HelloFresh?',
     greenpan: [
-      'Nee. De actie waarbij nieuwe klanten een gratis GreenPan-pan kregen, liep in mei en juni 2026 en is afgelopen. Bij onze laatste controle (13 oktober 2026) zagen we geen nieuwe actie met een pan.',
-      'Wat er nu wel is: tot €70 korting op je eerste 3 boxen (€45 + €15 + €10), automatisch via onze link. Komt er een nieuwe pan-actie, dan zetten we die hier.',
+      'Nee. De actie waarbij nieuwe klanten een gratis GreenPan-pan kregen, liep in mei en juni 2026 en is afgelopen. Bij onze laatste controle (2 november 2026) zagen we geen nieuwe actie met een pan.',
+      'Wat er nu wel is: tot €70 korting op je eerste 3 boxen (€45 + €15 + €10), automatisch via onze link. Wie zich tot en met 30 november 2026 inschrijft, krijgt er bovendien een gratis Peugeot-molenset bij. Komt er een nieuwe pan-actie, dan zetten we die hier.',
     ],
     waaromKop: 'Waarom HelloFresh?',
     waarom: 'HelloFresh is de grootste maaltijdbox ter wereld en ook in België de populairste keuze. Met meer dan 80 recepten per week, levering in heel België en een score van 8,4/10 op deze site biedt het de beste balans tussen prijs, variatie en gemak. Bereidingstijd gemiddeld 25–35 minuten.',
@@ -105,8 +105,8 @@ const TEKST: Record<'nl' | 'fr', Tekst> = {
     ],
     greenpanKop: 'Reçoit-on encore une poêle GreenPan offerte chez HelloFresh ?',
     greenpan: [
-      "Non. L'action qui offrait une poêle GreenPan aux nouveaux clients a eu lieu en mai et juin 2026 et est terminée. Lors de notre dernier contrôle (13 octobre 2026), nous n'avons vu aucune nouvelle action avec une poêle.",
-      "Ce qui existe aujourd'hui : jusqu'à 70 € de réduction sur vos 3 premières box (45 € + 15 € + 10 €), automatiquement via notre lien. Si une nouvelle action avec une poêle arrive, nous l'ajouterons ici.",
+      "Non. L'action qui offrait une poêle GreenPan aux nouveaux clients a eu lieu en mai et juin 2026 et est terminée. Lors de notre dernier contrôle (2 novembre 2026), nous n'avons vu aucune nouvelle action avec une poêle.",
+      "Ce qui existe aujourd'hui : jusqu'à 70 € de réduction sur vos 3 premières box (45 € + 15 € + 10 €), automatiquement via notre lien. En vous inscrivant jusqu'au 30 novembre 2026, vous recevez en plus un set de moulins Peugeot offert. Si une nouvelle action avec une poêle arrive, nous l'ajouterons ici.",
     ],
     waaromKop: 'Pourquoi HelloFresh ?',
     waarom: 'HelloFresh est le plus grand box repas au monde et aussi le choix le plus populaire en Belgique. Avec plus de 80 recettes par semaine, une livraison dans toute la Belgique (Wallonie comprise) et une note de 8,4/10 sur ce site, il offre le meilleur équilibre entre prix, variété et facilité. Temps de préparation : 25 à 35 minutes en moyenne.',
