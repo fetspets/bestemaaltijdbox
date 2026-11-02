@@ -307,7 +307,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     ],
     cons: [
       'Frais de livraison de 5,99 € par commande',
-      'Choix hebdomadaire limité',
+      'Dès 8,79 € la portion après la première box',
       "Aucune expérience de cuisine",
     ],
     besteVoor: 'manger sans cuisiner, partout en Belgique',

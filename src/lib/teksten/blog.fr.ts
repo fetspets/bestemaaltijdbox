@@ -878,7 +878,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
           'Foodbag : à partir de 8,43 €, ingrédients belges en filière courte, livre aussi en Wallonie',
           'Ekomenu : à partir de 6,42 €, entièrement bio — mais pas de livraison en Wallonie',
           'Foodprepper : à partir de 4,75 €, le prix le plus bas — Flandre et Bruxelles uniquement',
-          'Factor : à partir de 4,99 €, plats prêts, + 5,99 € de livraison, couvre tout le pays',
+          'Factor : dès 8,79 € (première box dès 4,99 €), plats prêts, + 5,99 € de livraison, couvre tout le pays',
         ],
       },
       { type: 'h2', text: 'Quand cuisiner soi-même revient moins cher' },
@@ -1186,7 +1186,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Combien coûte Factor réellement ?' },
       {
         type: 'p',
-        text: "Le prix d'entrée est de 4,99 € la portion, l'un des plus bas du marché. Mais comptez les 5,99 € de livraison par commande : ils s'ajoutent au prix par portion. Pour deux personnes et trois repas par semaine, vous arrivez à 35,93 € par semaine.",
+        text: "Votre première box coûte dès 4,99 € la portion, mais c'est un prix de bienvenue : ensuite, vous payez dès 8,79 € la portion (box de 14 repas). Comptez aussi les 5,99 € de livraison par commande. Pour deux personnes et trois repas par semaine, vous arrivez à au moins 58,73 € par semaine.",
       },
       { type: 'h2', text: 'À qui Factor convient-il ?' },
       {
@@ -1211,7 +1211,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       },
       {
         q: 'Combien coûte Factor par semaine ?',
-        a: "À partir de 4,99 € la portion, plus 5,99 € de livraison par commande. Pour deux personnes et trois repas, comptez 35,93 € par semaine au tarif standard.",
+        a: "Dès 4,99 € la portion dans votre première box, puis dès 8,79 €, plus 5,99 € de livraison par commande. Pour deux personnes et trois repas, comptez au moins 58,73 € par semaine au tarif standard.",
       },
     ],
   },
@@ -1250,7 +1250,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Combien ça coûte ?' },
       {
         type: 'p',
-        text: "Le prix par portion se situe dans la gamme premium propre au prêt-à-réchauffer. Factor démarre le plus bas à 4,99 € la portion mais facture 5,99 € de livraison. Crowd Cooks est plus cher par portion avec des frais de livraison plus faibles. Foodmaker livre gratuitement mais impose un minimum de 39,90 €.",
+        text: "Le prix par portion se situe dans la gamme premium propre au prêt-à-réchauffer. Factor démarre à 4,99 € la portion dans la première box, puis coûte dès 8,79 €, plus 5,99 € de livraison. Crowd Cooks est plus cher par portion avec des frais de livraison plus faibles. Foodmaker livre gratuitement mais impose un minimum de 39,90 €.",
       },
       { type: 'h2', text: 'À qui cela convient-il ?' },
       {

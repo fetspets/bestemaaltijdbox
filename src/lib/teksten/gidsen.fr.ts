@@ -16,7 +16,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
       "Quel box repas est réellement le moins cher ? Prix par semaine pour 7 fournisseurs, frais de livraison inclus — et lesquels livrent en Wallonie.",
     broodkruimel: 'Box repas le moins cher',
     introParagrafen: [
-      "Le prix par portion est une façon trompeuse de comparer les box repas. Factor semble le moins cher à 4,99 € la portion — mais avec 5,99 € de livraison par semaine, vous payez plus que chez Foodprepper (à partir de 4,75 €, livraison gratuite). Et Foodprepper, lui, ne livre pas en Wallonie. La vraie formule :",
+      "Le prix par portion est une façon trompeuse de comparer les box repas. Factor attire avec 4,99 € la portion dans la première box — mais ensuite vous payez 8,79 € la portion plus 5,99 € de livraison par semaine, bien plus que chez Foodprepper (à partir de 4,75 €, livraison gratuite). Et Foodprepper, lui, ne livre pas en Wallonie. La vraie formule :",
     ],
     formule: 'prix par semaine = (portions × prix/portion) + frais de livraison',
     slotIntro:
@@ -118,7 +118,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
     faq: [
       {
         q: 'Quel est le box repas le moins cher qui livre en Wallonie ?',
-        a: "HelloFresh, à 53,49 € par semaine pour deux personnes et trois repas, livraison de 5,99 € comprise, et avec une réduction de bienvenue allant jusqu'à 70 €. Factor affiche un prix par portion plus bas (4,99 €) mais facture 5,99 € de livraison, ce qui donne 35,93 € par semaine — moins cher, mais il s'agit de plats prêts et non d'un box à cuisiner.",
+        a: "HelloFresh, à 53,49 € par semaine pour deux personnes et trois repas, livraison de 5,99 € comprise, et avec une réduction de bienvenue allant jusqu'à 70 €. Factor ne coûte que 4,99 € la portion dans la première box ; ensuite, avec 8,79 € la portion et 5,99 € de livraison, vous payez au moins 58,73 € par semaine — et il s'agit de plats prêts, pas d'un box à cuisiner.",
       },
       {
         q: 'Foodprepper est-il vraiment le moins cher ?',

@@ -20,7 +20,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
       "Vous n'avez ni le temps ni l'envie de cuisiner et voulez manger tout de suite",
       'Vous voulez manger sainement avec des valeurs nutritionnelles fixes (High-Protein, Calorie-Conscious)',
       "Votre agenda est chargé et la facilité compte plus que le plaisir de cuisiner",
-      'Vous cherchez le prix par portion le plus bas (4,99 €), en comptant les 5,99 € de livraison',
+      'Vous voulez un prix d’entrée bas (première box dès 4,99 € la portion), puis 8,79 € plus 5,99 € de livraison',
     ],
     kiesKookboxAls: [
       'Vous aimez cuisiner et le plaisir de cuisiner compte pour vous',
@@ -30,7 +30,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     verdictTekst: "Il n'y a pas de gagnant absolu : tout dépend de votre envie de cuisiner. HelloFresh obtient une meilleure note globale et convient mieux à ceux qui aiment cuisiner, veulent de la variété et une bonne offre de bienvenue. Factor est le meilleur choix si vous ne voulez pas cuisiner : prêt en 2 à 3 minutes, avec des styles alimentaires pour les sportifs et ceux qui surveillent leurs calories. Les deux livrent dans toute la Belgique, Wallonie comprise. Vous aimez cuisiner ? HelloFresh. Vous voulez juste réchauffer ? Factor.",
     faq: [
       { q: 'Quelle est la différence entre Factor et HelloFresh ?', a: 'Factor est un service de plats préparés : les repas arrivent frais et cuisinés, vous les réchauffez en 2 à 3 minutes. HelloFresh est un box à cuisiner classique : vous recevez des ingrédients frais et une recette, et vous cuisinez en 25 à 40 minutes.' },
-      { q: 'Lequel est le moins cher : Factor ou HelloFresh ?', a: "Factor a le prix par portion le plus bas (dès 4,99 €), mais facture 5,99 € de livraison. HelloFresh coûte dès 7,92 € par portion, avec aussi 5,99 € de livraison par box (la première livraison est offerte) et jusqu'à 70 € de réduction de bienvenue. Calculez votre prix total : prix par portion × portions + livraison − réduction." },
+      { q: 'Lequel est le moins cher : Factor ou HelloFresh ?', a: "HelloFresh, après la première box. Factor coûte dès 4,99 € la portion dans votre première box, puis dès 8,79 €, plus 5,99 € de livraison. HelloFresh coûte dès 7,92 € par portion, avec aussi 5,99 € de livraison par box (la première livraison est offerte) et jusqu'à 70 € de réduction de bienvenue. Calculez votre prix total : prix par portion × portions + livraison − réduction." },
       { q: 'Lequel obtient la meilleure note dans votre test ?', a: "HelloFresh obtient 8,4/10 et se classe n° 1 ; Factor obtient 7,8/10 et se classe n° 5. Ce sont toutefois deux catégories différentes, box à cuisiner et plats préparés : comparez surtout sur ce qui compte pour vous, cuisiner ou réchauffer." },
       { q: 'Puis-je résilier les deux quand je veux ?', a: 'Oui. Factor et HelloFresh fonctionnent tous deux avec un abonnement flexible que vous pouvez modifier, suspendre ou résilier chaque semaine.' },
       { q: 'Livrent-ils en Wallonie ?', a: 'Oui. Factor et HelloFresh livrent tous les deux dans toute la Belgique, Wallonie comprise.' },
@@ -49,7 +49,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     kiesFactorAls: [
       "Vous n'avez ni le temps ni l'envie de cuisiner et voulez manger tout de suite",
       'Vous voulez manger sainement avec des valeurs nutritionnelles fixes (High-Protein, Calorie-Conscious)',
-      'Vous cherchez le prix par portion le plus bas (4,99 € contre 8,43 €)',
+      'Vous voulez un prix d’entrée bas (première box dès 4,99 € la portion)',
       "La rapidité et la facilité comptent plus que l'origine locale",
     ],
     kiesKookboxAls: [
@@ -61,7 +61,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     verdictTekst: "Il n'y a pas de gagnant absolu : tout dépend de votre envie de cuisiner. Foodbag obtient une meilleure note globale et convient mieux à ceux qui veulent cuisiner frais et belge, avec un excellent goût et des ingrédients locaux. Factor est le meilleur choix si vous ne voulez pas cuisiner : prêt en quelques minutes, avec des styles alimentaires et un prix par portion plus bas. Les deux livrent en Wallonie. Vous aimez cuisiner et le local ? Foodbag. Vous voulez juste réchauffer ? Factor.",
     faq: [
       { q: 'Quelle est la différence entre Factor et Foodbag ?', a: "Factor, ce sont des plats préparés à réchauffer en 2 à 3 minutes. Foodbag est un box à cuisiner classique avec des ingrédients frais et locaux belges, que vous préparez en 25 à 35 minutes. Foodbag appartient au groupe Colruyt, Factor au groupe HelloFresh." },
-      { q: 'Lequel est le moins cher : Factor ou Foodbag ?', a: "Factor a un prix par portion bien plus bas (dès 4,99 € contre 8,43 € chez Foodbag), mais facture 5,99 € de livraison ; Foodbag livre gratuitement. Foodbag offre 60 € de réduction aux nouveaux clients, appliquée automatiquement via notre lien. Calculez votre prix total, livraison comprise." },
+      { q: 'Lequel est le moins cher : Factor ou Foodbag ?', a: "Par portion, ils sont proches : Factor dès 8,79 € (première box dès 4,99 €), Foodbag dès 8,43 €. Factor facture 5,99 € de livraison ; Foodbag livre gratuitement. Foodbag offre 60 € de réduction aux nouveaux clients, appliquée automatiquement via notre lien. Calculez votre prix total, livraison comprise." },
       { q: 'Lequel a le meilleur goût ?', a: "Foodbag obtient une meilleure note de goût dans notre test (8,6 contre 7,8), grâce à des ingrédients frais et locaux que vous cuisinez vous-même. Factor est étonnamment bon pour un plat à réchauffer, mais n'atteint pas la fraîcheur d'un repas cuisiné." },
       { q: 'Puis-je les utiliser sans abonnement ?', a: 'Chez Foodbag, vous pouvez commander ponctuellement, sans abonnement obligatoire. Factor fonctionne avec un abonnement flexible que vous pouvez modifier, suspendre ou résilier chaque semaine.' },
     ],
@@ -91,7 +91,7 @@ export const factorVergelijkingenFr: Record<string, Partial<FactorVergelijking>>
     verdictTekst: "Il n'y a pas de gagnant absolu : tout dépend de votre envie de cuisiner, et de l'endroit où vous habitez. Les notes sont proches. Marley Spoon convient mieux à ceux qui aiment cuisiner et recherchent le meilleur goût et de la profondeur culinaire, mais il ne livre qu'en Flandre et à Bruxelles. Factor est le meilleur choix si vous ne voulez pas cuisiner, si vous habitez en Wallonie ou si vous voulez manger sainement avec des styles alimentaires. Vous aimez cuisiner et habitez à Bruxelles ? Marley Spoon. Vous voulez réchauffer ou habitez en Wallonie ? Factor.",
     faq: [
       { q: 'Quelle est la différence entre Factor et Marley Spoon ?', a: "Factor, ce sont des plats préparés à réchauffer en 2 à 3 minutes. Marley Spoon est un box à cuisiner avec des recettes de chef élaborées, qui demandent 45 à 60 minutes de préparation. Factor livre dans toute la Belgique ; Marley Spoon uniquement en Flandre et à Bruxelles." },
-      { q: 'Lequel est le moins cher : Factor ou Marley Spoon ?', a: "Factor a le prix par portion le plus bas (dès 4,99 € contre 7,79 €). Factor facture 5,99 € de livraison, Marley Spoon 6,99 €. Marley Spoon propose une solide offre de bienvenue aux nouveaux clients (jusqu'à 50 % sur les premières box). Calculez votre prix total, livraison comprise." },
+      { q: 'Lequel est le moins cher : Factor ou Marley Spoon ?', a: "Marley Spoon, après la première box : Factor coûte dès 8,79 € la portion (première box dès 4,99 €), Marley Spoon dès 7,79 €. Factor facture 5,99 € de livraison, Marley Spoon 6,99 €. Marley Spoon propose une solide offre de bienvenue aux nouveaux clients (jusqu'à 50 % sur les premières box). Calculez votre prix total, livraison comprise." },
       { q: 'Marley Spoon livre-t-il en Wallonie ?', a: "Non. Marley Spoon livre uniquement en Flandre et dans la Région de Bruxelles-Capitale. Factor livre en revanche dans toute la Belgique, Wallonie comprise : un avantage pratique si vous y habitez." },
       { q: 'Lequel a le meilleur goût ?', a: "Marley Spoon obtient la meilleure note de goût de notre test (8,6), avec des recettes de chef et une attention à la technique. Factor est bon pour un plat à réchauffer, mais mise sur la facilité plutôt que sur la profondeur culinaire." },
     ],
