@@ -162,7 +162,7 @@
     "tipTekst": "Les offres de bienvenue sont réservées aux nouveaux clients et disponibles pour une durée limitée. Vérifiez aussi que le fournisseur livre bien chez vous.",
     "bekijkDeal": "Voir l'offre {partner}",
     "gesponsordeUitleg": "Placement sponsorisé. Nos notes et notre classement en sont indépendants et ne sont jamais rémunérés.",
-    "quizIntro": "Vous hésitez ? Répondez à cinq questions et découvrez quel box repas vous convient — en tenant compte de votre région de livraison.",
+    "quizIntro": "Vous hésitez ? Répondez à sept questions et découvrez quel box repas vous convient — en tenant compte de votre région de livraison.",
     "tabelIntro": "Aperçu des prix, de la livraison, de la flexibilité et plus — mis à jour en {datum}.",
     "tabelLegenda": "= vous choisissez votre jour de livraison · <b>Créneau horaire</b> = vous choisissez l’heure de livraison · ✓ = possible · ✗ = impossible · 🇧🇪 = ingrédients belges · Les prix sont indicatifs et varient selon la formule et les promotions.",
     "uitleg1": "Un box repas est un service de livraison hebdomadaire qui vous fournit les ingrédients et les recettes pour cuisiner chez vous. Vous choisissez le nombre de portions et de repas par semaine, et tout arrive frais à votre porte.",
@@ -275,7 +275,11 @@
     "v6": "Voulez-vous payer en titres-repas ?",
     "v6o0": "Oui, en titres-repas",
     "v6o1": "Non",
-    "v6o2": "Peu importe"
+    "v6o2": "Peu importe",
+    "v7": "Voulez-vous un abonnement ?",
+    "v7o0": "Plutôt sans abonnement",
+    "v7o1": "Un abonnement me convient",
+    "v7o2": "Peu importe"
   },
   "homeFaq2": {
     "v0": "Quels box repas livrent en Wallonie ?",

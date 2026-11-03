@@ -6,12 +6,15 @@ import Link from '@/components/TaalLink';
 
 type Sleutel = 'hf' | 'fb' | 'ms' | 'ek' | 'fp' | 'cc' | 'fa';
 type Scores = Record<Sleutel, number>;
-type Optie = { labelSleutel: string; scores: Partial<Scores>; wallonie?: boolean; cheques?: boolean };
+type Optie = { labelSleutel: string; scores: Partial<Scores>; wallonie?: boolean; cheques?: boolean; zonderAbo?: boolean };
 
 const leeg = (): Scores => ({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0, fa: 0 });
 
 /** Aanvaarden maaltijdcheques (zie het artikel maaltijdbox-maaltijdcheques-belgie). */
 const metCheques: Sleutel[] = ['fb', 'fp', 'hf'];
+
+/** Kunnen zonder abonnement (losBestellenMogelijk in aanbieders.ts). */
+const zonderAbonnement: Sleutel[] = ['fb', 'fp'];
 
 /** Hoe je met maaltijdcheques betaalt, getoond als de bezoeker ze wil gebruiken. */
 const chequesUitleg: Partial<Record<Sleutel, { nl: string; fr: string }>> = {
@@ -53,6 +56,14 @@ const vragen: Array<{ vraagSleutel: string; opties: Optie[] }> = [
       { labelSleutel: 'v6o0', scores: { fb: 1, fp: 1 }, cheques: true },
       { labelSleutel: 'v6o1', scores: {} },
       { labelSleutel: 'v6o2', scores: {} },
+    ],
+  },
+  {
+    vraagSleutel: 'v7',
+    opties: [
+      { labelSleutel: 'v7o0', scores: { fb: 1, fp: 1 }, zonderAbo: true },
+      { labelSleutel: 'v7o1', scores: {} },
+      { labelSleutel: 'v7o2', scores: {} },
     ],
   },
   {
@@ -204,9 +215,14 @@ const resultatenFr: Record<string, { tagline: string; bullets: string[] }> = {
   },
 };
 
-function getWinnaar(scores: Scores, wallonie: boolean, cheques: boolean): Sleutel {
+type Filters = { wallonie: boolean; cheques: boolean; zonderAbo: boolean };
+
+function getWinnaar(scores: Scores, f: Filters): Sleutel {
   const kandidaten = voorrang.filter(
-    k => !(wallonie && nietInWallonie.includes(k)) && !(cheques && !metCheques.includes(k))
+    k =>
+      !(f.wallonie && nietInWallonie.includes(k)) &&
+      !(f.cheques && !metCheques.includes(k)) &&
+      !(f.zonderAbo && !zonderAbonnement.includes(k))
   );
   // Stabiele sortering: bij gelijke score blijft de volgorde van `voorrang`.
   return [...kandidaten].sort((a, b) => scores[b] - scores[a])[0];
@@ -224,6 +240,7 @@ export default function Quiz() {
   const [scores, setScores] = useState<Scores>(leeg);
   const [wallonie, setWallonie] = useState(false);
   const [cheques, setCheques] = useState(false);
+  const [zonderAbo, setZonderAbo] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [done, setDone] = useState(false);
 
@@ -235,17 +252,20 @@ export default function Quiz() {
     for (const k of Object.keys(opt.scores) as Sleutel[]) next[k] += opt.scores[k] ?? 0;
     const inWallonie = wallonie || !!opt.wallonie;
     const metMaaltijdcheques = cheques || !!opt.cheques;
+    const geenAbo = zonderAbo || !!opt.zonderAbo;
     setScores(next);
+    setZonderAbo(geenAbo);
     setWallonie(inWallonie);
     setCheques(metMaaltijdcheques);
     if (step === 0) meet('quiz_start', { taal: fr ? 'fr' : 'nl' });
     if (step + 1 >= totalSteps) {
-      const w = getWinnaar(next, inWallonie, metMaaltijdcheques);
+      const w = getWinnaar(next, { wallonie: inWallonie, cheques: metMaaltijdcheques, zonderAbo: geenAbo });
       meet('quiz_resultaat', {
         aanbieder: resultaten[w].slug,
         taal: fr ? 'fr' : 'nl',
         wallonie: inWallonie ? 'ja' : 'nee',
         maaltijdcheques: metMaaltijdcheques ? 'ja' : 'nee',
+        zonder_abonnement: geenAbo ? 'ja' : 'nee',
       });
       setDone(true);
     } else {
@@ -258,11 +278,12 @@ export default function Quiz() {
     setScores(leeg());
     setWallonie(false);
     setCheques(false);
+    setZonderAbo(false);
     setDone(false);
     setHoveredIdx(null);
   }
 
-  const winnaarKey = done ? getWinnaar(scores, wallonie, cheques) : '';
+  const winnaarKey = done ? getWinnaar(scores, { wallonie, cheques, zonderAbo }) : '';
   const winnaar = done ? resultaten[winnaarKey] : null;
 
   return (

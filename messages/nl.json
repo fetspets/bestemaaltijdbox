@@ -162,7 +162,7 @@
     "tipTekst": "Welkomstdeals zijn alleen geldig voor nieuwe klanten en zijn beschikbaar voor beperkte tijd.",
     "bekijkDeal": "Bekijk de {partner}-deal",
     "gesponsordeUitleg": "Gesponsorde plaatsing. Onze scores en rangschikking staan hier los van en worden niet betaald.",
-    "quizIntro": "Twijfel je welke maaltijdbox het beste bij jou past? Doe onze korte test van 5 vragen en ontdek jouw persoonlijke aanbeveling.",
+    "quizIntro": "Twijfel je welke maaltijdbox het beste bij jou past? Doe onze korte test van 7 vragen en ontdek jouw persoonlijke aanbeveling.",
     "tabelIntro": "Overzicht van prijzen, bezorging, flexibiliteit en meer — bijgewerkt {datum}.",
     "tabelLegenda": "= je kan zelf je bezorgdag selecteren · <b>Tijdslot kiezen</b> = je kan zelf een tijdstip/leverslot kiezen · ✓ = mogelijk · ✗ = niet mogelijk · 🇧🇪 = Belgische ingrediënten · Prijzen zijn richtprijzen en kunnen variëren per formule en promotie.",
     "uitleg1": "Een maaltijdbox is een wekelijkse bezorgservice waarbij je alle ingrediënten en recepten krijgt om thuis te koken. Je kiest hoeveel porties en maaltijden je wil per week, en alles wordt vers geleverd aan je deur.",
@@ -275,7 +275,11 @@
     "v6": "Wil je betalen met maaltijdcheques?",
     "v6o0": "Ja, met maaltijdcheques",
     "v6o1": "Nee",
-    "v6o2": "Maakt niet uit"
+    "v6o2": "Maakt niet uit",
+    "v7": "Wil je een abonnement?",
+    "v7o0": "Liever zonder abonnement",
+    "v7o1": "Een abonnement is oké",
+    "v7o2": "Maakt niet uit"
   },
   "homeFaq2": {
     "v0": "Wat is de goedkoopste maaltijdbox in België?",
