@@ -4,53 +4,75 @@ import { useLocale, useTranslations } from 'next-intl';
 import { useState } from 'react';
 import Link from '@/components/TaalLink';
 
-type Scores = { hf: number; fb: number; ms: number; ek: number; fp: number; cc: number };
+type Sleutel = 'hf' | 'fb' | 'ms' | 'ek' | 'fp' | 'cc' | 'fa';
+type Scores = Record<Sleutel, number>;
+type Optie = { labelSleutel: string; scores: Partial<Scores>; wallonie?: boolean };
 
-const vragen = [
+const leeg = (): Scores => ({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0, fa: 0 });
+
+/** Leveren niet in Wallonië (levergebied 'vlaanderen-brussel' in aanbieders.ts). */
+const nietInWallonie: Sleutel[] = ['fp', 'ms', 'ek'];
+
+/**
+ * Bij een gelijke stand wint de eerste in deze lijst: eerst de boxen met een
+ * welkomstkorting via onze link, Ekomenu (nog geen affiliate) als laatste.
+ */
+const voorrang: Sleutel[] = ['hf', 'fa', 'fb', 'fp', 'cc', 'ms', 'ek'];
+
+const vragen: Array<{ vraagSleutel: string; opties: Optie[] }> = [
+  {
+    vraagSleutel: 'v5',
+    opties: [
+      { labelSleutel: 'v5o0', scores: {} },
+      { labelSleutel: 'v5o1', scores: {} },
+      { labelSleutel: 'v5o2', scores: {}, wallonie: true },
+    ],
+  },
   {
     vraagSleutel: 'v0',
     opties: [
-      { labelSleutel: 'v0o0', scores: { hf: 2, fb: 0, ms: 0, ek: 1, fp: 1, cc: 2 } },
-      { labelSleutel: 'v0o1', scores: { hf: 2, fb: 1, ms: 2, ek: 2, fp: 1, cc: 2 } },
-      { labelSleutel: 'v0o2', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 0, cc: 1 } },
-      { labelSleutel: 'v0o3', scores: { hf: 1, fb: 3, ms: 0, ek: 0, fp: 0, cc: 0 } },
+      { labelSleutel: 'v0o0', scores: { hf: 2, fb: 0, ms: 0, ek: 1, fp: 2, cc: 2, fa: 1 } },
+      { labelSleutel: 'v0o1', scores: { hf: 2, fb: 1, ms: 2, ek: 2, fp: 2, cc: 2, fa: 1 } },
+      { labelSleutel: 'v0o2', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 0, cc: 1, fa: 1 } },
+      { labelSleutel: 'v0o3', scores: { hf: 1, fb: 3, ms: 0, ek: 0, fp: 0, cc: 0, fa: 0 } },
     ],
   },
   {
     vraagSleutel: 'v1',
     opties: [
-      { labelSleutel: 'v1o0', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1, cc: 1 } },
-      { labelSleutel: 'v1o1', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1, cc: 1 } },
-      { labelSleutel: 'v1o2', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0, cc: 1 } },
-      { labelSleutel: 'v1o3', scores: { hf: 1, fb: 0, ms: 1, ek: 0, fp: 2, cc: 2 } },
+      { labelSleutel: 'v1o0', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1, cc: 1, fa: 1 } },
+      { labelSleutel: 'v1o1', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1, cc: 1, fa: 1 } },
+      { labelSleutel: 'v1o2', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0, cc: 1, fa: 1 } },
+      { labelSleutel: 'v1o3', scores: { hf: 1, fb: 1, ms: 1, ek: 0, fp: 3, cc: 2, fa: 0 } },
     ],
   },
   {
     vraagSleutel: 'v2',
     opties: [
-      { labelSleutel: 'v2o0', scores: { hf: 3, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 } },
-      { labelSleutel: 'v2o1', scores: { hf: 2, fb: 1, ms: 1, ek: 0, fp: 3, cc: 3 } },
-      { labelSleutel: 'v2o2', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
-      { labelSleutel: 'v2o3', scores: { hf: 0, fb: 1, ms: 3, ek: 0, fp: 0, cc: 0 } },
-      { labelSleutel: 'v2o4', scores: { hf: 0, fb: 3, ms: 0, ek: 0, fp: 1, cc: 2 } },
+      { labelSleutel: 'v2o0', scores: { hf: 3, fb: 0, ms: 0, ek: 0, fp: 2, cc: 0, fa: 0 } },
+      { labelSleutel: 'v2o1', scores: { hf: 2, fb: 1, ms: 1, ek: 0, fp: 3, cc: 2, fa: 2 } },
+      { labelSleutel: 'v2o2', scores: { hf: 1, fb: 0, ms: 0, ek: 2, fp: 0, cc: 0, fa: 2 } },
+      { labelSleutel: 'v2o3', scores: { hf: 0, fb: 1, ms: 3, ek: 0, fp: 0, cc: 0, fa: 0 } },
+      { labelSleutel: 'v2o4', scores: { hf: 0, fb: 3, ms: 0, ek: 0, fp: 1, cc: 2, fa: 0 } },
     ],
   },
   {
     vraagSleutel: 'v3',
     opties: [
-      { labelSleutel: 'v3o0', scores: { hf: 2, fb: 0, ms: 0, ek: 0, fp: 3, cc: 3 } },
-      { labelSleutel: 'v3o1', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 0 } },
-      { labelSleutel: 'v3o2', scores: { hf: 0, fb: 1, ms: 2, ek: 1, fp: 0, cc: 0 } },
-      { labelSleutel: 'v3o3', scores: { hf: 0, fb: 0, ms: 3, ek: 0, fp: 0, cc: 0 } },
+      { labelSleutel: 'v3o4', scores: { hf: 0, fb: 0, ms: 0, ek: 0, fp: 1, cc: 3, fa: 4 } },
+      { labelSleutel: 'v3o0', scores: { hf: 2, fb: 0, ms: 0, ek: 0, fp: 3, cc: 2, fa: 2 } },
+      { labelSleutel: 'v3o1', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 0, fa: 0 } },
+      { labelSleutel: 'v3o2', scores: { hf: 0, fb: 1, ms: 2, ek: 1, fp: 0, cc: 0, fa: 0 } },
+      { labelSleutel: 'v3o3', scores: { hf: 0, fb: 0, ms: 3, ek: 0, fp: 0, cc: 0, fa: 0 } },
     ],
   },
   {
     vraagSleutel: 'v4',
     opties: [
-      { labelSleutel: 'v4o0', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 2 } },
-      { labelSleutel: 'v4o1', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
-      { labelSleutel: 'v4o2', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0 } },
-      { labelSleutel: 'v4o3', scores: { hf: 1, fb: 0, ms: 0, ek: 2, fp: 0, cc: 1 } },
+      { labelSleutel: 'v4o0', scores: { hf: 1, fb: 2, ms: 1, ek: 0, fp: 1, cc: 1, fa: 0 } },
+      { labelSleutel: 'v4o1', scores: { hf: 2, fb: 2, ms: 0, ek: 2, fp: 0, cc: 0, fa: 0 } },
+      { labelSleutel: 'v4o2', scores: { hf: 0, fb: 0, ms: 0, ek: 3, fp: 0, cc: 0, fa: 0 } },
+      { labelSleutel: 'v4o3', scores: { hf: 1, fb: 0, ms: 0, ek: 1, fp: 0, cc: 1, fa: 3 } },
     ],
   },
 ];
@@ -128,6 +150,17 @@ const resultaten: Record<string, {
     ],
     runnerUp: { slug: 'factor', naam: 'Factor', vergelijkSlug: 'crowd-cooks-vs-factor' },
   },
+  fa: {
+    naam: 'Factor',
+    slug: 'factor',
+    tagline: 'Kant-en-klare chef-maaltijden: opwarmen in een paar minuten, niet koken.',
+    bullets: [
+      '27 gerechten per week, ook eiwitrijk en caloriebewust',
+      'Levert in heel België, ook in Wallonië',
+      'Tot 40% korting op je eerste box via onze link',
+    ],
+    runnerUp: { slug: 'hellofresh', naam: 'HelloFresh', vergelijkSlug: 'factor-vs-hellofresh' },
+  },
 };
 
 /** Franse teksten voor de quizresultaten, met het levergebied waar dat telt. */
@@ -156,36 +189,45 @@ const resultatenFr: Record<string, { tagline: string; bullets: string[] }> = {
     tagline: 'Des plats belges prêts à manger : préparés frais, il suffit de réchauffer.',
     bullets: ['Rien à cuisiner, prêt en quelques minutes', 'Livraison le dimanche ou le lundi (4,90 €)', 'Belge, avec de grandes portions de 450 g et plus'],
   },
+  fa: {
+    tagline: 'Des plats de chef prêts à manger : quelques minutes au micro-ondes, rien à cuisiner.',
+    bullets: ['27 plats par semaine, aussi riches en protéines ou pauvres en calories', 'Livre dans toute la Belgique, Wallonie comprise', 'Jusqu’à 40 % de réduction sur votre première box via notre lien'],
+  },
 };
 
-function getWinnaar(scores: Scores): string {
-  const entries = Object.entries(scores) as [string, number][];
-  entries.sort((a, b) => b[1] - a[1]);
-  return entries[0][0];
+function getWinnaar(scores: Scores, wallonie: boolean): Sleutel {
+  const kandidaten = voorrang.filter(k => !(wallonie && nietInWallonie.includes(k)));
+  // Stabiele sortering: bij gelijke score blijft de volgorde van `voorrang`.
+  return [...kandidaten].sort((a, b) => scores[b] - scores[a])[0];
+}
+
+function meet(event: string, params: Record<string, string | number>) {
+  if (typeof window === 'undefined') return;
+  (window as unknown as { gtag?: (...args: unknown[]) => void }).gtag?.('event', event, params);
 }
 
 export default function Quiz() {
   const tq = useTranslations('quiz');
   const fr = useLocale() === 'fr';
   const [step, setStep] = useState(0);
-  const [scores, setScores] = useState<Scores>({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 });
+  const [scores, setScores] = useState<Scores>(leeg);
+  const [wallonie, setWallonie] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [done, setDone] = useState(false);
 
   const totalSteps = vragen.length;
   const progress = done ? 100 : (step / totalSteps) * 100;
 
-  function handleAnswer(delta: Scores) {
-    const next: Scores = {
-      hf: scores.hf + delta.hf,
-      fb: scores.fb + delta.fb,
-      ms: scores.ms + delta.ms,
-      ek: scores.ek + delta.ek,
-      fp: scores.fp + delta.fp,
-      cc: scores.cc + delta.cc,
-    };
+  function handleAnswer(opt: Optie) {
+    const next = { ...scores };
+    for (const k of Object.keys(opt.scores) as Sleutel[]) next[k] += opt.scores[k] ?? 0;
+    const inWallonie = wallonie || !!opt.wallonie;
     setScores(next);
+    setWallonie(inWallonie);
+    if (step === 0) meet('quiz_start', { taal: fr ? 'fr' : 'nl' });
     if (step + 1 >= totalSteps) {
+      const w = getWinnaar(next, inWallonie);
+      meet('quiz_resultaat', { aanbieder: resultaten[w].slug, taal: fr ? 'fr' : 'nl', wallonie: inWallonie ? 'ja' : 'nee' });
       setDone(true);
     } else {
       setStep(step + 1);
@@ -194,12 +236,13 @@ export default function Quiz() {
 
   function reset() {
     setStep(0);
-    setScores({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0 });
+    setScores(leeg());
+    setWallonie(false);
     setDone(false);
     setHoveredIdx(null);
   }
 
-  const winnaarKey = done ? getWinnaar(scores) : '';
+  const winnaarKey = done ? getWinnaar(scores, wallonie) : '';
   const winnaar = done ? resultaten[winnaarKey] : null;
 
   return (
@@ -236,7 +279,7 @@ export default function Quiz() {
             {vragen[step].opties.map((opt, i) => (
               <button
                 key={i}
-                onClick={() => handleAnswer(opt.scores as Scores)}
+                onClick={() => handleAnswer(opt)}
                 onMouseEnter={() => setHoveredIdx(i)}
                 onMouseLeave={() => setHoveredIdx(null)}
                 style={{

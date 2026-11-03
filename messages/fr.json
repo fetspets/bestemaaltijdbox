@@ -266,7 +266,12 @@
     "v4o0": "Aucune préférence particulière",
     "v4o1": "Végétarien",
     "v4o2": "Bio",
-    "v4o3": "Sain et pauvre en calories"
+    "v4o3": "Sain et pauvre en calories",
+    "v5": "Où habitez-vous ?",
+    "v5o0": "En Flandre",
+    "v5o1": "À Bruxelles",
+    "v5o2": "En Wallonie",
+    "v3o4": "🍽️ Je ne veux pas cuisiner, juste réchauffer"
   },
   "homeFaq2": {
     "v0": "Quels box repas livrent en Wallonie ?",
