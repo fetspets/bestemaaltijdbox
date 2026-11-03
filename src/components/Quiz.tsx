@@ -6,9 +6,19 @@ import Link from '@/components/TaalLink';
 
 type Sleutel = 'hf' | 'fb' | 'ms' | 'ek' | 'fp' | 'cc' | 'fa';
 type Scores = Record<Sleutel, number>;
-type Optie = { labelSleutel: string; scores: Partial<Scores>; wallonie?: boolean };
+type Optie = { labelSleutel: string; scores: Partial<Scores>; wallonie?: boolean; cheques?: boolean };
 
 const leeg = (): Scores => ({ hf: 0, fb: 0, ms: 0, ek: 0, fp: 0, cc: 0, fa: 0 });
+
+/** Aanvaarden maaltijdcheques (zie het artikel maaltijdbox-maaltijdcheques-belgie). */
+const metCheques: Sleutel[] = ['fb', 'fp', 'hf'];
+
+/** Hoe je met maaltijdcheques betaalt, getoond als de bezoeker ze wil gebruiken. */
+const chequesUitleg: Partial<Record<Sleutel, { nl: string; fr: string }>> = {
+  fb: { nl: 'Betaal met Monizze, Pluxee of Edenred, bij een eenmalige bestelling', fr: 'Payez avec Monizze, Pluxee ou Edenred, pour une commande ponctuelle' },
+  fp: { nl: 'Betaal met Monizze, Pluxee of Edenred, bij een eenmalige bestelling', fr: 'Payez avec Monizze, Pluxee ou Edenred, pour une commande ponctuelle' },
+  hf: { nl: 'Betaal met maaltijdcheques via de Monizze Virtual Visa of Edenred', fr: 'Payez en titres-repas via la Monizze Virtual Visa ou Edenred' },
+};
 
 /** Leveren niet in Wallonië (levergebied 'vlaanderen-brussel' in aanbieders.ts). */
 const nietInWallonie: Sleutel[] = ['fp', 'ms', 'ek'];
@@ -38,12 +48,11 @@ const vragen: Array<{ vraagSleutel: string; opties: Optie[] }> = [
     ],
   },
   {
-    vraagSleutel: 'v1',
+    vraagSleutel: 'v6',
     opties: [
-      { labelSleutel: 'v1o0', scores: { hf: 1, fb: 0, ms: 2, ek: 1, fp: 1, cc: 1, fa: 1 } },
-      { labelSleutel: 'v1o1', scores: { hf: 2, fb: 2, ms: 0, ek: 0, fp: 1, cc: 1, fa: 1 } },
-      { labelSleutel: 'v1o2', scores: { hf: 0, fb: 2, ms: 0, ek: 2, fp: 0, cc: 1, fa: 1 } },
-      { labelSleutel: 'v1o3', scores: { hf: 1, fb: 1, ms: 1, ek: 0, fp: 3, cc: 2, fa: 0 } },
+      { labelSleutel: 'v6o0', scores: { fb: 1, fp: 1 }, cheques: true },
+      { labelSleutel: 'v6o1', scores: {} },
+      { labelSleutel: 'v6o2', scores: {} },
     ],
   },
   {
@@ -195,8 +204,10 @@ const resultatenFr: Record<string, { tagline: string; bullets: string[] }> = {
   },
 };
 
-function getWinnaar(scores: Scores, wallonie: boolean): Sleutel {
-  const kandidaten = voorrang.filter(k => !(wallonie && nietInWallonie.includes(k)));
+function getWinnaar(scores: Scores, wallonie: boolean, cheques: boolean): Sleutel {
+  const kandidaten = voorrang.filter(
+    k => !(wallonie && nietInWallonie.includes(k)) && !(cheques && !metCheques.includes(k))
+  );
   // Stabiele sortering: bij gelijke score blijft de volgorde van `voorrang`.
   return [...kandidaten].sort((a, b) => scores[b] - scores[a])[0];
 }
@@ -212,6 +223,7 @@ export default function Quiz() {
   const [step, setStep] = useState(0);
   const [scores, setScores] = useState<Scores>(leeg);
   const [wallonie, setWallonie] = useState(false);
+  const [cheques, setCheques] = useState(false);
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null);
   const [done, setDone] = useState(false);
 
@@ -222,12 +234,19 @@ export default function Quiz() {
     const next = { ...scores };
     for (const k of Object.keys(opt.scores) as Sleutel[]) next[k] += opt.scores[k] ?? 0;
     const inWallonie = wallonie || !!opt.wallonie;
+    const metMaaltijdcheques = cheques || !!opt.cheques;
     setScores(next);
     setWallonie(inWallonie);
+    setCheques(metMaaltijdcheques);
     if (step === 0) meet('quiz_start', { taal: fr ? 'fr' : 'nl' });
     if (step + 1 >= totalSteps) {
-      const w = getWinnaar(next, inWallonie);
-      meet('quiz_resultaat', { aanbieder: resultaten[w].slug, taal: fr ? 'fr' : 'nl', wallonie: inWallonie ? 'ja' : 'nee' });
+      const w = getWinnaar(next, inWallonie, metMaaltijdcheques);
+      meet('quiz_resultaat', {
+        aanbieder: resultaten[w].slug,
+        taal: fr ? 'fr' : 'nl',
+        wallonie: inWallonie ? 'ja' : 'nee',
+        maaltijdcheques: metMaaltijdcheques ? 'ja' : 'nee',
+      });
       setDone(true);
     } else {
       setStep(step + 1);
@@ -238,11 +257,12 @@ export default function Quiz() {
     setStep(0);
     setScores(leeg());
     setWallonie(false);
+    setCheques(false);
     setDone(false);
     setHoveredIdx(null);
   }
 
-  const winnaarKey = done ? getWinnaar(scores, wallonie) : '';
+  const winnaarKey = done ? getWinnaar(scores, wallonie, cheques) : '';
   const winnaar = done ? resultaten[winnaarKey] : null;
 
   return (
@@ -314,7 +334,10 @@ export default function Quiz() {
             {fr ? resultatenFr[winnaarKey]?.tagline ?? winnaar.tagline : winnaar.tagline}
           </p>
           <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 6 }}>
-            {(fr ? resultatenFr[winnaarKey]?.bullets ?? winnaar.bullets : winnaar.bullets).map((b, i) => (
+            {[
+              ...(fr ? resultatenFr[winnaarKey]?.bullets ?? winnaar.bullets : winnaar.bullets),
+              ...(cheques && chequesUitleg[winnaarKey as Sleutel] ? [chequesUitleg[winnaarKey as Sleutel]![fr ? 'fr' : 'nl']] : []),
+            ].map((b, i) => (
               <li key={i} style={{ fontSize: 13, color: 'var(--ink)', display: 'flex', gap: 8, alignItems: 'flex-start' }}>
                 <span style={{ color: 'var(--mint)', fontWeight: 700, flexShrink: 0 }}>✔</span>
                 {b}

@@ -271,7 +271,11 @@
     "v5o0": "Vlaanderen",
     "v5o1": "Brussel",
     "v5o2": "Wallonië",
-    "v3o4": "🍽️ Ik wil helemaal niet koken, enkel opwarmen"
+    "v3o4": "🍽️ Ik wil helemaal niet koken, enkel opwarmen",
+    "v6": "Wil je betalen met maaltijdcheques?",
+    "v6o0": "Ja, met maaltijdcheques",
+    "v6o1": "Nee",
+    "v6o2": "Maakt niet uit"
   },
   "homeFaq2": {
     "v0": "Wat is de goedkoopste maaltijdbox in België?",

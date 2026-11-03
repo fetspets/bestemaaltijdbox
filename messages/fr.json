@@ -271,7 +271,11 @@
     "v5o0": "En Flandre",
     "v5o1": "À Bruxelles",
     "v5o2": "En Wallonie",
-    "v3o4": "🍽️ Je ne veux pas cuisiner, juste réchauffer"
+    "v3o4": "🍽️ Je ne veux pas cuisiner, juste réchauffer",
+    "v6": "Voulez-vous payer en titres-repas ?",
+    "v6o0": "Oui, en titres-repas",
+    "v6o1": "Non",
+    "v6o2": "Peu importe"
   },
   "homeFaq2": {
     "v0": "Quels box repas livrent en Wallonie ?",
