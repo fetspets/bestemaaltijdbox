@@ -221,7 +221,7 @@ export default async function HelloFreshKortingscode({ params }: { params: Promi
         ))}
       </div>
 
-      <HelloFreshGidsen taal={taal} />
+      <HelloFreshGidsen taal={taal} metKortingscode={false} />
 
       {/* Over HelloFresh */}
       <div style={{ marginBottom: 32 }}>

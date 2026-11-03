@@ -353,6 +353,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { q: 'Et si je ne choisis pas de recettes ?', a: 'HelloFresh compose alors un menu pour vous. Pour l’éviter, choisissez toujours avant la date limite, 3 à 6 jours avant la livraison.' },
     ],
     relatedLinks: [
+      { label: 'Code promo HelloFresh : jusqu’à 70 € de réduction', href: '/kortingscode/hellofresh' },
       { label: 'Comment fonctionne HelloFresh ? Étape par étape', href: '/blog/hoe-werkt-hellofresh' },
       { label: 'Cuisiner végétarien avec un box repas', href: '/blog/vegetarisch-koken-maaltijdbox' },
       { label: 'Notre avis complet sur HelloFresh', href: '/aanbieder/hellofresh' },
@@ -409,6 +410,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { q: 'La pause coûte-t-elle quelque chose ?', a: 'Non. Une semaine en pause n’est ni livrée ni facturée.' },
     ],
     relatedLinks: [
+      { label: 'Code promo HelloFresh : jusqu’à 70 € de réduction', href: '/kortingscode/hellofresh' },
       { label: 'Résilier HelloFresh : la marche à suivre', href: '/blog/hellofresh-opzeggen' },
       { label: 'Comment fonctionne HelloFresh ? Étape par étape', href: '/blog/hoe-werkt-hellofresh' },
       { label: 'Box repas sans abonnement', href: '/blog/maaltijdbox-zonder-abonnement-belgie' },
@@ -549,6 +551,9 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { q: 'Factor appartient-il à HelloFresh ?', a: "Oui, Factor fait partie du même groupe que HelloFresh. La grande différence : Factor livre des plats prêts à réchauffer, HelloFresh des ingrédients à cuisiner." },
       { q: 'Puis-je mettre HelloFresh en pause plutôt que résilier ?', a: "Oui. Vous pouvez sauter des livraisons ou mettre en pause chaque semaine depuis votre compte, avant la date limite de votre prochaine livraison." },
     ],
+    relatedLinks: [
+      { label: 'Code promo HelloFresh : jusqu’à 70 € de réduction', href: '/kortingscode/hellofresh' },
+    ],
   },
   'is-hellofresh-het-waard': {
     titel: 'HelloFresh vaut-il le coup ? Ce que vous payez vraiment par rapport au supermarché',
@@ -609,6 +614,9 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { q: 'HelloFresh est-il sain ?', a: "Cela dépend des recettes que vous choisissez. HelloFresh indique que plus de la moitié de son menu se compose de recettes équilibrées, avec les valeurs nutritionnelles de chaque recette." },
       { q: 'HelloFresh est-il belge ?', a: "Non, HelloFresh est une entreprise allemande basée à Berlin. Pour un box belge, regardez Foodbag ou Foodprepper." },
       { q: 'HelloFresh est-il bio ?', a: "Non, HelloFresh n'est pas un box bio. Pour du 100 % bio, Ekomenu est l'option de notre comparatif (Flandre et Bruxelles uniquement)." },
+    ],
+    relatedLinks: [
+      { label: 'Code promo HelloFresh : jusqu’à 70 € de réduction', href: '/kortingscode/hellofresh' },
     ],
   },
   'maaltijdbox-supermarkt-belgie': {
@@ -681,6 +689,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { q: 'Le Simply You Box de Carrefour existe-t-il encore ?', a: "Non, le Simply You Box de Carrefour a été arrêté. Carrefour vend désormais des kits repas pour un plat." },
     ],
     relatedLinks: [
+      { label: 'Code promo HelloFresh : jusqu’à 70 € de réduction', href: '/kortingscode/hellofresh' },
       { label: 'Box repas Delhaize : que contient-il ?', href: '/blog/delhaize-maaltijdbox' },
       { label: 'Box repas Colruyt : Freshbox, Foodbag ou Foodprepper ?', href: '/blog/colruyt-maaltijdbox' },
     ],
@@ -881,6 +890,9 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         q: 'Que peut-on acheter avec des titres-repas ?',
         a: "Uniquement de l'alimentation et des boissons non alcoolisées : au supermarché, chez le boulanger ou le boucher, au restaurant et chez les box repas comme Foodbag, HelloFresh et Foodprepper. L'alcool, le tabac et les produits non alimentaires (produits d'entretien, soins) sont exclus.",
       },
+    ],
+    relatedLinks: [
+      { label: 'Code promo HelloFresh : jusqu’à 70 € de réduction', href: '/kortingscode/hellofresh' },
     ],
   },
 

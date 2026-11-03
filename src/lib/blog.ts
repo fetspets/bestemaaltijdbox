@@ -406,6 +406,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedSlugs: ['hellofresh', 'marley-spoon', 'foodbag'],
     relatedLinks: [
+      { label: 'HelloFresh-kortingscode: tot €70 korting', href: '/kortingscode/hellofresh' },
       { label: 'Hoe werkt HelloFresh? Stap voor stap', href: '/blog/hoe-werkt-hellofresh' },
       { label: 'Vegetarisch koken met een maaltijdbox', href: '/blog/vegetarisch-koken-maaltijdbox' },
       { label: 'Onze volledige HelloFresh-review', href: '/aanbieder/hellofresh' },
@@ -467,6 +468,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedSlugs: ['hellofresh', 'foodbag', 'foodprepper'],
     relatedLinks: [
+      { label: 'HelloFresh-kortingscode: tot €70 korting', href: '/kortingscode/hellofresh' },
       { label: 'HelloFresh opzeggen: zo doe je het', href: '/blog/hellofresh-opzeggen' },
       { label: 'Hoe werkt HelloFresh? Stap voor stap', href: '/blog/hoe-werkt-hellofresh' },
       { label: 'Maaltijdbox zonder abonnement', href: '/blog/maaltijdbox-zonder-abonnement-belgie' },
@@ -610,6 +612,9 @@ export const blogPosts: BlogPost[] = [
       { q: 'Is Factor van HelloFresh?', a: 'Ja, Factor hoort bij dezelfde groep als HelloFresh. Het grote verschil: Factor levert kant-en-klare maaltijden die je enkel opwarmt, HelloFresh levert ingrediënten om zelf te koken.' },
       { q: 'Kan ik HelloFresh pauzeren in plaats van opzeggen?', a: 'Ja. Je kan wekelijks leveringen overslaan of pauzeren in je account, voor de deadline van je volgende levering.' },
     ],
+    relatedLinks: [
+      { label: 'HelloFresh-kortingscode: tot €70 korting', href: '/kortingscode/hellofresh' },
+    ],
     relatedSlugs: ['hellofresh-opzeggen', 'maaltijdbox-zonder-abonnement-belgie'],
   },
   {
@@ -674,6 +679,9 @@ export const blogPosts: BlogPost[] = [
       { q: 'Is HelloFresh gezond?', a: 'Dat hangt af van de recepten die je kiest. HelloFresh geeft zelf aan dat meer dan de helft van het menu uit "Fit & Bewust"-recepten bestaat, met per recept de voedingswaarden.' },
       { q: 'Is HelloFresh Belgisch?', a: 'Nee, HelloFresh is een Duits bedrijf uit Berlijn. Zoek je een Belgische maaltijdbox, kijk dan naar Foodbag of Foodprepper.' },
       { q: 'Is HelloFresh biologisch?', a: 'Nee, HelloFresh is geen biologische maaltijdbox. Wil je 100% bio, dan is Ekomenu de optie in onze vergelijking.' },
+    ],
+    relatedLinks: [
+      { label: 'HelloFresh-kortingscode: tot €70 korting', href: '/kortingscode/hellofresh' },
     ],
     relatedSlugs: ['hellofresh-alternatieven-belgie', 'maaltijdbox-of-zelf-koken-belgie'],
   },
@@ -751,6 +759,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedSlugs: ['is-hellofresh-het-waard', 'maaltijdbox-zonder-abonnement-belgie'],
     relatedLinks: [
+      { label: 'HelloFresh-kortingscode: tot €70 korting', href: '/kortingscode/hellofresh' },
       { label: 'Delhaize Maaltijdbox: wat zit erin?', href: '/blog/delhaize-maaltijdbox' },
       { label: 'Colruyt maaltijdbox: Freshbox, Foodbag of Foodprepper?', href: '/blog/colruyt-maaltijdbox' },
     ],
@@ -1008,6 +1017,9 @@ export const blogPosts: BlogPost[] = [
       { q: 'Welke maaltijdcheques worden aanvaard?', a: 'Monizze, Pluxee (vroeger Sodexo) en Edenred (Ticket Restaurant).' },
       { q: 'Hoeveel is een maaltijdcheque waard?', a: 'Sinds 1 januari 2026 mag een maaltijdcheque maximaal €10 waard zijn, per gewerkte dag. De verhoging van €8 naar €10 is niet automatisch: je werkgever of je sector moet ze afspreken.' },
       { q: 'Wat kan je kopen met maaltijdcheques?', a: 'Alleen voeding en niet-alcoholische dranken: in de supermarkt, bij de bakker of slager, in restaurants en bij maaltijdboxen zoals Foodbag, HelloFresh en Foodprepper. Alcohol, tabak en producten die geen voeding zijn (zoals poetsmiddelen of verzorgingsproducten) mogen niet.' },
+    ],
+    relatedLinks: [
+      { label: 'HelloFresh-kortingscode: tot €70 korting', href: '/kortingscode/hellofresh' },
     ],
     relatedSlugs: ['maaltijdbox-zonder-abonnement-belgie', 'maaltijdbox-of-zelf-koken-belgie'],
   },

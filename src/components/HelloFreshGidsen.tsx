@@ -12,7 +12,7 @@ const GIDSEN = [
   { href: '/blog/hellofresh-pauzeren-week-overslaan', nl: 'HelloFresh pauzeren: tot wanneer kan het en wat met je korting?', fr: 'Pause HelloFresh : jusqu’à quand et quid de votre réduction ?' },
 ];
 
-export default function HelloFreshGidsen({ taal }: { taal: 'nl' | 'fr' }) {
+export default function HelloFreshGidsen({ taal, metKortingscode = true }: { taal: 'nl' | 'fr'; metKortingscode?: boolean }) {
   const vanaf = new Date(`${permanentUitgelichtKortingscodes.vanaf}T00:00:00`);
   const zichtbaar = getActieveSponsoring()?.partnerSlug === 'hellofresh' || new Date() >= vanaf;
   if (!zichtbaar) return null;
@@ -24,13 +24,16 @@ export default function HelloFreshGidsen({ taal }: { taal: 'nl' | 'fr' }) {
   const lijst = peugeotEinde && new Date() < peugeotEinde
     ? [{ href: '/blog/hellofresh-peugeot-molens-actie', nl: 'Alleen in november: zo krijg je de gratis Peugeot-molens', fr: 'Uniquement en novembre : les moulins Peugeot offerts' }, ...GIDSEN]
     : GIDSEN;
+  // Interne link naar de kortingscodepagina, behalve op die pagina zelf.
+  const kortingscode = { href: '/kortingscode/hellofresh', nl: 'HelloFresh-kortingscode: tot €70 korting op je eerste 3 boxen', fr: 'Code promo HelloFresh : jusqu’à 70 € sur vos 3 premières box' };
+  const items = metKortingscode ? [kortingscode, ...lijst] : lijst;
   return (
     <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 12, padding: '18px 20px', margin: '0 0 28px' }}>
       <div style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 800, marginBottom: 10, color: '#1B4332' }}>
         {fr ? 'Vous hésitez encore ? Nos guides HelloFresh' : 'Twijfel je nog? Onze HelloFresh-gidsen'}
       </div>
       <ul style={{ margin: 0, paddingLeft: 18, lineHeight: 1.9, fontSize: 15 }}>
-        {lijst.map(g => (
+        {items.map(g => (
           <li key={g.href}>
             <Link href={g.href} style={{ color: '#1B4332', fontWeight: 600, textDecoration: 'underline' }}>{fr ? g.fr : g.nl}</Link>
           </li>

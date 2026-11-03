@@ -8,6 +8,9 @@ import { aanbiederVoor, actieveAanbiedersVoor, rangVoor } from '@/lib/teksten';
 import { getTranslations } from 'next-intl/server';
 import { laatstBijgewerkt, LAATST_GECONTROLEERD_ISO } from '@/lib/site';
 
+/** Aanbieders met een eigen /kortingscode/<slug>-pagina (zie ook sitemap.ts). */
+const KORTINGSCODE_PAGINAS = ['hellofresh', 'foodbag', 'factor', 'foodprepper', 'crowd-cooks'];
+
 export async function generateStaticParams() {
   return aanbieders.map(a => ({ slug: a.slug }));
 }
@@ -471,6 +474,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <div style={{ background: '#F0FDF4', border: '1.5px solid #86EFAC', borderRadius: 8, padding: '10px 12px', textAlign: 'center', marginBottom: 10 }}>
                 <div style={{ fontSize: 14, fontWeight: 800, color: '#166534' }}>{a.kortingsCode.bedrag}</div>
                 <div style={{ fontSize: 11, color: 'var(--muted)' }}>{a.kortingsCode.beschrijving}</div>
+                {KORTINGSCODE_PAGINAS.includes(a.slug) && (
+                  <Link href={`/kortingscode/${a.slug}`} style={{ display: 'inline-block', marginTop: 6, fontSize: 12, fontWeight: 700, color: '#166534', textDecoration: 'underline' }}>
+                    {fr ? `Toutes les conditions du code promo ${a.naam} →` : `Alle voorwaarden van de ${a.naam}-kortingscode →`}
+                  </Link>
+                )}
               </div>
             )}
 
