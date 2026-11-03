@@ -14,6 +14,8 @@ export interface Actie {
   tot: string;
   /** Aparte trackinglink voor deze actie (geldt enkel binnen de looptijd). */
   url: string;
+  /** Trackinglink naar de Franstalige landingspagina, voor bezoekers van /fr. */
+  urlFr?: string;
 }
 
 export const acties: Actie[] = [
@@ -25,6 +27,8 @@ export const acties: Actie[] = [
     van: '2026-11-01',
     tot: '2026-11-30',
     url: 'https://hellofreshfr.sjv.io/c/3156055/4111207/45302',
+    // Mail Tessa 2/11/2026: zelfde actie, landt op hellofresh.be in het Frans (fr-BE).
+    urlFr: 'https://hellofreshfr.sjv.io/c/3156055/4120966/45302',
   },
 ];
 
