@@ -156,6 +156,9 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'De BONI Freshbox is het huismerk-verspakket van Colruyt, voor 3 à 4 personen. Voorbeelden zijn moussaka (€5,52), Indiase curry (€4,99), groentenrisotto (€5,49) en een ovenschotel prei-curry (€5,59). Er zijn ook soepen, zoals butternut-, tomaten- en wortelsoep (€4,27 tot €4,66). Dit zijn de prijzen van een Colruyt-winkel op 2 november 2026; ze kunnen per winkel verschillen. Net als bij de supermarktpakketten van Delhaize zit er geen vlees in.' },
       { type: 'h2', text: 'Foodbag: de maaltijdbox van Colruyt Group' },
       { type: 'p', text: 'Foodbag is een echte maaltijdbox: alle ingrediënten voor je gerechten, afgemeten per persoon. Colruyt Group nam in februari 2022 een belang in Smartmat, het bedrijf achter Foodbag, en is sinds april 2025 volledig eigenaar. Je kiest elke week uit 40 gerechten met Belgische ingrediënten, met of zonder abonnement. Een bestelling kost vanaf €50,60 voor minstens 3 gerechten, de levering is gratis en je kan betalen met maaltijdcheques. Shop je bij Colruyt, dan kan je je Foodbag ook afhalen in een van de meer dan 100 Collect&Go-punten.' },
+      { type: 'h2', text: 'Foodbag afhalen bij Colruyt: zo werkt het' },
+      { type: 'p', text: 'Doe je je boodschappen via Collect&Go, dan kan je je Foodbag in hetzelfde afhaalpunt ophalen. Je maakt eerst je Collect&Go-reservatie en bestelt daarna je Foodbag. Je kan de box afhalen van maandag 16 uur tot dinsdag 19 uur, alleen of samen met je boodschappen. Niet elk Collect&Go-punt doet mee, dus kijk bij het bestellen welk punt in de buurt Foodbag aanbiedt. Op drukke dagen raken de afhaalmomenten soms vol.' },
+      { type: 'p', text: 'Combineer je niets met boodschappen, dan is thuislevering meestal handiger: die is bij Foodbag gratis, in heel België. De welkomstkorting van 3× €20 krijg je ook als je via onze link bestelt en onze kortingscode invult bij het afrekenen.' },
       { type: 'h2', text: 'Foodprepper: klaar in 15 minuten' },
       { type: 'p', text: 'Foodprepper komt van hetzelfde bedrijf als Foodbag, maar werkt anders. Groenten zijn al gesneden en voorgegaard, vlees en vis zijn gemarineerd en sauzen zijn klaar: je eten staat in maximaal 15 minuten op tafel. Je kan ook ontbijt, lunch en tussendoortjes bestellen. De levering is gratis in Vlaanderen en Brussel, je bestelt met of zonder abonnement, tot donderdagochtend 9 uur voor de volgende levering.' },
       {
@@ -223,7 +226,7 @@ export const blogPosts: BlogPost[] = [
       { q: 'Is Foodbag van Colruyt?', a: 'Ja. Colruyt Group nam in 2022 een belang van 41% in Smartmat, het bedrijf achter Foodbag, en werd in april 2025 volledig eigenaar.' },
       { q: 'Is Foodprepper van Foodbag?', a: 'Foodprepper werd in oktober 2025 gelanceerd door Smartmat, het bedrijf achter Foodbag. Het hoort dus ook bij Colruyt Group, maar werkt anders: je eten is in maximaal 15 minuten klaar.' },
       { q: 'Wat kost een BONI Freshbox?', a: 'Op 2 november 2026 tussen €4,27 en €5,59 voor 3 à 4 personen in een Colruyt-winkel. Vlees koop je er zelf bij; de prijs kan per winkel verschillen.' },
-      { q: 'Kan je Foodbag afhalen bij Colruyt?', a: 'Ja, in meer dan 100 Collect&Go-afhaalpunten. Je kan ook gratis aan huis laten leveren.' },
+      { q: 'Kan je Foodbag afhalen bij Colruyt?', a: 'Ja, in meer dan 100 Collect&Go-afhaalpunten, van maandag 16 uur tot dinsdag 19 uur. Je maakt eerst je Collect&Go-reservatie en bestelt daarna je Foodbag. Thuislevering is ook gratis.' },
     ],
     relatedSlugs: ['maaltijdbox-supermarkt-belgie', 'maaltijdbox-zonder-abonnement-belgie'],
     relatedLinks: [
