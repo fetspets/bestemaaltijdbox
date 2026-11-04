@@ -33,7 +33,7 @@ const faqJsonLd = {
       name: 'Is de Foodprepper welkomstkorting nog geldig?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja, de welkomstkorting is actief gecontroleerd geldig t.e.m. 01/01/2027 en wordt automatisch toegepast via onze link — je hoeft geen code in te voeren. Controleer ook altijd de actuele geldigheid op foodprepper.be zelf.',
+        text: 'Ja, de welkomstkorting is actief gecontroleerd geldig t.e.m. 31/12/2027 en krijg je met code FOODPREPX45 bij het afrekenen. Controleer ook altijd de actuele geldigheid op foodprepper.be zelf.',
       },
     },
     {
@@ -57,7 +57,7 @@ const faqJsonLd = {
       name: 'Geldt de korting ook bij een abonnement?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Foodprepper werkt zonder verplicht abonnement. Je bestelt wanneer je wil. De welkomstkorting geldt voor nieuwe klanten op de eerste drie bestellingen, ongeacht of je regelmatig of eenmalig bestelt, en wordt automatisch toegepast via onze link.',
+        text: 'Foodprepper werkt zonder verplicht abonnement. Je bestelt wanneer je wil. De welkomstkorting geldt voor nieuwe klanten op de eerste drie bestellingen, ongeacht of je regelmatig of eenmalig bestelt, en krijg je met code FOODPREPX45 bij het afrekenen.',
       },
     },
   ],

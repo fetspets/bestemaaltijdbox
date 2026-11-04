@@ -84,13 +84,13 @@ export const vergelijkingen: Vergelijking[] = [
           {
             slug: 'foodprepper',
             kop: '🏷️ Welkomstkorting Foodprepper',
-            tekst: '3× €15 korting op eerste 3 bestellingen (tot €45). Automatisch toegepast via onze link — geen code nodig. Geldig voor nieuwe klanten; controleer geldigheid op foodprepper.be.',
+            tekst: '3× €15 korting op eerste 3 bestellingen (tot €45). Gebruik code FOODPREPX45 bij het afrekenen. Geldig voor nieuwe klanten; controleer geldigheid op foodprepper.be.',
             knoptekst: '€15 korting op eerste 3 bestellingen →',
           },
           {
             slug: 'foodbag',
             kop: '🏷️ Welkomstkorting Foodbag',
-            tekst: '3× €20 korting op eerste 3 bestellingen (tot €60). Automatisch toegepast via onze link — geen code nodig. Geldig voor nieuwe klanten; controleer geldigheid op foodbag.be.',
+            tekst: '3× €20 korting op eerste 3 bestellingen (tot €60). Gebruik code FOODBAGx60 bij het afrekenen. Geldig voor nieuwe klanten; controleer geldigheid op foodbag.be.',
             knoptekst: 'Bekijk Foodbag →',
           },
         ],
@@ -134,8 +134,8 @@ export const vergelijkingen: Vergelijking[] = [
     verdictTekst: 'Er is geen absolute winnaar in deze vergelijking — de beste keuze hangt af van je levensstijl. Als je op doordeweekse avonden maximaal 20 minuten wil koken en ook ontbijt of lunch wil regelen, is Foodprepper de sterkste optie. Als je van koken houdt, de avond als rustmoment ervaart en veel receptvariatie wil, is Foodbag de juiste keuze. Beide zijn van hetzelfde moederbedrijf en gebruiken Belgische ingrediënten — het verschil zit hem in het concept.',
     faq: [
       { q: 'Zijn Foodprepper en Foodbag hetzelfde bedrijf?', a: 'Ze zijn van hetzelfde moederbedrijf: Smartmat NV, onderdeel van de Colruyt Group. Maar ze zijn compleet anders opgezet. Foodbag is een klassieke kookbox waarbij je zelf kookt in 25–35 minuten. Foodprepper levert half-voorbereide maaltijden die je in 15 minuten afwerkt. Doelgroep, menu en bestelervaring zijn apart.' },
-      { q: 'Welke is goedkoper: Foodprepper of Foodbag?', a: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, automatisch toegepast via onze link.' },
-      { q: 'Kan ik beide uitproberen?', a: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting van 3× €15 op je eerste 3 bestellingen, automatisch via onze link. Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.' },
+      { q: 'Welke is goedkoper: Foodprepper of Foodbag?', a: 'Foodbag kost gemiddeld meer per portie dan Foodprepper. Maar de exacte prijs hangt sterk af van welke maaltijden je kiest en voor hoeveel personen. Controleer de actuele prijzen op foodprepper.be en foodbag.be — prijzen kunnen wijzigen. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, met code FOODPREPX45 bij het afrekenen.' },
+      { q: 'Kan ik beide uitproberen?', a: 'Ja. Zowel Foodprepper als Foodbag vereisen geen verplicht abonnement — je kan eenmalig bestellen en zelf vergelijken. Foodprepper heeft een welkomstkorting van 3× €15 op je eerste 3 bestellingen, met code FOODPREPX45. Foodbag heeft een eigen welkomstaanbieding voor nieuwe klanten.' },
       { q: 'Welke is het beste voor een gezin met kinderen?', a: 'Foodprepper heeft een praktisch voordeel voor gezinnen met jonge kinderen: klaar in 15 minuten, minder stress op drukke avonden. Foodbag biedt meer kookkeuze en receptvariatie. Als snelheid in de avondroutine telt, is Foodprepper sterker. Als je van samen koken houdt, is Foodbag interessanter.' },
     ],
   },
@@ -200,7 +200,7 @@ export const vergelijkingen: Vergelijking[] = [
         html: true,
         paragrafen: [
           'HelloFresh begint vanaf een vaste prijs per portie en heeft regelmatig welkomstkortingen voor nieuwe klanten. De prijs van Foodprepper varieert per maaltijdkeuze — check foodprepper.be voor het actuele aanbod, want tarieven kunnen wijzigen.',
-          'Nieuwe Foodprepper-klanten kunnen drie keer €15 korting halen op hun eerste drie bestellingen, automatisch toegepast via onze link. Dat maakt de startperiode extra voordelig om zelf te vergelijken.',
+          'Nieuwe Foodprepper-klanten kunnen drie keer €15 korting halen op hun eerste drie bestellingen, met code FOODPREPX45 bij het afrekenen. Dat maakt de startperiode extra voordelig om zelf te vergelijken.',
         ],
       },
       {
@@ -209,7 +209,7 @@ export const vergelijkingen: Vergelijking[] = [
           {
             slug: 'foodprepper',
             kop: '🏷️ Welkomstkorting Foodprepper',
-            tekst: '3× €15 korting op eerste 3 bestellingen (tot €45). Automatisch toegepast via onze link — geen code nodig. Geldig voor nieuwe klanten; controleer geldigheid op foodprepper.be.',
+            tekst: '3× €15 korting op eerste 3 bestellingen (tot €45). Gebruik code FOODPREPX45 bij het afrekenen. Geldig voor nieuwe klanten; controleer geldigheid op foodprepper.be.',
             knoptekst: '€15 korting op eerste 3 bestellingen →',
           },
           {
@@ -258,7 +258,7 @@ export const vergelijkingen: Vergelijking[] = [
     verdictSlug: 'foodprepper',
     verdictTekst: 'Foodprepper is de sterkste keuze voor drukke gezinnen en tweeverdieners die vers willen eten in 15 minuten, bewust Belgisch consumeren en ook ontbijt of lunch willen regelen. HelloFresh wint op receptenvariatie (80+), bereik (heel België) en een vaste lage prijs per portie. Wie van koken houdt of in Wallonië woont, kiest HelloFresh. Wie snelheid en lokale herkomst boven menugrootte stelt, kiest Foodprepper.',
     faq: [
-      { q: 'Is Foodprepper goedkoper dan HelloFresh?', a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,92 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, automatisch toegepast via onze link, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.' },
+      { q: 'Is Foodprepper goedkoper dan HelloFresh?', a: 'Dat hangt af van je keuze. HelloFresh heeft een vaste prijs vanaf €7,92 per portie. Foodprepper werkt met een wisselend menu — controleer de actuele prijs op foodprepper.be, want die varieert. Nieuwe Foodprepper-klanten krijgen drie keer €15 korting, met code FOODPREPX45 bij het afrekenen, wat de eerste bestellingen goedkoper kan maken. HelloFresh biedt ook welkomstkortingen voor nieuwe klanten.' },
       { q: 'Levert HelloFresh ook in Vlaanderen?', a: 'Ja, HelloFresh levert in heel België inclusief Vlaanderen, Brussel en Wallonië. Foodprepper levert enkel in Vlaanderen en het Brussels Hoofdstedelijk Gewest. Voor wie in Wallonië woont, is HelloFresh de enige keuze van de twee.' },
       { q: 'Welke is het beste voor drukke gezinnen?', a: 'Foodprepper heeft op drukke avonden een praktisch voordeel: klaar in 15 minuten dankzij voorbereide ingrediënten. HelloFresh vraagt 25–40 minuten. Voor gezinnen met weinig marge in de avondroutine is Foodprepper sneller. HelloFresh biedt meer receptkeuze en een groter weekmenu, wat handig is als je lang op één aanbieder wil blijven zonder eentonigheid.' },
       { q: 'Kan ik beide maaltijdboxen combineren?', a: 'Ja, dat kan. Foodprepper heeft geen verplicht abonnement en je kan eenmalig of wekelijks bestellen. HelloFresh werkt met een flexibel abonnement dat je wekelijks kan pauzeren. Sommige gezinnen combineren een snelle Foodprepper-bestelling op drukke weken met HelloFresh op rustigere weken.' },

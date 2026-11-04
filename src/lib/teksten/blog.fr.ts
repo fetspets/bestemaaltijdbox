@@ -68,7 +68,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
             badgeTekst: '#1E40AF',
             tagline: 'Ingrédients belges · livraison gratuite · sans abonnement',
             waarom: 'Des ingrédients belges et la livraison gratuite dans toute la Belgique, Wallonie comprise. Commande ponctuelle possible, sans abonnement.',
-            deal: '3 × 20 € de réduction sur vos 3 premières commandes, automatiquement via notre lien',
+            deal: '3 × 20 € de réduction sur vos 3 premières commandes, avec le code FOODBAGx60',
           },
           {
             slug: 'foodprepper',
@@ -157,7 +157,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
             badgeTekst: '#1E40AF',
             tagline: '40 plats · livraison gratuite · retrait chez Collect&Go',
             waarom: 'Le choix logique si vous faites vos courses chez Colruyt : ingrédients belges, livraison gratuite dans toute la Belgique et pas d’abonnement obligatoire.',
-            deal: '3 × 20 € de réduction sur vos 3 premières commandes, automatiquement via notre lien',
+            deal: '3 × 20 € de réduction sur vos 3 premières commandes, avec le code FOODBAGx60',
           },
           {
             slug: 'foodprepper',
@@ -473,7 +473,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
             badgeTekst: '#1E40AF',
             tagline: 'Ingrédients belges · livraison gratuite · avec ou sans abonnement',
             waarom: "Foodbag est l'alternative la plus proche de HelloFresh, mais belge : ingrédients de fournisseurs belges, cinq styles de cuisine et livraison dans tout le pays, Wallonie comprise. Comme la livraison est gratuite, vous payez souvent moins par semaine que chez HelloFresh pour 2 personnes et 3 repas. Et vous pouvez commander sans abonnement.",
-            deal: '3 × 20 € de réduction sur vos 3 premières commandes, automatiquement via notre lien',
+            deal: '3 × 20 € de réduction sur vos 3 premières commandes, avec le code FOODBAGx60',
           },
           {
             slug: 'factor',
@@ -541,7 +541,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         tekst: "Foodbag est la plus proche de HelloFresh, avec des ingrédients belges, une livraison gratuite dans toute la Belgique et la possibilité de commander sans abonnement.",
         slug: 'foodbag',
         knoptekst: 'Voir Foodbag →',
-        subtekst: '3 × 20 € de réduction · automatiquement via notre lien · livraison gratuite',
+        subtekst: '3 × 20 € de réduction · avec le code FOODBAGx60 · livraison gratuite',
       },
     ],
     faq: [
@@ -658,7 +658,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
             badgeTekst: '#1E40AF',
             tagline: 'Ingrédients belges · livraison gratuite · retrait Collect&Go',
             waarom: "Si vous faites déjà vos courses chez Colruyt, Foodbag est l'étape logique : entièrement au groupe Colruyt depuis 2025, avec des ingrédients belges et une livraison gratuite dans tout le pays, Wallonie comprise. Commande possible sans abonnement, et paiement en titres-repas.",
-            deal: '3 × 20 € de réduction sur vos 3 premières commandes, automatiquement via notre lien',
+            deal: '3 × 20 € de réduction sur vos 3 premières commandes, avec le code FOODBAGx60',
           },
           {
             slug: 'hellofresh',
@@ -920,7 +920,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         kop: '🏆 Le meilleur box sans abonnement qui livre partout',
         slug: 'foodbag',
         prijsRegel: 'Commande ponctuelle · livraison gratuite dans tout le pays',
-        dealRegel: '3 × 20 € de réduction sur vos trois premières commandes, appliqué automatiquement via notre lien.',
+        dealRegel: '3 × 20 € de réduction sur vos trois premières commandes, avec le code FOODBAGx60 lors du paiement.',
         knoptekst: 'Voir Foodbag →',
         alternatief: {
           inleiding: 'Vous cherchez le prix le plus bas et habitez en Flandre ou à Bruxelles ? →',
@@ -953,7 +953,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
           { kop: 'Réduction', soort: 'korting' },
         ],
         voetnoot:
-          "Prix indicatifs — vérifiez les tarifs actuels sur le site du fournisseur. Les réductions valent pour les nouveaux clients et sont appliquées automatiquement via notre lien.",
+          "Prix indicatifs — vérifiez les tarifs actuels sur le site du fournisseur. Les réductions valent pour les nouveaux clients. Chez Foodbag et Foodprepper, saisissez le code lors du paiement.",
       },
       {
         type: 'topAanbieders',
@@ -966,7 +966,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
             badgeTekst: '#1E40AF',
             tagline: 'Ingrédients belges · livre dans tout le pays',
             waarom:
-              "Foodbag est le numéro deux du marché belge et appartient au groupe Colruyt. Ingrédients 100 % belges, cinq styles de cuisine dont la ligne Sana de Sandra Bekkari, et livraison gratuite dans les trois régions — Wallonie comprise. Aucun abonnement n'est nécessaire : vous commandez quand cela vous arrange. Via notre lien, vous recevez 3 × 20 € sur vos trois premières commandes, soit 60 € au total, sans code à saisir.",
+              "Foodbag est le numéro deux du marché belge et appartient au groupe Colruyt. Ingrédients 100 % belges, cinq styles de cuisine dont la ligne Sana de Sandra Bekkari, et livraison gratuite dans les trois régions — Wallonie comprise. Aucun abonnement n'est nécessaire : vous commandez quand cela vous arrange. Via notre lien, vous recevez 3 × 20 € sur vos trois premières commandes, soit 60 € au total, avec le code FOODBAGx60 à saisir.",
             deal: '3 × 20 € de réduction sur les 3 premières commandes',
           },
           {

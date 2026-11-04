@@ -247,7 +247,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
                 {a.ctaTekst} →
               </Link>
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>
-                {fr ? 'La réduction est appliquée automatiquement via notre lien : aucun code à saisir.' : 'Korting wordt automatisch toegepast via onze link — geen code nodig.'}
+                {a.kortingsCode.code
+                  ? (fr ? `Saisissez le code ${a.kortingsCode.code} lors du paiement.` : `Vul bij het afrekenen de code ${a.kortingsCode.code} in.`)
+                  : (fr ? 'La réduction est appliquée automatiquement via notre lien : aucun code à saisir.' : 'Korting wordt automatisch toegepast via onze link — geen code nodig.')}
               </div>
             </div>
           )}
@@ -256,7 +258,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {a.uitgebreideReview.prijsTabel && (
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>{fr ? `Combien coûte ${a.naam} par mois en Belgique ?` : `Wat kost ${a.naam} per maand in België?`}</h2>
-              <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>{fr ? 'Offre de bienvenue (2 personnes / 3 repas par semaine), automatique via le lien, sans code :' : 'Welkomstdeal (2 personen / 3 maaltijden/week) — automatisch via de link, geen code nodig:'}</p>
+              <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>{a.kortingsCode?.code
+                ? (fr ? `Offre de bienvenue (2 personnes / 3 repas par semaine), avec le code ${a.kortingsCode.code} :` : `Welkomstdeal (2 personen / 3 maaltijden/week), met code ${a.kortingsCode.code}:`)
+                : (fr ? 'Offre de bienvenue (2 personnes / 3 repas par semaine), automatique via le lien, sans code :' : 'Welkomstdeal (2 personen / 3 maaltijden/week) — automatisch via de link, geen code nodig:')}</p>
               <div style={{ overflowX: 'auto' }}>
                 <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: 13 }}>
                   <thead>
@@ -474,6 +478,11 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <div style={{ background: '#F0FDF4', border: '1.5px solid #86EFAC', borderRadius: 8, padding: '10px 12px', textAlign: 'center', marginBottom: 10 }}>
                 <div style={{ fontSize: 14, fontWeight: 800, color: '#166534' }}>{a.kortingsCode.bedrag}</div>
                 <div style={{ fontSize: 11, color: 'var(--muted)' }}>{a.kortingsCode.beschrijving}</div>
+                {a.kortingsCode.code && (
+                  <div style={{ marginTop: 6, fontSize: 12 }}>
+                    {fr ? 'Code : ' : 'Code: '}<strong style={{ fontFamily: 'monospace', fontSize: 14, letterSpacing: '0.05em' }}>{a.kortingsCode.code}</strong>
+                  </div>
+                )}
                 {KORTINGSCODE_PAGINAS.includes(a.slug) && (
                   <Link href={`/kortingscode/${a.slug}`} style={{ display: 'inline-block', marginTop: 6, fontSize: 12, fontWeight: 700, color: '#166534', textDecoration: 'underline' }}>
                     {fr ? `Toutes les conditions du code promo ${a.naam} →` : `Alle voorwaarden van de ${a.naam}-kortingscode →`}

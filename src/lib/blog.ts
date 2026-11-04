@@ -101,7 +101,7 @@ export const blogPosts: BlogPost[] = [
             badgeTekst: '#1E40AF',
             tagline: 'Belgische ingrediënten · gratis levering · zonder abonnement',
             waarom: 'Belgische ingrediënten en gratis levering in heel België. Je kan ook eenmalig bestellen, zonder abonnement.',
-            deal: '3× €20 korting op je eerste 3 bestellingen, automatisch via onze link',
+            deal: '3× €20 korting op je eerste 3 bestellingen, met code FOODBAGx60',
           },
           {
             slug: 'foodprepper',
@@ -194,7 +194,7 @@ export const blogPosts: BlogPost[] = [
             badgeTekst: '#1E40AF',
             tagline: '40 gerechten · gratis levering · afhalen bij Collect&Go',
             waarom: 'De logische keuze als je bij Colruyt winkelt: Belgische ingrediënten, gratis levering in heel België en geen verplicht abonnement.',
-            deal: '3× €20 korting op je eerste 3 bestellingen, automatisch via onze link',
+            deal: '3× €20 korting op je eerste 3 bestellingen, met code FOODBAGx60',
           },
           {
             slug: 'foodprepper',
@@ -533,7 +533,7 @@ export const blogPosts: BlogPost[] = [
             badgeTekst: '#1E40AF',
             tagline: 'Belgische ingrediënten · gratis levering · met of zonder abonnement',
             waarom: 'Foodbag is het alternatief dat het dichtst bij HelloFresh ligt, maar Belgisch: ingrediënten van Belgische leveranciers, vijf kookstijlen en levering in heel België. Omdat de levering gratis is, betaal je per week voor 2 personen en 3 maaltijden vaak minder dan bij HelloFresh. En je kan bestellen zonder abonnement.',
-            deal: '3× €20 korting op je eerste 3 bestellingen, automatisch via onze link',
+            deal: '3× €20 korting op je eerste 3 bestellingen, met code FOODBAGx60',
           },
           {
             slug: 'marley-spoon',
@@ -601,7 +601,7 @@ export const blogPosts: BlogPost[] = [
         tekst: 'Foodbag ligt het dichtst bij HelloFresh, maar met Belgische ingrediënten, gratis levering in heel België en de keuze om zonder abonnement te bestellen.',
         slug: 'foodbag',
         knoptekst: 'Bekijk Foodbag →',
-        subtekst: '3× €20 korting · automatisch via onze link · gratis levering',
+        subtekst: '3× €20 korting · met code FOODBAGx60 · gratis levering',
       },
     ],
     faqKop: 'Veelgestelde vragen over alternatieven voor HelloFresh',
@@ -726,7 +726,7 @@ export const blogPosts: BlogPost[] = [
             badgeTekst: '#1E40AF',
             tagline: 'Belgische ingrediënten · gratis levering · afhalen bij Collect&Go',
             waarom: 'Shop je al bij Colruyt, dan is Foodbag de logische stap: sinds 2025 volledig van Colruyt Group, met Belgische ingrediënten en gratis levering in heel België. Je kan ook zonder abonnement bestellen en betalen met maaltijdcheques.',
-            deal: '3× €20 korting op je eerste 3 bestellingen, automatisch via onze link',
+            deal: '3× €20 korting op je eerste 3 bestellingen, met code FOODBAGx60',
           },
           {
             slug: 'hellofresh',
@@ -780,7 +780,7 @@ export const blogPosts: BlogPost[] = [
         kop: '🏆 Beste maaltijdbox zonder abonnement',
         slug: 'foodbag',
         prijsRegel: 'Los bestellen · gratis bezorging in heel België',
-        dealRegel: '3× €20 korting op je eerste 3 bestellingen, automatisch via onze link.',
+        dealRegel: '3× €20 korting op je eerste 3 bestellingen, met code FOODBAGx60.',
         knoptekst: 'Bekijk Foodbag →',
         alternatief: {
           inleiding: 'Op zoek naar de laagste prijs? →',
@@ -807,7 +807,7 @@ export const blogPosts: BlogPost[] = [
           { kop: 'Bezorging', soort: 'bezorging' },
           { kop: 'Korting', soort: 'korting' },
         ],
-        voetnoot: 'Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder. Kortingen gelden voor nieuwe klanten en worden automatisch toegepast via onze link.',
+        voetnoot: 'Prijzen zijn richtprijzen — controleer de actuele tarieven op de site van de aanbieder. Kortingen gelden voor nieuwe klanten. Bij Foodbag en Foodprepper vul je de code in bij het afrekenen.',
       },
       {
         type: 'topAanbieders',
@@ -819,7 +819,7 @@ export const blogPosts: BlogPost[] = [
             badgeAchtergrond: '#DBEAFE',
             badgeTekst: '#1E40AF',
             tagline: 'Lokale Belgische ingrediënten · 5 kookstijlen',
-            waarom: 'Foodbag is de #2 maaltijdbox in België, eigendom van de Colruyt Group. Met 100% lokale Belgische ingrediënten, 5 kookstijlen (waaronder Sana van Sandra Bekkari) en gratis bezorging in heel België — inclusief Wallonië — is het de meest complete keuze als je af en toe los wil bestellen. Je hebt geen vast abonnement nodig: je plaatst een bestelling wanneer het jou uitkomt. Via onze link krijg je 3× €20 korting op je eerste 3 bestellingen (in totaal €60 voordeel), automatisch toegepast — geen code nodig.',
+            waarom: 'Foodbag is de #2 maaltijdbox in België, eigendom van de Colruyt Group. Met 100% lokale Belgische ingrediënten, 5 kookstijlen (waaronder Sana van Sandra Bekkari) en gratis bezorging in heel België — inclusief Wallonië — is het de meest complete keuze als je af en toe los wil bestellen. Je hebt geen vast abonnement nodig: je plaatst een bestelling wanneer het jou uitkomt. Via onze link krijg je 3× €20 korting op je eerste 3 bestellingen (in totaal €60 voordeel), met code FOODBAGx60.',
             deal: '3× €20 korting op eerste 3 bestellingen',
           },
           {
@@ -828,7 +828,7 @@ export const blogPosts: BlogPost[] = [
             badgeAchtergrond: '#E8F5EE',
             badgeTekst: '#1B4332',
             tagline: 'Klaar in 15 minuten · geen opzegtermijn',
-            waarom: 'Foodprepper is de snelste kookbox van België: alles staat in 15 minuten op tafel dankzij voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. Er is geen verplicht abonnement en geen opzegtermijn — je bestelt eenmalig, wekelijks of tweewekelijks zoals het jou past. Bijna alle ingrediënten komen van Belgische leveranciers. Bezorging is gratis in Vlaanderen en Brussel. Via onze link bespaar je tot €45 op je eerste 3 bestellingen — automatisch toegepast, geen code nodig.',
+            waarom: 'Foodprepper is de snelste kookbox van België: alles staat in 15 minuten op tafel dankzij voorgegaarde groenten, gemarineerd vlees en klaargemaakte sauzen. Er is geen verplicht abonnement en geen opzegtermijn — je bestelt eenmalig, wekelijks of tweewekelijks zoals het jou past. Bijna alle ingrediënten komen van Belgische leveranciers. Bezorging is gratis in Vlaanderen en Brussel. Via onze link bespaar je tot €45 op je eerste 3 bestellingen — met code FOODPREPX45.',
             deal: '3× €15 korting op eerste 3 bestellingen',
           },
           {
@@ -850,7 +850,7 @@ export const blogPosts: BlogPost[] = [
             scenario: 'Je wil eenmalig een maaltijdbox proberen',
             aanbeveling: 'Foodprepper',
             slug: 'foodprepper',
-            uitleg: 'Geen abonnement, geen opzegtermijn. Tot €45 welkomstkorting, automatisch via onze link. Ideaal om risicovrij te starten.',
+            uitleg: 'Geen abonnement, geen opzegtermijn. Tot €45 welkomstkorting, met code FOODPREPX45. Ideaal om risicovrij te starten.',
             achtergrond: '#F0FDF4',
             rand: '#BBF7D0',
           },
@@ -866,7 +866,7 @@ export const blogPosts: BlogPost[] = [
             scenario: 'Belgische kwaliteit zonder vaste verplichting',
             aanbeveling: 'Foodbag',
             slug: 'foodbag',
-            uitleg: 'Lokale ingrediënten, 5 kookstijlen, gratis bezorging in heel België. Los bestellen mogelijk zonder abonnement. €60 korting over eerste 3 bestellingen, automatisch via onze link.',
+            uitleg: 'Lokale ingrediënten, 5 kookstijlen, gratis bezorging in heel België. Los bestellen mogelijk zonder abonnement. €60 korting over eerste 3 bestellingen, met code FOODBAGx60.',
             achtergrond: '#DBEAFE',
             rand: '#93C5FD',
           },
@@ -885,7 +885,7 @@ export const blogPosts: BlogPost[] = [
     faq: [
       { q: 'Welke maaltijdbox heeft geen abonnement?', a: 'Foodprepper en Foodmaker werken volledig zonder verplicht abonnement — je bestelt wanneer het jou uitkomt, zonder wekelijkse verplichting of opzegtermijn. Foodbag laat je ook los bestellen: je kiest zelf wanneer je een box plaatst, zonder je vast in te schrijven op een wekelijks schema.' },
       { q: 'Kan ik een maaltijdbox eenmalig bestellen?', a: 'Ja. Bij Foodprepper en Foodmaker is een eenmalige bestelling standaard mogelijk — geen abonnement, geen opzegtermijn. Ook bij Foodbag kun je los bestellen zonder vast contract. Zo probeer je een maaltijdbox risicovrij, zonder langetermijnverplichting.' },
-      { q: 'Wat is de goedkoopste maaltijdbox zonder abonnement?', a: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €4,75/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 (3× €15 op de eerste 3 bestellingen), automatisch toegepast via onze link. Foodbag kost €8,43/portie maar biedt €60 korting via onze link en bezorgt in heel België inclusief Wallonië.' },
+      { q: 'Wat is de goedkoopste maaltijdbox zonder abonnement?', a: 'Foodprepper is de goedkoopste kookbox zonder abonnement: vanaf €4,75/portie, gratis bezorging in Vlaanderen en Brussel. Nieuwe klanten besparen tot €45 (3× €15 op de eerste 3 bestellingen), met code FOODPREPX45 bij het afrekenen. Foodbag kost €8,43/portie maar biedt €60 korting met code FOODBAGx60 en bezorgt in heel België inclusief Wallonië.' },
     ],
     relatedSlugs: ['maaltijdbox-maaltijdcheques-belgie', 'maaltijdbox-starten-beginners'],
   },
