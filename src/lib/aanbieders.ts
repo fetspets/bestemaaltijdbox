@@ -179,10 +179,10 @@ export const aanbieders: Aanbieder[] = [
       bedrag: '€60 korting',
       bedragKort: '€60 totaal',
       deal: '3x €20 korting op je eerste 3 bestellingen',
-      voorwaarden: 'Geldig voor nieuwe klanten · Met code FOODBAGx60 · Geldig t.e.m. 01/01/2027 · 3x €20 op de eerste 3 bestellingen',
-      beschrijving: 'Krijg 3× €20 korting verspreid over je eerste 3 Foodbag-bestellingen. Totale besparing: €60. Gebruik code FOODBAGx60 bij het afrekenen.',
+      voorwaarden: 'Geldig voor nieuwe klanten · Met onze kortingscode · Geldig t.e.m. 01/01/2027 · 3x €20 op de eerste 3 bestellingen',
+      beschrijving: 'Krijg 3× €20 korting verspreid over je eerste 3 Foodbag-bestellingen. Totale besparing: €60. Gebruik onze kortingscode bij het afrekenen.',
     },
-    ctaSubtekst: '3× €20 korting · met code FOODBAGx60',
+    ctaSubtekst: '3× €20 korting · met onze kortingscode',
     kenmerken: ['🇧🇪 Lokale ingrediënten', '✓ Gratis bezorging', '✓ 5 kookstijlen', '✓ Zonder abonnement', '🔀 Voorheen ook Smartmat & 15gram'],    pros: ['100% Belgische en lokale ingrediënten', 'Uitstekende smaakscores', 'Eigen bezorgers', '5 kookstijlen incl. Sana (Sandra Bekkari)', 'Geen verplicht abonnement'],
     cons: ['Hogere prijs dan internationale alternatieven', 'Beperktere bezorgdagen dan HelloFresh', 'Minder geschikt voor strikte budgetkijkers'],
     geschiktVoor: ['koppel', 'gezin', 'vegetarisch', 'bio'],
@@ -302,8 +302,8 @@ export const aanbieders: Aanbieder[] = [
       voorWie: 'Foodprepper is het sterkst voor tweeverdieners tussen 26 en 50 jaar, koppels met jonge kinderen, en wie op doordeweekse avonden geen tijd of energie heeft voor een klassieke kookbox. Wie HelloFresh of Foodbag te bewerkelijk vindt maar toch niet wil afhalen of opwarmen, is hier aan het juiste adres.\n\nOok interessant voor wie vlak naast zijn of haar Foodbag-abonnement iets wil dat sneller gaat op drukke avonden. Foodprepper en Foodbag zijn van hetzelfde moederbedrijf, waardoor de logistiek aansluit.\n\nMinder geschikt voor wie het kookproces zelf als ontspanning ervaart, of voor wie in Wallonië woont — Foodprepper levert enkel in Vlaanderen en Brussel.',
       hoeWerktHet: 'Foodprepper werkt zo: je gaat naar foodprepper.be, kiest je maaltijden uit het wisselende weekmenu, en voegt eventueel producten toe uit de versmarkt (soepen, snacks, bijgerechten). Je bestelling wordt gekoeld geleverd op zondag of maandag.\n\nThuis haal je de ingrediënten uit de koelkast. Alles is al voorbereid: groenten zijn voorgesneden en voorgegaard, vlees of vis is gemarineerd, sauzen zijn klaar. Jij bakt, warmt op of mengt — en na 15 minuten staat het eten op tafel.\n\nEen abonnement is niet verplicht. Je kan eenmalig bestellen, of kiezen voor een wekelijks of tweewekelijks ritme. Pauzeren en opzeggen kan vrij, zonder boetes of opzegtermijn.',
       vergelijking: 'Foodprepper zit in hetzelfde ecosystem als Foodbag: zelfde moederbedrijf (Smartmat NV), zelfde focus op Belgische leveranciers. Het grote verschil is de bereidingstijd: Foodbag vraagt 25–35 minuten, Foodprepper 15 minuten. Wie snelheid boven kookplezier stelt, kiest Foodprepper.\n\nTen opzichte van HelloFresh biedt Foodprepper meer lokale ingrediënten en een snellere bereiding, maar minder receptvariatie. HelloFresh heeft een groter weekaanbod (80+ recepten), terwijl Foodprepper mikt op kwaliteit en snelheid boven volume.\n\nVergeleken met kant-en-klaar (Factor, Foodmaker) is Foodprepper een tussenvorm: je bereidt zelf, maar het zware werk is al gedaan. Dat geeft meer gevoel van een echte maaltijd dan opwarmen, maar minder werk dan een klassieke kookbox.',
-      eindoordeel: 'Foodprepper verdient zijn plek als de snelste maaltijdbox van België. Voor drukke gezinnen en tweeverdieners die vers willen eten zonder lang in de keuken te staan, is het een sterke keuze. De Belgische ingrediënten, flexibele formule zonder verplicht abonnement, en het brede dagmenu (ontbijt tot snacks) maken het onderscheidend.\n\nDe welkomstkorting van 3× €15 op de eerste 3 bestellingen maakt de instap extra aantrekkelijk — de korting krijg je met code FOODPREPX45 bij het afrekenen. Bezoek foodprepper.be voor actuele prijzen en het weekmenu.',
-      prijsUitleg: 'Foodprepper hanteert een flexibel prijssysteem zonder minimumengagement. Je betaalt per maaltijd of per box, afhankelijk van je keuze. Actuele prijzen variëren — controleer het huidige aanbod op foodprepper.be, want prijzen kunnen wijzigen.\n\nNieuwe klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, wat neerkomt op maximaal €45 voordeel. De korting krijg je met code FOODPREPX45 bij het afrekenen.',
+      eindoordeel: 'Foodprepper verdient zijn plek als de snelste maaltijdbox van België. Voor drukke gezinnen en tweeverdieners die vers willen eten zonder lang in de keuken te staan, is het een sterke keuze. De Belgische ingrediënten, flexibele formule zonder verplicht abonnement, en het brede dagmenu (ontbijt tot snacks) maken het onderscheidend.\n\nDe welkomstkorting van 3× €15 op de eerste 3 bestellingen maakt de instap extra aantrekkelijk — de korting krijg je met onze kortingscode bij het afrekenen. Bezoek foodprepper.be voor actuele prijzen en het weekmenu.',
+      prijsUitleg: 'Foodprepper hanteert een flexibel prijssysteem zonder minimumengagement. Je betaalt per maaltijd of per box, afhankelijk van je keuze. Actuele prijzen variëren — controleer het huidige aanbod op foodprepper.be, want prijzen kunnen wijzigen.\n\nNieuwe klanten krijgen drie keer €15 korting op hun eerste drie bestellingen, wat neerkomt op maximaal €45 voordeel. De korting krijg je met onze kortingscode bij het afrekenen.',
       nietGeschiktVoor: [
         'Je woont in Wallonië of buiten Vlaanderen/Brussel — Foodprepper bezorgt enkel in Vlaanderen en het Brussels Hoofdstedelijk Gewest.',
         'Je zoekt een uitgebreide kookbeleving — het snijwerk en de voorbereiding zijn al gedaan, waardoor het kookplezier beperkter is.',
@@ -313,7 +313,7 @@ export const aanbieders: Aanbieder[] = [
       faq: [
         {
           vraag: 'Is Foodprepper duur?',
-          antwoord: 'Foodprepper is niet de goedkoopste maaltijdbox in België, maar ook niet de duurste. De prijs varieert afhankelijk van je keuze aan maaltijden en hoeveel personen je kookt. Voor nieuwe klanten geldt een welkomstkorting: 3× €15 korting op de eerste 3 bestellingen (tot €45 voordeel), met code FOODPREPX45 bij het afrekenen. Actuele prijzen vind je op foodprepper.be — prijzen kunnen wijzigen.',
+          antwoord: 'Foodprepper is niet de goedkoopste maaltijdbox in België, maar ook niet de duurste. De prijs varieert afhankelijk van je keuze aan maaltijden en hoeveel personen je kookt. Voor nieuwe klanten geldt een welkomstkorting: 3× €15 korting op de eerste 3 bestellingen (tot €45 voordeel), met onze kortingscode bij het afrekenen. Actuele prijzen vind je op foodprepper.be — prijzen kunnen wijzigen.',
         },
         {
           vraag: 'Kan ik bestellen zonder abonnement?',
@@ -360,10 +360,10 @@ export const aanbieders: Aanbieder[] = [
       bedrag: '3× €15 korting',
       bedragKort: '€45 totaal',
       deal: '3× €15 korting op je eerste 3 bestellingen',
-      voorwaarden: 'Geldig voor nieuwe klanten · Met code FOODPREPX45 · 3× €15 op eerste 3 bestellingen · Vrij opzegbaar',
-      beschrijving: 'Krijg €15 korting op elk van je eerste 3 bestellingen. Totale besparing: €45. Gebruik code FOODPREPX45 bij het afrekenen. Klaar in 15 minuten dankzij voorbereide ingrediënten.',
+      voorwaarden: 'Geldig voor nieuwe klanten · Met onze kortingscode · 3× €15 op eerste 3 bestellingen · Vrij opzegbaar',
+      beschrijving: 'Krijg €15 korting op elk van je eerste 3 bestellingen. Totale besparing: €45. Gebruik onze kortingscode bij het afrekenen. Klaar in 15 minuten dankzij voorbereide ingrediënten.',
     },
-    ctaSubtekst: '3× €15 korting op eerste 3 bestellingen · met code FOODPREPX45',
+    ctaSubtekst: '3× €15 korting op eerste 3 bestellingen · met onze kortingscode',
     ctaTekst: 'Bekijk Foodprepper',
     kenmerken: ['⚡ Klaar in 15 min', '🇧🇪 Belgisch & lokaal', '✓ Gratis bezorging', '✓ Geen verplicht abo'],
     pros: [

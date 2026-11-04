@@ -43,5 +43,14 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const sponsor = s?.plaatsingen.homepageBlok ? { slug: s.partnerSlug, plaatsing: s.tracking.homepageBlok, positie: s.homepagePositie, actie: !!actieveActie(s.partnerSlug) } : undefined;
 
   // In het Frans staan de aanbieders die niet in Wallonië leveren achteraan.
-  return <HomePageClient sponsor={sponsor} aanbieders={gerangschiktVoor(taal)} taal={taal} />;
+  return <HomePageClient sponsor={sponsor} aanbieders={zonderCodes(gerangschiktVoor(taal))} taal={taal} />;
+}
+
+/**
+ * De homepage geeft de aanbieders door aan een client component, waardoor alles
+ * in de RSC-payload van de HTML belandt. Kortingscodes horen daar niet: ze worden
+ * pas na een klik via onze link getoond (zie CodeOnthullen).
+ */
+function zonderCodes<T extends { kortingsCode?: { code: string | null } | null }>(lijst: T[]): T[] {
+  return lijst.map((a) => (a.kortingsCode?.code ? { ...a, kortingsCode: { ...a.kortingsCode, code: null } } : a));
 }

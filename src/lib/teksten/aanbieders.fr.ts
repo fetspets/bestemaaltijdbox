@@ -84,8 +84,8 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       bedrag: "60 € de réduction",
       bedragKort: "60 € au total",
       deal: "3 × 20 € de réduction sur vos 3 premières commandes",
-      voorwaarden: "Réservé aux nouveaux clients · avec le code FOODBAGx60 · valable jusqu’au 01/01/2027 · 3 × 20 € sur les 3 premières commandes · livre en Wallonie",
-      beschrijving: "Recevez 3 × 20 € de réduction répartis sur vos trois premières commandes Foodbag, soit 60 € d'économie. Utilisez le code FOODBAGx60 lors du paiement. Livraison gratuite dans tout le pays.",
+      voorwaarden: "Réservé aux nouveaux clients · avec notre code promo · valable jusqu’au 01/01/2027 · 3 × 20 € sur les 3 premières commandes · livre en Wallonie",
+      beschrijving: "Recevez 3 × 20 € de réduction répartis sur vos trois premières commandes Foodbag, soit 60 € d'économie. Utilisez notre code promo lors du paiement. Livraison gratuite dans tout le pays.",
     },
     tagline: 'Ingrédients belges en circuit court — livre aussi en Wallonie',
     beschrijving:
@@ -115,7 +115,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     ],
     cons: ['Prix par portion élevé', 'Moins de recettes par semaine que HelloFresh'],
     besteVoor: 'manger belge et local avec livraison nationale',
-    ctaSubtekst: '3 × 20 € de réduction · avec le code FOODBAGx60 lors du paiement',
+    ctaSubtekst: '3 × 20 € de réduction · avec notre code promo lors du paiement',
     seoTitle: 'Foodbag avis et prix (2026) : combien coûte le box belge ?',
     seoDescription:
       "Notre avis sur Foodbag : ingrédients belges, livraison gratuite dans tout le pays et sans abonnement. Prix, qualité et comparaison avec les alternatives.",
@@ -202,15 +202,15 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       bedrag: "3 × 15 € de réduction",
       bedragKort: "45 € au total",
       deal: "3 × 15 € de réduction sur vos 3 premières commandes",
-      voorwaarden: "Réservé aux nouveaux clients · avec le code FOODPREPX45 · 3 × 15 € sur les 3 premières commandes · sans abonnement · Flandre et Bruxelles uniquement",
-      beschrijving: "Recevez 15 € de réduction sur chacune de vos trois premières commandes, soit 45 € d'économie. Utilisez le code FOODPREPX45 lors du paiement. Prêt en quinze minutes grâce aux ingrédients préparés. Attention : pas de livraison en Wallonie.",
+      voorwaarden: "Réservé aux nouveaux clients · avec notre code promo · 3 × 15 € sur les 3 premières commandes · sans abonnement · Flandre et Bruxelles uniquement",
+      beschrijving: "Recevez 15 € de réduction sur chacune de vos trois premières commandes, soit 45 € d'économie. Utilisez notre code promo lors du paiement. Prêt en quinze minutes grâce aux ingrédients préparés. Attention : pas de livraison en Wallonie.",
     },
     tagline: 'Prêt en 15 minutes — Flandre et Bruxelles uniquement',
     beschrijving:
       "Foodprepper livre des ingrédients déjà préparés : légumes précuits, viande marinée, sauces prêtes. Vous assemblez en un quart d'heure. La livraison est toutefois limitée à la Flandre et à Bruxelles — pas de Wallonie.",
     opzegTermijn: 'aucun abonnement obligatoire',
     uitgebreideReview: {
-      prijsUitleg: "Foodprepper applique un système de prix flexible, sans engagement minimum. Vous payez par repas ou par box, selon votre choix. Les prix varient : vérifiez l'offre actuelle sur foodprepper.be, car ils peuvent changer.\n\nLes nouveaux clients reçoivent trois fois 15 € de réduction sur leurs trois premières commandes, soit 45 € d'avantage au maximum. La réduction est appliquée avec le code FOODPREPX45. Attention : Foodprepper livre uniquement en Flandre et à Bruxelles.",
+      prijsUitleg: "Foodprepper applique un système de prix flexible, sans engagement minimum. Vous payez par repas ou par box, selon votre choix. Les prix varient : vérifiez l'offre actuelle sur foodprepper.be, car ils peuvent changer.\n\nLes nouveaux clients reçoivent trois fois 15 € de réduction sur leurs trois premières commandes, soit 45 € d'avantage au maximum. La réduction est appliquée avec notre code promo. Attention : Foodprepper livre uniquement en Flandre et à Bruxelles.",
       nietGeschiktVoor: [
         'Vous habitez en Wallonie : Foodprepper livre uniquement en Flandre et dans la Région de Bruxelles-Capitale.',
         "Vous cherchez une vraie expérience de cuisine : la découpe et la préparation sont déjà faites, le plaisir de cuisiner est donc plus limité.",
@@ -220,7 +220,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       faq: [
         {
           vraag: 'Foodprepper est-il cher ?',
-          antwoord: "Foodprepper n'est ni le box repas le moins cher de Belgique, ni le plus cher. Le prix dépend des repas choisis et du nombre de personnes. Les nouveaux clients profitent d'une réduction de bienvenue : 3 x 15 € sur les 3 premières commandes (jusqu'à 45 €), appliquée avec le code FOODPREPX45. Les prix actuels sont sur foodprepper.be et peuvent changer.",
+          antwoord: "Foodprepper n'est ni le box repas le moins cher de Belgique, ni le plus cher. Le prix dépend des repas choisis et du nombre de personnes. Les nouveaux clients profitent d'une réduction de bienvenue : 3 x 15 € sur les 3 premières commandes (jusqu'à 45 €), appliquée avec notre code promo. Les prix actuels sont sur foodprepper.be et peuvent changer.",
         },
         {
           vraag: 'Puis-je commander sans abonnement ?',
@@ -265,7 +265,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       'Minimum de commande de 55 €',
     ],
     besteVoor: 'les soirées pressées à Bruxelles et en Flandre',
-    ctaSubtekst: '3 × 15 € de réduction · avec le code FOODPREPX45 lors du paiement',
+    ctaSubtekst: '3 × 15 € de réduction · avec notre code promo lors du paiement',
     seoTitle: 'Foodprepper avis (2026) : livre-t-il en Wallonie ?',
     seoDescription:
       "Foodprepper prépare vos repas en 15 minutes, mais ne livre qu'en Flandre et à Bruxelles. Notre avis : prix, qualité et alternatives pour la Wallonie.",

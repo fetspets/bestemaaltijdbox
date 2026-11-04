@@ -92,7 +92,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Ingrédients belges · livre aussi en Wallonie',
             waarom:
               "Les couples qui veulent manger belge choisissent Foodbag. Les ingrédients viennent de fermes locales via une filière courte, ce qui se remarque à la fraîcheur. Cinq styles de cuisine, dont la ligne Sana de Sandra Bekkari, laissent de la marge si vos goûts divergent. Livraison gratuite dans tout le pays.",
-            deal: '3 × 20 € de réduction — avec le code FOODBAGx60 lors du paiement',
+            deal: '3 × 20 € de réduction — avec notre code promo lors du paiement',
           },
           {
             slug: 'foodmaker',
@@ -264,7 +264,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Ligne veggie · ingrédients belges · livre en Wallonie',
             waarom:
               "Foodbag propose cinq styles de cuisine, dont une ligne veggie composée de plats végétariens et végétaux, avec des ingrédients de fermes belges. Livraison gratuite dans tout le pays. Là encore, ce n'est pas un box végétal : les autres lignes contiennent viande et poisson.",
-            deal: '3 × 20 € de réduction — avec le code FOODBAGx60 lors du paiement',
+            deal: '3 × 20 € de réduction — avec notre code promo lors du paiement',
             waarschuwing: '⚠️ Pas 100 % végétal',
           },
           {
@@ -444,7 +444,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Ingrédients belges · livraison gratuite · avec ou sans abonnement',
             waarom:
               "Foodbag cuisine avec des ingrédients de fournisseurs belges et propose cinq styles, dont la ligne rapide Quick&Easy et Kant&Klaar pour les soirs vraiment chargés. Vous choisissez le nombre de personnes par plat, pouvez payer en chèques-repas, et la livraison est toujours gratuite, Wallonie comprise.",
-            deal: '3 × 20 € de réduction — avec le code FOODBAGx60 lors du paiement',
+            deal: '3 × 20 € de réduction — avec notre code promo lors du paiement',
           },
           {
             slug: 'factor',
@@ -676,7 +676,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Sans abonnement · livraison gratuite partout',
             waarom:
               "Foodbag cuisine avec des ingrédients belges et livre gratuitement dans tout le pays, Wallonie comprise. Vous choisissez le nombre de personnes par plat et commandez au moins trois plats, avec ou sans abonnement — idéal pour tester sans engagement.",
-            deal: '3 × 20 € de réduction — avec le code FOODBAGx60 lors du paiement',
+            deal: '3 × 20 € de réduction — avec notre code promo lors du paiement',
           },
         ],
       },

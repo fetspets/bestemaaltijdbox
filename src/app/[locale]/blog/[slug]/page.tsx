@@ -24,17 +24,17 @@ const eurFr = (n: number) => n.toFixed(2).replace('.', ',') + ' €';
 const OPZEG_DEALS = {
   nl: [
     { naam: 'Factor', logo: '/logos/factor.svg', deal: 'Tot 40% op je eerste box + cadeaus', detail: 'Automatisch via onze link · korting op je eerste 4 boxen · nieuwe klanten', cta: 'Activeer Factor deal', href: '/ga/factor', kleur: '#D97706', bg: '#FFFBEB' },
-    { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '€60 korting op je eerste 3 bestellingen', detail: 'Met code FOODBAGx60 · 3x €20 · geldig t.e.m. 01/01/2027', cta: 'Activeer €60 korting', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
+    { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '€60 korting op je eerste 3 bestellingen', detail: 'Met onze kortingscode · 3x €20 · geldig t.e.m. 01/01/2027', cta: 'Activeer €60 korting', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
     { naam: 'HelloFresh', logo: '/logos/hellofresh.png', deal: 'Tot €70 korting op je eerste 3 boxen', detail: 'Automatisch via onze link · nieuwe klanten', cta: 'Activeer HelloFresh deal', href: '/ga/hellofresh', kleur: '#1B4332', bg: '#F0FDF4' },
     { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: 'Tot 50% korting op je eerste 4 boxen', detail: 'Geen code nodig · korting automatisch via onze link', cta: 'Activeer Marley Spoon deal', href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
-    { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3× €15 korting op je eerste 3 bestellingen', detail: 'Met code FOODPREPX45 · €45 totaal · klaar in 15 minuten', cta: 'Activeer Foodprepper deal', href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
+    { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3× €15 korting op je eerste 3 bestellingen', detail: 'Met onze kortingscode · €45 totaal · klaar in 15 minuten', cta: 'Activeer Foodprepper deal', href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
   ],
   fr: [
     { naam: 'Factor', logo: '/logos/factor.svg', deal: 'Jusqu’à 40 % sur la première box + cadeaux', detail: 'Automatique via notre lien · nouveaux clients · livre en Wallonie', cta: "Activer l'offre Factor", href: '/ga/factor', kleur: '#D97706', bg: '#FFFBEB' },
-    { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '60 € de réduction sur vos 3 premières commandes', detail: "Avec le code FOODBAGx60 · 3 x 20 € · valable jusqu'au 01/01/2027 · livre en Wallonie", cta: 'Activer 60 € de réduction', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
+    { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '60 € de réduction sur vos 3 premières commandes', detail: "Avec notre code promo · 3 x 20 € · valable jusqu'au 01/01/2027 · livre en Wallonie", cta: 'Activer 60 € de réduction', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
     { naam: 'HelloFresh', logo: '/logos/hellofresh.png', deal: "Jusqu'à 70 € de réduction sur vos 3 premières box", detail: 'Automatique via notre lien · nouveaux clients · livre en Wallonie', cta: "Activer l'offre HelloFresh", href: '/ga/hellofresh', kleur: '#1B4332', bg: '#F0FDF4' },
     { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: "Jusqu'à 50 % de réduction sur vos 4 premières box", detail: 'Sans code · Flandre et Bruxelles uniquement', cta: "Activer l'offre Marley Spoon", href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
-    { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3 x 15 € de réduction sur vos 3 premières commandes', detail: 'Avec le code FOODPREPX45 · 45 € au total · Flandre et Bruxelles uniquement', cta: "Activer l'offre Foodprepper", href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
+    { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3 x 15 € de réduction sur vos 3 premières commandes', detail: 'Avec notre code promo · 45 € au total · Flandre et Bruxelles uniquement', cta: "Activer l'offre Foodprepper", href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
   ],
 };
 
@@ -45,7 +45,7 @@ const UI = {
     opzegIntro: 'Als je maaltijdbox niet meer past — té duur, te weinig variatie, verkeerde porties — is het soms slimmer om te wisselen dan volledig te stoppen. Nieuwe klanten krijgen bij alle grote aanbieders een flinke welkomstdeal. Hieronder de beste alternatieven van dit moment.',
     opzegNoot: 'Instructies om op te zeggen vind je hieronder. Wil je liever pauzeren dan opzeggen? Dat kan bij de meeste aanbieders wekelijks via je account.',
     snellerKop: 'Op zoek naar iets snellers dan HelloFresh?',
-    snellerTekst: <>Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Krijg <strong>€15 korting</strong> op elk van je eerste 3 bestellingen, met code FOODPREPX45 bij het afrekenen.</>,
+    snellerTekst: <>Foodprepper zet binnen 15 minuten een verse maaltijd op tafel — zonder lang snijwerk. Krijg <strong>€15 korting</strong> op elk van je eerste 3 bestellingen, met onze kortingscode bij het afrekenen.</>,
     snellerCta: '€15 korting op de eerste 3 bestellingen →',
     prijsKop: (m: number) => `Prijsvoorbeeld — ${m} maaltijden per week`,
     prijsRegel1: (m: number, pp: string, tot: string) => `${m} × ${pp} = ${tot} aan maaltijden`,
@@ -60,7 +60,7 @@ const UI = {
     opzegIntro: "Si votre box repas ne vous convient plus (trop cher, pas assez varié, mauvaises portions), il est parfois plus malin de changer que d'arrêter complètement. Les nouveaux clients reçoivent une belle offre de bienvenue chez tous les grands fournisseurs. Voici les meilleures alternatives du moment.",
     opzegNoot: 'Les instructions pour résilier se trouvent ci-dessous. Vous préférez mettre en pause plutôt que résilier ? C’est possible chaque semaine via votre compte chez la plupart des fournisseurs.',
     snellerKop: 'Vous cherchez plus rapide que HelloFresh ?',
-    snellerTekst: <>Foodprepper met un repas frais sur la table en 15 minutes, sans longue découpe. Profitez de <strong>15 € de réduction</strong> sur chacune de vos 3 premières commandes, appliqués avec le code FOODPREPX45. Attention : Foodprepper livre uniquement en Flandre et à Bruxelles.</>,
+    snellerTekst: <>Foodprepper met un repas frais sur la table en 15 minutes, sans longue découpe. Profitez de <strong>15 € de réduction</strong> sur chacune de vos 3 premières commandes, appliqués avec notre code promo. Attention : Foodprepper livre uniquement en Flandre et à Bruxelles.</>,
     snellerCta: '15 € de réduction sur les 3 premières commandes →',
     prijsKop: (m: number) => `Exemple de prix — ${m} repas par semaine`,
     prijsRegel1: (m: number, pp: string, tot: string) => `${m} × ${pp} = ${tot} de repas`,

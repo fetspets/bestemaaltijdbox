@@ -1,5 +1,8 @@
 import type { ReactNode } from 'react';
 import Link from '@/components/TaalLink';
+import CodeOnthullen from '@/components/CodeOnthullen';
+import { codeerCode } from '@/lib/codeer';
+import { getAanbieder } from '@/lib/aanbieders';
 
 /**
  * Gedeelde opmaak van de kortingscodepagina's (/kortingscode/<aanbieder>).
@@ -91,8 +94,8 @@ export default function KortingscodeDetail({
         <div style={{ fontSize: 14, color: '#4B5563' }}>{t.voordeelSub}</div>
         {t.code && (
           <div style={{ marginTop: 14 }}>
-            <div style={{ fontSize: 12, color: '#4B5563', marginBottom: 6 }}>{t.codeLabel}</div>
-            <div style={{ display: 'inline-block', fontFamily: 'monospace', fontSize: 20, fontWeight: 800, letterSpacing: '0.08em', padding: '8px 16px', border: '2px dashed currentColor', borderRadius: 8, background: 'white' }}>{t.code}</div>
+            <div style={{ fontSize: 12, color: '#4B5563', marginBottom: 2 }}>{t.codeLabel}</div>
+            <CodeOnthullen slug={slug} codeB64={codeerCode(t.code)} naam={getAanbieder(slug)?.naam ?? slug} plaatsing="kortingscode-code" />
           </div>
         )}
         {t.voordeelNoot && (

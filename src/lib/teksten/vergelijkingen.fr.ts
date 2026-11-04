@@ -75,14 +75,14 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
             slug: 'foodprepper',
             kop: '🏷️ Réduction de bienvenue Foodprepper',
             tekst:
-              "3 × 15 € sur vos trois premières commandes (jusqu'à 45 €). Utilisez le code FOODPREPX45 lors du paiement. Réservé aux nouveaux clients ; vérifiez la validité et votre code postal sur foodprepper.be.",
+              "3 × 15 € sur vos trois premières commandes (jusqu'à 45 €). Utilisez notre code promo lors du paiement. Réservé aux nouveaux clients ; vérifiez la validité et votre code postal sur foodprepper.be.",
             knoptekst: '15 € de réduction sur les 3 premières commandes →',
           },
           {
             slug: 'foodbag',
             kop: '🏷️ Réduction de bienvenue Foodbag',
             tekst:
-              "3 × 20 € sur vos trois premières commandes (jusqu'à 60 €). Utilisez le code FOODBAGx60 lors du paiement. Réservé aux nouveaux clients ; vérifiez la validité sur foodbag.be.",
+              "3 × 20 € sur vos trois premières commandes (jusqu'à 60 €). Utilisez notre code promo lors du paiement. Réservé aux nouveaux clients ; vérifiez la validité sur foodbag.be.",
             knoptekst: 'Voir Foodbag →',
           },
         ],
@@ -136,7 +136,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
       },
       {
         q: 'Lequel est le moins cher ?',
-        a: "Foodbag coûte en moyenne plus cher par portion que Foodprepper. Le prix exact dépend toutefois des plats choisis et du nombre de personnes. Vérifiez les tarifs actuels sur foodprepper.be et foodbag.be, car ils évoluent. Les nouveaux clients Foodprepper reçoivent trois fois 15 € de réduction sur leurs trois premières commandes, appliqués avec le code FOODPREPX45.",
+        a: "Foodbag coûte en moyenne plus cher par portion que Foodprepper. Le prix exact dépend toutefois des plats choisis et du nombre de personnes. Vérifiez les tarifs actuels sur foodprepper.be et foodbag.be, car ils évoluent. Les nouveaux clients Foodprepper reçoivent trois fois 15 € de réduction sur leurs trois premières commandes, appliqués avec notre code promo.",
       },
       {
         q: 'Puis-je tester les deux ?',
@@ -216,7 +216,7 @@ export const vergelijkingenFr: Record<string, Partial<Vergelijking>> = {
             slug: 'foodprepper',
             kop: '🏷️ Réduction de bienvenue Foodprepper',
             tekst:
-              "3 × 15 € sur vos trois premières commandes (jusqu'à 45 €). Utilisez le code FOODPREPX45 lors du paiement. Réservé aux nouveaux clients ; vérifiez votre code postal sur foodprepper.be.",
+              "3 × 15 € sur vos trois premières commandes (jusqu'à 45 €). Utilisez notre code promo lors du paiement. Réservé aux nouveaux clients ; vérifiez votre code postal sur foodprepper.be.",
             knoptekst: '15 € de réduction sur les 3 premières commandes →',
           },
           {
