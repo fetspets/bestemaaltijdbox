@@ -854,6 +854,30 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         'Les box repas : Foodbag, HelloFresh et Foodprepper.',
       ] },
       { type: 'p', text: "Non autorisés : l'alcool (même au supermarché), le tabac et tout ce qui n'est pas alimentaire, comme les produits d'entretien, les soins, la nourriture pour animaux ou les ustensiles de cuisine. Avec un box repas, vous dépensez donc vos titres-repas pour exactement ce à quoi ils servent : des ingrédients frais et une recette." },
+      { type: 'p', text: "La loi est brève : un titre-repas ne peut servir qu'à payer un repas ou à acheter des aliments prêts à la consommation. Ce qui passe concrètement en caisse dépend du système de caisse du magasin. Depuis septembre 2020, les grands supermarchés séparent automatiquement l'alimentaire du non-alimentaire, et les émetteurs contrôlent plus strictement." },
+      { type: 'h2', text: 'Courses en ligne et livraison à domicile' },
+      { type: 'ul', items: [
+        'Box repas : Foodbag, HelloFresh et Foodprepper acceptent les titres-repas électroniques. Le fonctionnement par box est expliqué plus haut.',
+        "Collect&Go (Colruyt) : selon les conditions générales, vous pouvez payer en titres-repas électroniques lorsqu'un collaborateur Collect&Go livre vos courses à domicile, au moment de la livraison. Pour un retrait en point Collect&Go, les conditions ne mentionnent pas les titres-repas ; renseignez-vous auprès de votre point de retrait.",
+        "Autres boutiques en ligne : Monizze collabore avec plusieurs boutiques en ligne, où vous choisissez « Monizze » au paiement. Les moyens de paiement indiquent toujours si les titres-repas sont acceptés.",
+        "Livraison de repas par des restaurants : possible si le restaurant ou l'application accepte la carte de votre émetteur.",
+      ] },
+      {
+        type: 'notitie',
+        kop: 'Cas limites',
+        achtergrond: '#FFF7ED',
+        rand: '#FDBA74',
+        regels: [
+          { label: 'Bière, vin et spiritueux :', tekst: 'non, même au supermarché.' },
+          { label: 'Bière sans alcool :', tekst: "pas de règle claire. Cela dépend de la façon dont le magasin a classé le produit dans sa caisse." },
+          { label: 'Nourriture pour animaux :', tekst: "non, ce n'est pas de l'alimentation humaine." },
+          { label: 'Alimentation pour bébé :', tekst: "c'est de l'alimentation, donc en principe oui. Les règles ne la citent pas séparément ; la caisse du magasin décide." },
+          { label: 'Entretien, soins, ustensiles :', tekst: 'non, ce sont des produits non alimentaires.' },
+        ],
+      },
+      { type: 'h2', text: 'Combien de temps un titre-repas est-il valable ?' },
+      { type: 'p', text: "Un titre-repas électronique est valable 12 mois à partir du jour où il est crédité sur votre compte. Les titres les plus anciens sont utilisés en premier. Des titres expirés peuvent dans certains cas être réactivés ; un titre réactivé reste alors valable 3 mois. Votre solde et vos dates d'expiration figurent dans l'application de votre émetteur (Monizze, Pluxee ou Edenred)." },
+      { type: 'p', html: true, text: 'Vérifié le 10 novembre 2026. Sources : <a href="https://werk.belgie.be/nl/themas/verloning/maaltijdcheques" rel="noopener" target="_blank" style="color:#1B4332;text-decoration:underline">SPF Emploi</a>, <a href="https://www.monizze.be/en/employees/spend-meal-vouchers/" rel="noopener" target="_blank" style="color:#1B4332;text-decoration:underline">Monizze</a> et les <a href="https://gdpr.colruytgroup.com/gdpr/tc/X_TC_COLLECTGO_NL.pdf" rel="noopener" target="_blank" style="color:#1B4332;text-decoration:underline">conditions générales de Collect&amp;Go</a>.' },
       {
         type: 'slotCta',
         kop: 'Prêt à commander ?',
@@ -892,6 +916,18 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       {
         q: 'Que peut-on acheter avec des titres-repas ?',
         a: "Uniquement de l'alimentation et des boissons non alcoolisées : au supermarché, chez le boulanger ou le boucher, au restaurant et chez les box repas comme Foodbag, HelloFresh et Foodprepper. L'alcool, le tabac et les produits non alimentaires (produits d'entretien, soins) sont exclus.",
+      },
+      {
+        q: 'Combien de temps les titres-repas sont-ils valables ?',
+        a: "Un titre-repas électronique est valable 12 mois à partir du jour où il est crédité sur votre compte. Les plus anciens sont utilisés en premier. Votre solde et vos dates d'expiration figurent dans l'application Monizze, Pluxee ou Edenred.",
+      },
+      {
+        q: 'Peut-on payer Collect&Go en titres-repas ?',
+        a: "Selon les conditions générales de Collect&Go, oui pour une livraison à domicile par un collaborateur Collect&Go : vous payez en titres-repas électroniques à la livraison. Pour le retrait, les conditions ne le mentionnent pas.",
+      },
+      {
+        q: 'Peut-on acheter de la nourriture pour animaux avec des titres-repas ?',
+        a: "Non. Les titres-repas sont réservés à l'alimentation humaine ; la nourriture pour animaux n'en fait pas partie.",
       },
     ],
     relatedLinks: [
