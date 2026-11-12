@@ -39,7 +39,7 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
       rijen: [
         { slug: 'hellofresh', badge: '⭐ Meilleur choix national' },
         { slug: 'ekomenu', badge: '🌱 Meilleur bio', noot: 'pas de livraison en Wallonie' },
-        { slug: 'marley-spoon', badge: '🎯 Meilleure offre', noot: 'pas de livraison en Wallonie · + 6,99 € de livraison' },
+        { slug: 'marley-spoon', badge: '👨‍🍳 Le plus de recettes', noot: 'pas de livraison en Wallonie · + 6,99 € de livraison' },
         { slug: 'foodprepper', badge: '💸 Prix/portion le plus bas', noot: 'pas de livraison en Wallonie · min. 55 €' },
         { slug: 'factor', noot: '+ 5,99 € de livraison' },
         { slug: 'foodbag' },
@@ -75,13 +75,13 @@ export const gidsenFr: Record<string, Partial<Gids>> = {
         },
         {
           slug: 'marley-spoon',
-          badge: '🎯 Meilleure offre de bienvenue par portion',
+          badge: '👨‍🍳 Le meilleur choix pour les passionnés de cuisine',
           accent: '#7C3AED',
-          metDeal: '~41 €/semaine en moyenne · box 1 à 23,37 € (50 % + livraison offerte)',
+          metDeal: 'offre de bienvenue actuelle : voir marleyspoon.be',
           naDeal: '53,73 €/semaine (tarif standard, livraison 6,99 € comprise)',
           uitleg:
-            "50 % + 20 % + 15 % + 10 % sur les quatre premières box rendent Marley Spoon particulièrement avantageux au démarrage : votre première box coûte 23,37 €, livraison comprise. Recettes de qualité chef, plus de 40 choix par semaine. Après la période de bienvenue : 46,74 €/semaine + 6,99 € de livraison. Livraison en Flandre et à Bruxelles uniquement.",
-          dealOpmerking: 'Réduction automatique via le lien · 4 box · Flandre et Bruxelles uniquement.',
+            "Marley Spoon n'est pas le moins cher, mais offre le plus de choix avec plus de 80 recettes par semaine, des recettes de chef qui sortent de l'ordinaire. Au tarif normal, vous payez 46,74 € par semaine plus 6,99 € de livraison. Marley Spoon adapte régulièrement son offre de bienvenue ; l'offre actuelle s'affiche sur marleyspoon.be. Livraison en Flandre et à Bruxelles uniquement.",
+          dealOpmerking: 'Offre actuelle sur marleyspoon.be · Flandre et Bruxelles uniquement.',
         },
       ],
     },

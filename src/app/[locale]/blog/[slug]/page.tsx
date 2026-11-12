@@ -26,14 +26,14 @@ const OPZEG_DEALS = {
     { naam: 'Factor', logo: '/logos/factor.svg', deal: 'Tot 40% op je eerste box + cadeaus', detail: 'Automatisch via onze link · korting op je eerste 4 boxen · nieuwe klanten', cta: 'Activeer Factor deal', href: '/ga/factor', kleur: '#D97706', bg: '#FFFBEB' },
     { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '€60 korting op je eerste 3 bestellingen', detail: 'Met onze kortingscode · 3x €20 · geldig t.e.m. 01/01/2027', cta: 'Activeer €60 korting', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
     { naam: 'HelloFresh', logo: '/logos/hellofresh.png', deal: 'Tot €70 korting op je eerste 3 boxen', detail: 'Automatisch via onze link · nieuwe klanten', cta: 'Activeer HelloFresh deal', href: '/ga/hellofresh', kleur: '#1B4332', bg: '#F0FDF4' },
-    { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: 'Tot 50% korting op je eerste 4 boxen', detail: 'Geen code nodig · korting automatisch via onze link', cta: 'Activeer Marley Spoon deal', href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
+    { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: 'Meer dan 80 chef-recepten per week', detail: 'Actueel welkomstaanbod op marleyspoon.be · Vlaanderen en Brussel', cta: 'Bekijk Marley Spoon', href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
     { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3× €15 korting op je eerste 3 bestellingen', detail: 'Met onze kortingscode · €45 totaal · klaar in 15 minuten', cta: 'Activeer Foodprepper deal', href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
   ],
   fr: [
     { naam: 'Factor', logo: '/logos/factor.svg', deal: 'Jusqu’à 40 % sur la première box + cadeaux', detail: 'Automatique via notre lien · nouveaux clients · livre en Wallonie', cta: "Activer l'offre Factor", href: '/ga/factor', kleur: '#D97706', bg: '#FFFBEB' },
     { naam: 'Foodbag', logo: '/logos/foodbag.png', deal: '60 € de réduction sur vos 3 premières commandes', detail: "Avec notre code promo · 3 x 20 € · valable jusqu'au 01/01/2027 · livre en Wallonie", cta: 'Activer 60 € de réduction', href: '/ga/foodbag', kleur: '#1E40AF', bg: '#EFF6FF' },
     { naam: 'HelloFresh', logo: '/logos/hellofresh.png', deal: "Jusqu'à 70 € de réduction sur vos 3 premières box", detail: 'Automatique via notre lien · nouveaux clients · livre en Wallonie', cta: "Activer l'offre HelloFresh", href: '/ga/hellofresh', kleur: '#1B4332', bg: '#F0FDF4' },
-    { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: "Jusqu'à 50 % de réduction sur vos 4 premières box", detail: 'Sans code · Flandre et Bruxelles uniquement', cta: "Activer l'offre Marley Spoon", href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
+    { naam: 'Marley Spoon', logo: '/logos/marley-spoon.png', deal: 'Plus de 80 recettes de chef par semaine', detail: 'Offre de bienvenue actuelle sur marleyspoon.be · Flandre et Bruxelles uniquement', cta: 'Découvrir Marley Spoon', href: '/ga/marley-spoon', kleur: '#7C3AED', bg: '#F5F3FF' },
     { naam: 'Foodprepper', logo: '/logos/foodprepper.png', deal: '3 x 15 € de réduction sur vos 3 premières commandes', detail: 'Avec notre code promo · 45 € au total · Flandre et Bruxelles uniquement', cta: "Activer l'offre Foodprepper", href: '/ga/foodprepper', kleur: '#2D6A4F', bg: '#ECFDF5' },
   ],
 };

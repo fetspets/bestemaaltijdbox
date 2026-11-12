@@ -131,29 +131,31 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
 
   'marley-spoon': {
     badge: { label: '👨‍🍳 Pour les passionnés de cuisine', bg: '#F3E8FF', color: '#7C3AED' },
-    ctaTekst: 'Économisez 44 € sur vos 4 premières box',
-    ctaTekst2: 'Essayez votre première box pour 23,37 €',
+    ctaTekst: 'Découvrir Marley Spoon',
+    ctaTekst2: "Voir l'offre de bienvenue",
     kortingsCode: {
       code: null,
-      bedrag: "50 % de réduction",
-      bedragKort: "Jusqu'à 50 %",
-      deal: "Jusqu'à 50 % de réduction répartis sur les 4 premières box",
-      voorwaarden: "Réservé aux nouveaux clients · aucun code requis · 4 premières box · résiliable · livraison 6,99 €/commande · Flandre et Bruxelles uniquement",
-      beschrijving: "Aucun code nécessaire — la réduction s'applique automatiquement via notre lien. Répartition : 50 % + livraison offerte sur la box 1, 20 % sur la box 2, 15 % sur la box 3, 10 % sur la box 4. Ensuite 6,99 € par livraison. Attention : pas de livraison en Wallonie.",
+      bedrag: "Offre de bienvenue",
+      bedragKort: 'Voir le site',
+      deal: "Découvrez l'offre de bienvenue actuelle sur marleyspoon.be",
+      nietGegarandeerd: true,
+      voorwaarden: "Nouveaux clients · offre actuelle sur marleyspoon.be · résiliable · livraison 6,99 €/commande · Flandre et Bruxelles uniquement",
+      beschrijving: "Marley Spoon adapte régulièrement son offre de bienvenue. L'offre actuelle pour les nouveaux clients s'affiche sur marleyspoon.be. La livraison coûte 6,99 € par commande. Attention : pas de livraison en Wallonie.",
     },
     tagline: 'Recettes de chef — mais pas de livraison en Wallonie',
     beschrijving:
       "Marley Spoon propose les recettes les plus travaillées de notre comparatif. Attention toutefois : la livraison est limitée à la Flandre et à Bruxelles. Si vous habitez en Wallonie, ce fournisseur n'est pas une option.",
     opzegTermijn: '5 jours avant la livraison',
     uitgebreideReview: {
+      prijsTabelIntro: "Prix normal pour 2 personnes / 3 repas par semaine. Une éventuelle offre de bienvenue s'affiche sur marleyspoon.be.",
       prijsTabel: [
-        { box: 'Box 1', normaal: '46,74 €', korting: '50 % + livraison offerte', betaal: '23,37 €', besparing: '23,37 €' },
-        { box: 'Box 2', normaal: '46,74 €', korting: '20 %', betaal: '37,39 €', besparing: '9,35 €' },
-        { box: 'Box 3', normaal: '46,74 €', korting: '15 %', betaal: '39,73 €', besparing: '7,01 €' },
-        { box: 'Box 4', normaal: '46,74 €', korting: '10 %', betaal: '42,07 €', besparing: '4,67 €' },
-        { box: 'Total', normaal: '186,96 €', korting: '—', betaal: '142,56 €', besparing: '44,40 €' },
+        { box: 'Semaine 1', normaal: '46,74 € + 6,99 € de livraison', korting: '—', betaal: '53,73 €', besparing: '—' },
+        { box: 'Semaine 2', normaal: '46,74 € + 6,99 € de livraison', korting: '—', betaal: '53,73 €', besparing: '—' },
+        { box: 'Semaine 3', normaal: '46,74 € + 6,99 € de livraison', korting: '—', betaal: '53,73 €', besparing: '—' },
+        { box: 'Semaine 4', normaal: '46,74 € + 6,99 € de livraison', korting: '—', betaal: '53,73 €', besparing: '—' },
+        { box: 'Total', normaal: '214,92 €', korting: '—', betaal: '214,92 €', besparing: '—' },
       ],
-      prijsUitleg: "Après la période de bienvenue, vous payez à deux, avec 3 repas par semaine, 46,74 € par box plus 6,99 € de livraison, soit 214,92 € par mois (4 × 53,73 €). Est-ce cher par rapport aux courses classiques ? Oui. Mais les clients de Marley Spoon citent toujours les mêmes raisons : pas de gaspillage, plus besoin de réfléchir chaque jour au menu, et le temps gagné en évitant le magasin tous les soirs. Attention : Marley Spoon ne livre qu'en Flandre et à Bruxelles.",
+      prijsUitleg: "Au tarif normal, vous payez à deux, avec 3 repas par semaine, 46,74 € par box plus 6,99 € de livraison, soit 214,92 € par mois (4 × 53,73 €). Est-ce cher par rapport aux courses classiques ? Oui. Mais les clients de Marley Spoon citent toujours les mêmes raisons : pas de gaspillage, plus besoin de réfléchir chaque jour au menu, et le temps gagné en évitant le magasin tous les soirs. Attention : Marley Spoon ne livre qu'en Flandre et à Bruxelles.",
       nietGeschiktVoor: [
         "Vous habitez en Wallonie : Marley Spoon n'y livre pas, uniquement en Flandre et à Bruxelles.",
         'Vous avez peu de temps pour cuisiner : comptez 45 à 60 minutes par recette.',
@@ -196,7 +198,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
       'Temps de préparation plus long (45 à 60 minutes)',
     ],
     besteVoor: 'les amateurs de cuisine à Bruxelles et en Flandre',
-    ctaSubtekst: 'réduction appliquée automatiquement via notre lien · vérifiez votre code postal',
+    ctaSubtekst: 'offre de bienvenue actuelle sur marleyspoon.be · vérifiez votre code postal',
     seoTitle: 'Marley Spoon avis (2026) : livre-t-il en Wallonie ?',
     seoDescription:
       "Marley Spoon ne livre qu'en Flandre et à Bruxelles. Notre avis complet : qualité des recettes, prix, frais de livraison et alternatives pour la Wallonie.",

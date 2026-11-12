@@ -9,6 +9,12 @@ export interface KortingsCode {
   /** Kleine lettertjes: geldigheid en beperkingen. */
   voorwaarden: string;
   beschrijving: string;
+  /**
+   * Zet op true als we niet kunnen garanderen dat de welkomstkorting via onze
+   * link toegepast wordt (bv. Marley Spoon: de Adtraction-link geeft een
+   * foutmelding over de code). Dan tonen we geen 'automatisch via onze link'.
+   */
+  nietGegarandeerd?: boolean;
 }
 
 export interface Aanbieder {
@@ -27,6 +33,8 @@ export interface Aanbieder {
     vergelijking: string;
     eindoordeel: string;
     prijsTabel?: { box: string; normaal: string; korting: string; betaal: string; besparing: string }[];
+    /** Overschrijft de standaardzin boven de prijstabel. */
+    prijsTabelIntro?: string;
     prijsUitleg?: string;
     nietGeschiktVoor?: string[];
     faq?: { vraag: string; antwoord: string }[];
@@ -217,14 +225,15 @@ export const aanbieders: Aanbieder[] = [
       hoeWerktHet: 'Bestellen via marleyspoon.be of de app. Box voor 1 persoon, of 2, 3, 4 of 6 porties per maaltijd. Bezorging in Vlaanderen en Brussel. Wekelijks pauzeren of opzeggen mogelijk via je account.',
       vergelijking: 'Marley Spoon zit qua prijs in dezelfde categorie als Foodbag maar biedt meer receptkeuze (80+ per week). Ten opzichte van HelloFresh zijn de recepten creatiever en uitgebreider qua bereiding, maar ook tijdsintensiever. Wie snel wil koken kiest beter voor HelloFresh.',
       eindoordeel: 'Marley Spoon verdient zijn #3 positie als beste keuze voor kookliefhebbers. De hoge smaakscore (8,6/10) en het brede receptaanbod maken het verschil. Enkel de beperkte bezorging (geen Wallonië) en de hogere prijs zijn minpunten.',
+      prijsTabelIntro: 'Normale prijs voor 2 personen / 3 maaltijden per week. Een eventueel welkomstaanbod zie je op marleyspoon.be.',
       prijsTabel: [
-        { box: 'Box 1', normaal: '€46,74', korting: '50% + gratis bezorging', betaal: '€23,37', besparing: '€23,37' },
-        { box: 'Box 2', normaal: '€46,74', korting: '20%', betaal: '€37,39', besparing: '€9,35' },
-        { box: 'Box 3', normaal: '€46,74', korting: '15%', betaal: '€39,73', besparing: '€7,01' },
-        { box: 'Box 4', normaal: '€46,74', korting: '10%', betaal: '€42,07', besparing: '€4,67' },
-        { box: 'Totaal', normaal: '€186,96', korting: '—', betaal: '€142,56', besparing: '€44,40' },
+        { box: 'Week 1', normaal: '€46,74 + €6,99 bezorging', korting: '—', betaal: '€53,73', besparing: '—' },
+        { box: 'Week 2', normaal: '€46,74 + €6,99 bezorging', korting: '—', betaal: '€53,73', besparing: '—' },
+        { box: 'Week 3', normaal: '€46,74 + €6,99 bezorging', korting: '—', betaal: '€53,73', besparing: '—' },
+        { box: 'Week 4', normaal: '€46,74 + €6,99 bezorging', korting: '—', betaal: '€53,73', besparing: '—' },
+        { box: 'Totaal', normaal: '€214,92', korting: '—', betaal: '€214,92', besparing: '—' },
       ],
-      prijsUitleg: 'Na de welkomstperiode betaal je als 2 personen met 3 maaltijden/week €46,74 per box plus €6,99 bezorging, samen €214,92 per maand (4 × €53,73). Is dat duur vergeleken met zelf boodschappen doen? Ja. Maar Marley Spoon-gebruikers noemen telkens dezelfde redenen: geen voedselverspilling, geen dagelijks nadenken over wat je kookt, en de tijdsbesparing van niet elke avond naar de winkel te rijden.',
+      prijsUitleg: 'Aan de normale prijs betaal je als 2 personen met 3 maaltijden/week €46,74 per box plus €6,99 bezorging, samen €214,92 per maand (4 × €53,73). Is dat duur vergeleken met zelf boodschappen doen? Ja. Maar Marley Spoon-gebruikers noemen telkens dezelfde redenen: geen voedselverspilling, geen dagelijks nadenken over wat je kookt, en de tijdsbesparing van niet elke avond naar de winkel te rijden.',
       nietGeschiktVoor: [
         'Je woont in Wallonië of buiten Vlaanderen/Brussel — Marley Spoon bezorgt daar niet.',
         'Je hebt weinig tijd om te koken — reken op 45 tot 60 minuten per bereiding.',
@@ -261,27 +270,28 @@ export const aanbieders: Aanbieder[] = [
     affiliateUrl: 'https://go.adt246.net/t/t?a=1709214807&as=2059394978&t=2&tk=1',
     kortingsCode: {
       code: null,
-      bedrag: '50% korting',
-      bedragKort: 'Tot 50%',
-      deal: 'Tot 50% korting verspreid over de eerste 4 boxen',
-      voorwaarden: 'Geldig voor nieuwe klanten · Geen code vereist · Eerste 4 boxen · Direct opzegbaar · Reguliere bezorgkost: €6,99/levering',
-      beschrijving: 'Geen kortingscode nodig — korting wordt automatisch toegepast via onze link. Verspreid als: 50% + gratis verzending op box 1, 20% op box 2, 15% op box 3, 10% op box 4. Daarna €6,99/levering.',
+      bedrag: 'Welkomstaanbod',
+      bedragKort: 'Zie site',
+      deal: 'Bekijk het actuele welkomstaanbod op marleyspoon.be',
+      nietGegarandeerd: true,
+      voorwaarden: 'Voor nieuwe klanten · Actueel aanbod op marleyspoon.be · Direct opzegbaar · Bezorgkost: €6,99/levering',
+      beschrijving: 'Marley Spoon past zijn welkomstaanbod geregeld aan. Het actuele aanbod voor nieuwe klanten zie je op marleyspoon.be. Bezorging kost €6,99 per levering.',
     },
-    ctaSubtekst: 'Korting automatisch via link · geen code nodig',
-    ctaTekst: 'Bespaar €44 op je eerste 4 boxen',
-    ctaTekst2: 'Probeer je eerste box voor €23,37',
+    ctaSubtekst: 'Actueel welkomstaanbod op marleyspoon.be',
+    ctaTekst: 'Bekijk Marley Spoon',
+    ctaTekst2: 'Bekijk het welkomstaanbod',
     kenmerken: ['✓ 80+ recepten/week', '✓ Chef-kwaliteit', '📦 €6,99 bezorging', '🌱 Vegan opties'],
     pros: [
       'Ruim receptaanbod: 80+ recepten per week',
       'Hoogste smaakscore in onze test (8,6/10) — ingrediënten en afwerking overtuigen',
       'Recepten van chefs met aandacht voor techniek, smaak en zelfgemaakte sauzen',
-      'Gratis bezorging op je eerste box via de welkomstdeal',
+      'Elke week meer dan 80 recepten om uit te kiezen',
       'Wekelijks opzegbaar, geen abonnement of minimumperiode',
       'Ruim aanbod vegetarische en flexitarische opties',
     ],
     cons: [
       'Enkel leverbaar in Vlaanderen en Brussel — Wallonië wordt niet bediend',
-      '€6,99 bezorgkosten per box na de welkomstperiode',
+      '€6,99 bezorgkosten per box',
       'Bereidingstijd van 45–60 minuten is langer dan bij HelloFresh of Foodbag',
       'Je kiest uit een vast menu — zelf ingrediënten samenstellen is niet mogelijk',
     ],

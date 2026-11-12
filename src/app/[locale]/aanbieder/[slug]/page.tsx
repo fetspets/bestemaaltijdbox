@@ -251,7 +251,9 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
               <div style={{ fontSize: 12, color: 'var(--muted)', marginTop: 6 }}>
                 {a.kortingsCode.code
                   ? (fr ? 'Saisissez notre code promo lors du paiement :' : 'Vul bij het afrekenen onze kortingscode in:')
-                  : (fr ? 'La réduction est appliquée automatiquement via notre lien : aucun code à saisir.' : 'Korting wordt automatisch toegepast via onze link — geen code nodig.')}
+                  : a.kortingsCode.nietGegarandeerd
+                    ? (fr ? `Offre de bienvenue actuelle : voir le site de ${a.naam}.` : `Het actuele welkomstaanbod zie je op de site van ${a.naam}.`)
+                    : (fr ? 'La réduction est appliquée automatiquement via notre lien : aucun code à saisir.' : 'Korting wordt automatisch toegepast via onze link — geen code nodig.')}
                 {a.kortingsCode.code && (
                   <CodeOnthullen slug={a.slug} codeB64={codeerCode(a.kortingsCode.code)} naam={a.naam} taal={fr ? 'fr' : 'nl'} plaatsing="review-cta-code" compact />
                 )}
@@ -263,7 +265,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {a.uitgebreideReview.prijsTabel && (
             <div style={{ background: 'white', border: '1px solid var(--rule)', borderRadius: 12, padding: 24, marginBottom: 24 }}>
               <h2 style={{ fontFamily: 'Fraunces, serif', fontSize: 20, fontWeight: 900, marginBottom: 8 }}>{fr ? `Combien coûte ${a.naam} par mois en Belgique ?` : `Wat kost ${a.naam} per maand in België?`}</h2>
-              <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>{a.kortingsCode?.code
+              <p style={{ fontSize: 13, color: 'var(--muted)', marginBottom: 12 }}>{a.uitgebreideReview.prijsTabelIntro ? a.uitgebreideReview.prijsTabelIntro : a.kortingsCode?.code
                 ? (fr ? `Offre de bienvenue (2 personnes / 3 repas par semaine), avec notre code promo :` : `Welkomstdeal (2 personen / 3 maaltijden/week), met onze kortingscode:`)
                 : (fr ? 'Offre de bienvenue (2 personnes / 3 repas par semaine), automatique via le lien, sans code :' : 'Welkomstdeal (2 personen / 3 maaltijden/week) — automatisch via de link, geen code nodig:')}</p>
               <div style={{ overflowX: 'auto' }}>

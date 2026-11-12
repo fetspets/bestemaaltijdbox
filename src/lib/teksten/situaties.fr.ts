@@ -286,7 +286,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
             tagline: 'Préférence végane · Flandre et Bruxelles uniquement',
             waarom:
               "Marley Spoon inclut des recettes végétariennes et véganes dans son menu hebdomadaire et permet de choisir « végan » comme préférence. Ce n'est pas un box végétal, et la livraison ne dépasse pas la Flandre et Bruxelles — deux restrictions qui l'écartent pour une grande partie des lecteurs francophones.",
-            deal: 'Réduction appliquée automatiquement via notre lien — vérifiez votre code postal',
+            deal: "Offre de bienvenue actuelle sur marleyspoon.be — vérifiez votre code postal",
             waarschuwing: '⚠️ Pas 100 % végétal · pas en Wallonie',
           },
         ],
