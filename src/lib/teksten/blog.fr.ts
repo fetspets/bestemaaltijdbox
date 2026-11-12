@@ -631,6 +631,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
     content: [
       { type: 'p', text: "En cherchant « box repas delhaize » ou « box repas colruyt », on ne trouve pas un box comme HelloFresh, mais des kits repas : un paquet de légumes, sauce ou épices et une recette pour un seul plat. La viande ou le poisson s'achètent généralement à part. C'est moins cher qu'un box repas, mais c'est tout autre chose." },
       { type: 'p', text: "Nous avons regardé l'offre des quatre grands supermarchés le 14 octobre 2026. Les prix peuvent varier selon le magasin et la semaine." },
+      { type: 'p', html: true, text: 'Vous cherchez un magasin en détail ? Lisez <a href="/fr/blog/delhaize-maaltijdbox" style="color:#1B4332;text-decoration:underline;font-weight:600">Box repas Delhaize : que contient-il ?</a> ou <a href="/fr/blog/colruyt-maaltijdbox" style="color:#1B4332;text-decoration:underline;font-weight:600">Box repas Colruyt : lequel des 3 vous convient ?</a>' },
       { type: 'h2', text: 'Delhaize : un box pour un plat' },
       { type: 'p', text: "Delhaize vend sous le nom « Boîte de repas » des paquets de légumes (découpés ou non) pour un plat, comme le waterzooi ou le poulet teriyaki. Ils coûtent 6,89 €, sont prévus pour 2 à 3 personnes et se préparent en 35 minutes environ. La viande est à ajouter vous-même ; l'emballage indique ce qu'il faut ajouter, avec une astuce végétarienne. En magasin ou en ligne, avec livraison à partir de 7,95 €." },
       { type: 'h2', text: 'Colruyt : BONI Freshbox et Foodbag' },
@@ -699,7 +700,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
   },
   'maaltijdbox-maaltijdcheques-belgie': {
     titel: 'Payer un box repas avec des titres-repas en Belgique : qui les accepte ?',
-    metaTitle: 'Payer un box repas en titres-repas (2026) : quels 3 box les acceptent et comment ?',
+    metaTitle: 'Titres-repas 2026 : quel box repas les accepte, et que peut-on encore acheter ?',
     metaDescription:
       "Oui, mais pas chez tous les box repas. Quels 3 box acceptent Monizze, Pluxee et Edenred, comment payer (même avec abonnement) et ce que vous pouvez acheter avec vos titres-repas.",
     excerpt:

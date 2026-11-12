@@ -699,6 +699,7 @@ export const blogPosts: BlogPost[] = [
     content: [
       { type: 'p', text: 'Wie in Google "maaltijdbox delhaize" of "maaltijdbox colruyt" zoekt, vindt geen HelloFresh-achtige box, maar verspakketten: één pakket met groenten, saus of kruiden en een recept voor één gerecht. Vlees of vis koop je er meestal zelf bij. Dat is goedkoper dan een maaltijdbox, maar ook iets heel anders.' },
       { type: 'p', text: 'We bekeken het aanbod van de vier grote supermarkten op 14 oktober 2026. Prijzen kunnen per winkel en per week verschillen.' },
+      { type: 'p', html: true, text: 'Zoek je één winkel in detail? Lees dan <a href="/blog/delhaize-maaltijdbox" style="color:#1B4332;text-decoration:underline;font-weight:600">Delhaize Maaltijdbox: wat zit erin?</a> of <a href="/blog/colruyt-maaltijdbox" style="color:#1B4332;text-decoration:underline;font-weight:600">Colruyt maaltijdbox: welke van de 3 past bij jou?</a>' },
       { type: 'h2', text: 'Delhaize: Maaltijdbox voor één gerecht' },
       { type: 'p', text: 'Delhaize verkoopt onder de naam "Maaltijdbox" pakketten met (versneden) groenten voor één gerecht, zoals waterzooi of kip teriyaki. Ze kosten €6,89, zijn voor 2 à 3 personen en staan in ongeveer 35 minuten op tafel. Vlees voeg je zelf toe; op de verpakking staat wat je erbij nodig hebt, met een veggie-tip. Je koopt ze in de winkel of online, met levering vanaf €7,95.' },
       { type: 'h2', text: 'Colruyt: BONI Freshbox en Foodbag' },
@@ -895,7 +896,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'maaltijdbox-maaltijdcheques-belgie',
     titel: 'Maaltijdbox betalen met maaltijdcheques in België — wie accepteert ze?',
-    metaTitle: 'Maaltijdbox betalen met maaltijdcheques (2026): welke 3 aanvaarden ze en hoe?',
+    metaTitle: 'Maaltijdcheques 2026: welke maaltijdbox aanvaardt ze, en wat mag je nog kopen?',
     metaDescription: 'Ja, het kan, maar niet bij elke maaltijdbox. Welke 3 boxen Monizze, Pluxee en Edenred aanvaarden, hoe je betaalt (ook met abonnement) en wat je met maaltijdcheques mag kopen.',
     gepubliceerd: 'juni 2026',
     datumISO: '2026-06-02',

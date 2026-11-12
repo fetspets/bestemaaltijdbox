@@ -193,7 +193,7 @@ export const aanbieders: Aanbieder[] = [
     minMaaltijdenPerWeek: 1,
     badge: { label: '🇧🇪 Belgische keuze', bg: '#DBEAFE', color: '#1E40AF' },
     seoTitle: 'Foodbag prijs & review 2026: wat kost het echt? (8,1/10)',
-    seoDescription: 'Wat kost Foodbag? Vanaf €8,43 per portie, altijd gratis bezorging en 40 gerechten per week. Onze review: prijs per persoon, smaak, voor wie het past en de minpunten.',
+    seoDescription: 'Wat betaal je écht per persoon bij Foodbag, mét en zonder welkomstkorting? Onze rekensom, wat er verandert na de eerste boxen, en voor wie het de moeite is.',
   },
   {
     slug: 'marley-spoon',
