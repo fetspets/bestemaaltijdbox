@@ -34,7 +34,7 @@ const TEKST: Record<'nl' | 'fr', KortingscodeTekst> = {
     overAlineas: [
       'Foodbag is een 100% Belgische maaltijdbox met lokale ingrediënten van Belgische boerderijen. Eigendom van Colruyt Group. Met 40 gerechten per week, 5 kookstijlen en gratis bezorging in heel België is het een van de meest populaire keuzes voor Belgische gezinnen en koppels.',
     ],
-    reviewTekst: 'Lees onze volledige Foodbag review →',
+    reviewTekst: 'Wat kost Foodbag per persoon na de korting? Bekijk onze rekensom in de review →',
     allesTekst: '← Alle kortingscodes bekijken',
   },
   fr: {
@@ -70,7 +70,7 @@ const TEKST: Record<'nl' | 'fr', KortingscodeTekst> = {
     overAlineas: [
       "Foodbag est un box repas 100 % belge, avec des ingrédients locaux issus de fermes belges. Il appartient au groupe Colruyt. Avec 40 plats par semaine, 5 styles de cuisine et la livraison gratuite dans toute la Belgique, c'est l'un des choix les plus populaires auprès des familles et des couples belges.",
     ],
-    reviewTekst: 'Lire notre avis complet sur Foodbag →',
+    reviewTekst: 'Combien coûte Foodbag par personne après la réduction ? Voir notre calcul dans l’avis →',
     allesTekst: '← Voir tous les codes promo',
   },
 };

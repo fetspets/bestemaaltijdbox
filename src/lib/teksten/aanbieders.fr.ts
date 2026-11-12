@@ -104,6 +104,14 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
         "Foodbag est plus cher que HelloFresh mais nettement plus local. Face à Foodprepper, qui appartient au même groupe, la différence est le temps : Foodprepper vise 15 minutes, Foodbag une vraie séance de cuisine — mais Foodprepper ne livre pas en Wallonie, ce qui tranche la question pour beaucoup de lecteurs.",
       eindoordeel:
         "Le meilleur compromis pour qui veut du belge et du frais avec une livraison nationale. Le prix reste le principal frein.",
+      prijsTabel: [
+        { box: 'Box 1', normaal: '50,60 €', korting: '20 €', betaal: '30,60 €', besparing: '20,00 €' },
+        { box: 'Box 2', normaal: '50,60 €', korting: '20 €', betaal: '30,60 €', besparing: '20,00 €' },
+        { box: 'Box 3', normaal: '50,60 €', korting: '20 €', betaal: '30,60 €', besparing: '20,00 €' },
+        { box: 'Box 4', normaal: '50,60 €', korting: '—', betaal: '50,60 €', besparing: '—' },
+        { box: 'Total', normaal: '202,40 €', korting: '—', betaal: '142,40 €', besparing: '60,00 €' },
+      ],
+      prijsUitleg: "Par personne, cela revient à 5,10 € par repas dans vos trois premières box, puis 8,43 €. Après la période de bienvenue, vous payez à deux, avec 3 repas par semaine, 50,60 € par box, soit environ 202 € par mois. La livraison est toujours gratuite, rien ne s'ajoute donc, et vous n'êtes lié à aucun abonnement. Plus vous commandez de portions, plus le prix par portion baisse : à 4 personnes ou avec plus de plats, il passe sous les 8,43 €. Votre prix exact s'affiche dans votre panier sur foodbag.be, sans devoir commander.",
     },
     kenmerken: ['🇧🇪 Ingrédients belges', '✓ Livraison gratuite', '✓ Sans abonnement', '✓ Livre en Wallonie'],
     pros: [
