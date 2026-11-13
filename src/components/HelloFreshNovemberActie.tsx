@@ -3,7 +3,7 @@ import { actieveActie } from '@/lib/acties';
 
 // Tijdelijke HelloFresh-actie (november 2026): gratis Peugeot-molenset bij de
 // 5e box, bovenop de gewone welkomstkorting. Server-side gated op de looptijd.
-export default function HelloFreshNovemberActie({ taal, plaatsing }: { taal: 'nl' | 'fr'; plaatsing: string }) {
+export default function HelloFreshNovemberActie({ taal, plaatsing, alternatief = false }: { taal: 'nl' | 'fr'; plaatsing: string; /** Toont het blok als alternatief onderaan de pagina van een andere aanbieder. */ alternatief?: boolean }) {
   if (!actieveActie('hellofresh')) return null;
   const fr = taal === 'fr';
   return (
@@ -12,7 +12,9 @@ export default function HelloFreshNovemberActie({ taal, plaatsing }: { taal: 'nl
         <img src={fr ? '/acties/hellofresh-peugeot-molens-fr.jpg' : '/acties/hellofresh-peugeot-molens.jpg'} alt={fr ? 'Moulins Peugeot Bistro Duo offerts chez HelloFresh' : 'Gratis Peugeot Bistro Duo-molenset bij HelloFresh'} width={110} height={110} style={{ borderRadius: 10, display: 'block' }} />
       </a>
       <div style={{ fontSize: 12, fontWeight: 700, color: '#C2410C', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 6 }}>
-        {fr ? '🎁 Uniquement en novembre' : '🎁 Alleen in november'}
+        {alternatief
+          ? (fr ? '🎁 Vous hésitez encore ? Aussi ce mois-ci chez HelloFresh' : '🎁 Twijfel je nog? Ook deze maand bij HelloFresh')
+          : (fr ? '🎁 Uniquement en novembre' : '🎁 Alleen in november')}
       </div>
       <div style={{ fontFamily: 'Fraunces, serif', fontSize: 19, fontWeight: 900, lineHeight: 1.3, marginBottom: 8, color: '#1C1C1C' }}>
         {fr

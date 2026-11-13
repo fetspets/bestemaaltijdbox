@@ -48,10 +48,13 @@ export default function KortingscodeDetail({
   slug,
   t,
   kleur,
+  onderaan,
 }: {
   slug: string;
   t: KortingscodeTekst;
   kleur: KortingscodeKleur;
+  /** Optioneel blok net boven de link naar alle kortingscodes. */
+  onderaan?: ReactNode;
 }) {
   return (
     <div style={{ maxWidth: 680, margin: '0 auto', padding: '40px 20px 64px' }}>
@@ -152,6 +155,8 @@ export default function KortingscodeDetail({
           {t.reviewTekst}
         </Link>
       </div>
+
+      {onderaan}
 
       <Link href="/kortingscodes" style={{ fontSize: 14, color: '#9CA3AF', textDecoration: 'none' }}>
         {t.allesTekst}

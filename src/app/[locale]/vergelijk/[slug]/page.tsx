@@ -1,5 +1,6 @@
 import Link from '@/components/TaalLink';
 import HelloFreshGidsen from '@/components/HelloFreshGidsen';
+import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
 import { getTranslations } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
@@ -256,6 +257,10 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
         </div>
 
         {v.slug.includes('hellofresh') && <HelloFreshGidsen taal={taal === 'fr' ? 'fr' : 'nl'} />}
+
+        {v.slug === 'foodprepper-vs-foodbag' && (
+          <HelloFreshNovemberActie taal={taal === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-vergelijk" alternatief />
+        )}
 
         {/* FAQ */}
         <div style={{ marginBottom: 40 }}>

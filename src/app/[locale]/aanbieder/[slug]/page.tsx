@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation';
 import CodeOnthullen from '@/components/CodeOnthullen';
+import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
 import { codeerCode } from '@/lib/codeer';
 import HelloFreshGidsen from '@/components/HelloFreshGidsen';
 import Link from '@/components/TaalLink';
@@ -380,6 +381,10 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           </div>
 
           {a.slug === 'hellofresh' && <HelloFreshGidsen taal={taal === 'fr' ? 'fr' : 'nl'} />}
+
+          {(a.slug === 'foodprepper' || a.slug === 'foodbag') && (
+            <HelloFreshNovemberActie taal={fr ? 'fr' : 'nl'} plaatsing={`hellofresh-actie-review-${a.slug}`} alternatief />
+          )}
 
           {/* FAQ */}
           {a.uitgebreideReview.faq && (

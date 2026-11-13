@@ -1,4 +1,5 @@
 import KortingscodeDetail, { type KortingscodeTekst } from '@/components/KortingscodeDetail';
+import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
 
 const TEKST: Record<'nl' | 'fr', KortingscodeTekst> = {
   nl: {
@@ -89,6 +90,7 @@ export default async function FoodprepperKortingscode({ params }: { params: Prom
       slug="foodprepper"
       t={TEKST[locale === 'fr' ? 'fr' : 'nl']}
       kleur={{ accent: '#EA580C', achtergrond: '#FFF7ED', rand: '#FED7AA', link: '#EA580C' }}
+      onderaan={<HelloFreshNovemberActie taal={locale === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-kortingscode-foodprepper" alternatief />}
     />
   );
 }
