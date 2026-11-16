@@ -376,13 +376,13 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
     keywords: ['comment fonctionne hellofresh', 'hellofresh belgique', 'hellofresh wallonie', 'commander hellofresh', 'livraison hellofresh'],
   },
   'hellofresh-menu-recepten': {
-    titel: 'Le menu HelloFresh expliqué : que pouvez-vous choisir chaque semaine ?',
-    metaTitle: 'Menu HelloFresh : que choisir chaque semaine ? (toutes les étiquettes)',
-    metaDescription: "Express, Saveurs de Belgique, One Pot, Sport : Carb+… Qu'y a-t-il vraiment au menu HelloFresh et comment bien choisir ? Nous avons passé en revue un menu complet.",
-    excerpt: "Plus de 50 recettes par semaine, des variantes et toute une série d'étiquettes. Nous avons passé en revue un menu HelloFresh complet pour expliquer ce que vous pouvez choisir.",
+    titel: 'Menu HelloFresh de la semaine : que choisir, et comment bien choisir ?',
+    metaTitle: 'Menu HelloFresh de la semaine : combien de choix avez-vous vraiment ?',
+    metaDescription: "Nous avons compté un menu HelloFresh complet : combien de recettes, combien de végétariennes, combien prêtes en 20 minutes, et ce que signifient les étiquettes. Plus nos conseils.",
+    excerpt: "Nous avons compté le menu HelloFresh du 21 au 27 novembre 2026 : 80 recettes et variantes, dont 22 végétariennes. Que contient le menu, que signifient les étiquettes et comment bien choisir ?",
     faqKop: 'Questions fréquentes sur le menu HelloFresh',
     content: [
-      { type: 'p', text: "En ouvrant HelloFresh pour la première fois, on découvre un long menu plein d'étiquettes : Express, Saveurs de Belgique, Signature, Sport : Carb+. Que signifient-elles, et combien de choix avez-vous vraiment ? Nous avons passé en revue le menu complet de fin octobre 2026." },
+      { type: 'p', text: "En ouvrant HelloFresh pour la première fois, on découvre un long menu plein d'étiquettes : Express, Saveurs de Belgique, Signature, Sport : Carb+. Que signifient-elles, et combien de choix avez-vous vraiment ? Nous avons compté le menu complet du 21 au 27 novembre 2026 sur hellofresh.be : 80 recettes et variantes, dont 22 végétariennes et 21 prêtes en 20 minutes ou moins (la plus rapide en 5 minutes). Le menu change chaque semaine, mais sa structure reste la même." },
       { type: 'codebox', tekst: 'Voir le menu de la semaine' },
       { type: 'h2', text: 'Combien de choix ?' },
       { type: 'p', text: "HelloFresh annonce plus de 50 recettes par semaine. En comptant les variantes, il y en a bien davantage : beaucoup de plats existent avec des pâtes complètes, du poulet ou du poisson au lieu du bœuf, ou du poulet végétal. Le menu change chaque semaine, avec des nouveautés autour d'un noyau de favoris." },
@@ -1706,12 +1706,12 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
   },
 
   'hellofresh-opzeggen': {
-    titel: 'Résilier HelloFresh : arrêter ou mettre en pause votre abonnement (2026)',
-    metaTitle: 'Résilier HelloFresh en Belgique (2026) — étapes et délai',
-    metaDescription: "Résilier ou mettre en pause HelloFresh ? Les étapes dans votre compte, le délai exact selon votre jour de livraison et que faire si vous êtes en retard. Vérifié en octobre 2026.",
+    titel: 'Résilier ou arrêter HelloFresh : stopper ou mettre en pause votre abonnement (2026)',
+    metaTitle: "Résilier HelloFresh : jusqu'à quand est-ce encore possible ?",
+    metaDescription: "Résilier HelloFresh prend une minute, mais si vous ratez le délai, une box arrive quand même. Les étapes, le délai selon votre jour de livraison et que faire si vous êtes en retard.",
     excerpt: "Résilier HelloFresh prend une minute depuis votre compte. Le seul point d'attention est le délai, qui dépend de votre jour de livraison.",
     content: [
-      { type: 'p', text: "Vous pouvez résilier HelloFresh à tout moment, sans préavis. Tout se fait depuis votre compte, sans appeler personne. Il faut seulement respecter le délai hebdomadaire : si vous résiliez trop tard, la box suivante part quand même. Voici les étapes et les délais tels que HelloFresh les publie (vérifié le 12 octobre 2026)." },
+      { type: 'p', text: "Vous pouvez résilier HelloFresh à tout moment, sans préavis. Tout se fait depuis votre compte, sans appeler personne. Il faut seulement respecter le délai hebdomadaire : si vous résiliez trop tard, la box suivante part quand même. Voici les étapes et les délais tels que HelloFresh les publie (vérifié le 16 novembre 2026)." },
       { type: 'h2', text: 'Résilier HelloFresh en 3 étapes' },
       { type: 'ul', items: [
         'Connectez-vous sur hellofresh.be.',
