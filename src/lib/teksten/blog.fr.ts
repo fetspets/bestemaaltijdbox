@@ -12,6 +12,70 @@ import type { BlogPost } from '../blog';
  * kan wegvallen.
  */
 export const blogFr: Record<string, Partial<BlogPost>> = {
+  'maaltijdbox-feestdagen-kerst': {
+    titel: 'Box repas à Noël et au Nouvel An 2026 : menu de fête, box habituel ou pause ?',
+    metaTitle: 'Box repas à Noël 2026 : lequel vous sauve en décembre ?',
+    metaDescription: "Menu de fête, box habituel ou petite pause ? Ce que font les box repas en Belgique autour de Noël, les délais à ne pas manquer, et notre conseil pour un mois de décembre chargé.",
+    excerpt: 'Pendant les fêtes, vous avez trois options avec votre box repas : un menu de fête, votre box habituel pour les semaines chargées, ou une pause. Ce que font les fournisseurs en Belgique.',
+    faqKop: 'Questions fréquentes sur les box repas pendant les fêtes',
+    content: [
+      { type: 'p', text: "Décembre est pour beaucoup de familles le mois le plus chargé de l'année : fêtes, repas, cadeaux, et en plus cuisiner chaque soir. Un box repas peut aider, mais autour de Noël et du Nouvel An, on ne veut pas non plus être coincé. Vous avez en gros trois options : un menu de fête, votre box habituel pour les semaines chargées, ou une pause. Voici ce qu'il faut savoir, avec une attention particulière pour la Wallonie." },
+      {
+        type: 'notitie',
+        kop: 'Situation au 16 novembre 2026',
+        achtergrond: '#FFF7ED',
+        rand: '#FDBA74',
+        regels: [
+          { label: 'Menus de fête :', tekst: "aucun grand fournisseur (HelloFresh, Foodbag, Marley Spoon, Foodprepper ou Factor) n'a encore publié de menu de Noël pour 2026. Dès qu'il y en a un, nous complétons cet article." },
+          { label: 'HelloFresh :', tekst: "une action est en cours ce mois-ci : en vous abonnant entre le 1er et le 30 novembre, vous recevez un set de moulins Peugeot dans votre 5e box. Pratique comme cadeau ou pour la table de fête. HelloFresh livre aussi en Wallonie." },
+          { label: 'Foodbag :', tekst: "proposait les années précédentes un menu de fête séparé. Celui de 2026 n'est pas encore annoncé. Vous pouvez déjà ajouter des extras comme le traiteur ou des box apéritif à votre commande." },
+        ],
+      },
+      { type: 'h2', text: 'Option 1 : un menu de fête en box repas' },
+      { type: 'p', text: "Un menu de fête est un box unique avec tout le nécessaire pour un dîner de plusieurs plats, avec recette et planning. Vous cuisinez vous-même, mais sans stress des courses. Foodbag proposait ce type de menu les années précédentes, pour petits et grands groupes." },
+      { type: 'p', text: "Notre conseil : commandez tôt. Les jours de livraison autour de Noël et du Nouvel An sont limités, et la date limite de commande tombe souvent une semaine ou plus avant la livraison. Dès que les fournisseurs annoncent leurs menus de fête 2026, nous publions ici les prix, les plats et les délais." },
+      { type: 'h2', text: 'Option 2 : votre box habituel pour les semaines chargées' },
+      { type: 'p', text: "Les semaines avant Noël sont souvent les plus difficiles. C'est justement là qu'un box qui règle le souper aide. Le bon choix dépend du temps dont vous disposez :" },
+      { type: 'ul', items: [
+        "Peu de temps : Foodprepper, prêt en 15 minutes maximum. Attention : uniquement en Flandre et à Bruxelles.",
+        "Pas de temps du tout : Factor, des repas prêts à réchauffer.",
+        "Sans abonnement : Foodbag. Vous pouvez commander une seule fois, et retirer votre box dans un point Collect&Go.",
+        "Le plus de choix pour toute la famille : HelloFresh, qui livre aussi en Wallonie. Avec l'action de ce mois, vous recevez en plus un set de moulins Peugeot.",
+      ] },
+      { type: 'h2', text: 'Option 3 : faire une pause pendant les fêtes' },
+      { type: 'p', text: "Vous êtes en famille ou en voyage à Noël et au Nouvel An ? Mettez simplement votre box en pause. Votre abonnement reste actif et reprend ensuite. Attention à la date limite : passé ce délai, le box est livré et facturé." },
+      {
+        type: 'notitie',
+        kop: "Jusqu'à quand pouvez-vous sauter un box ?",
+        achtergrond: '#F0F7F3',
+        rand: '#A7D3B9',
+        regels: [
+          { label: 'HelloFresh :', tekst: '3 à 6 jours avant la livraison, selon votre jour de livraison.' },
+          { label: 'Marley Spoon :', tekst: "jusqu'à 5 jours avant la livraison ; vous pouvez sauter jusqu'à 4 semaines à l'avance. Pas de livraison en Wallonie." },
+          { label: 'Foodbag :', tekst: "via « Menu » et « Sauter ce box », avant la date limite de commande. Sans abonnement, rien à mettre en pause." },
+          { label: 'Factor :', tekst: 'par semaine via votre compte ou l’application ; la date limite exacte figure à chaque date de livraison.' },
+        ],
+      },
+      { type: 'p', text: "Notre conseil : si vous savez déjà quelles semaines vous serez absent, mettez-les en pause tout de suite. Sinon, on l'oublie facilement pendant les fêtes, et un box arrive pile le 24 décembre." },
+      { type: 'p', html: true, text: 'Attention si vous venez de commencer chez HelloFresh : la réduction de bienvenue expire 56 jours après votre première commande. Une pause trop longue pendant les fêtes peut vous faire perdre la réduction sur les box suivants. Plus d’infos : <a href="/fr/blog/hellofresh-pauzeren-week-overslaan" style="color:#1B4332;font-weight:600;text-decoration:underline">mettre HelloFresh en pause</a>.' },
+      { type: 'h2', text: 'Idée cadeau : offrir un box repas' },
+      { type: 'p', text: "Vous cherchez un cadeau pour quelqu'un qui vient de déménager, une jeune famille ou vos parents ? Foodbag vend des bons cadeaux : la personne choisit elle-même quand et quoi commander. Pas d'abonnement, mais quelques soirées sans stress en cuisine." },
+      { type: 'p', html: true, text: 'Vous voulez commencer vous-même en décembre ? Consultez d’abord les <a href="/fr/codes-promo" style="color:#1B4332;font-weight:600;text-decoration:underline">codes promo actuels</a>. La plupart des box offrent une belle réduction sur les premières semaines, juste pendant le mois le plus cher de l’année.' },
+    ],
+    faq: [
+      { q: 'HelloFresh a-t-il un box de Noël en Belgique ?', a: "Au 16 novembre 2026, HelloFresh n'a pas encore annoncé de box de Noël pour la Belgique. Une action avec un set de moulins Peugeot offert dans le 5e box court jusqu'au 30 novembre. Nous mettrons cet article à jour dès qu'une offre de Noël sera disponible." },
+      { q: 'Foodbag a-t-il un menu de fête pour 2026 ?', a: "Foodbag proposait un menu de fête les années précédentes, mais celui de 2026 n'est pas encore annoncé au 16 novembre. Dès sa sortie, nous ajouterons les prix et les délais à cet article." },
+      { q: 'Puis-je mettre mon box repas en pause pendant les fêtes ?', a: 'Oui. Chez HelloFresh, Marley Spoon, Foodbag et Factor, vous pouvez sauter une ou plusieurs semaines sans résilier. Faites-le avant la date limite, sinon le box est encore livré et facturé.' },
+      { q: 'Quel box repas livre en Wallonie pendant les fêtes ?', a: "HelloFresh, Foodbag et Factor livrent dans tout le pays. Marley Spoon, Foodprepper et Ekomenu ne livrent qu'en Flandre et à Bruxelles." },
+    ],
+    relatedLinks: [
+      { label: 'Action HelloFresh : moulins Peugeot offerts', href: '/blog/hellofresh-peugeot-molens-actie' },
+      { label: 'Mettre HelloFresh en pause', href: '/blog/hellofresh-pauzeren-week-overslaan' },
+      { label: 'Résilier ou mettre Foodbag en pause', href: '/blog/foodbag-opzeggen' },
+      { label: 'Tous les codes promo', href: '/kortingscodes' },
+    ],
+    keywords: ['box repas noël', 'box repas fêtes', 'menu de fête box repas', 'foodbag menu de fête', 'hellofresh noël', 'box repas pause noël'],
+  },
   'delhaize-maaltijdbox': {
     titel: 'Box repas Delhaize : que contient-il, et que faut-il encore acheter ?',
     metaTitle: 'Box repas Delhaize : que contient-il vraiment ?',
