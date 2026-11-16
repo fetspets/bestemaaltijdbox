@@ -510,6 +510,7 @@ export const blogPosts: BlogPost[] = [
       { label: 'Hoe werkt HelloFresh? Stap voor stap', href: '/blog/hoe-werkt-hellofresh' },
       { label: 'Vegetarisch koken met een maaltijdbox', href: '/blog/vegetarisch-koken-maaltijdbox' },
       { label: 'Onze volledige HelloFresh-review', href: '/aanbieder/hellofresh' },
+      { label: 'Vegetarische maaltijdbox: wie heeft de meeste keuze?', href: '/voor/vegetarisch' },
     ],
     keywords: ['hellofresh menu', 'hello fresh menu', 'hellofresh menu deze week', 'menu hellofresh', 'hellofresh recepten', 'hellofresh supersnel', 'hellofresh vegetarisch'],
   },
@@ -782,6 +783,7 @@ export const blogPosts: BlogPost[] = [
     ],
     relatedLinks: [
       { label: 'HelloFresh-kortingscode: tot €70 korting', href: '/kortingscode/hellofresh' },
+      { label: 'Goedkoopste maaltijdbox: wie is écht het goedkoopst per week?', href: '/gids/goedkoopste-maaltijdbox-belgie' },
     ],
     relatedSlugs: ['hellofresh-alternatieven-belgie', 'maaltijdbox-of-zelf-koken-belgie'],
   },
@@ -1279,6 +1281,11 @@ export const blogPosts: BlogPost[] = [
       { type: 'p', text: 'Voor volledig vegetarisch eten is Ekomenu de beste keuze in België. Wie flexibel wil zijn (soms vlees, soms niet) kiest het best voor HelloFresh vanwege de grote keuze. Foodbag is interessant als lokale herkomst voor jou primeert.' },
     ],
     relatedSlugs: ['hellofresh', 'ekomenu', 'foodbag'],
+    relatedLinks: [
+      { label: 'Beste vegetarische maaltijdbox in België', href: '/voor/vegetarisch' },
+      { label: 'Bestaat er een 100% vegan maaltijdbox?', href: '/voor/vegan' },
+      { label: 'Biologische maaltijdbox: welke is écht bio?', href: '/voor/bio' },
+    ],
   },
   {
     slug: 'maaltijdbox-starten-beginners',
@@ -1320,6 +1327,10 @@ export const blogPosts: BlogPost[] = [
       ]},
     ],
     relatedSlugs: ['hellofresh', 'foodbag', 'marley-spoon'],
+    relatedLinks: [
+      { label: 'Maaltijdbox voor 1 persoon: welke leveren écht voor één?', href: '/voor/singles' },
+      { label: 'Goedkoopste maaltijdbox: wie is écht het goedkoopst?', href: '/gids/goedkoopste-maaltijdbox-belgie' },
+    ],
   },
   {
     slug: 'factor-review-belgie',
@@ -1346,7 +1357,7 @@ export const blogPosts: BlogPost[] = [
       { type: 'h2', text: 'Smaak en kwaliteit' },
       { type: 'p', text: 'Voor een maaltijd die je enkel opwarmt, is de smaak verrassend goed. In onze beoordeling scoort Factor 7,8/10. Gebruikers waarderen vooral de verschillende dieetstijlen: sporters kiezen High-Protein, wie op zijn gewicht let gaat voor Calorie-Conscious. De porties zijn afgemeten op voedingswaarde, niet op maximale hoeveelheid — hou daar rekening mee als je een grote eter bent.' },
       { type: 'h2', text: 'Wat kost Factor echt?' },
-      { type: 'p', text: 'Je eerste box kost v.a. €4,99 per portie, maar dat is een welkomstprijs: daarna betaal je v.a. €8,79 per portie (box van 14 maaltijden). Reken ook de €5,99 bezorgkosten per levering mee: die komen bovenop de portieprijs, ongeacht hoeveel maaltijden je bestelt. Voor nieuwe klanten geldt de welkomstkorting: tot 40% korting op je eerste box, daarna korting op box 2 t.e.m. 4 en een cadeau bij box 2 t.e.m. 5.' },
+      { type: 'p', text: 'Je eerste box kost v.a. €5,27 per portie, maar dat is een welkomstprijs: daarna betaal je v.a. €8,79 per portie (box van 14 maaltijden). Reken ook de €5,99 bezorgkosten per levering mee: die komen bovenop de portieprijs, ongeacht hoeveel maaltijden je bestelt. Voor nieuwe klanten geldt de welkomstkorting: tot 40% korting op je eerste box, daarna korting op box 2 t.e.m. 4 en een cadeau bij box 2 t.e.m. 5.' },
       { type: 'prijsvoorbeeld' },
       { type: 'codebox', tekst: 'Claim je 40% welkomstkorting' },
       { type: 'h2', text: 'Voor wie is Factor geschikt?' },
@@ -1401,7 +1412,7 @@ export const blogPosts: BlogPost[] = [
         'Foodmaker: artisanale kwaliteit met de Jeroen Meus-lijn en gratis bezorging in heel België.',
       ]},
       { type: 'h2', text: 'Wat kost het?' },
-      { type: 'p', text: 'De prijs per portie ligt in de premium-klasse die eigen is aan kant-en-klaar. Factor start met €4,99 per portie in je eerste box en kost daarna v.a. €8,79, plus €5,99 bezorgkosten per levering. Crowd Cooks ligt hoger per portie maar rekent minder bezorgkost (€4,90). Foodmaker bezorgt gratis maar heeft een minimumbestelbedrag. Reken altijd de totaalprijs uit: portieprijs × aantal maaltijden + bezorgkost.' },
+      { type: 'p', text: 'De prijs per portie ligt in de premium-klasse die eigen is aan kant-en-klaar. Factor start met €5,27 per portie in je eerste box en kost daarna v.a. €8,79, plus €5,99 bezorgkosten per levering. Crowd Cooks ligt hoger per portie maar rekent minder bezorgkost (€4,90). Foodmaker bezorgt gratis maar heeft een minimumbestelbedrag. Reken altijd de totaalprijs uit: portieprijs × aantal maaltijden + bezorgkost.' },
       { type: 'prijsvoorbeeld' },
       { type: 'codebox', tekst: 'Claim je 40% welkomstkorting' },
       { type: 'h2', text: 'Voor wie is het geschikt?' },

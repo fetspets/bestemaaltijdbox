@@ -456,7 +456,7 @@ export const aanbieders: Aanbieder[] = [
     besteVoor: 'Ready-to-eat',
     minMaaltijdenPerWeek: 1,
     seoTitle: 'Factor review 2026: kant-en-klaar van HelloFresh · 7,8/10',
-    seoDescription: 'Factor is de kant-en-klare maaltijddienst van de HelloFresh Group. Eerste box vanaf €4,99 per maaltijd, daarna €8,79 + €5,99 bezorging. Onze review van smaak, prijs, dieetstijlen en opzeggen.',
+    seoDescription: 'Factor is de kant-en-klare maaltijddienst van de HelloFresh Group. Eerste box vanaf €5,27 per maaltijd, daarna €8,79 + €5,99 bezorging. Onze review van smaak, prijs, dieetstijlen en opzeggen.',
   },
   {
     slug: 'crowd-cooks',

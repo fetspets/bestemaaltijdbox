@@ -562,7 +562,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
 
   budget: {
     uitlegParagraphs: [
-      "Le box repas le moins cher n'est pas toujours la meilleure affaire. <a href=\"/fr/fournisseur/factor\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Factor</a> attire avec 4,99 € la portion dans votre première box, mais ensuite vous payez dès 8,79 € la portion plus 5,99 € de livraison : pour deux personnes, environ 59 € par semaine. <a href=\"/fr/fournisseur/hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">HelloFresh</a> semble plus cher à première vue (7,92 €/portion), mais avec jusqu'à 70 € de réduction de bienvenue et la première livraison offerte, c'est souvent le choix le plus avantageux les premières semaines. Ensuite, HelloFresh facture aussi 5,99 € de livraison par box. Les deux livrent en Wallonie. <a href=\"/fr/fournisseur/foodprepper\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Foodprepper</a> est une option intermédiaire sans abonnement (45 € de réduction de bienvenue), mais uniquement en Flandre et à Bruxelles.",
+      "Le box repas le moins cher n'est pas toujours la meilleure affaire. <a href=\"/fr/fournisseur/factor\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Factor</a> attire avec 5,27 € la portion dans votre première box, mais ensuite vous payez dès 8,79 € la portion plus 5,99 € de livraison : pour deux personnes, environ 59 € par semaine. <a href=\"/fr/fournisseur/hellofresh\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">HelloFresh</a> semble plus cher à première vue (7,92 €/portion), mais avec jusqu'à 70 € de réduction de bienvenue et la première livraison offerte, c'est souvent le choix le plus avantageux les premières semaines. Ensuite, HelloFresh facture aussi 5,99 € de livraison par box. Les deux livrent en Wallonie. <a href=\"/fr/fournisseur/foodprepper\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">Foodprepper</a> est une option intermédiaire sans abonnement (45 € de réduction de bienvenue), mais uniquement en Flandre et à Bruxelles.",
       "Calculez toujours le vrai montant par semaine : prix par portion × nombre de portions + livraison − réduction de bienvenue. Un prix par portion bas avec une livraison chère peut revenir plus cher qu'un box « plus cher » avec livraison gratuite et une belle réduction de bienvenue. Notre <a href=\"/fr/guide/goedkoopste-maaltijdbox-belgie\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">guide du box repas le moins cher</a> détaille le calcul par fournisseur.",
     ],
     titel: 'Petit budget',
@@ -608,7 +608,7 @@ export const situatiesFr: Record<string, Partial<Situatie>> = {
     ],
     seoTitel: 'Box repas pour 1 personne en Belgique 2026 — 6 options comparées',
     seoDesc:
-      "Quels box repas livrent vraiment pour une personne ? HelloFresh, Factor, Foodbag et d'autres comparés sur le minimum, le prix et la zone de livraison.",
+      "Beaucoup de box commencent à 2 personnes. Lesquels livrent vraiment des portions pour une personne, quel minimum commander, et lequel est le plus avantageux seul ?",
     faqKop: 'Questions fréquentes pour une personne',
     faq: [
       {

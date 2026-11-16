@@ -1180,7 +1180,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
           'Foodbag : à partir de 8,43 €, ingrédients belges en filière courte, livre aussi en Wallonie',
           'Ekomenu : à partir de 6,42 €, entièrement bio — mais pas de livraison en Wallonie',
           'Foodprepper : à partir de 4,75 €, le prix le plus bas — Flandre et Bruxelles uniquement',
-          'Factor : dès 8,79 € (première box dès 4,99 €), plats prêts, + 5,99 € de livraison, couvre tout le pays',
+          'Factor : dès 8,79 € (première box dès 5,27 €), plats prêts, + 5,99 € de livraison, couvre tout le pays',
         ],
       },
       { type: 'h2', text: 'Quand cuisiner soi-même revient moins cher' },
@@ -1391,6 +1391,11 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         a: "Entre 8 et 12 par semaine, dans un catalogue de plus de 80 recettes. Un filtre dédié permet de les afficher directement.",
       },
     ],
+    relatedLinks: [
+      { label: 'Box repas végétarien en Belgique', href: '/voor/vegetarisch' },
+      { label: 'Box repas végétal : lequel livre en Wallonie ?', href: '/voor/vegan' },
+      { label: 'Box repas bio en Belgique', href: '/voor/bio' },
+    ],
   },
 
   'maaltijdbox-starten-beginners': {
@@ -1455,6 +1460,10 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         a: "HelloFresh, Foodbag, Factor et Foodmaker livrent dans tout le pays. Crowd Cooks couvre les grandes villes wallonnes. Marley Spoon, Foodprepper et Ekomenu ne livrent pas au sud du pays.",
       },
     ],
+    relatedLinks: [
+      { label: 'Box repas pour 1 personne', href: '/voor/singles' },
+      { label: 'Box repas le moins cher en Belgique', href: '/gids/goedkoopste-maaltijdbox-belgie' },
+    ],
   },
 
   'factor-review-belgie': {
@@ -1488,7 +1497,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Combien coûte Factor réellement ?' },
       {
         type: 'p',
-        text: "Votre première box coûte dès 4,99 € la portion, mais c'est un prix de bienvenue : ensuite, vous payez dès 8,79 € la portion (box de 14 repas). Comptez aussi les 5,99 € de livraison par commande. Pour deux personnes et trois repas par semaine, vous arrivez à au moins 58,73 € par semaine.",
+        text: "Votre première box coûte dès 5,27 € la portion, mais c'est un prix de bienvenue : ensuite, vous payez dès 8,79 € la portion (box de 14 repas). Comptez aussi les 5,99 € de livraison par commande. Pour deux personnes et trois repas par semaine, vous arrivez à au moins 58,73 € par semaine.",
       },
       { type: 'h2', text: 'À qui Factor convient-il ?' },
       {
@@ -1513,7 +1522,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       },
       {
         q: 'Combien coûte Factor par semaine ?',
-        a: "Dès 4,99 € la portion dans votre première box, puis dès 8,79 €, plus 5,99 € de livraison par commande. Pour deux personnes et trois repas, comptez au moins 58,73 € par semaine au tarif standard.",
+        a: "Dès 5,27 € la portion dans votre première box, puis dès 8,79 €, plus 5,99 € de livraison par commande. Pour deux personnes et trois repas, comptez au moins 58,73 € par semaine au tarif standard.",
       },
     ],
   },
@@ -1552,7 +1561,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Combien ça coûte ?' },
       {
         type: 'p',
-        text: "Le prix par portion se situe dans la gamme premium propre au prêt-à-réchauffer. Factor démarre à 4,99 € la portion dans la première box, puis coûte dès 8,79 €, plus 5,99 € de livraison. Crowd Cooks est plus cher par portion avec des frais de livraison plus faibles. Foodmaker livre gratuitement mais impose un minimum de 39,90 €.",
+        text: "Le prix par portion se situe dans la gamme premium propre au prêt-à-réchauffer. Factor démarre à 5,27 € la portion dans la première box, puis coûte dès 8,79 €, plus 5,99 € de livraison. Crowd Cooks est plus cher par portion avec des frais de livraison plus faibles. Foodmaker livre gratuitement mais impose un minimum de 39,90 €.",
       },
       { type: 'h2', text: 'À qui cela convient-il ?' },
       {

@@ -68,11 +68,11 @@ export const gidsen: Gids[] = [
   {
     slug: 'goedkoopste-maaltijdbox-belgie',
     titel: 'Goedkoopste maaltijdbox België 2026 — echte prijsvergelijking per week',
-    metaTitle: 'Goedkoopste maaltijdbox België 2026 — echte weekprijs van 7 aanbieders',
-    metaDescription: 'Welke maaltijdbox is écht het goedkoopst? Prijs per week voor 7 aanbieders, inclusief bezorgkosten en verborgen kosten. Met rekensom en welkomstvoordelen.',
+    metaTitle: 'Goedkoopste maaltijdbox België 2026: wie is écht het goedkoopst per week?',
+    metaDescription: 'De laagste prijs per portie is niet altijd de laagste weekprijs. We rekenden 7 boxen door, inclusief bezorgkost en minimumbedrag. De uitkomst verrast.',
     broodkruimel: 'Goedkoopste maaltijdbox',
     introParagrafen: [
-      'De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lokt met €4,99/portie in je eerste box — maar daarna betaal je €8,79/portie plus €5,99 bezorgkost per week, veel meer dan bij Foodprepper (v.a. €4,75/portie, gratis bezorging). De echte formule:',
+      'De prijs per portie is een misleidende manier om maaltijdboxen te vergelijken. Factor lokt met €5,27/portie in je eerste box — maar daarna betaal je €8,79/portie plus €5,99 bezorgkost per week, veel meer dan bij Foodprepper (v.a. €4,75/portie, gratis bezorging). De echte formule:',
     ],
     formule: 'weekprijs = (porties × prijs/portie) + bezorgkost',
     slotIntro: 'We berekenden de weekprijs voor 2 personen met 3 maaltijden (= 6 porties) voor alle 7 aanbieders, inclusief bezorgkost en welkomstdeals. Zo zie je meteen wie écht het voordeligst is.',
@@ -168,7 +168,7 @@ export const gidsen: Gids[] = [
       },
       {
         q: 'Is Factor echt de goedkoopste maaltijdbox in België?',
-        a: 'Nee. De €4,99 per portie geldt alleen voor je eerste box. Daarna betaal je v.a. €8,79 per portie (box van 14 maaltijden) plus €5,99 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je zo op minstens €58,73/week. Foodprepper ligt met v.a. €4,75/portie en gratis bezorging lager, al geldt daar een minimum bestelbedrag van €55. Factor levert kant-en-klare maaltijden, geen kookbox.',
+        a: 'Nee. De €5,27 per portie geldt alleen voor je eerste box. Daarna betaal je v.a. €8,79 per portie (box van 14 maaltijden) plus €5,99 bezorgkost per levering. Voor 2 personen met 3 maaltijden per week kom je zo op minstens €58,73/week. Foodprepper ligt met v.a. €4,75/portie en gratis bezorging lager, al geldt daar een minimum bestelbedrag van €55. Factor levert kant-en-klare maaltijden, geen kookbox.',
       },
       {
         q: 'Wat is de goedkoopste maaltijdbox zonder abonnement in België?',
@@ -202,7 +202,7 @@ export const gidsen: Gids[] = [
           situatie: 'Goedkoopste optie voor 1 persoon',
           winnaarNaam: 'HelloFresh',
           slug: 'hellofresh',
-          detail: '€48,49/week (1p, 3 maaltijden, 3 porties × €14,17 + €5,99 bezorging). HelloFresh is de enige grote kookbox die levert voor 1 persoon. Wil je niet koken, dan is Factor goedkoper: v.a. €8,79 per portie (eerste box v.a. €4,99), plus €5,99 bezorging.',
+          detail: '€48,49/week (1p, 3 maaltijden, 3 porties × €14,17 + €5,99 bezorging). HelloFresh levert elke kookbox ook voor 1 persoon; Marley Spoon heeft een aparte formule voor één. Wil je niet koken, dan is Factor goedkoper: v.a. €8,79 per portie (eerste box v.a. €5,27), plus €5,99 bezorging.',
           achtergrond: '#FFF7ED',
           rand: '#FED7AA',
         },
