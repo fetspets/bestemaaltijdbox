@@ -16,8 +16,8 @@ export async function generateMetadata(
       ? `Code promo HelloFresh ${laatstBijgewerkt('fr')} — jusqu’à 70 € de réduction sur vos 3 premières box`
       : `HelloFresh kortingscode ${LAATST_BIJGEWERKT} — tot €70 korting op je eerste 3 boxen`,
     beschrijving: locale === 'fr'
-      ? 'Activez l’offre de bienvenue HelloFresh : jusqu’à 70 € de réduction répartis sur vos 3 premières box. Appliquée automatiquement via notre lien. Livraison partout en Belgique, Wallonie comprise.'
-      : 'Activeer de HelloFresh welkomstdeal: tot €70 korting verdeeld over je eerste 3 boxen. Automatisch via onze link — geen code nodig. Voor nieuwe klanten in België.',
+      ? 'Comment obtenir jusqu’à 70 € de réduction chez HelloFresh ce mois-ci ? La répartition par box, les conditions à connaître et l’action en cours. Livraison partout en Belgique, Wallonie comprise.'
+      : 'Hoe krijg je deze maand tot €70 korting bij HelloFresh? De verdeling per box, de voorwaarden die je moet kennen en de actie die nu loopt. Voor nieuwe klanten in België.',
     type: 'article',
   });
 }

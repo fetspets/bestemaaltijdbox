@@ -74,7 +74,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     ctaSubtekst: "jusqu'à 70 € de réduction sur vos 3 premières box — appliqué automatiquement via notre lien",
     seoTitle: 'HelloFresh avis (2026) : que vaut-il vraiment en Belgique ?',
     seoDescription:
-      "Notre avis sur HelloFresh en Belgique : prix, choix de recettes, livraison en Wallonie et flexibilité. Comparé aux alternatives qui livrent au sud du pays.",
+      "HelloFresh vaut-il son prix en Belgique ? Ce que coûte vraiment une box après la réduction, combien de recettes vous avez au choix, et notre verdict honnête.",
   },
 
   foodbag: {
@@ -126,7 +126,7 @@ export const aanbiedersFr: Record<string, AanbiederTeksten> = {
     ctaSubtekst: '3 × 20 € de réduction · avec notre code promo lors du paiement',
     seoTitle: 'Foodbag avis et prix (2026) : combien coûte le box belge ?',
     seoDescription:
-      "Notre avis sur Foodbag : ingrédients belges, livraison gratuite dans tout le pays et sans abonnement. Prix, qualité et comparaison avec les alternatives.",
+      "Combien payez-vous vraiment par personne chez Foodbag, avec et sans réduction de bienvenue ? Notre calcul, ce qui change après les premières box, et la livraison en Wallonie.",
   },
 
   'marley-spoon': {

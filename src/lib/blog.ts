@@ -114,7 +114,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'delhaize-maaltijdbox',
     titel: 'Delhaize Maaltijdbox: wat zit erin, en wat moet je er nog bij kopen?',
-    metaTitle: 'Delhaize Maaltijdbox: wat zit er écht in (en wat niet)?',
+    metaTitle: 'Delhaize Maaltijdbox en verspakket: wat zit er écht in?',
     metaDescription: 'Delhaize verkoopt tientallen Maaltijdboxen in de winkel. Voor hoeveel personen zijn ze, wat moet je er nog bij kopen en wanneer is een box aan huis slimmer?',
     gepubliceerd: 'november 2026',
     datumISO: '2026-11-02',
@@ -202,7 +202,7 @@ export const blogPosts: BlogPost[] = [
   {
     slug: 'colruyt-maaltijdbox',
     titel: 'Colruyt maaltijdbox: BONI Freshbox, Foodbag of Foodprepper?',
-    metaTitle: 'Colruyt maaltijdbox: welke van de 3 past bij jou?',
+    metaTitle: 'Colruyt maaltijdbox of verspakket: welke van de 3 past bij jou?',
     metaDescription: 'Colruyt heeft niet één maar drie manieren om sneller te koken. Wat is het verschil tussen de Freshbox, Foodbag en Foodprepper, en waar krijg je korting?',
     gepubliceerd: 'november 2026',
     datumISO: '2026-11-02',

@@ -78,7 +78,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
   },
   'delhaize-maaltijdbox': {
     titel: 'Box repas Delhaize : que contient-il, et que faut-il encore acheter ?',
-    metaTitle: 'Box repas Delhaize : que contient-il vraiment ?',
+    metaTitle: 'Box repas Delhaize et kits frais : que contiennent-ils vraiment ?',
     metaDescription: "Delhaize vend des dizaines de box repas en magasin. Pour combien de personnes, que faut-il encore acheter, et quand un box livré à domicile est-il plus malin ?",
     excerpt: "Le box repas de Delhaize est un kit pour un seul plat, dès 5,89 €. Ce qu'il contient, ce qui manque, et la comparaison avec un box repas livré chez vous.",
     faqKop: 'Questions fréquentes sur le box repas Delhaize',

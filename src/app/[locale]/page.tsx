@@ -21,7 +21,7 @@ export async function generateMetadata(
     route: '/',
     titel:
       locale === 'fr'
-        ? `Meilleur box repas en Belgique 2026 — ${n} box comparés, livraison incluse`
+        ? `Meilleure box repas en Belgique 2026 : laquelle vaut vraiment le coup ?`
         : `Beste maaltijdbox België 2026 — ${n} boxen eerlijk vergeleken`,
     beschrijving:
       locale === 'fr'
