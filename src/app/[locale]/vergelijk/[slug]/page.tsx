@@ -256,6 +256,12 @@ export default async function VergelijkingPagina({ params }: { params: Promise<{
           </div>
         </div>
 
+        {/* Lopende HelloFresh-actie op elke vergelijking met HelloFresh: dit zijn
+            bezoekers die nog moeten kiezen, dus nieuwe klanten (= commissie). */}
+        {v.slug.includes('hellofresh') && (
+          <HelloFreshNovemberActie taal={taal === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-vergelijk-hf" />
+        )}
+
         {v.slug.includes('hellofresh') && <HelloFreshGidsen taal={taal === 'fr' ? 'fr' : 'nl'} />}
 
         {v.slug === 'foodprepper-vs-foodbag' && (
