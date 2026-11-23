@@ -9,6 +9,7 @@ import { blogPostsVoor, blogPostVoor, aanbiederVoor, aanbiedersVoor } from '@/li
 
 import GesponsordLabel from '@/components/GesponsordLabel';
 import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
+import HelloFreshGidsen from '@/components/HelloFreshGidsen';
 import KortingscodeBox from '@/components/KortingscodeBox';
 import { buildMetadata, articleJsonLd } from '@/lib/seo';
 import { maandNaarISO } from '@/lib/site';
@@ -325,6 +326,13 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
               </div>
             ))}
           </div>
+        </div>
+      )}
+
+      {/* HelloFresh-artikels: interne links naar de kortingscodepagina en de gidsen */}
+      {(slug.includes('hellofresh')) && (
+        <div style={{ marginTop: 40 }}>
+          <HelloFreshGidsen taal={taal === 'fr' ? 'fr' : 'nl'} huidig={`/blog/${slug}`} />
         </div>
       )}
 

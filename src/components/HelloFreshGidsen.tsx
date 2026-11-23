@@ -12,7 +12,7 @@ const GIDSEN = [
   { href: '/blog/hellofresh-pauzeren-week-overslaan', nl: 'HelloFresh pauzeren: tot wanneer kan het en wat met je korting?', fr: 'Pause HelloFresh : jusqu’à quand et quid de votre réduction ?' },
 ];
 
-export default function HelloFreshGidsen({ taal, metKortingscode = true }: { taal: 'nl' | 'fr'; metKortingscode?: boolean }) {
+export default function HelloFreshGidsen({ taal, metKortingscode = true, huidig }: { taal: 'nl' | 'fr'; metKortingscode?: boolean; /** Pad van de huidige pagina: die link wordt weggelaten. */ huidig?: string }) {
   const vanaf = new Date(`${permanentUitgelichtKortingscodes.vanaf}T00:00:00`);
   const zichtbaar = getActieveSponsoring()?.partnerSlug === 'hellofresh' || new Date() >= vanaf;
   if (!zichtbaar) return null;
@@ -26,7 +26,7 @@ export default function HelloFreshGidsen({ taal, metKortingscode = true }: { taa
     : GIDSEN;
   // Interne link naar de kortingscodepagina, behalve op die pagina zelf.
   const kortingscode = { href: '/kortingscode/hellofresh', nl: 'HelloFresh-kortingscode: tot €70 korting op je eerste 3 boxen', fr: 'Code promo HelloFresh : jusqu’à 70 € sur vos 3 premières box' };
-  const items = metKortingscode ? [kortingscode, ...lijst] : lijst;
+  const items = (metKortingscode ? [kortingscode, ...lijst] : lijst).filter(g => g.href !== huidig);
   return (
     <div style={{ background: '#F0FDF4', border: '1px solid #BBF7D0', borderRadius: 12, padding: '18px 20px', margin: '0 0 28px' }}>
       <div style={{ fontFamily: 'Fraunces, serif', fontSize: 17, fontWeight: 800, marginBottom: 10, color: '#1B4332' }}>
