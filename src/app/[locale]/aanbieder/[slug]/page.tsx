@@ -383,7 +383,7 @@ export default async function AanbiederPage({ params }: { params: Promise<{ slug
           {a.slug === 'hellofresh' && <HelloFreshGidsen taal={taal === 'fr' ? 'fr' : 'nl'} />}
 
           {(a.slug === 'foodprepper' || a.slug === 'foodbag') && (
-            <HelloFreshNovemberActie taal={fr ? 'fr' : 'nl'} plaatsing={`hellofresh-actie-review-${a.slug}`} alternatief />
+            <HelloFreshNovemberActie taal={fr ? 'fr' : 'nl'} plaatsing={`hellofresh-actie-review-${a.slug}`} alternatief welkomAlsGeenActie />
           )}
 
           {/* FAQ */}

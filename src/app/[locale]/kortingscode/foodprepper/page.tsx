@@ -90,7 +90,7 @@ export default async function FoodprepperKortingscode({ params }: { params: Prom
       slug="foodprepper"
       t={TEKST[locale === 'fr' ? 'fr' : 'nl']}
       kleur={{ accent: '#EA580C', achtergrond: '#FFF7ED', rand: '#FED7AA', link: '#EA580C' }}
-      onderaan={<HelloFreshNovemberActie taal={locale === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-kortingscode-foodprepper" alternatief />}
+      onderaan={<HelloFreshNovemberActie taal={locale === 'fr' ? 'fr' : 'nl'} plaatsing="hellofresh-actie-kortingscode-foodprepper" alternatief welkomAlsGeenActie />}
     />
   );
 }
