@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import type { Locale } from '@/i18n/routing';
 import { buildMetadata, articleJsonLd } from '@/lib/seo';
+import QuizTeaser from '@/components/QuizTeaser';
 import { lokaliseerPad } from '@/i18n/paden';
 import { generateGidsStaticParams, berekenWeekprijs } from '@/lib/gidsen';
 import { gidsVoor, aanbiederVoor } from '@/lib/teksten';
@@ -259,6 +260,8 @@ export default async function GidsPagina({ params }: { params: Promise<{ slug: s
             ))}
           </div>
         </div>
+
+        <QuizTeaser taal={taal === 'fr' ? 'fr' : 'nl'} />
 
         {/* FAQ */}
         <div style={{ marginBottom: 40 }}>

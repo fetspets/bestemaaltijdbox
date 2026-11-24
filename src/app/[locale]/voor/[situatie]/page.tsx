@@ -7,6 +7,7 @@ import { generateSituatieStaticParams } from '@/lib/situaties';
 import { situatiesVoor, situatieVoor, aanbiederVoor } from '@/lib/teksten';
 import { buildMetadata } from '@/lib/seo';
 import ContentBlokken from '@/components/ContentBlokken';
+import QuizTeaser from '@/components/QuizTeaser';
 import { getTranslations } from 'next-intl/server';
 
 export async function generateStaticParams() {
@@ -162,6 +163,8 @@ export default async function SituatiePage({ params }: { params: Promise<{ situa
           </ul>
         </div>
       )}
+
+      <QuizTeaser taal={fr ? 'fr' : 'nl'} />
 
       {/* FAQ */}
       <div style={{ marginTop: 40, marginBottom: 40 }}>

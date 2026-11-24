@@ -52,6 +52,10 @@ export const routing = defineRouting({
       nl: '/blog/[slug]',
       fr: '/blog/[slug]',
     },
+    '/welke-maaltijdbox': {
+      nl: '/welke-maaltijdbox',
+      fr: '/quelle-box-repas',
+    },
     '/over-ons': {
       nl: '/over-ons',
       fr: '/a-propos',

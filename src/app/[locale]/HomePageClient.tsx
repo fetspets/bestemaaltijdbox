@@ -127,6 +127,9 @@ export default function HomePageClient({
         <p style={{ fontSize: 15, color: 'var(--muted)', lineHeight: 1.65, marginBottom: 20, maxWidth: 560 }}>
           {t('intro', { n: aantalAanbieders })}
         </p>
+        <a href="#quiz" data-plaatsing="hero-quiz" style={{ display: 'inline-block', marginBottom: 20, fontSize: 14, fontWeight: 700, color: '#1B4332', textDecoration: 'underline' }}>
+          {t('heroQuizLink')}
+        </a>
 
         {/* Stats */}
         <div style={{ display: 'flex', gap: 24, marginBottom: 24, flexWrap: 'wrap' }}>
@@ -261,7 +264,7 @@ export default function HomePageClient({
         {sponsor?.positie !== 'onderTop3' && sponsorBlok}
 
         {/* QUIZ */}
-        <div style={{ marginBottom: 48 }}>
+        <div id="quiz" style={{ marginBottom: 48, scrollMarginTop: 80 }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20, paddingBottom: 14, borderBottom: '2px solid var(--ink)' }}>
             <h2 style={{ fontSize: 'clamp(18px, 4vw, 28px)', fontWeight: 900 }}>{t('welkePastBijJou')}</h2>
           </div>

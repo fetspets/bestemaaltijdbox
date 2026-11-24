@@ -10,6 +10,7 @@ import { blogPostsVoor, blogPostVoor, aanbiederVoor, aanbiedersVoor } from '@/li
 import GesponsordLabel from '@/components/GesponsordLabel';
 import HelloFreshNovemberActie from '@/components/HelloFreshNovemberActie';
 import HelloFreshGidsen from '@/components/HelloFreshGidsen';
+import QuizTeaser from '@/components/QuizTeaser';
 import KortingscodeBox from '@/components/KortingscodeBox';
 import { buildMetadata, articleJsonLd } from '@/lib/seo';
 import { maandNaarISO } from '@/lib/site';
@@ -95,6 +96,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 const RIJKE_BLOKKEN = new Set<string>([
   'notitie', 'infokaarten', 'winnaar', 'topAanbieders',
   'overigeAanbieders', 'tabel', 'scenarios', 'slotCta',
+]);
+
+const ALGEMENE_BLOGS = new Set([
+  'maaltijdbox-feestdagen-kerst', 'maaltijdbox-supermarkt-belgie', 'maaltijdbox-zonder-abonnement-belgie',
+  'maaltijdbox-maaltijdcheques-belgie', 'maaltijdbox-of-zelf-koken-belgie', 'vegetarisch-koken-maaltijdbox',
+  'maaltijdbox-starten-beginners', 'kant-en-klare-maaltijden-zonder-koken-belgie', 'gezond-eten-zonder-tijd-belgie',
+  'delhaize-maaltijdbox', 'colruyt-maaltijdbox', 'hoe-maaltijdbox-opzeggen-belgie',
 ]);
 
 export default async function BlogDetailPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
@@ -328,6 +336,9 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
           </div>
         </div>
       )}
+
+      {/* Algemene artikels (geen specifieke aanbieder): verwijzing naar de keuzetest */}
+      {ALGEMENE_BLOGS.has(slug) && <QuizTeaser taal={taal === 'fr' ? 'fr' : 'nl'} />}
 
       {/* HelloFresh-artikels: interne links naar de kortingscodepagina en de gidsen */}
       {(slug.includes('hellofresh')) && (

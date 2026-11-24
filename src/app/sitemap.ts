@@ -29,6 +29,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const ingangen: Ingang[] = [
     { route: '/', priority: 1, frequentie: 'weekly' },
     { route: '/kortingscodes', priority: 0.9, frequentie: 'weekly' },
+    { route: '/welke-maaltijdbox', priority: 0.8 },
     { route: '/blog', priority: 0.7, frequentie: 'weekly' },
     { route: '/over-ons', priority: 0.5 },
     { route: '/privacy', priority: 0.3 },
