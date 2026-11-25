@@ -15,25 +15,44 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
   'maaltijdbox-feestdagen-kerst': {
     titel: 'Box repas à Noël et au Nouvel An 2026 : menu de fête, box habituel ou pause ?',
     metaTitle: 'Box repas à Noël 2026 : lequel vous sauve en décembre ?',
-    metaDescription: "Menu de fête, box habituel ou petite pause ? Ce que font les box repas en Belgique autour de Noël, les délais à ne pas manquer, et notre conseil pour un mois de décembre chargé.",
+    metaDescription: "Une box repas belge a déjà publié son menu de fête 2026. Laquelle, qu'y a-t-il au menu et jusqu'à quand commander ? Plus les délais de pause pour décembre.",
     excerpt: 'Pendant les fêtes, vous avez trois options avec votre box repas : un menu de fête, votre box habituel pour les semaines chargées, ou une pause. Ce que font les fournisseurs en Belgique.',
     faqKop: 'Questions fréquentes sur les box repas pendant les fêtes',
     content: [
       { type: 'p', text: "Décembre est pour beaucoup de familles le mois le plus chargé de l'année : fêtes, repas, cadeaux, et en plus cuisiner chaque soir. Un box repas peut aider, mais autour de Noël et du Nouvel An, on ne veut pas non plus être coincé. Vous avez en gros trois options : un menu de fête, votre box habituel pour les semaines chargées, ou une pause. Voici ce qu'il faut savoir, avec une attention particulière pour la Wallonie." },
       {
         type: 'notitie',
-        kop: 'Situation au 16 novembre 2026',
+        kop: 'Situation au 25 novembre 2026',
         achtergrond: '#FFF7ED',
         rand: '#FDBA74',
         regels: [
-          { label: 'Menus de fête :', tekst: "aucun grand fournisseur (HelloFresh, Foodbag, Marley Spoon, Foodprepper ou Factor) n'a encore publié de menu de Noël pour 2026. Dès qu'il y en a un, nous complétons cet article." },
+          { label: 'Foodbag :', tekst: "a publié le premier un menu de fête pour 2026, avec un menu séparé pour Noël et pour le Nouvel An. Tous les plats, délais et jours de livraison ci-dessous." },
+          { label: 'Autres fournisseurs :', tekst: "chez HelloFresh, Foodprepper et Factor, nous n'avons pas encore vu de menu de fête au 25 novembre. Dès qu'il y en a un, nous complétons cet article." },
           { label: 'HelloFresh :', tekst: "une action est en cours ce mois-ci : en vous abonnant entre le 1er et le 30 novembre, vous recevez un set de moulins Peugeot dans votre 5e box. Pratique comme cadeau ou pour la table de fête. HelloFresh livre aussi en Wallonie." },
-          { label: 'Foodbag :', tekst: "proposait les années précédentes un menu de fête séparé. Celui de 2026 n'est pas encore annoncé. Vous pouvez déjà ajouter des extras comme le traiteur ou des box apéritif à votre commande." },
         ],
       },
-      { type: 'h2', text: 'Option 1 : un menu de fête en box repas' },
-      { type: 'p', text: "Un menu de fête est un box unique avec tout le nécessaire pour un dîner de plusieurs plats, avec recette et planning. Vous cuisinez vous-même, mais sans stress des courses. Foodbag proposait ce type de menu les années précédentes, pour petits et grands groupes." },
-      { type: 'p', text: "Notre conseil : commandez tôt. Les jours de livraison autour de Noël et du Nouvel An sont limités, et la date limite de commande tombe souvent une semaine ou plus avant la livraison. Dès que les fournisseurs annoncent leurs menus de fête 2026, nous publions ici les prix, les plats et les délais." },
+      { type: 'h2', text: 'Option 1 : le menu de fête Foodbag (Noël et Nouvel An 2026)' },
+      { type: 'p', text: "Un menu de fête est une commande unique avec tout le nécessaire pour un dîner de plusieurs plats. Vous cuisinez vous-même, mais sans stress des courses. Cette année, Foodbag propose un menu distinct pour Noël et pour le Nouvel An, que vous composez vous-même : pour chaque service, vous choisissez entre trois lignes, Quick&Easy, Original ou Veggie, et vous pouvez les combiner librement." },
+      { type: 'ul', items: [
+        "Noël, entrée : soupe de potiron au chorizo (Quick&Easy), toast au saumon fumé (Original) ou mini tarte tatin d'oignon au roquefort (Veggie).",
+        "Noël, plat : ragoût de cerf et croquettes (Quick&Easy), filet de pintade et gratin (Original) ou tortelloni chèvre-potiron (Veggie).",
+        "Noël, dessert : choux à la framboise, poire caramélisée à la ricotta citronnée ou « théramisu » au spéculoos.",
+        "Nouvel An : notamment des croquettes au fromage et aux crevettes, du saumon laqué, des ravioloni à la truffe et une tarte aux pommes en verrine.",
+        "Pas envie de cuisiner ? Il existe aussi une ligne prête à réchauffer, avec chaque fois un plat de gibier, de poisson et végétarien.",
+      ] },
+      {
+        type: 'notitie',
+        kop: 'Menu de fête Foodbag : délais et livraison',
+        achtergrond: '#FFF7ED',
+        rand: '#FDBA74',
+        regels: [
+          { label: 'Menu de Noël :', tekst: "à commander jusqu'au vendredi 18 décembre (9 h). Livraison uniquement le mercredi 23 décembre." },
+          { label: 'Menu du Nouvel An :', tekst: "à commander du 26 novembre au jeudi 24 décembre (9 h). Livraison uniquement le mercredi 30 décembre." },
+          { label: 'Portions :', tekst: "1 à 12 portions par plat, 3 à 12 plats par commande." },
+          { label: 'Attention :', tekst: "cette année, le menu de fête ne peut pas être retiré chez Collect&Go. La livraison à domicile les 23 et 30 décembre est gratuite. Foodbag livre aussi en Wallonie." },
+        ],
+      },
+      { type: 'p', html: true, text: 'Notre conseil : commandez tôt, car il n’y a qu’un seul jour de livraison par fête. Le menu de fête apparaît sur le site de Foodbag quand vous choisissez le mercredi comme jour de livraison. <a href="/ga/foodbag" data-plaatsing="blog-kerst-feestmenu" rel="noopener sponsored nofollow" style="color:#1B4332;font-weight:600;text-decoration:underline">Voir le menu de fête Foodbag →</a>' },
       { type: 'h2', text: 'Option 2 : votre box habituel pour les semaines chargées' },
       { type: 'p', text: "Les semaines avant Noël sont souvent les plus difficiles. C'est justement là qu'un box qui règle le souper aide. Le bon choix dépend du temps dont vous disposez :" },
       { type: 'ul', items: [
@@ -63,8 +82,8 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'p', html: true, text: 'Vous voulez commencer vous-même en décembre ? Consultez d’abord les <a href="/fr/codes-promo" style="color:#1B4332;font-weight:600;text-decoration:underline">codes promo actuels</a>. La plupart des box offrent une belle réduction sur les premières semaines, juste pendant le mois le plus cher de l’année.' },
     ],
     faq: [
-      { q: 'HelloFresh a-t-il un box de Noël en Belgique ?', a: "Au 16 novembre 2026, HelloFresh n'a pas encore annoncé de box de Noël pour la Belgique. Une action avec un set de moulins Peugeot offert dans le 5e box court jusqu'au 30 novembre. Nous mettrons cet article à jour dès qu'une offre de Noël sera disponible." },
-      { q: 'Foodbag a-t-il un menu de fête pour 2026 ?', a: "Foodbag proposait un menu de fête les années précédentes, mais celui de 2026 n'est pas encore annoncé au 16 novembre. Dès sa sortie, nous ajouterons les prix et les délais à cet article." },
+      { q: 'HelloFresh a-t-il un box de Noël en Belgique ?', a: "Au 25 novembre 2026, HelloFresh n'a pas encore annoncé de box de Noël pour la Belgique. Une action avec un set de moulins Peugeot offert dans le 5e box court jusqu'au 30 novembre. Nous mettrons cet article à jour dès qu'une offre de Noël sera disponible." },
+      { q: 'Foodbag a-t-il un menu de fête pour 2026 ?', a: "Oui. Foodbag propose un menu séparé pour Noël et pour le Nouvel An, à composer vous-même entre Quick&Easy, Original et Veggie, ainsi qu'une ligne prête à réchauffer. Le menu de Noël se commande jusqu'au vendredi 18 décembre pour une livraison le mercredi 23 décembre ; celui du Nouvel An jusqu'au jeudi 24 décembre pour une livraison le mercredi 30 décembre." },
       { q: 'Puis-je mettre mon box repas en pause pendant les fêtes ?', a: 'Oui. Chez HelloFresh, Marley Spoon, Foodbag et Factor, vous pouvez sauter une ou plusieurs semaines sans résilier. Faites-le avant la date limite, sinon le box est encore livré et facturé.' },
       { q: 'Quel box repas livre en Wallonie pendant les fêtes ?', a: "HelloFresh, Foodbag et Factor livrent dans tout le pays. Marley Spoon, Foodprepper et Ekomenu ne livrent qu'en Flandre et à Bruxelles." },
     ],
@@ -319,8 +338,8 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
   },
   'hoe-werkt-hellofresh': {
     titel: 'Comment fonctionne HelloFresh ? De la commande à la box devant votre porte',
-    metaTitle: 'Comment fonctionne HelloFresh ? À savoir avant votre première box (2026)',
-    metaDescription: "Commande, choix des recettes, livraison et pause : HelloFresh en Belgique, étape par étape. Plus la date limite que beaucoup de nouveaux clients ratent et comment obtenir la réduction de bienvenue.",
+    metaTitle: 'HelloFresh en Belgique : comment ça marche vraiment ? (livraison, recettes, pause)',
+    metaDescription: 'Avant votre première box HelloFresh : comment choisir vos recettes, quand vous êtes livré, et la date limite que beaucoup de nouveaux clients ratent.',
     excerpt: "Vous choisissez une box, composez votre menu chaque semaine et tout arrive au frais chez vous. Mais il y a une date limite à connaître. HelloFresh en Belgique, étape par étape.",
     faqKop: 'Questions fréquentes sur le fonctionnement de HelloFresh',
     content: [
@@ -1468,9 +1487,8 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
 
   'factor-review-belgie': {
     titel: 'Factor : notre avis sur les plats prêts à réchauffer en Belgique',
-    metaTitle: 'Factor avis Belgique 2026 — plats prêts testés honnêtement',
-    metaDescription:
-      "Notre avis sur Factor : plats de chef prêts à réchauffer, livrés dans toute la Belgique. Prix, goût, styles diététiques et pour qui cela vaut la peine.",
+    metaTitle: 'Factor avis Belgique 2026 : les plats prêts valent-ils vraiment le prix ?',
+    metaDescription: "Nous avons testé Factor : le goût, le vrai coût d'une semaine après la réduction, et pour qui ça vaut (ou pas) la peine. Notre note honnête et les pièges.",
     excerpt:
       "Factor livre des plats de chef prêts à réchauffer en deux à trois minutes — aucune cuisson. Nous avons testé le prix, le goût, les styles diététiques et la couverture de livraison.",
     faqKop: 'Questions fréquentes sur Factor',
@@ -1760,8 +1778,8 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
 
   'factor-opzeggen': {
     titel: 'Résilier Factor : étapes, délai et annulation de la première box (2026)',
-    metaTitle: 'Résilier Factor en Belgique (2026) — désactiver votre abonnement',
-    metaDescription: "Résilier Factor sur ordinateur, mobile ou dans l'application, sauter une livraison et annuler votre première box. Les étapes décrites par Factor, vérifiées en octobre 2026.",
+    metaTitle: 'Résilier Factor Meals en Belgique : comment arrêter (et quoi savoir avant)',
+    metaDescription: "Résilier Factor sur le site ou dans l'application, ou plutôt sauter une semaine ? Les étapes, la date limite et que faire de votre première box. Vérifié en octobre 2026.",
     excerpt: "Chez Factor, résilier revient à désactiver l'abonnement. C'est possible à tout moment, mais avant le délai hebdomadaire. La première box s'annule via le service client.",
     content: [
       { type: 'p', text: "Vous pouvez résilier Factor à tout moment depuis votre compte : dans les paramètres, on parle de désactiver l'abonnement. Attention au délai hebdomadaire : une fois passé, la commande est traitée et même le service client ne peut plus l'annuler. Les étapes ci-dessous viennent de la FAQ de Factor Belgique (vérifié le 12 octobre 2026)." },
