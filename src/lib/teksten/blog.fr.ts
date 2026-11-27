@@ -76,7 +76,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
         ],
       },
       { type: 'p', text: "Notre conseil : si vous savez déjà quelles semaines vous serez absent, mettez-les en pause tout de suite. Sinon, on l'oublie facilement pendant les fêtes, et un box arrive pile le 24 décembre." },
-      { type: 'p', html: true, text: 'Attention si vous venez de commencer chez HelloFresh : la réduction de bienvenue expire 56 jours après votre première commande. Une pause trop longue pendant les fêtes peut vous faire perdre la réduction sur les box suivants. Plus d’infos : <a href="/fr/blog/hellofresh-pauzeren-week-overslaan" style="color:#1B4332;font-weight:600;text-decoration:underline">mettre HelloFresh en pause</a>.' },
+      { type: 'p', html: true, text: 'Attention si vous venez de commencer chez HelloFresh : la réduction de bienvenue expire 49 jours après votre première commande. Une pause trop longue pendant les fêtes peut vous faire perdre la réduction sur les box suivants. Plus d’infos : <a href="/fr/blog/hellofresh-pauzeren-week-overslaan" style="color:#1B4332;font-weight:600;text-decoration:underline">mettre HelloFresh en pause</a>.' },
       { type: 'h2', text: 'Idée cadeau : offrir un box repas' },
       { type: 'p', text: "Vous cherchez un cadeau pour quelqu'un qui vient de déménager, une jeune famille ou vos parents ? Foodbag vend des bons cadeaux : la personne choisit elle-même quand et quoi commander. Pas d'abonnement, mais quelques soirées sans stress en cuisine." },
       { type: 'p', html: true, text: 'Vous voulez commencer vous-même en décembre ? Consultez d’abord les <a href="/fr/codes-promo" style="color:#1B4332;font-weight:600;text-decoration:underline">codes promo actuels</a>. La plupart des box offrent une belle réduction sur les premières semaines, juste pendant le mois le plus cher de l’année.' },
@@ -369,7 +369,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Pause, modification ou arrêt' },
       { type: 'p', html: true, text: "Vous n'êtes engagé à rien. Depuis votre compte ou l'application, vous mettez une semaine (ou plus) en pause, changez votre créneau de livraison ou résiliez, toujours avant la date limite. Un délai de rétractation de 14 jours s'applique aussi. Comment fonctionne la pause et à quoi faire attention avec votre réduction de bienvenue : lisez <a href=\"/fr/blog/hellofresh-pauzeren-week-overslaan\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">mettre HelloFresh en pause</a>." },
       { type: 'h2', text: 'Combien ça coûte ?' },
-      { type: 'p', html: true, text: "Les nouveaux clients reçoivent via notre lien jusqu'à 70 € de réduction sur leurs 3 premières box : 45 € sur la première, 15 € sur la deuxième et 10 € sur la troisième. Cette réduction expire 56 jours après la commande de votre première box. Ensuite, vous payez le prix normal plus 5,99 € de livraison par box. Dans <a href=\"/fr/blog/is-hellofresh-het-waard\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">HelloFresh vaut-il le coup ?</a>, nous calculons ce que cela coûte par portion par rapport au supermarché." },
+      { type: 'p', html: true, text: "Les nouveaux clients reçoivent via notre lien jusqu'à 70 € de réduction sur leurs 3 premières box : 45 € sur la première, 15 € sur la deuxième et 10 € sur la troisième. Cette réduction expire 49 jours après la commande de votre première box. Ensuite, vous payez le prix normal plus 5,99 € de livraison par box. Dans <a href=\"/fr/blog/is-hellofresh-het-waard\" style=\"color:#1B4332;font-weight:600;text-decoration:underline\">HelloFresh vaut-il le coup ?</a>, nous calculons ce que cela coûte par portion par rapport au supermarché." },
       { type: 'codebox', tekst: 'Activer jusqu’à 70 € de réduction sur vos 3 premières box' },
       { type: 'h2', text: 'Pour qui HelloFresh fonctionne-t-il le mieux ?' },
       { type: 'ul', items: [
@@ -479,10 +479,10 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
       { type: 'h2', text: 'Changer de jour plutôt que faire une pause' },
       { type: 'p', text: "Une pause n'est pas toujours nécessaire. Absent le lundi mais présent le mercredi ? Changez simplement le créneau de livraison de cette semaine dans votre compte ou l'application. Et si vous n'êtes pas là au moment de la livraison, indiquez où déposer la box réfrigérée, par exemple dans le garage ou chez les voisins." },
       { type: 'h2', text: 'Attention à votre réduction de bienvenue' },
-      { type: 'p', text: "C'est là que ça coince souvent. Selon les conditions de l'offre HelloFresh, la réduction de bienvenue expire 56 jours après la commande de votre première box. Si vous faites une longue pause juste après la première box, la réduction sur les box 2 et 3 peut expirer avant que vous ne l'utilisiez. Et en cas de résiliation, l'offre est perdue, même si vous recommencez plus tard." },
+      { type: 'p', text: "C'est là que ça coince souvent. Selon les conditions de l'offre HelloFresh, la réduction de bienvenue expire 49 jours après la commande de votre première box. Si vous faites une longue pause juste après la première box, la réduction sur les box 2 et 3 peut expirer avant que vous ne l'utilisiez. Et en cas de résiliation, l'offre est perdue, même si vous recommencez plus tard." },
       { type: 'ul', items: [
-        'Vous voulez toute la réduction ? Recevez vos trois premières box dans ces 56 jours.',
-        'Une pause est inévitable ? Gardez-la courte et calculez quand les 56 jours sont écoulés.',
+        'Vous voulez toute la réduction ? Recevez vos trois premières box dans ces 49 jours.',
+        'Une pause est inévitable ? Gardez-la courte et calculez quand les 49 jours sont écoulés.',
         'Vous pensez arrêter ? Préférez la pause à la résiliation tant que vous n’êtes pas sûr.',
       ]},
       { type: 'h2', text: 'Pas encore client ?' },
@@ -492,7 +492,7 @@ export const blogFr: Record<string, Partial<BlogPost>> = {
     faq: [
       { q: 'Combien de temps puis-je mettre HelloFresh en pause ?', a: "Vous pouvez sauter une semaine ou mettre plusieurs semaines d'affilée en pause depuis votre compte ou l'application. L'abonnement reste actif et reprend ensuite." },
       { q: 'Jusqu’à quand puis-je sauter une box HelloFresh ?', a: 'Jusqu’à la date limite, 3 à 6 jours avant la livraison selon votre jour de livraison. Ensuite, la box est livrée et facturée.' },
-      { q: 'Est-ce que je perds ma réduction en faisant une pause ?', a: 'Pas directement, mais la réduction de bienvenue expire 56 jours après la commande de la première box. Une pause trop longue peut vous faire perdre la réduction sur les box 2 et 3. En cas de résiliation, l’offre est perdue.' },
+      { q: 'Est-ce que je perds ma réduction en faisant une pause ?', a: 'Pas directement, mais la réduction de bienvenue expire 49 jours après la commande de la première box. Une pause trop longue peut vous faire perdre la réduction sur les box 2 et 3. En cas de résiliation, l’offre est perdue.' },
       { q: 'La pause coûte-t-elle quelque chose ?', a: 'Non. Une semaine en pause n’est ni livrée ni facturée.' },
     ],
     relatedLinks: [

@@ -129,6 +129,7 @@ const TEKST: Record<'nl' | 'fr', Tekst> = {
       'Réservé aux nouveaux clients ou aux clients ayant résilié il y a plus d’un an',
       'Répartition sur vos 3 premières box : 45 € + 15 € + 10 € (70 € au total)',
       'Première livraison gratuite, ensuite des frais de livraison sont facturés',
+      'La réduction expire 49 jours après la commande de votre 1re box',
       'Résiliable chaque semaine + droit de rétractation de 14 jours',
     ],
     greenpanKop: 'Reçoit-on encore une poêle GreenPan offerte chez HelloFresh ?',
